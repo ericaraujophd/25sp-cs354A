@@ -993,7 +993,21 @@
     "href": "index.html",
     "title": "Welcome to CS112 - Data Structures",
     "section": "",
-    "text": "CS 112 uses the C++ programming language to introduce students to the elementary data structures (vectors, lists, stacks, queues, binary search trees, …), recursion, big-oh notation, and other intermediate-level programming topics.\nThis a permanently in construction website, so please let us know if you find any information missing or had some bad experience with the links and interface throughout the semester.\nHere you will find all information needed to do well during the course.\nData Science in a Box contains the materials required to teach (or learn from) the course described above, all of which are freely-available and open-source. They include course materials such as slide decks, lecture and live coding videos, homework assignments, guided labs, sample exams, a final project assignment, as well as materials for instructors such as pedagogical tips, information on computing infrastructure, technology stack, and course logistics.\nMajority of the materials linked live in the GitHub repo serving this website. You can access the repo at https://github.com/rstudio-education/datascience-box.\nPlease note that Data Science in a Box uses a Contributor Code of Conduct. By contributing to this project, you agree to abide by its terms."
+    "text": "CS 112 uses the C++ programming language to introduce students to the elementary data structures (vectors, lists, stacks, queues, binary search trees, …), recursion, big-oh notation, and other intermediate-level programming topics.\nThis a permanently in construction website, so please let us know if you find any information missing or had some bad experience with the links and interface throughout the semester.\nHere you will find all information needed to do well during the course."
+  },
+  {
+    "objectID": "index.html#student-learning-outcomes",
+    "href": "index.html#student-learning-outcomes",
+    "title": "Welcome to CS112 - Data Structures",
+    "section": "Student Learning Outcomes",
+    "text": "Student Learning Outcomes\nUpon successful completion of this course students will be able to:\n\nUse indirection (pointers) and run-time memory allocation to implement dynamic, generic container classes (e.g., vectors, lists, stacks, queues, trees, etc.).\n\nAnalyze, categorize, and compare the complexity of data structure operations using “big-oh” notation.\n\nDesign and implement recursive data structure operations.\n\nDesign, create, and use unit-tests to test the correctness of data structure operations.\n\nFor select algorithms, use simple parallel computing techniques to improve algorithm performance and measure the improvement."
+  },
+  {
+    "objectID": "index.html#course-organization",
+    "href": "index.html#course-organization",
+    "title": "Welcome to CS112 - Data Structures",
+    "section": "Course Organization",
+    "text": "Course Organization\nThe course is organized around these components:\n\nThe lectures that will introduce data structures topics at the conceptual level;\nThe labs in which students will (in pairs) practice using and building data structures; and\nThe projects in which students will (individually) practice using and building data structures.\n\nEach week’s lectures, labs and projects will cover the same concepts, but will do so in different ways.\nThe first 4 weeks will be dedicated to learning C++. After that, we will begin studying data structures."
   },
   {
     "objectID": "index.html#license",
