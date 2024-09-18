@@ -991,21 +991,21 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Welcome",
+    "title": "Welcome to CS112 - Data Structures",
     "section": "",
-    "text": "How can we effectively and efficiently teach data science to students with little to no background in computing and statistical thinking? How can we equip them with the skills and tools for reasoning with various types of data and leave them wanting to learn more? This introductory data science course is our (working) answer to this question.\nThe source code for everything you see here can be found on GitHub.\nThe core content of the course focuses on data acquisition and wrangling, exploratory data analysis, data visualization, inference, modelling, and effective communication of results. Time permitting, the course also introduces additional concepts and tools like interactive visualization and reporting, text analysis, and Bayesian inference. A heavy emphasis is placed on a consistent syntax (with tools from the tidyverse), reproducibility (with R Markdown), and version control and collaboration (with Git and GitHub). In addition, out-of-class learning is supplemented with interactive tutorials. The goal of the course is to bring students from zero to being able to work in a team on a fully reproducible data science project analysing a dataset of their choice and answering questions they care about.\nData Science in a Box contains the materials required to teach (or learn from) the course described above, all of which are freely-available and open-source. They include course materials such as slide decks, lecture and live coding videos, homework assignments, guided labs, sample exams, a final project assignment, as well as materials for instructors such as pedagogical tips, information on computing infrastructure, technology stack, and course logistics.\nMajority of the materials linked live in the GitHub repo serving this website. You can access the repo at https://github.com/rstudio-education/datascience-box.\nPlease note that Data Science in a Box uses a Contributor Code of Conduct. By contributing to this project, you agree to abide by its terms."
+    "text": "CS 112 uses the C++ programming language to introduce students to the elementary data structures (vectors, lists, stacks, queues, binary search trees, …), recursion, big-oh notation, and other intermediate-level programming topics.\nThis a permanently in construction website, so please let us know if you find any information missing or had some bad experience with the links and interface throughout the semester.\nHere you will find all information needed to do well during the course.\nData Science in a Box contains the materials required to teach (or learn from) the course described above, all of which are freely-available and open-source. They include course materials such as slide decks, lecture and live coding videos, homework assignments, guided labs, sample exams, a final project assignment, as well as materials for instructors such as pedagogical tips, information on computing infrastructure, technology stack, and course logistics.\nMajority of the materials linked live in the GitHub repo serving this website. You can access the repo at https://github.com/rstudio-education/datascience-box.\nPlease note that Data Science in a Box uses a Contributor Code of Conduct. By contributing to this project, you agree to abide by its terms."
   },
   {
     "objectID": "index.html#license",
     "href": "index.html#license",
-    "title": "Welcome",
+    "title": "Welcome to CS112 - Data Structures",
     "section": "License",
     "text": "License\nThis online work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International. Visit here for more information about the license."
   },
   {
     "objectID": "index.html#acknowledements",
     "href": "index.html#acknowledements",
-    "title": "Welcome",
+    "title": "Welcome to CS112 - Data Structures",
     "section": "Acknowledements",
     "text": "Acknowledements\nHuge thanks to the #rstats education community who have made numerous suggestions for this resource, to Lee Suddaby and Zeno Kujawa for converting the homework assignments to learnr tutorials, and to Müge Çetinkaya for the hex logo!\nThis website is built with Quarto, the lovely icons by icons8, and none of this would be possible without the tidyverse."
   },
