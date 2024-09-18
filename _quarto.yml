@@ -30,7 +30,7 @@ website:
 
   navbar:
     background: "#A7D5E8"
-    logo: "images/dsbox.png"
+    logo: "images/cs112-logo.jpeg"
     align: center
     title: false
     collapse-below: lg
