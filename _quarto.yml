@@ -8,7 +8,7 @@ project:
 website:
   page-navigation: true
   title: "CS112 - Data Structures"
-  description: "Data Science in a Box contains the materials required to teach (or learn from) the course described above, all of which are freely-available and open-source."
+  description: "CS112 will teach students to use C++ for creating data structures."
   site-url: "https://datasciencebox.org/"
   
   repo-url: https://github.com/rstudio-education/datascience-box
