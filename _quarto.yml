@@ -1,6 +1,6 @@
 project:
   type: website
-  output-dir: 24fa-cs112
+  output-dir: docs
   resources:
     - "images/twitter-card.png"
     - "course-materials/_slides/"
