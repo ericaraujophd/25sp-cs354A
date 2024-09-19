@@ -1,0 +1,13 @@
+---
+title: "Instructors"
+---
+
+This course has as instructors:
+- Prof. Victor Norman
+- Prof. Eric Araújo
+
+## Office Hours
+
+- [Prof. Norman's hours](https://vtn2webpage.firebaseapp.com/home)
+- [Prof. Araújo's hours](https://outlook.office365.com/calendar/published/c0bd07a3f1d64aaf9a74c91921ce7536@calvin.edu/79189cd730424803bceba861959c7e752179000899390454025/calendar.html)
+

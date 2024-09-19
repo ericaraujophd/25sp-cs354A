@@ -1156,207 +1156,163 @@
     ]
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Welcome to CS112 - Data Structures",
+    "objectID": "policies.html",
+    "href": "policies.html",
+    "title": "Course Policies",
     "section": "",
-    "text": "CS 112 uses the C++ programming language to introduce students to the elementary data structures (vectors, lists, stacks, queues, binary search trees, …), recursion, big-oh notation, and other intermediate-level programming topics.\nThis a permanently in construction website, so please let us know if you find any information missing or had some bad experience with the links and interface throughout the semester.\nHere you will find all information needed to do well during the course."
-  },
-  {
-    "objectID": "index.html#student-learning-outcomes",
-    "href": "index.html#student-learning-outcomes",
-    "title": "Welcome to CS112 - Data Structures",
-    "section": "Student Learning Outcomes",
-    "text": "Student Learning Outcomes\nUpon successful completion of this course students will be able to:\n\nUse indirection (pointers) and run-time memory allocation to implement dynamic, generic container classes (e.g., vectors, lists, stacks, queues, trees, etc.).\n\nAnalyze, categorize, and compare the complexity of data structure operations using “big-oh” notation.\n\nDesign and implement recursive data structure operations.\n\nDesign, create, and use unit-tests to test the correctness of data structure operations.\n\nFor select algorithms, use simple parallel computing techniques to improve algorithm performance and measure the improvement."
-  },
-  {
-    "objectID": "index.html#course-organization",
-    "href": "index.html#course-organization",
-    "title": "Welcome to CS112 - Data Structures",
-    "section": "Course Organization",
-    "text": "Course Organization\nThe course is organized around these components:\n\nThe lectures that will introduce data structures topics at the conceptual level;\nThe labs in which students will (in pairs) practice using and building data structures; and\nThe projects in which students will (individually) practice using and building data structures.\n\nEach week’s lectures, labs and projects will cover the same concepts, but will do so in different ways.\nThe first 4 weeks will be dedicated to learning C++. After that, we will begin studying data structures."
-  },
-  {
-    "objectID": "index.html#acknowledgements",
-    "href": "index.html#acknowledgements",
-    "title": "Welcome to CS112 - Data Structures",
-    "section": "Acknowledgements",
-    "text": "Acknowledgements\nThis website is built with Quarto, the lovely icons by icons8, and none of this would be possible without the tidyverse."
-  },
-  {
-    "objectID": "02-interactive-tutorials.html",
-    "href": "02-interactive-tutorials.html",
-    "title": "Interactive tutorials",
-    "section": "",
-    "text": "The following interactive tutorials have been built with learnr and gradethis. They’re available on shinyapps.io (linked) as well as distributed with the dsbox package.1 With the dsbox package installed, you can also run these tutorials in the Tutorials pane of your RStudio window. This might be preferable for courses with high enrollment where students need to access the tutorials at the same time.\nNote that many of these include examples and questions from the homework assignments listed earlier. You can think of these as interactive, auto-feedback versions of the simpler questions in the homework assignments. If using both the tutorials and the homework assignments in your teaching, I recommend modifying the homework assignments to remove the redundant questions (they will usually be the earlier, shorter, simpler questions) and making the homework assignment shorter. Students will ultimately get exposed to the same material, but get auto-feedback in the tutorials and human feedback on the homework assignments.\nIf you would like to learn about making your own tutorials with learnr, I strongly recommend reviewing the video and materials from the following 1.5 hour workshop: Building interactive tutorials in R.",
+    "text": "Your grade in this course will be based on:\n\nDaily Quizzes: 5%\n\nThe lowest 3 quizzes will be dropped.\n\nLabs: 20%\nHomework projects: 25%\nTests (5, including the final test during the Exam time): 50%\n\nThe lowest test score will be dropped.",
     "crumbs": [
-      "Content",
-      "Interactive tutorials"
+      "Course Policies"
     ]
   },
   {
-    "objectID": "02-interactive-tutorials.html#footnotes",
-    "href": "02-interactive-tutorials.html#footnotes",
-    "title": "Interactive tutorials",
+    "objectID": "policies.html#grace-days",
+    "href": "policies.html#grace-days",
+    "title": "Course Policies",
+    "section": "Grace Days",
+    "text": "Grace Days\nYou have 8 Grace Days available to you during the semester. These grace days may be used to submit an assignment late without penalty. Grace Days Remaining will be seen in the GradeBook in Moodle.\nHere are some circumstances in which you might use grace days:\n\nYou are an athlete and you have a very busy week. Use a few grace days to catch up the next week.\nYou become ill (physically or mentally) and cannot do the work on time.\nYou need to go home for an emergency.\n\nHere is the procedure for using grace days:\n\nDO NOT email me to tell me you are going to use grace days. I don’t need to know this – there is no action I need to take if you tell me this.\nWhen your assignment grade comes back and you have lost points due to lateness, then use the Grade Appeal app to ask for the points to be restored and tell me how many grace days you want to use for that.",
+    "crumbs": [
+      "Course Policies"
+    ]
+  },
+  {
+    "objectID": "policies.html#extenuating-circumstances",
+    "href": "policies.html#extenuating-circumstances",
+    "title": "Course Policies",
+    "section": "Extenuating Circumstances",
+    "text": "Extenuating Circumstances\nIf you fall ill (physically or mentally) for an extended period of time, AND you send me documentation from Student Life, Student Health Center, or the Center for Health and Wellness, then, and only then, I will consider allowing you to make up late assignments.\nIf you begin to skip class repeatedly due to mental health problems, go to the Center for Health and Wellness! Don’t delay!",
+    "crumbs": [
+      "Course Policies"
+    ]
+  },
+  {
+    "objectID": "policies.html#incompletes",
+    "href": "policies.html#incompletes",
+    "title": "Course Policies",
+    "section": "Incompletes",
+    "text": "Incompletes\nAn Incomplete (I) grade will be granted only in unusual circumstances, and only if those circumstances have been verified by the Student Life Office. Procrastination does not qualify as an unusual circumstance.\nNo work will be accepted after the last day of classes.",
+    "crumbs": [
+      "Course Policies"
+    ]
+  },
+  {
+    "objectID": "policies.html#classroom-policy",
+    "href": "policies.html#classroom-policy",
+    "title": "Course Policies",
+    "section": "Classroom Policy",
+    "text": "Classroom Policy\n\n\n\n\n\n\nIMPORTANT!\n\n\n\nNo phones, no laptops, unless we tell you you can.\n\n\nThis is a difficult class, and you don’t need to be distracted by goofing around on your phone or laptop. And, I don’t want you to distract others.\nDaily Quizzes will be administered in the first 5 minutes of class, on Moodle. Do not show up late to class.",
+    "crumbs": [
+      "Course Policies"
+    ]
+  },
+  {
+    "objectID": "policies.html#attendance",
+    "href": "policies.html#attendance",
+    "title": "Course Policies",
+    "section": "Attendance",
+    "text": "Attendance\nClass attendance is optional.\nAlso, lab attendance is required! Lab is not optional. Skipping lab may result in you doing poorly in class.\nMissing class due to illness: if you are going to miss class due to (physical or mental) illness, please send me an email before class.",
+    "crumbs": [
+      "Course Policies"
+    ]
+  },
+  {
+    "objectID": "policies.html#disabilities",
+    "href": "policies.html#disabilities",
+    "title": "Course Policies",
+    "section": "Disabilities",
+    "text": "Disabilities\nCalvin University is committed to providing access to all students. If you are a student with a documented disability, please notify a Disability Coordinator in Student Success (located in Hiemenga Hall 227) to discuss necessary accommodations. If you have an accommodation memo, please come talk to me in the first two weeks of class. If you are a student needing reasonable modifications for pregnancy and related conditions, please contact the Title IX Coordinator in Student Life (located in Spoelhof University Center 364).",
+    "crumbs": [
+      "Course Policies"
+    ]
+  },
+  {
+    "objectID": "policies.html#statement-of-diversity-and-inclusion",
+    "href": "policies.html#statement-of-diversity-and-inclusion",
+    "title": "Course Policies",
+    "section": "Statement of Diversity and Inclusion",
+    "text": "Statement of Diversity and Inclusion\nInside and outside of the classroom, I work to treat every person with equal respect, regardless of racial identity, gender identity, physicality, brain chemistry, nationality, political leanings, and religious background. Whoever you are, you are fearfully and wonderfully made. God delights in diversity and I do, too. We humans need diverse viewpoints because every viewpoint, on its own, has blind spots. That has been proven to be true in technology-related fields, where under-represented minorities are significantly under-represented in the working world. When companies work hard to rectify this, they find their products and services improve. We have found this to be true in Computer Science classrooms as well.\n\n\n\n\n\n\nIMPORTANT!\n\n\n\nIf you or someone else in this class is hurt by something I say or do in class, I would like to know about it so that we can work toward a remedy. This has happened in the past in my classroom – usually when I’m trying to be “cool” or be funny. If this happens this semester, please know that it was unintentional. Because this kind of feedback can be uncomfortable for all involved, I’ll take it however it comes: in public or in private, on the spot or days later, directly from you or indirectly through another student, another professor, or through my department chair Keith VanderLinden (kvlinden@calvin.edu).\n\n\n\n\n\n\n\n\nCallout by Prof. Norman!\n\n\n\nAlso, please note that I am half deaf (at least). I am completely deaf on my left side. This results in my not being able to hear students that speak quietly, and not being able to tell which direction sounds are coming from. Please speak loudly! Thanks.",
+    "crumbs": [
+      "Course Policies"
+    ]
+  },
+  {
+    "objectID": "01-community.html",
+    "href": "01-community.html",
+    "title": "Community",
+    "section": "",
+    "text": "Do you like what’s in the box? Do you have questions? Is something you need missing? Want to exchange ideas with others teaching similar courses?\nWe now have a dsbox Slack channel, you can join here.1 The Slack channel is a place for discussion on using these or similar materials in data science courses. Please make sure to review the Code of Conduct before joining.\nOther great venues for questions are the RStudio Community under Teaching or #rstats Twitter.\nAdditionally, we would love to hear from you if you are using these resources. Please take just a few minutes to fill out this Google form. All fields are optional, but the more information you provide, the more data we will have to assess the reach and impact of this project."
+  },
+  {
+    "objectID": "01-community.html#footnotes",
+    "href": "01-community.html#footnotes",
+    "title": "Community",
     "section": "Footnotes",
-    "text": "Footnotes\n\n\nThe dsbox package is not yet on CRAN, until then you will need to install from GitHub with devtools::install_github(\"rstudio-education/dsbox\").↩︎",
-    "crumbs": [
-      "Content",
-      "Interactive tutorials"
-    ]
+    "text": "Footnotes\n\n\nIf the link has expired, please email me at cetinkaya.mine@gmail.com to request a new one.↩︎"
   },
   {
-    "objectID": "02-ethics.html",
-    "href": "02-ethics.html",
-    "title": "Data science ethics",
+    "objectID": "design.html",
+    "href": "design.html",
+    "title": "Course design",
     "section": "",
-    "text": "This unit touches on data science ethics, specifically on issues of misrepresentation of data and results, data privacy, and algorithmic bias. Course lectures are supplemented with “guest lectures” from domain experts.",
-    "crumbs": [
-      "Content",
-      "Data science ethics"
-    ]
-  },
-  {
-    "objectID": "02-ethics.html#slides-videos-and-application-exercises",
-    "href": "02-ethics.html#slides-videos-and-application-exercises",
-    "title": "Data science ethics",
-    "section": "Slides, videos, and application exercises",
-    "text": "Slides, videos, and application exercises\n\nUnit 3 - Deck 1: Misrepresentation\n\nSlides\n\n\nSource\n\n\nVideo\n\n\n\nAlberto Cairo - How charts lie\n\nVideo\n\n\n\nUnit 3 - Deck 2: Data privacy\n\nSlides\n\n\nSource\n\n\nVideo\n\n\n\nThe Guardian - Cambridge Analytica whistleblower\n\nVideo\n\n\n\nUnit 3 - Deck 3: Algorithmic bias\n\nSlides\n\n\nSource\n\n\nVideo\n\n\n\nJoy Buolamwini - How I’m fighting bias in algorithms\n\nVideo\n\n\n\nCathy O’Neil - Weapons of Math Destruction\n\nVideo\n\n\n\nSafiya Umoja Noble - Imagining a Future Free from the Algorithms of Oppression\n\nVideo\n\n\n\nKristian Lum - What’s An Algorithm Got To Do With It\n\nVideo",
-    "crumbs": [
-      "Content",
-      "Data science ethics"
-    ]
-  },
-  {
-    "objectID": "02-ethics.html#labs",
-    "href": "02-ethics.html#labs",
-    "title": "Data science ethics",
-    "section": "Labs",
-    "text": "Labs\n\nLab 9: Conveying the right message through visualisation\nImproving data visualisations to better convey the right message\n\nInstructions\n\n\nSource\n\n\nStarter",
-    "crumbs": [
-      "Content",
-      "Data science ethics"
-    ]
-  },
-  {
-    "objectID": "04-schedule.html",
-    "href": "04-schedule.html",
-    "title": "Schedule",
-    "section": "",
-    "text": "There are a lot of materials in Data Science Course in a Box, which allows instructors to pick and choose what they want depending on the length of the course they’re teaching, their audience, and the curriculum within which the course is placed. The following are two options for course schedules, one for a 11-week course and the other for a 15-week course.",
+    "text": "Want some resources for learning more about teaching with Data Science in a Box or need a 11 or 15-week term schedule? You’ve come to the right place.",
     "crumbs": [
       "Design",
-      "Schedule"
+      "Course design"
     ]
   },
   {
-    "objectID": "04-schedule.html#week-schedule",
-    "href": "04-schedule.html#week-schedule",
-    "title": "Schedule",
-    "section": "11-week schedule",
-    "text": "11-week schedule\n\n\n\n\n\n\n\n\n\nUnit\nWeek\nTitle\nType\n\n\n\n\n1\n1\nWelcome to data science!\nLecture\n\n\n1\n1\nMeet the toolkit: Programming\nLecture\n\n\n1\n1\nMeet the toolkit: Version control & collaboration\nLecture\n\n\n1\n1\nHello R\nLab\n\n\n1\n1\nPet names\nHomework\n\n\n2\n2\nData and visualisation\nLecture\n\n\n2\n2\nVisualising data with ggplot2\nLecture\n\n\n2\n2\nVisualising numerical data\nLecture\n\n\n2\n2\nVisualising categorical data\nLecture\n\n\n2\n2\nStarWars + Dataviz\nApplication exercise\n\n\n2\n2\nPlastic waste\nLab\n\n\n2\n2\nAirbnb listings in Edinburgh\nHomework\n\n\n2\n3\nTidy data\nLecture\n\n\n2\n3\nGrammar of data wrangling\nLecture\n\n\n2\n3\nWorking with a single data frame\nLecture\n\n\n2\n3\nWorking with multiple data frames\nLecture\n\n\n2\n3\nTidying data\nLecture\n\n\n2\n3\nHotels + Data wrangling\nApplication exercise\n\n\n2\n3\nNobel laureates\nLab\n\n\n2\n3\nRoad traffic accidents\nHomework\n\n\n2\n4\nData types\nLecture\n\n\n2\n4\nData classes\nLecture\n\n\n2\n4\nImporting data\nLecture\n\n\n2\n4\nRecoding data\nLecture\n\n\n2\n4\nHotels + Data types\nApplication exercise\n\n\n2\n4\nNobels + Sales + Data import\nApplication exercise\n\n\n2\n4\nOption 1: La Quinta is Spanish for next to Denny’s, Pt. 1\nOption 2: La Quinta is Spanish for next to Denny’s, Pt. 2\nLab\n\n\n2\n4\nCollege majors\nHomework\n\n\n2\n5\nTips for effective data visualization\nLecture\n\n\n2\n5\nBrexit + Telling stories with dataviz\nApplication exercise\n\n\n2\n5\nScientific studies and confounding\nLecture\n\n\n2\n5\nSimpson’s paradox\nLecture\n\n\n2\n5\nDoing data science\nLecture\n\n\n2\n5\nOption 1: Take a sad plot and make it better\nOption 2: Simpson’s paradox\nLab\n\n\n2\n5\nLegos\nHomework\n\n\n2\n6\nWeb scraping\nLecture\n\n\n2\n6\nScraping top 250 movies on IMDB\nLecture\n\n\n2\n6\nWeb scraping considerations\nLecture\n\n\n2\n6\nIMDB + Web scraping\nApplication exercise\n\n\n2\n6\nFunctions\nLecture\n\n\n2\n6\nIteration\nLecture\n\n\n2\n6\nUniversity of Edinburgh Art Collection\nLab\n\n\n2\n6\nMoney in politics\nHomework\n\n\n3\n7\nMisrepresentation\nLecture\n\n\n3\n7\nData privacy\nLecture\n\n\n3\n7\nAlgorithmic bias\nLecture\n\n\n3\n7\nConveying the right message through visualisation\nLab\n\n\n3\n7\nProject proposals\nProject\n\n\n4\n8\nFitting and interpreting models\nLecture\n\n\n4\n8\nModelling nonlinear relationships\nLecture\n\n\n4\n8\nModels with multiple predictors\nLecture\n\n\n4\n8\nMore models with multiple predictors\nLecture\n\n\n4\n8\nGrading the professor, Pt 1\nLab\n\n\n4\n8\nOption 1: Bike rentals in DC\nOption 2: Peer review of project proposals\nHomework\n\n\n4\n9\nLogistic regression\nLecture\n\n\n4\n9\nPrediction and overfitting\nLecture\n\n\n4\n9\nFeature engineering\nLecture\n\n\n4\n9\nGrading the professor, Pt 1\nLab\n\n\n4\n9\nExploring the GSS\nHomework\n\n\n4\n10\nCross validation\nLecture\n\n\n4\n10\nThe Office, Part 1\nApplication exercise\n\n\n4\n10\nThe Office, Part 2\nApplication exercise\n\n\n4\n10\nQuantifying uncertainty\nLecture\n\n\n4\n10\nBootstrapping\nLecture\n\n\n4\n10\nOption 1: Smoking during pregnancy\nOption 2: Work on projects\nOption 3: Collaboration on GitHub\nLab\n\n\n4\n10\nModelling the GSS\nHomework\n\n\n5\n11\nText analysis\nLecture\n\n\n5\n11\nComparing texts\nLecture\n\n\n5\n11\nInteractive web apps\nLecture\n\n\n5\n11\nMachine learning\nLecture\n\n\n5\n11\nProject presentations\nLab\n\n\n5\n11\nWrap up\nHomework",
-    "crumbs": [
-      "Design",
-      "Schedule"
-    ]
-  },
-  {
-    "objectID": "04-schedule.html#week-schedule-1",
-    "href": "04-schedule.html#week-schedule-1",
-    "title": "Schedule",
-    "section": "15-week schedule",
-    "text": "15-week schedule\n\n\n\n\n\n\n\n\n\nUnit\nWeek\nTitle\nType\n\n\n\n\n1\n1\nWelcome to data science!\nLecture\n\n\n1\n1\nMeet the toolkit: Programming\nLecture\n\n\n1\n1\nMeet the toolkit: Version control & collaboration\nLecture\n\n\n1\n1\nHello R\nLab\n\n\n1\n1\nPet names\nHomework\n\n\n2\n2\nData and visualisation\nLecture\n\n\n2\n2\nVisualising data with ggplot2\nLecture\n\n\n2\n2\nVisualising numerical data\nLecture\n\n\n2\n2\nVisualising categorical data\nLecture\n\n\n2\n2\nStarWars + Dataviz\nApplication exercise\n\n\n2\n2\nPlastic waste\nLab\n\n\n2\n2\nAirbnb listings in Edinburgh\nHomework\n\n\n2\n3\nTidy data\nLecture\n\n\n2\n3\nGrammar of data wrangling\nLecture\n\n\n2\n3\nWorking with a single data frame\nLecture\n\n\n2\n3\nWorking with multiple data frames\nLecture\n\n\n2\n3\nTidying data\nLecture\n\n\n2\n3\nHotels + Data wrangling\nApplication exercise\n\n\n2\n3\nNobel laureates\nLab\n\n\n2\n3\nRoad traffic accidents\nHomework\n\n\n2\n4\nData types\nLecture\n\n\n2\n4\nData classes\nLecture\n\n\n2\n4\nRecoding data\nLecture\n\n\n2\n4\nHotels + Data types\nApplication exercise\n\n\n2\n4\nLa Quinta is Spanish for next to Denny’s, Pt. 1\nLab\n\n\n2\n4\nCollege majors\nHomework\n\n\n2\n5\nImporting data\nLecture\n\n\n2\n5\nNobels + Sales + Data import\nApplication exercise\n\n\n2\n5\nTips for effective data visualization\nLecture\n\n\n2\n5\nBrexit + Telling stories with dataviz\nApplication exercise\n\n\n2\n5\nTake a sad plot and make it better\nLab\n\n\n2\n5\nLa Quinta is Spanish for next to Denny’s, Pt. 2\nHomework\n\n\n2\n6\nScientific studies and confounding\nLecture\n\n\n2\n6\nSimpson’s paradox\nLecture\n\n\n2\n6\nDoing data science\nLecture\n\n\n2\n6\nSimpson’s paradox\nLab\n\n\n2\n6\nLegos\nHomework\n\n\n2\n7\nWeb scraping\nLecture\n\n\n2\n7\nScraping top 250 movies on IMDB\nLecture\n\n\n2\n7\nWeb scraping considerations\nLecture\n\n\n2\n7\nIMDB + Web scraping\nApplication exercise\n\n\n2\n7\nWork on projects\nLab\n\n\n2\n7\nWork on projects\nHomework\n\n\n2\n8\nFunctions\nLecture\n\n\n2\n8\nIteration\nLecture\n\n\n2\n8\nUniversity of Edinburgh Art Collection\nLab\n\n\n2\n8\nMoney in politics\nHomework\n\n\n3\n9\nMisrepresentation\nLecture\n\n\n3\n9\nData privacy\nLecture\n\n\n3\n9\nAlgorithmic bias\nLecture\n\n\n3\n9\nConveying the right message through visualisation\nLab\n\n\n3\n9\nProject proposals\nProject\n\n\n3\n9\nPeer review of project proposals\nHomework\n\n\n4\n10\nFitting and interpreting models\nLecture\n\n\n4\n10\nModelling nonlinear relationships\nLecture\n\n\n4\n10\nModels with multiple predictors\nLecture\n\n\n4\n10\nMore models with multiple predictors\nLecture\n\n\n4\n10\nGrading the professor, Pt 1\nLab\n\n\n4\n10\nBike rentals in DC\nHomework\n\n\n4\n11\nLogistic regression\nLecture\n\n\n4\n11\nPrediction and overfitting\nLecture\n\n\n4\n11\nFeature engineering\nLecture\n\n\n4\n11\nGrading the professor, Pt. 1\nLab\n\n\n4\n11\nExploring the GSS\nHomework\n\n\n4\n12\nCross validation\nLecture\n\n\n4\n12\nThe Office, Part 1\nApplication exercise\n\n\n4\n12\nThe Office, Part 2\nApplication exercise\n\n\n4\n12\nBootstrapping\nLecture\n\n\n4\n12\nWork on projects\nLab\n\n\n4\n12\nGrading the professor, Pt. 2\nHomework\n\n\n4\n13\nQuantifying uncertainty\nLecture\n\n\n4\n13\nBootstrapping\nLecture\n\n\n4\n13\nHypothesis testing\nLecture\n\n\n4\n13\nInference overview\nLecture\n\n\n4\n13\nSmoking during pregnancy\nLab\n\n\n4\n13\nModelling the GSS\nHomework\n\n\n5\n14\nText analysis\nLecture\n\n\n5\n14\nComparing texts\nLecture\n\n\n5\n14\nInteractive web apps\nLecture\n\n\n5\n14\nMachine learning\nLecture\n\n\n5\n14\nCollaborating on GitHub\nLab\n\n\n5\n14\nWrap up\nHomework\n\n\n5\n15\nBayesian inference\nLecture\n\n\n5\n15\nBuilding interactive web apps, Pt. 1\nLecture\n\n\n5\n15\nBuilding interactive web apps, Pt. 1\nLecture\n\n\n5\n15\nProject presentations\nLab\n\n\n5\n15\nN/A\nHomework",
-    "crumbs": [
-      "Design",
-      "Schedule"
-    ]
-  },
-  {
-    "objectID": "01-overview.html",
-    "href": "01-overview.html",
-    "title": "Overview",
+    "objectID": "content.html",
+    "href": "content.html",
+    "title": "Course content",
     "section": "",
-    "text": "There are two answers to this question, depending on whether you are a learner or educator. (And really, aren’t we all both?)\nLearner persona\nIf you are a learner who is interested in making sense of (sometimes messy) data and who\n\nhas little to no background in data science, statistics, or programming, or\nhas been using R for a while but wants to modernize their skills,\n\nthe materials in this course are for you! The content is definitely newcomer friendly, however you should be willing to ask questions and dive into the documentation of the packages we introduce.\nNote that course prerequisites are not listed, and this is not an oversight. The course is designed to be accessible to new learners at the undergraduate level and above, though adventurous learners at the high school level might also enjoy these materials.\nEducator persona\nIf you are an educator who is / will be teaching data science at the introductory level and who\n\nhas been teaching with R for a while but wants to update bits of or completely overhaul their teaching materials, or\nis new to teaching (with) R but otherwise comfortable with the basics of the language\n\nthe course materials provided here are for you.\nThe course is designed to be taught at the introductory undergraduate level and above, however it is possible to re-purpose much of this content at the high school level as well.\nNote that a specific discipline is not mentioned, and this is not an oversight. Many disciplines are offering their version of introductory data science nowadays, and we think more the merrier! The course draws on data sets primarily from the social sciences and humanities, and a few from natural sciences.",
+    "text": "The course content is organized in five units: Hello world, Exploring data, Data science ethics, Making rigorous conclusions, and Looking further. For each unit numerous slide decks, homework and lab assignments, and application exercises are provided. Also provided are interactive tutorials, exams, and project assignment.",
     "crumbs": [
-      "Course Policies",
-      "Overview"
+      "Content",
+      "Course content"
     ]
   },
   {
-    "objectID": "01-overview.html#who-is-this-course-for",
-    "href": "01-overview.html#who-is-this-course-for",
-    "title": "Overview",
+    "objectID": "02-project.html",
+    "href": "02-project.html",
+    "title": "Project",
     "section": "",
-    "text": "There are two answers to this question, depending on whether you are a learner or educator. (And really, aren’t we all both?)\nLearner persona\nIf you are a learner who is interested in making sense of (sometimes messy) data and who\n\nhas little to no background in data science, statistics, or programming, or\nhas been using R for a while but wants to modernize their skills,\n\nthe materials in this course are for you! The content is definitely newcomer friendly, however you should be willing to ask questions and dive into the documentation of the packages we introduce.\nNote that course prerequisites are not listed, and this is not an oversight. The course is designed to be accessible to new learners at the undergraduate level and above, though adventurous learners at the high school level might also enjoy these materials.\nEducator persona\nIf you are an educator who is / will be teaching data science at the introductory level and who\n\nhas been teaching with R for a while but wants to update bits of or completely overhaul their teaching materials, or\nis new to teaching (with) R but otherwise comfortable with the basics of the language\n\nthe course materials provided here are for you.\nThe course is designed to be taught at the introductory undergraduate level and above, however it is possible to re-purpose much of this content at the high school level as well.\nNote that a specific discipline is not mentioned, and this is not an oversight. Many disciplines are offering their version of introductory data science nowadays, and we think more the merrier! The course draws on data sets primarily from the social sciences and humanities, and a few from natural sciences.",
+    "text": "The following is a sample project assignment for this curriculum. You can find the source code for this assignment write up here. I’ve also provided sample evaluation forms to be used by the teaching team and students as well as a sample repo structure for the project.",
     "crumbs": [
-      "Course Policies",
-      "Overview"
+      "Content",
+      "Project"
     ]
   },
   {
-    "objectID": "01-overview.html#where-does-this-course-fit-in-a-curriculum",
-    "href": "01-overview.html#where-does-this-course-fit-in-a-curriculum",
-    "title": "Overview",
-    "section": "Where does this course fit in a curriculum?",
-    "text": "Where does this course fit in a curriculum?\nThis course can serve as a first course in an undergraduate data science or statistics curriculum. It can also serve as an introductory course in a graduate program, and depending on the background of the students, earlier topics can be covered more quickly to make room for more content at the end of the course.",
+    "objectID": "02-project.html#tldr",
+    "href": "02-project.html#tldr",
+    "title": "Project",
+    "section": "TL;DR",
+    "text": "TL;DR\nPick a dataset, any dataset…\n…and do something with it. That is your final project in a nutshell. More details below.",
     "crumbs": [
-      "Course Policies",
-      "Overview"
+      "Content",
+      "Project"
     ]
   },
   {
-    "objectID": "01-overview.html#what-is-in-the-box",
-    "href": "01-overview.html#what-is-in-the-box",
-    "title": "Overview",
-    "section": "What is in the box?",
-    "text": "What is in the box?\nStudent facing materials:\n\nslides: 30 slide decks, each to be covered roughly in a 75 minute class session\napplication exercises: 10 application exercises\nassignments: 8 homework assignments\nlabs: 12 guided hands on exercises for students requiring minimal introduction from the instructor\nexams: 2 sample take-home exams and keys\nproject: Final project assignment\ntutorials: 8 interactive learnr tutorials\n\nEducator facing materials:\n\nComputing infrastructure:\n\nRStudio: Choosing between RStudio Cloud, RStudio Server Pro, or local RStudio IDE and how to structure your course using each option\nGit/GitHub: How to use Git and GitHub as the learning management system for your course as well as a collaborative platform for your students and how to use GitHub Classroom and ghclass for setting up your course\nCreating learnr modules\nUsing blogdown to create your course website\n\nPedagogical tips",
+    "objectID": "02-project.html#may-be-too-long-but-please-do-read",
+    "href": "02-project.html#may-be-too-long-but-please-do-read",
+    "title": "Project",
+    "section": "May be too long, but please do read",
+    "text": "May be too long, but please do read\nThe final project for this class will consist of analysis on a dataset of your own choosing. The dataset may already exist, or you may collect your own data using a survey or by conducting an experiment. You can choose the data based on your interests or based on work in other courses or research projects. The goal of this project is for you to demonstrate proficiency in the techniques we have covered in this class (and beyond, if you like) and apply them to a novel dataset in a meaningful way.\nThe goal is not to do an exhaustive data analysis i.e., do not calculate every statistic and procedure you have learned for every variable, but rather let me know that you are proficient at asking meaningful questions and answering them with results of data analysis, that you are proficient in using R, and that you are proficient at interpreting and presenting the results. Focus on methods that help you begin to answer your research questions. You do not have to apply every statistical procedure we learned (and you can use techniques we haven’t officially covered in class, if you’re feeling adventurous). Also, critique your own methods and provide suggestions for improving your analysis. Issues pertaining to the reliability and validity of your data, and appropriateness of the statistical analysis should be discussed here.\nThe project is very open ended. You should create some kind of compelling visualization(s) of this data in R. There is no limit on what tools or packages you may use, but sticking to packages we learned in class (tidyverse) is required. You do not need to visualize all of the data at once. A single high quality visualization will receive a much higher grade than a large number of poor quality visualizations. Also pay attention to your presentation. Neatness, coherency, and clarity will count. All analyses must be done in RStudio, using R.",
     "crumbs": [
-      "Course Policies",
-      "Overview"
+      "Content",
+      "Project"
     ]
   },
   {
-    "objectID": "01-overview.html#why-r",
-    "href": "01-overview.html#why-r",
-    "title": "Overview",
-    "section": "Why R?",
-    "text": "Why R?\nUnlike most other software designed specifically for teaching statistics, R is free and open source, powerful, flexible, and relevant beyond the introductory statistics classroom. Arguments against using and teaching R at especially the introductory statistics level generally cluster around the following two points: teaching programming in addition to statistical concepts is challenging and the command line is more intimidating to beginners than the graphical user interface (GUI) most point-and-click type software offer.\nOne solution for these concerns is to avoid hands-on data analysis completely. If we do not ask our students to start with raw data and instead always provide them with small, tidy rectangles of data then there is never really a need for statistical software beyond spreadsheet or graphing calculator. This is not what we want in a modern statistics course and is a disservice to students.\nAnother solution is to use traditional point-and-click software for data analysis. The typical argument is that the GUI is easier for students to learn and so they can spend more time on statistical concepts. However, this ignores the fact that these software tools also have nontrivial learning curves. In fact, teaching specific data analysis tasks using such software often requires lengthy step-by-step instructions, with annotated screenshots, for navigating menus and other interface elements. Also, it is not uncommon that instructions for one task do not easily extend to another. Replacing such instructions with just a few lines of R code actually makes the instructional materials more concise and less intimidating.\nMany in the statistics education community are in favor of teaching R (or some other programming language, like Python) in upper level statistics courses, however the value of using R in introductory statistics courses is not as widely accepted. We acknowledge that this addition can be burdensome, however we would argue that learning a tool that is applicable beyond the introductory statistics course and that enhances students’ problem solving skills is a burden worth bearing.",
+    "objectID": "02-project.html#data",
+    "href": "02-project.html#data",
+    "title": "Project",
+    "section": "Data",
+    "text": "Data\nIn order for you to have the greatest chance of success with this project it is important that you choose a manageable dataset. This means that the data should be readily accessible and large enough that multiple relationships can be explored. As such, your dataset must have at least 50 observations and between 10 to 20 variables (exceptions can be made but you must speak with me first). The dataset’s variables should include categorical variables, discrete numerical variables, and continuous numerical variables.\nIf you are using a dataset that comes in a format that we haven’t encountered in class, make sure that you are able to load it into R as this can be tricky depending on the source. If you are having trouble ask for help before it is too late.\nNote on reusing datasets from class: Do not reuse datasets used in examples, homework assignments, or labs in the class.\nBelow are a list of data repositories that might be of interest to browse. You’re not limited to these resources, and in fact you’re encouraged to venture beyond them. But you might find something interesting there:\n\nTidyTuesday\nNHS Scotland Open Data\nEdinburgh Open Data\nOpen access to Scotland’s official statistics\nBikeshare data portal\nUK Gov Data\nKaggle datasets\nOpenIntro datasets\nAwesome public datasets\nYouth Risk Behavior Surveillance System (YRBSS)\nPRISM Data Archive Project\nHarvard Dataverse\nIf you know of others, let me know, and we’ll add here…\n\n\nDeliverables\n\nProposal - due [ENTER DUE DATE]\nPresentation - due [ENTER DUE DATE]\nExecutive summary - due [ENTER DUE DATE]\n\n\nProposal\nThis is a draft of the introduction section of your project as well as a data analysis plan and your dataset.\n\nSection 1 - Introduction: The introduction should introduce your general\nresearch question and your data (where it came from, how it was collected,\nwhat are the cases, what are the variables, etc.).\nSection 2 - Data: Place your data in the `/data` folder, and add dimensions and codebook to the README in that folder. Then print out the output of and codebook to the README in that folder. Then print out the output of glimpse() or skim() of your data frame.\nSection 3 - Data analysis plan:\n\nThe outcome (response, Y) and predictor (explanatory, X) variables you will use to answer your question.\nThe comparison groups you will use, if applicable.\nVery preliminary exploratory data analysis, including some summary statistics and visualizations, along with some explanation on how they help you learn more about your data. (You can add to these later as you work on your project.)\nThe method(s) that you believe will be useful in answering your question(s). (You can update these later as you work on your project.)\nWhat results from these specific statistical methods are needed to support your hypothesized answer?\n\n\nEach section should be no more than 1 page (excluding figures). You can check a print preview to confirm length.\nThe grading scheme for the project proposal is as follows. Note that after you receive feedback for your proposal you can improve it based on the feedback and re-submit it. If you re-submit, your final score for the proposal will be the average of two scores you receive (first and second submission).\n\n\n\nTotal\n10 pts\n\n\n\n\nData\n3 pts\n\n\nProposal\n5 pts\n\n\nWorkflow, organization, code quality\n1 pt\n\n\nTeamwork\n1 pt\n\n\n\n\n\nPresentation\n5 minutes maximum, and each team member should say something substantial. You can either present live during your workshop or pre-record and submit your video to be played during the workshop.\nPrepare a slide deck using the template in your repo. This template uses a package called xaringan, and allows you to make presentation slides using R Markdown syntax. There isn’t a limit to how many slides you can use, just a time limit (5 minutes total). Each team member should get a chance to speak during the presentation. Your presentation should not just be an account of everything you tried (“then we did this, then we did this, etc.”), instead it should convey what choices you made, and why, and what you found.\nBefore you finalize your presentation, make sure your chunks are turned off with echo = FALSE.\nPresentations will take place during the last workshop of the semester. You can choose to do your presentation live or pre-record it. During your workshop you will watch presentations from other teams in your workshop and provide feedback in the form of peer evaluations. The presentation line-up will be generated randomly.\nThe grading scheme for the presentation is as follows:\n\n\n\n\n\n\n\nTotal\n50 pts\n\n\n\n\nTime management: Did the team divide the time well amongst themselves or got cut off going over time?\n4 pts\n\n\nContent: Is the research question well designed and is the data being used relevant to the research question?\n5 pts\n\n\nProfessionalism: How well did the team present? Does the presentation appear to be well practiced? Did everyone get a chance to say something meaningful about the project?\n5 pts\n\n\nTeamwork: Did the team present a unified story, or did it seem like independent pieces of work patched together?\n6 pts\n\n\nContent: Did the team use appropriate statistical procedures and interpretations of results accurately?\n10 pts\n\n\nCreativity and Critical Thought: Is the project carefully thought out? Are the limitations carefully considered? Does it appear that time and effort went into the planning and implementation of the project?\n10 pts\n\n\nSlides: Are the slides well organized, readable, not full of text, featuring figures with legible labels, legends, etc.?\n10 pts\n\n\n\n\n\nExecutive summary\nAlong with your presentation slides, we want you to provide a brief summary of your project in the README of your repository.\nThis executive summary should provide information on the dataset you’re using, your research question(s), your methodology, and your findings.\nThe executive summary is worth 15 points and will be evaluated based on whether it follows guidance and whether it’s concise but detailed enough.\n\n\nRepo organization\nThe following folders and files in your project repository:\n\npresentation.Rmd + presentation.html: Your presentation slides\nREADME.Rmd + README.md: Your write-up\n/data: Your dataset in CSV or RDS format and your data dictionary\n/proposal: Your project proposal\n\nStyle and format does count for this assignment, so please take the time to make sure everything looks good and your data and code are properly formatted.\n\n\n\nTips\n\nYou’re working in the same repo as your teammates now, so merge conflicts will happen, issues will arise, and that’s fine Commit and push often, and ask questions when stuck.\nReview the marking guidelines below and ask questions if any of the expectations are unclear.\nMake sure each team member is contributing, both in terms of quality and quantity of contribution (we will be reviewing commits from different team members).\nSet aside time to work together and apart (physically).\nWhen you’re done, review the documents on GitHub to make sure you’re happy with the final state of your work. Then go get some rest!\nCode: In your presentation your code should be hidden (echo = FALSE) so that your document is neat and easy to read. However your document should include all your code such that if I re-knit your R Markdown file I should be able to obtain the results you presented.\n\nException: If you want to highlight something specific about a piece of code, you’re welcomed to show that portion.\n\nTeamwork: You are to complete the assignment as a team. All team members are expected to contribute equally to the completion of this assignment and team evaluations will be given at its completion - anyone judged to not have sufficient contributed to the final product will have their grade penalized. While different teams members may have different backgrounds and abilities, it is the responsibility of every team member to understand how and why all code and approaches in the assignment works.\n\n\n\nMarking\n\n\n\nTotal\n100 pts\n\n\n\n\nProposal\n10 pts\n\n\nPresentation\n50 pts\n\n\nExecutive summary\n15 pts\n\n\nReproducibility and organization\n10 pts\n\n\nTeam peer evaluation\n10 pts\n\n\nClassmates’ evaluation\n5 pts\n\n\n\n\nCriteria\nYour project will be assessed on the following criteria:\n\nContent - What is the quality of research and/or policy question and relevancy of data to those questions?\nCorrectness - Are statistical procedures carried out and explained correctly?\nWriting and Presentation - What is the quality of the statistical presentation, writing, and explanations?\nCreativity and Critical Thought - Is the project carefully thought out? Are the limitations carefully considered? Does it appear that time and effort went into the planning and implementation of the project?\n\nA general breakdown of scoring is as follows:\n\n90%-100% - Outstanding effort. Student understands how to apply all statistical concepts, can put the results into a cogent argument, can identify weaknesses in the argument, and can clearly communicate the results to others.\n80%-89% - Good effort. Student understands most of the concepts, puts together an adequate argument, identifies some weaknesses of their argument, and communicates most results clearly to others.\n70%-79% - Passing effort. Student has misunderstanding of concepts in several areas, has some trouble putting results together in a cogent argument, and communication of results is sometimes unclear.\n60%-69% - Struggling effort. Student is making some effort, but has misunderstanding of many concepts and is unable to put together a cogent argument. Communication of results is unclear.\nBelow 60% - Student is not making a sufficient effort.\n\n\n\nTeam peer evaluation\nYou will be asked to fill out a survey where you rate the contribution and teamwork of each team member out of 10 points. You will additionally report a contribution percentage for each team member. Filling out the survey is a prerequisite for getting credit on the team member evaluation.If you are suggesting that an individual did less than 20% of the work, please provide some explanation. If any individual gets an average peer score indicating that they did less than 10% of the work, this person will receive half the grade of the rest of the group.",
     "crumbs": [
-      "Course Policies",
-      "Overview"
-    ]
-  },
-  {
-    "objectID": "01-overview.html#why-not-language-x",
-    "href": "01-overview.html#why-not-language-x",
-    "title": "Overview",
-    "section": "Why not language X?",
-    "text": "Why not language X?\nThere are a number of other great programming tools out there that can also be used for introducing students to data science, e.g. Python. These materials are designed for teaching data science with R. A great example of a similar curriculum using Python is Data 8 designed at University of California, Berkeley.",
-    "crumbs": [
-      "Course Policies",
-      "Overview"
-    ]
-  },
-  {
-    "objectID": "01-overview.html#why-rstudio",
-    "href": "01-overview.html#why-rstudio",
-    "title": "Overview",
-    "section": "Why RStudio?",
-    "text": "Why RStudio?\nThe RStudio IDE includes a viewable environment, a file browser, data viewer, and a plotting pane, which makes it less intimidating than the bare R shell. Additionally, since it is a full fledged IDE, it also features integrated help, syntax highlighting, and context-aware tab completion, which are all powerful tools that help flatten the learning curve. RStudio also has direct integration with other critically important tools for teaching computing best practices and reproducible research.\nOur recommendation is that students access the RStudio IDE through a centralized RStudio server instance or using RStudio Cloud. We describe this in further detail in the Infrastructure section.\nIt should be noted that we do not want to completely dissuade students from downloading and installing R and RStudio locally, we just do not want it to be a prerequisite for getting started. We have found that teaching personal setup is best done progressively throughout a semester, usually via one-on-one interactions during office hours or after class. Our goal is that all students will be able to continue using R in any setting.",
-    "crumbs": [
-      "Course Policies",
-      "Overview"
-    ]
-  },
-  {
-    "objectID": "01-overview.html#learn-more",
-    "href": "01-overview.html#learn-more",
-    "title": "Overview",
-    "section": "Learn more",
-    "text": "Learn more\nIf you would like to learn more about the design philosophy behind the course as well as implementation details, we recommend the following paper that is freely available online.\n\nMine Çetinkaya-Rundel & Victoria Ellison (In press), A fresh look at introductory data science, Journal of Statistics Education. doi.org/10.1080/10691898.2020.1804497.",
-    "crumbs": [
-      "Course Policies",
-      "Overview"
+      "Content",
+      "Project"
     ]
   },
   {
@@ -1540,171 +1496,141 @@
     ]
   },
   {
-    "objectID": "02-project.html",
-    "href": "02-project.html",
-    "title": "Project",
+    "objectID": "04-schedule.html",
+    "href": "04-schedule.html",
+    "title": "Schedule",
     "section": "",
-    "text": "The following is a sample project assignment for this curriculum. You can find the source code for this assignment write up here. I’ve also provided sample evaluation forms to be used by the teaching team and students as well as a sample repo structure for the project.",
-    "crumbs": [
-      "Content",
-      "Project"
-    ]
-  },
-  {
-    "objectID": "02-project.html#tldr",
-    "href": "02-project.html#tldr",
-    "title": "Project",
-    "section": "TL;DR",
-    "text": "TL;DR\nPick a dataset, any dataset…\n…and do something with it. That is your final project in a nutshell. More details below.",
-    "crumbs": [
-      "Content",
-      "Project"
-    ]
-  },
-  {
-    "objectID": "02-project.html#may-be-too-long-but-please-do-read",
-    "href": "02-project.html#may-be-too-long-but-please-do-read",
-    "title": "Project",
-    "section": "May be too long, but please do read",
-    "text": "May be too long, but please do read\nThe final project for this class will consist of analysis on a dataset of your own choosing. The dataset may already exist, or you may collect your own data using a survey or by conducting an experiment. You can choose the data based on your interests or based on work in other courses or research projects. The goal of this project is for you to demonstrate proficiency in the techniques we have covered in this class (and beyond, if you like) and apply them to a novel dataset in a meaningful way.\nThe goal is not to do an exhaustive data analysis i.e., do not calculate every statistic and procedure you have learned for every variable, but rather let me know that you are proficient at asking meaningful questions and answering them with results of data analysis, that you are proficient in using R, and that you are proficient at interpreting and presenting the results. Focus on methods that help you begin to answer your research questions. You do not have to apply every statistical procedure we learned (and you can use techniques we haven’t officially covered in class, if you’re feeling adventurous). Also, critique your own methods and provide suggestions for improving your analysis. Issues pertaining to the reliability and validity of your data, and appropriateness of the statistical analysis should be discussed here.\nThe project is very open ended. You should create some kind of compelling visualization(s) of this data in R. There is no limit on what tools or packages you may use, but sticking to packages we learned in class (tidyverse) is required. You do not need to visualize all of the data at once. A single high quality visualization will receive a much higher grade than a large number of poor quality visualizations. Also pay attention to your presentation. Neatness, coherency, and clarity will count. All analyses must be done in RStudio, using R.",
-    "crumbs": [
-      "Content",
-      "Project"
-    ]
-  },
-  {
-    "objectID": "02-project.html#data",
-    "href": "02-project.html#data",
-    "title": "Project",
-    "section": "Data",
-    "text": "Data\nIn order for you to have the greatest chance of success with this project it is important that you choose a manageable dataset. This means that the data should be readily accessible and large enough that multiple relationships can be explored. As such, your dataset must have at least 50 observations and between 10 to 20 variables (exceptions can be made but you must speak with me first). The dataset’s variables should include categorical variables, discrete numerical variables, and continuous numerical variables.\nIf you are using a dataset that comes in a format that we haven’t encountered in class, make sure that you are able to load it into R as this can be tricky depending on the source. If you are having trouble ask for help before it is too late.\nNote on reusing datasets from class: Do not reuse datasets used in examples, homework assignments, or labs in the class.\nBelow are a list of data repositories that might be of interest to browse. You’re not limited to these resources, and in fact you’re encouraged to venture beyond them. But you might find something interesting there:\n\nTidyTuesday\nNHS Scotland Open Data\nEdinburgh Open Data\nOpen access to Scotland’s official statistics\nBikeshare data portal\nUK Gov Data\nKaggle datasets\nOpenIntro datasets\nAwesome public datasets\nYouth Risk Behavior Surveillance System (YRBSS)\nPRISM Data Archive Project\nHarvard Dataverse\nIf you know of others, let me know, and we’ll add here…\n\n\nDeliverables\n\nProposal - due [ENTER DUE DATE]\nPresentation - due [ENTER DUE DATE]\nExecutive summary - due [ENTER DUE DATE]\n\n\nProposal\nThis is a draft of the introduction section of your project as well as a data analysis plan and your dataset.\n\nSection 1 - Introduction: The introduction should introduce your general\nresearch question and your data (where it came from, how it was collected,\nwhat are the cases, what are the variables, etc.).\nSection 2 - Data: Place your data in the `/data` folder, and add dimensions and codebook to the README in that folder. Then print out the output of and codebook to the README in that folder. Then print out the output of glimpse() or skim() of your data frame.\nSection 3 - Data analysis plan:\n\nThe outcome (response, Y) and predictor (explanatory, X) variables you will use to answer your question.\nThe comparison groups you will use, if applicable.\nVery preliminary exploratory data analysis, including some summary statistics and visualizations, along with some explanation on how they help you learn more about your data. (You can add to these later as you work on your project.)\nThe method(s) that you believe will be useful in answering your question(s). (You can update these later as you work on your project.)\nWhat results from these specific statistical methods are needed to support your hypothesized answer?\n\n\nEach section should be no more than 1 page (excluding figures). You can check a print preview to confirm length.\nThe grading scheme for the project proposal is as follows. Note that after you receive feedback for your proposal you can improve it based on the feedback and re-submit it. If you re-submit, your final score for the proposal will be the average of two scores you receive (first and second submission).\n\n\n\nTotal\n10 pts\n\n\n\n\nData\n3 pts\n\n\nProposal\n5 pts\n\n\nWorkflow, organization, code quality\n1 pt\n\n\nTeamwork\n1 pt\n\n\n\n\n\nPresentation\n5 minutes maximum, and each team member should say something substantial. You can either present live during your workshop or pre-record and submit your video to be played during the workshop.\nPrepare a slide deck using the template in your repo. This template uses a package called xaringan, and allows you to make presentation slides using R Markdown syntax. There isn’t a limit to how many slides you can use, just a time limit (5 minutes total). Each team member should get a chance to speak during the presentation. Your presentation should not just be an account of everything you tried (“then we did this, then we did this, etc.”), instead it should convey what choices you made, and why, and what you found.\nBefore you finalize your presentation, make sure your chunks are turned off with echo = FALSE.\nPresentations will take place during the last workshop of the semester. You can choose to do your presentation live or pre-record it. During your workshop you will watch presentations from other teams in your workshop and provide feedback in the form of peer evaluations. The presentation line-up will be generated randomly.\nThe grading scheme for the presentation is as follows:\n\n\n\n\n\n\n\nTotal\n50 pts\n\n\n\n\nTime management: Did the team divide the time well amongst themselves or got cut off going over time?\n4 pts\n\n\nContent: Is the research question well designed and is the data being used relevant to the research question?\n5 pts\n\n\nProfessionalism: How well did the team present? Does the presentation appear to be well practiced? Did everyone get a chance to say something meaningful about the project?\n5 pts\n\n\nTeamwork: Did the team present a unified story, or did it seem like independent pieces of work patched together?\n6 pts\n\n\nContent: Did the team use appropriate statistical procedures and interpretations of results accurately?\n10 pts\n\n\nCreativity and Critical Thought: Is the project carefully thought out? Are the limitations carefully considered? Does it appear that time and effort went into the planning and implementation of the project?\n10 pts\n\n\nSlides: Are the slides well organized, readable, not full of text, featuring figures with legible labels, legends, etc.?\n10 pts\n\n\n\n\n\nExecutive summary\nAlong with your presentation slides, we want you to provide a brief summary of your project in the README of your repository.\nThis executive summary should provide information on the dataset you’re using, your research question(s), your methodology, and your findings.\nThe executive summary is worth 15 points and will be evaluated based on whether it follows guidance and whether it’s concise but detailed enough.\n\n\nRepo organization\nThe following folders and files in your project repository:\n\npresentation.Rmd + presentation.html: Your presentation slides\nREADME.Rmd + README.md: Your write-up\n/data: Your dataset in CSV or RDS format and your data dictionary\n/proposal: Your project proposal\n\nStyle and format does count for this assignment, so please take the time to make sure everything looks good and your data and code are properly formatted.\n\n\n\nTips\n\nYou’re working in the same repo as your teammates now, so merge conflicts will happen, issues will arise, and that’s fine Commit and push often, and ask questions when stuck.\nReview the marking guidelines below and ask questions if any of the expectations are unclear.\nMake sure each team member is contributing, both in terms of quality and quantity of contribution (we will be reviewing commits from different team members).\nSet aside time to work together and apart (physically).\nWhen you’re done, review the documents on GitHub to make sure you’re happy with the final state of your work. Then go get some rest!\nCode: In your presentation your code should be hidden (echo = FALSE) so that your document is neat and easy to read. However your document should include all your code such that if I re-knit your R Markdown file I should be able to obtain the results you presented.\n\nException: If you want to highlight something specific about a piece of code, you’re welcomed to show that portion.\n\nTeamwork: You are to complete the assignment as a team. All team members are expected to contribute equally to the completion of this assignment and team evaluations will be given at its completion - anyone judged to not have sufficient contributed to the final product will have their grade penalized. While different teams members may have different backgrounds and abilities, it is the responsibility of every team member to understand how and why all code and approaches in the assignment works.\n\n\n\nMarking\n\n\n\nTotal\n100 pts\n\n\n\n\nProposal\n10 pts\n\n\nPresentation\n50 pts\n\n\nExecutive summary\n15 pts\n\n\nReproducibility and organization\n10 pts\n\n\nTeam peer evaluation\n10 pts\n\n\nClassmates’ evaluation\n5 pts\n\n\n\n\nCriteria\nYour project will be assessed on the following criteria:\n\nContent - What is the quality of research and/or policy question and relevancy of data to those questions?\nCorrectness - Are statistical procedures carried out and explained correctly?\nWriting and Presentation - What is the quality of the statistical presentation, writing, and explanations?\nCreativity and Critical Thought - Is the project carefully thought out? Are the limitations carefully considered? Does it appear that time and effort went into the planning and implementation of the project?\n\nA general breakdown of scoring is as follows:\n\n90%-100% - Outstanding effort. Student understands how to apply all statistical concepts, can put the results into a cogent argument, can identify weaknesses in the argument, and can clearly communicate the results to others.\n80%-89% - Good effort. Student understands most of the concepts, puts together an adequate argument, identifies some weaknesses of their argument, and communicates most results clearly to others.\n70%-79% - Passing effort. Student has misunderstanding of concepts in several areas, has some trouble putting results together in a cogent argument, and communication of results is sometimes unclear.\n60%-69% - Struggling effort. Student is making some effort, but has misunderstanding of many concepts and is unable to put together a cogent argument. Communication of results is unclear.\nBelow 60% - Student is not making a sufficient effort.\n\n\n\nTeam peer evaluation\nYou will be asked to fill out a survey where you rate the contribution and teamwork of each team member out of 10 points. You will additionally report a contribution percentage for each team member. Filling out the survey is a prerequisite for getting credit on the team member evaluation.If you are suggesting that an individual did less than 20% of the work, please provide some explanation. If any individual gets an average peer score indicating that they did less than 10% of the work, this person will receive half the grade of the rest of the group.",
-    "crumbs": [
-      "Content",
-      "Project"
-    ]
-  },
-  {
-    "objectID": "content.html",
-    "href": "content.html",
-    "title": "Course content",
-    "section": "",
-    "text": "The course content is organized in five units: Hello world, Exploring data, Data science ethics, Making rigorous conclusions, and Looking further. For each unit numerous slide decks, homework and lab assignments, and application exercises are provided. Also provided are interactive tutorials, exams, and project assignment.",
-    "crumbs": [
-      "Content",
-      "Course content"
-    ]
-  },
-  {
-    "objectID": "design.html",
-    "href": "design.html",
-    "title": "Course design",
-    "section": "",
-    "text": "Want some resources for learning more about teaching with Data Science in a Box or need a 11 or 15-week term schedule? You’ve come to the right place.",
+    "text": "There are a lot of materials in Data Science Course in a Box, which allows instructors to pick and choose what they want depending on the length of the course they’re teaching, their audience, and the curriculum within which the course is placed. The following are two options for course schedules, one for a 11-week course and the other for a 15-week course.",
     "crumbs": [
       "Design",
-      "Course design"
+      "Schedule"
     ]
   },
   {
-    "objectID": "01-community.html",
-    "href": "01-community.html",
-    "title": "Community",
-    "section": "",
-    "text": "Do you like what’s in the box? Do you have questions? Is something you need missing? Want to exchange ideas with others teaching similar courses?\nWe now have a dsbox Slack channel, you can join here.1 The Slack channel is a place for discussion on using these or similar materials in data science courses. Please make sure to review the Code of Conduct before joining.\nOther great venues for questions are the RStudio Community under Teaching or #rstats Twitter.\nAdditionally, we would love to hear from you if you are using these resources. Please take just a few minutes to fill out this Google form. All fields are optional, but the more information you provide, the more data we will have to assess the reach and impact of this project.",
+    "objectID": "04-schedule.html#week-schedule",
+    "href": "04-schedule.html#week-schedule",
+    "title": "Schedule",
+    "section": "11-week schedule",
+    "text": "11-week schedule\n\n\n\n\n\n\n\n\n\nUnit\nWeek\nTitle\nType\n\n\n\n\n1\n1\nWelcome to data science!\nLecture\n\n\n1\n1\nMeet the toolkit: Programming\nLecture\n\n\n1\n1\nMeet the toolkit: Version control & collaboration\nLecture\n\n\n1\n1\nHello R\nLab\n\n\n1\n1\nPet names\nHomework\n\n\n2\n2\nData and visualisation\nLecture\n\n\n2\n2\nVisualising data with ggplot2\nLecture\n\n\n2\n2\nVisualising numerical data\nLecture\n\n\n2\n2\nVisualising categorical data\nLecture\n\n\n2\n2\nStarWars + Dataviz\nApplication exercise\n\n\n2\n2\nPlastic waste\nLab\n\n\n2\n2\nAirbnb listings in Edinburgh\nHomework\n\n\n2\n3\nTidy data\nLecture\n\n\n2\n3\nGrammar of data wrangling\nLecture\n\n\n2\n3\nWorking with a single data frame\nLecture\n\n\n2\n3\nWorking with multiple data frames\nLecture\n\n\n2\n3\nTidying data\nLecture\n\n\n2\n3\nHotels + Data wrangling\nApplication exercise\n\n\n2\n3\nNobel laureates\nLab\n\n\n2\n3\nRoad traffic accidents\nHomework\n\n\n2\n4\nData types\nLecture\n\n\n2\n4\nData classes\nLecture\n\n\n2\n4\nImporting data\nLecture\n\n\n2\n4\nRecoding data\nLecture\n\n\n2\n4\nHotels + Data types\nApplication exercise\n\n\n2\n4\nNobels + Sales + Data import\nApplication exercise\n\n\n2\n4\nOption 1: La Quinta is Spanish for next to Denny’s, Pt. 1\nOption 2: La Quinta is Spanish for next to Denny’s, Pt. 2\nLab\n\n\n2\n4\nCollege majors\nHomework\n\n\n2\n5\nTips for effective data visualization\nLecture\n\n\n2\n5\nBrexit + Telling stories with dataviz\nApplication exercise\n\n\n2\n5\nScientific studies and confounding\nLecture\n\n\n2\n5\nSimpson’s paradox\nLecture\n\n\n2\n5\nDoing data science\nLecture\n\n\n2\n5\nOption 1: Take a sad plot and make it better\nOption 2: Simpson’s paradox\nLab\n\n\n2\n5\nLegos\nHomework\n\n\n2\n6\nWeb scraping\nLecture\n\n\n2\n6\nScraping top 250 movies on IMDB\nLecture\n\n\n2\n6\nWeb scraping considerations\nLecture\n\n\n2\n6\nIMDB + Web scraping\nApplication exercise\n\n\n2\n6\nFunctions\nLecture\n\n\n2\n6\nIteration\nLecture\n\n\n2\n6\nUniversity of Edinburgh Art Collection\nLab\n\n\n2\n6\nMoney in politics\nHomework\n\n\n3\n7\nMisrepresentation\nLecture\n\n\n3\n7\nData privacy\nLecture\n\n\n3\n7\nAlgorithmic bias\nLecture\n\n\n3\n7\nConveying the right message through visualisation\nLab\n\n\n3\n7\nProject proposals\nProject\n\n\n4\n8\nFitting and interpreting models\nLecture\n\n\n4\n8\nModelling nonlinear relationships\nLecture\n\n\n4\n8\nModels with multiple predictors\nLecture\n\n\n4\n8\nMore models with multiple predictors\nLecture\n\n\n4\n8\nGrading the professor, Pt 1\nLab\n\n\n4\n8\nOption 1: Bike rentals in DC\nOption 2: Peer review of project proposals\nHomework\n\n\n4\n9\nLogistic regression\nLecture\n\n\n4\n9\nPrediction and overfitting\nLecture\n\n\n4\n9\nFeature engineering\nLecture\n\n\n4\n9\nGrading the professor, Pt 1\nLab\n\n\n4\n9\nExploring the GSS\nHomework\n\n\n4\n10\nCross validation\nLecture\n\n\n4\n10\nThe Office, Part 1\nApplication exercise\n\n\n4\n10\nThe Office, Part 2\nApplication exercise\n\n\n4\n10\nQuantifying uncertainty\nLecture\n\n\n4\n10\nBootstrapping\nLecture\n\n\n4\n10\nOption 1: Smoking during pregnancy\nOption 2: Work on projects\nOption 3: Collaboration on GitHub\nLab\n\n\n4\n10\nModelling the GSS\nHomework\n\n\n5\n11\nText analysis\nLecture\n\n\n5\n11\nComparing texts\nLecture\n\n\n5\n11\nInteractive web apps\nLecture\n\n\n5\n11\nMachine learning\nLecture\n\n\n5\n11\nProject presentations\nLab\n\n\n5\n11\nWrap up\nHomework",
     "crumbs": [
-      "Course Policies",
-      "Community"
+      "Design",
+      "Schedule"
     ]
   },
   {
-    "objectID": "01-community.html#footnotes",
-    "href": "01-community.html#footnotes",
-    "title": "Community",
+    "objectID": "04-schedule.html#week-schedule-1",
+    "href": "04-schedule.html#week-schedule-1",
+    "title": "Schedule",
+    "section": "15-week schedule",
+    "text": "15-week schedule\n\n\n\n\n\n\n\n\n\nUnit\nWeek\nTitle\nType\n\n\n\n\n1\n1\nWelcome to data science!\nLecture\n\n\n1\n1\nMeet the toolkit: Programming\nLecture\n\n\n1\n1\nMeet the toolkit: Version control & collaboration\nLecture\n\n\n1\n1\nHello R\nLab\n\n\n1\n1\nPet names\nHomework\n\n\n2\n2\nData and visualisation\nLecture\n\n\n2\n2\nVisualising data with ggplot2\nLecture\n\n\n2\n2\nVisualising numerical data\nLecture\n\n\n2\n2\nVisualising categorical data\nLecture\n\n\n2\n2\nStarWars + Dataviz\nApplication exercise\n\n\n2\n2\nPlastic waste\nLab\n\n\n2\n2\nAirbnb listings in Edinburgh\nHomework\n\n\n2\n3\nTidy data\nLecture\n\n\n2\n3\nGrammar of data wrangling\nLecture\n\n\n2\n3\nWorking with a single data frame\nLecture\n\n\n2\n3\nWorking with multiple data frames\nLecture\n\n\n2\n3\nTidying data\nLecture\n\n\n2\n3\nHotels + Data wrangling\nApplication exercise\n\n\n2\n3\nNobel laureates\nLab\n\n\n2\n3\nRoad traffic accidents\nHomework\n\n\n2\n4\nData types\nLecture\n\n\n2\n4\nData classes\nLecture\n\n\n2\n4\nRecoding data\nLecture\n\n\n2\n4\nHotels + Data types\nApplication exercise\n\n\n2\n4\nLa Quinta is Spanish for next to Denny’s, Pt. 1\nLab\n\n\n2\n4\nCollege majors\nHomework\n\n\n2\n5\nImporting data\nLecture\n\n\n2\n5\nNobels + Sales + Data import\nApplication exercise\n\n\n2\n5\nTips for effective data visualization\nLecture\n\n\n2\n5\nBrexit + Telling stories with dataviz\nApplication exercise\n\n\n2\n5\nTake a sad plot and make it better\nLab\n\n\n2\n5\nLa Quinta is Spanish for next to Denny’s, Pt. 2\nHomework\n\n\n2\n6\nScientific studies and confounding\nLecture\n\n\n2\n6\nSimpson’s paradox\nLecture\n\n\n2\n6\nDoing data science\nLecture\n\n\n2\n6\nSimpson’s paradox\nLab\n\n\n2\n6\nLegos\nHomework\n\n\n2\n7\nWeb scraping\nLecture\n\n\n2\n7\nScraping top 250 movies on IMDB\nLecture\n\n\n2\n7\nWeb scraping considerations\nLecture\n\n\n2\n7\nIMDB + Web scraping\nApplication exercise\n\n\n2\n7\nWork on projects\nLab\n\n\n2\n7\nWork on projects\nHomework\n\n\n2\n8\nFunctions\nLecture\n\n\n2\n8\nIteration\nLecture\n\n\n2\n8\nUniversity of Edinburgh Art Collection\nLab\n\n\n2\n8\nMoney in politics\nHomework\n\n\n3\n9\nMisrepresentation\nLecture\n\n\n3\n9\nData privacy\nLecture\n\n\n3\n9\nAlgorithmic bias\nLecture\n\n\n3\n9\nConveying the right message through visualisation\nLab\n\n\n3\n9\nProject proposals\nProject\n\n\n3\n9\nPeer review of project proposals\nHomework\n\n\n4\n10\nFitting and interpreting models\nLecture\n\n\n4\n10\nModelling nonlinear relationships\nLecture\n\n\n4\n10\nModels with multiple predictors\nLecture\n\n\n4\n10\nMore models with multiple predictors\nLecture\n\n\n4\n10\nGrading the professor, Pt 1\nLab\n\n\n4\n10\nBike rentals in DC\nHomework\n\n\n4\n11\nLogistic regression\nLecture\n\n\n4\n11\nPrediction and overfitting\nLecture\n\n\n4\n11\nFeature engineering\nLecture\n\n\n4\n11\nGrading the professor, Pt. 1\nLab\n\n\n4\n11\nExploring the GSS\nHomework\n\n\n4\n12\nCross validation\nLecture\n\n\n4\n12\nThe Office, Part 1\nApplication exercise\n\n\n4\n12\nThe Office, Part 2\nApplication exercise\n\n\n4\n12\nBootstrapping\nLecture\n\n\n4\n12\nWork on projects\nLab\n\n\n4\n12\nGrading the professor, Pt. 2\nHomework\n\n\n4\n13\nQuantifying uncertainty\nLecture\n\n\n4\n13\nBootstrapping\nLecture\n\n\n4\n13\nHypothesis testing\nLecture\n\n\n4\n13\nInference overview\nLecture\n\n\n4\n13\nSmoking during pregnancy\nLab\n\n\n4\n13\nModelling the GSS\nHomework\n\n\n5\n14\nText analysis\nLecture\n\n\n5\n14\nComparing texts\nLecture\n\n\n5\n14\nInteractive web apps\nLecture\n\n\n5\n14\nMachine learning\nLecture\n\n\n5\n14\nCollaborating on GitHub\nLab\n\n\n5\n14\nWrap up\nHomework\n\n\n5\n15\nBayesian inference\nLecture\n\n\n5\n15\nBuilding interactive web apps, Pt. 1\nLecture\n\n\n5\n15\nBuilding interactive web apps, Pt. 1\nLecture\n\n\n5\n15\nProject presentations\nLab\n\n\n5\n15\nN/A\nHomework",
+    "crumbs": [
+      "Design",
+      "Schedule"
+    ]
+  },
+  {
+    "objectID": "02-ethics.html",
+    "href": "02-ethics.html",
+    "title": "Data science ethics",
+    "section": "",
+    "text": "This unit touches on data science ethics, specifically on issues of misrepresentation of data and results, data privacy, and algorithmic bias. Course lectures are supplemented with “guest lectures” from domain experts.",
+    "crumbs": [
+      "Content",
+      "Data science ethics"
+    ]
+  },
+  {
+    "objectID": "02-ethics.html#slides-videos-and-application-exercises",
+    "href": "02-ethics.html#slides-videos-and-application-exercises",
+    "title": "Data science ethics",
+    "section": "Slides, videos, and application exercises",
+    "text": "Slides, videos, and application exercises\n\nUnit 3 - Deck 1: Misrepresentation\n\nSlides\n\n\nSource\n\n\nVideo\n\n\n\nAlberto Cairo - How charts lie\n\nVideo\n\n\n\nUnit 3 - Deck 2: Data privacy\n\nSlides\n\n\nSource\n\n\nVideo\n\n\n\nThe Guardian - Cambridge Analytica whistleblower\n\nVideo\n\n\n\nUnit 3 - Deck 3: Algorithmic bias\n\nSlides\n\n\nSource\n\n\nVideo\n\n\n\nJoy Buolamwini - How I’m fighting bias in algorithms\n\nVideo\n\n\n\nCathy O’Neil - Weapons of Math Destruction\n\nVideo\n\n\n\nSafiya Umoja Noble - Imagining a Future Free from the Algorithms of Oppression\n\nVideo\n\n\n\nKristian Lum - What’s An Algorithm Got To Do With It\n\nVideo",
+    "crumbs": [
+      "Content",
+      "Data science ethics"
+    ]
+  },
+  {
+    "objectID": "02-ethics.html#labs",
+    "href": "02-ethics.html#labs",
+    "title": "Data science ethics",
+    "section": "Labs",
+    "text": "Labs\n\nLab 9: Conveying the right message through visualisation\nImproving data visualisations to better convey the right message\n\nInstructions\n\n\nSource\n\n\nStarter",
+    "crumbs": [
+      "Content",
+      "Data science ethics"
+    ]
+  },
+  {
+    "objectID": "02-interactive-tutorials.html",
+    "href": "02-interactive-tutorials.html",
+    "title": "Interactive tutorials",
+    "section": "",
+    "text": "The following interactive tutorials have been built with learnr and gradethis. They’re available on shinyapps.io (linked) as well as distributed with the dsbox package.1 With the dsbox package installed, you can also run these tutorials in the Tutorials pane of your RStudio window. This might be preferable for courses with high enrollment where students need to access the tutorials at the same time.\nNote that many of these include examples and questions from the homework assignments listed earlier. You can think of these as interactive, auto-feedback versions of the simpler questions in the homework assignments. If using both the tutorials and the homework assignments in your teaching, I recommend modifying the homework assignments to remove the redundant questions (they will usually be the earlier, shorter, simpler questions) and making the homework assignment shorter. Students will ultimately get exposed to the same material, but get auto-feedback in the tutorials and human feedback on the homework assignments.\nIf you would like to learn about making your own tutorials with learnr, I strongly recommend reviewing the video and materials from the following 1.5 hour workshop: Building interactive tutorials in R.",
+    "crumbs": [
+      "Content",
+      "Interactive tutorials"
+    ]
+  },
+  {
+    "objectID": "02-interactive-tutorials.html#footnotes",
+    "href": "02-interactive-tutorials.html#footnotes",
+    "title": "Interactive tutorials",
     "section": "Footnotes",
-    "text": "Footnotes\n\n\nIf the link has expired, please email me at cetinkaya.mine@gmail.com to request a new one.↩︎",
+    "text": "Footnotes\n\n\nThe dsbox package is not yet on CRAN, until then you will need to install from GitHub with devtools::install_github(\"rstudio-education/dsbox\").↩︎",
+    "crumbs": [
+      "Content",
+      "Interactive tutorials"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Welcome to CS112 - Data Structures",
+    "section": "",
+    "text": "CS 112 uses the C++ programming language to introduce students to the elementary data structures (vectors, lists, stacks, queues, binary search trees, …), recursion, big-oh notation, and other intermediate-level programming topics.\nThis a permanently in construction website, so please let us know if you find any information missing or had some bad experience with the links and interface throughout the semester.\nHere you will find all information needed to do well during the course."
+  },
+  {
+    "objectID": "index.html#student-learning-outcomes",
+    "href": "index.html#student-learning-outcomes",
+    "title": "Welcome to CS112 - Data Structures",
+    "section": "Student Learning Outcomes",
+    "text": "Student Learning Outcomes\nUpon successful completion of this course students will be able to:\n\nUse indirection (pointers) and run-time memory allocation to implement dynamic, generic container classes (e.g., vectors, lists, stacks, queues, trees, etc.).\n\nAnalyze, categorize, and compare the complexity of data structure operations using “big-oh” notation.\n\nDesign and implement recursive data structure operations.\n\nDesign, create, and use unit-tests to test the correctness of data structure operations.\n\nFor select algorithms, use simple parallel computing techniques to improve algorithm performance and measure the improvement."
+  },
+  {
+    "objectID": "index.html#course-organization",
+    "href": "index.html#course-organization",
+    "title": "Welcome to CS112 - Data Structures",
+    "section": "Course Organization",
+    "text": "Course Organization\nThe course is organized around these components:\n\nThe lectures that will introduce data structures topics at the conceptual level;\nThe labs in which students will (in pairs) practice using and building data structures; and\nThe projects in which students will (individually) practice using and building data structures.\n\nEach week’s lectures, labs and projects will cover the same concepts, but will do so in different ways.\nThe first 4 weeks will be dedicated to learning C++. After that, we will begin studying data structures."
+  },
+  {
+    "objectID": "index.html#acknowledgements",
+    "href": "index.html#acknowledgements",
+    "title": "Welcome to CS112 - Data Structures",
+    "section": "Acknowledgements",
+    "text": "Acknowledgements\nThis website is built with Quarto, the lovely icons by icons8, and none of this would be possible without the tidyverse."
+  },
+  {
+    "objectID": "01-instructors.html",
+    "href": "01-instructors.html",
+    "title": "Instructors",
+    "section": "",
+    "text": "This course has as instructors: - Prof. Victor Norman - Prof. Eric Araújo",
     "crumbs": [
       "Course Policies",
-      "Community"
+      "Instructors"
     ]
   },
   {
-    "objectID": "policies.html",
-    "href": "policies.html",
-    "title": "Course Policies",
-    "section": "",
-    "text": "Your grade in this course will be based on:\n\nDaily Quizzes: 5%\n\nThe lowest 3 quizzes will be dropped.\n\nLabs: 20%\nHomework projects: 25%\nTests (5, including the final test during the Exam time): 50%\n\nThe lowest test score will be dropped.",
+    "objectID": "01-instructors.html#office-hours",
+    "href": "01-instructors.html#office-hours",
+    "title": "Instructors",
+    "section": "Office Hours",
+    "text": "Office Hours\n\nProf. Norman’s hours\nProf. Araújo’s hours",
     "crumbs": [
-      "Course Policies"
-    ]
-  },
-  {
-    "objectID": "policies.html#grace-days",
-    "href": "policies.html#grace-days",
-    "title": "Course Policies",
-    "section": "Grace Days",
-    "text": "Grace Days\nYou have 8 Grace Days available to you during the semester. These grace days may be used to submit an assignment late without penalty. Grace Days Remaining will be seen in the GradeBook in Moodle.\nHere are some circumstances in which you might use grace days:\n\nYou are an athlete and you have a very busy week. Use a few grace days to catch up the next week.\nYou become ill (physically or mentally) and cannot do the work on time.\nYou need to go home for an emergency.\n\nHere is the procedure for using grace days:\n\nDO NOT email me to tell me you are going to use grace days. I don’t need to know this – there is no action I need to take if you tell me this.\nWhen your assignment grade comes back and you have lost points due to lateness, then use the Grade Appeal app to ask for the points to be restored and tell me how many grace days you want to use for that.",
-    "crumbs": [
-      "Course Policies"
-    ]
-  },
-  {
-    "objectID": "policies.html#extenuating-circumstances",
-    "href": "policies.html#extenuating-circumstances",
-    "title": "Course Policies",
-    "section": "Extenuating Circumstances",
-    "text": "Extenuating Circumstances\nIf you fall ill (physically or mentally) for an extended period of time, AND you send me documentation from Student Life, Student Health Center, or the Center for Health and Wellness, then, and only then, I will consider allowing you to make up late assignments.\nIf you begin to skip class repeatedly due to mental health problems, go to the Center for Health and Wellness! Don’t delay!",
-    "crumbs": [
-      "Course Policies"
-    ]
-  },
-  {
-    "objectID": "policies.html#incompletes",
-    "href": "policies.html#incompletes",
-    "title": "Course Policies",
-    "section": "Incompletes",
-    "text": "Incompletes\nAn Incomplete (I) grade will be granted only in unusual circumstances, and only if those circumstances have been verified by the Student Life Office. Procrastination does not qualify as an unusual circumstance.\nNo work will be accepted after the last day of classes.",
-    "crumbs": [
-      "Course Policies"
-    ]
-  },
-  {
-    "objectID": "policies.html#classroom-policy",
-    "href": "policies.html#classroom-policy",
-    "title": "Course Policies",
-    "section": "Classroom Policy",
-    "text": "Classroom Policy\n\n\n\n\n\n\nIMPORTANT!\n\n\n\nNo phones, no laptops, unless we tell you you can.\n\n\nThis is a difficult class, and you don’t need to be distracted by goofing around on your phone or laptop. And, I don’t want you to distract others.\nDaily Quizzes will be administered in the first 5 minutes of class, on Moodle. Do not show up late to class.",
-    "crumbs": [
-      "Course Policies"
-    ]
-  },
-  {
-    "objectID": "policies.html#attendance",
-    "href": "policies.html#attendance",
-    "title": "Course Policies",
-    "section": "Attendance",
-    "text": "Attendance\nClass attendance is optional.\nAlso, lab attendance is required! Lab is not optional. Skipping lab may result in you doing poorly in class.\nMissing class due to illness: if you are going to miss class due to (physical or mental) illness, please send me an email before class.",
-    "crumbs": [
-      "Course Policies"
-    ]
-  },
-  {
-    "objectID": "policies.html#disabilities",
-    "href": "policies.html#disabilities",
-    "title": "Course Policies",
-    "section": "Disabilities",
-    "text": "Disabilities\nCalvin University is committed to providing access to all students. If you are a student with a documented disability, please notify a Disability Coordinator in Student Success (located in Hiemenga Hall 227) to discuss necessary accommodations. If you have an accommodation memo, please come talk to me in the first two weeks of class. If you are a student needing reasonable modifications for pregnancy and related conditions, please contact the Title IX Coordinator in Student Life (located in Spoelhof University Center 364).",
-    "crumbs": [
-      "Course Policies"
-    ]
-  },
-  {
-    "objectID": "policies.html#statement-of-diversity-and-inclusion",
-    "href": "policies.html#statement-of-diversity-and-inclusion",
-    "title": "Course Policies",
-    "section": "Statement of Diversity and Inclusion",
-    "text": "Statement of Diversity and Inclusion\nInside and outside of the classroom, I work to treat every person with equal respect, regardless of racial identity, gender identity, physicality, brain chemistry, nationality, political leanings, and religious background. Whoever you are, you are fearfully and wonderfully made. God delights in diversity and I do, too. We humans need diverse viewpoints because every viewpoint, on its own, has blind spots. That has been proven to be true in technology-related fields, where under-represented minorities are significantly under-represented in the working world. When companies work hard to rectify this, they find their products and services improve. We have found this to be true in Computer Science classrooms as well.\n\n\n\n\n\n\nIMPORTANT!\n\n\n\nIf you or someone else in this class is hurt by something I say or do in class, I would like to know about it so that we can work toward a remedy. This has happened in the past in my classroom – usually when I’m trying to be “cool” or be funny. If this happens this semester, please know that it was unintentional. Because this kind of feedback can be uncomfortable for all involved, I’ll take it however it comes: in public or in private, on the spot or days later, directly from you or indirectly through another student, another professor, or through my department chair Keith VanderLinden (kvlinden@calvin.edu).\n\n\n\n\n\n\n\n\nCallout by Prof. Norman!\n\n\n\n\n\nAlso, please note that I am half deaf (at least). I am completely deaf on my left side. This results in my not being able to hear students that speak quietly, and not being able to tell which direction sounds are coming from. Please speak loudly! Thanks.",
-    "crumbs": [
-      "Course Policies"
+      "Course Policies",
+      "Instructors"
     ]
   },
   {
@@ -1712,77 +1638,49 @@
     "href": "01-design-principles.html",
     "title": "Design principles",
     "section": "",
-    "text": "This course is designed with five principles in mind:",
-    "crumbs": [
-      "Course Policies",
-      "Design principles"
-    ]
+    "text": "This course is designed with five principles in mind:"
   },
   {
     "objectID": "01-design-principles.html#start-with-cake",
     "href": "01-design-principles.html#start-with-cake",
     "title": "Design principles",
     "section": "Start with cake",
-    "text": "Start with cake\nAssuming you like chocolate and strawberries, which of the following images is more likely to make you want to learn to bake a cake? I’m guessing the answer is the image on the left: the cake.\n\n\n\n\n\n\n\n\n\nThe teaching philosophy of this course builds on this same idea. We first show the students the end result, and then step back and teach the necessary components. Specifically, instead of starting with data structures and functions, we start data visualization. And not just a toy example, but a complex, multivariate data visualization. Of course, we don’t want students feeling like…\n\n\n\n\n\n\n\n\n\nThe course starts out slow and emphasizes iteration. Students are initially provided with lots of scaffolding, and then slowly we take away the scaffolding until they are starting with a blank slate for their final projects.",
-    "crumbs": [
-      "Course Policies",
-      "Design principles"
-    ]
+    "text": "Start with cake\nAssuming you like chocolate and strawberries, which of the following images is more likely to make you want to learn to bake a cake? I’m guessing the answer is the image on the left: the cake.\n\n\n\n\n\n\n\n\n\nThe teaching philosophy of this course builds on this same idea. We first show the students the end result, and then step back and teach the necessary components. Specifically, instead of starting with data structures and functions, we start data visualization. And not just a toy example, but a complex, multivariate data visualization. Of course, we don’t want students feeling like…\n\n\n\n\n\n\n\n\n\nThe course starts out slow and emphasizes iteration. Students are initially provided with lots of scaffolding, and then slowly we take away the scaffolding until they are starting with a blank slate for their final projects."
   },
   {
     "objectID": "01-design-principles.html#cherish-day-one",
     "href": "01-design-principles.html#cherish-day-one",
     "title": "Design principles",
     "section": "Cherish day one",
-    "text": "Cherish day one\nDon’t spend the first day going through the syllabus in detail, aim to get students to make their first meaningful data visualization in 10 minutes! This might sound impossible, and it probably is, if you start by installing R, and then RStudio, and then a bunch of packages, and making sure students have Git working on their computer. You could spend a whole class (or more) on this and not get to a point where every student has their local setup working in an ideal fashion.\nInstead, use cloud-based access to RStudio. This could be via RStudio Cloud or an RStudio Server you set up locally at your institution. Find out more about how you can set up your computing infrastructure for friction-less onboarding here.",
-    "crumbs": [
-      "Course Policies",
-      "Design principles"
-    ]
+    "text": "Cherish day one\nDon’t spend the first day going through the syllabus in detail, aim to get students to make their first meaningful data visualization in 10 minutes! This might sound impossible, and it probably is, if you start by installing R, and then RStudio, and then a bunch of packages, and making sure students have Git working on their computer. You could spend a whole class (or more) on this and not get to a point where every student has their local setup working in an ideal fashion.\nInstead, use cloud-based access to RStudio. This could be via RStudio Cloud or an RStudio Server you set up locally at your institution. Find out more about how you can set up your computing infrastructure for friction-less onboarding here."
   },
   {
     "objectID": "01-design-principles.html#skip-baby-steps",
     "href": "01-design-principles.html#skip-baby-steps",
     "title": "Design principles",
     "section": "Skip baby steps",
-    "text": "Skip baby steps\nIt’s tempting to start teaching with the simplest examples, e.g. starting data visualization with a bar graph of a single categorical variable instead of a multivariate faceted visualization, especially when teaching programming to build these visualizations since with complex examples comes an extensive amount of code. Unfortunately very basic data visualizations are rarely as motivating as those telling the story of the relationship between a number of variables at once. With the right choice of language and syntax, one can achieve the goal of starting with motivating and complex examples, and building up to such examples along the way. The ggplot2 package, a system for declaratively creating graphics, based on The Grammar of Graphics allows for just this in the context of data visualization. Similarly, the data wrangling packages dplyr and tidyr work really well with the pipe (%&gt;%) operator in R, which allows for building up your data manipulation and analysis in a step-wise fashion, similar in spirit to ggplot2’s layers.",
-    "crumbs": [
-      "Course Policies",
-      "Design principles"
-    ]
+    "text": "Skip baby steps\nIt’s tempting to start teaching with the simplest examples, e.g. starting data visualization with a bar graph of a single categorical variable instead of a multivariate faceted visualization, especially when teaching programming to build these visualizations since with complex examples comes an extensive amount of code. Unfortunately very basic data visualizations are rarely as motivating as those telling the story of the relationship between a number of variables at once. With the right choice of language and syntax, one can achieve the goal of starting with motivating and complex examples, and building up to such examples along the way. The ggplot2 package, a system for declaratively creating graphics, based on The Grammar of Graphics allows for just this in the context of data visualization. Similarly, the data wrangling packages dplyr and tidyr work really well with the pipe (%&gt;%) operator in R, which allows for building up your data manipulation and analysis in a step-wise fashion, similar in spirit to ggplot2’s layers."
   },
   {
     "objectID": "01-design-principles.html#hide-the-veggies",
     "href": "01-design-principles.html#hide-the-veggies",
     "title": "Design principles",
     "section": "Hide the veggies",
-    "text": "Hide the veggies\nThis is somewhat tongue-in-cheek. Veggies are absolutely good for you, and it is important that you learn to enjoy them. However many people wouldn’t list raw broccoli as their favourite food, however good it might be for them. Similarly there are many aspects of data science and programming that students must absolutely learn and understand the importance of, even if they are not the most exciting part of their data science journey. For example, one cannot do justice to working with text data without discussing regular expressions. However regular expressions are likely going to be a pain point in the learning journey of newcomers with little to no prior programming experience. So, in this course, instead of teaching students the basics of regular expressions as a unit, we hide this topic within the context of web scraping and manipulating text fields into multiple columns to get what we want out of them.",
-    "crumbs": [
-      "Course Policies",
-      "Design principles"
-    ]
+    "text": "Hide the veggies\nThis is somewhat tongue-in-cheek. Veggies are absolutely good for you, and it is important that you learn to enjoy them. However many people wouldn’t list raw broccoli as their favourite food, however good it might be for them. Similarly there are many aspects of data science and programming that students must absolutely learn and understand the importance of, even if they are not the most exciting part of their data science journey. For example, one cannot do justice to working with text data without discussing regular expressions. However regular expressions are likely going to be a pain point in the learning journey of newcomers with little to no prior programming experience. So, in this course, instead of teaching students the basics of regular expressions as a unit, we hide this topic within the context of web scraping and manipulating text fields into multiple columns to get what we want out of them."
   },
   {
     "objectID": "01-design-principles.html#leverage-the-ecosystem",
     "href": "01-design-principles.html#leverage-the-ecosystem",
     "title": "Design principles",
     "section": "Leverage the ecosystem",
-    "text": "Leverage the ecosystem\nThe course materials make heavy use of the tidyverse for data visualization and data wrangling. However, until recently, there was a gap in the R ecosystem for doing basic statistical inference using a syntax that follows tidyverse design principles. This prompted the developments of infer, a package for performing statistical inference using an expressive statistical grammar that coheres with the tidyverse design framework. Using infer to introduce statistical inference makes the transition from the first to the second unit of the course much smoother, and the development of the package as a collaboration between like-minded educators is a great example of leveraging an existing ecosystem to provide a smoother learning experience for students.\nSimilarly, on the instructor facing side, course organization on GitHub is managed by the ghclass package. And the course slides are built with xaringan, and course website is built with blogdown. Leveraging all of these packages allows the instructor to live and breathe in R for all aspects of running their course.",
-    "crumbs": [
-      "Course Policies",
-      "Design principles"
-    ]
+    "text": "Leverage the ecosystem\nThe course materials make heavy use of the tidyverse for data visualization and data wrangling. However, until recently, there was a gap in the R ecosystem for doing basic statistical inference using a syntax that follows tidyverse design principles. This prompted the developments of infer, a package for performing statistical inference using an expressive statistical grammar that coheres with the tidyverse design framework. Using infer to introduce statistical inference makes the transition from the first to the second unit of the course much smoother, and the development of the package as a collaboration between like-minded educators is a great example of leveraging an existing ecosystem to provide a smoother learning experience for students.\nSimilarly, on the instructor facing side, course organization on GitHub is managed by the ghclass package. And the course slides are built with xaringan, and course website is built with blogdown. Leveraging all of these packages allows the instructor to live and breathe in R for all aspects of running their course."
   },
   {
     "objectID": "01-design-principles.html#learn-more",
     "href": "01-design-principles.html#learn-more",
     "title": "Design principles",
     "section": "Learn more",
-    "text": "Learn more\nThe following talk titled “Let them eat cake (first)!” describes in further detail and with examples from the course materials each of the design principles outlined above.",
-    "crumbs": [
-      "Course Policies",
-      "Design principles"
-    ]
+    "text": "Learn more\nThe following talk titled “Let them eat cake (first)!” describes in further detail and with examples from the course materials each of the design principles outlined above."
   },
   {
     "objectID": "course-materials/application-exercises/ae-07-brexit-story-dataviz/brexit.html",
@@ -2581,11 +2479,7 @@
     "href": "01-topics.html",
     "title": "Topics",
     "section": "",
-    "text": "The course content is organized in three units:\n\n\n\n\n\n\nUnit 1 - Hello world: This unit is an introduction to the content, pedagogy, and toolkit of the course.\nUnit 2 - Exploring data: This unit focuses on data visualization and data wrangling. Specifically we cover fundamentals of data and data visualization, confounding variables, and Simpson’s paradox as well as the concept of tidy data, data import, data cleaning, and data curation. We end the unit with web scraping and introduce the idea of iteration in preparation for the next unit. Also in this unit students are introduced to the toolkit: R, RStudio, R Markdown, Git, and GitHub.\nUnit 3 - Data science ethics: In this unit we discuss misrepresentation of findings, particularly in data visualisations, breaches of data privacy, and algorithmic bias.\nUnit 4 - Making rigorous conclusions: In this unit we introduce modelling and statistical inference for making data-based conclusions. We discuss building, interpreting, and selecting models, visualizing interaction effects, and prediction and model validation. Statistical inference is introduced from a simulation based perspective, and the Central Limit Theorem is discussed very briefly to lay the foundation for future coursework in statistics.\nUnit 5 - Looking forward: In the last unit we present a series of modules such as interactive reporting and visualization with Shiny, text analysis, and Bayesian inference. These are independent modules that educators can choose to include in their introductory data science curriculum depending on how much time they have left in the semester.",
-    "crumbs": [
-      "Course Policies",
-      "Topics"
-    ]
+    "text": "The course content is organized in three units:\n\n\n\n\n\n\nUnit 1 - Hello world: This unit is an introduction to the content, pedagogy, and toolkit of the course.\nUnit 2 - Exploring data: This unit focuses on data visualization and data wrangling. Specifically we cover fundamentals of data and data visualization, confounding variables, and Simpson’s paradox as well as the concept of tidy data, data import, data cleaning, and data curation. We end the unit with web scraping and introduce the idea of iteration in preparation for the next unit. Also in this unit students are introduced to the toolkit: R, RStudio, R Markdown, Git, and GitHub.\nUnit 3 - Data science ethics: In this unit we discuss misrepresentation of findings, particularly in data visualisations, breaches of data privacy, and algorithmic bias.\nUnit 4 - Making rigorous conclusions: In this unit we introduce modelling and statistical inference for making data-based conclusions. We discuss building, interpreting, and selecting models, visualizing interaction effects, and prediction and model validation. Statistical inference is introduced from a simulation based perspective, and the Central Limit Theorem is discussed very briefly to lay the foundation for future coursework in statistics.\nUnit 5 - Looking forward: In the last unit we present a series of modules such as interactive reporting and visualization with Shiny, text analysis, and Bayesian inference. These are independent modules that educators can choose to include in their introductory data science curriculum depending on how much time they have left in the semester."
   },
   {
     "objectID": "02-making-rigorous-conclusions.html",
@@ -2636,10 +2530,6 @@
     "href": "01-tech-stack.html",
     "title": "Tech stack",
     "section": "",
-    "text": "This course teaches computing and statistics to undergraduates with no background in either. Managing such a course with students from varied backgrounds doing non-trivial computational work is a big technical challenge. This page briefly describes the toolkit choices, and the Infrastructure part provides a path forward for educators who are considering using these tools for their own teaching purposes.\nWhile the recommended tech stack for the entirety of course development is tall, only a few of the technologies are student facing:\n\nRStudio Cloud: RStudio Cloud is a managed cloud instance of the RStudio IDE. We recommend having students access RStudio via RStudio Cloud as opposed to using a local installation. See Accessing R for more on this.\nGitHub: The use of GitHub also goes a long way to help students visualize and understand the git process which also aids in student buy-in. The web interface allows students to easily view diffs (file changes over time) in files they are collaborating on, keep track of commit histories, and search both the current state as well as the entire history of the code base. Within the classroom GitHub can be thought of as an advanced and flexible learning management system (compared to traditional tools like Blackboard or Sakai). See Version Control for more on this.\nPiazza: Piazza is an easy to use and free Q&A platform that your students might very well be already familiar with from other classes. It is also possible that it’s already integrated into your learning management system if you’re teaching in a university setting. Students are discouraged from using email for questions and discussions related to content of the course, only emails about personal matters are allowed. Hence most course communication happens on Piazza. Both public (for announcements and general questions) and private (for team communication) channels are used. Note that Piazza is not everyone’s first choice, a few options for alternatives used in statistics and data science courses can be found on this Twitter thread.",
-    "crumbs": [
-      "Course Policies",
-      "Tech stack"
-    ]
+    "text": "This course teaches computing and statistics to undergraduates with no background in either. Managing such a course with students from varied backgrounds doing non-trivial computational work is a big technical challenge. This page briefly describes the toolkit choices, and the Infrastructure part provides a path forward for educators who are considering using these tools for their own teaching purposes.\nWhile the recommended tech stack for the entirety of course development is tall, only a few of the technologies are student facing:\n\nRStudio Cloud: RStudio Cloud is a managed cloud instance of the RStudio IDE. We recommend having students access RStudio via RStudio Cloud as opposed to using a local installation. See Accessing R for more on this.\nGitHub: The use of GitHub also goes a long way to help students visualize and understand the git process which also aids in student buy-in. The web interface allows students to easily view diffs (file changes over time) in files they are collaborating on, keep track of commit histories, and search both the current state as well as the entire history of the code base. Within the classroom GitHub can be thought of as an advanced and flexible learning management system (compared to traditional tools like Blackboard or Sakai). See Version Control for more on this.\nPiazza: Piazza is an easy to use and free Q&A platform that your students might very well be already familiar with from other classes. It is also possible that it’s already integrated into your learning management system if you’re teaching in a university setting. Students are discouraged from using email for questions and discussions related to content of the course, only emails about personal matters are allowed. Hence most course communication happens on Piazza. Both public (for announcements and general questions) and private (for team communication) channels are used. Note that Piazza is not everyone’s first choice, a few options for alternatives used in statistics and data science courses can be found on this Twitter thread."
   }
 ]

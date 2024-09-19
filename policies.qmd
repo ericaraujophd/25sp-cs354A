@@ -113,7 +113,7 @@ If you or someone else in this class is hurt by something I say or do in class, 
 :::
 
 
-::: {.callout-caution collapse="true"}
+::: {.callout-caution}
 ## Callout by Prof. Norman!
 
 Also, please note that I am half deaf (at least). I am completely deaf on my left side. This results in my not being able to hear students that speak quietly, and not being able to tell which direction sounds are coming from. Please speak loudly! Thanks.

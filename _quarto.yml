@@ -63,11 +63,11 @@ website:
       align: left
       contents:
         - href: policies.qmd
-        - href: 01-overview.qmd
-        - href: 01-design-principles.qmd
-        - href: 01-topics.qmd
-        - href: 01-tech-stack.qmd
-        - href: 01-community.qmd
+        - href: 01-instructors.qmd
+        # - href: 01-design-principles.qmd
+        # - href: 01-topics.qmd
+        # - href: 01-tech-stack.qmd
+        # - href: 01-community.qmd
 
     - id: content
       title: "Content"
