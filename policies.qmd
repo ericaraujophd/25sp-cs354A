@@ -78,7 +78,7 @@ Note that if you and someone else both independently ask ChatGPT or Copilot (or 
 
 ## Classroom Policy
 
-::: {.important}
+::: {.callout-important}
 ## IMPORTANT!
 
 **No phones, no laptops, unless we tell you you can.**
@@ -105,7 +105,7 @@ Calvin University is committed to providing access to all students. If you are a
 
 Inside and outside of the classroom, I work to treat every person with equal respect, regardless of racial identity, gender identity, physicality, brain chemistry, nationality, political leanings, and religious background. Whoever you are, you are fearfully and wonderfully made. God delights in diversity and I do, too. We humans need diverse viewpoints because every viewpoint, on its own, has blind spots. That has been proven to be true in technology-related fields, where under-represented minorities are significantly under-represented in the working world. When companies work hard to rectify this, they find their products and services improve. We have found this to be true in Computer Science classrooms as well.
 
-::: {.important}
+::: {.callout-important}
 ## IMPORTANT!
 
 If you or someone else in this class is hurt by something I say or do in class, I would like to know about it so that we can work toward a remedy. This has happened in the past in my classroom -- usually when I'm trying to be "cool" or be funny. If this happens this semester, please know that it was unintentional. Because this kind of feedback can be uncomfortable for all involved, I’ll take it however it comes: in public or in private, on the spot or days later, directly from you or indirectly through another student, another professor, or through my department chair Keith VanderLinden (kvlinden@calvin.edu).
