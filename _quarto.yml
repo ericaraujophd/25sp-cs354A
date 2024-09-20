@@ -9,14 +9,14 @@ website:
   page-navigation: true
   title: "CS112 - Data Structures"
   description: "CS112 will teach students to use C++ for creating data structures."
-  site-url: "https://datasciencebox.org/"
+  site-url: "https://ericaraujo.com/24fa-cs112"
   
-  repo-url: https://github.com/rstudio-education/datascience-box
+  repo-url: https://github.com/ericaraujophd/24fa-cs112
   repo-actions: [edit, issue]
 
   open-graph: true
   twitter-card:
-    creator: "@minebocek"
+    creator: "@ericaraujo"
     image: "/images/twitter-card.png"
 
   page-footer:
@@ -37,11 +37,11 @@ website:
  
     right:
       - icon: github
-        href: https://github.com/rstudio-education/datascience-box
+        href: https://github.com/ericaraujophd/24fa-cs112
         aria-label: GitHub
-      - icon: cloud-fill
-        href: https://rstudio.cloud/spaces/1655/join?access_code=5rdjusfIYF5iI0Gum2vNsBDLdtdnIEELBkf2EivK
-        aria-label: RStudio Cloud
+      # - icon: cloud-fill
+      #   href: https://rstudio.cloud/spaces/1655/join?access_code=5rdjusfIYF5iI0Gum2vNsBDLdtdnIEELBkf2EivK
+      #   aria-label: RStudio Cloud
 
     left:
       - text: "Overview"
@@ -72,7 +72,7 @@ website:
     - id: content
       title: "Content"
       contents:
-        - href: content.qmd
+        # - href: content.qmd
         - href: 02-hello-world.qmd
         - href: 02-exploring-data.qmd
         - href: 02-ethics.qmd

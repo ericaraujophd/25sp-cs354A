@@ -1,1 +1,1 @@
-Sitemap: https://datasciencebox.org/sitemap.xml
+Sitemap: https://ericaraujo.com/24fa-cs112/sitemap.xml

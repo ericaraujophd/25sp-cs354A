@@ -160,7 +160,6 @@
     "section": "",
     "text": "In the last unit we present a series of modules such as interactive reporting and visualization with Shiny, text analysis, machine learning, and Bayesian inference. These are independent modules that educators can choose to include in their introductory data science curriculum depending on how much time they have left in the semester. Note that the slides in this unit are a bit more sparse than the others, and much of the content is delivered as live coding sessions.",
     "crumbs": [
-      "Content",
       "Looking further"
     ]
   },
@@ -171,7 +170,6 @@
     "section": "Slides, videos, and application exercises",
     "text": "Slides, videos, and application exercises\n\nUnit 5 - Deck 1: Text analysis\n\nSlides\n\n\nSource\n\n\nVideo\n\n\n\nUnit 5 - Deck 2: Comparing texts\n\nSlides\n\n\nSource\n\n\nVideo\n\n\n\nUnit 5 - Deck 3: Interactive web apps\n\nSlides\n\n\nSource\n\n\nVideo\n\n\n\nUnit 5 - Deck 4: Machine learning\n\nSlides\n\n\nSource\n\n\nVideo\n\n\n\nUnit 5 - Deck 5: Interactive data visualisation\n\nSlides\n\n\n\nUnit 5 - Deck 6: Interactive data visualisation and reporting\n\nSlides\n\n\n\nUnit 5 - Deck 7: Bayesian inference\n\nSlides\n\n\nSource",
     "crumbs": [
-      "Content",
       "Looking further"
     ]
   },
@@ -182,7 +180,6 @@
     "section": "Labs",
     "text": "Labs\n\nLab 13: Working on projects\nFitting and interpreting simple linear regression models\n\nInstructions\n\n\nSource\n\n\n\nLab 14: Collaboration on GitHub\nFitting and interpreting simple linear regression models\n\nInstructions\n\n\nSource",
     "crumbs": [
-      "Content",
       "Looking further"
     ]
   },
@@ -193,7 +190,6 @@
     "section": "Homework assignments",
     "text": "Homework assignments\n\nHW 10: Wrapping up\nModel validation and inference\n\nInstructions\n\n\nSource\n\n\nStarter",
     "crumbs": [
-      "Content",
       "Looking further"
     ]
   },
@@ -1118,7 +1114,6 @@
     "section": "",
     "text": "This unit focuses on data visualization and data wrangling. Specifically we cover fundamentals of data and data visualization, confounding variables, and Simpson’s paradox as well as the concept of tidy data, data import, data cleaning, and data curation. We end the unit with web scraping and introduce the idea of iteration in preparation for the next unit. Also in this unit students are introduced to the toolkit: R, RStudio, R Markdown, Git, and GitHub.",
     "crumbs": [
-      "Content",
       "Exploring data"
     ]
   },
@@ -1129,7 +1124,6 @@
     "section": "Slides, videos, and application exercises",
     "text": "Slides, videos, and application exercises\n\nVisualising data\n\nUnit 2 - Deck 1: Data and visualisation\n\nSlides\n\n\nSource\n\n\nVideo\n\n\n\nUnit 2 - Deck 2: Visualising data with ggplot2\n\nSlides\n\n\nSource\n\n\nVideo\n\n\nR4DS :: Chp 3 - Data visualization\n\n\n\nUnit 2 - Deck 3: Visualising numerical data\n\nSlides\n\n\nSource\n\n\nVideo\n\n\nIMS :: Chp 4 - Exploring numerical data\n\n\n\nUnit 2 - Deck 4: Visualising categorical data\n\nSlides\n\n\nSource\n\n\nVideo\n\n\nIMS :: Chp 5 - Exploring categorical data\n\n\n\nStarWars + Dataviz\n\nSource\n\n\nVideo\n\n\n\n\nWrangling and tidying data\n\nUnit 2 - Deck 5: Tidy data\n\nSlides\n\n\nSource\n\n\nVideo\n\n\nJSS :: Tidy data\n\n\n\nUnit 2 - Deck 6: Grammar of data wrangling\n\nSlides\n\n\nSource\n\n\nVideo\n\n\n\nUnit 2 - Deck 7: Working with a single data frame\n\nSlides\n\n\nSource\n\n\nVideo\n\n\nR4DS :: Chp 5 - Data transformation\n\n\n\nUnit 2 - Deck 8: Working with multiple data frames\n\nSlides\n\n\nSource\n\n\nVideo\n\n\nR4DS :: Chp 13 - Relational data\n\n\n\nUnit 2 - Deck 9: Tidying data\n\nSlides\n\n\nSource\n\n\nVideo\n\n\nR4DS :: Chp 12 - Tidy data\n\n\n\nHotels + Data wrangling\n\nSource\n\n\nVideo\n\n\n\n\nImporting and recoding data\n\nUnit 2 - Deck 10: Data types\n\nSlides\n\n\nSource\n\n\nVideo\n\n\n\nUnit 2 - Deck 11: Data classes\n\nSlides\n\n\nSource\n\n\nVideo\n\n\nR4DS :: Chp 15 - Factors\n\n\n\nUnit 2 - Deck 12: Importing data\n\nSlides\n\n\nSource\n\n\nVideo\n\n\nR4DS :: Chp 11 - Data import\n\n\n\nUnit 2 - Deck 13: Recoding data\n\nSlides\n\n\nSource\n\n\nVideo\n\n\nR4DS :: Sec 16.1 - 16.3 - Dates and times\n\n\n\nHotels + Data types\n\nSource\n\n\nSource\n\n\nVideo\n\n\n\nNobels + Sales + Data import\n\nSource\n\n\nSource\n\n\nVideo\n\n\n\n\nCommunicating data science results effectively\n\nUnit 2 - Deck 14: Tips for effective data visualization\n\nSlides\n\n\nSource\n\n\nVideo\n\n\nIMS :: Chp 6 - Applications: Explore\n\n\n\nBrexit + Telling stories with dataviz\n\nSource\n\n\nVideo\n\n\n\nUnit 2 - Deck 15: Scientific studies and confounding\n\nSlides\n\n\nSource\n\n\nVideo\n\n\nIMS :: Chp 2 - Study design\n\n\n\nUnit 2 - Deck 16: Simpson’s paradox\n\nSlides\n\n\nSource\n\n\nVideo\n\n\n\nUnit 2 - Deck 17: Doing data science\n\nSlides\n\n\nSource\n\n\nVideo\n\n\nR4DS :: Chp 7 - Exploratory data analysis\n\n\n\n\nWeb scraping and programming\n\nUnit 2 - Deck 18: Web scraping\n\nSlides\n\n\nSource\n\n\nVideo\n\n\n\nUnit 2 - Deck 19: Scraping top 250 movies on IMDB\n\nSlides\n\n\nSource\n\n\nVideo\n\n\n\nUnit 2 - Deck 20: Web scraping considerations\n\nSlides\n\n\nSource\n\n\nVideo\n\n\n\nIMDB + Web scraping\n\nSource\n\n\nVideo\n\n\n\nUnit 2 - Deck 21: Functions\n\nSlides\n\n\nSource\n\n\nVideo\n\n\nR4DS :: Chp 19 - Functions\n\n\n\nUnit 2 - Deck 22: Iteration\n\nSlides\n\n\nSource\n\n\nVideo\n\n\nR4DS :: Chp 20 - Iteration",
     "crumbs": [
-      "Content",
       "Exploring data"
     ]
   },
@@ -1140,7 +1134,6 @@
     "section": "Labs",
     "text": "Labs\n\nLab 1: Hello R\nIntroduction to R, R Markdown, Git, and GitHub\n\nInstructions\n\n\nSource\n\n\nStarter\n\n\n\nLab 2: Plastic waste\nIntroduction to working with data in R with the tidyverse\n\nInstructions\n\n\nSource\n\n\nStarter\n\n\n\nLab 3: Nobel laureates\nData wrangling and tidying\n\nInstructions\n\n\nSource\n\n\nStarter\n\n\n\nLab 4: La Quinta is Spanish for ‘next to Denny’s’, Pt. 1\nVisualizing spatial data\n\nInstructions\n\n\nSource\n\n\nStarter\n\n\n\nLab 5: La Quinta is Spanish for ‘next to Denny’s’, Pt. 2\nWrangling spatial data\n\nInstructions\n\n\nSource\n\n\nStarter\n\n\n\nLab 6: Sad plots\nCritiquing and improving data visualisations\n\nInstructions\n\n\nSource\n\n\nStarter\n\n\n\nLab 7: Simpson’s paradox\nData visualisation, confounding, multivariable relationships\n\nInstructions\n\n\nSource\n\n\nStarter\n\n\n\nLab 8: University of Edinburgh Art Collection\nWeb scraping, function, iteration\n\nInstructions\n\n\nSource\n\n\nStarter",
     "crumbs": [
-      "Content",
       "Exploring data"
     ]
   },
@@ -1151,7 +1144,6 @@
     "section": "Homework assignments",
     "text": "Homework assignments\n\nHW 1: Pet names\nIntroduction to working with data in R with the tidyverse\n\nInstructions\n\n\nSource\n\n\nStarter\n\n\n\nHW 2: Edinburgh Airbnb rentals\nData visualisation with the tidyverse\n\nInstructions\n\n\nSource\n\n\nStarter\n\n\n\nHW 3: Road traffic accidents\nData wrangling, tidying, and visualization\n\nInstructions\n\n\nSource\n\n\nStarter\n\n\n\nHW 4: What should I major in?\nMore data wrangling, summarizing, and visualization\n\nInstructions\n\n\nSource\n\n\nStarter\n\n\n\nHW 5: Legos\nMore data wrangling, summarizing, and visualization\n\nInstructions\n\n\nSource\n\n\nStarter\n\n\n\nHW 6: Money in politics\nWeb scraping, functions, and iteration\n\nInstructions\n\n\nSource\n\n\nStarter",
     "crumbs": [
-      "Content",
       "Exploring data"
     ]
   },
@@ -1265,11 +1257,7 @@
     "href": "content.html",
     "title": "Course content",
     "section": "",
-    "text": "The course content is organized in five units: Hello world, Exploring data, Data science ethics, Making rigorous conclusions, and Looking further. For each unit numerous slide decks, homework and lab assignments, and application exercises are provided. Also provided are interactive tutorials, exams, and project assignment.",
-    "crumbs": [
-      "Content",
-      "Course content"
-    ]
+    "text": "CS 112 is organized by week, with each week structured as follows:\n\nClassroom sessions are Monday-Wednesday-Friday.\nThe lab sessions are on Tuesdays.\nYour lab submission is due Thursday at 23:59.\nYour project submission is due the next Monday at 23:59 (the night before your next lab).\nTutoring Assistants are available in SB337 on Mondays and Thursdays, from 7 - 9 pm.\n\nThe SLOs (Student Learning Objectives), labs, and projects for each week are given in the links on the left of this page. On overview of the semester is given in the table below:"
   },
   {
     "objectID": "02-project.html",
@@ -1278,7 +1266,6 @@
     "section": "",
     "text": "The following is a sample project assignment for this curriculum. You can find the source code for this assignment write up here. I’ve also provided sample evaluation forms to be used by the teaching team and students as well as a sample repo structure for the project.",
     "crumbs": [
-      "Content",
       "Project"
     ]
   },
@@ -1289,7 +1276,6 @@
     "section": "TL;DR",
     "text": "TL;DR\nPick a dataset, any dataset…\n…and do something with it. That is your final project in a nutshell. More details below.",
     "crumbs": [
-      "Content",
       "Project"
     ]
   },
@@ -1300,7 +1286,6 @@
     "section": "May be too long, but please do read",
     "text": "May be too long, but please do read\nThe final project for this class will consist of analysis on a dataset of your own choosing. The dataset may already exist, or you may collect your own data using a survey or by conducting an experiment. You can choose the data based on your interests or based on work in other courses or research projects. The goal of this project is for you to demonstrate proficiency in the techniques we have covered in this class (and beyond, if you like) and apply them to a novel dataset in a meaningful way.\nThe goal is not to do an exhaustive data analysis i.e., do not calculate every statistic and procedure you have learned for every variable, but rather let me know that you are proficient at asking meaningful questions and answering them with results of data analysis, that you are proficient in using R, and that you are proficient at interpreting and presenting the results. Focus on methods that help you begin to answer your research questions. You do not have to apply every statistical procedure we learned (and you can use techniques we haven’t officially covered in class, if you’re feeling adventurous). Also, critique your own methods and provide suggestions for improving your analysis. Issues pertaining to the reliability and validity of your data, and appropriateness of the statistical analysis should be discussed here.\nThe project is very open ended. You should create some kind of compelling visualization(s) of this data in R. There is no limit on what tools or packages you may use, but sticking to packages we learned in class (tidyverse) is required. You do not need to visualize all of the data at once. A single high quality visualization will receive a much higher grade than a large number of poor quality visualizations. Also pay attention to your presentation. Neatness, coherency, and clarity will count. All analyses must be done in RStudio, using R.",
     "crumbs": [
-      "Content",
       "Project"
     ]
   },
@@ -1311,7 +1296,6 @@
     "section": "Data",
     "text": "Data\nIn order for you to have the greatest chance of success with this project it is important that you choose a manageable dataset. This means that the data should be readily accessible and large enough that multiple relationships can be explored. As such, your dataset must have at least 50 observations and between 10 to 20 variables (exceptions can be made but you must speak with me first). The dataset’s variables should include categorical variables, discrete numerical variables, and continuous numerical variables.\nIf you are using a dataset that comes in a format that we haven’t encountered in class, make sure that you are able to load it into R as this can be tricky depending on the source. If you are having trouble ask for help before it is too late.\nNote on reusing datasets from class: Do not reuse datasets used in examples, homework assignments, or labs in the class.\nBelow are a list of data repositories that might be of interest to browse. You’re not limited to these resources, and in fact you’re encouraged to venture beyond them. But you might find something interesting there:\n\nTidyTuesday\nNHS Scotland Open Data\nEdinburgh Open Data\nOpen access to Scotland’s official statistics\nBikeshare data portal\nUK Gov Data\nKaggle datasets\nOpenIntro datasets\nAwesome public datasets\nYouth Risk Behavior Surveillance System (YRBSS)\nPRISM Data Archive Project\nHarvard Dataverse\nIf you know of others, let me know, and we’ll add here…\n\n\nDeliverables\n\nProposal - due [ENTER DUE DATE]\nPresentation - due [ENTER DUE DATE]\nExecutive summary - due [ENTER DUE DATE]\n\n\nProposal\nThis is a draft of the introduction section of your project as well as a data analysis plan and your dataset.\n\nSection 1 - Introduction: The introduction should introduce your general\nresearch question and your data (where it came from, how it was collected,\nwhat are the cases, what are the variables, etc.).\nSection 2 - Data: Place your data in the `/data` folder, and add dimensions and codebook to the README in that folder. Then print out the output of and codebook to the README in that folder. Then print out the output of glimpse() or skim() of your data frame.\nSection 3 - Data analysis plan:\n\nThe outcome (response, Y) and predictor (explanatory, X) variables you will use to answer your question.\nThe comparison groups you will use, if applicable.\nVery preliminary exploratory data analysis, including some summary statistics and visualizations, along with some explanation on how they help you learn more about your data. (You can add to these later as you work on your project.)\nThe method(s) that you believe will be useful in answering your question(s). (You can update these later as you work on your project.)\nWhat results from these specific statistical methods are needed to support your hypothesized answer?\n\n\nEach section should be no more than 1 page (excluding figures). You can check a print preview to confirm length.\nThe grading scheme for the project proposal is as follows. Note that after you receive feedback for your proposal you can improve it based on the feedback and re-submit it. If you re-submit, your final score for the proposal will be the average of two scores you receive (first and second submission).\n\n\n\nTotal\n10 pts\n\n\n\n\nData\n3 pts\n\n\nProposal\n5 pts\n\n\nWorkflow, organization, code quality\n1 pt\n\n\nTeamwork\n1 pt\n\n\n\n\n\nPresentation\n5 minutes maximum, and each team member should say something substantial. You can either present live during your workshop or pre-record and submit your video to be played during the workshop.\nPrepare a slide deck using the template in your repo. This template uses a package called xaringan, and allows you to make presentation slides using R Markdown syntax. There isn’t a limit to how many slides you can use, just a time limit (5 minutes total). Each team member should get a chance to speak during the presentation. Your presentation should not just be an account of everything you tried (“then we did this, then we did this, etc.”), instead it should convey what choices you made, and why, and what you found.\nBefore you finalize your presentation, make sure your chunks are turned off with echo = FALSE.\nPresentations will take place during the last workshop of the semester. You can choose to do your presentation live or pre-record it. During your workshop you will watch presentations from other teams in your workshop and provide feedback in the form of peer evaluations. The presentation line-up will be generated randomly.\nThe grading scheme for the presentation is as follows:\n\n\n\n\n\n\n\nTotal\n50 pts\n\n\n\n\nTime management: Did the team divide the time well amongst themselves or got cut off going over time?\n4 pts\n\n\nContent: Is the research question well designed and is the data being used relevant to the research question?\n5 pts\n\n\nProfessionalism: How well did the team present? Does the presentation appear to be well practiced? Did everyone get a chance to say something meaningful about the project?\n5 pts\n\n\nTeamwork: Did the team present a unified story, or did it seem like independent pieces of work patched together?\n6 pts\n\n\nContent: Did the team use appropriate statistical procedures and interpretations of results accurately?\n10 pts\n\n\nCreativity and Critical Thought: Is the project carefully thought out? Are the limitations carefully considered? Does it appear that time and effort went into the planning and implementation of the project?\n10 pts\n\n\nSlides: Are the slides well organized, readable, not full of text, featuring figures with legible labels, legends, etc.?\n10 pts\n\n\n\n\n\nExecutive summary\nAlong with your presentation slides, we want you to provide a brief summary of your project in the README of your repository.\nThis executive summary should provide information on the dataset you’re using, your research question(s), your methodology, and your findings.\nThe executive summary is worth 15 points and will be evaluated based on whether it follows guidance and whether it’s concise but detailed enough.\n\n\nRepo organization\nThe following folders and files in your project repository:\n\npresentation.Rmd + presentation.html: Your presentation slides\nREADME.Rmd + README.md: Your write-up\n/data: Your dataset in CSV or RDS format and your data dictionary\n/proposal: Your project proposal\n\nStyle and format does count for this assignment, so please take the time to make sure everything looks good and your data and code are properly formatted.\n\n\n\nTips\n\nYou’re working in the same repo as your teammates now, so merge conflicts will happen, issues will arise, and that’s fine Commit and push often, and ask questions when stuck.\nReview the marking guidelines below and ask questions if any of the expectations are unclear.\nMake sure each team member is contributing, both in terms of quality and quantity of contribution (we will be reviewing commits from different team members).\nSet aside time to work together and apart (physically).\nWhen you’re done, review the documents on GitHub to make sure you’re happy with the final state of your work. Then go get some rest!\nCode: In your presentation your code should be hidden (echo = FALSE) so that your document is neat and easy to read. However your document should include all your code such that if I re-knit your R Markdown file I should be able to obtain the results you presented.\n\nException: If you want to highlight something specific about a piece of code, you’re welcomed to show that portion.\n\nTeamwork: You are to complete the assignment as a team. All team members are expected to contribute equally to the completion of this assignment and team evaluations will be given at its completion - anyone judged to not have sufficient contributed to the final product will have their grade penalized. While different teams members may have different backgrounds and abilities, it is the responsibility of every team member to understand how and why all code and approaches in the assignment works.\n\n\n\nMarking\n\n\n\nTotal\n100 pts\n\n\n\n\nProposal\n10 pts\n\n\nPresentation\n50 pts\n\n\nExecutive summary\n15 pts\n\n\nReproducibility and organization\n10 pts\n\n\nTeam peer evaluation\n10 pts\n\n\nClassmates’ evaluation\n5 pts\n\n\n\n\nCriteria\nYour project will be assessed on the following criteria:\n\nContent - What is the quality of research and/or policy question and relevancy of data to those questions?\nCorrectness - Are statistical procedures carried out and explained correctly?\nWriting and Presentation - What is the quality of the statistical presentation, writing, and explanations?\nCreativity and Critical Thought - Is the project carefully thought out? Are the limitations carefully considered? Does it appear that time and effort went into the planning and implementation of the project?\n\nA general breakdown of scoring is as follows:\n\n90%-100% - Outstanding effort. Student understands how to apply all statistical concepts, can put the results into a cogent argument, can identify weaknesses in the argument, and can clearly communicate the results to others.\n80%-89% - Good effort. Student understands most of the concepts, puts together an adequate argument, identifies some weaknesses of their argument, and communicates most results clearly to others.\n70%-79% - Passing effort. Student has misunderstanding of concepts in several areas, has some trouble putting results together in a cogent argument, and communication of results is sometimes unclear.\n60%-69% - Struggling effort. Student is making some effort, but has misunderstanding of many concepts and is unable to put together a cogent argument. Communication of results is unclear.\nBelow 60% - Student is not making a sufficient effort.\n\n\n\nTeam peer evaluation\nYou will be asked to fill out a survey where you rate the contribution and teamwork of each team member out of 10 points. You will additionally report a contribution percentage for each team member. Filling out the survey is a prerequisite for getting credit on the team member evaluation.If you are suggesting that an individual did less than 20% of the work, please provide some explanation. If any individual gets an average peer score indicating that they did less than 10% of the work, this person will receive half the grade of the rest of the group.",
     "crumbs": [
-      "Content",
       "Project"
     ]
   },
@@ -1322,7 +1306,6 @@
     "section": "",
     "text": "I don’t think the best assessment method for this curriculum is an exam, but sometimes a take home exam can be an incredible motivator for students without stifling their creativity. I’ve provided two sample take home exams. You probably wouldn’t want to use them verbatim as exams, since they’re now publicly available. But they might give you some idea about how to structure take home exams, how to write directions to reduce issues around plagiarism while still encouraging students to search for resources, etc.\n\nExam 1\n[Instructions] [Source]\n\n\nExam 2\n[Instructions] [Source]",
     "crumbs": [
-      "Content",
       "Exams"
     ]
   },
@@ -1403,7 +1386,6 @@
     "section": "",
     "text": "I recommend starting the class off right, devoting more of the class time to introducing the course content instead of the course policies. And get students doing something with data as quickly as possible! A personal goal of mine is to get students to produce their first data visualization within the first 10 minutes of class. The application exercise in this lecture is one way of achieving this goal. Slides for Day One of class are provided below.\nNote that getting students computing on Day One in class requires that they come to class equipped with a laptop or that you’re holding your course online or in a computer lab. If teaching online, this is resolved automatically, of course. They do not need to do any preparation ahead of time, just need internet access. As outlined in the slides, give them a link to your RStudio Cloud workspace and get them started working on the application exercise you put together for them. There are two options for a day one application exercise. Note that one of them uses COVID-19 data and depending on where, when, and to whom you’re teaching, working with these data might not be the most pleasant experience for all students. Please make sure to consider this before using this activity.",
     "crumbs": [
-      "Content",
       "Hello world"
     ]
   },
@@ -1414,7 +1396,6 @@
     "section": "Slides, videos, and application exercises",
     "text": "Slides, videos, and application exercises\n\nUnit 1 - Deck 1: Welcome\n\nSlides\n\n\nSource\n\n\nVideo\n\n\n\nFirst dataviz\n\nOption 1 - UN Votes\n\nSource\n\n\nVideo\n\n\n\nOption 2 - COVID-19\n\nSource\n\n\n\n\nUnit 1 - Deck 2: Meet the toolkit - Programming\n\nSlides\n\n\nSource\n\n\nVideo\n\n\n\nR4DS :: Chp 2 - Introduction\nIMS :: Sec 1.1 & 1.2 - Case study & Data basics\n\n\n\n\nBechdel + R Markdown\n\nSource\n\n\n\nUnit 1 - Deck 3: Meet the toolkit - Version control and collaboration\n\nSlides\n\n\nSource\n\n\nVideo",
     "crumbs": [
-      "Content",
       "Hello world"
     ]
   },
@@ -1535,7 +1516,6 @@
     "section": "",
     "text": "This unit touches on data science ethics, specifically on issues of misrepresentation of data and results, data privacy, and algorithmic bias. Course lectures are supplemented with “guest lectures” from domain experts.",
     "crumbs": [
-      "Content",
       "Data science ethics"
     ]
   },
@@ -1546,7 +1526,6 @@
     "section": "Slides, videos, and application exercises",
     "text": "Slides, videos, and application exercises\n\nUnit 3 - Deck 1: Misrepresentation\n\nSlides\n\n\nSource\n\n\nVideo\n\n\n\nAlberto Cairo - How charts lie\n\nVideo\n\n\n\nUnit 3 - Deck 2: Data privacy\n\nSlides\n\n\nSource\n\n\nVideo\n\n\n\nThe Guardian - Cambridge Analytica whistleblower\n\nVideo\n\n\n\nUnit 3 - Deck 3: Algorithmic bias\n\nSlides\n\n\nSource\n\n\nVideo\n\n\n\nJoy Buolamwini - How I’m fighting bias in algorithms\n\nVideo\n\n\n\nCathy O’Neil - Weapons of Math Destruction\n\nVideo\n\n\n\nSafiya Umoja Noble - Imagining a Future Free from the Algorithms of Oppression\n\nVideo\n\n\n\nKristian Lum - What’s An Algorithm Got To Do With It\n\nVideo",
     "crumbs": [
-      "Content",
       "Data science ethics"
     ]
   },
@@ -1557,7 +1536,6 @@
     "section": "Labs",
     "text": "Labs\n\nLab 9: Conveying the right message through visualisation\nImproving data visualisations to better convey the right message\n\nInstructions\n\n\nSource\n\n\nStarter",
     "crumbs": [
-      "Content",
       "Data science ethics"
     ]
   },
@@ -1568,7 +1546,6 @@
     "section": "",
     "text": "The following interactive tutorials have been built with learnr and gradethis. They’re available on shinyapps.io (linked) as well as distributed with the dsbox package.1 With the dsbox package installed, you can also run these tutorials in the Tutorials pane of your RStudio window. This might be preferable for courses with high enrollment where students need to access the tutorials at the same time.\nNote that many of these include examples and questions from the homework assignments listed earlier. You can think of these as interactive, auto-feedback versions of the simpler questions in the homework assignments. If using both the tutorials and the homework assignments in your teaching, I recommend modifying the homework assignments to remove the redundant questions (they will usually be the earlier, shorter, simpler questions) and making the homework assignment shorter. Students will ultimately get exposed to the same material, but get auto-feedback in the tutorials and human feedback on the homework assignments.\nIf you would like to learn about making your own tutorials with learnr, I strongly recommend reviewing the video and materials from the following 1.5 hour workshop: Building interactive tutorials in R.",
     "crumbs": [
-      "Content",
       "Interactive tutorials"
     ]
   },
@@ -1579,7 +1556,6 @@
     "section": "Footnotes",
     "text": "Footnotes\n\n\nThe dsbox package is not yet on CRAN, until then you will need to install from GitHub with devtools::install_github(\"rstudio-education/dsbox\").↩︎",
     "crumbs": [
-      "Content",
       "Interactive tutorials"
     ]
   },
@@ -2488,7 +2464,6 @@
     "section": "",
     "text": "In this part we introduce modelling and statistical inference for making data-based conclusions. We discuss building, interpreting, and selecting models, visualizing interaction effects, and prediction and model validation. Statistical inference is introduced from a simulation based perspective, and the Central Limit Theorem is discussed very briefly to lay the foundation for future coursework in statistics.",
     "crumbs": [
-      "Content",
       "Making rigorous conclusions"
     ]
   },
@@ -2499,7 +2474,6 @@
     "section": "Slides, videos, and application exercises",
     "text": "Slides, videos, and application exercises\n\nModelling data\n\nUnit 4 - Deck 1: The language of models\n\nSlides\n\n\nSource\n\n\nVideo\n\n\n\nUnit 4 - Deck 2: Fitting and interpreting models\n\nSlides\n\n\nSource\n\n\nVideo\n\n\nIMS :: Chp 7 - Linear regression with a single predictor\n\n\n\nUnit 4 - Deck 3: Modelling nonlinear relationships\n\nSlides\n\n\nSource\n\n\nVideo\n\n\n\nUnit 4 - Deck 4: Models with multiple predictors\n\nSlides\n\n\nSource\n\n\nVideo\n\n\nIMS :: Chp 8 - Linear regression with multiple predictors\n\n\n\nUnit 4 - Deck 5: More models with multiple predictors\n\nSlides\n\n\nSource\n\n\nVideo\n\n\n\n\nClassification and model building\n\nUnit 4 - Deck 6: Logistic regression\n\nSlides\n\n\nSource\n\n\nVideo\n\n\nIMS :: Chp 9 - Logistic regression\n\n\n\nUnit 4 - Deck 7: Prediction and overfitting\n\nSlides\n\n\nSource\n\n\nVideo\n\n\ntidymodels :: Build a model\n\n\n\nUnit 4 - Deck 8: Feature engineering\n\nSlides\n\n\nSource\n\n\nVideo\n\n\ntidymodels :: Preprocess your data with recipes\n\n\n\n\nModel validation\n\nUnit 4 - Deck 9: Cross validation\n\nSlides\n\n\nSource\n\n\nVideo\n\n\ntidymodels :: Evaluate your model with resampling\n\n\n\nThe Office + Feature engineering, Pt. 1\n\nSource\n\n\nVideo\n\n\n\nThe Office + Cross validation, Pt. 2\n\nSource\n\n\nVideo\n\n\n\n\nUncertainty quantification\n\nUnit 4 - Deck 10: Quantifying uncertainty\n\nSlides\n\n\nSource\n\n\nVideo\n\n\n\nUnit 4 - Deck 11: Bootstrapping\n\nSlides\n\n\nSource\n\n\nVideo\n\n\nIMS :: Chp 12 - Confidence intervals with bootstrapping\n\n\n\nUnit 4 - Deck 12: Hypothesis testing\n\nSlides\n\n\nSource\n\n\nIMS :: Chp 11 - Hypothesis testing with randomization\n\n\n\nUnit 4 - Deck 13: Inference overview\n\nSlides\n\n\nSource",
     "crumbs": [
-      "Content",
       "Making rigorous conclusions"
     ]
   },
@@ -2510,7 +2484,6 @@
     "section": "Labs",
     "text": "Labs\n\nLab 10: Grading the professor, Pt. 1\nFitting and interpreting simple linear regression models\n\nInstructions\n\n\nSource\n\n\nStarter\n\n\n\nLab 11: Grading the professor, Pt. 2\nFitting and interpreting multiple linear regression models\n\nInstructions\n\n\nSource\n\n\nStarter\n\n\n\nLab 12: Smoking while pregnant\nConstructing confidence intervals, conducting hypothesis tests, and interpreting results in context of the data\n\nInstructions\n\n\nSource\n\n\nStarter",
     "crumbs": [
-      "Content",
       "Making rigorous conclusions"
     ]
   },
@@ -2521,7 +2494,6 @@
     "section": "Homework assignments",
     "text": "Homework assignments\n\nHW 7: Bike rentals in DC\nExploratory data analysis and fitting and interpreting models\n\nInstructions\n\n\nSource\n\n\nStarter\n\n\n\nHW 8: Exploring the GSS\nFitting and interpreting models\n\nInstructions\n\n\nSource\n\n\nStarter\n\n\n\nHW 9: Modelling the GSS\nModel validation and inference\n\nInstructions\n\n\nSource\n\n\nStarter",
     "crumbs": [
-      "Content",
       "Making rigorous conclusions"
     ]
   },

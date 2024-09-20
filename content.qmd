@@ -3,6 +3,14 @@ title: "Course content"
 editor: visual
 ---
 
-The course content is organized in five units: Hello world, Exploring data, Data science ethics, Making rigorous conclusions, and Looking further.
-For each unit numerous slide decks, homework and lab assignments, and application exercises are provided.
-Also provided are interactive tutorials, exams, and project assignment.
+CS 112 is organized by week, with each week structured as follows:
+
+- Classroom sessions are Monday-Wednesday-Friday. 
+- The lab sessions are on Tuesdays.
+- Your lab submission is due Thursday at 23:59.
+- Your project submission is due the next Monday at 23:59 (the night before your next lab).
+- Tutoring Assistants are available in SB337 on Mondays and Thursdays, from 7 - 9 pm.
+
+The SLOs (Student Learning Objectives), labs, and projects for each week are given in the links on the left of this page. On overview of the semester is given in the table below:
+
+
