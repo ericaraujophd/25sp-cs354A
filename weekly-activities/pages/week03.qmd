@@ -1,0 +1,17 @@
+---
+title: "Week 3: Classes, Operator Overloading, etc."
+---
+
+## SLOs for Week 3
+
+Students will be able to:
+
+- define a class and implement it in .h and .cpp files, respectively.
+- reason about the access modifiers public and private.
+- define and implement constructors and destructors, and general methods.
+- instantiate objects statically
+- implement Test-driven development for a class.
+
+## Readings
+
+No readings for Week 3.
