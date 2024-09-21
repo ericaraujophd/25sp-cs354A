@@ -72,7 +72,7 @@ website:
     - id: content
       title: "Content"
       contents:
-        # - href: content.qmd
+        - href: content.qmd
         - href: 02-hello-world.qmd
         - href: 02-exploring-data.qmd
         - href: 02-ethics.qmd
