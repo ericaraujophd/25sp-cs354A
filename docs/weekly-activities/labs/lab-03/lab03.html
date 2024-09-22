@@ -156,7 +156,10 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#step-3.-getters" id="toc-step-3.-getters" class="nav-link" data-scroll-target="#step-3.-getters">Step 3. getters</a></li>
   <li><a href="#step-4.-setters" id="toc-step-4.-setters" class="nav-link" data-scroll-target="#step-4.-setters">Step 4. setters</a></li>
   <li><a href="#step-5.-fanciness" id="toc-step-5.-fanciness" class="nav-link" data-scroll-target="#step-5.-fanciness">Step 5. Fanciness</a></li>
+  <li><a href="#step-6.-display-as-a-string" id="toc-step-6.-display-as-a-string" class="nav-link" data-scroll-target="#step-6.-display-as-a-string">Step 6. Display as a string</a></li>
   </ul></li>
+  <li><a href="#submission" id="toc-submission" class="nav-link" data-scroll-target="#submission">Submission</a></li>
+  <li><a href="#grading-rubric" id="toc-grading-rubric" class="nav-link" data-scroll-target="#grading-rubric">Grading Rubric</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/ericaraujophd/24fa-cs112/edit/main/weekly-activities/labs/lab-03/lab03.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/24fa-cs112/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -445,9 +448,50 @@ NOTE
 <pre><code>SECTION("setDenominator") {
     REQUIRE_THROWS_AS(f1.setDenominator(0), invalid_argument);
 }</code></pre>
-
-
 </section>
+<section id="step-6.-display-as-a-string" class="level3">
+<h3 class="anchored" data-anchor-id="step-6.-display-as-a-string">Step 6. Display as a string</h3>
+<p>Create a test to call <em>asString()</em> on a Fraction object: If you create a new Fraction object <em>newFrac</em> and call <em>newFrac.asString()</em>, you can REQUIRE that the result should be “0/1”. Initially, this test will fail, so create the method, which returns a string.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In <em>asString()</em> you can use <ins>to_string(anInt)</ins> to convert an integer into a string. And, you can concatenate strings with +. <em>to_string()</em> is defined in <string> so you’ll have to #include that.</string></p>
+</div>
+</div>
+<p>When that works, use the setters to change the numerator and denominator for a fraction, and then write a test to ensure that <em>asString()</em> still produces the correct results.</p>
+</section>
+</section>
+<section id="submission" class="level2">
+<h2 class="anchored" data-anchor-id="submission">Submission</h2>
+<p>Commit your changes to your github repo. After you do this, verify that the automated tests pass. The automated tests just run the <em>tests.cpp</em> file you have been editing.</p>
+<p>Don’t forget to look at the Grading Rubric at the top to make sure you get as many points as possible.</p>
+</section>
+<section id="grading-rubric" class="level2">
+<h2 class="anchored" data-anchor-id="grading-rubric">Grading Rubric</h2>
+<p>This lab is worth 20 pts:</p>
+<ul>
+<li>10 points for each of Part 1 and Part the Second: 20 pts
+<ul>
+<li>6 pts for correctness</li>
+<li>1 pt for perfect indentation and good variable names, function names, and comments (i.e., hospitable code). You should write a comment in your code only when the following block of code is not <em>obvious</em> to the trained reader. You should not write a comment for each line of code.</li>
+<li>3 pts for sufficient test cases to prove that the code is correct.</li>
+</ul></li>
+</ul>
+<p>Ways students have lost points in the past:</p>
+<ul>
+<li>-2: Test doesn’t pass</li>
+<li>-1: Missing name and id</li>
+<li>-3: Missing steps, Next time speak to professor.</li>
+</ul>
+
+
 </section>
 
 </main> <!-- /main -->

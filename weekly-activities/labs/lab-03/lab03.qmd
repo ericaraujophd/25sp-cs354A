@@ -186,3 +186,35 @@ SECTION("setDenominator") {
     REQUIRE_THROWS_AS(f1.setDenominator(0), invalid_argument);
 }
 ```
+
+### Step 6. Display as a string
+
+Create a test to call *asString()* on a Fraction object: If you create a new Fraction object *newFrac* and call *newFrac.asString()*, you can REQUIRE that the result should be "0/1". Initially, this test will fail, so create the method, which returns a string. 
+
+:::{.callout-note}
+## Note
+In *asString()* you can use <ins>to_string(anInt)</ins> to convert an integer into a string. And, you can concatenate strings with +. *to_string()* is defined in <string> so you'll have to #include that.
+:::
+
+When that works, use the setters to change the numerator and denominator for a fraction, and then write a test to ensure that *asString()* still produces the correct results.
+
+## Submission
+
+Commit your changes to your github repo. After you do this, verify that the automated tests pass. The automated tests just run the *tests.cpp* file you have been editing.
+
+Don't forget to look at the Grading Rubric at the top to make sure you get as many points as possible.
+
+## Grading Rubric
+
+This lab is worth 20 pts:
+
+- 10 points for each of Part 1 and Part the Second: 20 pts
+  - 6 pts for correctness
+  - 1 pt for perfect indentation and good variable names, function names, and comments (i.e., hospitable code). You should write a comment in your code only when the following block of code is not *obvious* to the trained reader. You should not write a comment for each line of code.
+  - 3 pts for sufficient test cases to prove that the code is correct.
+
+Ways students have lost points in the past:
+
+- -2: Test doesn't pass
+- -1: Missing name and id
+- -3: Missing steps, Next time speak to professor.
