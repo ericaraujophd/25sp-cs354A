@@ -69,7 +69,7 @@ Compile and run (in a terminal, run ```./tester "Student class"```) -- this shou
 
 Now, repeat the above steps for the other tests and instance variables **(maybe make this part more clear in the future)**. Start with a test in *tests.cpp* first, then implement the prototype and code. 
 
-:::{.callout-tip}
+:::{.callout-note}
 ## NOTE
 Don't delete any old tests -- just keep adding more. Put each test in its own SECTION within the "Student class" TEST_CASE.
 :::
@@ -141,9 +141,48 @@ Update the default constructor, to initialize *myNumerator* to 0 and *myDenomina
 
 Now, implement the explicit-value constructor, which takes both the numerator and denominator as parameters, and stores them in *myNumerator* and *myDenominator*. Don't forget to put the declaration in the .h file and implementation in the .cpp file.
 
-:::{.callout-important}
+:::{.callout-note}
 ## Note
 We will compile our tester after the next section.
 :::
 
 
+### Step 3. getters
+
+Add a new SECTION (within the "Fraction class" TEST_CASE) called "fraction getters" and SECTIONs to call the getter functions and test their results. Compilation should fail, as expected. 
+
+:::{.callout-note}
+## NOTE
+ Yes, this is repetitive as we already used them for the default constructors. Just to make sure we cover all our bases, and this can easily be seen in our tests, make another SECTION to quickly check the getter functions again.
+:::
+
+Now, create getter functions for each.
+
+Now the compilation and execution should succeed with all tests passing. 
+
+:::{.callout-note}
+## NOTE
+You can run only some tests by putting the name of the test on the command line. E.g., you can run only the Fraction tests by running ```./tester "Fraction class"```.
+:::
+
+### Step 4. setters
+
+Create tests to test setters. 
+
+Then, create the methods and the code so it will compile and run successfully.
+
+### Step 5. Fanciness
+
+Now, in *setDenominator()*, check if the parameter is 0 -- an illegal value. If so, throw an invalid_argument exception (remember to ```#include <stdexcept>``` first). You can do this by using the line:
+
+```
+throw invalid_argument("Your error message here!"); // (Change the error message please!)
+```
+
+Here is a test for that, assuming you have a fraction called f1:
+
+```
+SECTION("setDenominator") {
+    REQUIRE_THROWS_AS(f1.setDenominator(0), invalid_argument);
+}
+```

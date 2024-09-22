@@ -157,6 +157,9 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
   <li><a href="#step-1.-test-the-fraction-class" id="toc-step-1.-test-the-fraction-class" class="nav-link" data-scroll-target="#step-1.-test-the-fraction-class">Step 1. Test the Fraction class</a></li>
   <li><a href="#step-2.-add-the-instance-variables-and-constructors" id="toc-step-2.-add-the-instance-variables-and-constructors" class="nav-link" data-scroll-target="#step-2.-add-the-instance-variables-and-constructors">Step 2. Add the instance variables and constructors</a></li>
+  <li><a href="#step-3.-getters" id="toc-step-3.-getters" class="nav-link" data-scroll-target="#step-3.-getters">Step 3. getters</a></li>
+  <li><a href="#step-4.-setters" id="toc-step-4.-setters" class="nav-link" data-scroll-target="#step-4.-setters">Step 4. setters</a></li>
+  <li><a href="#step-5.-fanciness" id="toc-step-5.-fanciness" class="nav-link" data-scroll-target="#step-5.-fanciness">Step 5. Fanciness</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/ericaraujophd/24fa-cs112/edit/main/weekly-activities/labs/lab-03/lab03.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/24fa-cs112/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -294,7 +297,7 @@ Compile
 <p>So, create a getter function (in both the <em>Student.h</em> and <em>Student.cpp</em> files) called <em>getMajor()</em>.</p>
 <p>Compile and run (in a terminal, run <code>./tester "Student class"</code>) – this should work now.</p>
 <p>Now, repeat the above steps for the other tests and instance variables <strong>(maybe make this part more clear in the future)</strong>. Start with a test in <em>tests.cpp</em> first, then implement the prototype and code.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -387,7 +390,7 @@ Important!
 <p>Add the two instance variables – <em>myNumerator</em> and <em>myDenominator</em> (both integers) – to the class definition in the .h file.</p>
 <p>Update the default constructor, to initialize <em>myNumerator</em> to 0 and <em>myDenominator</em> to 1.</p>
 <p>Now, implement the explicit-value constructor, which takes both the numerator and denominator as parameters, and stores them in <em>myNumerator</em> and <em>myDenominator</em>. Don’t forget to put the declaration in the .h file and implementation in the .cpp file.</p>
-<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -400,6 +403,52 @@ Note
 <p>We will compile our tester after the next section.</p>
 </div>
 </div>
+</section>
+<section id="step-3.-getters" class="level3">
+<h3 class="anchored" data-anchor-id="step-3.-getters">Step 3. getters</h3>
+<p>Add a new SECTION (within the “Fraction class” TEST_CASE) called “fraction getters” and SECTIONs to call the getter functions and test their results. Compilation should fail, as expected.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+NOTE
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Yes, this is repetitive as we already used them for the default constructors. Just to make sure we cover all our bases, and this can easily be seen in our tests, make another SECTION to quickly check the getter functions again.</p>
+</div>
+</div>
+<p>Now, create getter functions for each.</p>
+<p>Now the compilation and execution should succeed with all tests passing.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+NOTE
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You can run only some tests by putting the name of the test on the command line. E.g., you can run only the Fraction tests by running <code>./tester "Fraction class"</code>.</p>
+</div>
+</div>
+</section>
+<section id="step-4.-setters" class="level3">
+<h3 class="anchored" data-anchor-id="step-4.-setters">Step 4. setters</h3>
+<p>Create tests to test setters.</p>
+<p>Then, create the methods and the code so it will compile and run successfully.</p>
+</section>
+<section id="step-5.-fanciness" class="level3">
+<h3 class="anchored" data-anchor-id="step-5.-fanciness">Step 5. Fanciness</h3>
+<p>Now, in <em>setDenominator()</em>, check if the parameter is 0 – an illegal value. If so, throw an invalid_argument exception (remember to <code>#include &lt;stdexcept&gt;</code> first). You can do this by using the line:</p>
+<pre><code>throw invalid_argument(“Your error message here!”); // (Change the error message please!)</code></pre>
+<p>Here is a test for that, assuming you have a fraction called f1:</p>
+<pre><code>SECTION("setDenominator") {
+    REQUIRE_THROWS_AS(f1.setDenominator(0), invalid_argument);
+}</code></pre>
 
 
 </section>
