@@ -52,8 +52,6 @@ website:
         href: content.qmd
       - text: "Infrastructure"
         href: infrastructure.qmd
-      - text: "Design"
-        href: design.qmd
 
   sidebar:
     - id: policies
@@ -93,12 +91,7 @@ website:
         - href: 03-sharing.qmd
         - href: 03-alternative-setups.qmd
 
-    - id: design
-      align: left
-      contents:
-        - href: design.qmd
-        - href: 04-pedagogy.qmd
-        - href: 04-schedule.qmd
+
 
 format:
   html:
