@@ -49,7 +49,7 @@ Fitting and interpreting simple linear regression models
 :::
 
 ::: source
-[Source](https://github.com/rstudio-education/datascience-box/tree/master/course-materials/lab-instructions/lab-13)
+[Source](https://classroom.github.com/a/1IU3C6dH)
 :::
 :::
 
@@ -58,7 +58,7 @@ Fitting and interpreting simple linear regression models
 <!-- ## Homework assignments -->
 
 ::: homework
-**HW 10: Wrapping up**
+**Project 3: Classes**
 
 Model validation and inference
 
