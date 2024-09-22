@@ -55,50 +55,6 @@
     ]
   },
   {
-    "objectID": "02-making-rigorous-conclusions.html",
-    "href": "02-making-rigorous-conclusions.html",
-    "title": "Making rigorous conclusions",
-    "section": "",
-    "text": "In this part we introduce modelling and statistical inference for making data-based conclusions. We discuss building, interpreting, and selecting models, visualizing interaction effects, and prediction and model validation. Statistical inference is introduced from a simulation based perspective, and the Central Limit Theorem is discussed very briefly to lay the foundation for future coursework in statistics.",
-    "crumbs": [
-      "Content",
-      "Making rigorous conclusions"
-    ]
-  },
-  {
-    "objectID": "02-making-rigorous-conclusions.html#slides-videos-and-application-exercises",
-    "href": "02-making-rigorous-conclusions.html#slides-videos-and-application-exercises",
-    "title": "Making rigorous conclusions",
-    "section": "Slides, videos, and application exercises",
-    "text": "Slides, videos, and application exercises\n\nModelling data\n\nUnit 4 - Deck 1: The language of models\n\nSlides\n\n\nSource\n\n\nVideo\n\n\n\nUnit 4 - Deck 2: Fitting and interpreting models\n\nSlides\n\n\nSource\n\n\nVideo\n\n\nIMS :: Chp 7 - Linear regression with a single predictor\n\n\n\nUnit 4 - Deck 3: Modelling nonlinear relationships\n\nSlides\n\n\nSource\n\n\nVideo\n\n\n\nUnit 4 - Deck 4: Models with multiple predictors\n\nSlides\n\n\nSource\n\n\nVideo\n\n\nIMS :: Chp 8 - Linear regression with multiple predictors\n\n\n\nUnit 4 - Deck 5: More models with multiple predictors\n\nSlides\n\n\nSource\n\n\nVideo\n\n\n\n\nClassification and model building\n\nUnit 4 - Deck 6: Logistic regression\n\nSlides\n\n\nSource\n\n\nVideo\n\n\nIMS :: Chp 9 - Logistic regression\n\n\n\nUnit 4 - Deck 7: Prediction and overfitting\n\nSlides\n\n\nSource\n\n\nVideo\n\n\ntidymodels :: Build a model\n\n\n\nUnit 4 - Deck 8: Feature engineering\n\nSlides\n\n\nSource\n\n\nVideo\n\n\ntidymodels :: Preprocess your data with recipes\n\n\n\n\nModel validation\n\nUnit 4 - Deck 9: Cross validation\n\nSlides\n\n\nSource\n\n\nVideo\n\n\ntidymodels :: Evaluate your model with resampling\n\n\n\nThe Office + Feature engineering, Pt. 1\n\nSource\n\n\nVideo\n\n\n\nThe Office + Cross validation, Pt. 2\n\nSource\n\n\nVideo\n\n\n\n\nUncertainty quantification\n\nUnit 4 - Deck 10: Quantifying uncertainty\n\nSlides\n\n\nSource\n\n\nVideo\n\n\n\nUnit 4 - Deck 11: Bootstrapping\n\nSlides\n\n\nSource\n\n\nVideo\n\n\nIMS :: Chp 12 - Confidence intervals with bootstrapping\n\n\n\nUnit 4 - Deck 12: Hypothesis testing\n\nSlides\n\n\nSource\n\n\nIMS :: Chp 11 - Hypothesis testing with randomization\n\n\n\nUnit 4 - Deck 13: Inference overview\n\nSlides\n\n\nSource",
-    "crumbs": [
-      "Content",
-      "Making rigorous conclusions"
-    ]
-  },
-  {
-    "objectID": "02-making-rigorous-conclusions.html#labs",
-    "href": "02-making-rigorous-conclusions.html#labs",
-    "title": "Making rigorous conclusions",
-    "section": "Labs",
-    "text": "Labs\n\nLab 10: Grading the professor, Pt. 1\nFitting and interpreting simple linear regression models\n\nInstructions\n\n\nSource\n\n\nStarter\n\n\n\nLab 11: Grading the professor, Pt. 2\nFitting and interpreting multiple linear regression models\n\nInstructions\n\n\nSource\n\n\nStarter\n\n\n\nLab 12: Smoking while pregnant\nConstructing confidence intervals, conducting hypothesis tests, and interpreting results in context of the data\n\nInstructions\n\n\nSource\n\n\nStarter",
-    "crumbs": [
-      "Content",
-      "Making rigorous conclusions"
-    ]
-  },
-  {
-    "objectID": "02-making-rigorous-conclusions.html#homework-assignments",
-    "href": "02-making-rigorous-conclusions.html#homework-assignments",
-    "title": "Making rigorous conclusions",
-    "section": "Homework assignments",
-    "text": "Homework assignments\n\nHW 7: Bike rentals in DC\nExploratory data analysis and fitting and interpreting models\n\nInstructions\n\n\nSource\n\n\nStarter\n\n\n\nHW 8: Exploring the GSS\nFitting and interpreting models\n\nInstructions\n\n\nSource\n\n\nStarter\n\n\n\nHW 9: Modelling the GSS\nModel validation and inference\n\nInstructions\n\n\nSource\n\n\nStarter",
-    "crumbs": [
-      "Content",
-      "Making rigorous conclusions"
-    ]
-  },
-  {
     "objectID": "kudos/kudos.html",
     "href": "kudos/kudos.html",
     "title": "CS112 - Data Structures",
@@ -128,22 +84,11 @@
     ]
   },
   {
-    "objectID": "weekly-activities/week03.html#readings",
-    "href": "weekly-activities/week03.html#readings",
-    "title": "Week 3: Classes, Operator Overloading, etc.",
-    "section": "Readings",
-    "text": "Readings\nNo readings for Week 3.",
-    "crumbs": [
-      "Content",
-      "Week 3: Classes, Operator Overloading, etc."
-    ]
-  },
-  {
     "objectID": "weekly-activities/week03.html#slides-videos-and-application-exercises",
     "href": "weekly-activities/week03.html#slides-videos-and-application-exercises",
     "title": "Week 3: Classes, Operator Overloading, etc.",
     "section": "Slides, videos, and application exercises",
-    "text": "Slides, videos, and application exercises\n\nWeek 3: Slides\n\nSlides\n\n\nSource\n\n\n\n\n\nLab 3: Classes\nFitting and interpreting simple linear regression models\n\nInstructions\n\n\nSource\n\n\n\n\nHW 10: Wrapping up\nModel validation and inference\n\nInstructions\n\n\nSource\n\n\nStarter",
+    "text": "Slides, videos, and application exercises\n\nWeek 3: Slides\n\nSlides\n\n\nSource\n\n\nNo readings for Week 3.\n\n\n\n\n\n\nLab 3: Classes\nFitting and interpreting simple linear regression models\n\nInstructions\n\n\nSource\n\n\n\n\nProject 3: Classes\nModel validation and inference\n\nInstructions\n\n\nSource\n\n\nStarter",
     "crumbs": [
       "Content",
       "Week 3: Classes, Operator Overloading, etc."
@@ -1057,106 +1002,32 @@
     "text": "Data dictionary\nBelow is the full data dictionary. Note that it is long (there are lots of variables in the data), but we will be using a limited set of the variables for our analysis.\n\n\n\n\n\n\n\n\nvariable\nclass\ndescription\n\n\n\n\nhotel\ncharacter\nHotel (H1 = Resort Hotel or H2 = City Hotel)\n\n\nis_canceled\ndouble\nValue indicating if the booking was canceled (1) or not (0)\n\n\nlead_time\ndouble\nNumber of days that elapsed between the entering date of the booking into the PMS and the arrival date\n\n\narrival_date_year\ndouble\nYear of arrival date\n\n\narrival_date_month\ncharacter\nMonth of arrival date\n\n\narrival_date_week_number\ndouble\nWeek number of year for arrival date\n\n\narrival_date_day_of_month\ndouble\nDay of arrival date\n\n\nstays_in_weekend_nights\ndouble\nNumber of weekend nights (Saturday or Sunday) the guest stayed or booked to stay at the hotel\n\n\nstays_in_week_nights\ndouble\nNumber of week nights (Monday to Friday) the guest stayed or booked to stay at the hotel\n\n\nadults\ndouble\nNumber of adults\n\n\nchildren\ndouble\nNumber of children\n\n\nbabies\ndouble\nNumber of babies\n\n\nmeal\ncharacter\nType of meal booked. Categories are presented in standard hospitality meal packages:  Undefined/SC – no meal package;BB – Bed & Breakfast;  HB – Half board (breakfast and one other meal – usually dinner);  FB – Full board (breakfast, lunch and dinner)\n\n\ncountry\ncharacter\nCountry of origin. Categories are represented in the ISO 3155–3:2013 format\n\n\nmarket_segment\ncharacter\nMarket segment designation. In categories, the term “TA” means “Travel Agents” and “TO” means “Tour Operators”\n\n\ndistribution_channel\ncharacter\nBooking distribution channel. The term “TA” means “Travel Agents” and “TO” means “Tour Operators”\n\n\nis_repeated_guest\ndouble\nValue indicating if the booking name was from a repeated guest (1) or not (0)\n\n\nprevious_cancellations\ndouble\nNumber of previous bookings that were cancelled by the customer prior to the current booking\n\n\nprevious_bookings_not_canceled\ndouble\nNumber of previous bookings not cancelled by the customer prior to the current booking\n\n\nreserved_room_type\ncharacter\nCode of room type reserved. Code is presented instead of designation for anonymity reasons\n\n\nassigned_room_type\ncharacter\nCode for the type of room assigned to the booking. Sometimes the assigned room type differs from the reserved room type due to hotel operation reasons (e.g. overbooking) or by customer request. Code is presented instead of designation for anonymity reasons\n\n\nbooking_changes\ndouble\nNumber of changes/amendments made to the booking from the moment the booking was entered on the PMS until the moment of check-in or cancellation\n\n\ndeposit_type\ncharacter\nIndication on if the customer made a deposit to guarantee the booking. This variable can assume three categories:No Deposit – no deposit was made;Non Refund – a deposit was made in the value of the total stay cost;Refundable – a deposit was made with a value under the total cost of stay.\n\n\nagent\ncharacter\nID of the travel agency that made the booking\n\n\ncompany\ncharacter\nID of the company/entity that made the booking or responsible for paying the booking. ID is presented instead of designation for anonymity reasons\n\n\ndays_in_waiting_list\ndouble\nNumber of days the booking was in the waiting list before it was confirmed to the customer\n\n\ncustomer_type\ncharacter\nType of booking, assuming one of four categories:Contract - when the booking has an allotment or other type of contract associated to it;Group – when the booking is associated to a group;Transient – when the booking is not part of a group or contract, and is not associated to other transient booking;Transient-party – when the booking is transient, but is associated to at least other transient booking\n\n\nadr\ndouble\nAverage Daily Rate as defined by dividing the sum of all lodging transactions by the total number of staying nights\n\n\nrequired_car_parking_spaces\ndouble\nNumber of car parking spaces required by the customer\n\n\ntotal_of_special_requests\ndouble\nNumber of special requests made by the customer (e.g. twin bed or high floor)\n\n\nreservation_status\ncharacter\nReservation last status, assuming one of three categories:Canceled – booking was canceled by the customer;Check-Out – customer has checked in but already departed;No-Show – customer did not check-in and did inform the hotel of the reason why\n\n\nreservation_status_date\ndouble\nDate at which the last status was set. This variable can be used in conjunction with the ReservationStatus to understand when was the booking canceled or when did the customer checked-out of the hotel"
   },
   {
-    "objectID": "policies.html",
-    "href": "policies.html",
-    "title": "Course Policies",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Welcome to CS112 - Data Structures",
     "section": "",
-    "text": "Your grade in this course will be based on:\n\nDaily Quizzes: 5%\n\nThe lowest 3 quizzes will be dropped.\n\nLabs: 20%\nHomework projects: 25%\nTests (5, including the final test during the Exam time): 50%\n\nThe lowest test score will be dropped.",
-    "crumbs": [
-      "Course Policies"
-    ]
+    "text": "CS 112 uses the C++ programming language to introduce students to the elementary data structures (vectors, lists, stacks, queues, binary search trees, …), recursion, big-oh notation, and other intermediate-level programming topics.\nThis a permanently in construction website, so please let us know if you find any information missing or had some bad experience with the links and interface throughout the semester.\nHere you will find all information needed to do well during the course."
   },
   {
-    "objectID": "policies.html#grace-days",
-    "href": "policies.html#grace-days",
-    "title": "Course Policies",
-    "section": "Grace Days",
-    "text": "Grace Days\nYou have 8 Grace Days available to you during the semester. These grace days may be used to submit an assignment late without penalty. Grace Days Remaining will be seen in the GradeBook in Moodle.\nHere are some circumstances in which you might use grace days:\n\nYou are an athlete and you have a very busy week. Use a few grace days to catch up the next week.\nYou become ill (physically or mentally) and cannot do the work on time.\nYou need to go home for an emergency.\n\nHere is the procedure for using grace days:\n\nDO NOT email me to tell me you are going to use grace days. I don’t need to know this – there is no action I need to take if you tell me this.\nWhen your assignment grade comes back and you have lost points due to lateness, then use the Grade Appeal app to ask for the points to be restored and tell me how many grace days you want to use for that.",
-    "crumbs": [
-      "Course Policies"
-    ]
+    "objectID": "index.html#student-learning-outcomes",
+    "href": "index.html#student-learning-outcomes",
+    "title": "Welcome to CS112 - Data Structures",
+    "section": "Student Learning Outcomes",
+    "text": "Student Learning Outcomes\nUpon successful completion of this course students will be able to:\n\nUse indirection (pointers) and run-time memory allocation to implement dynamic, generic container classes (e.g., vectors, lists, stacks, queues, trees, etc.).\n\nAnalyze, categorize, and compare the complexity of data structure operations using “big-oh” notation.\n\nDesign and implement recursive data structure operations.\n\nDesign, create, and use unit-tests to test the correctness of data structure operations.\n\nFor select algorithms, use simple parallel computing techniques to improve algorithm performance and measure the improvement."
   },
   {
-    "objectID": "policies.html#extenuating-circumstances",
-    "href": "policies.html#extenuating-circumstances",
-    "title": "Course Policies",
-    "section": "Extenuating Circumstances",
-    "text": "Extenuating Circumstances\nIf you fall ill (physically or mentally) for an extended period of time, AND you send me documentation from Student Life, Student Health Center, or the Center for Health and Wellness, then, and only then, I will consider allowing you to make up late assignments.\nIf you begin to skip class repeatedly due to mental health problems, go to the Center for Health and Wellness! Don’t delay!",
-    "crumbs": [
-      "Course Policies"
-    ]
+    "objectID": "index.html#course-organization",
+    "href": "index.html#course-organization",
+    "title": "Welcome to CS112 - Data Structures",
+    "section": "Course Organization",
+    "text": "Course Organization\nThe course is organized around these components:\n\nThe lectures that will introduce data structures topics at the conceptual level;\nThe labs in which students will (in pairs) practice using and building data structures; and\nThe projects in which students will (individually) practice using and building data structures.\n\nEach week’s lectures, labs and projects will cover the same concepts, but will do so in different ways.\nThe first 4 weeks will be dedicated to learning C++. After that, we will begin studying data structures."
   },
   {
-    "objectID": "policies.html#incompletes",
-    "href": "policies.html#incompletes",
-    "title": "Course Policies",
-    "section": "Incompletes",
-    "text": "Incompletes\nAn Incomplete (I) grade will be granted only in unusual circumstances, and only if those circumstances have been verified by the Student Life Office. Procrastination does not qualify as an unusual circumstance.\nNo work will be accepted after the last day of classes.",
-    "crumbs": [
-      "Course Policies"
-    ]
-  },
-  {
-    "objectID": "policies.html#classroom-policy",
-    "href": "policies.html#classroom-policy",
-    "title": "Course Policies",
-    "section": "Classroom Policy",
-    "text": "Classroom Policy\n\n\n\n\n\n\nIMPORTANT!\n\n\n\nNo phones, no laptops, unless we tell you you can.\n\n\nThis is a difficult class, and you don’t need to be distracted by goofing around on your phone or laptop. And, I don’t want you to distract others.\nDaily Quizzes will be administered in the first 5 minutes of class, on Moodle. Do not show up late to class.",
-    "crumbs": [
-      "Course Policies"
-    ]
-  },
-  {
-    "objectID": "policies.html#attendance",
-    "href": "policies.html#attendance",
-    "title": "Course Policies",
-    "section": "Attendance",
-    "text": "Attendance\nClass attendance is optional.\nAlso, lab attendance is required! Lab is not optional. Skipping lab may result in you doing poorly in class.\nMissing class due to illness: if you are going to miss class due to (physical or mental) illness, please send me an email before class.",
-    "crumbs": [
-      "Course Policies"
-    ]
-  },
-  {
-    "objectID": "policies.html#disabilities",
-    "href": "policies.html#disabilities",
-    "title": "Course Policies",
-    "section": "Disabilities",
-    "text": "Disabilities\nCalvin University is committed to providing access to all students. If you are a student with a documented disability, please notify a Disability Coordinator in Student Success (located in Hiemenga Hall 227) to discuss necessary accommodations. If you have an accommodation memo, please come talk to me in the first two weeks of class. If you are a student needing reasonable modifications for pregnancy and related conditions, please contact the Title IX Coordinator in Student Life (located in Spoelhof University Center 364).",
-    "crumbs": [
-      "Course Policies"
-    ]
-  },
-  {
-    "objectID": "policies.html#statement-of-diversity-and-inclusion",
-    "href": "policies.html#statement-of-diversity-and-inclusion",
-    "title": "Course Policies",
-    "section": "Statement of Diversity and Inclusion",
-    "text": "Statement of Diversity and Inclusion\nInside and outside of the classroom, I work to treat every person with equal respect, regardless of racial identity, gender identity, physicality, brain chemistry, nationality, political leanings, and religious background. Whoever you are, you are fearfully and wonderfully made. God delights in diversity and I do, too. We humans need diverse viewpoints because every viewpoint, on its own, has blind spots. That has been proven to be true in technology-related fields, where under-represented minorities are significantly under-represented in the working world. When companies work hard to rectify this, they find their products and services improve. We have found this to be true in Computer Science classrooms as well.\n\n\n\n\n\n\nIMPORTANT!\n\n\n\nIf you or someone else in this class is hurt by something I say or do in class, I would like to know about it so that we can work toward a remedy. This has happened in the past in my classroom – usually when I’m trying to be “cool” or be funny. If this happens this semester, please know that it was unintentional. Because this kind of feedback can be uncomfortable for all involved, I’ll take it however it comes: in public or in private, on the spot or days later, directly from you or indirectly through another student, another professor, or through my department chair Keith VanderLinden (kvlinden@calvin.edu).\n\n\n\n\n\n\n\n\nCallout by Prof. Norman!\n\n\n\nAlso, please note that I am half deaf (at least). I am completely deaf on my left side. This results in my not being able to hear students that speak quietly, and not being able to tell which direction sounds are coming from. Please speak loudly! Thanks.",
-    "crumbs": [
-      "Course Policies"
-    ]
-  },
-  {
-    "objectID": "02-interactive-tutorials.html",
-    "href": "02-interactive-tutorials.html",
-    "title": "Interactive tutorials",
-    "section": "",
-    "text": "The following interactive tutorials have been built with learnr and gradethis. They’re available on shinyapps.io (linked) as well as distributed with the dsbox package.1 With the dsbox package installed, you can also run these tutorials in the Tutorials pane of your RStudio window. This might be preferable for courses with high enrollment where students need to access the tutorials at the same time.\nNote that many of these include examples and questions from the homework assignments listed earlier. You can think of these as interactive, auto-feedback versions of the simpler questions in the homework assignments. If using both the tutorials and the homework assignments in your teaching, I recommend modifying the homework assignments to remove the redundant questions (they will usually be the earlier, shorter, simpler questions) and making the homework assignment shorter. Students will ultimately get exposed to the same material, but get auto-feedback in the tutorials and human feedback on the homework assignments.\nIf you would like to learn about making your own tutorials with learnr, I strongly recommend reviewing the video and materials from the following 1.5 hour workshop: Building interactive tutorials in R.",
-    "crumbs": [
-      "Content",
-      "Interactive tutorials"
-    ]
-  },
-  {
-    "objectID": "02-interactive-tutorials.html#footnotes",
-    "href": "02-interactive-tutorials.html#footnotes",
-    "title": "Interactive tutorials",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\nThe dsbox package is not yet on CRAN, until then you will need to install from GitHub with devtools::install_github(\"rstudio-education/dsbox\").↩︎",
-    "crumbs": [
-      "Content",
-      "Interactive tutorials"
-    ]
+    "objectID": "index.html#acknowledgements",
+    "href": "index.html#acknowledgements",
+    "title": "Welcome to CS112 - Data Structures",
+    "section": "Acknowledgements",
+    "text": "Acknowledgements\nThis website is built with Quarto, the lovely icons by icons8. The original code used to build this website can be found at DS Box. We are very grateful for their work!"
   },
   {
     "objectID": "instructors.html",
@@ -1233,28 +1104,6 @@
     "crumbs": [
       "Content",
       "Exams"
-    ]
-  },
-  {
-    "objectID": "02-hello-world.html",
-    "href": "02-hello-world.html",
-    "title": "Hello world",
-    "section": "",
-    "text": "I recommend starting the class off right, devoting more of the class time to introducing the course content instead of the course policies. And get students doing something with data as quickly as possible! A personal goal of mine is to get students to produce their first data visualization within the first 10 minutes of class. The application exercise in this lecture is one way of achieving this goal. Slides for Day One of class are provided below.\nNote that getting students computing on Day One in class requires that they come to class equipped with a laptop or that you’re holding your course online or in a computer lab. If teaching online, this is resolved automatically, of course. They do not need to do any preparation ahead of time, just need internet access. As outlined in the slides, give them a link to your RStudio Cloud workspace and get them started working on the application exercise you put together for them. There are two options for a day one application exercise. Note that one of them uses COVID-19 data and depending on where, when, and to whom you’re teaching, working with these data might not be the most pleasant experience for all students. Please make sure to consider this before using this activity.",
-    "crumbs": [
-      "Content",
-      "Hello world"
-    ]
-  },
-  {
-    "objectID": "02-hello-world.html#slides-videos-and-application-exercises",
-    "href": "02-hello-world.html#slides-videos-and-application-exercises",
-    "title": "Hello world",
-    "section": "Slides, videos, and application exercises",
-    "text": "Slides, videos, and application exercises\n\nUnit 1 - Deck 1: Welcome\n\nSlides\n\n\nSource\n\n\nVideo\n\n\n\nFirst dataviz\n\nOption 1 - UN Votes\n\nSource\n\n\nVideo\n\n\n\nOption 2 - COVID-19\n\nSource\n\n\n\n\nUnit 1 - Deck 2: Meet the toolkit - Programming\n\nSlides\n\n\nSource\n\n\nVideo\n\n\n\nR4DS :: Chp 2 - Introduction\nIMS :: Sec 1.1 & 1.2 - Case study & Data basics\n\n\n\n\nBechdel + R Markdown\n\nSource\n\n\n\nUnit 1 - Deck 3: Meet the toolkit - Version control and collaboration\n\nSlides\n\n\nSource\n\n\nVideo",
-    "crumbs": [
-      "Content",
-      "Hello world"
     ]
   },
   {
@@ -1383,108 +1232,105 @@
     ]
   },
   {
-    "objectID": "02-ethics.html",
-    "href": "02-ethics.html",
-    "title": "Data science ethics",
+    "objectID": "02-interactive-tutorials.html",
+    "href": "02-interactive-tutorials.html",
+    "title": "Interactive tutorials",
     "section": "",
-    "text": "This unit touches on data science ethics, specifically on issues of misrepresentation of data and results, data privacy, and algorithmic bias. Course lectures are supplemented with “guest lectures” from domain experts.",
+    "text": "The following interactive tutorials have been built with learnr and gradethis. They’re available on shinyapps.io (linked) as well as distributed with the dsbox package.1 With the dsbox package installed, you can also run these tutorials in the Tutorials pane of your RStudio window. This might be preferable for courses with high enrollment where students need to access the tutorials at the same time.\nNote that many of these include examples and questions from the homework assignments listed earlier. You can think of these as interactive, auto-feedback versions of the simpler questions in the homework assignments. If using both the tutorials and the homework assignments in your teaching, I recommend modifying the homework assignments to remove the redundant questions (they will usually be the earlier, shorter, simpler questions) and making the homework assignment shorter. Students will ultimately get exposed to the same material, but get auto-feedback in the tutorials and human feedback on the homework assignments.\nIf you would like to learn about making your own tutorials with learnr, I strongly recommend reviewing the video and materials from the following 1.5 hour workshop: Building interactive tutorials in R.",
     "crumbs": [
       "Content",
-      "Data science ethics"
+      "Interactive tutorials"
     ]
   },
   {
-    "objectID": "02-ethics.html#slides-videos-and-application-exercises",
-    "href": "02-ethics.html#slides-videos-and-application-exercises",
-    "title": "Data science ethics",
-    "section": "Slides, videos, and application exercises",
-    "text": "Slides, videos, and application exercises\n\nUnit 3 - Deck 1: Misrepresentation\n\nSlides\n\n\nSource\n\n\nVideo\n\n\n\nAlberto Cairo - How charts lie\n\nVideo\n\n\n\nUnit 3 - Deck 2: Data privacy\n\nSlides\n\n\nSource\n\n\nVideo\n\n\n\nThe Guardian - Cambridge Analytica whistleblower\n\nVideo\n\n\n\nUnit 3 - Deck 3: Algorithmic bias\n\nSlides\n\n\nSource\n\n\nVideo\n\n\n\nJoy Buolamwini - How I’m fighting bias in algorithms\n\nVideo\n\n\n\nCathy O’Neil - Weapons of Math Destruction\n\nVideo\n\n\n\nSafiya Umoja Noble - Imagining a Future Free from the Algorithms of Oppression\n\nVideo\n\n\n\nKristian Lum - What’s An Algorithm Got To Do With It\n\nVideo",
+    "objectID": "02-interactive-tutorials.html#footnotes",
+    "href": "02-interactive-tutorials.html#footnotes",
+    "title": "Interactive tutorials",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nThe dsbox package is not yet on CRAN, until then you will need to install from GitHub with devtools::install_github(\"rstudio-education/dsbox\").↩︎",
     "crumbs": [
       "Content",
-      "Data science ethics"
+      "Interactive tutorials"
     ]
   },
   {
-    "objectID": "02-ethics.html#labs",
-    "href": "02-ethics.html#labs",
-    "title": "Data science ethics",
-    "section": "Labs",
-    "text": "Labs\n\nLab 9: Conveying the right message through visualisation\nImproving data visualisations to better convey the right message\n\nInstructions\n\n\nSource\n\n\nStarter",
-    "crumbs": [
-      "Content",
-      "Data science ethics"
-    ]
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Welcome to CS112 - Data Structures",
+    "objectID": "policies.html",
+    "href": "policies.html",
+    "title": "Course Policies",
     "section": "",
-    "text": "CS 112 uses the C++ programming language to introduce students to the elementary data structures (vectors, lists, stacks, queues, binary search trees, …), recursion, big-oh notation, and other intermediate-level programming topics.\nThis a permanently in construction website, so please let us know if you find any information missing or had some bad experience with the links and interface throughout the semester.\nHere you will find all information needed to do well during the course."
-  },
-  {
-    "objectID": "index.html#student-learning-outcomes",
-    "href": "index.html#student-learning-outcomes",
-    "title": "Welcome to CS112 - Data Structures",
-    "section": "Student Learning Outcomes",
-    "text": "Student Learning Outcomes\nUpon successful completion of this course students will be able to:\n\nUse indirection (pointers) and run-time memory allocation to implement dynamic, generic container classes (e.g., vectors, lists, stacks, queues, trees, etc.).\n\nAnalyze, categorize, and compare the complexity of data structure operations using “big-oh” notation.\n\nDesign and implement recursive data structure operations.\n\nDesign, create, and use unit-tests to test the correctness of data structure operations.\n\nFor select algorithms, use simple parallel computing techniques to improve algorithm performance and measure the improvement."
-  },
-  {
-    "objectID": "index.html#course-organization",
-    "href": "index.html#course-organization",
-    "title": "Welcome to CS112 - Data Structures",
-    "section": "Course Organization",
-    "text": "Course Organization\nThe course is organized around these components:\n\nThe lectures that will introduce data structures topics at the conceptual level;\nThe labs in which students will (in pairs) practice using and building data structures; and\nThe projects in which students will (individually) practice using and building data structures.\n\nEach week’s lectures, labs and projects will cover the same concepts, but will do so in different ways.\nThe first 4 weeks will be dedicated to learning C++. After that, we will begin studying data structures."
-  },
-  {
-    "objectID": "index.html#acknowledgements",
-    "href": "index.html#acknowledgements",
-    "title": "Welcome to CS112 - Data Structures",
-    "section": "Acknowledgements",
-    "text": "Acknowledgements\nThis website is built with Quarto, the lovely icons by icons8. The original code used to build this website can be found at DS Box. We are very grateful for their work!"
-  },
-  {
-    "objectID": "02-exploring-data.html",
-    "href": "02-exploring-data.html",
-    "title": "Exploring data",
-    "section": "",
-    "text": "This unit focuses on data visualization and data wrangling. Specifically we cover fundamentals of data and data visualization, confounding variables, and Simpson’s paradox as well as the concept of tidy data, data import, data cleaning, and data curation. We end the unit with web scraping and introduce the idea of iteration in preparation for the next unit. Also in this unit students are introduced to the toolkit: R, RStudio, R Markdown, Git, and GitHub.",
+    "text": "Your grade in this course will be based on:\n\nDaily Quizzes: 5%\n\nThe lowest 3 quizzes will be dropped.\n\nLabs: 20%\nHomework projects: 25%\nTests (5, including the final test during the Exam time): 50%\n\nThe lowest test score will be dropped.",
     "crumbs": [
-      "Content",
-      "Exploring data"
+      "Course Policies"
     ]
   },
   {
-    "objectID": "02-exploring-data.html#slides-videos-and-application-exercises",
-    "href": "02-exploring-data.html#slides-videos-and-application-exercises",
-    "title": "Exploring data",
-    "section": "Slides, videos, and application exercises",
-    "text": "Slides, videos, and application exercises\n\nVisualising data\n\nUnit 2 - Deck 1: Data and visualisation\n\nSlides\n\n\nSource\n\n\nVideo\n\n\n\nUnit 2 - Deck 2: Visualising data with ggplot2\n\nSlides\n\n\nSource\n\n\nVideo\n\n\nR4DS :: Chp 3 - Data visualization\n\n\n\nUnit 2 - Deck 3: Visualising numerical data\n\nSlides\n\n\nSource\n\n\nVideo\n\n\nIMS :: Chp 4 - Exploring numerical data\n\n\n\nUnit 2 - Deck 4: Visualising categorical data\n\nSlides\n\n\nSource\n\n\nVideo\n\n\nIMS :: Chp 5 - Exploring categorical data\n\n\n\nStarWars + Dataviz\n\nSource\n\n\nVideo\n\n\n\n\nWrangling and tidying data\n\nUnit 2 - Deck 5: Tidy data\n\nSlides\n\n\nSource\n\n\nVideo\n\n\nJSS :: Tidy data\n\n\n\nUnit 2 - Deck 6: Grammar of data wrangling\n\nSlides\n\n\nSource\n\n\nVideo\n\n\n\nUnit 2 - Deck 7: Working with a single data frame\n\nSlides\n\n\nSource\n\n\nVideo\n\n\nR4DS :: Chp 5 - Data transformation\n\n\n\nUnit 2 - Deck 8: Working with multiple data frames\n\nSlides\n\n\nSource\n\n\nVideo\n\n\nR4DS :: Chp 13 - Relational data\n\n\n\nUnit 2 - Deck 9: Tidying data\n\nSlides\n\n\nSource\n\n\nVideo\n\n\nR4DS :: Chp 12 - Tidy data\n\n\n\nHotels + Data wrangling\n\nSource\n\n\nVideo\n\n\n\n\nImporting and recoding data\n\nUnit 2 - Deck 10: Data types\n\nSlides\n\n\nSource\n\n\nVideo\n\n\n\nUnit 2 - Deck 11: Data classes\n\nSlides\n\n\nSource\n\n\nVideo\n\n\nR4DS :: Chp 15 - Factors\n\n\n\nUnit 2 - Deck 12: Importing data\n\nSlides\n\n\nSource\n\n\nVideo\n\n\nR4DS :: Chp 11 - Data import\n\n\n\nUnit 2 - Deck 13: Recoding data\n\nSlides\n\n\nSource\n\n\nVideo\n\n\nR4DS :: Sec 16.1 - 16.3 - Dates and times\n\n\n\nHotels + Data types\n\nSource\n\n\nSource\n\n\nVideo\n\n\n\nNobels + Sales + Data import\n\nSource\n\n\nSource\n\n\nVideo\n\n\n\n\nCommunicating data science results effectively\n\nUnit 2 - Deck 14: Tips for effective data visualization\n\nSlides\n\n\nSource\n\n\nVideo\n\n\nIMS :: Chp 6 - Applications: Explore\n\n\n\nBrexit + Telling stories with dataviz\n\nSource\n\n\nVideo\n\n\n\nUnit 2 - Deck 15: Scientific studies and confounding\n\nSlides\n\n\nSource\n\n\nVideo\n\n\nIMS :: Chp 2 - Study design\n\n\n\nUnit 2 - Deck 16: Simpson’s paradox\n\nSlides\n\n\nSource\n\n\nVideo\n\n\n\nUnit 2 - Deck 17: Doing data science\n\nSlides\n\n\nSource\n\n\nVideo\n\n\nR4DS :: Chp 7 - Exploratory data analysis\n\n\n\n\nWeb scraping and programming\n\nUnit 2 - Deck 18: Web scraping\n\nSlides\n\n\nSource\n\n\nVideo\n\n\n\nUnit 2 - Deck 19: Scraping top 250 movies on IMDB\n\nSlides\n\n\nSource\n\n\nVideo\n\n\n\nUnit 2 - Deck 20: Web scraping considerations\n\nSlides\n\n\nSource\n\n\nVideo\n\n\n\nIMDB + Web scraping\n\nSource\n\n\nVideo\n\n\n\nUnit 2 - Deck 21: Functions\n\nSlides\n\n\nSource\n\n\nVideo\n\n\nR4DS :: Chp 19 - Functions\n\n\n\nUnit 2 - Deck 22: Iteration\n\nSlides\n\n\nSource\n\n\nVideo\n\n\nR4DS :: Chp 20 - Iteration",
+    "objectID": "policies.html#grace-days",
+    "href": "policies.html#grace-days",
+    "title": "Course Policies",
+    "section": "Grace Days",
+    "text": "Grace Days\nYou have 8 Grace Days available to you during the semester. These grace days may be used to submit an assignment late without penalty. Grace Days Remaining will be seen in the GradeBook in Moodle.\nHere are some circumstances in which you might use grace days:\n\nYou are an athlete and you have a very busy week. Use a few grace days to catch up the next week.\nYou become ill (physically or mentally) and cannot do the work on time.\nYou need to go home for an emergency.\n\nHere is the procedure for using grace days:\n\nDO NOT email me to tell me you are going to use grace days. I don’t need to know this – there is no action I need to take if you tell me this.\nWhen your assignment grade comes back and you have lost points due to lateness, then use the Grade Appeal app to ask for the points to be restored and tell me how many grace days you want to use for that.",
     "crumbs": [
-      "Content",
-      "Exploring data"
+      "Course Policies"
     ]
   },
   {
-    "objectID": "02-exploring-data.html#labs",
-    "href": "02-exploring-data.html#labs",
-    "title": "Exploring data",
-    "section": "Labs",
-    "text": "Labs\n\nLab 1: Hello R\nIntroduction to R, R Markdown, Git, and GitHub\n\nInstructions\n\n\nSource\n\n\nStarter\n\n\n\nLab 2: Plastic waste\nIntroduction to working with data in R with the tidyverse\n\nInstructions\n\n\nSource\n\n\nStarter\n\n\n\nLab 3: Nobel laureates\nData wrangling and tidying\n\nInstructions\n\n\nSource\n\n\nStarter\n\n\n\nLab 4: La Quinta is Spanish for ‘next to Denny’s’, Pt. 1\nVisualizing spatial data\n\nInstructions\n\n\nSource\n\n\nStarter\n\n\n\nLab 5: La Quinta is Spanish for ‘next to Denny’s’, Pt. 2\nWrangling spatial data\n\nInstructions\n\n\nSource\n\n\nStarter\n\n\n\nLab 6: Sad plots\nCritiquing and improving data visualisations\n\nInstructions\n\n\nSource\n\n\nStarter\n\n\n\nLab 7: Simpson’s paradox\nData visualisation, confounding, multivariable relationships\n\nInstructions\n\n\nSource\n\n\nStarter\n\n\n\nLab 8: University of Edinburgh Art Collection\nWeb scraping, function, iteration\n\nInstructions\n\n\nSource\n\n\nStarter",
+    "objectID": "policies.html#extenuating-circumstances",
+    "href": "policies.html#extenuating-circumstances",
+    "title": "Course Policies",
+    "section": "Extenuating Circumstances",
+    "text": "Extenuating Circumstances\nIf you fall ill (physically or mentally) for an extended period of time, AND you send me documentation from Student Life, Student Health Center, or the Center for Health and Wellness, then, and only then, I will consider allowing you to make up late assignments.\nIf you begin to skip class repeatedly due to mental health problems, go to the Center for Health and Wellness! Don’t delay!",
     "crumbs": [
-      "Content",
-      "Exploring data"
+      "Course Policies"
     ]
   },
   {
-    "objectID": "02-exploring-data.html#homework-assignments",
-    "href": "02-exploring-data.html#homework-assignments",
-    "title": "Exploring data",
-    "section": "Homework assignments",
-    "text": "Homework assignments\n\nHW 1: Pet names\nIntroduction to working with data in R with the tidyverse\n\nInstructions\n\n\nSource\n\n\nStarter\n\n\n\nHW 2: Edinburgh Airbnb rentals\nData visualisation with the tidyverse\n\nInstructions\n\n\nSource\n\n\nStarter\n\n\n\nHW 3: Road traffic accidents\nData wrangling, tidying, and visualization\n\nInstructions\n\n\nSource\n\n\nStarter\n\n\n\nHW 4: What should I major in?\nMore data wrangling, summarizing, and visualization\n\nInstructions\n\n\nSource\n\n\nStarter\n\n\n\nHW 5: Legos\nMore data wrangling, summarizing, and visualization\n\nInstructions\n\n\nSource\n\n\nStarter\n\n\n\nHW 6: Money in politics\nWeb scraping, functions, and iteration\n\nInstructions\n\n\nSource\n\n\nStarter",
+    "objectID": "policies.html#incompletes",
+    "href": "policies.html#incompletes",
+    "title": "Course Policies",
+    "section": "Incompletes",
+    "text": "Incompletes\nAn Incomplete (I) grade will be granted only in unusual circumstances, and only if those circumstances have been verified by the Student Life Office. Procrastination does not qualify as an unusual circumstance.\nNo work will be accepted after the last day of classes.",
     "crumbs": [
-      "Content",
-      "Exploring data"
+      "Course Policies"
+    ]
+  },
+  {
+    "objectID": "policies.html#classroom-policy",
+    "href": "policies.html#classroom-policy",
+    "title": "Course Policies",
+    "section": "Classroom Policy",
+    "text": "Classroom Policy\n\n\n\n\n\n\nIMPORTANT!\n\n\n\nNo phones, no laptops, unless we tell you you can.\n\n\nThis is a difficult class, and you don’t need to be distracted by goofing around on your phone or laptop. And, I don’t want you to distract others.\nDaily Quizzes will be administered in the first 5 minutes of class, on Moodle. Do not show up late to class.",
+    "crumbs": [
+      "Course Policies"
+    ]
+  },
+  {
+    "objectID": "policies.html#attendance",
+    "href": "policies.html#attendance",
+    "title": "Course Policies",
+    "section": "Attendance",
+    "text": "Attendance\nClass attendance is optional.\nAlso, lab attendance is required! Lab is not optional. Skipping lab may result in you doing poorly in class.\nMissing class due to illness: if you are going to miss class due to (physical or mental) illness, please send me an email before class.",
+    "crumbs": [
+      "Course Policies"
+    ]
+  },
+  {
+    "objectID": "policies.html#disabilities",
+    "href": "policies.html#disabilities",
+    "title": "Course Policies",
+    "section": "Disabilities",
+    "text": "Disabilities\nCalvin University is committed to providing access to all students. If you are a student with a documented disability, please notify a Disability Coordinator in Student Success (located in Hiemenga Hall 227) to discuss necessary accommodations. If you have an accommodation memo, please come talk to me in the first two weeks of class. If you are a student needing reasonable modifications for pregnancy and related conditions, please contact the Title IX Coordinator in Student Life (located in Spoelhof University Center 364).",
+    "crumbs": [
+      "Course Policies"
+    ]
+  },
+  {
+    "objectID": "policies.html#statement-of-diversity-and-inclusion",
+    "href": "policies.html#statement-of-diversity-and-inclusion",
+    "title": "Course Policies",
+    "section": "Statement of Diversity and Inclusion",
+    "text": "Statement of Diversity and Inclusion\nInside and outside of the classroom, I work to treat every person with equal respect, regardless of racial identity, gender identity, physicality, brain chemistry, nationality, political leanings, and religious background. Whoever you are, you are fearfully and wonderfully made. God delights in diversity and I do, too. We humans need diverse viewpoints because every viewpoint, on its own, has blind spots. That has been proven to be true in technology-related fields, where under-represented minorities are significantly under-represented in the working world. When companies work hard to rectify this, they find their products and services improve. We have found this to be true in Computer Science classrooms as well.\n\n\n\n\n\n\nIMPORTANT!\n\n\n\nIf you or someone else in this class is hurt by something I say or do in class, I would like to know about it so that we can work toward a remedy. This has happened in the past in my classroom – usually when I’m trying to be “cool” or be funny. If this happens this semester, please know that it was unintentional. Because this kind of feedback can be uncomfortable for all involved, I’ll take it however it comes: in public or in private, on the spot or days later, directly from you or indirectly through another student, another professor, or through my department chair Keith VanderLinden (kvlinden@calvin.edu).\n\n\n\n\n\n\n\n\nCallout by Prof. Norman!\n\n\n\nAlso, please note that I am half deaf (at least). I am completely deaf on my left side. This results in my not being able to hear students that speak quietly, and not being able to tell which direction sounds are coming from. Please speak loudly! Thanks.",
+    "crumbs": [
+      "Course Policies"
     ]
   },
   {
@@ -2312,50 +2158,6 @@
     "crumbs": [
       "Infrastructure",
       "Sharing"
-    ]
-  },
-  {
-    "objectID": "02-looking-further.html",
-    "href": "02-looking-further.html",
-    "title": "Looking further",
-    "section": "",
-    "text": "In the last unit we present a series of modules such as interactive reporting and visualization with Shiny, text analysis, machine learning, and Bayesian inference. These are independent modules that educators can choose to include in their introductory data science curriculum depending on how much time they have left in the semester. Note that the slides in this unit are a bit more sparse than the others, and much of the content is delivered as live coding sessions.",
-    "crumbs": [
-      "Content",
-      "Looking further"
-    ]
-  },
-  {
-    "objectID": "02-looking-further.html#slides-videos-and-application-exercises",
-    "href": "02-looking-further.html#slides-videos-and-application-exercises",
-    "title": "Looking further",
-    "section": "Slides, videos, and application exercises",
-    "text": "Slides, videos, and application exercises\n\nUnit 5 - Deck 1: Text analysis\n\nSlides\n\n\nSource\n\n\nVideo\n\n\n\nUnit 5 - Deck 2: Comparing texts\n\nSlides\n\n\nSource\n\n\nVideo\n\n\n\nUnit 5 - Deck 3: Interactive web apps\n\nSlides\n\n\nSource\n\n\nVideo\n\n\n\nUnit 5 - Deck 4: Machine learning\n\nSlides\n\n\nSource\n\n\nVideo\n\n\n\nUnit 5 - Deck 5: Interactive data visualisation\n\nSlides\n\n\n\nUnit 5 - Deck 6: Interactive data visualisation and reporting\n\nSlides\n\n\n\nUnit 5 - Deck 7: Bayesian inference\n\nSlides\n\n\nSource",
-    "crumbs": [
-      "Content",
-      "Looking further"
-    ]
-  },
-  {
-    "objectID": "02-looking-further.html#labs",
-    "href": "02-looking-further.html#labs",
-    "title": "Looking further",
-    "section": "Labs",
-    "text": "Labs\n\nLab 13: Working on projects\nFitting and interpreting simple linear regression models\n\nInstructions\n\n\nSource\n\n\n\nLab 14: Collaboration on GitHub\nFitting and interpreting simple linear regression models\n\nInstructions\n\n\nSource",
-    "crumbs": [
-      "Content",
-      "Looking further"
-    ]
-  },
-  {
-    "objectID": "02-looking-further.html#homework-assignments",
-    "href": "02-looking-further.html#homework-assignments",
-    "title": "Looking further",
-    "section": "Homework assignments",
-    "text": "Homework assignments\n\nHW 10: Wrapping up\nModel validation and inference\n\nInstructions\n\n\nSource\n\n\nStarter",
-    "crumbs": [
-      "Content",
-      "Looking further"
     ]
   },
   {

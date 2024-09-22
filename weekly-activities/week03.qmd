@@ -12,10 +12,6 @@ Students will be able to:
 - instantiate objects statically
 - implement Test-driven development for a class.
 
-## Readings
-
-No readings for Week 3.
-
 
 ## Slides, videos, and application exercises
 
@@ -30,6 +26,12 @@ No readings for Week 3.
 [Source](https://github.com/rstudio-education/datascience-box/tree/main/course-materials/_slides/u5-d01-text-analysis)
 :::
 
+::: reading
+No readings for Week 3.
+
+<!-- -   R4DS :: [Chp 2 - Introduction](https://r4ds.had.co.nz/explore-intro.html)
+-   IMS :: [Sec 1.1 & 1.2 - Case study & Data basics](https://openintro-ims.netlify.app/data-hello.html) -->
+:::
 <!-- ::: video
 [Video](https://youtu.be/_YqEHZccujc)
 :::
@@ -48,7 +50,7 @@ Fitting and interpreting simple linear regression models
 [Instructions](labs/lab-03/lab03.qmd)
 :::
 
-::: source
+::: starter
 [Source](https://classroom.github.com/a/1IU3C6dH)
 :::
 :::
@@ -74,3 +76,34 @@ Model validation and inference
 [Starter](https://github.com/rstudio-education/datascience-box/tree/master/course-materials/starters/hw/hw-10-wrap-up)
 :::
 :::
+
+
+
+<!-- ::: application-exercise
+**First dataviz**
+
+> **Option 1 - UN Votes**
+>
+> ::: source
+> [Source](https://github.com/rstudio-education/datascience-box/tree/master/course-materials/application-exercises/ae-01a-un-votes/unvotes.qmd)
+> :::
+>
+> ::: video
+> [Video](https://youtu.be/r-uTBEclM1E)
+> :::
+
+> **Option 2 - COVID-19**
+>
+> ::: source
+> [Source](https://github.com/rstudio-education/datascience-box/blob/master/course-materials/application-exercises/ae-01b-covid/covid.qmd)
+> :::
+::: -->
+
+
+<!-- ::: guest-lecture
+**Alberto Cairo - How charts lie**
+
+::: video
+[Video](https://youtu.be/Low28hx4wyk)
+:::
+::: -->

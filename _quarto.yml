@@ -68,11 +68,6 @@ website:
       contents:
         - href: content.qmd
         - href: weekly-activities/week03.qmd
-        - href: 02-hello-world.qmd
-        - href: 02-exploring-data.qmd
-        - href: 02-ethics.qmd
-        - href: 02-making-rigorous-conclusions.qmd
-        - href: 02-looking-further.qmd
         - href: 02-interactive-tutorials.qmd
         - href: 02-project.qmd
         - href: 02-exams.qmd
