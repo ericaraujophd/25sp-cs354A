@@ -15,3 +15,62 @@ Students will be able to:
 ## Readings
 
 No readings for Week 3.
+
+
+## Slides, videos, and application exercises
+
+::: slide-deck
+**Week 3: Slides**
+
+::: slides
+[Slides](https://docs.google.com/presentation/d/1MHIPb67PUzT9cdGHwnfcYBP5MlFd6_wg44jWBtG3UGc/edit#slide=id.p)
+:::
+
+::: source
+[Source](https://github.com/rstudio-education/datascience-box/tree/main/course-materials/_slides/u5-d01-text-analysis)
+:::
+
+<!-- ::: video
+[Video](https://youtu.be/_YqEHZccujc)
+:::
+-->
+
+:::
+
+<!-- ## Lab -->
+
+::: lab
+**Lab 3: Working on projects**
+
+Fitting and interpreting simple linear regression models
+
+::: instructions
+[Instructions](../labs/lab03.qmd)
+:::
+
+::: source
+[Source](https://github.com/rstudio-education/datascience-box/tree/master/course-materials/lab-instructions/lab-13)
+:::
+:::
+
+
+
+<!-- ## Homework assignments -->
+
+::: homework
+**HW 10: Wrapping up**
+
+Model validation and inference
+
+::: instructions
+[Instructions](https://datasciencebox.org/course-materials/hw-instructions/hw-10/hw-10-wrap-up.html)
+:::
+
+::: source
+[Source](https://github.com/rstudio-education/datascience-box/tree/master/course-materials/hw-instructions/hw-10)
+:::
+
+::: starter
+[Starter](https://github.com/rstudio-education/datascience-box/tree/master/course-materials/starters/hw/hw-10-wrap-up)
+:::
+:::

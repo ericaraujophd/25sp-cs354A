@@ -1,0 +1,21 @@
+---
+title: "Lab 3: Classes"
+---
+
+## Part 1: A Student Class
+
+### Step 0. Prepare
+
+- Click this [link](https://classroom.github.com/a/1IU3C6dH) and then "Accept this assignment".
+- Wait a few seconds and refresh the page. Refresh until the page says "You're ready to go!". The page has a link to a github repo.
+- Click the link to see your new repo on github.com.
+- Click the green Code button and copy the SSH link it shows.
+
+- In a terminal,
+  - ```cd``` to the directory where you are putting all your CS112 assignments.
+  - type ```git clone <paste-the-contents-of-the-link-you-copied>```
+- ```cd``` to the new directory containing your repo.
+- type ```code .``` to start up Visual Studio Code in that directory.
+- Edit **README.md**, putting your and your partner's names and email addresses in the file.
+- Inspect the code you got in the assignment.
+
