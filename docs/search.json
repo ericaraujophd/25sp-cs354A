@@ -55,146 +55,47 @@
     ]
   },
   {
-    "objectID": "03-access-r.html",
-    "href": "03-access-r.html",
-    "title": "Accessing R",
+    "objectID": "02-making-rigorous-conclusions.html",
+    "href": "02-making-rigorous-conclusions.html",
+    "title": "Making rigorous conclusions",
     "section": "",
-    "text": "The RStudio IDE includes a viewable environment, a file browser, data viewer, and a plotting pane, which makes it less intimidating than the bare R shell. Additionally, since it is a full fledged IDE, it also features integrated help, syntax highlighting, and context-aware tab completion, which are all powerful tools that help flatten the learning curve.\nRStudio Cloud is a managed cloud instance of the RStudio IDE. We recommend having students access RStudio via RStudio Cloud as opposed to using a local installation. The main reason for this choice is reducing friction at first exposure to R. Local installation can be difficult to manage, both for the student and the instructor, and can shift the focus away from data science learning at the beginning of the course. We discuss in further detail the reasons for avoiding local installation at the beginning of the course in Design Principles.1\nWhen you create an account on RStudio Cloud, you get a workspace of your own, and the projects you create here can be public or private. You can also add a new workspace and control its permissions, and the projects you create here can also be public or private.\nA natural way to set up a course in RStudio Cloud is using a private workspace. In this structure a classroom (a cohort of students in one semester of the course) maps to a workspace. Once a workspace is set up, instructors can invite students to the workspace via an invite link. Workspaces allow for various permission levels which can be assigned to students, teaching assistants, and instructors. Then, each assignment/project in the course maps to an RStudio Cloud project.\nRStudio Cloud classroom structure",
-    "crumbs": [
-      "Infrastructure",
-      "Accessing R"
-    ]
-  },
-  {
-    "objectID": "03-access-r.html#setting-up-your-course-in-rstudio-cloud",
-    "href": "03-access-r.html#setting-up-your-course-in-rstudio-cloud",
-    "title": "Accessing R",
-    "section": "Setting up your course in RStudio Cloud",
-    "text": "Setting up your course in RStudio Cloud\nFirst, create a new workspace on RStudio Cloud. By default, this new workspace will be a private workspace. All it takes to create a new workspace is a name and brief information for the space. You can update the information once the space is created, however you can’t change the name of the space. For the name,\nI recommend using something along the lines of Course number - Semester.\n\n\n\n\n\nCreating a new workspace on RStudio Cloud\n\n\n\n\nNext step is to invite members to the workspace. You can do this by sending invitations or using a sharing link. I recommend using the latter approach for efficiency. Once all of your students are in the course (or once drop/add period ends) you can change the settings so that additional members cannot join throughout the semester using the sharing link, and can only be added via an invitation from the instructor.\n\n\n\n\n\nSetting workspace permissions\n\n\n\n\nAs highlighted in the figure above, when a workspace is set to accept members via a shared link, the owner can also set a default permission level for those entering the workspace via the sharing link. Suggested permission levels and suggestions for mapping to course roles are as follows.\n\n\n\n\n\n\n\n\nRStudio Cloud role\nPermissions\nCourse role\n\n\n\n\nAdmin\nManage users, view, edit and manage all projects\nInstructor\n\n\nModerator\nView, edit and manage all projects\nTeaching Assistant\n\n\nContributor\nCreate, edit and manage their own projects\nStudent\n\n\nViewer\nView projects shared with everyone\nAuditor, Visitor\n\n\n\nThis set of permissions will allow instructors full access including management of users. Teaching assistants will be able to peek into student projects, which can be very useful when helping troubleshoot. Students won’t be able to see each others’ projects. Students auditing your course or visitors, such as colleagues wanting to view/experience your course setup will have limited access.\nRStudio Cloud also allows you to specify who can see the list of members. Admins and moderators can, by default, see all members of the workspace. I prefer to allow contributors (students) to see the list of members and viewers (auditors and visitors) to not since course enrollment information should not be available to non-official members of the course.",
-    "crumbs": [
-      "Infrastructure",
-      "Accessing R"
-    ]
-  },
-  {
-    "objectID": "03-access-r.html#projects",
-    "href": "03-access-r.html#projects",
-    "title": "Accessing R",
-    "section": "Projects",
-    "text": "Projects\nA project in RStudio Cloud is equivalent to an RStudio project. If you are an RStudio user, but you don’t use projects, I highly recommend considering switching your workflow to include projects. You can learn more about them here.\n\n\n\n\n\nA new project in RStudio Cloud is a new project in the RStudio IDE\n\n\n\n\n\nAccess\nWhen you create a new project in your workspace, it is by default visible only to you plus the admins and moderators of the space. This default has two advantages:\n\nIt allows you to develop a project semi-privately and actively decide when the project is ready to be shared with students. This can be especially beneficial when developing an assessment like an exam.\nIt means when a student creates a project in the workspace it’s not, by default, visible to other students.\n\nWhen your project is ready to be shared with the students in your course, you can adjust the access level by clicking on the gear icon to reveal the settings menu. You should also check the “Make this project an assignment” box so that when a student starts their assignment RStudio Cloud automatically makes a copy of the project for them.\n\n\n\n\n\nSetting project permissions within a workspace",
-    "crumbs": [
-      "Infrastructure",
-      "Accessing R"
-    ]
-  },
-  {
-    "objectID": "03-access-r.html#base-project-template",
-    "href": "03-access-r.html#base-project-template",
-    "title": "Accessing R",
-    "section": "Base project template",
-    "text": "Base project template\nIf you consistently use a particular set of packages and/or need a particular set of documents to be included in each project, the base project template functionality will come in very handy. You can use this by defining a base project template for the space. Simply create a new project and add any packages or files you want projects created in the space to start with. After creating your project, select it on the Settings page as the base project template.\n\n\n\n\n\nSelecting a base project template\n\n\n\n\nNote that a project must be shared with everyone in the space in order to be used as a template; only projects which are viewable by everyone in the space will appear in the templates list.\nYou can update your base project as many times as you want throughout the semester. The base template is applied prospectively – it only effects projects created after the template has been set. Therefore updating the base project will not break projects already created with the previous version of a base project.",
-    "crumbs": [
-      "Infrastructure",
-      "Accessing R"
-    ]
-  },
-  {
-    "objectID": "03-access-r.html#git-integration",
-    "href": "03-access-r.html#git-integration",
-    "title": "Accessing R",
-    "section": "Git integration",
-    "text": "Git integration\nIt is possible to create (clone) a new project in RStudio Cloud from a GitHub repository, just like in the RStudio IDE.\n\n\n\n\n\nCreating a new project from GitHub repository\n\n\n\n\nIf you have a base project template set up for your workspace, this new project created from GitHub will also have the packages installed in the base project template.\nFor more on using Git and GitHub in the classroom, see Version Control.",
-    "crumbs": [
-      "Infrastructure",
-      "Accessing R"
-    ]
-  },
-  {
-    "objectID": "03-access-r.html#troubleshooting",
-    "href": "03-access-r.html#troubleshooting",
-    "title": "Accessing R",
-    "section": "Troubleshooting",
-    "text": "Troubleshooting\nI strongly recommend that you make a second account for themselves on RStudio Cloud and add that user as a contributor to the workspace to be able to see what your students see when they log in. It’s a great way to test out functionality and resolve unexpected issues your students might encounter, before they encounter them. I recommend using an incognito browser window for the student account so that you can stay logged in both as a student and as the instructor at the same time and test the student view as you develop content as an instructor.\nOne huge advantage of your students working in RStudio Cloud is that you as the instructor, and anyone with an admin and moderator role, can peek into student projects. While it is important for your students to learn to ask questions in a way that does not depend on someone else being able to see their work directly (and for this I strongly recommend teaching students to make reprexes), it is sometimes, especially early on, nice to be able to peek into a student’s project.",
-    "crumbs": [
-      "Infrastructure",
-      "Accessing R"
-    ]
-  },
-  {
-    "objectID": "03-access-r.html#limits",
-    "href": "03-access-r.html#limits",
-    "title": "Accessing R",
-    "section": "Limits",
-    "text": "Limits\n\nMemory & CPU\nEach project on RStudio Cloud is allocated 1 GB of RAM and 1 CPU by default. While this is a pretty generous limit, actions like joining very large tables or fitting complicated models could exceed the limit.\nI recommend testing out the any work you assign, especially those using large datasets, in order to avoid unexpected hiccups due to out of memory issues. One challenge is that you might have no control over what issues students might run into if they are working on an open ended project using a dataset of their own choice. In these circumstances it’s helpful to keep in the back of your mind that one way an out of memory issue can present itself is with the RStudio Cloud project crashing.\n\n\nOther limits\nFor most up to date information on limits on free RStudio Cloud accounts, as well as any other technical details, see the RStudio Cloud Guide. This document gets updated as changes are made to the user interface and/or the backend of RStudio Cloud and should be assumed to be more current than the information outlined here.",
-    "crumbs": [
-      "Infrastructure",
-      "Accessing R"
-    ]
-  },
-  {
-    "objectID": "03-access-r.html#learn-more",
-    "href": "03-access-r.html#learn-more",
-    "title": "Accessing R",
-    "section": "Learn more",
-    "text": "Learn more\nTo see this all in action and learn more, watch the following RStudio Cloud webinars:\n\nTeaching R online with RStudio Cloud (July 2020)\nTeaching R online with RStudio Cloud (March 2020)\nRStudio Cloud in the Classroom",
-    "crumbs": [
-      "Infrastructure",
-      "Accessing R"
-    ]
-  },
-  {
-    "objectID": "03-access-r.html#footnotes",
-    "href": "03-access-r.html#footnotes",
-    "title": "Accessing R",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\nNote that as of August 2020 RStudio Cloud offers paid tiers as well, and you will likely need a paid subscription to teach with RStudio Cloud (unless you’re teaching a short, small course). Depending on your institution’s IT infrastructure and your class size, RStudio Cloud may or may not be the most economically feasible solution for your teaching needs. See Alternative Setups for suggestions for other setups for providing server access to RStudio for your students. Note that these alternatives generally require system infrastructure expertise or IT professional time.↩︎",
-    "crumbs": [
-      "Infrastructure",
-      "Accessing R"
-    ]
-  },
-  {
-    "objectID": "02-looking-further.html",
-    "href": "02-looking-further.html",
-    "title": "Looking further",
-    "section": "",
-    "text": "In the last unit we present a series of modules such as interactive reporting and visualization with Shiny, text analysis, machine learning, and Bayesian inference. These are independent modules that educators can choose to include in their introductory data science curriculum depending on how much time they have left in the semester. Note that the slides in this unit are a bit more sparse than the others, and much of the content is delivered as live coding sessions.",
+    "text": "In this part we introduce modelling and statistical inference for making data-based conclusions. We discuss building, interpreting, and selecting models, visualizing interaction effects, and prediction and model validation. Statistical inference is introduced from a simulation based perspective, and the Central Limit Theorem is discussed very briefly to lay the foundation for future coursework in statistics.",
     "crumbs": [
       "Content",
-      "Looking further"
+      "Making rigorous conclusions"
     ]
   },
   {
-    "objectID": "02-looking-further.html#slides-videos-and-application-exercises",
-    "href": "02-looking-further.html#slides-videos-and-application-exercises",
-    "title": "Looking further",
+    "objectID": "02-making-rigorous-conclusions.html#slides-videos-and-application-exercises",
+    "href": "02-making-rigorous-conclusions.html#slides-videos-and-application-exercises",
+    "title": "Making rigorous conclusions",
     "section": "Slides, videos, and application exercises",
-    "text": "Slides, videos, and application exercises\n\nUnit 5 - Deck 1: Text analysis\n\nSlides\n\n\nSource\n\n\nVideo\n\n\n\nUnit 5 - Deck 2: Comparing texts\n\nSlides\n\n\nSource\n\n\nVideo\n\n\n\nUnit 5 - Deck 3: Interactive web apps\n\nSlides\n\n\nSource\n\n\nVideo\n\n\n\nUnit 5 - Deck 4: Machine learning\n\nSlides\n\n\nSource\n\n\nVideo\n\n\n\nUnit 5 - Deck 5: Interactive data visualisation\n\nSlides\n\n\n\nUnit 5 - Deck 6: Interactive data visualisation and reporting\n\nSlides\n\n\n\nUnit 5 - Deck 7: Bayesian inference\n\nSlides\n\n\nSource",
+    "text": "Slides, videos, and application exercises\n\nModelling data\n\nUnit 4 - Deck 1: The language of models\n\nSlides\n\n\nSource\n\n\nVideo\n\n\n\nUnit 4 - Deck 2: Fitting and interpreting models\n\nSlides\n\n\nSource\n\n\nVideo\n\n\nIMS :: Chp 7 - Linear regression with a single predictor\n\n\n\nUnit 4 - Deck 3: Modelling nonlinear relationships\n\nSlides\n\n\nSource\n\n\nVideo\n\n\n\nUnit 4 - Deck 4: Models with multiple predictors\n\nSlides\n\n\nSource\n\n\nVideo\n\n\nIMS :: Chp 8 - Linear regression with multiple predictors\n\n\n\nUnit 4 - Deck 5: More models with multiple predictors\n\nSlides\n\n\nSource\n\n\nVideo\n\n\n\n\nClassification and model building\n\nUnit 4 - Deck 6: Logistic regression\n\nSlides\n\n\nSource\n\n\nVideo\n\n\nIMS :: Chp 9 - Logistic regression\n\n\n\nUnit 4 - Deck 7: Prediction and overfitting\n\nSlides\n\n\nSource\n\n\nVideo\n\n\ntidymodels :: Build a model\n\n\n\nUnit 4 - Deck 8: Feature engineering\n\nSlides\n\n\nSource\n\n\nVideo\n\n\ntidymodels :: Preprocess your data with recipes\n\n\n\n\nModel validation\n\nUnit 4 - Deck 9: Cross validation\n\nSlides\n\n\nSource\n\n\nVideo\n\n\ntidymodels :: Evaluate your model with resampling\n\n\n\nThe Office + Feature engineering, Pt. 1\n\nSource\n\n\nVideo\n\n\n\nThe Office + Cross validation, Pt. 2\n\nSource\n\n\nVideo\n\n\n\n\nUncertainty quantification\n\nUnit 4 - Deck 10: Quantifying uncertainty\n\nSlides\n\n\nSource\n\n\nVideo\n\n\n\nUnit 4 - Deck 11: Bootstrapping\n\nSlides\n\n\nSource\n\n\nVideo\n\n\nIMS :: Chp 12 - Confidence intervals with bootstrapping\n\n\n\nUnit 4 - Deck 12: Hypothesis testing\n\nSlides\n\n\nSource\n\n\nIMS :: Chp 11 - Hypothesis testing with randomization\n\n\n\nUnit 4 - Deck 13: Inference overview\n\nSlides\n\n\nSource",
     "crumbs": [
       "Content",
-      "Looking further"
+      "Making rigorous conclusions"
     ]
   },
   {
-    "objectID": "02-looking-further.html#labs",
-    "href": "02-looking-further.html#labs",
-    "title": "Looking further",
+    "objectID": "02-making-rigorous-conclusions.html#labs",
+    "href": "02-making-rigorous-conclusions.html#labs",
+    "title": "Making rigorous conclusions",
     "section": "Labs",
-    "text": "Labs\n\nLab 13: Working on projects\nFitting and interpreting simple linear regression models\n\nInstructions\n\n\nSource\n\n\n\nLab 14: Collaboration on GitHub\nFitting and interpreting simple linear regression models\n\nInstructions\n\n\nSource",
+    "text": "Labs\n\nLab 10: Grading the professor, Pt. 1\nFitting and interpreting simple linear regression models\n\nInstructions\n\n\nSource\n\n\nStarter\n\n\n\nLab 11: Grading the professor, Pt. 2\nFitting and interpreting multiple linear regression models\n\nInstructions\n\n\nSource\n\n\nStarter\n\n\n\nLab 12: Smoking while pregnant\nConstructing confidence intervals, conducting hypothesis tests, and interpreting results in context of the data\n\nInstructions\n\n\nSource\n\n\nStarter",
     "crumbs": [
       "Content",
-      "Looking further"
+      "Making rigorous conclusions"
     ]
   },
   {
-    "objectID": "02-looking-further.html#homework-assignments",
-    "href": "02-looking-further.html#homework-assignments",
-    "title": "Looking further",
+    "objectID": "02-making-rigorous-conclusions.html#homework-assignments",
+    "href": "02-making-rigorous-conclusions.html#homework-assignments",
+    "title": "Making rigorous conclusions",
     "section": "Homework assignments",
-    "text": "Homework assignments\n\nHW 10: Wrapping up\nModel validation and inference\n\nInstructions\n\n\nSource\n\n\nStarter",
+    "text": "Homework assignments\n\nHW 7: Bike rentals in DC\nExploratory data analysis and fitting and interpreting models\n\nInstructions\n\n\nSource\n\n\nStarter\n\n\n\nHW 8: Exploring the GSS\nFitting and interpreting models\n\nInstructions\n\n\nSource\n\n\nStarter\n\n\n\nHW 9: Modelling the GSS\nModel validation and inference\n\nInstructions\n\n\nSource\n\n\nStarter",
     "crumbs": [
       "Content",
-      "Looking further"
+      "Making rigorous conclusions"
     ]
   },
   {
@@ -1156,76 +1057,84 @@
     "text": "Data dictionary\nBelow is the full data dictionary. Note that it is long (there are lots of variables in the data), but we will be using a limited set of the variables for our analysis.\n\n\n\n\n\n\n\n\nvariable\nclass\ndescription\n\n\n\n\nhotel\ncharacter\nHotel (H1 = Resort Hotel or H2 = City Hotel)\n\n\nis_canceled\ndouble\nValue indicating if the booking was canceled (1) or not (0)\n\n\nlead_time\ndouble\nNumber of days that elapsed between the entering date of the booking into the PMS and the arrival date\n\n\narrival_date_year\ndouble\nYear of arrival date\n\n\narrival_date_month\ncharacter\nMonth of arrival date\n\n\narrival_date_week_number\ndouble\nWeek number of year for arrival date\n\n\narrival_date_day_of_month\ndouble\nDay of arrival date\n\n\nstays_in_weekend_nights\ndouble\nNumber of weekend nights (Saturday or Sunday) the guest stayed or booked to stay at the hotel\n\n\nstays_in_week_nights\ndouble\nNumber of week nights (Monday to Friday) the guest stayed or booked to stay at the hotel\n\n\nadults\ndouble\nNumber of adults\n\n\nchildren\ndouble\nNumber of children\n\n\nbabies\ndouble\nNumber of babies\n\n\nmeal\ncharacter\nType of meal booked. Categories are presented in standard hospitality meal packages:  Undefined/SC – no meal package;BB – Bed & Breakfast;  HB – Half board (breakfast and one other meal – usually dinner);  FB – Full board (breakfast, lunch and dinner)\n\n\ncountry\ncharacter\nCountry of origin. Categories are represented in the ISO 3155–3:2013 format\n\n\nmarket_segment\ncharacter\nMarket segment designation. In categories, the term “TA” means “Travel Agents” and “TO” means “Tour Operators”\n\n\ndistribution_channel\ncharacter\nBooking distribution channel. The term “TA” means “Travel Agents” and “TO” means “Tour Operators”\n\n\nis_repeated_guest\ndouble\nValue indicating if the booking name was from a repeated guest (1) or not (0)\n\n\nprevious_cancellations\ndouble\nNumber of previous bookings that were cancelled by the customer prior to the current booking\n\n\nprevious_bookings_not_canceled\ndouble\nNumber of previous bookings not cancelled by the customer prior to the current booking\n\n\nreserved_room_type\ncharacter\nCode of room type reserved. Code is presented instead of designation for anonymity reasons\n\n\nassigned_room_type\ncharacter\nCode for the type of room assigned to the booking. Sometimes the assigned room type differs from the reserved room type due to hotel operation reasons (e.g. overbooking) or by customer request. Code is presented instead of designation for anonymity reasons\n\n\nbooking_changes\ndouble\nNumber of changes/amendments made to the booking from the moment the booking was entered on the PMS until the moment of check-in or cancellation\n\n\ndeposit_type\ncharacter\nIndication on if the customer made a deposit to guarantee the booking. This variable can assume three categories:No Deposit – no deposit was made;Non Refund – a deposit was made in the value of the total stay cost;Refundable – a deposit was made with a value under the total cost of stay.\n\n\nagent\ncharacter\nID of the travel agency that made the booking\n\n\ncompany\ncharacter\nID of the company/entity that made the booking or responsible for paying the booking. ID is presented instead of designation for anonymity reasons\n\n\ndays_in_waiting_list\ndouble\nNumber of days the booking was in the waiting list before it was confirmed to the customer\n\n\ncustomer_type\ncharacter\nType of booking, assuming one of four categories:Contract - when the booking has an allotment or other type of contract associated to it;Group – when the booking is associated to a group;Transient – when the booking is not part of a group or contract, and is not associated to other transient booking;Transient-party – when the booking is transient, but is associated to at least other transient booking\n\n\nadr\ndouble\nAverage Daily Rate as defined by dividing the sum of all lodging transactions by the total number of staying nights\n\n\nrequired_car_parking_spaces\ndouble\nNumber of car parking spaces required by the customer\n\n\ntotal_of_special_requests\ndouble\nNumber of special requests made by the customer (e.g. twin bed or high floor)\n\n\nreservation_status\ncharacter\nReservation last status, assuming one of three categories:Canceled – booking was canceled by the customer;Check-Out – customer has checked in but already departed;No-Show – customer did not check-in and did inform the hotel of the reason why\n\n\nreservation_status_date\ndouble\nDate at which the last status was set. This variable can be used in conjunction with the ReservationStatus to understand when was the booking canceled or when did the customer checked-out of the hotel"
   },
   {
-    "objectID": "02-exploring-data.html",
-    "href": "02-exploring-data.html",
-    "title": "Exploring data",
+    "objectID": "policies.html",
+    "href": "policies.html",
+    "title": "Course Policies",
     "section": "",
-    "text": "This unit focuses on data visualization and data wrangling. Specifically we cover fundamentals of data and data visualization, confounding variables, and Simpson’s paradox as well as the concept of tidy data, data import, data cleaning, and data curation. We end the unit with web scraping and introduce the idea of iteration in preparation for the next unit. Also in this unit students are introduced to the toolkit: R, RStudio, R Markdown, Git, and GitHub.",
+    "text": "Your grade in this course will be based on:\n\nDaily Quizzes: 5%\n\nThe lowest 3 quizzes will be dropped.\n\nLabs: 20%\nHomework projects: 25%\nTests (5, including the final test during the Exam time): 50%\n\nThe lowest test score will be dropped.",
     "crumbs": [
-      "Content",
-      "Exploring data"
+      "Course Policies"
     ]
   },
   {
-    "objectID": "02-exploring-data.html#slides-videos-and-application-exercises",
-    "href": "02-exploring-data.html#slides-videos-and-application-exercises",
-    "title": "Exploring data",
-    "section": "Slides, videos, and application exercises",
-    "text": "Slides, videos, and application exercises\n\nVisualising data\n\nUnit 2 - Deck 1: Data and visualisation\n\nSlides\n\n\nSource\n\n\nVideo\n\n\n\nUnit 2 - Deck 2: Visualising data with ggplot2\n\nSlides\n\n\nSource\n\n\nVideo\n\n\nR4DS :: Chp 3 - Data visualization\n\n\n\nUnit 2 - Deck 3: Visualising numerical data\n\nSlides\n\n\nSource\n\n\nVideo\n\n\nIMS :: Chp 4 - Exploring numerical data\n\n\n\nUnit 2 - Deck 4: Visualising categorical data\n\nSlides\n\n\nSource\n\n\nVideo\n\n\nIMS :: Chp 5 - Exploring categorical data\n\n\n\nStarWars + Dataviz\n\nSource\n\n\nVideo\n\n\n\n\nWrangling and tidying data\n\nUnit 2 - Deck 5: Tidy data\n\nSlides\n\n\nSource\n\n\nVideo\n\n\nJSS :: Tidy data\n\n\n\nUnit 2 - Deck 6: Grammar of data wrangling\n\nSlides\n\n\nSource\n\n\nVideo\n\n\n\nUnit 2 - Deck 7: Working with a single data frame\n\nSlides\n\n\nSource\n\n\nVideo\n\n\nR4DS :: Chp 5 - Data transformation\n\n\n\nUnit 2 - Deck 8: Working with multiple data frames\n\nSlides\n\n\nSource\n\n\nVideo\n\n\nR4DS :: Chp 13 - Relational data\n\n\n\nUnit 2 - Deck 9: Tidying data\n\nSlides\n\n\nSource\n\n\nVideo\n\n\nR4DS :: Chp 12 - Tidy data\n\n\n\nHotels + Data wrangling\n\nSource\n\n\nVideo\n\n\n\n\nImporting and recoding data\n\nUnit 2 - Deck 10: Data types\n\nSlides\n\n\nSource\n\n\nVideo\n\n\n\nUnit 2 - Deck 11: Data classes\n\nSlides\n\n\nSource\n\n\nVideo\n\n\nR4DS :: Chp 15 - Factors\n\n\n\nUnit 2 - Deck 12: Importing data\n\nSlides\n\n\nSource\n\n\nVideo\n\n\nR4DS :: Chp 11 - Data import\n\n\n\nUnit 2 - Deck 13: Recoding data\n\nSlides\n\n\nSource\n\n\nVideo\n\n\nR4DS :: Sec 16.1 - 16.3 - Dates and times\n\n\n\nHotels + Data types\n\nSource\n\n\nSource\n\n\nVideo\n\n\n\nNobels + Sales + Data import\n\nSource\n\n\nSource\n\n\nVideo\n\n\n\n\nCommunicating data science results effectively\n\nUnit 2 - Deck 14: Tips for effective data visualization\n\nSlides\n\n\nSource\n\n\nVideo\n\n\nIMS :: Chp 6 - Applications: Explore\n\n\n\nBrexit + Telling stories with dataviz\n\nSource\n\n\nVideo\n\n\n\nUnit 2 - Deck 15: Scientific studies and confounding\n\nSlides\n\n\nSource\n\n\nVideo\n\n\nIMS :: Chp 2 - Study design\n\n\n\nUnit 2 - Deck 16: Simpson’s paradox\n\nSlides\n\n\nSource\n\n\nVideo\n\n\n\nUnit 2 - Deck 17: Doing data science\n\nSlides\n\n\nSource\n\n\nVideo\n\n\nR4DS :: Chp 7 - Exploratory data analysis\n\n\n\n\nWeb scraping and programming\n\nUnit 2 - Deck 18: Web scraping\n\nSlides\n\n\nSource\n\n\nVideo\n\n\n\nUnit 2 - Deck 19: Scraping top 250 movies on IMDB\n\nSlides\n\n\nSource\n\n\nVideo\n\n\n\nUnit 2 - Deck 20: Web scraping considerations\n\nSlides\n\n\nSource\n\n\nVideo\n\n\n\nIMDB + Web scraping\n\nSource\n\n\nVideo\n\n\n\nUnit 2 - Deck 21: Functions\n\nSlides\n\n\nSource\n\n\nVideo\n\n\nR4DS :: Chp 19 - Functions\n\n\n\nUnit 2 - Deck 22: Iteration\n\nSlides\n\n\nSource\n\n\nVideo\n\n\nR4DS :: Chp 20 - Iteration",
+    "objectID": "policies.html#grace-days",
+    "href": "policies.html#grace-days",
+    "title": "Course Policies",
+    "section": "Grace Days",
+    "text": "Grace Days\nYou have 8 Grace Days available to you during the semester. These grace days may be used to submit an assignment late without penalty. Grace Days Remaining will be seen in the GradeBook in Moodle.\nHere are some circumstances in which you might use grace days:\n\nYou are an athlete and you have a very busy week. Use a few grace days to catch up the next week.\nYou become ill (physically or mentally) and cannot do the work on time.\nYou need to go home for an emergency.\n\nHere is the procedure for using grace days:\n\nDO NOT email me to tell me you are going to use grace days. I don’t need to know this – there is no action I need to take if you tell me this.\nWhen your assignment grade comes back and you have lost points due to lateness, then use the Grade Appeal app to ask for the points to be restored and tell me how many grace days you want to use for that.",
     "crumbs": [
-      "Content",
-      "Exploring data"
+      "Course Policies"
     ]
   },
   {
-    "objectID": "02-exploring-data.html#labs",
-    "href": "02-exploring-data.html#labs",
-    "title": "Exploring data",
-    "section": "Labs",
-    "text": "Labs\n\nLab 1: Hello R\nIntroduction to R, R Markdown, Git, and GitHub\n\nInstructions\n\n\nSource\n\n\nStarter\n\n\n\nLab 2: Plastic waste\nIntroduction to working with data in R with the tidyverse\n\nInstructions\n\n\nSource\n\n\nStarter\n\n\n\nLab 3: Nobel laureates\nData wrangling and tidying\n\nInstructions\n\n\nSource\n\n\nStarter\n\n\n\nLab 4: La Quinta is Spanish for ‘next to Denny’s’, Pt. 1\nVisualizing spatial data\n\nInstructions\n\n\nSource\n\n\nStarter\n\n\n\nLab 5: La Quinta is Spanish for ‘next to Denny’s’, Pt. 2\nWrangling spatial data\n\nInstructions\n\n\nSource\n\n\nStarter\n\n\n\nLab 6: Sad plots\nCritiquing and improving data visualisations\n\nInstructions\n\n\nSource\n\n\nStarter\n\n\n\nLab 7: Simpson’s paradox\nData visualisation, confounding, multivariable relationships\n\nInstructions\n\n\nSource\n\n\nStarter\n\n\n\nLab 8: University of Edinburgh Art Collection\nWeb scraping, function, iteration\n\nInstructions\n\n\nSource\n\n\nStarter",
+    "objectID": "policies.html#extenuating-circumstances",
+    "href": "policies.html#extenuating-circumstances",
+    "title": "Course Policies",
+    "section": "Extenuating Circumstances",
+    "text": "Extenuating Circumstances\nIf you fall ill (physically or mentally) for an extended period of time, AND you send me documentation from Student Life, Student Health Center, or the Center for Health and Wellness, then, and only then, I will consider allowing you to make up late assignments.\nIf you begin to skip class repeatedly due to mental health problems, go to the Center for Health and Wellness! Don’t delay!",
     "crumbs": [
-      "Content",
-      "Exploring data"
+      "Course Policies"
     ]
   },
   {
-    "objectID": "02-exploring-data.html#homework-assignments",
-    "href": "02-exploring-data.html#homework-assignments",
-    "title": "Exploring data",
-    "section": "Homework assignments",
-    "text": "Homework assignments\n\nHW 1: Pet names\nIntroduction to working with data in R with the tidyverse\n\nInstructions\n\n\nSource\n\n\nStarter\n\n\n\nHW 2: Edinburgh Airbnb rentals\nData visualisation with the tidyverse\n\nInstructions\n\n\nSource\n\n\nStarter\n\n\n\nHW 3: Road traffic accidents\nData wrangling, tidying, and visualization\n\nInstructions\n\n\nSource\n\n\nStarter\n\n\n\nHW 4: What should I major in?\nMore data wrangling, summarizing, and visualization\n\nInstructions\n\n\nSource\n\n\nStarter\n\n\n\nHW 5: Legos\nMore data wrangling, summarizing, and visualization\n\nInstructions\n\n\nSource\n\n\nStarter\n\n\n\nHW 6: Money in politics\nWeb scraping, functions, and iteration\n\nInstructions\n\n\nSource\n\n\nStarter",
+    "objectID": "policies.html#incompletes",
+    "href": "policies.html#incompletes",
+    "title": "Course Policies",
+    "section": "Incompletes",
+    "text": "Incompletes\nAn Incomplete (I) grade will be granted only in unusual circumstances, and only if those circumstances have been verified by the Student Life Office. Procrastination does not qualify as an unusual circumstance.\nNo work will be accepted after the last day of classes.",
     "crumbs": [
-      "Content",
-      "Exploring data"
+      "Course Policies"
     ]
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Welcome to CS112 - Data Structures",
-    "section": "",
-    "text": "CS 112 uses the C++ programming language to introduce students to the elementary data structures (vectors, lists, stacks, queues, binary search trees, …), recursion, big-oh notation, and other intermediate-level programming topics.\nThis a permanently in construction website, so please let us know if you find any information missing or had some bad experience with the links and interface throughout the semester.\nHere you will find all information needed to do well during the course."
+    "objectID": "policies.html#classroom-policy",
+    "href": "policies.html#classroom-policy",
+    "title": "Course Policies",
+    "section": "Classroom Policy",
+    "text": "Classroom Policy\n\n\n\n\n\n\nIMPORTANT!\n\n\n\nNo phones, no laptops, unless we tell you you can.\n\n\nThis is a difficult class, and you don’t need to be distracted by goofing around on your phone or laptop. And, I don’t want you to distract others.\nDaily Quizzes will be administered in the first 5 minutes of class, on Moodle. Do not show up late to class.",
+    "crumbs": [
+      "Course Policies"
+    ]
   },
   {
-    "objectID": "index.html#student-learning-outcomes",
-    "href": "index.html#student-learning-outcomes",
-    "title": "Welcome to CS112 - Data Structures",
-    "section": "Student Learning Outcomes",
-    "text": "Student Learning Outcomes\nUpon successful completion of this course students will be able to:\n\nUse indirection (pointers) and run-time memory allocation to implement dynamic, generic container classes (e.g., vectors, lists, stacks, queues, trees, etc.).\n\nAnalyze, categorize, and compare the complexity of data structure operations using “big-oh” notation.\n\nDesign and implement recursive data structure operations.\n\nDesign, create, and use unit-tests to test the correctness of data structure operations.\n\nFor select algorithms, use simple parallel computing techniques to improve algorithm performance and measure the improvement."
+    "objectID": "policies.html#attendance",
+    "href": "policies.html#attendance",
+    "title": "Course Policies",
+    "section": "Attendance",
+    "text": "Attendance\nClass attendance is optional.\nAlso, lab attendance is required! Lab is not optional. Skipping lab may result in you doing poorly in class.\nMissing class due to illness: if you are going to miss class due to (physical or mental) illness, please send me an email before class.",
+    "crumbs": [
+      "Course Policies"
+    ]
   },
   {
-    "objectID": "index.html#course-organization",
-    "href": "index.html#course-organization",
-    "title": "Welcome to CS112 - Data Structures",
-    "section": "Course Organization",
-    "text": "Course Organization\nThe course is organized around these components:\n\nThe lectures that will introduce data structures topics at the conceptual level;\nThe labs in which students will (in pairs) practice using and building data structures; and\nThe projects in which students will (individually) practice using and building data structures.\n\nEach week’s lectures, labs and projects will cover the same concepts, but will do so in different ways.\nThe first 4 weeks will be dedicated to learning C++. After that, we will begin studying data structures."
+    "objectID": "policies.html#disabilities",
+    "href": "policies.html#disabilities",
+    "title": "Course Policies",
+    "section": "Disabilities",
+    "text": "Disabilities\nCalvin University is committed to providing access to all students. If you are a student with a documented disability, please notify a Disability Coordinator in Student Success (located in Hiemenga Hall 227) to discuss necessary accommodations. If you have an accommodation memo, please come talk to me in the first two weeks of class. If you are a student needing reasonable modifications for pregnancy and related conditions, please contact the Title IX Coordinator in Student Life (located in Spoelhof University Center 364).",
+    "crumbs": [
+      "Course Policies"
+    ]
   },
   {
-    "objectID": "index.html#acknowledgements",
-    "href": "index.html#acknowledgements",
-    "title": "Welcome to CS112 - Data Structures",
-    "section": "Acknowledgements",
-    "text": "Acknowledgements\nThis website is built with Quarto, the lovely icons by icons8, and none of this would be possible without the tidyverse."
+    "objectID": "policies.html#statement-of-diversity-and-inclusion",
+    "href": "policies.html#statement-of-diversity-and-inclusion",
+    "title": "Course Policies",
+    "section": "Statement of Diversity and Inclusion",
+    "text": "Statement of Diversity and Inclusion\nInside and outside of the classroom, I work to treat every person with equal respect, regardless of racial identity, gender identity, physicality, brain chemistry, nationality, political leanings, and religious background. Whoever you are, you are fearfully and wonderfully made. God delights in diversity and I do, too. We humans need diverse viewpoints because every viewpoint, on its own, has blind spots. That has been proven to be true in technology-related fields, where under-represented minorities are significantly under-represented in the working world. When companies work hard to rectify this, they find their products and services improve. We have found this to be true in Computer Science classrooms as well.\n\n\n\n\n\n\nIMPORTANT!\n\n\n\nIf you or someone else in this class is hurt by something I say or do in class, I would like to know about it so that we can work toward a remedy. This has happened in the past in my classroom – usually when I’m trying to be “cool” or be funny. If this happens this semester, please know that it was unintentional. Because this kind of feedback can be uncomfortable for all involved, I’ll take it however it comes: in public or in private, on the spot or days later, directly from you or indirectly through another student, another professor, or through my department chair Keith VanderLinden (kvlinden@calvin.edu).\n\n\n\n\n\n\n\n\nCallout by Prof. Norman!\n\n\n\nAlso, please note that I am half deaf (at least). I am completely deaf on my left side. This results in my not being able to hear students that speak quietly, and not being able to tell which direction sounds are coming from. Please speak loudly! Thanks.",
+    "crumbs": [
+      "Course Policies"
+    ]
   },
   {
     "objectID": "02-interactive-tutorials.html",
@@ -1507,182 +1416,75 @@
     ]
   },
   {
-    "objectID": "01-community.html",
-    "href": "01-community.html",
-    "title": "Community",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Welcome to CS112 - Data Structures",
     "section": "",
-    "text": "Do you like what’s in the box? Do you have questions? Is something you need missing? Want to exchange ideas with others teaching similar courses?\nWe now have a dsbox Slack channel, you can join here.1 The Slack channel is a place for discussion on using these or similar materials in data science courses. Please make sure to review the Code of Conduct before joining.\nOther great venues for questions are the RStudio Community under Teaching or #rstats Twitter.\nAdditionally, we would love to hear from you if you are using these resources. Please take just a few minutes to fill out this Google form. All fields are optional, but the more information you provide, the more data we will have to assess the reach and impact of this project.",
-    "crumbs": [
-      "Course Policies",
-      "Community"
-    ]
+    "text": "CS 112 uses the C++ programming language to introduce students to the elementary data structures (vectors, lists, stacks, queues, binary search trees, …), recursion, big-oh notation, and other intermediate-level programming topics.\nThis a permanently in construction website, so please let us know if you find any information missing or had some bad experience with the links and interface throughout the semester.\nHere you will find all information needed to do well during the course."
   },
   {
-    "objectID": "01-community.html#footnotes",
-    "href": "01-community.html#footnotes",
-    "title": "Community",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\nIf the link has expired, please email me at cetinkaya.mine@gmail.com to request a new one.↩︎",
-    "crumbs": [
-      "Course Policies",
-      "Community"
-    ]
+    "objectID": "index.html#student-learning-outcomes",
+    "href": "index.html#student-learning-outcomes",
+    "title": "Welcome to CS112 - Data Structures",
+    "section": "Student Learning Outcomes",
+    "text": "Student Learning Outcomes\nUpon successful completion of this course students will be able to:\n\nUse indirection (pointers) and run-time memory allocation to implement dynamic, generic container classes (e.g., vectors, lists, stacks, queues, trees, etc.).\n\nAnalyze, categorize, and compare the complexity of data structure operations using “big-oh” notation.\n\nDesign and implement recursive data structure operations.\n\nDesign, create, and use unit-tests to test the correctness of data structure operations.\n\nFor select algorithms, use simple parallel computing techniques to improve algorithm performance and measure the improvement."
   },
   {
-    "objectID": "policies.html",
-    "href": "policies.html",
-    "title": "Course Policies",
+    "objectID": "index.html#course-organization",
+    "href": "index.html#course-organization",
+    "title": "Welcome to CS112 - Data Structures",
+    "section": "Course Organization",
+    "text": "Course Organization\nThe course is organized around these components:\n\nThe lectures that will introduce data structures topics at the conceptual level;\nThe labs in which students will (in pairs) practice using and building data structures; and\nThe projects in which students will (individually) practice using and building data structures.\n\nEach week’s lectures, labs and projects will cover the same concepts, but will do so in different ways.\nThe first 4 weeks will be dedicated to learning C++. After that, we will begin studying data structures."
+  },
+  {
+    "objectID": "index.html#acknowledgements",
+    "href": "index.html#acknowledgements",
+    "title": "Welcome to CS112 - Data Structures",
+    "section": "Acknowledgements",
+    "text": "Acknowledgements\nThis website is built with Quarto, the lovely icons by icons8. The original code used to build this website can be found at DS Box. We are very grateful for their work!"
+  },
+  {
+    "objectID": "02-exploring-data.html",
+    "href": "02-exploring-data.html",
+    "title": "Exploring data",
     "section": "",
-    "text": "Your grade in this course will be based on:\n\nDaily Quizzes: 5%\n\nThe lowest 3 quizzes will be dropped.\n\nLabs: 20%\nHomework projects: 25%\nTests (5, including the final test during the Exam time): 50%\n\nThe lowest test score will be dropped.",
+    "text": "This unit focuses on data visualization and data wrangling. Specifically we cover fundamentals of data and data visualization, confounding variables, and Simpson’s paradox as well as the concept of tidy data, data import, data cleaning, and data curation. We end the unit with web scraping and introduce the idea of iteration in preparation for the next unit. Also in this unit students are introduced to the toolkit: R, RStudio, R Markdown, Git, and GitHub.",
     "crumbs": [
-      "Course Policies"
+      "Content",
+      "Exploring data"
     ]
   },
   {
-    "objectID": "policies.html#grace-days",
-    "href": "policies.html#grace-days",
-    "title": "Course Policies",
-    "section": "Grace Days",
-    "text": "Grace Days\nYou have 8 Grace Days available to you during the semester. These grace days may be used to submit an assignment late without penalty. Grace Days Remaining will be seen in the GradeBook in Moodle.\nHere are some circumstances in which you might use grace days:\n\nYou are an athlete and you have a very busy week. Use a few grace days to catch up the next week.\nYou become ill (physically or mentally) and cannot do the work on time.\nYou need to go home for an emergency.\n\nHere is the procedure for using grace days:\n\nDO NOT email me to tell me you are going to use grace days. I don’t need to know this – there is no action I need to take if you tell me this.\nWhen your assignment grade comes back and you have lost points due to lateness, then use the Grade Appeal app to ask for the points to be restored and tell me how many grace days you want to use for that.",
+    "objectID": "02-exploring-data.html#slides-videos-and-application-exercises",
+    "href": "02-exploring-data.html#slides-videos-and-application-exercises",
+    "title": "Exploring data",
+    "section": "Slides, videos, and application exercises",
+    "text": "Slides, videos, and application exercises\n\nVisualising data\n\nUnit 2 - Deck 1: Data and visualisation\n\nSlides\n\n\nSource\n\n\nVideo\n\n\n\nUnit 2 - Deck 2: Visualising data with ggplot2\n\nSlides\n\n\nSource\n\n\nVideo\n\n\nR4DS :: Chp 3 - Data visualization\n\n\n\nUnit 2 - Deck 3: Visualising numerical data\n\nSlides\n\n\nSource\n\n\nVideo\n\n\nIMS :: Chp 4 - Exploring numerical data\n\n\n\nUnit 2 - Deck 4: Visualising categorical data\n\nSlides\n\n\nSource\n\n\nVideo\n\n\nIMS :: Chp 5 - Exploring categorical data\n\n\n\nStarWars + Dataviz\n\nSource\n\n\nVideo\n\n\n\n\nWrangling and tidying data\n\nUnit 2 - Deck 5: Tidy data\n\nSlides\n\n\nSource\n\n\nVideo\n\n\nJSS :: Tidy data\n\n\n\nUnit 2 - Deck 6: Grammar of data wrangling\n\nSlides\n\n\nSource\n\n\nVideo\n\n\n\nUnit 2 - Deck 7: Working with a single data frame\n\nSlides\n\n\nSource\n\n\nVideo\n\n\nR4DS :: Chp 5 - Data transformation\n\n\n\nUnit 2 - Deck 8: Working with multiple data frames\n\nSlides\n\n\nSource\n\n\nVideo\n\n\nR4DS :: Chp 13 - Relational data\n\n\n\nUnit 2 - Deck 9: Tidying data\n\nSlides\n\n\nSource\n\n\nVideo\n\n\nR4DS :: Chp 12 - Tidy data\n\n\n\nHotels + Data wrangling\n\nSource\n\n\nVideo\n\n\n\n\nImporting and recoding data\n\nUnit 2 - Deck 10: Data types\n\nSlides\n\n\nSource\n\n\nVideo\n\n\n\nUnit 2 - Deck 11: Data classes\n\nSlides\n\n\nSource\n\n\nVideo\n\n\nR4DS :: Chp 15 - Factors\n\n\n\nUnit 2 - Deck 12: Importing data\n\nSlides\n\n\nSource\n\n\nVideo\n\n\nR4DS :: Chp 11 - Data import\n\n\n\nUnit 2 - Deck 13: Recoding data\n\nSlides\n\n\nSource\n\n\nVideo\n\n\nR4DS :: Sec 16.1 - 16.3 - Dates and times\n\n\n\nHotels + Data types\n\nSource\n\n\nSource\n\n\nVideo\n\n\n\nNobels + Sales + Data import\n\nSource\n\n\nSource\n\n\nVideo\n\n\n\n\nCommunicating data science results effectively\n\nUnit 2 - Deck 14: Tips for effective data visualization\n\nSlides\n\n\nSource\n\n\nVideo\n\n\nIMS :: Chp 6 - Applications: Explore\n\n\n\nBrexit + Telling stories with dataviz\n\nSource\n\n\nVideo\n\n\n\nUnit 2 - Deck 15: Scientific studies and confounding\n\nSlides\n\n\nSource\n\n\nVideo\n\n\nIMS :: Chp 2 - Study design\n\n\n\nUnit 2 - Deck 16: Simpson’s paradox\n\nSlides\n\n\nSource\n\n\nVideo\n\n\n\nUnit 2 - Deck 17: Doing data science\n\nSlides\n\n\nSource\n\n\nVideo\n\n\nR4DS :: Chp 7 - Exploratory data analysis\n\n\n\n\nWeb scraping and programming\n\nUnit 2 - Deck 18: Web scraping\n\nSlides\n\n\nSource\n\n\nVideo\n\n\n\nUnit 2 - Deck 19: Scraping top 250 movies on IMDB\n\nSlides\n\n\nSource\n\n\nVideo\n\n\n\nUnit 2 - Deck 20: Web scraping considerations\n\nSlides\n\n\nSource\n\n\nVideo\n\n\n\nIMDB + Web scraping\n\nSource\n\n\nVideo\n\n\n\nUnit 2 - Deck 21: Functions\n\nSlides\n\n\nSource\n\n\nVideo\n\n\nR4DS :: Chp 19 - Functions\n\n\n\nUnit 2 - Deck 22: Iteration\n\nSlides\n\n\nSource\n\n\nVideo\n\n\nR4DS :: Chp 20 - Iteration",
     "crumbs": [
-      "Course Policies"
+      "Content",
+      "Exploring data"
     ]
   },
   {
-    "objectID": "policies.html#extenuating-circumstances",
-    "href": "policies.html#extenuating-circumstances",
-    "title": "Course Policies",
-    "section": "Extenuating Circumstances",
-    "text": "Extenuating Circumstances\nIf you fall ill (physically or mentally) for an extended period of time, AND you send me documentation from Student Life, Student Health Center, or the Center for Health and Wellness, then, and only then, I will consider allowing you to make up late assignments.\nIf you begin to skip class repeatedly due to mental health problems, go to the Center for Health and Wellness! Don’t delay!",
+    "objectID": "02-exploring-data.html#labs",
+    "href": "02-exploring-data.html#labs",
+    "title": "Exploring data",
+    "section": "Labs",
+    "text": "Labs\n\nLab 1: Hello R\nIntroduction to R, R Markdown, Git, and GitHub\n\nInstructions\n\n\nSource\n\n\nStarter\n\n\n\nLab 2: Plastic waste\nIntroduction to working with data in R with the tidyverse\n\nInstructions\n\n\nSource\n\n\nStarter\n\n\n\nLab 3: Nobel laureates\nData wrangling and tidying\n\nInstructions\n\n\nSource\n\n\nStarter\n\n\n\nLab 4: La Quinta is Spanish for ‘next to Denny’s’, Pt. 1\nVisualizing spatial data\n\nInstructions\n\n\nSource\n\n\nStarter\n\n\n\nLab 5: La Quinta is Spanish for ‘next to Denny’s’, Pt. 2\nWrangling spatial data\n\nInstructions\n\n\nSource\n\n\nStarter\n\n\n\nLab 6: Sad plots\nCritiquing and improving data visualisations\n\nInstructions\n\n\nSource\n\n\nStarter\n\n\n\nLab 7: Simpson’s paradox\nData visualisation, confounding, multivariable relationships\n\nInstructions\n\n\nSource\n\n\nStarter\n\n\n\nLab 8: University of Edinburgh Art Collection\nWeb scraping, function, iteration\n\nInstructions\n\n\nSource\n\n\nStarter",
     "crumbs": [
-      "Course Policies"
+      "Content",
+      "Exploring data"
     ]
   },
   {
-    "objectID": "policies.html#incompletes",
-    "href": "policies.html#incompletes",
-    "title": "Course Policies",
-    "section": "Incompletes",
-    "text": "Incompletes\nAn Incomplete (I) grade will be granted only in unusual circumstances, and only if those circumstances have been verified by the Student Life Office. Procrastination does not qualify as an unusual circumstance.\nNo work will be accepted after the last day of classes.",
+    "objectID": "02-exploring-data.html#homework-assignments",
+    "href": "02-exploring-data.html#homework-assignments",
+    "title": "Exploring data",
+    "section": "Homework assignments",
+    "text": "Homework assignments\n\nHW 1: Pet names\nIntroduction to working with data in R with the tidyverse\n\nInstructions\n\n\nSource\n\n\nStarter\n\n\n\nHW 2: Edinburgh Airbnb rentals\nData visualisation with the tidyverse\n\nInstructions\n\n\nSource\n\n\nStarter\n\n\n\nHW 3: Road traffic accidents\nData wrangling, tidying, and visualization\n\nInstructions\n\n\nSource\n\n\nStarter\n\n\n\nHW 4: What should I major in?\nMore data wrangling, summarizing, and visualization\n\nInstructions\n\n\nSource\n\n\nStarter\n\n\n\nHW 5: Legos\nMore data wrangling, summarizing, and visualization\n\nInstructions\n\n\nSource\n\n\nStarter\n\n\n\nHW 6: Money in politics\nWeb scraping, functions, and iteration\n\nInstructions\n\n\nSource\n\n\nStarter",
     "crumbs": [
-      "Course Policies"
-    ]
-  },
-  {
-    "objectID": "policies.html#classroom-policy",
-    "href": "policies.html#classroom-policy",
-    "title": "Course Policies",
-    "section": "Classroom Policy",
-    "text": "Classroom Policy\n\n\n\n\n\n\nIMPORTANT!\n\n\n\nNo phones, no laptops, unless we tell you you can.\n\n\nThis is a difficult class, and you don’t need to be distracted by goofing around on your phone or laptop. And, I don’t want you to distract others.\nDaily Quizzes will be administered in the first 5 minutes of class, on Moodle. Do not show up late to class.",
-    "crumbs": [
-      "Course Policies"
-    ]
-  },
-  {
-    "objectID": "policies.html#attendance",
-    "href": "policies.html#attendance",
-    "title": "Course Policies",
-    "section": "Attendance",
-    "text": "Attendance\nClass attendance is optional.\nAlso, lab attendance is required! Lab is not optional. Skipping lab may result in you doing poorly in class.\nMissing class due to illness: if you are going to miss class due to (physical or mental) illness, please send me an email before class.",
-    "crumbs": [
-      "Course Policies"
-    ]
-  },
-  {
-    "objectID": "policies.html#disabilities",
-    "href": "policies.html#disabilities",
-    "title": "Course Policies",
-    "section": "Disabilities",
-    "text": "Disabilities\nCalvin University is committed to providing access to all students. If you are a student with a documented disability, please notify a Disability Coordinator in Student Success (located in Hiemenga Hall 227) to discuss necessary accommodations. If you have an accommodation memo, please come talk to me in the first two weeks of class. If you are a student needing reasonable modifications for pregnancy and related conditions, please contact the Title IX Coordinator in Student Life (located in Spoelhof University Center 364).",
-    "crumbs": [
-      "Course Policies"
-    ]
-  },
-  {
-    "objectID": "policies.html#statement-of-diversity-and-inclusion",
-    "href": "policies.html#statement-of-diversity-and-inclusion",
-    "title": "Course Policies",
-    "section": "Statement of Diversity and Inclusion",
-    "text": "Statement of Diversity and Inclusion\nInside and outside of the classroom, I work to treat every person with equal respect, regardless of racial identity, gender identity, physicality, brain chemistry, nationality, political leanings, and religious background. Whoever you are, you are fearfully and wonderfully made. God delights in diversity and I do, too. We humans need diverse viewpoints because every viewpoint, on its own, has blind spots. That has been proven to be true in technology-related fields, where under-represented minorities are significantly under-represented in the working world. When companies work hard to rectify this, they find their products and services improve. We have found this to be true in Computer Science classrooms as well.\n\n\n\n\n\n\nIMPORTANT!\n\n\n\nIf you or someone else in this class is hurt by something I say or do in class, I would like to know about it so that we can work toward a remedy. This has happened in the past in my classroom – usually when I’m trying to be “cool” or be funny. If this happens this semester, please know that it was unintentional. Because this kind of feedback can be uncomfortable for all involved, I’ll take it however it comes: in public or in private, on the spot or days later, directly from you or indirectly through another student, another professor, or through my department chair Keith VanderLinden (kvlinden@calvin.edu).\n\n\n\n\n\n\n\n\nCallout by Prof. Norman!\n\n\n\nAlso, please note that I am half deaf (at least). I am completely deaf on my left side. This results in my not being able to hear students that speak quietly, and not being able to tell which direction sounds are coming from. Please speak loudly! Thanks.",
-    "crumbs": [
-      "Course Policies"
-    ]
-  },
-  {
-    "objectID": "01-design-principles.html",
-    "href": "01-design-principles.html",
-    "title": "Design principles",
-    "section": "",
-    "text": "This course is designed with five principles in mind:",
-    "crumbs": [
-      "Course Policies",
-      "Design principles"
-    ]
-  },
-  {
-    "objectID": "01-design-principles.html#start-with-cake",
-    "href": "01-design-principles.html#start-with-cake",
-    "title": "Design principles",
-    "section": "Start with cake",
-    "text": "Start with cake\nAssuming you like chocolate and strawberries, which of the following images is more likely to make you want to learn to bake a cake? I’m guessing the answer is the image on the left: the cake.\n\n\n\n\n\n\n\n\n\nThe teaching philosophy of this course builds on this same idea. We first show the students the end result, and then step back and teach the necessary components. Specifically, instead of starting with data structures and functions, we start data visualization. And not just a toy example, but a complex, multivariate data visualization. Of course, we don’t want students feeling like…\n\n\n\n\n\n\n\n\n\nThe course starts out slow and emphasizes iteration. Students are initially provided with lots of scaffolding, and then slowly we take away the scaffolding until they are starting with a blank slate for their final projects.",
-    "crumbs": [
-      "Course Policies",
-      "Design principles"
-    ]
-  },
-  {
-    "objectID": "01-design-principles.html#cherish-day-one",
-    "href": "01-design-principles.html#cherish-day-one",
-    "title": "Design principles",
-    "section": "Cherish day one",
-    "text": "Cherish day one\nDon’t spend the first day going through the syllabus in detail, aim to get students to make their first meaningful data visualization in 10 minutes! This might sound impossible, and it probably is, if you start by installing R, and then RStudio, and then a bunch of packages, and making sure students have Git working on their computer. You could spend a whole class (or more) on this and not get to a point where every student has their local setup working in an ideal fashion.\nInstead, use cloud-based access to RStudio. This could be via RStudio Cloud or an RStudio Server you set up locally at your institution. Find out more about how you can set up your computing infrastructure for friction-less onboarding here.",
-    "crumbs": [
-      "Course Policies",
-      "Design principles"
-    ]
-  },
-  {
-    "objectID": "01-design-principles.html#skip-baby-steps",
-    "href": "01-design-principles.html#skip-baby-steps",
-    "title": "Design principles",
-    "section": "Skip baby steps",
-    "text": "Skip baby steps\nIt’s tempting to start teaching with the simplest examples, e.g. starting data visualization with a bar graph of a single categorical variable instead of a multivariate faceted visualization, especially when teaching programming to build these visualizations since with complex examples comes an extensive amount of code. Unfortunately very basic data visualizations are rarely as motivating as those telling the story of the relationship between a number of variables at once. With the right choice of language and syntax, one can achieve the goal of starting with motivating and complex examples, and building up to such examples along the way. The ggplot2 package, a system for declaratively creating graphics, based on The Grammar of Graphics allows for just this in the context of data visualization. Similarly, the data wrangling packages dplyr and tidyr work really well with the pipe (%&gt;%) operator in R, which allows for building up your data manipulation and analysis in a step-wise fashion, similar in spirit to ggplot2’s layers.",
-    "crumbs": [
-      "Course Policies",
-      "Design principles"
-    ]
-  },
-  {
-    "objectID": "01-design-principles.html#hide-the-veggies",
-    "href": "01-design-principles.html#hide-the-veggies",
-    "title": "Design principles",
-    "section": "Hide the veggies",
-    "text": "Hide the veggies\nThis is somewhat tongue-in-cheek. Veggies are absolutely good for you, and it is important that you learn to enjoy them. However many people wouldn’t list raw broccoli as their favourite food, however good it might be for them. Similarly there are many aspects of data science and programming that students must absolutely learn and understand the importance of, even if they are not the most exciting part of their data science journey. For example, one cannot do justice to working with text data without discussing regular expressions. However regular expressions are likely going to be a pain point in the learning journey of newcomers with little to no prior programming experience. So, in this course, instead of teaching students the basics of regular expressions as a unit, we hide this topic within the context of web scraping and manipulating text fields into multiple columns to get what we want out of them.",
-    "crumbs": [
-      "Course Policies",
-      "Design principles"
-    ]
-  },
-  {
-    "objectID": "01-design-principles.html#leverage-the-ecosystem",
-    "href": "01-design-principles.html#leverage-the-ecosystem",
-    "title": "Design principles",
-    "section": "Leverage the ecosystem",
-    "text": "Leverage the ecosystem\nThe course materials make heavy use of the tidyverse for data visualization and data wrangling. However, until recently, there was a gap in the R ecosystem for doing basic statistical inference using a syntax that follows tidyverse design principles. This prompted the developments of infer, a package for performing statistical inference using an expressive statistical grammar that coheres with the tidyverse design framework. Using infer to introduce statistical inference makes the transition from the first to the second unit of the course much smoother, and the development of the package as a collaboration between like-minded educators is a great example of leveraging an existing ecosystem to provide a smoother learning experience for students.\nSimilarly, on the instructor facing side, course organization on GitHub is managed by the ghclass package. And the course slides are built with xaringan, and course website is built with blogdown. Leveraging all of these packages allows the instructor to live and breathe in R for all aspects of running their course.",
-    "crumbs": [
-      "Course Policies",
-      "Design principles"
-    ]
-  },
-  {
-    "objectID": "01-design-principles.html#learn-more",
-    "href": "01-design-principles.html#learn-more",
-    "title": "Design principles",
-    "section": "Learn more",
-    "text": "Learn more\nThe following talk titled “Let them eat cake (first)!” describes in further detail and with examples from the course materials each of the design principles outlined above.",
-    "crumbs": [
-      "Course Policies",
-      "Design principles"
+      "Content",
+      "Exploring data"
     ]
   },
   {
@@ -2499,69 +2301,146 @@
     ]
   },
   {
-    "objectID": "01-topics.html",
-    "href": "01-topics.html",
-    "title": "Topics",
+    "objectID": "02-looking-further.html",
+    "href": "02-looking-further.html",
+    "title": "Looking further",
     "section": "",
-    "text": "The course content is organized in three units:\n\n\n\n\n\n\nUnit 1 - Hello world: This unit is an introduction to the content, pedagogy, and toolkit of the course.\nUnit 2 - Exploring data: This unit focuses on data visualization and data wrangling. Specifically we cover fundamentals of data and data visualization, confounding variables, and Simpson’s paradox as well as the concept of tidy data, data import, data cleaning, and data curation. We end the unit with web scraping and introduce the idea of iteration in preparation for the next unit. Also in this unit students are introduced to the toolkit: R, RStudio, R Markdown, Git, and GitHub.\nUnit 3 - Data science ethics: In this unit we discuss misrepresentation of findings, particularly in data visualisations, breaches of data privacy, and algorithmic bias.\nUnit 4 - Making rigorous conclusions: In this unit we introduce modelling and statistical inference for making data-based conclusions. We discuss building, interpreting, and selecting models, visualizing interaction effects, and prediction and model validation. Statistical inference is introduced from a simulation based perspective, and the Central Limit Theorem is discussed very briefly to lay the foundation for future coursework in statistics.\nUnit 5 - Looking forward: In the last unit we present a series of modules such as interactive reporting and visualization with Shiny, text analysis, and Bayesian inference. These are independent modules that educators can choose to include in their introductory data science curriculum depending on how much time they have left in the semester.",
-    "crumbs": [
-      "Course Policies",
-      "Topics"
-    ]
-  },
-  {
-    "objectID": "02-making-rigorous-conclusions.html",
-    "href": "02-making-rigorous-conclusions.html",
-    "title": "Making rigorous conclusions",
-    "section": "",
-    "text": "In this part we introduce modelling and statistical inference for making data-based conclusions. We discuss building, interpreting, and selecting models, visualizing interaction effects, and prediction and model validation. Statistical inference is introduced from a simulation based perspective, and the Central Limit Theorem is discussed very briefly to lay the foundation for future coursework in statistics.",
+    "text": "In the last unit we present a series of modules such as interactive reporting and visualization with Shiny, text analysis, machine learning, and Bayesian inference. These are independent modules that educators can choose to include in their introductory data science curriculum depending on how much time they have left in the semester. Note that the slides in this unit are a bit more sparse than the others, and much of the content is delivered as live coding sessions.",
     "crumbs": [
       "Content",
-      "Making rigorous conclusions"
+      "Looking further"
     ]
   },
   {
-    "objectID": "02-making-rigorous-conclusions.html#slides-videos-and-application-exercises",
-    "href": "02-making-rigorous-conclusions.html#slides-videos-and-application-exercises",
-    "title": "Making rigorous conclusions",
+    "objectID": "02-looking-further.html#slides-videos-and-application-exercises",
+    "href": "02-looking-further.html#slides-videos-and-application-exercises",
+    "title": "Looking further",
     "section": "Slides, videos, and application exercises",
-    "text": "Slides, videos, and application exercises\n\nModelling data\n\nUnit 4 - Deck 1: The language of models\n\nSlides\n\n\nSource\n\n\nVideo\n\n\n\nUnit 4 - Deck 2: Fitting and interpreting models\n\nSlides\n\n\nSource\n\n\nVideo\n\n\nIMS :: Chp 7 - Linear regression with a single predictor\n\n\n\nUnit 4 - Deck 3: Modelling nonlinear relationships\n\nSlides\n\n\nSource\n\n\nVideo\n\n\n\nUnit 4 - Deck 4: Models with multiple predictors\n\nSlides\n\n\nSource\n\n\nVideo\n\n\nIMS :: Chp 8 - Linear regression with multiple predictors\n\n\n\nUnit 4 - Deck 5: More models with multiple predictors\n\nSlides\n\n\nSource\n\n\nVideo\n\n\n\n\nClassification and model building\n\nUnit 4 - Deck 6: Logistic regression\n\nSlides\n\n\nSource\n\n\nVideo\n\n\nIMS :: Chp 9 - Logistic regression\n\n\n\nUnit 4 - Deck 7: Prediction and overfitting\n\nSlides\n\n\nSource\n\n\nVideo\n\n\ntidymodels :: Build a model\n\n\n\nUnit 4 - Deck 8: Feature engineering\n\nSlides\n\n\nSource\n\n\nVideo\n\n\ntidymodels :: Preprocess your data with recipes\n\n\n\n\nModel validation\n\nUnit 4 - Deck 9: Cross validation\n\nSlides\n\n\nSource\n\n\nVideo\n\n\ntidymodels :: Evaluate your model with resampling\n\n\n\nThe Office + Feature engineering, Pt. 1\n\nSource\n\n\nVideo\n\n\n\nThe Office + Cross validation, Pt. 2\n\nSource\n\n\nVideo\n\n\n\n\nUncertainty quantification\n\nUnit 4 - Deck 10: Quantifying uncertainty\n\nSlides\n\n\nSource\n\n\nVideo\n\n\n\nUnit 4 - Deck 11: Bootstrapping\n\nSlides\n\n\nSource\n\n\nVideo\n\n\nIMS :: Chp 12 - Confidence intervals with bootstrapping\n\n\n\nUnit 4 - Deck 12: Hypothesis testing\n\nSlides\n\n\nSource\n\n\nIMS :: Chp 11 - Hypothesis testing with randomization\n\n\n\nUnit 4 - Deck 13: Inference overview\n\nSlides\n\n\nSource",
+    "text": "Slides, videos, and application exercises\n\nUnit 5 - Deck 1: Text analysis\n\nSlides\n\n\nSource\n\n\nVideo\n\n\n\nUnit 5 - Deck 2: Comparing texts\n\nSlides\n\n\nSource\n\n\nVideo\n\n\n\nUnit 5 - Deck 3: Interactive web apps\n\nSlides\n\n\nSource\n\n\nVideo\n\n\n\nUnit 5 - Deck 4: Machine learning\n\nSlides\n\n\nSource\n\n\nVideo\n\n\n\nUnit 5 - Deck 5: Interactive data visualisation\n\nSlides\n\n\n\nUnit 5 - Deck 6: Interactive data visualisation and reporting\n\nSlides\n\n\n\nUnit 5 - Deck 7: Bayesian inference\n\nSlides\n\n\nSource",
     "crumbs": [
       "Content",
-      "Making rigorous conclusions"
+      "Looking further"
     ]
   },
   {
-    "objectID": "02-making-rigorous-conclusions.html#labs",
-    "href": "02-making-rigorous-conclusions.html#labs",
-    "title": "Making rigorous conclusions",
+    "objectID": "02-looking-further.html#labs",
+    "href": "02-looking-further.html#labs",
+    "title": "Looking further",
     "section": "Labs",
-    "text": "Labs\n\nLab 10: Grading the professor, Pt. 1\nFitting and interpreting simple linear regression models\n\nInstructions\n\n\nSource\n\n\nStarter\n\n\n\nLab 11: Grading the professor, Pt. 2\nFitting and interpreting multiple linear regression models\n\nInstructions\n\n\nSource\n\n\nStarter\n\n\n\nLab 12: Smoking while pregnant\nConstructing confidence intervals, conducting hypothesis tests, and interpreting results in context of the data\n\nInstructions\n\n\nSource\n\n\nStarter",
+    "text": "Labs\n\nLab 13: Working on projects\nFitting and interpreting simple linear regression models\n\nInstructions\n\n\nSource\n\n\n\nLab 14: Collaboration on GitHub\nFitting and interpreting simple linear regression models\n\nInstructions\n\n\nSource",
     "crumbs": [
       "Content",
-      "Making rigorous conclusions"
+      "Looking further"
     ]
   },
   {
-    "objectID": "02-making-rigorous-conclusions.html#homework-assignments",
-    "href": "02-making-rigorous-conclusions.html#homework-assignments",
-    "title": "Making rigorous conclusions",
+    "objectID": "02-looking-further.html#homework-assignments",
+    "href": "02-looking-further.html#homework-assignments",
+    "title": "Looking further",
     "section": "Homework assignments",
-    "text": "Homework assignments\n\nHW 7: Bike rentals in DC\nExploratory data analysis and fitting and interpreting models\n\nInstructions\n\n\nSource\n\n\nStarter\n\n\n\nHW 8: Exploring the GSS\nFitting and interpreting models\n\nInstructions\n\n\nSource\n\n\nStarter\n\n\n\nHW 9: Modelling the GSS\nModel validation and inference\n\nInstructions\n\n\nSource\n\n\nStarter",
+    "text": "Homework assignments\n\nHW 10: Wrapping up\nModel validation and inference\n\nInstructions\n\n\nSource\n\n\nStarter",
     "crumbs": [
       "Content",
-      "Making rigorous conclusions"
+      "Looking further"
     ]
   },
   {
-    "objectID": "01-tech-stack.html",
-    "href": "01-tech-stack.html",
-    "title": "Tech stack",
+    "objectID": "03-access-r.html",
+    "href": "03-access-r.html",
+    "title": "Accessing R",
     "section": "",
-    "text": "This course teaches computing and statistics to undergraduates with no background in either. Managing such a course with students from varied backgrounds doing non-trivial computational work is a big technical challenge. This page briefly describes the toolkit choices, and the Infrastructure part provides a path forward for educators who are considering using these tools for their own teaching purposes.\nWhile the recommended tech stack for the entirety of course development is tall, only a few of the technologies are student facing:\n\nRStudio Cloud: RStudio Cloud is a managed cloud instance of the RStudio IDE. We recommend having students access RStudio via RStudio Cloud as opposed to using a local installation. See Accessing R for more on this.\nGitHub: The use of GitHub also goes a long way to help students visualize and understand the git process which also aids in student buy-in. The web interface allows students to easily view diffs (file changes over time) in files they are collaborating on, keep track of commit histories, and search both the current state as well as the entire history of the code base. Within the classroom GitHub can be thought of as an advanced and flexible learning management system (compared to traditional tools like Blackboard or Sakai). See Version Control for more on this.\nPiazza: Piazza is an easy to use and free Q&A platform that your students might very well be already familiar with from other classes. It is also possible that it’s already integrated into your learning management system if you’re teaching in a university setting. Students are discouraged from using email for questions and discussions related to content of the course, only emails about personal matters are allowed. Hence most course communication happens on Piazza. Both public (for announcements and general questions) and private (for team communication) channels are used. Note that Piazza is not everyone’s first choice, a few options for alternatives used in statistics and data science courses can be found on this Twitter thread.",
+    "text": "The RStudio IDE includes a viewable environment, a file browser, data viewer, and a plotting pane, which makes it less intimidating than the bare R shell. Additionally, since it is a full fledged IDE, it also features integrated help, syntax highlighting, and context-aware tab completion, which are all powerful tools that help flatten the learning curve.\nRStudio Cloud is a managed cloud instance of the RStudio IDE. We recommend having students access RStudio via RStudio Cloud as opposed to using a local installation. The main reason for this choice is reducing friction at first exposure to R. Local installation can be difficult to manage, both for the student and the instructor, and can shift the focus away from data science learning at the beginning of the course. We discuss in further detail the reasons for avoiding local installation at the beginning of the course in Design Principles.1\nWhen you create an account on RStudio Cloud, you get a workspace of your own, and the projects you create here can be public or private. You can also add a new workspace and control its permissions, and the projects you create here can also be public or private.\nA natural way to set up a course in RStudio Cloud is using a private workspace. In this structure a classroom (a cohort of students in one semester of the course) maps to a workspace. Once a workspace is set up, instructors can invite students to the workspace via an invite link. Workspaces allow for various permission levels which can be assigned to students, teaching assistants, and instructors. Then, each assignment/project in the course maps to an RStudio Cloud project.\nRStudio Cloud classroom structure",
     "crumbs": [
-      "Course Policies",
-      "Tech stack"
+      "Infrastructure",
+      "Accessing R"
+    ]
+  },
+  {
+    "objectID": "03-access-r.html#setting-up-your-course-in-rstudio-cloud",
+    "href": "03-access-r.html#setting-up-your-course-in-rstudio-cloud",
+    "title": "Accessing R",
+    "section": "Setting up your course in RStudio Cloud",
+    "text": "Setting up your course in RStudio Cloud\nFirst, create a new workspace on RStudio Cloud. By default, this new workspace will be a private workspace. All it takes to create a new workspace is a name and brief information for the space. You can update the information once the space is created, however you can’t change the name of the space. For the name,\nI recommend using something along the lines of Course number - Semester.\n\n\n\n\n\nCreating a new workspace on RStudio Cloud\n\n\n\n\nNext step is to invite members to the workspace. You can do this by sending invitations or using a sharing link. I recommend using the latter approach for efficiency. Once all of your students are in the course (or once drop/add period ends) you can change the settings so that additional members cannot join throughout the semester using the sharing link, and can only be added via an invitation from the instructor.\n\n\n\n\n\nSetting workspace permissions\n\n\n\n\nAs highlighted in the figure above, when a workspace is set to accept members via a shared link, the owner can also set a default permission level for those entering the workspace via the sharing link. Suggested permission levels and suggestions for mapping to course roles are as follows.\n\n\n\n\n\n\n\n\nRStudio Cloud role\nPermissions\nCourse role\n\n\n\n\nAdmin\nManage users, view, edit and manage all projects\nInstructor\n\n\nModerator\nView, edit and manage all projects\nTeaching Assistant\n\n\nContributor\nCreate, edit and manage their own projects\nStudent\n\n\nViewer\nView projects shared with everyone\nAuditor, Visitor\n\n\n\nThis set of permissions will allow instructors full access including management of users. Teaching assistants will be able to peek into student projects, which can be very useful when helping troubleshoot. Students won’t be able to see each others’ projects. Students auditing your course or visitors, such as colleagues wanting to view/experience your course setup will have limited access.\nRStudio Cloud also allows you to specify who can see the list of members. Admins and moderators can, by default, see all members of the workspace. I prefer to allow contributors (students) to see the list of members and viewers (auditors and visitors) to not since course enrollment information should not be available to non-official members of the course.",
+    "crumbs": [
+      "Infrastructure",
+      "Accessing R"
+    ]
+  },
+  {
+    "objectID": "03-access-r.html#projects",
+    "href": "03-access-r.html#projects",
+    "title": "Accessing R",
+    "section": "Projects",
+    "text": "Projects\nA project in RStudio Cloud is equivalent to an RStudio project. If you are an RStudio user, but you don’t use projects, I highly recommend considering switching your workflow to include projects. You can learn more about them here.\n\n\n\n\n\nA new project in RStudio Cloud is a new project in the RStudio IDE\n\n\n\n\n\nAccess\nWhen you create a new project in your workspace, it is by default visible only to you plus the admins and moderators of the space. This default has two advantages:\n\nIt allows you to develop a project semi-privately and actively decide when the project is ready to be shared with students. This can be especially beneficial when developing an assessment like an exam.\nIt means when a student creates a project in the workspace it’s not, by default, visible to other students.\n\nWhen your project is ready to be shared with the students in your course, you can adjust the access level by clicking on the gear icon to reveal the settings menu. You should also check the “Make this project an assignment” box so that when a student starts their assignment RStudio Cloud automatically makes a copy of the project for them.\n\n\n\n\n\nSetting project permissions within a workspace",
+    "crumbs": [
+      "Infrastructure",
+      "Accessing R"
+    ]
+  },
+  {
+    "objectID": "03-access-r.html#base-project-template",
+    "href": "03-access-r.html#base-project-template",
+    "title": "Accessing R",
+    "section": "Base project template",
+    "text": "Base project template\nIf you consistently use a particular set of packages and/or need a particular set of documents to be included in each project, the base project template functionality will come in very handy. You can use this by defining a base project template for the space. Simply create a new project and add any packages or files you want projects created in the space to start with. After creating your project, select it on the Settings page as the base project template.\n\n\n\n\n\nSelecting a base project template\n\n\n\n\nNote that a project must be shared with everyone in the space in order to be used as a template; only projects which are viewable by everyone in the space will appear in the templates list.\nYou can update your base project as many times as you want throughout the semester. The base template is applied prospectively – it only effects projects created after the template has been set. Therefore updating the base project will not break projects already created with the previous version of a base project.",
+    "crumbs": [
+      "Infrastructure",
+      "Accessing R"
+    ]
+  },
+  {
+    "objectID": "03-access-r.html#git-integration",
+    "href": "03-access-r.html#git-integration",
+    "title": "Accessing R",
+    "section": "Git integration",
+    "text": "Git integration\nIt is possible to create (clone) a new project in RStudio Cloud from a GitHub repository, just like in the RStudio IDE.\n\n\n\n\n\nCreating a new project from GitHub repository\n\n\n\n\nIf you have a base project template set up for your workspace, this new project created from GitHub will also have the packages installed in the base project template.\nFor more on using Git and GitHub in the classroom, see Version Control.",
+    "crumbs": [
+      "Infrastructure",
+      "Accessing R"
+    ]
+  },
+  {
+    "objectID": "03-access-r.html#troubleshooting",
+    "href": "03-access-r.html#troubleshooting",
+    "title": "Accessing R",
+    "section": "Troubleshooting",
+    "text": "Troubleshooting\nI strongly recommend that you make a second account for themselves on RStudio Cloud and add that user as a contributor to the workspace to be able to see what your students see when they log in. It’s a great way to test out functionality and resolve unexpected issues your students might encounter, before they encounter them. I recommend using an incognito browser window for the student account so that you can stay logged in both as a student and as the instructor at the same time and test the student view as you develop content as an instructor.\nOne huge advantage of your students working in RStudio Cloud is that you as the instructor, and anyone with an admin and moderator role, can peek into student projects. While it is important for your students to learn to ask questions in a way that does not depend on someone else being able to see their work directly (and for this I strongly recommend teaching students to make reprexes), it is sometimes, especially early on, nice to be able to peek into a student’s project.",
+    "crumbs": [
+      "Infrastructure",
+      "Accessing R"
+    ]
+  },
+  {
+    "objectID": "03-access-r.html#limits",
+    "href": "03-access-r.html#limits",
+    "title": "Accessing R",
+    "section": "Limits",
+    "text": "Limits\n\nMemory & CPU\nEach project on RStudio Cloud is allocated 1 GB of RAM and 1 CPU by default. While this is a pretty generous limit, actions like joining very large tables or fitting complicated models could exceed the limit.\nI recommend testing out the any work you assign, especially those using large datasets, in order to avoid unexpected hiccups due to out of memory issues. One challenge is that you might have no control over what issues students might run into if they are working on an open ended project using a dataset of their own choice. In these circumstances it’s helpful to keep in the back of your mind that one way an out of memory issue can present itself is with the RStudio Cloud project crashing.\n\n\nOther limits\nFor most up to date information on limits on free RStudio Cloud accounts, as well as any other technical details, see the RStudio Cloud Guide. This document gets updated as changes are made to the user interface and/or the backend of RStudio Cloud and should be assumed to be more current than the information outlined here.",
+    "crumbs": [
+      "Infrastructure",
+      "Accessing R"
+    ]
+  },
+  {
+    "objectID": "03-access-r.html#learn-more",
+    "href": "03-access-r.html#learn-more",
+    "title": "Accessing R",
+    "section": "Learn more",
+    "text": "Learn more\nTo see this all in action and learn more, watch the following RStudio Cloud webinars:\n\nTeaching R online with RStudio Cloud (July 2020)\nTeaching R online with RStudio Cloud (March 2020)\nRStudio Cloud in the Classroom",
+    "crumbs": [
+      "Infrastructure",
+      "Accessing R"
+    ]
+  },
+  {
+    "objectID": "03-access-r.html#footnotes",
+    "href": "03-access-r.html#footnotes",
+    "title": "Accessing R",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nNote that as of August 2020 RStudio Cloud offers paid tiers as well, and you will likely need a paid subscription to teach with RStudio Cloud (unless you’re teaching a short, small course). Depending on your institution’s IT infrastructure and your class size, RStudio Cloud may or may not be the most economically feasible solution for your teaching needs. See Alternative Setups for suggestions for other setups for providing server access to RStudio for your students. Note that these alternatives generally require system infrastructure expertise or IT professional time.↩︎",
+    "crumbs": [
+      "Infrastructure",
+      "Accessing R"
     ]
   }
 ]
