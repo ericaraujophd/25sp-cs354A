@@ -72,9 +72,11 @@ ul.task-list li input[type="checkbox"] {
 
 
 <meta property="og:title" content="Lab 3: Classes – CS112 - Data Structures">
+<meta property="og:description" content="CS112 will teach students to use C++ for creating data structures.">
 <meta property="og:image" content="https://ericaraujo.com/24fa-cs112/weekly-activities/labs/lab-03/imgs/student-cover.jpeg">
 <meta property="og:site_name" content="CS112 - Data Structures">
 <meta name="twitter:title" content="Lab 3: Classes – CS112 - Data Structures">
+<meta name="twitter:description" content="CS112 will teach students to use C++ for creating data structures.">
 <meta name="twitter:image" content="https://ericaraujo.com/24fa-cs112/images/twitter-card.png">
 <meta name="twitter:creator" content="@ericfaraujo">
 <meta name="twitter:image-height" content="600">
@@ -147,7 +149,14 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
   <li><a href="#step-0.-prepare" id="toc-step-0.-prepare" class="nav-link" data-scroll-target="#step-0.-prepare">Step 0. Prepare</a></li>
   <li><a href="#step-1.-create-the-class" id="toc-step-1.-create-the-class" class="nav-link" data-scroll-target="#step-1.-create-the-class">Step 1. Create the class</a></li>
-  <li><a href="#step-3.-create-getters" id="toc-step-3.-create-getters" class="nav-link" data-scroll-target="#step-3.-create-getters">Step 3. Create getters</a></li>
+  <li><a href="#step-2.-create-getters" id="toc-step-2.-create-getters" class="nav-link" data-scroll-target="#step-2.-create-getters">Step 2. Create getters</a></li>
+  <li><a href="#step-3.-create-setters" id="toc-step-3.-create-setters" class="nav-link" data-scroll-target="#step-3.-create-setters">Step 3. Create setters</a></li>
+  <li><a href="#step-4.-create-an-explicit-value-constructor" id="toc-step-4.-create-an-explicit-value-constructor" class="nav-link" data-scroll-target="#step-4.-create-an-explicit-value-constructor">Step 4. Create an explicit-value constructor</a></li>
+  </ul></li>
+  <li><a href="#part-2-fraction-class" id="toc-part-2-fraction-class" class="nav-link" data-scroll-target="#part-2-fraction-class">Part 2: Fraction class</a>
+  <ul class="collapse">
+  <li><a href="#step-1.-test-the-fraction-class" id="toc-step-1.-test-the-fraction-class" class="nav-link" data-scroll-target="#step-1.-test-the-fraction-class">Step 1. Test the Fraction class</a></li>
+  <li><a href="#step-2.-add-the-instance-variables-and-constructors" id="toc-step-2.-add-the-instance-variables-and-constructors" class="nav-link" data-scroll-target="#step-2.-add-the-instance-variables-and-constructors">Step 2. Add the instance variables and constructors</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/ericaraujophd/24fa-cs112/edit/main/weekly-activities/labs/lab-03/lab03.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/24fa-cs112/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -266,8 +275,8 @@ Compile and fix any errors.
 </div>
 </div>
 </section>
-<section id="step-3.-create-getters" class="level3">
-<h3 class="anchored" data-anchor-id="step-3.-create-getters">Step 3. Create getters</h3>
+<section id="step-2.-create-getters" class="level3">
+<h3 class="anchored" data-anchor-id="step-2.-create-getters">Step 2. Create getters</h3>
 <p>In your <em>tests.cpp</em>, you’ll find the first SECTION of unit tests called “student getters”, within the TEST_CASE “Student class”. Uncomment the first SECTION, so that the code to construct a Student object and then test getMajor() runs.</p>
 <div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -284,7 +293,7 @@ Compile
 </div>
 <p>So, create a getter function (in both the <em>Student.h</em> and <em>Student.cpp</em> files) called <em>getMajor()</em>.</p>
 <p>Compile and run (in a terminal, run <code>./tester "Student class"</code>) – this should work now.</p>
-<p>Now, repeat the above steps for the other tests and instance variables. Start with a test in <em>tests.cpp</em> first, then implement the prototype and code.</p>
+<p>Now, repeat the above steps for the other tests and instance variables <strong>(maybe make this part more clear in the future)</strong>. Start with a test in <em>tests.cpp</em> first, then implement the prototype and code.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -296,6 +305,99 @@ NOTE
 </div>
 <div class="callout-body-container callout-body">
 <p>Don’t delete any old tests – just keep adding more. Put each test in its own SECTION within the “Student class” TEST_CASE.</p>
+</div>
+</div>
+</section>
+<section id="step-3.-create-setters" class="level3">
+<h3 class="anchored" data-anchor-id="step-3.-create-setters">Step 3. Create setters</h3>
+<p>For the instance variables that are mutable (see the table above), create setter methods. But first, for each, create a test. Put all of these tests in a new SECTION within the “Student class” TEST_CASE.</p>
+<p>Example: for the setGpa test, set the student’s gpa to 3.25, then in a REQUIRE statement, call getGpa() and make sure the value is 3.25.</p>
+</section>
+<section id="step-4.-create-an-explicit-value-constructor" class="level3">
+<h3 class="anchored" data-anchor-id="step-4.-create-an-explicit-value-constructor">Step 4. Create an explicit-value constructor</h3>
+<p>Now, create a second constructor – the explicit-value constructor. This constructor should take the two immutable fields as parameters, and store their values in the instance variables. Initialize all the other variables to their default values. BUT FIRST, create tests. I called my SECTION “student explicit-value constructor”, and in it I create a Student with the explicit-value constructor and then use the getters on all instance variables to make sure the object has the correct values in it.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Compile and test the result. Fix any errors.
+</div>
+</div>
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+<p>You are now done with this simple class. We could add tons of other functionality to it, but not now…</p>
+<p>Before you go on, commit and push your changes to your github repo. You can easily do this from VSCode. After you do this, you should be able to see that the automated tests fail – but the one test that tests the “Student class” passes. If it does not pass, fix your code (or your tests), and resubmit until it does pass.</p>
+</section>
+</section>
+<section id="part-2-fraction-class" class="level2">
+<h2 class="anchored" data-anchor-id="part-2-fraction-class">Part 2: Fraction class</h2>
+<p>A Fraction class is a useful class to create. It stores a numerator and denominator and can do things like represent itself nicely (e.g., “3/4”), simplify itself, multiply itself with another fraction, etc.</p>
+<section id="step-1.-test-the-fraction-class" class="level3">
+<h3 class="anchored" data-anchor-id="step-1.-test-the-fraction-class">Step 1. Test the Fraction class</h3>
+<p>We’ll continue to use <em>tests.cpp</em> – <strong>don’t remove any code from there</strong>. But, now we’ll also use it to create and test Fraction class instances. However, our <em>makefile</em> does not compile the Fraction stuff yet.</p>
+<p>Edit the <em>makefile</em>, <ins>adding</ins> Fraction.cpp to the SOURCES line.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Space separated! <strong>Do not</strong> remove Students.cpp.</p>
+</div>
+</div>
+<p>In <strong>tests.cpp</strong>, below all your tests for the Student class, add the tests shown below</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important!
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You’ll have to <code>#include "Fraction.h"</code> at the top of the file.</p>
+</div>
+</div>
+<pre><code>TEST_CASE("Fraction class") {
+    SECTION("fraction constructors") {
+        SECTION("default") {
+            Fraction fr;
+            REQUIRE(fr.getNumerator() == 0);
+            REQUIRE(fr.getDenominator() == 1);
+        }
+        SECTION("explicit value") {
+            Fraction fr(2, 4);
+            REQUIRE(fr.getNumerator() == 2);
+            REQUIRE(fr.getDenominator() == 4);
+        }
+    }
+}</code></pre>
+</section>
+<section id="step-2.-add-the-instance-variables-and-constructors" class="level3">
+<h3 class="anchored" data-anchor-id="step-2.-add-the-instance-variables-and-constructors">Step 2. Add the instance variables and constructors</h3>
+<p>Add the two instance variables – <em>myNumerator</em> and <em>myDenominator</em> (both integers) – to the class definition in the .h file.</p>
+<p>Update the default constructor, to initialize <em>myNumerator</em> to 0 and <em>myDenominator</em> to 1.</p>
+<p>Now, implement the explicit-value constructor, which takes both the numerator and denominator as parameters, and stores them in <em>myNumerator</em> and <em>myDenominator</em>. Don’t forget to put the declaration in the .h file and implementation in the .cpp file.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We will compile our tester after the next section.</p>
 </div>
 </div>
 
