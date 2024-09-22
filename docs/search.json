@@ -1030,69 +1030,14 @@
     "text": "Acknowledgements\nThis website is built with Quarto, the lovely icons by icons8. The original code used to build this website can be found at DS Box. We are very grateful for their work!"
   },
   {
-    "objectID": "instructors.html",
-    "href": "instructors.html",
-    "title": "Instructors",
+    "objectID": "content.html",
+    "href": "content.html",
+    "title": "Course content",
     "section": "",
-    "text": "This course has as instructors: - Prof. Victor Norman - Prof. Eric Araújo",
-    "crumbs": [
-      "Course Policies",
-      "Instructors"
-    ]
-  },
-  {
-    "objectID": "instructors.html#office-hours",
-    "href": "instructors.html#office-hours",
-    "title": "Instructors",
-    "section": "Office Hours",
-    "text": "Office Hours\n\nProf. Norman’s hours\nProf. Araújo’s hours",
-    "crumbs": [
-      "Course Policies",
-      "Instructors"
-    ]
-  },
-  {
-    "objectID": "02-project.html",
-    "href": "02-project.html",
-    "title": "Project",
-    "section": "",
-    "text": "The following is a sample project assignment for this curriculum. You can find the source code for this assignment write up here. I’ve also provided sample evaluation forms to be used by the teaching team and students as well as a sample repo structure for the project.",
+    "text": "CS 112 is organized by week, with each week structured as follows:\n\nClassroom sessions are Monday-Wednesday-Friday.\nThe lab sessions are on Tuesdays.\nYour lab submission is due Thursday at 23:59.\nYour project submission is due the next Monday at 23:59 (the night before your next lab).\nTutoring Assistants are available in SB337 on Mondays and Thursdays, from 7 - 9 pm.\n\nThe SLOs (Student Learning Objectives), labs, and projects for each week are given in the links on the left of this page. On overview of the semester is given in the table below:",
     "crumbs": [
       "Content",
-      "Project"
-    ]
-  },
-  {
-    "objectID": "02-project.html#tldr",
-    "href": "02-project.html#tldr",
-    "title": "Project",
-    "section": "TL;DR",
-    "text": "TL;DR\nPick a dataset, any dataset…\n…and do something with it. That is your final project in a nutshell. More details below.",
-    "crumbs": [
-      "Content",
-      "Project"
-    ]
-  },
-  {
-    "objectID": "02-project.html#may-be-too-long-but-please-do-read",
-    "href": "02-project.html#may-be-too-long-but-please-do-read",
-    "title": "Project",
-    "section": "May be too long, but please do read",
-    "text": "May be too long, but please do read\nThe final project for this class will consist of analysis on a dataset of your own choosing. The dataset may already exist, or you may collect your own data using a survey or by conducting an experiment. You can choose the data based on your interests or based on work in other courses or research projects. The goal of this project is for you to demonstrate proficiency in the techniques we have covered in this class (and beyond, if you like) and apply them to a novel dataset in a meaningful way.\nThe goal is not to do an exhaustive data analysis i.e., do not calculate every statistic and procedure you have learned for every variable, but rather let me know that you are proficient at asking meaningful questions and answering them with results of data analysis, that you are proficient in using R, and that you are proficient at interpreting and presenting the results. Focus on methods that help you begin to answer your research questions. You do not have to apply every statistical procedure we learned (and you can use techniques we haven’t officially covered in class, if you’re feeling adventurous). Also, critique your own methods and provide suggestions for improving your analysis. Issues pertaining to the reliability and validity of your data, and appropriateness of the statistical analysis should be discussed here.\nThe project is very open ended. You should create some kind of compelling visualization(s) of this data in R. There is no limit on what tools or packages you may use, but sticking to packages we learned in class (tidyverse) is required. You do not need to visualize all of the data at once. A single high quality visualization will receive a much higher grade than a large number of poor quality visualizations. Also pay attention to your presentation. Neatness, coherency, and clarity will count. All analyses must be done in RStudio, using R.",
-    "crumbs": [
-      "Content",
-      "Project"
-    ]
-  },
-  {
-    "objectID": "02-project.html#data",
-    "href": "02-project.html#data",
-    "title": "Project",
-    "section": "Data",
-    "text": "Data\nIn order for you to have the greatest chance of success with this project it is important that you choose a manageable dataset. This means that the data should be readily accessible and large enough that multiple relationships can be explored. As such, your dataset must have at least 50 observations and between 10 to 20 variables (exceptions can be made but you must speak with me first). The dataset’s variables should include categorical variables, discrete numerical variables, and continuous numerical variables.\nIf you are using a dataset that comes in a format that we haven’t encountered in class, make sure that you are able to load it into R as this can be tricky depending on the source. If you are having trouble ask for help before it is too late.\nNote on reusing datasets from class: Do not reuse datasets used in examples, homework assignments, or labs in the class.\nBelow are a list of data repositories that might be of interest to browse. You’re not limited to these resources, and in fact you’re encouraged to venture beyond them. But you might find something interesting there:\n\nTidyTuesday\nNHS Scotland Open Data\nEdinburgh Open Data\nOpen access to Scotland’s official statistics\nBikeshare data portal\nUK Gov Data\nKaggle datasets\nOpenIntro datasets\nAwesome public datasets\nYouth Risk Behavior Surveillance System (YRBSS)\nPRISM Data Archive Project\nHarvard Dataverse\nIf you know of others, let me know, and we’ll add here…\n\n\nDeliverables\n\nProposal - due [ENTER DUE DATE]\nPresentation - due [ENTER DUE DATE]\nExecutive summary - due [ENTER DUE DATE]\n\n\nProposal\nThis is a draft of the introduction section of your project as well as a data analysis plan and your dataset.\n\nSection 1 - Introduction: The introduction should introduce your general\nresearch question and your data (where it came from, how it was collected,\nwhat are the cases, what are the variables, etc.).\nSection 2 - Data: Place your data in the `/data` folder, and add dimensions and codebook to the README in that folder. Then print out the output of and codebook to the README in that folder. Then print out the output of glimpse() or skim() of your data frame.\nSection 3 - Data analysis plan:\n\nThe outcome (response, Y) and predictor (explanatory, X) variables you will use to answer your question.\nThe comparison groups you will use, if applicable.\nVery preliminary exploratory data analysis, including some summary statistics and visualizations, along with some explanation on how they help you learn more about your data. (You can add to these later as you work on your project.)\nThe method(s) that you believe will be useful in answering your question(s). (You can update these later as you work on your project.)\nWhat results from these specific statistical methods are needed to support your hypothesized answer?\n\n\nEach section should be no more than 1 page (excluding figures). You can check a print preview to confirm length.\nThe grading scheme for the project proposal is as follows. Note that after you receive feedback for your proposal you can improve it based on the feedback and re-submit it. If you re-submit, your final score for the proposal will be the average of two scores you receive (first and second submission).\n\n\n\nTotal\n10 pts\n\n\n\n\nData\n3 pts\n\n\nProposal\n5 pts\n\n\nWorkflow, organization, code quality\n1 pt\n\n\nTeamwork\n1 pt\n\n\n\n\n\nPresentation\n5 minutes maximum, and each team member should say something substantial. You can either present live during your workshop or pre-record and submit your video to be played during the workshop.\nPrepare a slide deck using the template in your repo. This template uses a package called xaringan, and allows you to make presentation slides using R Markdown syntax. There isn’t a limit to how many slides you can use, just a time limit (5 minutes total). Each team member should get a chance to speak during the presentation. Your presentation should not just be an account of everything you tried (“then we did this, then we did this, etc.”), instead it should convey what choices you made, and why, and what you found.\nBefore you finalize your presentation, make sure your chunks are turned off with echo = FALSE.\nPresentations will take place during the last workshop of the semester. You can choose to do your presentation live or pre-record it. During your workshop you will watch presentations from other teams in your workshop and provide feedback in the form of peer evaluations. The presentation line-up will be generated randomly.\nThe grading scheme for the presentation is as follows:\n\n\n\n\n\n\n\nTotal\n50 pts\n\n\n\n\nTime management: Did the team divide the time well amongst themselves or got cut off going over time?\n4 pts\n\n\nContent: Is the research question well designed and is the data being used relevant to the research question?\n5 pts\n\n\nProfessionalism: How well did the team present? Does the presentation appear to be well practiced? Did everyone get a chance to say something meaningful about the project?\n5 pts\n\n\nTeamwork: Did the team present a unified story, or did it seem like independent pieces of work patched together?\n6 pts\n\n\nContent: Did the team use appropriate statistical procedures and interpretations of results accurately?\n10 pts\n\n\nCreativity and Critical Thought: Is the project carefully thought out? Are the limitations carefully considered? Does it appear that time and effort went into the planning and implementation of the project?\n10 pts\n\n\nSlides: Are the slides well organized, readable, not full of text, featuring figures with legible labels, legends, etc.?\n10 pts\n\n\n\n\n\nExecutive summary\nAlong with your presentation slides, we want you to provide a brief summary of your project in the README of your repository.\nThis executive summary should provide information on the dataset you’re using, your research question(s), your methodology, and your findings.\nThe executive summary is worth 15 points and will be evaluated based on whether it follows guidance and whether it’s concise but detailed enough.\n\n\nRepo organization\nThe following folders and files in your project repository:\n\npresentation.Rmd + presentation.html: Your presentation slides\nREADME.Rmd + README.md: Your write-up\n/data: Your dataset in CSV or RDS format and your data dictionary\n/proposal: Your project proposal\n\nStyle and format does count for this assignment, so please take the time to make sure everything looks good and your data and code are properly formatted.\n\n\n\nTips\n\nYou’re working in the same repo as your teammates now, so merge conflicts will happen, issues will arise, and that’s fine Commit and push often, and ask questions when stuck.\nReview the marking guidelines below and ask questions if any of the expectations are unclear.\nMake sure each team member is contributing, both in terms of quality and quantity of contribution (we will be reviewing commits from different team members).\nSet aside time to work together and apart (physically).\nWhen you’re done, review the documents on GitHub to make sure you’re happy with the final state of your work. Then go get some rest!\nCode: In your presentation your code should be hidden (echo = FALSE) so that your document is neat and easy to read. However your document should include all your code such that if I re-knit your R Markdown file I should be able to obtain the results you presented.\n\nException: If you want to highlight something specific about a piece of code, you’re welcomed to show that portion.\n\nTeamwork: You are to complete the assignment as a team. All team members are expected to contribute equally to the completion of this assignment and team evaluations will be given at its completion - anyone judged to not have sufficient contributed to the final product will have their grade penalized. While different teams members may have different backgrounds and abilities, it is the responsibility of every team member to understand how and why all code and approaches in the assignment works.\n\n\n\nMarking\n\n\n\nTotal\n100 pts\n\n\n\n\nProposal\n10 pts\n\n\nPresentation\n50 pts\n\n\nExecutive summary\n15 pts\n\n\nReproducibility and organization\n10 pts\n\n\nTeam peer evaluation\n10 pts\n\n\nClassmates’ evaluation\n5 pts\n\n\n\n\nCriteria\nYour project will be assessed on the following criteria:\n\nContent - What is the quality of research and/or policy question and relevancy of data to those questions?\nCorrectness - Are statistical procedures carried out and explained correctly?\nWriting and Presentation - What is the quality of the statistical presentation, writing, and explanations?\nCreativity and Critical Thought - Is the project carefully thought out? Are the limitations carefully considered? Does it appear that time and effort went into the planning and implementation of the project?\n\nA general breakdown of scoring is as follows:\n\n90%-100% - Outstanding effort. Student understands how to apply all statistical concepts, can put the results into a cogent argument, can identify weaknesses in the argument, and can clearly communicate the results to others.\n80%-89% - Good effort. Student understands most of the concepts, puts together an adequate argument, identifies some weaknesses of their argument, and communicates most results clearly to others.\n70%-79% - Passing effort. Student has misunderstanding of concepts in several areas, has some trouble putting results together in a cogent argument, and communication of results is sometimes unclear.\n60%-69% - Struggling effort. Student is making some effort, but has misunderstanding of many concepts and is unable to put together a cogent argument. Communication of results is unclear.\nBelow 60% - Student is not making a sufficient effort.\n\n\n\nTeam peer evaluation\nYou will be asked to fill out a survey where you rate the contribution and teamwork of each team member out of 10 points. You will additionally report a contribution percentage for each team member. Filling out the survey is a prerequisite for getting credit on the team member evaluation.If you are suggesting that an individual did less than 20% of the work, please provide some explanation. If any individual gets an average peer score indicating that they did less than 10% of the work, this person will receive half the grade of the rest of the group.",
-    "crumbs": [
-      "Content",
-      "Project"
+      "Course content"
     ]
   },
   {
@@ -1221,36 +1166,25 @@
     ]
   },
   {
-    "objectID": "content.html",
-    "href": "content.html",
-    "title": "Course content",
+    "objectID": "instructors.html",
+    "href": "instructors.html",
+    "title": "Instructors",
     "section": "",
-    "text": "CS 112 is organized by week, with each week structured as follows:\n\nClassroom sessions are Monday-Wednesday-Friday.\nThe lab sessions are on Tuesdays.\nYour lab submission is due Thursday at 23:59.\nYour project submission is due the next Monday at 23:59 (the night before your next lab).\nTutoring Assistants are available in SB337 on Mondays and Thursdays, from 7 - 9 pm.\n\nThe SLOs (Student Learning Objectives), labs, and projects for each week are given in the links on the left of this page. On overview of the semester is given in the table below:",
+    "text": "This course has as instructors: - Prof. Victor Norman - Prof. Eric Araújo",
     "crumbs": [
-      "Content",
-      "Course content"
+      "Course Policies",
+      "Instructors"
     ]
   },
   {
-    "objectID": "02-interactive-tutorials.html",
-    "href": "02-interactive-tutorials.html",
-    "title": "Interactive tutorials",
-    "section": "",
-    "text": "The following interactive tutorials have been built with learnr and gradethis. They’re available on shinyapps.io (linked) as well as distributed with the dsbox package.1 With the dsbox package installed, you can also run these tutorials in the Tutorials pane of your RStudio window. This might be preferable for courses with high enrollment where students need to access the tutorials at the same time.\nNote that many of these include examples and questions from the homework assignments listed earlier. You can think of these as interactive, auto-feedback versions of the simpler questions in the homework assignments. If using both the tutorials and the homework assignments in your teaching, I recommend modifying the homework assignments to remove the redundant questions (they will usually be the earlier, shorter, simpler questions) and making the homework assignment shorter. Students will ultimately get exposed to the same material, but get auto-feedback in the tutorials and human feedback on the homework assignments.\nIf you would like to learn about making your own tutorials with learnr, I strongly recommend reviewing the video and materials from the following 1.5 hour workshop: Building interactive tutorials in R.",
+    "objectID": "instructors.html#office-hours",
+    "href": "instructors.html#office-hours",
+    "title": "Instructors",
+    "section": "Office Hours",
+    "text": "Office Hours\n\nProf. Norman’s hours\nProf. Araújo’s hours",
     "crumbs": [
-      "Content",
-      "Interactive tutorials"
-    ]
-  },
-  {
-    "objectID": "02-interactive-tutorials.html#footnotes",
-    "href": "02-interactive-tutorials.html#footnotes",
-    "title": "Interactive tutorials",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\nThe dsbox package is not yet on CRAN, until then you will need to install from GitHub with devtools::install_github(\"rstudio-education/dsbox\").↩︎",
-    "crumbs": [
-      "Content",
-      "Interactive tutorials"
+      "Course Policies",
+      "Instructors"
     ]
   },
   {
@@ -2126,7 +2060,7 @@
     "href": "weekly-activities/labs/lab-03/lab03.html#part-1-a-student-class",
     "title": "Lab 3: Classes",
     "section": "Part 1: A Student Class",
-    "text": "Part 1: A Student Class\n\nStep 0. Prepare\n\nClick this link and then “Accept this assignment”.\nWait a few seconds and refresh the page. Refresh until the page says “You’re ready to go!”. The page has a link to a github repo.\nClick the link to see your new repo on github.com.\nClick the green Code button and copy the SSH link it shows.\nIn a terminal,\n\ncd to the directory where you are putting all your CS112 assignments.\ntype git clone &lt;paste-the-contents-of-the-link-you-copied&gt;\n\ncd to the new directory containing your repo.\ntype code . to start up Visual Studio Code in that directory.\nEdit README.md, putting your and your partner’s names and email addresses in the file.\nInspect the code you got in the assignment.\n\n\n\nStep 1. Create the class\nWe will create a class to represent a Student. You probably have not created a class in C++ before, so here are the Pair.h and Pair.cpp classes I created as an example in class. Use this code as an example/template.\nThe instance variables for a Student will be:\n\n\n\n\n\n\n\n\n\nInstance Variable Name\nType\nDefault value\nNotes\n\n\n\n\nmyName\nstring\n“”\nImmutable (NOTE: this is not a const in our class, but we will not be making setter functions for these immutable values.)\n\n\nmyId\nunsigned int\n0\nImmutable (NOTE: this is not a const in our class, but we will not be making setter functions for these immutable values.)\n\n\nmyGpa\nfloat\n0.0\n\n\n\nmyMajor\nstring\n“Undecided”\n\n\n\n\nIn Student.h, you should see the definition of the Student class. In that class, create the private: section, and in there define the 4 instance variables, shown in the table above. You’ll have to #include &lt;string&gt; and do the using namespace business…\nCompile (type: make tester) and fix any errors. (You may see warnings – you can ignore those for now.)\nIn Student.h define the default constructor (in the public: section). In Student.cpp, create the default constructor implementation, initializing the instance variables to their default values, as shown in the table above.\n\n\n\n\n\n\nCompile and fix any errors.\n\n\n\n\n\n\n\n\nStep 2. Create getters\nIn your tests.cpp, you’ll find the first SECTION of unit tests called “student getters”, within the TEST_CASE “Student class”. Uncomment the first SECTION, so that the code to construct a Student object and then test getMajor() runs.\n\n\n\n\n\n\nCompile\n\n\n\nThe compilation should fail because we haven’t defined getMajor() yet. There should be no other problems.\n\n\nSo, create a getter function (in both the Student.h and Student.cpp files) called getMajor().\nCompile and run (in a terminal, run ./tester \"Student class\") – this should work now.\nNow, repeat the above steps for the other tests and instance variables (maybe make this part more clear in the future). Start with a test in tests.cpp first, then implement the prototype and code.\n\n\n\n\n\n\nNOTE\n\n\n\nDon’t delete any old tests – just keep adding more. Put each test in its own SECTION within the “Student class” TEST_CASE.\n\n\n\n\nStep 3. Create setters\nFor the instance variables that are mutable (see the table above), create setter methods. But first, for each, create a test. Put all of these tests in a new SECTION within the “Student class” TEST_CASE.\nExample: for the setGpa test, set the student’s gpa to 3.25, then in a REQUIRE statement, call getGpa() and make sure the value is 3.25.\n\n\nStep 4. Create an explicit-value constructor\nNow, create a second constructor – the explicit-value constructor. This constructor should take the two immutable fields as parameters, and store their values in the instance variables. Initialize all the other variables to their default values. BUT FIRST, create tests. I called my SECTION “student explicit-value constructor”, and in it I create a Student with the explicit-value constructor and then use the getters on all instance variables to make sure the object has the correct values in it.\n\n\n\n\n\n\nCompile and test the result. Fix any errors.\n\n\n\n\n\n\nYou are now done with this simple class. We could add tons of other functionality to it, but not now…\nBefore you go on, commit and push your changes to your github repo. You can easily do this from VSCode. After you do this, you should be able to see that the automated tests fail – but the one test that tests the “Student class” passes. If it does not pass, fix your code (or your tests), and resubmit until it does pass."
+    "text": "Part 1: A Student Class\n\nStep 0. Prepare\n\nClick this link and then “Accept this assignment”.\nWait a few seconds and refresh the page. Refresh until the page says “You’re ready to go!”. The page has a link to a github repo.\nClick the link to see your new repo on github.com.\nClick the green Code button and copy the SSH link it shows 1.\nIn a terminal,\n\ncd to the directory where you are putting all your CS112 assignments.\ntype git clone &lt;paste-the-contents-of-the-link-you-copied&gt;\n\ncd to the new directory containing your repo.\ntype code . to start up Visual Studio Code in that directory.\nEdit README.md, putting your and your partner’s names and email addresses in the file.\nInspect the code you got in the assignment.\n\n\n\nStep 1. Create the class\nWe will create a class to represent a Student. You probably have not created a class in C++ before, so here are the Pair.h and Pair.cpp classes I created as an example in class. Use this code as an example/template.\nThe instance variables for a Student will be:\n\n\n\n\n\n\n\n\n\nInstance Variable Name\nType\nDefault value\nNotes\n\n\n\n\nmyName\nstring\n“”\nImmutable (NOTE: this is not a const in our class, but we will not be making setter functions for these immutable values.)\n\n\nmyId\nunsigned int\n0\nImmutable (NOTE: this is not a const in our class, but we will not be making setter functions for these immutable values.)\n\n\nmyGpa\nfloat\n0.0\n\n\n\nmyMajor\nstring\n“Undecided”\n\n\n\n\nIn Student.h, you should see the definition of the Student class. In that class, create the private: section, and in there define the 4 instance variables, shown in the table above. You’ll have to #include &lt;string&gt; and do the using namespace business…\nCompile (type: make tester) and fix any errors. (You may see warnings – you can ignore those for now.)\nIn Student.h define the default constructor (in the public: section). In Student.cpp, create the default constructor implementation, initializing the instance variables to their default values, as shown in the table above.\n\n\n\n\n\n\nCompile and fix any errors.\n\n\n\n\n\n\n\n\nStep 2. Create getters\nIn your tests.cpp, you’ll find the first SECTION of unit tests called “student getters”, within the TEST_CASE “Student class”. Uncomment the first SECTION, so that the code to construct a Student object and then test getMajor() runs.\n\n\n\n\n\n\nCompile\n\n\n\nThe compilation should fail because we haven’t defined getMajor() yet. There should be no other problems.\n\n\nSo, create a getter function (in both the Student.h and Student.cpp files) called getMajor().\nCompile and run (in a terminal, run ./tester \"Student class\") – this should work now.\nNow, repeat the above steps for the other tests and instance variables (maybe make this part more clear in the future). Start with a test in tests.cpp first, then implement the prototype and code.\n\n\n\n\n\n\nNOTE\n\n\n\nDon’t delete any old tests – just keep adding more. Put each test in its own SECTION within the “Student class” TEST_CASE.\n\n\n\n\nStep 3. Create setters\nFor the instance variables that are mutable (see the table above), create setter methods. But first, for each, create a test. Put all of these tests in a new SECTION within the “Student class” TEST_CASE.\nExample: for the setGpa test, set the student’s gpa to 3.25, then in a REQUIRE statement, call getGpa() and make sure the value is 3.25.\n\n\nStep 4. Create an explicit-value constructor\nNow, create a second constructor – the explicit-value constructor. This constructor should take the two immutable fields as parameters, and store their values in the instance variables. Initialize all the other variables to their default values. BUT FIRST, create tests. I called my SECTION “student explicit-value constructor”, and in it I create a Student with the explicit-value constructor and then use the getters on all instance variables to make sure the object has the correct values in it.\n\n\n\n\n\n\nCompile and test the result. Fix any errors.\n\n\n\n\n\n\nYou are now done with this simple class. We could add tons of other functionality to it, but not now…\nBefore you go on, commit and push your changes to your github repo. You can easily do this from VSCode. After you do this, you should be able to see that the automated tests fail – but the one test that tests the “Student class” passes. If it does not pass, fix your code (or your tests), and resubmit until it does pass."
   },
   {
     "objectID": "weekly-activities/labs/lab-03/lab03.html#part-2-fraction-class",
@@ -2148,6 +2082,13 @@
     "title": "Lab 3: Classes",
     "section": "Grading Rubric",
     "text": "Grading Rubric\nThis lab is worth 20 pts:\n\n10 points for each of Part 1 and Part the Second: 20 pts\n\n6 pts for correctness\n1 pt for perfect indentation and good variable names, function names, and comments (i.e., hospitable code). You should write a comment in your code only when the following block of code is not obvious to the trained reader. You should not write a comment for each line of code.\n3 pts for sufficient test cases to prove that the code is correct.\n\n\nWays students have lost points in the past:\n\n-2: Test doesn’t pass\n-1: Missing name and id\n-3: Missing steps, Next time speak to professor."
+  },
+  {
+    "objectID": "weekly-activities/labs/lab-03/lab03.html#footnotes",
+    "href": "weekly-activities/labs/lab-03/lab03.html#footnotes",
+    "title": "Lab 3: Classes",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nhow to add footnotes.↩︎"
   },
   {
     "objectID": "03-sharing.html",
