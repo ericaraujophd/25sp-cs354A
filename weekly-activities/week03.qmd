@@ -45,7 +45,7 @@ No readings for Week 3.
 Fitting and interpreting simple linear regression models
 
 ::: instructions
-[Instructions](../labs/lab03.qmd)
+[Instructions](labs/lab-03/lab03.qmd)
 :::
 
 ::: source

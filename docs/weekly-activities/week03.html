@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Instructors – CS112 - Data Structures</title>
+<title>Week 3: Classes, Operator Overloading, etc. – CS112 - Data Structures</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,25 +23,26 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./policies.html" rel="prev">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../02-hello-world.html" rel="next">
+<link href="../content.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -72,13 +73,13 @@ ul.task-list li input[type="checkbox"] {
 <script src="https://kit.fontawesome.com/78ddb093ea.js" crossorigin="anonymous"></script>
 
 
-<meta property="og:title" content="Instructors – CS112 - Data Structures">
+<meta property="og:title" content="Week 3: Classes, Operator Overloading, etc. – CS112 - Data Structures">
 <meta property="og:description" content="CS112 will teach students to use C++ for creating data structures.">
 <meta property="og:site_name" content="CS112 - Data Structures">
-<meta name="twitter:title" content="Instructors – CS112 - Data Structures">
+<meta name="twitter:title" content="Week 3: Classes, Operator Overloading, etc. – CS112 - Data Structures">
 <meta name="twitter:description" content="CS112 will teach students to use C++ for creating data structures.">
 <meta name="twitter:image" content="https://ericaraujo.com/24fa-cs112/images/twitter-card.png">
-<meta name="twitter:creator" content="@ericaraujo">
+<meta name="twitter:creator" content="@ericfaraujo">
 <meta name="twitter:image-height" content="600">
 <meta name="twitter:image-width" content="1200">
 <meta name="twitter:card" content="summary_large_image">
@@ -91,8 +92,8 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./images/cs112-logo.png" alt="" class="navbar-logo">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../images/cs112-logo.png" alt="" class="navbar-logo">
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -102,23 +103,23 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
+    <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Overview</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./policies.html" aria-current="page"> 
+    <a class="nav-link" href="../policies.html"> 
 <span class="menu-text">Course Policies</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./content.html"> 
+    <a class="nav-link active" href="../content.html" aria-current="page"> 
 <span class="menu-text">Content</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./infrastructure.html"> 
+    <a class="nav-link" href="../infrastructure.html"> 
 <span class="menu-text">Infrastructure</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./design.html"> 
+    <a class="nav-link" href="../design.html"> 
 <span class="menu-text">Design</span></a>
   </li>  
 </ul>
@@ -140,7 +141,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01-instructors.html">Instructors</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../weekly-activities/week03.html">Week 3: Classes, Operator Overloading, etc.</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -154,14 +155,62 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./policies.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Course Policies</span></a>
+  <a href="../content.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Course content</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01-instructors.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Instructors</span></a>
+  <a href="../weekly-activities/week03.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Week 3: Classes, Operator Overloading, etc.</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../02-hello-world.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Hello world</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../02-exploring-data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exploring data</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../02-ethics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data science ethics</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../02-making-rigorous-conclusions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Making rigorous conclusions</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../02-looking-further.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Looking further</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../02-interactive-tutorials.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Interactive tutorials</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../02-project.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Project</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../02-exams.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exams</span></a>
   </div>
 </li>
     </ul>
@@ -174,16 +223,18 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#office-hours" id="toc-office-hours" class="nav-link active" data-scroll-target="#office-hours">Office Hours</a></li>
+  <li><a href="#slos-for-week-3" id="toc-slos-for-week-3" class="nav-link active" data-scroll-target="#slos-for-week-3">SLOs for Week 3</a></li>
+  <li><a href="#readings" id="toc-readings" class="nav-link" data-scroll-target="#readings">Readings</a></li>
+  <li><a href="#slides-videos-and-application-exercises" id="toc-slides-videos-and-application-exercises" class="nav-link" data-scroll-target="#slides-videos-and-application-exercises">Slides, videos, and application exercises</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/ericaraujophd/24fa-cs112/edit/main/01-instructors.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/24fa-cs112/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/ericaraujophd/24fa-cs112/edit/main/weekly-activities/week03.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/24fa-cs112/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Instructors</h1>
+<h1 class="title">Week 3: Classes, Operator Overloading, etc.</h1>
 </div>
 
 
@@ -200,13 +251,61 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>This course has as instructors: - Prof.&nbsp;Victor Norman - Prof.&nbsp;Eric Araújo</p>
-<section id="office-hours" class="level2">
-<h2 class="anchored" data-anchor-id="office-hours">Office Hours</h2>
+<section id="slos-for-week-3" class="level2">
+<h2 class="anchored" data-anchor-id="slos-for-week-3">SLOs for Week 3</h2>
+<p>Students will be able to:</p>
 <ul>
-<li><a href="https://vtn2webpage.firebaseapp.com/home">Prof.&nbsp;Norman’s hours</a></li>
-<li><a href="https://outlook.office365.com/calendar/published/c0bd07a3f1d64aaf9a74c91921ce7536@calvin.edu/79189cd730424803bceba861959c7e752179000899390454025/calendar.html">Prof.&nbsp;Araújo’s hours</a></li>
+<li>define a class and implement it in .h and .cpp files, respectively.</li>
+<li>reason about the access modifiers public and private.</li>
+<li>define and implement constructors and destructors, and general methods.</li>
+<li>instantiate objects statically</li>
+<li>implement Test-driven development for a class.</li>
 </ul>
+</section>
+<section id="readings" class="level2">
+<h2 class="anchored" data-anchor-id="readings">Readings</h2>
+<p>No readings for Week 3.</p>
+</section>
+<section id="slides-videos-and-application-exercises" class="level2">
+<h2 class="anchored" data-anchor-id="slides-videos-and-application-exercises">Slides, videos, and application exercises</h2>
+<div class="slide-deck">
+<p><strong>Week 3: Slides</strong></p>
+<div class="slides">
+<p><a href="https://docs.google.com/presentation/d/1MHIPb67PUzT9cdGHwnfcYBP5MlFd6_wg44jWBtG3UGc/edit#slide=id.p">Slides</a></p>
+</div>
+<div class="source">
+<p><a href="https://github.com/rstudio-education/datascience-box/tree/main/course-materials/_slides/u5-d01-text-analysis">Source</a></p>
+</div>
+<!-- ::: video
+[Video](https://youtu.be/_YqEHZccujc)
+:::
+-->
+</div>
+<!-- ## Lab -->
+<div class="lab">
+<p><strong>Lab 3: Classes</strong></p>
+<p>Fitting and interpreting simple linear regression models</p>
+<div class="instructions">
+<p><a href="../weekly-activities/labs/lab-03/lab03.html">Instructions</a></p>
+</div>
+<div class="source">
+<p><a href="https://github.com/rstudio-education/datascience-box/tree/master/course-materials/lab-instructions/lab-13">Source</a></p>
+</div>
+</div>
+<!-- ## Homework assignments -->
+<div class="homework">
+<p><strong>HW 10: Wrapping up</strong></p>
+<p>Model validation and inference</p>
+<div class="instructions">
+<p><a href="https://datasciencebox.org/course-materials/hw-instructions/hw-10/hw-10-wrap-up.html">Instructions</a></p>
+</div>
+<div class="source">
+<p><a href="https://github.com/rstudio-education/datascience-box/tree/master/course-materials/hw-instructions/hw-10">Source</a></p>
+</div>
+<div class="starter">
+<p><a href="https://github.com/rstudio-education/datascience-box/tree/master/course-materials/starters/hw/hw-10-wrap-up">Starter</a></p>
+</div>
+</div>
 
 
 </section>
@@ -778,11 +877,14 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./policies.html" class="pagination-link" aria-label="Course Policies">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Course Policies</span>
+      <a href="../content.html" class="pagination-link" aria-label="Course content">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Course content</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="../02-hello-world.html" class="pagination-link" aria-label="Hello world">
+        <span class="nav-page-text">Hello world</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->
@@ -793,16 +895,16 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ericaraujophd/24fa-cs112/edit/main/01-instructors.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/24fa-cs112/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ericaraujophd/24fa-cs112/edit/main/weekly-activities/week03.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/24fa-cs112/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
-    <a class="nav-link" href="./LICENSE.html">
+    <a class="nav-link" href="../LICENSE.html">
 <p>License</p>
 </a>
   </li>  
     <li class="nav-item">
-    <a class="nav-link" href="./CODE_OF_CONDUCT.html">
+    <a class="nav-link" href="../CODE_OF_CONDUCT.html">
 <p>Code of Conduct</p>
 </a>
   </li>  

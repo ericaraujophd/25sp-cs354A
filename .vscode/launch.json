@@ -6,8 +6,8 @@
       "type": "lldb",
       "request": "launch",
       "args": [],
-      "cwd": "/Users/ea47/Documents/GitPages/teaching/24fa-cs112/weekly-activities/labs/files",
-      "program": "/Users/ea47/Documents/GitPages/teaching/24fa-cs112/weekly-activities/labs/files/build/Debug/outDebug"
+      "cwd": "/Users/ea47/Documents/GitPages/teaching/24fa-cs112/weekly-activities/labs/lab-03/files",
+      "program": "/Users/ea47/Documents/GitPages/teaching/24fa-cs112/weekly-activities/labs/lab-03/files/build/Debug/outDebug"
     }
   ]
 }
