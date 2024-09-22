@@ -40,7 +40,7 @@ No readings for Week 3.
 <!-- ## Lab -->
 
 ::: lab
-**Lab 3: Working on projects**
+**Lab 3: Classes**
 
 Fitting and interpreting simple linear regression models
 

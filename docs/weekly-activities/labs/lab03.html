@@ -145,6 +145,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#part-1-a-student-class" id="toc-part-1-a-student-class" class="nav-link active" data-scroll-target="#part-1-a-student-class">Part 1: A Student Class</a>
   <ul class="collapse">
   <li><a href="#step-0.-prepare" id="toc-step-0.-prepare" class="nav-link" data-scroll-target="#step-0.-prepare">Step 0. Prepare</a></li>
+  <li><a href="#step-1.-create-the-class" id="toc-step-1.-create-the-class" class="nav-link" data-scroll-target="#step-1.-create-the-class">Step 1. Create the class</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/ericaraujophd/24fa-cs112/edit/main/weekly-activities/labs/lab03.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/24fa-cs112/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -190,6 +191,57 @@ ul.task-list li input[type="checkbox"] {
 <li><p>Edit <strong>README.md</strong>, putting your and your partner’s names and email addresses in the file.</p></li>
 <li><p>Inspect the code you got in the assignment.</p></li>
 </ul>
+</section>
+<section id="step-1.-create-the-class" class="level3">
+<h3 class="anchored" data-anchor-id="step-1.-create-the-class">Step 1. Create the class</h3>
+<p>We will create a class to represent a Student. You probably have not created a class in C++ before, so here are the <a href="files/Pair.h">Pair.h</a> and <a href="files/Pair.cpp">Pair.cpp</a> classes I created as an example in class. Use this code as an example/template.</p>
+<p>The instance variables for a Student will be:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 15%">
+<col style="width: 19%">
+<col style="width: 39%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Instance Variable Name</th>
+<th>Type</th>
+<th>Default value</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>myName</td>
+<td>string</td>
+<td>“”</td>
+<td>Immutable (NOTE: this <ins><strong>is not</strong></ins> a const in our class, but we will <strong>not</strong> be making setter functions for these immutable values.)</td>
+</tr>
+<tr class="even">
+<td>myId</td>
+<td>unsigned int</td>
+<td>0</td>
+<td>Immutable (NOTE: this <ins><strong>is not</strong></ins> a const in our class, but we will <strong>not</strong> be making setter functions for these immutable values.)</td>
+</tr>
+<tr class="odd">
+<td>myGpa</td>
+<td>float</td>
+<td>0.0</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>myMajor</td>
+<td>string</td>
+<td>“Undecided”</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>In <strong>Student.h</strong>, you should see the definition of the Student class. In that class, create the <strong>private:</strong> section, and in there define the 4 instance variables, shown in the table above. You’ll have to <code>#include &lt;string&gt;</code> and do the using <code>namespace</code> business…</p>
+<p>Compile (type: <code>make tester</code>) and fix any errors. (You may see warnings – you can ignore those for now.)</p>
+<p>In <strong>Student.h</strong> define the default constructor (in the <strong>public:</strong> section). In <strong>Student.cpp</strong>, create the default constructor implementation, initializing the instance variables to their default values, as shown in the table above.</p>
+<p>Compile and fix any errors.</p>
 
 
 </section>

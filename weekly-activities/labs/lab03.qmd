@@ -19,3 +19,24 @@ title: "Lab 3: Classes"
 - Edit **README.md**, putting your and your partner's names and email addresses in the file.
 - Inspect the code you got in the assignment.
 
+### Step 1. Create the class
+
+We will create a class to represent a Student. You probably have not created a class in C++ before, so here are the [Pair.h](files/Pair.h) and [Pair.cpp](files/Pair.cpp) classes I created as an example in class. Use this code as an example/template. 
+
+The instance variables for a Student will be:
+
+| Instance Variable Name | Type         | Default value | Notes                                  |
+|------------------------|--------------|------------------|-------------------------------------|
+| myName                 | string       | ""               | Immutable (NOTE: this <ins>**is not**</ins> a const in our class, but we will **not** be making setter functions for these immutable values.)                                  |
+| myId                   | unsigned int | 0                | Immutable (NOTE: this <ins>**is not**</ins> a const in our class, but we will **not** be making setter functions for these immutable values.)                                  |
+| myGpa                  | float        | 0.0              |                                     |
+| myMajor                | string       | "Undecided"      |                                     |
+
+
+In **Student.h**, you should see the definition of the Student class. In that class, create the **private:** section, and in there define the 4 instance variables, shown in the table above. You'll have to ```#include <string>``` and do the using ```namespace``` business...
+
+Compile (type: ```make tester```) and fix any errors. (You may see warnings -- you can ignore those for now.)
+
+In **Student.h** define the default constructor (in the **public:** section). In **Student.cpp**, create the default constructor implementation, initializing the instance variables to their default values, as shown in the table above.
+
+Compile and fix any errors.
