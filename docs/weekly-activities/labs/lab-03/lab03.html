@@ -444,7 +444,7 @@ NOTE
 <section id="step-5.-fanciness" class="level3">
 <h3 class="anchored" data-anchor-id="step-5.-fanciness">Step 5. Fanciness</h3>
 <p>Now, in <em>setDenominator()</em>, check if the parameter is 0 – an illegal value. If so, throw an invalid_argument exception (remember to <code>#include &lt;stdexcept&gt;</code> first). You can do this by using the line:</p>
-<pre><code>throw invalid_argument(“Your error message here!”); // (Change the error message please!)</code></pre>
+<pre><code>throw invalid_argument("Your error message here!"); // (Change the error message please!)</code></pre>
 <p>Here is a test for that, assuming you have a fraction called f1:</p>
 <pre><code>SECTION("setDenominator") {
     REQUIRE_THROWS_AS(f1.setDenominator(0), invalid_argument);
