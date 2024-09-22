@@ -68,7 +68,6 @@ website:
       contents:
         - href: content.qmd
         - href: weekly-activities/week03.qmd
-        - href: 02-exams.qmd
 
     - id: infrastructure
       title: "Infrastructure"

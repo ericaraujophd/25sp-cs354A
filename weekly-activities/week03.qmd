@@ -22,9 +22,9 @@ Students will be able to:
 [Slides](https://docs.google.com/presentation/d/1MHIPb67PUzT9cdGHwnfcYBP5MlFd6_wg44jWBtG3UGc/edit#slide=id.p)
 :::
 
-::: source
+<!-- ::: source
 [Source](https://github.com/rstudio-education/datascience-box/tree/main/course-materials/_slides/u5-d01-text-analysis)
-:::
+::: -->
 
 ::: reading
 No readings for Week 3.
@@ -56,7 +56,6 @@ Fitting and interpreting simple linear regression models
 :::
 
 
-
 <!-- ## Homework assignments -->
 
 ::: homework
@@ -77,7 +76,13 @@ Model validation and inference
 :::
 :::
 
+::: exam
+**Exam 1**
 
+Exam on Friday during class. Bring your laptop.
+
+<!-- [\[Instructions\]](course-materials/exams/exam-01/exam-01.qmd) [\[Source\]](https://github.com/rstudio-education/datascience-box/tree/master/course-materials/exams/exam-01) -->
+:::
 
 <!-- ::: application-exercise
 **First dataviz**
