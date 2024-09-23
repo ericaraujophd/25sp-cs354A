@@ -50,8 +50,8 @@ website:
         href: policies.qmd
       - text: "Content"
         href: content.qmd
-      - text: "Infrastructure"
-        href: infrastructure.qmd
+      - text: "Extras"
+        href: extras.qmd
 
   sidebar:
     - id: policies
@@ -69,17 +69,12 @@ website:
         - href: content.qmd
         - href: weekly-activities/week03.qmd
 
-    - id: infrastructure
-      title: "Infrastructure"
+    - id: extras
+      title: "Extras"
       contents:
-        - href: infrastructure.qmd
-        - href: 03-access-r.qmd
+        - href: extras.qmd
         - href: 03-version-control.qmd
         - href: 03-discussion.qmd
-        - href: 03-sharing.qmd
-        - href: 03-alternative-setups.qmd
-
-
 
 format:
   html:

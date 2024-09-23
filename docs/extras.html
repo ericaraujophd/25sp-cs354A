@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Sharing – CS112 - Data Structures</title>
+<title>Extras for the Course – CS112 - Data Structures</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./03-alternative-setups.html" rel="next">
-<link href="./03-discussion.html" rel="prev">
+<link href="./03-version-control.html" rel="next">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -73,10 +72,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="https://kit.fontawesome.com/78ddb093ea.js" crossorigin="anonymous"></script>
 
 
-<meta property="og:title" content="Sharing – CS112 - Data Structures">
+<meta property="og:title" content="Extras for the Course – CS112 - Data Structures">
 <meta property="og:description" content="CS112 will teach students to use C++ for creating data structures.">
 <meta property="og:site_name" content="CS112 - Data Structures">
-<meta name="twitter:title" content="Sharing – CS112 - Data Structures">
+<meta name="twitter:title" content="Extras for the Course – CS112 - Data Structures">
 <meta name="twitter:description" content="CS112 will teach students to use C++ for creating data structures.">
 <meta name="twitter:image" content="https://ericaraujo.com/24fa-cs112/images/twitter-card.png">
 <meta name="twitter:creator" content="@ericfaraujo">
@@ -115,8 +114,8 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Content</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./infrastructure.html" aria-current="page"> 
-<span class="menu-text">Infrastructure</span></a>
+    <a class="nav-link active" href="./extras.html" aria-current="page"> 
+<span class="menu-text">Extras</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
@@ -137,7 +136,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./03-sharing.html">Sharing</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./extras.html">Extras for the Course</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -151,14 +150,8 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./infrastructure.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Computational infrastructure</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./03-access-r.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Accessing R</span></a>
+  <a href="./extras.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Extras for the Course</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -171,18 +164,6 @@ ul.task-list li input[type="checkbox"] {
   <div class="sidebar-item-container"> 
   <a href="./03-discussion.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Discussion</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./03-sharing.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Sharing</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./03-alternative-setups.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Alternative setups</span></a>
   </div>
 </li>
     </ul>
@@ -198,7 +179,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Sharing</h1>
+<h1 class="title">Extras for the Course</h1>
 </div>
 
 
@@ -215,10 +196,7 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>A nifty tool for building your course website is blogdown.</p>
-<p>Perhaps the most useful aspect of blogdown in this setting is that your slides, assignments, etc. written in R Markdown can be automatically rendered, so you don’t need to separately knit those documents.</p>
-<p>If you would like to build your course website with blogdown, you can use <a href="http://introds.org/">this course website</a> as an example, source code <a href="https://github.com/ids-s1-20/website">here</a>.</p>
-<p><a href="https://resources.rstudio.com/webinars/sharing-on-short-notice-how-to-get-your-materials-online-with-r-markdown">This webinar</a> by Alison Hill and Desirée De Leon is also very useful for options for sharing your course materials with students.</p>
+<p>Here you will see extra documentation and material for the course.</p>
 
 
 
@@ -789,13 +767,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./03-discussion.html" class="pagination-link" aria-label="Discussion">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Discussion</span>
-      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./03-alternative-setups.html" class="pagination-link" aria-label="Alternative setups">
-        <span class="nav-page-text">Alternative setups</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./03-version-control.html" class="pagination-link" aria-label="Version control">
+        <span class="nav-page-text">Version control</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -807,7 +782,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/ericaraujophd/24fa-cs112/edit/main/03-sharing.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/24fa-cs112/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions"><ul><li><a href="https://github.com/ericaraujophd/24fa-cs112/edit/main/extras.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/24fa-cs112/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">

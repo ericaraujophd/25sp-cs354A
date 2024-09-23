@@ -1,0 +1,6 @@
+---
+title: "Extras for the Course"
+editor: visual
+---
+
+Here you will see extra documentation and material for the course.
