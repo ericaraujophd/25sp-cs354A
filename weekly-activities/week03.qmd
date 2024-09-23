@@ -64,15 +64,15 @@ Fitting and interpreting simple linear regression models
 Model validation and inference
 
 ::: instructions
-[Instructions](https://datasciencebox.org/course-materials/hw-instructions/hw-10/hw-10-wrap-up.html)
+[Instructions](projects/proj-03/proj03.qmd)
 :::
 
-::: source
+<!-- ::: source
 [Source](https://github.com/rstudio-education/datascience-box/tree/master/course-materials/hw-instructions/hw-10)
-:::
+::: -->
 
 ::: starter
-[Starter](https://github.com/rstudio-education/datascience-box/tree/master/course-materials/starters/hw/hw-10-wrap-up)
+[Starter](https://classroom.github.com/a/WiX09fHf)
 :::
 :::
 

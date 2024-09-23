@@ -1,0 +1,20 @@
+---
+title: "Project 3: a High Scores Class"
+---
+
+<center>
+<figure>
+    <img src="imgs/student-cover.jpeg"
+         alt="A cartoon style image of a computer science student wearing a T-shirt with a binary code pattern"
+         width="400"  >
+    <figcaption>A student created by AI.</figcaption>
+</figure>
+</center>
+
+## Introduction
+
+You will build a HighScores class that keeps track of the top-10 scores for a game. The class will store the scores from highest-to-lowest, and only store at most 10 scores. It will keep track of how many high scores are being stored. The class must store the scores in an array.
+
+The methods that must be defined for the class are: addScore(int score), getScore(i), and getNumScores(), plus, of course, the default constructor.
+
+
