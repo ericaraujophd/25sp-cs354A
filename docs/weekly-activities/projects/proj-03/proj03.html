@@ -71,9 +71,9 @@ ul.task-list li input[type="checkbox"] {
 <script src="https://kit.fontawesome.com/78ddb093ea.js" crossorigin="anonymous"></script>
 
 
+<link rel="stylesheet" href="../styles.css">
 <meta property="og:title" content="Project 3: a High Scores Class – CS112 - Data Structures">
 <meta property="og:description" content="CS112 will teach students to use C++ for creating data structures.">
-<meta property="og:image" content="https://ericaraujo.com/24fa-cs112/weekly-activities/projects/proj-03/imgs/student-cover.jpeg">
 <meta property="og:site_name" content="CS112 - Data Structures">
 <meta name="twitter:title" content="Project 3: a High Scores Class – CS112 - Data Structures">
 <meta name="twitter:description" content="CS112 will teach students to use C++ for creating data structures.">
@@ -142,6 +142,15 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#step-0.-prepare" id="toc-step-0.-prepare" class="nav-link" data-scroll-target="#step-0.-prepare">Step 0. Prepare</a></li>
+  <li><a href="#step-1.-starting-slow" id="toc-step-1.-starting-slow" class="nav-link" data-scroll-target="#step-1.-starting-slow">Step 1. Starting slow…</a></li>
+  <li><a href="#step-2.-adding-a-first-score" id="toc-step-2.-adding-a-first-score" class="nav-link" data-scroll-target="#step-2.-adding-a-first-score">Step 2. Adding a first score</a></li>
+  <li><a href="#step-3.-adding-many-scores" id="toc-step-3.-adding-many-scores" class="nav-link" data-scroll-target="#step-3.-adding-many-scores">Step 3. Adding many scores</a></li>
+  <li><a href="#step-4.-keep-the-scores-sorted" id="toc-step-4.-keep-the-scores-sorted" class="nav-link" data-scroll-target="#step-4.-keep-the-scores-sorted">Step 4. Keep the scores sorted</a></li>
+  <li><a href="#submission" id="toc-submission" class="nav-link" data-scroll-target="#submission">Submission:</a>
+  <ul class="collapse">
+  <li><a href="#grading-rubric" id="toc-grading-rubric" class="nav-link" data-scroll-target="#grading-rubric">Grading Rubric</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/ericaraujophd/24fa-cs112/edit/main/weekly-activities/projects/proj-03/proj03.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/24fa-cs112/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -169,18 +178,235 @@ ul.task-list li input[type="checkbox"] {
 
 <center>
 <figure class="figure">
-<img src="imgs/student-cover.jpeg" alt="A cartoon style image of a computer science student wearing a T-shirt with a binary code pattern" width="400" class="figure-img">
+<img src="imgs/grading.jpeg" alt="Created by AI Prompt: create a piece of art that echoes grading inside the classroom" width="350" class="figure-img">
 <figcaption>
-A student created by AI.
+Created by AI Prompt: <em>create a piece of art that echoes grading inside the classroom</em>
 </figcaption>
 </figure>
 </center>
 <section id="introduction" class="level2">
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<p>You will build a HighScores class that keeps track of the top-10 scores for a game. The class will store the scores from highest-to-lowest, and only store at most 10 scores. It will keep track of how many high scores are being stored. The class must store the scores in an array.</p>
-<p>The methods that must be defined for the class are: addScore(int score), getScore(i), and getNumScores(), plus, of course, the default constructor.</p>
+<p>You will build a <code>HighScores</code> class that keeps track of the top-10 scores for a game. The class will store the scores from highest-to-lowest, and only store at most 10 scores. It will keep track of how many high scores are being stored. The class must store the scores in an array.</p>
+<p>The methods that must be defined for the class are: <code>addScore(int score)</code>, <code>getScore(i)</code>, and <code>getNumScores()</code>, plus, of course, the default constructor.</p>
+</section>
+<section id="step-0.-prepare" class="level2">
+<h2 class="anchored" data-anchor-id="step-0.-prepare">Step 0. Prepare</h2>
+<ul>
+<li>Click this <a href="https://classroom.github.com/a/WiX09fHf">link</a> and then “Accept this assignment”.</li>
+<li>Wait a few seconds and refresh the page. Refresh until the page says “You’re ready to go!”. The page has a link to a github repo.</li>
+<li>Click the link to see your new repo on github.com.</li>
+<li>Click the green Code button and copy the link it shows.</li>
+<li>In a terminal,
+<ul>
+<li><code>cd</code> to the directory where you are putting all your CS112 assignments.</li>
+<li>type <code>git clone &lt;paste-the-contents-of-the-link-you-copied&gt;</code></li>
+</ul></li>
+<li><code>cd</code> to the new directory containing your repo.</li>
+<li>type <code>code .</code> to start up Visual Studio Code in that directory.</li>
+<li>Inspect the code you got in the assignment.</li>
+<li>In the terminal, type <code>make tester</code></li>
+<li>The code should compile and give you an executable called “tester”</li>
+<li>Run the program: type <code>./tester</code></li>
+<li>You should get some basic output – or at least it should not crash.</li>
+</ul>
+</section>
+<section id="step-1.-starting-slow" class="level2">
+<h2 class="anchored" data-anchor-id="step-1.-starting-slow">Step 1. Starting slow…</h2>
+<ol type="1">
+<li>Create a <code>TEST_CASE</code> that creates a HighScores object, and a <code>SECTION("getNumScores")</code> that calls <em>getNumScores()</em> on that object, and then REQUIREs that the result is 0. Compile (<code>make tester</code>) and see errors.</li>
+<li>Now, in <code>HighScores.h</code>, create the HighScores class and in the class’s <strong>private:</strong> section, create an array of size 10 of integers called <em>myScores</em>. And, create a variable called <em>myNumScores</em> that stores how many scores are being stored.</li>
+<li>In the constructor, initialize both variables. You will have to write a loop to initialize every entry of <em>myScores</em> to 0.</li>
+<li>Create the getter <code>getNumScores()</code>. Then, compile and run: your test should now pass.</li>
+</ol>
+</section>
+<section id="step-2.-adding-a-first-score" class="level2">
+<h2 class="anchored" data-anchor-id="step-2.-adding-a-first-score">Step 2. Adding a first score</h2>
+<p>In <em>tests.cpp</em>, add another test in a <code>SECTION("addScore")</code> to call <em>addScore(30)</em> and then <em>getNumScores()</em> and REQUIRE that the value is 1. Compile and see the errors. Fix them by doing the following:</p>
+<p>Create the <code>addScore(int aScore)</code> method in the .h and .cpp files (the function returns void). Implement it by just adding the score to the array at index <em>myNumScores</em>. Then increment <em>myNumScores</em>. Now, your test should pass. (However, if we call <em>addScore</em> multiple times, the scores may not be sorted properly. But we’ll deal with that later.)</p>
+</section>
+<section id="step-3.-adding-many-scores" class="level2">
+<h2 class="anchored" data-anchor-id="step-3.-adding-many-scores">Step 3. Adding many scores</h2>
+<p>In <em>tests.cpp</em>, create a loop to add 10 more scores to your <strong>HighScores</strong> object; thus, there should be 11 calls to <em>addScore()</em> made. Then, REQUIRE that the number of scores being stored is 10 – the maximum the object should store. This test should fail because our code does not check for a full array.</p>
+<p>Fix the problem by adding code to make sure you only ever store at most 10 scores. Add the code to <em>addScore()</em>: if the array is full – i.e., <code>myNumScores == 10</code>, just return – do not try to add the new score. (Note: this is not a correct solution, but for the time being, it is good enough.)</p>
+<p>Also, at this time, implement the method <code>getScore(i)</code>. The parameter is an index of the score to return. For example, if the array has the value 42 at index 7 and the code calls <em>getScore(7)</em>, the value 42 should be returned. You should write multiple tests to make sure the results you get are correct.</p>
+<p>If the user passes in an invalid index – i.e., an index that is <em>&gt;= myNumScores</em>, throw an <strong>invalid_argument</strong> exception. (include <code>&lt;stdexcept&gt;</code> and add the <code>using namespace std;</code> stuff). Use <code>REQUIRES_THROWS_AS()</code> to test if the exception is thrown. Look at <em>tests.cpp</em> in lab3 to see an example.</p>
+</section>
+<section id="step-4.-keep-the-scores-sorted" class="level2">
+<h2 class="anchored" data-anchor-id="step-4.-keep-the-scores-sorted">Step 4. Keep the scores sorted</h2>
+<p>Now, the fun part: when we insert a score into the array, we don’t want to just add it to the “end” of the array. Instead, we want to keep the array sorted from highest score to lowest. So it should be inserted into the array after all the scores that are higher than it and before all scores that are less than or equal to it. In order to do this, we’ll have to shift over any lower scores before inserting the new score into the array.</p>
+<p>For example, suppose the array looks like this:</p>
+<table class="caption-top" style="width:100%;">
+<colgroup>
+<col style="width: 12%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>100</th>
+<th>95</th>
+<th>93</th>
+<th>89</th>
+<th>87</th>
+<th>70</th>
+<th>49</th>
+<th>22</th>
+<th>19</th>
+<th>17</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<p>and <code>myNumScores = 10</code>.</p>
+<p>If the main code now calls <strong>addScore(77)</strong>, the array should look like this:</p>
+<table class="caption-top" style="width:100%;">
+<colgroup>
+<col style="width: 12%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>100</th>
+<th>95</th>
+<th>93</th>
+<th>89</th>
+<th>87</th>
+<th><span style="color: red">77</span></th>
+<th>70</th>
+<th>49</th>
+<th>22</th>
+<th>19</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<p>Notice that every number &lt; 77 has been shifted up in the array, and the last number has been “lost”. Even though we have called <em>addScore()</em> 11 times, <em>myNumScores</em> is still 10.</p>
+<p>To implement this, your code has to first iterate through the array and find the location where the new high score should be inserted – in this case, that location is index 5. Then, your code needs to copy values up in the array – starting at index 8, where the value 19 is in the example. You move the value at index 8 to index 9, then the value at index 7 to index 8, etc. Finally, the code needs to insert the new value into the place it should go. To summarize, the algorithm for addScore(score) is: 1. find the location to insert the new score – checking if the result is -1. If so, return; 2. shift every other value up; 3. add the new score to the array at the found location. 4. increment the number of scores stored – but only if the array was not full before adding the new value.</p>
+<p>(When the array was full, then the lowest high score was “lost”.)</p>
+<p>To implement this, you must create two <strong>private</strong> methods in the class:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 24%">
+<col style="width: 19%">
+<col style="width: 56%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Method name</th>
+<th>parameters</th>
+<th>return type</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>findLocationToInsert()</td>
+<td>int newScore</td>
+<td>int: the index of where to insert the newScore, or -1 if the score is not a new high score.</td>
+</tr>
+<tr class="even">
+<td>shiftUp()</td>
+<td>int fromIndex</td>
+<td>void</td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+NOTE 1
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If the new score is lower than all stored high scores, <code>findLocationToInsert</code> should return -1. Your code in <code>addScore()</code> should handle this situation, as shown in the algorithm above.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+NOTE 2
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>About <code>findLocationToInsert()</code>: loop from 0 to 9 so that your code can discover if the <strong>newScore</strong> should go at the end of the array. This will work because we’ve initialized the array to all 0s and we assume all scores are &gt;= 0.</p>
+</div>
+</div>
+<p>Add the prototypes to your .h file and add empty “skeleton” implementations in your .cpp file. Implement the algorithm above in your <em>addScore()</em> method. That implementation should be something like 7 lines of code.</p>
+<p>Before you implement the code, change your tests in <em>tests.cpp</em>. Your tests will have to assume that when <em>addScore()</em> is called, the value is inserted into the correct place, thus keeping the array sorted. So, some of your tests that assumed a value would always be added at the end will have to be replaced/fixed.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+NOTE 3
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Getting these tests correct is crucial. I added a comment after most of my calls to <em>addScore()</em> to state what the array should be holding at that point. That helped me keep track of how the code should be behaving and what my tests should test for.</p>
+</div>
+</div>
+<p>Now, implement the <strong>two private</strong> methods. Both must use for loops.</p>
+<p>You might find it really useful to create a function to print out the high scores in the object. Then, you can call that function from various places to see what the array really holds.</p>
+<p>Once you get things working, take another look at your tests. Do you need to add more tests to cover every situation? If so, add them. You’ll be graded on how good your tests are.</p>
+</section>
+<section id="submission" class="level2">
+<h2 class="anchored" data-anchor-id="submission">Submission:</h2>
+<p>Take another look at the Grading Rubric below and make changes to maximize your score.</p>
+<p>Commit and Sync your code to your online repo.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Verify you have synced your code to github by going to your online repo webpage and looking to see that the files are correct.</p>
+<p><strong>Also</strong>, verify that the automated test passes. The test is the same as <em>tests.cpp</em>.</p>
+</div>
+</div>
+<section id="grading-rubric" class="level3">
+<h3 class="anchored" data-anchor-id="grading-rubric">Grading Rubric</h3>
+<p>This project is worth 22 pts:</p>
+<ul>
+<li>15 pts for correctness</li>
+<li>2 pt for perfect indentation and good variable names, function names, and comments (i.e., hospitable code). You should write a comment in your code only when the following block of code is not obvious to the trained reader. You should not write a comment for each line of code. Writing a comment above the non-obvious methods can be very useful.</li>
+<li>5 pts for sufficient test cases to prove that the code is correct.</li>
+</ul>
+<p>Ways students have lost points in the past:</p>
+<ul>
+<li>-3: can’t make tester</li>
+<li>-2: Tests don’t pass</li>
+<li>-22: No submission</li>
+</ul>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

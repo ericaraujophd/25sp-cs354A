@@ -79,7 +79,7 @@ Model validation and inference
 ::: exam
 **Exam 1**
 
-Exam on Friday during class. Bring your laptop.
+Exam on Friday during class. Bring your laptop. Content: Weeks 0 - 2.
 
 <!-- [\[Instructions\]](course-materials/exams/exam-01/exam-01.qmd) [\[Source\]](https://github.com/rstudio-education/datascience-box/tree/master/course-materials/exams/exam-01) -->
 :::
