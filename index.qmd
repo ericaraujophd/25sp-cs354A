@@ -1,5 +1,6 @@
 ---
 title: "Welcome to CS112 - Data Structures"
+
 ---
 
 ![](images/cs112-logo.png){style="float: right;" fig-alt="A tree of bits" fig-align="right" width="250"}

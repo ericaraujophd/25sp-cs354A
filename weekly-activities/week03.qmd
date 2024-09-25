@@ -53,6 +53,10 @@ Fitting and interpreting simple linear regression models
 ::: starter
 [Source](https://classroom.github.com/a/1IU3C6dH)
 :::
+
+::: slides
+[Slides](./slides/lab03-slides.qmd)
+:::
 :::
 
 

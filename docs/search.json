@@ -55,72 +55,213 @@
     ]
   },
   {
-    "objectID": "weekly-activities/week03.html",
-    "href": "weekly-activities/week03.html",
-    "title": "Week 3: Classes, Operator Overloading, etc.",
+    "objectID": "weekly-activities/projects/proj-03/proj03.html",
+    "href": "weekly-activities/projects/proj-03/proj03.html",
+    "title": "Project 3: a High Scores Class",
     "section": "",
-    "text": "Students will be able to:\n\ndefine a class and implement it in .h and .cpp files, respectively.\nreason about the access modifiers public and private.\ndefine and implement constructors and destructors, and general methods.\ninstantiate objects statically\nimplement Test-driven development for a class.",
+    "text": "Created by AI Prompt: create a piece of art that echoes grading inside the classroom"
+  },
+  {
+    "objectID": "weekly-activities/projects/proj-03/proj03.html#introduction",
+    "href": "weekly-activities/projects/proj-03/proj03.html#introduction",
+    "title": "Project 3: a High Scores Class",
+    "section": "Introduction",
+    "text": "Introduction\nYou will build a HighScores class that keeps track of the top-10 scores for a game. The class will store the scores from highest-to-lowest, and only store at most 10 scores. It will keep track of how many high scores are being stored. The class must store the scores in an array.\nThe methods that must be defined for the class are: addScore(int score), getScore(i), and getNumScores(), plus, of course, the default constructor."
+  },
+  {
+    "objectID": "weekly-activities/projects/proj-03/proj03.html#step-0.-prepare",
+    "href": "weekly-activities/projects/proj-03/proj03.html#step-0.-prepare",
+    "title": "Project 3: a High Scores Class",
+    "section": "Step 0. Prepare",
+    "text": "Step 0. Prepare\n\nClick this link and then “Accept this assignment”.\nWait a few seconds and refresh the page. Refresh until the page says “You’re ready to go!”. The page has a link to a github repo.\nClick the link to see your new repo on github.com.\nClick the green Code button and copy the link it shows.\nIn a terminal,\n\ncd to the directory where you are putting all your CS112 assignments.\ntype git clone &lt;paste-the-contents-of-the-link-you-copied&gt;\n\ncd to the new directory containing your repo.\ntype code . to start up Visual Studio Code in that directory.\nInspect the code you got in the assignment.\nIn the terminal, type make tester\nThe code should compile and give you an executable called “tester”\nRun the program: type ./tester\nYou should get some basic output – or at least it should not crash."
+  },
+  {
+    "objectID": "weekly-activities/projects/proj-03/proj03.html#step-1.-starting-slow",
+    "href": "weekly-activities/projects/proj-03/proj03.html#step-1.-starting-slow",
+    "title": "Project 3: a High Scores Class",
+    "section": "Step 1. Starting slow…",
+    "text": "Step 1. Starting slow…\n\nCreate a TEST_CASE that creates a HighScores object, and a SECTION(\"getNumScores\") that calls getNumScores() on that object, and then REQUIREs that the result is 0. Compile (make tester) and see errors.\nNow, in HighScores.h, create the HighScores class and in the class’s private: section, create an array of size 10 of integers called myScores. And, create a variable called myNumScores that stores how many scores are being stored.\nIn the constructor, initialize both variables. You will have to write a loop to initialize every entry of myScores to 0.\nCreate the getter getNumScores(). Then, compile and run: your test should now pass."
+  },
+  {
+    "objectID": "weekly-activities/projects/proj-03/proj03.html#step-2.-adding-a-first-score",
+    "href": "weekly-activities/projects/proj-03/proj03.html#step-2.-adding-a-first-score",
+    "title": "Project 3: a High Scores Class",
+    "section": "Step 2. Adding a first score",
+    "text": "Step 2. Adding a first score\nIn tests.cpp, add another test in a SECTION(\"addScore\") to call addScore(30) and then getNumScores() and REQUIRE that the value is 1. Compile and see the errors. Fix them by doing the following:\nCreate the addScore(int aScore) method in the .h and .cpp files (the function returns void). Implement it by just adding the score to the array at index myNumScores. Then increment myNumScores. Now, your test should pass. (However, if we call addScore multiple times, the scores may not be sorted properly. But we’ll deal with that later.)"
+  },
+  {
+    "objectID": "weekly-activities/projects/proj-03/proj03.html#step-3.-adding-many-scores",
+    "href": "weekly-activities/projects/proj-03/proj03.html#step-3.-adding-many-scores",
+    "title": "Project 3: a High Scores Class",
+    "section": "Step 3. Adding many scores",
+    "text": "Step 3. Adding many scores\nIn tests.cpp, create a loop to add 10 more scores to your HighScores object; thus, there should be 11 calls to addScore() made. Then, REQUIRE that the number of scores being stored is 10 – the maximum the object should store. This test should fail because our code does not check for a full array.\nFix the problem by adding code to make sure you only ever store at most 10 scores. Add the code to addScore(): if the array is full – i.e., myNumScores == 10, just return – do not try to add the new score. (Note: this is not a correct solution, but for the time being, it is good enough.)\nAlso, at this time, implement the method getScore(i). The parameter is an index of the score to return. For example, if the array has the value 42 at index 7 and the code calls getScore(7), the value 42 should be returned. You should write multiple tests to make sure the results you get are correct.\nIf the user passes in an invalid index – i.e., an index that is &gt;= myNumScores, throw an invalid_argument exception. (include &lt;stdexcept&gt; and add the using namespace std; stuff). Use REQUIRES_THROWS_AS() to test if the exception is thrown. Look at tests.cpp in lab3 to see an example."
+  },
+  {
+    "objectID": "weekly-activities/projects/proj-03/proj03.html#step-4.-keep-the-scores-sorted",
+    "href": "weekly-activities/projects/proj-03/proj03.html#step-4.-keep-the-scores-sorted",
+    "title": "Project 3: a High Scores Class",
+    "section": "Step 4. Keep the scores sorted",
+    "text": "Step 4. Keep the scores sorted\nNow, the fun part: when we insert a score into the array, we don’t want to just add it to the “end” of the array. Instead, we want to keep the array sorted from highest score to lowest. So it should be inserted into the array after all the scores that are higher than it and before all scores that are less than or equal to it. In order to do this, we’ll have to shift over any lower scores before inserting the new score into the array.\nFor example, suppose the array looks like this:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n100\n95\n93\n89\n87\n70\n49\n22\n19\n17\n\n\n\n\n\nand myNumScores = 10.\nIf the main code now calls addScore(77), the array should look like this:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n100\n95\n93\n89\n87\n77\n70\n49\n22\n19\n\n\n\n\n\nNotice that every number &lt; 77 has been shifted up in the array, and the last number has been “lost”. Even though we have called addScore() 11 times, myNumScores is still 10.\nTo implement this, your code has to first iterate through the array and find the location where the new high score should be inserted – in this case, that location is index 5. Then, your code needs to copy values up in the array – starting at index 8, where the value 19 is in the example. You move the value at index 8 to index 9, then the value at index 7 to index 8, etc. Finally, the code needs to insert the new value into the place it should go. To summarize, the algorithm for addScore(score) is: 1. find the location to insert the new score – checking if the result is -1. If so, return; 2. shift every other value up; 3. add the new score to the array at the found location. 4. increment the number of scores stored – but only if the array was not full before adding the new value.\n(When the array was full, then the lowest high score was “lost”.)\nTo implement this, you must create two private methods in the class:\n\n\n\n\n\n\n\n\nMethod name\nparameters\nreturn type\n\n\n\n\nfindLocationToInsert()\nint newScore\nint: the index of where to insert the newScore, or -1 if the score is not a new high score.\n\n\nshiftUp()\nint fromIndex\nvoid\n\n\n\n\n\n\n\n\n\nNOTE 1\n\n\n\nIf the new score is lower than all stored high scores, findLocationToInsert should return -1. Your code in addScore() should handle this situation, as shown in the algorithm above.\n\n\n\n\n\n\n\n\nNOTE 2\n\n\n\nAbout findLocationToInsert(): loop from 0 to 9 so that your code can discover if the newScore should go at the end of the array. This will work because we’ve initialized the array to all 0s and we assume all scores are &gt;= 0.\n\n\nAdd the prototypes to your .h file and add empty “skeleton” implementations in your .cpp file. Implement the algorithm above in your addScore() method. That implementation should be something like 7 lines of code.\nBefore you implement the code, change your tests in tests.cpp. Your tests will have to assume that when addScore() is called, the value is inserted into the correct place, thus keeping the array sorted. So, some of your tests that assumed a value would always be added at the end will have to be replaced/fixed.\n\n\n\n\n\n\nNOTE 3\n\n\n\nGetting these tests correct is crucial. I added a comment after most of my calls to addScore() to state what the array should be holding at that point. That helped me keep track of how the code should be behaving and what my tests should test for.\n\n\nNow, implement the two private methods. Both must use for loops.\nYou might find it really useful to create a function to print out the high scores in the object. Then, you can call that function from various places to see what the array really holds.\nOnce you get things working, take another look at your tests. Do you need to add more tests to cover every situation? If so, add them. You’ll be graded on how good your tests are."
+  },
+  {
+    "objectID": "weekly-activities/projects/proj-03/proj03.html#submission",
+    "href": "weekly-activities/projects/proj-03/proj03.html#submission",
+    "title": "Project 3: a High Scores Class",
+    "section": "Submission:",
+    "text": "Submission:\nTake another look at the Grading Rubric below and make changes to maximize your score.\nCommit and Sync your code to your online repo.\n\n\n\n\n\n\nImportant\n\n\n\nVerify you have synced your code to github by going to your online repo webpage and looking to see that the files are correct.\nAlso, verify that the automated test passes. The test is the same as tests.cpp.\n\n\n\nGrading Rubric\nThis project is worth 22 pts:\n\n15 pts for correctness\n2 pt for perfect indentation and good variable names, function names, and comments (i.e., hospitable code). You should write a comment in your code only when the following block of code is not obvious to the trained reader. You should not write a comment for each line of code. Writing a comment above the non-obvious methods can be very useful.\n5 pts for sufficient test cases to prove that the code is correct.\n\nWays students have lost points in the past:\n\n-3: can’t make tester\n-2: Tests don’t pass\n-22: No submission"
+  },
+  {
+    "objectID": "03-discussion.html",
+    "href": "03-discussion.html",
+    "title": "Discussion",
+    "section": "",
+    "text": "My recommended tool for course discussion is Piazza.\nI have, in the past, used Slack for course communication as well. Slack has the advantage of being real-life feeling as well as being the communication tool of choice for many data science teams. However it doesn’t work well for lasting class discussions as threading and searchability are poor. Additionally, the instructor does not have the option to edit student questions, which can be frustrating if they have not formatted their code appropriately. Similar tools like Discord and MS Teams have similar advantages when it comes to real-life discussions and similar disadvantages when it comes to threading and searchability.\nOther options are GitHub issues and GitHub Discussions, especially for courses using version control.",
     "crumbs": [
-      "Content",
-      "Week 3: Classes, Operator Overloading, etc."
+      "Extras",
+      "Discussion"
     ]
   },
   {
-    "objectID": "weekly-activities/week03.html#slos-for-week-3",
-    "href": "weekly-activities/week03.html#slos-for-week-3",
-    "title": "Week 3: Classes, Operator Overloading, etc.",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Welcome to CS112 - Data Structures",
     "section": "",
-    "text": "Students will be able to:\n\ndefine a class and implement it in .h and .cpp files, respectively.\nreason about the access modifiers public and private.\ndefine and implement constructors and destructors, and general methods.\ninstantiate objects statically\nimplement Test-driven development for a class.",
+    "text": "CS 112 uses the C++ programming language to introduce students to the elementary data structures (vectors, lists, stacks, queues, binary search trees, …), recursion, big-oh notation, and other intermediate-level programming topics.\nThis a permanently in construction website, so please let us know if you find any information missing or had some bad experience with the links and interface throughout the semester.\nHere you will find all information needed to do well during the course."
+  },
+  {
+    "objectID": "index.html#student-learning-outcomes",
+    "href": "index.html#student-learning-outcomes",
+    "title": "Welcome to CS112 - Data Structures",
+    "section": "Student Learning Outcomes",
+    "text": "Student Learning Outcomes\nUpon successful completion of this course students will be able to:\n\nUse indirection (pointers) and run-time memory allocation to implement dynamic, generic container classes (e.g., vectors, lists, stacks, queues, trees, etc.).\n\nAnalyze, categorize, and compare the complexity of data structure operations using “big-oh” notation.\n\nDesign and implement recursive data structure operations.\n\nDesign, create, and use unit-tests to test the correctness of data structure operations.\n\nFor select algorithms, use simple parallel computing techniques to improve algorithm performance and measure the improvement."
+  },
+  {
+    "objectID": "index.html#course-organization",
+    "href": "index.html#course-organization",
+    "title": "Welcome to CS112 - Data Structures",
+    "section": "Course Organization",
+    "text": "Course Organization\nThe course is organized around these components:\n\nThe lectures that will introduce data structures topics at the conceptual level;\nThe labs in which students will (in pairs) practice using and building data structures; and\nThe projects in which students will (individually) practice using and building data structures.\n\nEach week’s lectures, labs and projects will cover the same concepts, but will do so in different ways.\nThe first 4 weeks will be dedicated to learning C++. After that, we will begin studying data structures."
+  },
+  {
+    "objectID": "index.html#acknowledgements",
+    "href": "index.html#acknowledgements",
+    "title": "Welcome to CS112 - Data Structures",
+    "section": "Acknowledgements",
+    "text": "Acknowledgements\nThis website is built with Quarto, the lovely icons by icons8. The original code used to build this website can be found at DS Box. We are very grateful for their work!"
+  },
+  {
+    "objectID": "content.html",
+    "href": "content.html",
+    "title": "Course content",
+    "section": "",
+    "text": "CS 112 is organized by week, with each week structured as follows:\n\nClassroom sessions are Monday-Wednesday-Friday.\nThe lab sessions are on Tuesdays.\nYour lab submission is due Thursday at 23:59.\nYour project submission is due the next Monday at 23:59 (the night before your next lab).\nTutoring Assistants are available in SB337 on Mondays and Thursdays, from 7 - 9 pm.\n\nThe SLOs (Student Learning Objectives), labs, and projects for each week are given in the links on the left of this page. An overview of the semester is given in the table below:\n\n\n\n\n\n\n\n\n\n\n\nWeek\nReadings\nTopics [SLOs]\nLab\nProject\nTests, Video Links, etc.\n\n\n\n\n0\n1, 2, 5.1, 5.2\nIntro to C++, compilation, Data Types (including pointers), const, binary and hexadecimal, arrays, using cout/cin.\nLab 0\nProject 0\nBinary Exposed\n\n\n1\n3 and 4\nControl Structures, Functions, Parameter Passing modes.\nLab 1\nProject 1\nArray Addressing POGIL activity (answers) Parameter Passing POGIL activity (answers)\n\n\n2\n6 and 7\nFile Input/Output, Exception Handling, Two-dimensional Arrays\nLab 2\nProject 2\n\n\n\n3\n\nClasses, Operator Overloading, etc.\nLab 3\nProject 3\nTest 1, Weeks 0 - 2, Friday.\n\n\n4\n\nVectors – dynamic arrays\nLab 4\nProject 4\n\n\n\n5\n\nGeneric Containers [SLOs] [Slides] Review of Runtime Stack\nLab 5\nProject 5\n\n\n\n6\n\nLinked Lists [SLOs] [Slides] [code from class] Dynamic Array or Linked List\nLab 6\nNo project\nTest 2, Weeks 0 - 5 (Friday)\n\n\n7\n\nAlgorithm Analysis and Big-Oh [Slides] [Videos] [SLOs]\nLab 7\nProject 7\n\n\n\n8\n\nStacks and Queues [SLOs] [Slides]\nLab 8\nProject 8\n\n\n\n9\n\nRecursion Monday: Queues [Slides]\nNo lab!\nProject 9\nTest 3, weeks 0 - 8 (Wednesday)\n\n\n10\n\nMonday, Apr. 1, No class. Wednesday: Recursion [SLOs] [Slides] Friday: BSTs\nNo lab!\nRecursion Project\n\n\n\n11\n\nApr. 8, 10: BSTs [SLOs] [Slides]\nLab 10\nProject 10\n\n\n\n12\nApr 12, 15\nAVL Trees, STL set and map containers, [SLOs] [Slides] [ [Slides]\nLab 12\nNo project\nTest 4: weeks 0 - 11 (Friday)\n\n\n13\nApr 17, 19, 22, 24, 26\nHash Tables [Slides] Sorting Algorithms] [ [SLOs] [Slides]]\nLab/Project 13\n\n\n\n\nFinal\n\nSearch calvin.edu for “Exam Schedule” to find the time of the exam (and all exams you have, this semester, and all future semesters).\n\n\nTest 5 Cumulative, during exam time (You may take it in either class’s exam time. Classes met at 11am MWF and 12:15 MWF.)\n\n\n11\n\nOpenMP, etc. [SLOs] [Slides]\nLab 11\nProject 11",
     "crumbs": [
       "Content",
-      "Week 3: Classes, Operator Overloading, etc."
+      "Course content"
     ]
   },
   {
-    "objectID": "weekly-activities/week03.html#slides-videos-and-application-exercises",
-    "href": "weekly-activities/week03.html#slides-videos-and-application-exercises",
-    "title": "Week 3: Classes, Operator Overloading, etc.",
-    "section": "Slides, videos, and application exercises",
-    "text": "Slides, videos, and application exercises\n\nWeek 3: Slides\n\nSlides\n\n\n\nNo readings for Week 3.\n\n\n\n\n\n\nLab 3: Classes\nFitting and interpreting simple linear regression models\n\nInstructions\n\n\nSource\n\n\n\n\nProject 3: Classes\nModel validation and inference\n\nInstructions\n\n\n\nStarter\n\n\n\nExam 1\nExam on Friday during class. Bring your laptop. Content: Weeks 0 - 2.",
+    "objectID": "LICENSE.html",
+    "href": "LICENSE.html",
+    "title": "Attribution-ShareAlike 4.0 International",
+    "section": "",
+    "text": "Creative Commons Corporation (“Creative Commons”) is not a law firm and does not provide legal services or legal advice. Distribution of Creative Commons public licenses does not create a lawyer-client or other relationship. Creative Commons makes its licenses and related information available on an “as-is” basis. Creative Commons gives no warranties regarding its licenses, any material licensed under their terms and conditions, or any related information. Creative Commons disclaims all liability for damages resulting from their use to the fullest extent possible."
+  },
+  {
+    "objectID": "LICENSE.html#creative-commons-attribution-sharealike-4.0-international-public-license",
+    "href": "LICENSE.html#creative-commons-attribution-sharealike-4.0-international-public-license",
+    "title": "Attribution-ShareAlike 4.0 International",
+    "section": "Creative Commons Attribution-ShareAlike 4.0 International Public License",
+    "text": "Creative Commons Attribution-ShareAlike 4.0 International Public License\nBy exercising the Licensed Rights (defined below), You accept and agree to be bound by the terms and conditions of this Creative Commons Attribution-ShareAlike 4.0 International Public License (“Public License”). To the extent this Public License may be interpreted as a contract, You are granted the Licensed Rights in consideration of Your acceptance of these terms and conditions, and the Licensor grants You such rights in consideration of benefits the Licensor receives from making the Licensed Material available under these terms and conditions.\n\nSection 1 – Definitions.\n\nAdapted Material means material subject to Copyright and Similar Rights that is derived from or based upon the Licensed Material and in which the Licensed Material is translated, altered, arranged, transformed, or otherwise modified in a manner requiring permission under the Copyright and Similar Rights held by the Licensor. For purposes of this Public License, where the Licensed Material is a musical work, performance, or sound recording, Adapted Material is always produced where the Licensed Material is synched in timed relation with a moving image.\nAdapter’s License means the license You apply to Your Copyright and Similar Rights in Your contributions to Adapted Material in accordance with the terms and conditions of this Public License.\nBY-SA Compatible License means a license listed at creativecommons.org/compatiblelicenses, approved by Creative Commons as essentially the equivalent of this Public License.\nCopyright and Similar Rights means copyright and/or similar rights closely related to copyright including, without limitation, performance, broadcast, sound recording, and Sui Generis Database Rights, without regard to how the rights are labeled or categorized. For purposes of this Public License, the rights specified in Section 2(b)(1)-(2) are not Copyright and Similar Rights.\nEffective Technological Measures means those measures that, in the absence of proper authority, may not be circumvented under laws fulfilling obligations under Article 11 of the WIPO Copyright Treaty adopted on December 20, 1996, and/or similar international agreements.\nExceptions and Limitations means fair use, fair dealing, and/or any other exception or limitation to Copyright and Similar Rights that applies to Your use of the Licensed Material.\nLicense Elements means the license attributes listed in the name of a Creative Commons Public License. The License Elements of this Public License are Attribution and ShareAlike.\nLicensed Material means the artistic or literary work, database, or other material to which the Licensor applied this Public License.\nLicensed Rights means the rights granted to You subject to the terms and conditions of this Public License, which are limited to all Copyright and Similar Rights that apply to Your use of the Licensed Material and that the Licensor has authority to license.\nLicensor means the individual(s) or entity(ies) granting rights under this Public License.\nShare means to provide material to the public by any means or process that requires permission under the Licensed Rights, such as reproduction, public display, public performance, distribution, dissemination, communication, or importation, and to make material available to the public including in ways that members of the public may access the material from a place and at a time individually chosen by them.\nSui Generis Database Rights means rights other than copyright resulting from Directive 96/9/EC of the European Parliament and of the Council of 11 March 1996 on the legal protection of databases, as amended and/or succeeded, as well as other essentially equivalent rights anywhere in the world.\nYou means the individual or entity exercising the Licensed Rights under this Public License. Your has a corresponding meaning.\n\n\n\nSection 2 – Scope.\n\nLicense grant.\n\nSubject to the terms and conditions of this Public License, the Licensor hereby grants You a worldwide, royalty-free, non-sublicensable, non-exclusive, irrevocable license to exercise the Licensed Rights in the Licensed Material to:\n\nreproduce and Share the Licensed Material, in whole or in part; and\nproduce, reproduce, and Share Adapted Material.\n\nExceptions and Limitations. For the avoidance of doubt, where Exceptions and Limitations apply to Your use, this Public License does not apply, and You do not need to comply with its terms and conditions.\nTerm. The term of this Public License is specified in Section 6(a).\nMedia and formats; technical modifications allowed. The Licensor authorizes You to exercise the Licensed Rights in all media and formats whether now known or hereafter created, and to make technical modifications necessary to do so. The Licensor waives and/or agrees not to assert any right or authority to forbid You from making technical modifications necessary to exercise the Licensed Rights, including technical modifications necessary to circumvent Effective Technological Measures. For purposes of this Public License, simply making modifications authorized by this Section 2(a)(4) never produces Adapted Material.\nDownstream recipients.\nA. Offer from the Licensor – Licensed Material. Every recipient of the Licensed Material automatically receives an offer from the Licensor to exercise the Licensed Rights under the terms and conditions of this Public License.\n\n__Additional offer from the Licensor – Adapted Material. Every recipient of Adapted Material from You automatically receives an offer from the Licensor to exercise the Licensed Rights in the Adapted Material under the conditions of the Adapter’s License You apply.\n\nC. No downstream restrictions. You may not offer or impose any additional or different terms or conditions on, or apply any Effective Technological Measures to, the Licensed Material if doing so restricts exercise of the Licensed Rights by any recipient of the Licensed Material.\nNo endorsement. Nothing in this Public License constitutes or may be construed as permission to assert or imply that You are, or that Your use of the Licensed Material is, connected with, or sponsored, endorsed, or granted official status by, the Licensor or others designated to receive attribution as provided in Section 3(a)(1)(A)(i).\n\nOther rights.\n\nMoral rights, such as the right of integrity, are not licensed under this Public License, nor are publicity, privacy, and/or other similar personality rights; however, to the extent possible, the Licensor waives and/or agrees not to assert any such rights held by the Licensor to the limited extent necessary to allow You to exercise the Licensed Rights, but not otherwise.\nPatent and trademark rights are not licensed under this Public License.\nTo the extent possible, the Licensor waives any right to collect royalties from You for the exercise of the Licensed Rights, whether directly or through a collecting society under any voluntary or waivable statutory or compulsory licensing scheme. In all other cases the Licensor expressly reserves any right to collect such royalties.\n\n\n\n\nSection 3 – License Conditions.\nYour exercise of the Licensed Rights is expressly made subject to the following conditions.\n\nAttribution.\n\nIf You Share the Licensed Material (including in modified form), You must:\n\nretain the following if it is supplied by the Licensor with the Licensed Material:\n\n\n\nidentification of the creator(s) of the Licensed Material and any others designated to receive attribution, in any reasonable manner requested by the Licensor (including by pseudonym if designated);\na copyright notice;\na notice that refers to this Public License;\na notice that refers to the disclaimer of warranties;\na URI or hyperlink to the Licensed Material to the extent reasonably practicable;\n\n\n\nindicate if You modified the Licensed Material and retain an indication of any previous modifications; and\nindicate the Licensed Material is licensed under this Public License, and include the text of, or the URI or hyperlink to, this Public License.\n\nYou may satisfy the conditions in Section 3(a)(1) in any reasonable manner based on the medium, means, and context in which You Share the Licensed Material. For example, it may be reasonable to satisfy the conditions by providing a URI or hyperlink to a resource that includes the required information.\nIf requested by the Licensor, You must remove any of the information required by Section 3(a)(1)(A) to the extent reasonably practicable.\n\nShareAlike.\n\nIn addition to the conditions in Section 3(a), if You Share Adapted Material You produce, the following conditions also apply.\n\nThe Adapter’s License You apply must be a Creative Commons license with the same License Elements, this version or later, or a BY-SA Compatible License.\nYou must include the text of, or the URI or hyperlink to, the Adapter’s License You apply. You may satisfy this condition in any reasonable manner based on the medium, means, and context in which You Share Adapted Material.\nYou may not offer or impose any additional or different terms or conditions on, or apply any Effective Technological Measures to, Adapted Material that restrict exercise of the rights granted under the Adapter’s License You apply.\n\n\n\nSection 4 – Sui Generis Database Rights.\nWhere the Licensed Rights include Sui Generis Database Rights that apply to Your use of the Licensed Material:\n\nfor the avoidance of doubt, Section 2(a)(1) grants You the right to extract, reuse, reproduce, and Share all or a substantial portion of the contents of the database;\nif You include all or a substantial portion of the database contents in a database in which You have Sui Generis Database Rights, then the database in which You have Sui Generis Database Rights (but not its individual contents) is Adapted Material, including for purposes of Section 3(b); and\nYou must comply with the conditions in Section 3(a) if You Share all or a substantial portion of the contents of the database.\n\nFor the avoidance of doubt, this Section 4 supplements and does not replace Your obligations under this Public License where the Licensed Rights include other Copyright and Similar Rights.\n\n\nSection 5 – Disclaimer of Warranties and Limitation of Liability.\n\nUnless otherwise separately undertaken by the Licensor, to the extent possible, the Licensor offers the Licensed Material as-is and as-available, and makes no representations or warranties of any kind concerning the Licensed Material, whether express, implied, statutory, or other. This includes, without limitation, warranties of title, merchantability, fitness for a particular purpose, non-infringement, absence of latent or other defects, accuracy, or the presence or absence of errors, whether or not known or discoverable. Where disclaimers of warranties are not allowed in full or in part, this disclaimer may not apply to You.\nTo the extent possible, in no event will the Licensor be liable to You on any legal theory (including, without limitation, negligence) or otherwise for any direct, special, indirect, incidental, consequential, punitive, exemplary, or other losses, costs, expenses, or damages arising out of this Public License or use of the Licensed Material, even if the Licensor has been advised of the possibility of such losses, costs, expenses, or damages. Where a limitation of liability is not allowed in full or in part, this limitation may not apply to You.\nThe disclaimer of warranties and limitation of liability provided above shall be interpreted in a manner that, to the extent possible, most closely approximates an absolute disclaimer and waiver of all liability.\n\n\n\nSection 6 – Term and Termination.\n\nThis Public License applies for the term of the Copyright and Similar Rights licensed here. However, if You fail to comply with this Public License, then Your rights under this Public License terminate automatically.\nWhere Your right to use the Licensed Material has terminated under Section 6(a), it reinstates:\n\nautomatically as of the date the violation is cured, provided it is cured within 30 days of Your discovery of the violation; or\nupon express reinstatement by the Licensor.\n\nFor the avoidance of doubt, this Section 6(b) does not affect any right the Licensor may have to seek remedies for Your violations of this Public License.\nFor the avoidance of doubt, the Licensor may also offer the Licensed Material under separate terms or conditions or stop distributing the Licensed Material at any time; however, doing so will not terminate this Public License.\nSections 1, 5, 6, 7, and 8 survive termination of this Public License.\n\n\n\nSection 7 – Other Terms and Conditions.\n\nThe Licensor shall not be bound by any additional or different terms or conditions communicated by You unless expressly agreed.\nAny arrangements, understandings, or agreements regarding the Licensed Material not stated herein are separate from and independent of the terms and conditions of this Public License.t stated herein are separate from and independent of the terms and conditions of this Public License.\n\n\n\nSection 8 – Interpretation.\n\nFor the avoidance of doubt, this Public License does not, and shall not be interpreted to, reduce, limit, restrict, or impose conditions on any use of the Licensed Material that could lawfully be made without permission under this Public License.\nTo the extent possible, if any provision of this Public License is deemed unenforceable, it shall be automatically reformed to the minimum extent necessary to make it enforceable. If the provision cannot be reformed, it shall be severed from this Public License without affecting the enforceability of the remaining terms and conditions.\nNo term or condition of this Public License will be waived and no failure to comply consented to unless expressly agreed to by the Licensor.\nNothing in this Public License constitutes or may be interpreted as a limitation upon, or waiver of, any privileges and immunities that apply to the Licensor or You, including from the legal processes of any jurisdiction or authority.\n\n\nCreative Commons is not a party to its public licenses. Notwithstanding, Creative Commons may elect to apply one of its public licenses to material it publishes and in those instances will be considered the “Licensor.” Except for the limited purpose of indicating that material is shared under a Creative Commons public license or as otherwise permitted by the Creative Commons policies published at creativecommons.org/policies, Creative Commons does not authorize the use of the trademark “Creative Commons” or any other trademark or logo of Creative Commons without its prior written consent including, without limitation, in connection with any unauthorized modifications to any of its public licenses or any other arrangements, understandings, or agreements concerning use of licensed material. For the avoidance of doubt, this paragraph does not form part of the public licenses.\nCreative Commons may be contacted at creativecommons.org"
+  },
+  {
+    "objectID": "CODE_OF_CONDUCT.html",
+    "href": "CODE_OF_CONDUCT.html",
+    "title": "Contributor Covenant Code of Conduct",
+    "section": "",
+    "text": "We as members, contributors, and leaders pledge to make participation in our community a harassment-free experience for everyone, regardless of age, body size, visible or invisible disability, ethnicity, sex characteristics, gender identity and expression, level of experience, education, socio-economic status, nationality, personal appearance, race, religion, or sexual identity and orientation.\nWe pledge to act and interact in ways that contribute to an open, welcoming, diverse, inclusive, and healthy community."
+  },
+  {
+    "objectID": "CODE_OF_CONDUCT.html#our-pledge",
+    "href": "CODE_OF_CONDUCT.html#our-pledge",
+    "title": "Contributor Covenant Code of Conduct",
+    "section": "",
+    "text": "We as members, contributors, and leaders pledge to make participation in our community a harassment-free experience for everyone, regardless of age, body size, visible or invisible disability, ethnicity, sex characteristics, gender identity and expression, level of experience, education, socio-economic status, nationality, personal appearance, race, religion, or sexual identity and orientation.\nWe pledge to act and interact in ways that contribute to an open, welcoming, diverse, inclusive, and healthy community."
+  },
+  {
+    "objectID": "CODE_OF_CONDUCT.html#our-standards",
+    "href": "CODE_OF_CONDUCT.html#our-standards",
+    "title": "Contributor Covenant Code of Conduct",
+    "section": "Our Standards",
+    "text": "Our Standards\nExamples of behavior that contributes to a positive environment for our community include:\n\nDemonstrating empathy and kindness toward other people\nBeing respectful of differing opinions, viewpoints, and experiences\nGiving and gracefully accepting constructive feedback\nAccepting responsibility and apologizing to those affected by our mistakes, and learning from the experience\nFocusing on what is best not just for us as individuals, but for the overall community\n\nExamples of unacceptable behavior include:\n\nThe use of sexualized language or imagery, and sexual attention or advances of any kind\nTrolling, insulting or derogatory comments, and personal or political attacks\nPublic or private harassment\nPublishing others’ private information, such as a physical or email address, without their explicit permission\nOther conduct which could reasonably be considered inappropriate in a professional setting"
+  },
+  {
+    "objectID": "CODE_OF_CONDUCT.html#enforcement-responsibilities",
+    "href": "CODE_OF_CONDUCT.html#enforcement-responsibilities",
+    "title": "Contributor Covenant Code of Conduct",
+    "section": "Enforcement Responsibilities",
+    "text": "Enforcement Responsibilities\nCommunity leaders are responsible for clarifying and enforcing our standards of acceptable behavior and will take appropriate and fair corrective action in response to any behavior that they deem inappropriate, threatening, offensive, or harmful.\nCommunity leaders have the right and responsibility to remove, edit, or reject comments, commits, code, wiki edits, issues, and other contributions that are not aligned to this Code of Conduct, and will communicate reasons for moderation decisions when appropriate."
+  },
+  {
+    "objectID": "CODE_OF_CONDUCT.html#scope",
+    "href": "CODE_OF_CONDUCT.html#scope",
+    "title": "Contributor Covenant Code of Conduct",
+    "section": "Scope",
+    "text": "Scope\nThis Code of Conduct applies within all community spaces, and also applies when an individual is officially representing the community in public spaces. Examples of representing our community include using an official e-mail address, posting via an official social media account, or acting as an appointed representative at an online or offline event."
+  },
+  {
+    "objectID": "CODE_OF_CONDUCT.html#enforcement",
+    "href": "CODE_OF_CONDUCT.html#enforcement",
+    "title": "Contributor Covenant Code of Conduct",
+    "section": "Enforcement",
+    "text": "Enforcement\nInstances of abusive, harassing, or otherwise unacceptable behavior may be reported to the community leaders responsible for enforcement at [INSERT CONTACT METHOD]. All complaints will be reviewed and investigated promptly and fairly.\nAll community leaders are obligated to respect the privacy and security of the reporter of any incident."
+  },
+  {
+    "objectID": "CODE_OF_CONDUCT.html#enforcement-guidelines",
+    "href": "CODE_OF_CONDUCT.html#enforcement-guidelines",
+    "title": "Contributor Covenant Code of Conduct",
+    "section": "Enforcement Guidelines",
+    "text": "Enforcement Guidelines\nCommunity leaders will follow these Community Impact Guidelines in determining the consequences for any action they deem in violation of this Code of Conduct:\n\n1. Correction\nCommunity Impact: Use of inappropriate language or other behavior deemed unprofessional or unwelcome in the community.\nConsequence: A private, written warning from community leaders, providing clarity around the nature of the violation and an explanation of why the behavior was inappropriate. A public apology may be requested.\n\n\n2. Warning\nCommunity Impact: A violation through a single incident or series of actions.\nConsequence: A warning with consequences for continued behavior. No interaction with the people involved, including unsolicited interaction with those enforcing the Code of Conduct, for a specified period of time. This includes avoiding interactions in community spaces as well as external channels like social media. Violating these terms may lead to a temporary or permanent ban.\n\n\n3. Temporary Ban\nCommunity Impact: A serious violation of community standards, including sustained inappropriate behavior.\nConsequence: A temporary ban from any sort of interaction or public communication with the community for a specified period of time. No public or private interaction with the people involved, including unsolicited interaction with those enforcing the Code of Conduct, is allowed during this period. Violating these terms may lead to a permanent ban.\n\n\n4. Permanent Ban\nCommunity Impact: Demonstrating a pattern of violation of community standards, including sustained inappropriate behavior, harassment of an individual, or aggression toward or disparagement of classes of individuals.\nConsequence: A permanent ban from any sort of public interaction within the community."
+  },
+  {
+    "objectID": "CODE_OF_CONDUCT.html#attribution",
+    "href": "CODE_OF_CONDUCT.html#attribution",
+    "title": "Contributor Covenant Code of Conduct",
+    "section": "Attribution",
+    "text": "Attribution\nThis Code of Conduct is adapted from the Contributor Covenant, version 2.0, available at https://www.contributor-covenant.org/version/2/0/ code_of_conduct.html.\nCommunity Impact Guidelines were inspired by Mozilla’s code of conduct enforcement ladder.\nFor answers to common questions about this code of conduct, see the FAQ at https://www.contributor-covenant.org/faq. Translations are available at https:// www.contributor-covenant.org/translations."
+  },
+  {
+    "objectID": "extras.html",
+    "href": "extras.html",
+    "title": "Extras for the Course",
+    "section": "",
+    "text": "Here you will see extra documentation and material for the course.",
     "crumbs": [
-      "Content",
-      "Week 3: Classes, Operator Overloading, etc."
+      "Extras",
+      "Extras for the Course"
     ]
   },
   {
-    "objectID": "weekly-activities/labs/lab-03/lab03.html",
-    "href": "weekly-activities/labs/lab-03/lab03.html",
-    "title": "Lab 3: Classes",
+    "objectID": "instructors.html",
+    "href": "instructors.html",
+    "title": "Instructors",
     "section": "",
-    "text": "A student created by AI."
+    "text": "This course has as instructors: - Prof. Victor Norman - Prof. Eric Araújo",
+    "crumbs": [
+      "Course Policies",
+      "Instructors"
+    ]
   },
   {
-    "objectID": "weekly-activities/labs/lab-03/lab03.html#part-1-a-student-class",
-    "href": "weekly-activities/labs/lab-03/lab03.html#part-1-a-student-class",
-    "title": "Lab 3: Classes",
-    "section": "Part 1: A Student Class",
-    "text": "Part 1: A Student Class\n\nStep 0. Prepare\n\nClick this link and then “Accept this assignment”.\nWait a few seconds and refresh the page. Refresh until the page says “You’re ready to go!”. The page has a link to a github repo.\nClick the link to see your new repo on github.com.\nClick the green Code button and copy the SSH link it shows.\nIn a terminal,\n\ncd to the directory where you are putting all your CS112 assignments.\ntype git clone &lt;paste-the-contents-of-the-link-you-copied&gt;\n\ncd to the new directory containing your repo.\ntype code . to start up Visual Studio Code in that directory.\nEdit README.md, putting your and your partner’s names and email addresses in the file.\nInspect the code you got in the assignment.\n\n\n\nStep 1. Create the class\nWe will create a class to represent a Student. You probably have not created a class in C++ before, so here are the Pair.h and Pair.cpp classes I created as an example in class. Use this code as an example/template.\nThe instance variables for a Student will be:\n\n\n\n\n\n\n\n\n\nInstance Variable Name\nType\nDefault value\nNotes\n\n\n\n\nmyName\nstring\n“”\nImmutable (NOTE: this is not a const in our class, but we will not be making setter functions for these immutable values.)\n\n\nmyId\nunsigned int\n0\nImmutable (NOTE: this is not a const in our class, but we will not be making setter functions for these immutable values.)\n\n\nmyGpa\nfloat\n0.0\n\n\n\nmyMajor\nstring\n“Undecided”\n\n\n\n\nIn Student.h, you should see the definition of the Student class. In that class, create the private: section, and in there define the 4 instance variables, shown in the table above. You’ll have to #include &lt;string&gt; and do the using namespace business…\nCompile (type: make tester) and fix any errors. (You may see warnings – you can ignore those for now.)\nIn Student.h define the default constructor (in the public: section). In Student.cpp, create the default constructor implementation, initializing the instance variables to their default values, as shown in the table above.\n\n\n\n\n\n\nCompile and fix any errors.\n\n\n\n\n\n\n\n\nStep 2. Create getters\nIn your tests.cpp, you’ll find the first SECTION of unit tests called “student getters”, within the TEST_CASE “Student class”. Uncomment the first SECTION, so that the code to construct a Student object and then test getMajor() runs.\n\n\n\n\n\n\nCompile\n\n\n\nThe compilation should fail because we haven’t defined getMajor() yet. There should be no other problems.\n\n\nSo, create a getter function (in both the Student.h and Student.cpp files) called getMajor().\nCompile and run (in a terminal, run ./tester \"Student class\") – this should work now.\nNow, repeat the above steps for the other tests and instance variables (maybe make this part more clear in the future). Start with a test in tests.cpp first, then implement the prototype and code.\n\n\n\n\n\n\nNOTE\n\n\n\nDon’t delete any old tests – just keep adding more. Put each test in its own SECTION within the “Student class” TEST_CASE.\n\n\n\n\nStep 3. Create setters\nFor the instance variables that are mutable (see the table above), create setter methods. But first, for each, create a test. Put all of these tests in a new SECTION within the “Student class” TEST_CASE.\nExample: for the setGpa test, set the student’s gpa to 3.25, then in a REQUIRE statement, call getGpa() and make sure the value is 3.25.\n\n\nStep 4. Create an explicit-value constructor\nNow, create a second constructor – the explicit-value constructor. This constructor should take the two immutable fields as parameters, and store their values in the instance variables. Initialize all the other variables to their default values. BUT FIRST, create tests. I called my SECTION “student explicit-value constructor”, and in it I create a Student with the explicit-value constructor and then use the getters on all instance variables to make sure the object has the correct values in it.\n\n\n\n\n\n\nCompile and test the result. Fix any errors.\n\n\n\n\n\n\nYou are now done with this simple class. We could add tons of other functionality to it, but not now…\nBefore you go on, commit and push your changes to your github repo. You can easily do this from VSCode. After you do this, you should be able to see that the automated tests fail – but the one test that tests the “Student class” passes. If it does not pass, fix your code (or your tests), and resubmit until it does pass."
-  },
-  {
-    "objectID": "weekly-activities/labs/lab-03/lab03.html#part-2-fraction-class",
-    "href": "weekly-activities/labs/lab-03/lab03.html#part-2-fraction-class",
-    "title": "Lab 3: Classes",
-    "section": "Part 2: Fraction class",
-    "text": "Part 2: Fraction class\nA Fraction class is a useful class to create. It stores a numerator and denominator and can do things like represent itself nicely (e.g., “3/4”), simplify itself, multiply itself with another fraction, etc.\n\nStep 1. Test the Fraction class\nWe’ll continue to use tests.cpp – don’t remove any code from there. But, now we’ll also use it to create and test Fraction class instances. However, our makefile does not compile the Fraction stuff yet.\nEdit the makefile, adding Fraction.cpp to the SOURCES line.\n\n\n\n\n\n\nNote\n\n\n\nSpace separated! Do not remove Students.cpp.\n\n\nIn tests.cpp, below all your tests for the Student class, add the tests shown below\n\n\n\n\n\n\nImportant!\n\n\n\nYou’ll have to #include \"Fraction.h\" at the top of the file.\n\n\nTEST_CASE(\"Fraction class\") {\n    SECTION(\"fraction constructors\") {\n        SECTION(\"default\") {\n            Fraction fr;\n            REQUIRE(fr.getNumerator() == 0);\n            REQUIRE(fr.getDenominator() == 1);\n        }\n        SECTION(\"explicit value\") {\n            Fraction fr(2, 4);\n            REQUIRE(fr.getNumerator() == 2);\n            REQUIRE(fr.getDenominator() == 4);\n        }\n    }\n}\n\n\nStep 2. Add the instance variables and constructors\nAdd the two instance variables – myNumerator and myDenominator (both integers) – to the class definition in the .h file.\nUpdate the default constructor, to initialize myNumerator to 0 and myDenominator to 1.\nNow, implement the explicit-value constructor, which takes both the numerator and denominator as parameters, and stores them in myNumerator and myDenominator. Don’t forget to put the declaration in the .h file and implementation in the .cpp file.\n\n\n\n\n\n\nNote\n\n\n\nWe will compile our tester after the next section.\n\n\n\n\nStep 3. getters\nAdd a new SECTION (within the “Fraction class” TEST_CASE) called “fraction getters” and SECTIONs to call the getter functions and test their results. Compilation should fail, as expected.\n\n\n\n\n\n\nNOTE\n\n\n\nYes, this is repetitive as we already used them for the default constructors. Just to make sure we cover all our bases, and this can easily be seen in our tests, make another SECTION to quickly check the getter functions again.\n\n\nNow, create getter functions for each.\nNow the compilation and execution should succeed with all tests passing.\n\n\n\n\n\n\nNOTE\n\n\n\nYou can run only some tests by putting the name of the test on the command line. E.g., you can run only the Fraction tests by running ./tester \"Fraction class\".\n\n\n\n\nStep 4. setters\nCreate tests to test setters.\nThen, create the methods and the code so it will compile and run successfully.\n\n\nStep 5. Fanciness\nNow, in setDenominator(), check if the parameter is 0 – an illegal value. If so, throw an invalid_argument exception (remember to #include &lt;stdexcept&gt; first). You can do this by using the line:\nthrow invalid_argument(\"Your error message here!\"); // (Change the error message please!)\nHere is a test for that, assuming you have a fraction called f1:\nSECTION(\"setDenominator\") {\n    REQUIRE_THROWS_AS(f1.setDenominator(0), invalid_argument);\n}\n\n\nStep 6. Display as a string\nCreate a test to call asString() on a Fraction object: If you create a new Fraction object newFrac and call newFrac.asString(), you can REQUIRE that the result should be “0/1”. Initially, this test will fail, so create the method, which returns a string.\n\n\n\n\n\n\nNote\n\n\n\nIn asString() you can use to_string(anInt) to convert an integer into a string. And, you can concatenate strings with +. to_string() is defined in  so you’ll have to #include that.\n\n\nWhen that works, use the setters to change the numerator and denominator for a fraction, and then write a test to ensure that asString() still produces the correct results."
-  },
-  {
-    "objectID": "weekly-activities/labs/lab-03/lab03.html#submission",
-    "href": "weekly-activities/labs/lab-03/lab03.html#submission",
-    "title": "Lab 3: Classes",
-    "section": "Submission",
-    "text": "Submission\nCommit your changes to your github repo. After you do this, verify that the automated tests pass. The automated tests just run the tests.cpp file you have been editing.\nDon’t forget to look at the Grading Rubric at the top to make sure you get as many points as possible."
-  },
-  {
-    "objectID": "weekly-activities/labs/lab-03/lab03.html#grading-rubric",
-    "href": "weekly-activities/labs/lab-03/lab03.html#grading-rubric",
-    "title": "Lab 3: Classes",
-    "section": "Grading Rubric",
-    "text": "Grading Rubric\nThis lab is worth 20 pts:\n\n10 points for each of Part 1 and Part the Second: 20 pts\n\n6 pts for correctness\n1 pt for perfect indentation and good variable names, function names, and comments (i.e., hospitable code). You should write a comment in your code only when the following block of code is not obvious to the trained reader. You should not write a comment for each line of code.\n3 pts for sufficient test cases to prove that the code is correct.\n\n\nWays students have lost points in the past:\n\n-2: Test doesn’t pass\n-1: Missing name and id\n-3: Missing steps, Next time speak to professor."
+    "objectID": "instructors.html#office-hours",
+    "href": "instructors.html#office-hours",
+    "title": "Instructors",
+    "section": "Office Hours",
+    "text": "Office Hours\n\nProf. Norman’s hours\nProf. Araújo’s hours",
+    "crumbs": [
+      "Course Policies",
+      "Instructors"
+    ]
   },
   {
     "objectID": "policies.html",
@@ -203,219 +344,85 @@
     ]
   },
   {
-    "objectID": "instructors.html",
-    "href": "instructors.html",
-    "title": "Instructors",
+    "objectID": "weekly-activities/labs/lab-03/lab03.html",
+    "href": "weekly-activities/labs/lab-03/lab03.html",
+    "title": "Lab 3: Classes",
     "section": "",
-    "text": "This course has as instructors: - Prof. Victor Norman - Prof. Eric Araújo",
-    "crumbs": [
-      "Course Policies",
-      "Instructors"
-    ]
+    "text": "A student created by AI."
   },
   {
-    "objectID": "instructors.html#office-hours",
-    "href": "instructors.html#office-hours",
-    "title": "Instructors",
-    "section": "Office Hours",
-    "text": "Office Hours\n\nProf. Norman’s hours\nProf. Araújo’s hours",
-    "crumbs": [
-      "Course Policies",
-      "Instructors"
-    ]
+    "objectID": "weekly-activities/labs/lab-03/lab03.html#part-1-a-student-class",
+    "href": "weekly-activities/labs/lab-03/lab03.html#part-1-a-student-class",
+    "title": "Lab 3: Classes",
+    "section": "Part 1: A Student Class",
+    "text": "Part 1: A Student Class\n\nStep 0. Prepare\n\nClick this link and then “Accept this assignment”.\nWait a few seconds and refresh the page. Refresh until the page says “You’re ready to go!”. The page has a link to a github repo.\nClick the link to see your new repo on github.com.\nClick the green Code button and copy the SSH link it shows.\nIn a terminal,\n\ncd to the directory where you are putting all your CS112 assignments.\ntype git clone &lt;paste-the-contents-of-the-link-you-copied&gt;\n\ncd to the new directory containing your repo.\ntype code . to start up Visual Studio Code in that directory.\nEdit README.md, putting your and your partner’s names and email addresses in the file.\nInspect the code you got in the assignment.\n\n\n\nStep 1. Create the class\nWe will create a class to represent a Student. You probably have not created a class in C++ before, so here are the Pair.h and Pair.cpp classes I created as an example in class. Use this code as an example/template.\nThe instance variables for a Student will be:\n\n\n\n\n\n\n\n\n\nInstance Variable Name\nType\nDefault value\nNotes\n\n\n\n\nmyName\nstring\n“”\nImmutable (NOTE: this is not a const in our class, but we will not be making setter functions for these immutable values.)\n\n\nmyId\nunsigned int\n0\nImmutable (NOTE: this is not a const in our class, but we will not be making setter functions for these immutable values.)\n\n\nmyGpa\nfloat\n0.0\n\n\n\nmyMajor\nstring\n“Undecided”\n\n\n\n\nIn Student.h, you should see the definition of the Student class. In that class, create the private: section, and in there define the 4 instance variables, shown in the table above. You’ll have to #include &lt;string&gt; and do the using namespace business…\nCompile (type: make tester) and fix any errors. (You may see warnings – you can ignore those for now.)\nIn Student.h define the default constructor (in the public: section). In Student.cpp, create the default constructor implementation, initializing the instance variables to their default values, as shown in the table above.\n\n\n\n\n\n\nCompile and fix any errors.\n\n\n\n\n\n\n\n\nStep 2. Create getters\nIn your tests.cpp, you’ll find the first SECTION of unit tests called “student getters”, within the TEST_CASE “Student class”. Uncomment the first SECTION, so that the code to construct a Student object and then test getMajor() runs.\n\n\n\n\n\n\nCompile\n\n\n\nThe compilation should fail because we haven’t defined getMajor() yet. There should be no other problems.\n\n\nSo, create a getter function (in both the Student.h and Student.cpp files) called getMajor().\nCompile and run (in a terminal, run ./tester \"Student class\") – this should work now.\nNow, repeat the above steps for the other tests and instance variables (maybe make this part more clear in the future). Start with a test in tests.cpp first, then implement the prototype and code.\n\n\n\n\n\n\nNOTE\n\n\n\nDon’t delete any old tests – just keep adding more. Put each test in its own SECTION within the “Student class” TEST_CASE.\n\n\n\n\nStep 3. Create setters\nFor the instance variables that are mutable (see the table above), create setter methods. But first, for each, create a test. Put all of these tests in a new SECTION within the “Student class” TEST_CASE.\nExample: for the setGpa test, set the student’s gpa to 3.25, then in a REQUIRE statement, call getGpa() and make sure the value is 3.25.\n\n\nStep 4. Create an explicit-value constructor\nNow, create a second constructor – the explicit-value constructor. This constructor should take the two immutable fields as parameters, and store their values in the instance variables. Initialize all the other variables to their default values. BUT FIRST, create tests. I called my SECTION “student explicit-value constructor”, and in it I create a Student with the explicit-value constructor and then use the getters on all instance variables to make sure the object has the correct values in it.\n\n\n\n\n\n\nCompile and test the result. Fix any errors.\n\n\n\n\n\n\nYou are now done with this simple class. We could add tons of other functionality to it, but not now…\nBefore you go on, commit and push your changes to your github repo. You can easily do this from VSCode. After you do this, you should be able to see that the automated tests fail – but the one test that tests the “Student class” passes. If it does not pass, fix your code (or your tests), and resubmit until it does pass."
   },
   {
-    "objectID": "extras.html",
-    "href": "extras.html",
-    "title": "Extras for the Course",
+    "objectID": "weekly-activities/labs/lab-03/lab03.html#part-2-fraction-class",
+    "href": "weekly-activities/labs/lab-03/lab03.html#part-2-fraction-class",
+    "title": "Lab 3: Classes",
+    "section": "Part 2: Fraction class",
+    "text": "Part 2: Fraction class\nA Fraction class is a useful class to create. It stores a numerator and denominator and can do things like represent itself nicely (e.g., “3/4”), simplify itself, multiply itself with another fraction, etc.\n\nStep 1. Test the Fraction class\nWe’ll continue to use tests.cpp – don’t remove any code from there. But, now we’ll also use it to create and test Fraction class instances. However, our makefile does not compile the Fraction stuff yet.\nEdit the makefile, adding Fraction.cpp to the SOURCES line.\n\n\n\n\n\n\nNote\n\n\n\nSpace separated! Do not remove Students.cpp.\n\n\nIn tests.cpp, below all your tests for the Student class, add the tests shown below\n\n\n\n\n\n\nImportant!\n\n\n\nYou’ll have to #include \"Fraction.h\" at the top of the file.\n\n\nTEST_CASE(\"Fraction class\") {\n    SECTION(\"fraction constructors\") {\n        SECTION(\"default\") {\n            Fraction fr;\n            REQUIRE(fr.getNumerator() == 0);\n            REQUIRE(fr.getDenominator() == 1);\n        }\n        SECTION(\"explicit value\") {\n            Fraction fr(2, 4);\n            REQUIRE(fr.getNumerator() == 2);\n            REQUIRE(fr.getDenominator() == 4);\n        }\n    }\n}\n\n\nStep 2. Add the instance variables and constructors\nAdd the two instance variables – myNumerator and myDenominator (both integers) – to the class definition in the .h file.\nUpdate the default constructor, to initialize myNumerator to 0 and myDenominator to 1.\nNow, implement the explicit-value constructor, which takes both the numerator and denominator as parameters, and stores them in myNumerator and myDenominator. Don’t forget to put the declaration in the .h file and implementation in the .cpp file.\n\n\n\n\n\n\nNote\n\n\n\nWe will compile our tester after the next section.\n\n\n\n\nStep 3. getters\nAdd a new SECTION (within the “Fraction class” TEST_CASE) called “fraction getters” and SECTIONs to call the getter functions and test their results. Compilation should fail, as expected.\n\n\n\n\n\n\nNOTE\n\n\n\nYes, this is repetitive as we already used them for the default constructors. Just to make sure we cover all our bases, and this can easily be seen in our tests, make another SECTION to quickly check the getter functions again.\n\n\nNow, create getter functions for each.\nNow the compilation and execution should succeed with all tests passing.\n\n\n\n\n\n\nNOTE\n\n\n\nYou can run only some tests by putting the name of the test on the command line. E.g., you can run only the Fraction tests by running ./tester \"Fraction class\".\n\n\n\n\nStep 4. setters\nCreate tests to test setters.\nThen, create the methods and the code so it will compile and run successfully.\n\n\nStep 5. Fanciness\nNow, in setDenominator(), check if the parameter is 0 – an illegal value. If so, throw an invalid_argument exception (remember to #include &lt;stdexcept&gt; first). You can do this by using the line:\nthrow invalid_argument(\"Your error message here!\"); // (Change the error message please!)\nHere is a test for that, assuming you have a fraction called f1:\nSECTION(\"setDenominator\") {\n    REQUIRE_THROWS_AS(f1.setDenominator(0), invalid_argument);\n}\n\n\nStep 6. Display as a string\nCreate a test to call asString() on a Fraction object: If you create a new Fraction object newFrac and call newFrac.asString(), you can REQUIRE that the result should be “0/1”. Initially, this test will fail, so create the method, which returns a string.\n\n\n\n\n\n\nNote\n\n\n\nIn asString() you can use to_string(anInt) to convert an integer into a string. And, you can concatenate strings with +. to_string() is defined in  so you’ll have to #include that.\n\n\nWhen that works, use the setters to change the numerator and denominator for a fraction, and then write a test to ensure that asString() still produces the correct results."
+  },
+  {
+    "objectID": "weekly-activities/labs/lab-03/lab03.html#submission",
+    "href": "weekly-activities/labs/lab-03/lab03.html#submission",
+    "title": "Lab 3: Classes",
+    "section": "Submission",
+    "text": "Submission\nCommit your changes to your github repo. After you do this, verify that the automated tests pass. The automated tests just run the tests.cpp file you have been editing.\nDon’t forget to look at the Grading Rubric at the top to make sure you get as many points as possible."
+  },
+  {
+    "objectID": "weekly-activities/labs/lab-03/lab03.html#grading-rubric",
+    "href": "weekly-activities/labs/lab-03/lab03.html#grading-rubric",
+    "title": "Lab 3: Classes",
+    "section": "Grading Rubric",
+    "text": "Grading Rubric\nThis lab is worth 20 pts:\n\n10 points for each of Part 1 and Part the Second: 20 pts\n\n6 pts for correctness\n1 pt for perfect indentation and good variable names, function names, and comments (i.e., hospitable code). You should write a comment in your code only when the following block of code is not obvious to the trained reader. You should not write a comment for each line of code.\n3 pts for sufficient test cases to prove that the code is correct.\n\n\nWays students have lost points in the past:\n\n-2: Test doesn’t pass\n-1: Missing name and id\n-3: Missing steps, Next time speak to professor."
+  },
+  {
+    "objectID": "weekly-activities/slides/lab03-slides.html#lab-3",
+    "href": "weekly-activities/slides/lab03-slides.html#lab-3",
+    "title": "Lab 03 — Classes",
+    "section": "Lab 3",
+    "text": "Lab 3\n\ncreating a Student class\npair programming (change your pairs!)"
+  },
+  {
+    "objectID": "weekly-activities/slides/lab03-slides.html#dad-joke-of-the-week",
+    "href": "weekly-activities/slides/lab03-slides.html#dad-joke-of-the-week",
+    "title": "Lab 03 — Classes",
+    "section": "Dad joke of the week",
+    "text": "Dad joke of the week\n\n\nQ: Why did the functions stop calling each other?\nA: Because they had constant arguments."
+  },
+  {
+    "objectID": "weekly-activities/week03.html",
+    "href": "weekly-activities/week03.html",
+    "title": "Week 3: Classes, Operator Overloading, etc.",
     "section": "",
-    "text": "Here you will see extra documentation and material for the course.",
-    "crumbs": [
-      "Extras",
-      "Extras for the Course"
-    ]
-  },
-  {
-    "objectID": "CODE_OF_CONDUCT.html",
-    "href": "CODE_OF_CONDUCT.html",
-    "title": "Contributor Covenant Code of Conduct",
-    "section": "",
-    "text": "We as members, contributors, and leaders pledge to make participation in our community a harassment-free experience for everyone, regardless of age, body size, visible or invisible disability, ethnicity, sex characteristics, gender identity and expression, level of experience, education, socio-economic status, nationality, personal appearance, race, religion, or sexual identity and orientation.\nWe pledge to act and interact in ways that contribute to an open, welcoming, diverse, inclusive, and healthy community."
-  },
-  {
-    "objectID": "CODE_OF_CONDUCT.html#our-pledge",
-    "href": "CODE_OF_CONDUCT.html#our-pledge",
-    "title": "Contributor Covenant Code of Conduct",
-    "section": "",
-    "text": "We as members, contributors, and leaders pledge to make participation in our community a harassment-free experience for everyone, regardless of age, body size, visible or invisible disability, ethnicity, sex characteristics, gender identity and expression, level of experience, education, socio-economic status, nationality, personal appearance, race, religion, or sexual identity and orientation.\nWe pledge to act and interact in ways that contribute to an open, welcoming, diverse, inclusive, and healthy community."
-  },
-  {
-    "objectID": "CODE_OF_CONDUCT.html#our-standards",
-    "href": "CODE_OF_CONDUCT.html#our-standards",
-    "title": "Contributor Covenant Code of Conduct",
-    "section": "Our Standards",
-    "text": "Our Standards\nExamples of behavior that contributes to a positive environment for our community include:\n\nDemonstrating empathy and kindness toward other people\nBeing respectful of differing opinions, viewpoints, and experiences\nGiving and gracefully accepting constructive feedback\nAccepting responsibility and apologizing to those affected by our mistakes, and learning from the experience\nFocusing on what is best not just for us as individuals, but for the overall community\n\nExamples of unacceptable behavior include:\n\nThe use of sexualized language or imagery, and sexual attention or advances of any kind\nTrolling, insulting or derogatory comments, and personal or political attacks\nPublic or private harassment\nPublishing others’ private information, such as a physical or email address, without their explicit permission\nOther conduct which could reasonably be considered inappropriate in a professional setting"
-  },
-  {
-    "objectID": "CODE_OF_CONDUCT.html#enforcement-responsibilities",
-    "href": "CODE_OF_CONDUCT.html#enforcement-responsibilities",
-    "title": "Contributor Covenant Code of Conduct",
-    "section": "Enforcement Responsibilities",
-    "text": "Enforcement Responsibilities\nCommunity leaders are responsible for clarifying and enforcing our standards of acceptable behavior and will take appropriate and fair corrective action in response to any behavior that they deem inappropriate, threatening, offensive, or harmful.\nCommunity leaders have the right and responsibility to remove, edit, or reject comments, commits, code, wiki edits, issues, and other contributions that are not aligned to this Code of Conduct, and will communicate reasons for moderation decisions when appropriate."
-  },
-  {
-    "objectID": "CODE_OF_CONDUCT.html#scope",
-    "href": "CODE_OF_CONDUCT.html#scope",
-    "title": "Contributor Covenant Code of Conduct",
-    "section": "Scope",
-    "text": "Scope\nThis Code of Conduct applies within all community spaces, and also applies when an individual is officially representing the community in public spaces. Examples of representing our community include using an official e-mail address, posting via an official social media account, or acting as an appointed representative at an online or offline event."
-  },
-  {
-    "objectID": "CODE_OF_CONDUCT.html#enforcement",
-    "href": "CODE_OF_CONDUCT.html#enforcement",
-    "title": "Contributor Covenant Code of Conduct",
-    "section": "Enforcement",
-    "text": "Enforcement\nInstances of abusive, harassing, or otherwise unacceptable behavior may be reported to the community leaders responsible for enforcement at [INSERT CONTACT METHOD]. All complaints will be reviewed and investigated promptly and fairly.\nAll community leaders are obligated to respect the privacy and security of the reporter of any incident."
-  },
-  {
-    "objectID": "CODE_OF_CONDUCT.html#enforcement-guidelines",
-    "href": "CODE_OF_CONDUCT.html#enforcement-guidelines",
-    "title": "Contributor Covenant Code of Conduct",
-    "section": "Enforcement Guidelines",
-    "text": "Enforcement Guidelines\nCommunity leaders will follow these Community Impact Guidelines in determining the consequences for any action they deem in violation of this Code of Conduct:\n\n1. Correction\nCommunity Impact: Use of inappropriate language or other behavior deemed unprofessional or unwelcome in the community.\nConsequence: A private, written warning from community leaders, providing clarity around the nature of the violation and an explanation of why the behavior was inappropriate. A public apology may be requested.\n\n\n2. Warning\nCommunity Impact: A violation through a single incident or series of actions.\nConsequence: A warning with consequences for continued behavior. No interaction with the people involved, including unsolicited interaction with those enforcing the Code of Conduct, for a specified period of time. This includes avoiding interactions in community spaces as well as external channels like social media. Violating these terms may lead to a temporary or permanent ban.\n\n\n3. Temporary Ban\nCommunity Impact: A serious violation of community standards, including sustained inappropriate behavior.\nConsequence: A temporary ban from any sort of interaction or public communication with the community for a specified period of time. No public or private interaction with the people involved, including unsolicited interaction with those enforcing the Code of Conduct, is allowed during this period. Violating these terms may lead to a permanent ban.\n\n\n4. Permanent Ban\nCommunity Impact: Demonstrating a pattern of violation of community standards, including sustained inappropriate behavior, harassment of an individual, or aggression toward or disparagement of classes of individuals.\nConsequence: A permanent ban from any sort of public interaction within the community."
-  },
-  {
-    "objectID": "CODE_OF_CONDUCT.html#attribution",
-    "href": "CODE_OF_CONDUCT.html#attribution",
-    "title": "Contributor Covenant Code of Conduct",
-    "section": "Attribution",
-    "text": "Attribution\nThis Code of Conduct is adapted from the Contributor Covenant, version 2.0, available at https://www.contributor-covenant.org/version/2/0/ code_of_conduct.html.\nCommunity Impact Guidelines were inspired by Mozilla’s code of conduct enforcement ladder.\nFor answers to common questions about this code of conduct, see the FAQ at https://www.contributor-covenant.org/faq. Translations are available at https:// www.contributor-covenant.org/translations."
-  },
-  {
-    "objectID": "LICENSE.html",
-    "href": "LICENSE.html",
-    "title": "Attribution-ShareAlike 4.0 International",
-    "section": "",
-    "text": "Creative Commons Corporation (“Creative Commons”) is not a law firm and does not provide legal services or legal advice. Distribution of Creative Commons public licenses does not create a lawyer-client or other relationship. Creative Commons makes its licenses and related information available on an “as-is” basis. Creative Commons gives no warranties regarding its licenses, any material licensed under their terms and conditions, or any related information. Creative Commons disclaims all liability for damages resulting from their use to the fullest extent possible."
-  },
-  {
-    "objectID": "LICENSE.html#creative-commons-attribution-sharealike-4.0-international-public-license",
-    "href": "LICENSE.html#creative-commons-attribution-sharealike-4.0-international-public-license",
-    "title": "Attribution-ShareAlike 4.0 International",
-    "section": "Creative Commons Attribution-ShareAlike 4.0 International Public License",
-    "text": "Creative Commons Attribution-ShareAlike 4.0 International Public License\nBy exercising the Licensed Rights (defined below), You accept and agree to be bound by the terms and conditions of this Creative Commons Attribution-ShareAlike 4.0 International Public License (“Public License”). To the extent this Public License may be interpreted as a contract, You are granted the Licensed Rights in consideration of Your acceptance of these terms and conditions, and the Licensor grants You such rights in consideration of benefits the Licensor receives from making the Licensed Material available under these terms and conditions.\n\nSection 1 – Definitions.\n\nAdapted Material means material subject to Copyright and Similar Rights that is derived from or based upon the Licensed Material and in which the Licensed Material is translated, altered, arranged, transformed, or otherwise modified in a manner requiring permission under the Copyright and Similar Rights held by the Licensor. For purposes of this Public License, where the Licensed Material is a musical work, performance, or sound recording, Adapted Material is always produced where the Licensed Material is synched in timed relation with a moving image.\nAdapter’s License means the license You apply to Your Copyright and Similar Rights in Your contributions to Adapted Material in accordance with the terms and conditions of this Public License.\nBY-SA Compatible License means a license listed at creativecommons.org/compatiblelicenses, approved by Creative Commons as essentially the equivalent of this Public License.\nCopyright and Similar Rights means copyright and/or similar rights closely related to copyright including, without limitation, performance, broadcast, sound recording, and Sui Generis Database Rights, without regard to how the rights are labeled or categorized. For purposes of this Public License, the rights specified in Section 2(b)(1)-(2) are not Copyright and Similar Rights.\nEffective Technological Measures means those measures that, in the absence of proper authority, may not be circumvented under laws fulfilling obligations under Article 11 of the WIPO Copyright Treaty adopted on December 20, 1996, and/or similar international agreements.\nExceptions and Limitations means fair use, fair dealing, and/or any other exception or limitation to Copyright and Similar Rights that applies to Your use of the Licensed Material.\nLicense Elements means the license attributes listed in the name of a Creative Commons Public License. The License Elements of this Public License are Attribution and ShareAlike.\nLicensed Material means the artistic or literary work, database, or other material to which the Licensor applied this Public License.\nLicensed Rights means the rights granted to You subject to the terms and conditions of this Public License, which are limited to all Copyright and Similar Rights that apply to Your use of the Licensed Material and that the Licensor has authority to license.\nLicensor means the individual(s) or entity(ies) granting rights under this Public License.\nShare means to provide material to the public by any means or process that requires permission under the Licensed Rights, such as reproduction, public display, public performance, distribution, dissemination, communication, or importation, and to make material available to the public including in ways that members of the public may access the material from a place and at a time individually chosen by them.\nSui Generis Database Rights means rights other than copyright resulting from Directive 96/9/EC of the European Parliament and of the Council of 11 March 1996 on the legal protection of databases, as amended and/or succeeded, as well as other essentially equivalent rights anywhere in the world.\nYou means the individual or entity exercising the Licensed Rights under this Public License. Your has a corresponding meaning.\n\n\n\nSection 2 – Scope.\n\nLicense grant.\n\nSubject to the terms and conditions of this Public License, the Licensor hereby grants You a worldwide, royalty-free, non-sublicensable, non-exclusive, irrevocable license to exercise the Licensed Rights in the Licensed Material to:\n\nreproduce and Share the Licensed Material, in whole or in part; and\nproduce, reproduce, and Share Adapted Material.\n\nExceptions and Limitations. For the avoidance of doubt, where Exceptions and Limitations apply to Your use, this Public License does not apply, and You do not need to comply with its terms and conditions.\nTerm. The term of this Public License is specified in Section 6(a).\nMedia and formats; technical modifications allowed. The Licensor authorizes You to exercise the Licensed Rights in all media and formats whether now known or hereafter created, and to make technical modifications necessary to do so. The Licensor waives and/or agrees not to assert any right or authority to forbid You from making technical modifications necessary to exercise the Licensed Rights, including technical modifications necessary to circumvent Effective Technological Measures. For purposes of this Public License, simply making modifications authorized by this Section 2(a)(4) never produces Adapted Material.\nDownstream recipients.\nA. Offer from the Licensor – Licensed Material. Every recipient of the Licensed Material automatically receives an offer from the Licensor to exercise the Licensed Rights under the terms and conditions of this Public License.\n\n__Additional offer from the Licensor – Adapted Material. Every recipient of Adapted Material from You automatically receives an offer from the Licensor to exercise the Licensed Rights in the Adapted Material under the conditions of the Adapter’s License You apply.\n\nC. No downstream restrictions. You may not offer or impose any additional or different terms or conditions on, or apply any Effective Technological Measures to, the Licensed Material if doing so restricts exercise of the Licensed Rights by any recipient of the Licensed Material.\nNo endorsement. Nothing in this Public License constitutes or may be construed as permission to assert or imply that You are, or that Your use of the Licensed Material is, connected with, or sponsored, endorsed, or granted official status by, the Licensor or others designated to receive attribution as provided in Section 3(a)(1)(A)(i).\n\nOther rights.\n\nMoral rights, such as the right of integrity, are not licensed under this Public License, nor are publicity, privacy, and/or other similar personality rights; however, to the extent possible, the Licensor waives and/or agrees not to assert any such rights held by the Licensor to the limited extent necessary to allow You to exercise the Licensed Rights, but not otherwise.\nPatent and trademark rights are not licensed under this Public License.\nTo the extent possible, the Licensor waives any right to collect royalties from You for the exercise of the Licensed Rights, whether directly or through a collecting society under any voluntary or waivable statutory or compulsory licensing scheme. In all other cases the Licensor expressly reserves any right to collect such royalties.\n\n\n\n\nSection 3 – License Conditions.\nYour exercise of the Licensed Rights is expressly made subject to the following conditions.\n\nAttribution.\n\nIf You Share the Licensed Material (including in modified form), You must:\n\nretain the following if it is supplied by the Licensor with the Licensed Material:\n\n\n\nidentification of the creator(s) of the Licensed Material and any others designated to receive attribution, in any reasonable manner requested by the Licensor (including by pseudonym if designated);\na copyright notice;\na notice that refers to this Public License;\na notice that refers to the disclaimer of warranties;\na URI or hyperlink to the Licensed Material to the extent reasonably practicable;\n\n\n\nindicate if You modified the Licensed Material and retain an indication of any previous modifications; and\nindicate the Licensed Material is licensed under this Public License, and include the text of, or the URI or hyperlink to, this Public License.\n\nYou may satisfy the conditions in Section 3(a)(1) in any reasonable manner based on the medium, means, and context in which You Share the Licensed Material. For example, it may be reasonable to satisfy the conditions by providing a URI or hyperlink to a resource that includes the required information.\nIf requested by the Licensor, You must remove any of the information required by Section 3(a)(1)(A) to the extent reasonably practicable.\n\nShareAlike.\n\nIn addition to the conditions in Section 3(a), if You Share Adapted Material You produce, the following conditions also apply.\n\nThe Adapter’s License You apply must be a Creative Commons license with the same License Elements, this version or later, or a BY-SA Compatible License.\nYou must include the text of, or the URI or hyperlink to, the Adapter’s License You apply. You may satisfy this condition in any reasonable manner based on the medium, means, and context in which You Share Adapted Material.\nYou may not offer or impose any additional or different terms or conditions on, or apply any Effective Technological Measures to, Adapted Material that restrict exercise of the rights granted under the Adapter’s License You apply.\n\n\n\nSection 4 – Sui Generis Database Rights.\nWhere the Licensed Rights include Sui Generis Database Rights that apply to Your use of the Licensed Material:\n\nfor the avoidance of doubt, Section 2(a)(1) grants You the right to extract, reuse, reproduce, and Share all or a substantial portion of the contents of the database;\nif You include all or a substantial portion of the database contents in a database in which You have Sui Generis Database Rights, then the database in which You have Sui Generis Database Rights (but not its individual contents) is Adapted Material, including for purposes of Section 3(b); and\nYou must comply with the conditions in Section 3(a) if You Share all or a substantial portion of the contents of the database.\n\nFor the avoidance of doubt, this Section 4 supplements and does not replace Your obligations under this Public License where the Licensed Rights include other Copyright and Similar Rights.\n\n\nSection 5 – Disclaimer of Warranties and Limitation of Liability.\n\nUnless otherwise separately undertaken by the Licensor, to the extent possible, the Licensor offers the Licensed Material as-is and as-available, and makes no representations or warranties of any kind concerning the Licensed Material, whether express, implied, statutory, or other. This includes, without limitation, warranties of title, merchantability, fitness for a particular purpose, non-infringement, absence of latent or other defects, accuracy, or the presence or absence of errors, whether or not known or discoverable. Where disclaimers of warranties are not allowed in full or in part, this disclaimer may not apply to You.\nTo the extent possible, in no event will the Licensor be liable to You on any legal theory (including, without limitation, negligence) or otherwise for any direct, special, indirect, incidental, consequential, punitive, exemplary, or other losses, costs, expenses, or damages arising out of this Public License or use of the Licensed Material, even if the Licensor has been advised of the possibility of such losses, costs, expenses, or damages. Where a limitation of liability is not allowed in full or in part, this limitation may not apply to You.\nThe disclaimer of warranties and limitation of liability provided above shall be interpreted in a manner that, to the extent possible, most closely approximates an absolute disclaimer and waiver of all liability.\n\n\n\nSection 6 – Term and Termination.\n\nThis Public License applies for the term of the Copyright and Similar Rights licensed here. However, if You fail to comply with this Public License, then Your rights under this Public License terminate automatically.\nWhere Your right to use the Licensed Material has terminated under Section 6(a), it reinstates:\n\nautomatically as of the date the violation is cured, provided it is cured within 30 days of Your discovery of the violation; or\nupon express reinstatement by the Licensor.\n\nFor the avoidance of doubt, this Section 6(b) does not affect any right the Licensor may have to seek remedies for Your violations of this Public License.\nFor the avoidance of doubt, the Licensor may also offer the Licensed Material under separate terms or conditions or stop distributing the Licensed Material at any time; however, doing so will not terminate this Public License.\nSections 1, 5, 6, 7, and 8 survive termination of this Public License.\n\n\n\nSection 7 – Other Terms and Conditions.\n\nThe Licensor shall not be bound by any additional or different terms or conditions communicated by You unless expressly agreed.\nAny arrangements, understandings, or agreements regarding the Licensed Material not stated herein are separate from and independent of the terms and conditions of this Public License.t stated herein are separate from and independent of the terms and conditions of this Public License.\n\n\n\nSection 8 – Interpretation.\n\nFor the avoidance of doubt, this Public License does not, and shall not be interpreted to, reduce, limit, restrict, or impose conditions on any use of the Licensed Material that could lawfully be made without permission under this Public License.\nTo the extent possible, if any provision of this Public License is deemed unenforceable, it shall be automatically reformed to the minimum extent necessary to make it enforceable. If the provision cannot be reformed, it shall be severed from this Public License without affecting the enforceability of the remaining terms and conditions.\nNo term or condition of this Public License will be waived and no failure to comply consented to unless expressly agreed to by the Licensor.\nNothing in this Public License constitutes or may be interpreted as a limitation upon, or waiver of, any privileges and immunities that apply to the Licensor or You, including from the legal processes of any jurisdiction or authority.\n\n\nCreative Commons is not a party to its public licenses. Notwithstanding, Creative Commons may elect to apply one of its public licenses to material it publishes and in those instances will be considered the “Licensor.” Except for the limited purpose of indicating that material is shared under a Creative Commons public license or as otherwise permitted by the Creative Commons policies published at creativecommons.org/policies, Creative Commons does not authorize the use of the trademark “Creative Commons” or any other trademark or logo of Creative Commons without its prior written consent including, without limitation, in connection with any unauthorized modifications to any of its public licenses or any other arrangements, understandings, or agreements concerning use of licensed material. For the avoidance of doubt, this paragraph does not form part of the public licenses.\nCreative Commons may be contacted at creativecommons.org"
-  },
-  {
-    "objectID": "content.html",
-    "href": "content.html",
-    "title": "Course content",
-    "section": "",
-    "text": "CS 112 is organized by week, with each week structured as follows:\n\nClassroom sessions are Monday-Wednesday-Friday.\nThe lab sessions are on Tuesdays.\nYour lab submission is due Thursday at 23:59.\nYour project submission is due the next Monday at 23:59 (the night before your next lab).\nTutoring Assistants are available in SB337 on Mondays and Thursdays, from 7 - 9 pm.\n\nThe SLOs (Student Learning Objectives), labs, and projects for each week are given in the links on the left of this page. On overview of the semester is given in the table below:",
+    "text": "Students will be able to:\n\ndefine a class and implement it in .h and .cpp files, respectively.\nreason about the access modifiers public and private.\ndefine and implement constructors and destructors, and general methods.\ninstantiate objects statically\nimplement Test-driven development for a class.",
     "crumbs": [
       "Content",
-      "Course content"
+      "Week 3: Classes, Operator Overloading, etc."
     ]
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Welcome to CS112 - Data Structures",
+    "objectID": "weekly-activities/week03.html#slos-for-week-3",
+    "href": "weekly-activities/week03.html#slos-for-week-3",
+    "title": "Week 3: Classes, Operator Overloading, etc.",
     "section": "",
-    "text": "CS 112 uses the C++ programming language to introduce students to the elementary data structures (vectors, lists, stacks, queues, binary search trees, …), recursion, big-oh notation, and other intermediate-level programming topics.\nThis a permanently in construction website, so please let us know if you find any information missing or had some bad experience with the links and interface throughout the semester.\nHere you will find all information needed to do well during the course."
-  },
-  {
-    "objectID": "index.html#student-learning-outcomes",
-    "href": "index.html#student-learning-outcomes",
-    "title": "Welcome to CS112 - Data Structures",
-    "section": "Student Learning Outcomes",
-    "text": "Student Learning Outcomes\nUpon successful completion of this course students will be able to:\n\nUse indirection (pointers) and run-time memory allocation to implement dynamic, generic container classes (e.g., vectors, lists, stacks, queues, trees, etc.).\n\nAnalyze, categorize, and compare the complexity of data structure operations using “big-oh” notation.\n\nDesign and implement recursive data structure operations.\n\nDesign, create, and use unit-tests to test the correctness of data structure operations.\n\nFor select algorithms, use simple parallel computing techniques to improve algorithm performance and measure the improvement."
-  },
-  {
-    "objectID": "index.html#course-organization",
-    "href": "index.html#course-organization",
-    "title": "Welcome to CS112 - Data Structures",
-    "section": "Course Organization",
-    "text": "Course Organization\nThe course is organized around these components:\n\nThe lectures that will introduce data structures topics at the conceptual level;\nThe labs in which students will (in pairs) practice using and building data structures; and\nThe projects in which students will (individually) practice using and building data structures.\n\nEach week’s lectures, labs and projects will cover the same concepts, but will do so in different ways.\nThe first 4 weeks will be dedicated to learning C++. After that, we will begin studying data structures."
-  },
-  {
-    "objectID": "index.html#acknowledgements",
-    "href": "index.html#acknowledgements",
-    "title": "Welcome to CS112 - Data Structures",
-    "section": "Acknowledgements",
-    "text": "Acknowledgements\nThis website is built with Quarto, the lovely icons by icons8. The original code used to build this website can be found at DS Box. We are very grateful for their work!"
-  },
-  {
-    "objectID": "03-discussion.html",
-    "href": "03-discussion.html",
-    "title": "Discussion",
-    "section": "",
-    "text": "My recommended tool for course discussion is Piazza.\nI have, in the past, used Slack for course communication as well. Slack has the advantage of being real-life feeling as well as being the communication tool of choice for many data science teams. However it doesn’t work well for lasting class discussions as threading and searchability are poor. Additionally, the instructor does not have the option to edit student questions, which can be frustrating if they have not formatted their code appropriately. Similar tools like Discord and MS Teams have similar advantages when it comes to real-life discussions and similar disadvantages when it comes to threading and searchability.\nOther options are GitHub issues and GitHub Discussions, especially for courses using version control.",
+    "text": "Students will be able to:\n\ndefine a class and implement it in .h and .cpp files, respectively.\nreason about the access modifiers public and private.\ndefine and implement constructors and destructors, and general methods.\ninstantiate objects statically\nimplement Test-driven development for a class.",
     "crumbs": [
-      "Extras",
-      "Discussion"
+      "Content",
+      "Week 3: Classes, Operator Overloading, etc."
     ]
   },
   {
-    "objectID": "weekly-activities/projects/proj-03/proj03.html",
-    "href": "weekly-activities/projects/proj-03/proj03.html",
-    "title": "Project 3: a High Scores Class",
-    "section": "",
-    "text": "Created by AI Prompt: create a piece of art that echoes grading inside the classroom"
-  },
-  {
-    "objectID": "weekly-activities/projects/proj-03/proj03.html#introduction",
-    "href": "weekly-activities/projects/proj-03/proj03.html#introduction",
-    "title": "Project 3: a High Scores Class",
-    "section": "Introduction",
-    "text": "Introduction\nYou will build a HighScores class that keeps track of the top-10 scores for a game. The class will store the scores from highest-to-lowest, and only store at most 10 scores. It will keep track of how many high scores are being stored. The class must store the scores in an array.\nThe methods that must be defined for the class are: addScore(int score), getScore(i), and getNumScores(), plus, of course, the default constructor."
-  },
-  {
-    "objectID": "weekly-activities/projects/proj-03/proj03.html#step-0.-prepare",
-    "href": "weekly-activities/projects/proj-03/proj03.html#step-0.-prepare",
-    "title": "Project 3: a High Scores Class",
-    "section": "Step 0. Prepare",
-    "text": "Step 0. Prepare\n\nClick this link and then “Accept this assignment”.\nWait a few seconds and refresh the page. Refresh until the page says “You’re ready to go!”. The page has a link to a github repo.\nClick the link to see your new repo on github.com.\nClick the green Code button and copy the link it shows.\nIn a terminal,\n\ncd to the directory where you are putting all your CS112 assignments.\ntype git clone &lt;paste-the-contents-of-the-link-you-copied&gt;\n\ncd to the new directory containing your repo.\ntype code . to start up Visual Studio Code in that directory.\nInspect the code you got in the assignment.\nIn the terminal, type make tester\nThe code should compile and give you an executable called “tester”\nRun the program: type ./tester\nYou should get some basic output – or at least it should not crash."
-  },
-  {
-    "objectID": "weekly-activities/projects/proj-03/proj03.html#step-1.-starting-slow",
-    "href": "weekly-activities/projects/proj-03/proj03.html#step-1.-starting-slow",
-    "title": "Project 3: a High Scores Class",
-    "section": "Step 1. Starting slow…",
-    "text": "Step 1. Starting slow…\n\nCreate a TEST_CASE that creates a HighScores object, and a SECTION(\"getNumScores\") that calls getNumScores() on that object, and then REQUIREs that the result is 0. Compile (make tester) and see errors.\nNow, in HighScores.h, create the HighScores class and in the class’s private: section, create an array of size 10 of integers called myScores. And, create a variable called myNumScores that stores how many scores are being stored.\nIn the constructor, initialize both variables. You will have to write a loop to initialize every entry of myScores to 0.\nCreate the getter getNumScores(). Then, compile and run: your test should now pass."
-  },
-  {
-    "objectID": "weekly-activities/projects/proj-03/proj03.html#step-2.-adding-a-first-score",
-    "href": "weekly-activities/projects/proj-03/proj03.html#step-2.-adding-a-first-score",
-    "title": "Project 3: a High Scores Class",
-    "section": "Step 2. Adding a first score",
-    "text": "Step 2. Adding a first score\nIn tests.cpp, add another test in a SECTION(\"addScore\") to call addScore(30) and then getNumScores() and REQUIRE that the value is 1. Compile and see the errors. Fix them by doing the following:\nCreate the addScore(int aScore) method in the .h and .cpp files (the function returns void). Implement it by just adding the score to the array at index myNumScores. Then increment myNumScores. Now, your test should pass. (However, if we call addScore multiple times, the scores may not be sorted properly. But we’ll deal with that later.)"
-  },
-  {
-    "objectID": "weekly-activities/projects/proj-03/proj03.html#step-3.-adding-many-scores",
-    "href": "weekly-activities/projects/proj-03/proj03.html#step-3.-adding-many-scores",
-    "title": "Project 3: a High Scores Class",
-    "section": "Step 3. Adding many scores",
-    "text": "Step 3. Adding many scores\nIn tests.cpp, create a loop to add 10 more scores to your HighScores object; thus, there should be 11 calls to addScore() made. Then, REQUIRE that the number of scores being stored is 10 – the maximum the object should store. This test should fail because our code does not check for a full array.\nFix the problem by adding code to make sure you only ever store at most 10 scores. Add the code to addScore(): if the array is full – i.e., myNumScores == 10, just return – do not try to add the new score. (Note: this is not a correct solution, but for the time being, it is good enough.)\nAlso, at this time, implement the method getScore(i). The parameter is an index of the score to return. For example, if the array has the value 42 at index 7 and the code calls getScore(7), the value 42 should be returned. You should write multiple tests to make sure the results you get are correct.\nIf the user passes in an invalid index – i.e., an index that is &gt;= myNumScores, throw an invalid_argument exception. (include &lt;stdexcept&gt; and add the using namespace std; stuff). Use REQUIRES_THROWS_AS() to test if the exception is thrown. Look at tests.cpp in lab3 to see an example."
-  },
-  {
-    "objectID": "weekly-activities/projects/proj-03/proj03.html#step-4.-keep-the-scores-sorted",
-    "href": "weekly-activities/projects/proj-03/proj03.html#step-4.-keep-the-scores-sorted",
-    "title": "Project 3: a High Scores Class",
-    "section": "Step 4. Keep the scores sorted",
-    "text": "Step 4. Keep the scores sorted\nNow, the fun part: when we insert a score into the array, we don’t want to just add it to the “end” of the array. Instead, we want to keep the array sorted from highest score to lowest. So it should be inserted into the array after all the scores that are higher than it and before all scores that are less than or equal to it. In order to do this, we’ll have to shift over any lower scores before inserting the new score into the array.\nFor example, suppose the array looks like this:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n100\n95\n93\n89\n87\n70\n49\n22\n19\n17\n\n\n\n\n\nand myNumScores = 10.\nIf the main code now calls addScore(77), the array should look like this:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n100\n95\n93\n89\n87\n77\n70\n49\n22\n19\n\n\n\n\n\nNotice that every number &lt; 77 has been shifted up in the array, and the last number has been “lost”. Even though we have called addScore() 11 times, myNumScores is still 10.\nTo implement this, your code has to first iterate through the array and find the location where the new high score should be inserted – in this case, that location is index 5. Then, your code needs to copy values up in the array – starting at index 8, where the value 19 is in the example. You move the value at index 8 to index 9, then the value at index 7 to index 8, etc. Finally, the code needs to insert the new value into the place it should go. To summarize, the algorithm for addScore(score) is: 1. find the location to insert the new score – checking if the result is -1. If so, return; 2. shift every other value up; 3. add the new score to the array at the found location. 4. increment the number of scores stored – but only if the array was not full before adding the new value.\n(When the array was full, then the lowest high score was “lost”.)\nTo implement this, you must create two private methods in the class:\n\n\n\n\n\n\n\n\nMethod name\nparameters\nreturn type\n\n\n\n\nfindLocationToInsert()\nint newScore\nint: the index of where to insert the newScore, or -1 if the score is not a new high score.\n\n\nshiftUp()\nint fromIndex\nvoid\n\n\n\n\n\n\n\n\n\nNOTE 1\n\n\n\nIf the new score is lower than all stored high scores, findLocationToInsert should return -1. Your code in addScore() should handle this situation, as shown in the algorithm above.\n\n\n\n\n\n\n\n\nNOTE 2\n\n\n\nAbout findLocationToInsert(): loop from 0 to 9 so that your code can discover if the newScore should go at the end of the array. This will work because we’ve initialized the array to all 0s and we assume all scores are &gt;= 0.\n\n\nAdd the prototypes to your .h file and add empty “skeleton” implementations in your .cpp file. Implement the algorithm above in your addScore() method. That implementation should be something like 7 lines of code.\nBefore you implement the code, change your tests in tests.cpp. Your tests will have to assume that when addScore() is called, the value is inserted into the correct place, thus keeping the array sorted. So, some of your tests that assumed a value would always be added at the end will have to be replaced/fixed.\n\n\n\n\n\n\nNOTE 3\n\n\n\nGetting these tests correct is crucial. I added a comment after most of my calls to addScore() to state what the array should be holding at that point. That helped me keep track of how the code should be behaving and what my tests should test for.\n\n\nNow, implement the two private methods. Both must use for loops.\nYou might find it really useful to create a function to print out the high scores in the object. Then, you can call that function from various places to see what the array really holds.\nOnce you get things working, take another look at your tests. Do you need to add more tests to cover every situation? If so, add them. You’ll be graded on how good your tests are."
-  },
-  {
-    "objectID": "weekly-activities/projects/proj-03/proj03.html#submission",
-    "href": "weekly-activities/projects/proj-03/proj03.html#submission",
-    "title": "Project 3: a High Scores Class",
-    "section": "Submission:",
-    "text": "Submission:\nTake another look at the Grading Rubric below and make changes to maximize your score.\nCommit and Sync your code to your online repo.\n\n\n\n\n\n\nImportant\n\n\n\nVerify you have synced your code to github by going to your online repo webpage and looking to see that the files are correct.\nAlso, verify that the automated test passes. The test is the same as tests.cpp.\n\n\n\nGrading Rubric\nThis project is worth 22 pts:\n\n15 pts for correctness\n2 pt for perfect indentation and good variable names, function names, and comments (i.e., hospitable code). You should write a comment in your code only when the following block of code is not obvious to the trained reader. You should not write a comment for each line of code. Writing a comment above the non-obvious methods can be very useful.\n5 pts for sufficient test cases to prove that the code is correct.\n\nWays students have lost points in the past:\n\n-3: can’t make tester\n-2: Tests don’t pass\n-22: No submission"
-  },
-  {
-    "objectID": "kudos/kudos.html",
-    "href": "kudos/kudos.html",
-    "title": "CS112 - Data Structures",
-    "section": "",
-    "text": "2021-03-17\n\nDear Mine,\nI wanted to take this opportunity to thank you for the wonderful Data Science in a Box materials.  I have been using them extensively in a new course I am putting together.  The title of the course is “predictive analytics” but I also am tasked with teaching them programming and getting data ready, so your course is at a great level for the students who have only had one introductory course in statistics.  I am adding and subtracting things but having your work was a life saver for me given all that is going on.  I am hopefully giving you appropriate creative attribution.\nhttps://laurark.github.io/sta323content/slides/u1-d02-toolkit-r/u1-d02-toolkit-r.html#2 is an example of how I did it on a slide.\nI have learned so much from you..  Thank you so very much for all the work you do and for your wonderful materials and training videos.\nI was able to integrate the XaringanXtra scribble into my slides as well.  https://pkg.garrickadenbuie.com/xaringanExtra/#/scribble  . I was super excited, impressed and grateful Matt and Garrett built this after I asked for it.\nThank you again.\nLaura\nLaura Ring Kapitula, PhD Associate Professor Department of Statistics\nGrand Valley State University"
+    "objectID": "weekly-activities/week03.html#slides-videos-and-application-exercises",
+    "href": "weekly-activities/week03.html#slides-videos-and-application-exercises",
+    "title": "Week 3: Classes, Operator Overloading, etc.",
+    "section": "Slides, videos, and application exercises",
+    "text": "Slides, videos, and application exercises\n\nWeek 3: Slides\n\nSlides\n\n\n\nNo readings for Week 3.\n\n\n\n\n\n\nLab 3: Classes\nFitting and interpreting simple linear regression models\n\nInstructions\n\n\nSource\n\n\nSlides\n\n\n\n\nProject 3: Classes\nModel validation and inference\n\nInstructions\n\n\n\nStarter\n\n\n\nExam 1\nExam on Friday during class. Bring your laptop. Content: Weeks 0 - 2.",
+    "crumbs": [
+      "Content",
+      "Week 3: Classes, Operator Overloading, etc."
+    ]
   }
 ]

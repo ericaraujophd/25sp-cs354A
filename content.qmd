@@ -11,6 +11,23 @@ CS 112 is organized by week, with each week structured as follows:
 - Your project submission is due the next Monday at 23:59 (the night before your next lab).
 - Tutoring Assistants are available in SB337 on Mondays and Thursdays, from 7 - 9 pm.
 
-The SLOs (Student Learning Objectives), labs, and projects for each week are given in the links on the left of this page. On overview of the semester is given in the table below:
+The SLOs (Student Learning Objectives), labs, and projects for each week are given in the links on the left of this page. An overview of the semester is given in the table below:
 
-
+| Week 	| Readings 	| Topics [SLOs] 	| Lab 	| Project 	| Tests, Video Links, etc. 	|
+|---	|---	|--------------------	|---	|---	|------------	|
+| 0 	| 1, 2, 5.1, 5.2 	| Intro to C++, compilation, Data Types (including pointers), const, binary and hexadecimal, arrays, using cout/cin. 	| Lab 0 	| Project 0 	| Binary Exposed 	|
+| 1 	| 3 and 4 	| Control Structures, Functions, Parameter Passing modes. | Lab 1 	| Project 1 	| Array Addressing POGIL activity  (answers) Parameter Passing POGIL activity  (answers) 	|
+| 2 	| 6 and 7 	| File Input/Output, Exception Handling, Two-dimensional Arrays	| Lab 2  	| Project 2 	|  	|
+| 3 	|  	| Classes, Operator Overloading, etc.	| Lab 3 	| Project 3 	| Test 1, Weeks 0 - 2, Friday.  	|
+| 4 	|  	| Vectors -- dynamic arrays 	| Lab 4 	| Project 4 	|  	|
+| 5 	|  	| Generic Containers [SLOs]  [Slides] Review of Runtime Stack 	| Lab 5 	| Project 5  	|  	|
+| 6 	|  	| Linked Lists [SLOs] [Slides] [code from class] Dynamic Array or Linked List 	| Lab 6 	| No project 	| Test 2, Weeks 0 - 5 (Friday) 	|
+| 7 	|  	| Algorithm Analysis and Big-Oh [Slides]  [Videos]  [SLOs] 	| Lab 7 	| Project 7 	|  	|
+| 8 	|  	| Stacks and Queues [SLOs]  [Slides] 	| Lab 8 	| Project 8 	|  	|
+| 9 	|  	| Recursion Monday: Queues [Slides] 	| No lab! 	| Project 9 	| Test 3, weeks 0 - 8 (Wednesday) 	|
+| 10 	|  	| Monday, Apr. 1, No class. Wednesday: Recursion [SLOs] [Slides] Friday: BSTs 	| No lab! 	| Recursion Project 	|  	|
+| 11 	|  	| Apr. 8, 10: BSTs [SLOs] [Slides] 	| Lab 10 	| Project 10 	|  	|
+| 12 	| Apr 12, 15 	| AVL Trees, STL set and map containers,  [SLOs] [Slides] [ [Slides]  	| Lab 12 	| No project 	| Test 4: weeks 0 - 11 (Friday) 	|
+| 13 	| Apr 17, 19, 22, 24, 26 	| Hash Tables [Slides] Sorting Algorithms] [  [SLOs] [Slides]]  	| Lab/Project 13 	|  	|  	|
+| Final 	|  	| Search calvin.edu for "Exam Schedule" to find the time of the exam (and all exams you have, this semester, and all future semesters). 	|  	|  	| Test 5 Cumulative, during exam time  (You may take it in either class's exam time. Classes met at 11am MWF and 12:15 MWF.) 	|
+| 11 	|  	| OpenMP, etc. [SLOs] [Slides] 	| Lab 11 	| Project 11 	|  	|

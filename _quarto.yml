@@ -10,6 +10,8 @@ website:
   title: "CS112 - Data Structures"
   description: "CS112 will teach students to use C++ for creating data structures."
   site-url: "https://ericaraujo.com/24fa-cs112"
+
+  favicon: ./images/cs112-logo.png
   
   repo-url: https://github.com/ericaraujophd/24fa-cs112
   repo-actions: [edit, issue]
@@ -68,6 +70,8 @@ website:
       contents:
         - href: content.qmd
         - href: weekly-activities/week03.qmd
+        - href: weekly-activities/week04.qmd
+        # - href: weekly-activities/week05.qmd
 
     - id: extras
       title: "Extras"
@@ -90,3 +94,5 @@ format:
 freeze: auto
 
 editor: visual
+
+
