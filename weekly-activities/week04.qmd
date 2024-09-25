@@ -1,6 +1,7 @@
 ---
 title: "Week 4: In construction"
 draft: true
+draft-mode: visible
 ---
 
 ## SLOs for Week 4
