@@ -1,5 +1,8 @@
 ---
 title: "Week 3: Classes, Operator Overloading, etc."
+format: 
+  html:
+    css: ../styles.css
 ---
 
 ## SLOs for Week 3

@@ -19,6 +19,7 @@ format:
 You will build a `HighScores` class that keeps track of the top-10 scores for a game. The class will store the scores from highest-to-lowest, and only store at most 10 scores. It will keep track of how many high scores are being stored. The class must store the scores in an array.
 
 The methods that must be defined for the class are: `addScore(int score)`, `getScore(i)`, and `getNumScores()`, plus, of course, the default constructor.
+<!-- These methods need better explanation -->
 
 
 ## Step 0. Prepare
@@ -41,8 +42,8 @@ The methods that must be defined for the class are: `addScore(int score)`, `getS
 ## Step 1. Starting slow...
 
 1. Create a `TEST_CASE` that creates a HighScores object, and a `SECTION("getNumScores")` that calls *getNumScores()* on that object, and then REQUIREs that the result is 0. Compile (`make tester`) and see errors.
-2. Now, in `HighScores.h`, create the HighScores class and in the class's **private:** section, create an array of size 10 of integers called *myScores*. And, create a variable called *myNumScores* that stores how many scores are being stored.
-3. In the constructor, initialize both variables. You will have to write a loop to initialize every entry of *myScores* to 0.
+2. Now, in `HighScores.h`, create the HighScores class and in the class's **private:** section, create an array of size 10 of integers called `*myScores*`. And, create a variable called `*myNumScores*` that stores how many scores are being stored.
+3. In the constructor, initialize both variables. You will have to write a loop to initialize every entry of `*myScores*` to 0.
 4. Create the getter `getNumScores()`. Then, compile and run: your test should now pass.
    
 ## Step 2. Adding a first score
@@ -80,10 +81,11 @@ If the main code now calls **addScore(77)**, the array should look like this:
 Notice that every number < 77 has been shifted up in the array, and the last number has been "lost". Even though we have called *addScore()* 11 times, *myNumScores* is still 10.
 
 To implement this, your code has to first iterate through the array and find the location where the new high score should be inserted -- in this case, that location is index 5. Then, your code needs to copy values up in the array -- starting at index 8, where the value 19 is in the example. You move the value at index 8 to index 9, then the value at index 7 to index 8, etc. Finally, the code needs to insert the new value into the place it should go. To summarize, the algorithm for addScore(score) is:
-   1. find the location to insert the new score -- checking if the result is -1. If so, return;
-   2. shift every other value up;
-   3. add the new score to the array at the found location.
-   4. increment the number of scores stored -- but only if the array was not full before adding the new value. 
+
+1. find the location to insert the new score -- checking if the result is -1. If so, return;
+2. shift every other value up;
+3. add the new score to the array at the found location.
+4. increment the number of scores stored -- but only if the array was not full before adding the new value. 
 
 (When the array was full, then the lowest high score was "lost".)
 
