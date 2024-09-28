@@ -148,7 +148,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#step-2.-adding-a-first-score" id="toc-step-2.-adding-a-first-score" class="nav-link" data-scroll-target="#step-2.-adding-a-first-score">Step 2. Adding a first score</a></li>
   <li><a href="#step-3.-adding-many-scores" id="toc-step-3.-adding-many-scores" class="nav-link" data-scroll-target="#step-3.-adding-many-scores">Step 3. Adding many scores</a></li>
   <li><a href="#step-4.-keep-the-scores-sorted" id="toc-step-4.-keep-the-scores-sorted" class="nav-link" data-scroll-target="#step-4.-keep-the-scores-sorted">Step 4. Keep the scores sorted</a></li>
-  <li><a href="#submission" id="toc-submission" class="nav-link" data-scroll-target="#submission">Submission:</a>
+  <li><a href="#submission" id="toc-submission" class="nav-link" data-scroll-target="#submission">Submission</a>
   <ul class="collapse">
   <li><a href="#grading-rubric" id="toc-grading-rubric" class="nav-link" data-scroll-target="#grading-rubric">Grading Rubric</a></li>
   </ul></li>
@@ -234,7 +234,7 @@ Created by AI Prompt: <em>create a piece of art that echoes grading inside the c
 </section>
 <section id="step-4.-keep-the-scores-sorted" class="level2">
 <h2 class="anchored" data-anchor-id="step-4.-keep-the-scores-sorted">Step 4. Keep the scores sorted</h2>
-<p>Now, the fun part: when we insert a score into the array, we don’t want to just add it to the “end” of the array. Instead, we want to keep the array sorted from highest score to lowest. So it should be inserted into the array after all the scores that are higher than it and before all scores that are less than or equal to it. In order to do this, we’ll have to shift over any lower scores before inserting the new score into the array.</p>
+<p>Now, the fun part: when we insert a score into the array, we don’t want to just add it to the “end” of the array. Instead, we want to keep the array sorted <strong>from highest score to lowest</strong>. So it should be inserted into the array <strong>after</strong> all the scores that are <strong>higher</strong> than it and <strong>before</strong> all scores that are <strong>less than or equal</strong> to it. In order to do this, we’ll have to shift over any lower scores before inserting the new score into the array.</p>
 <p>For example, suppose the array looks like this:</p>
 <table class="caption-top" style="width:100%;">
 <colgroup>
@@ -298,8 +298,8 @@ Created by AI Prompt: <em>create a piece of art that echoes grading inside the c
 <tbody>
 </tbody>
 </table>
-<p>Notice that every number &lt; 77 has been shifted up in the array, and the last number has been “lost”. Even though we have called <em>addScore()</em> 11 times, <em>myNumScores</em> is still 10.</p>
-<p>To implement this, your code has to first iterate through the array and find the location where the new high score should be inserted – in this case, that location is index 5. Then, your code needs to copy values up in the array – starting at index 8, where the value 19 is in the example. You move the value at index 8 to index 9, then the value at index 7 to index 8, etc. Finally, the code needs to insert the new value into the place it should go. To summarize, the algorithm for addScore(score) is:</p>
+<p>Notice that every number &lt;= 77 has been shifted up in the array, and the last number has been “lost”. Even though we have called <em>addScore()</em> 11 times, <em>myNumScores</em> is still 10.</p>
+<p>To implement this, your code has to first iterate through the array and find the location where the new high score should be inserted – in this case, that location is index 5. Then, your code needs to copy values up in the array – starting at index 8, where the value 19 is in the example. You move the value at index 8 to index 9, then the value at index 7 to index 8, etc. Finally, the code needs to insert the new value into the place it should go. To summarize, the algorithm for <code>addScore(score)</code> is:</p>
 <ol type="1">
 <li>find the location to insert the new score – checking if the result is -1. If so, return;</li>
 <li>shift every other value up;</li>
@@ -334,7 +334,7 @@ Created by AI Prompt: <em>create a piece of art that echoes grading inside the c
 </tr>
 </tbody>
 </table>
-<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -344,7 +344,7 @@ NOTE 1
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>If the new score is lower than all stored high scores, <code>findLocationToInsert</code> should return -1. Your code in <code>addScore()</code> should handle this situation, as shown in the algorithm above.</p>
+<p>If the new score is <strong>lower</strong> than all stored high scores, <code>findLocationToInsert</code> should return -1. Your code in <code>addScore()</code> should handle this situation, as shown in the algorithm above.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -360,8 +360,8 @@ NOTE 2
 <p>About <code>findLocationToInsert()</code>: loop from 0 to 9 so that your code can discover if the <strong>newScore</strong> should go at the end of the array. This will work because we’ve initialized the array to all 0s and we assume all scores are &gt;= 0.</p>
 </div>
 </div>
-<p>Add the prototypes to your .h file and add empty “skeleton” implementations in your .cpp file. Implement the algorithm above in your <em>addScore()</em> method. That implementation should be something like 7 lines of code.</p>
-<p>Before you implement the code, change your tests in <em>tests.cpp</em>. Your tests will have to assume that when <em>addScore()</em> is called, the value is inserted into the correct place, thus keeping the array sorted. So, some of your tests that assumed a value would always be added at the end will have to be replaced/fixed.</p>
+<p>Add the prototypes to your .h file and add empty “skeleton” implementations in your .cpp file. Implement the algorithm above in your `addScore()* method. That implementation should be something like 7 lines of code.</p>
+<p><strong>Before</strong> you implement the code, change your tests in <em>tests.cpp</em>. Your tests will have to assume that when <em>addScore()</em> is called, the value is inserted into the correct place, thus keeping the array sorted. So, some of your tests that assumed a value would always be added at the end will have to be replaced/fixed.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -380,7 +380,7 @@ NOTE 3
 <p>Once you get things working, take another look at your tests. Do you need to add more tests to cover every situation? If so, add them. You’ll be graded on how good your tests are.</p>
 </section>
 <section id="submission" class="level2">
-<h2 class="anchored" data-anchor-id="submission">Submission:</h2>
+<h2 class="anchored" data-anchor-id="submission">Submission</h2>
 <p>Take another look at the Grading Rubric below and make changes to maximize your score.</p>
 <p>Commit and Sync your code to your online repo.</p>
 <div class="callout callout-style-default callout-important callout-titled">
