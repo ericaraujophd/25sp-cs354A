@@ -1,0 +1,297 @@
+---
+title: "Lab 4: Vec -- A First Dynamic Data Structure"
+---
+
+## Objectives:
+
+In this exercise, you will:
+
+1. Build a class that uses dynamic allocation/deallocation.
+2. Use pointer variables to access items in a dynamically-allocated array.
+
+
+<!-- ![A student created by AI](imgs/student-cover.jpeg "A cartoon style image of a computer science student wearing a T-shirt with a binary code pattern") -->
+
+<center>
+<figure>
+    <img src="imgs/data-structures.jpeg"
+         alt="An array for a data structures assignment (created by AI)"
+         width="400"  >
+    <figcaption>An array for a data structures assignment created by AI.</figcaption>
+</figure>
+</center>
+
+## Introduction
+
+You should know how to [get the assignment](https://classroom.github.com/a/VP5OQop2). So, do it.
+
+- Don't forget to edit the README.md file and put both of your names and emails in the file.
+- You might also at this time Manage Access to the repo, so that both of you can access it.
+
+The Vec class is a simpler version of the vector<T> class template available in the C++ standard template library (STL). It will provide the basic functionality, without some of the more advanced "bells and whistles" of the STL version.
+
+The class in `Vec.h` is a mere shell at this point. Filling in this shell is our task this week.
+
+
+
+## Step 1. Getting Started
+
+
+- Open each file and take a moment to browse through them, to get a sense of what each one contains. Note that `test.cpp` contains tests for a variety of Vec operations. 
+
+Our approach today will be to use the following steps to build each operation:
+- This exercise will provide you with a description of what the operation should do, and a stub for the method that provides that operation;
+- You will uncomment the call to the test for that operation in `tests.cpp`
+- You will complete the method by adding statements to the stub; and
+- You will compile and run the project. (do `make tester && ./tester`)
+
+:::{.callout-important}
+## Compile. debug and fix any errors.
+If all is well, you can then proceed to the next operation; otherwise you will need to debug your operation to figure out why it is failing the test, recompile, and rerun the test, until it is passed.
+:::
+
+
+## Step 2. Instance Variables
+
+If you look in `Vec.h`, you'll see that we are (for now) using a typedef to define the identifier Item as a synonym for the type double.
+
+You'll also see that the `private:` section of class Vec is currently empty. As a minimalist dynamic array, our Vec will need to "remember" two things:
+
+1. How many Items it is currently storing; and
+2. The Items it is currently storing.
+
+To let a Vec "remember" the first of these, add an instance variable named `mySize` of type unsigned:
+
+```cpp
+  private:
+     unsigned mySize;
+  };
+```
+
+To let a Vec "remember" the second of these, add an instance variable named `myArray` capable of storing the address of an Item:
+
+```cpp
+  private:
+     unsigned mySize;
+     Item   *myArray;
+  };
+```
+
+With these two variables, a Vec object can "remember" (i) how many items it is storing, and (ii) the address of a dynamically allocated array in which its items are stored.
+
+
+<!-- :::{.callout-caution}
+## Compile
+The compilation should fail because we haven't defined getMajor() yet. There should be no other problems.
+:::
+
+:::{.callout-note}
+## NOTE
+Don't delete any old tests -- just keep adding more. Put each test in its own SECTION within the "Student class" TEST_CASE.
+::: -->
+
+## Step 3. The Default Constructor
+
+The role of the default constructor is to provide the instance variables with default values. In a data structure, these are usually values that are appropriate for an "empty" structure. In `Vec.cpp`, complete the default constructor for the class, so that it sets `mySize` to zero, and sets `myArray` to **nullptr**. Compile and run the project (`make tester && ./tester`).
+
+The test should pass, but notice that it isn't actually doing anything... To make a useful test, we need to see if `mySize` is 0 and `myArray` is **nullptr**. However, `myArray` and `mySize` are private, so the test cannot "reach into" the innards of the Vec object to check the values. To resolve this, we will create a getter for `mySize`. In the .h file, in the `public:` section, add the prototypes:
+
+```cpp
+unsigned getSize() const;
+```
+
+In the Vec.cpp file, add this code:
+
+```cpp
+unsigned Vec::getSize() const {
+}
+```
+
+and finish the code which returns mySize.
+
+Notice that we are NOT going to add a getter method for myArray, which would allow a user of the Vec class to get the address where the values are being stored. We do not want to expose this internal detail to the user, as the user could abuse it and start putting values directly into memory. So, because we won't make a getter for myArray, we won't be able to make tests to check the value of myArray.
+
+Uncomment the lines in the first ("default") `SECTION` and compile and run (`make tester && ./tester`).  
+
+:::{.callout-important}
+## Before you go the next step!
+When your definition passes the test, continue; otherwise fix and retest your constructor.
+:::
+
+## Step 4. The Explicit-Value Constructor
+
+The explicit-value constructor's role is to initialize an object using values provided by the user. In a data structure, the user often wants to specify a non-zero starting size for the structure. (e.g., `Vec v(5);` should construct v as a vector capable of storing 5 items.) To store the value the user specifies, our constructor will need a parameter, so we might start by writing this stub for the constructor:
+
+```cpp
+Vec::Vec(unsigned size) {
+}
+```
+
+Put the above code in your .cpp file, and add a prototype for this constructor to the Vec class in `Vec.h`. Then in `tests.cpp`, uncomment the first 2 lines of code in the "explicit-value" SECTION that tests this constructor. Save/compile/run the tests. The test should fail. To make it pass, add code to your explicit-value constructor. Here is the algorithm to follow:
+
+1. Set mySize to size
+2. If size is positive (greater than zero):
+     + Dynamically allocate an array of size values of type Item, and store the address of the array in myArray; and
+     + Set each of the Items in that array to zero.
+3. Otherwise:
+     + Set myArray to nullptr.
+
+Continue when your class passes all tests.
+
+
+## Step 5. Getting the Value of an Item
+
+The rest of the test for the "explicit-value constructor" looks to see if `myArray` was initialized correctly. In order to do this, we need to be able to retrieve the value in each location in `myArray`. To do that, we'll implement a `getItem()` method that lets us retrieve the value of an item at a given index (e.g., `Item it = v.getItem(i);`). Since this method (i) needs the index of the value it is to retrieve, and (ii) does not change its receiver's instance variables, we will start by defining this stub:
+
+```cpp
+Item Vec::getItem(unsigned index) const {
+}
+```
+
+Place a prototype for this method in the Vec class, and in `tests.cpp`, uncomment the rest of the test code in the "explicit-value" constructor SECTION. For the sake of time, here is the code for .cpp file:
+
+```cpp
+Item Vec::getItem(unsigned index) const {
+	if (index < 0 || index >= mySize) {
+     	throw range_error("Bad index");
+	}
+	return myArray[index];
+}
+```
+
+When all tests pass, continue.
+
+:::{.callout-note}
+## Note
+There is a TEST_CASE in tests.cpp to fully test getItem(), but it relies on setItem(), which we have not implemented yet. So, don't uncomment that test case yet.
+:::
+
+
+
+## Part 2: Fraction class
+
+A Fraction class is a useful class to create. It stores a numerator and denominator and can do things like represent itself nicely (e.g., "3/4"), simplify itself, multiply itself with another fraction, etc.
+
+### Step 1. Test the Fraction class
+
+We'll continue to use *tests.cpp* -- **don't remove any code from there**. But, now we'll also use it to create and test Fraction class instances. However, our *makefile* does not compile the Fraction stuff yet.
+
+Edit the *makefile*, <ins>adding</ins> Fraction.cpp to the SOURCES line. 
+
+:::{.callout-important}
+## Note
+Space separated! **Do not** remove Students.cpp.
+:::
+
+In **tests.cpp**, below all your tests for the Student class, add the tests shown below 
+
+:::{.callout-important}
+## Important!
+You'll have to ```#include "Fraction.h"``` at the top of the file.
+:::
+
+```
+TEST_CASE("Fraction class") {
+	SECTION("fraction constructors") {
+    	SECTION("default") {
+        	Fraction fr;
+        	REQUIRE(fr.getNumerator() == 0);
+        	REQUIRE(fr.getDenominator() == 1);
+    	}
+    	SECTION("explicit value") {
+        	Fraction fr(2, 4);
+        	REQUIRE(fr.getNumerator() == 2);
+        	REQUIRE(fr.getDenominator() == 4);
+    	}
+	}
+}
+```
+
+### Step 2. Add the instance variables and constructors
+
+Add the two instance variables -- *myNumerator* and *myDenominator* (both integers) -- to the class definition in the .h file.
+
+Update the default constructor, to initialize *myNumerator* to 0 and *myDenominator* to 1. 
+
+Now, implement the explicit-value constructor, which takes both the numerator and denominator as parameters, and stores them in *myNumerator* and *myDenominator*. Don't forget to put the declaration in the .h file and implementation in the .cpp file.
+
+:::{.callout-note}
+## Note
+We will compile our tester after the next section.
+:::
+
+
+### Step 3. getters
+
+Add a new SECTION (within the "Fraction class" TEST_CASE) called "fraction getters" and SECTIONs to call the getter functions and test their results. Compilation should fail, as expected. 
+
+:::{.callout-note}
+## NOTE
+ Yes, this is repetitive as we already used them for the default constructors. Just to make sure we cover all our bases, and this can easily be seen in our tests, make another SECTION to quickly check the getter functions again.
+:::
+
+Now, create getter functions for each.
+
+Now the compilation and execution should succeed with all tests passing. 
+
+:::{.callout-note}
+## NOTE
+You can run only some tests by putting the name of the test on the command line. E.g., you can run only the Fraction tests by running ```./tester "Fraction class"```.
+:::
+
+### Step 4. setters
+
+Create tests to test setters. 
+
+Then, create the methods and the code so it will compile and run successfully.
+
+### Step 5. Fanciness
+
+Now, in *setDenominator()*, check if the parameter is 0 -- an illegal value. If so, throw an invalid_argument exception (remember to ```#include <stdexcept>``` first). You can do this by using the line:
+
+```
+throw invalid_argument("Your error message here!"); // (Change the error message please!)
+```
+
+Here is a test for that, assuming you have a fraction called f1:
+
+```
+SECTION("setDenominator") {
+    REQUIRE_THROWS_AS(f1.setDenominator(0), invalid_argument);
+}
+```
+
+### Step 6. Display as a string
+
+Create a test to call *asString()* on a Fraction object: If you create a new Fraction object *newFrac* and call *newFrac.asString()*, you can REQUIRE that the result should be "0/1". Initially, this test will fail, so create the method, which returns a string. 
+
+:::{.callout-note}
+## Note
+In *asString()* you can use <ins>to_string(anInt)</ins> to convert an integer into a string. And, you can concatenate strings with +. *to_string()* is defined in <string> so you'll have to #include that.
+:::
+
+When that works, use the setters to change the numerator and denominator for a fraction, and then write a test to ensure that *asString()* still produces the correct results.
+
+## Submission
+
+Commit your changes to your github repo. After you do this, verify that the automated tests pass. The automated tests just run the *tests.cpp* file you have been editing.
+
+Don't forget to look at the Grading Rubric at the top to make sure you get as many points as possible.
+
+## Grading Rubric
+
+This lab is worth 20 pts:
+
+- 10 points for each of Part 1 and Part the Second: 20 pts
+  - 6 pts for correctness
+  - 1 pt for perfect indentation and good variable names, function names, and comments (i.e., hospitable code). You should write a comment in your code only when the following block of code is not *obvious* to the trained reader. You should not write a comment for each line of code.
+  - 3 pts for sufficient test cases to prove that the code is correct.
+
+Ways students have lost points in the past:
+
+- -2: Test doesn't pass
+- -1: Missing name and id
+- -3: Missing steps, Next time speak to professor.
+
+
+<!-- [^1]: how to add footnotes. -->
