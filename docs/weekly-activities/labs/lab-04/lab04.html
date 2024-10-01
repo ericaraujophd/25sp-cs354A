@@ -182,15 +182,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#step-3.-the-default-constructor" id="toc-step-3.-the-default-constructor" class="nav-link" data-scroll-target="#step-3.-the-default-constructor">Step 3. The Default Constructor</a></li>
   <li><a href="#step-4.-the-explicit-value-constructor" id="toc-step-4.-the-explicit-value-constructor" class="nav-link" data-scroll-target="#step-4.-the-explicit-value-constructor">Step 4. The Explicit-Value Constructor</a></li>
   <li><a href="#step-5.-getting-the-value-of-an-item" id="toc-step-5.-getting-the-value-of-an-item" class="nav-link" data-scroll-target="#step-5.-getting-the-value-of-an-item">Step 5. Getting the Value of an Item</a></li>
-  <li><a href="#part-2-fraction-class" id="toc-part-2-fraction-class" class="nav-link" data-scroll-target="#part-2-fraction-class">Part 2: Fraction class</a>
-  <ul class="collapse">
-  <li><a href="#step-1.-test-the-fraction-class" id="toc-step-1.-test-the-fraction-class" class="nav-link" data-scroll-target="#step-1.-test-the-fraction-class">Step 1. Test the Fraction class</a></li>
-  <li><a href="#step-2.-add-the-instance-variables-and-constructors" id="toc-step-2.-add-the-instance-variables-and-constructors" class="nav-link" data-scroll-target="#step-2.-add-the-instance-variables-and-constructors">Step 2. Add the instance variables and constructors</a></li>
-  <li><a href="#step-3.-getters" id="toc-step-3.-getters" class="nav-link" data-scroll-target="#step-3.-getters">Step 3. getters</a></li>
-  <li><a href="#step-4.-setters" id="toc-step-4.-setters" class="nav-link" data-scroll-target="#step-4.-setters">Step 4. setters</a></li>
-  <li><a href="#step-5.-fanciness" id="toc-step-5.-fanciness" class="nav-link" data-scroll-target="#step-5.-fanciness">Step 5. Fanciness</a></li>
-  <li><a href="#step-6.-display-as-a-string" id="toc-step-6.-display-as-a-string" class="nav-link" data-scroll-target="#step-6.-display-as-a-string">Step 6. Display as a string</a></li>
-  </ul></li>
+  <li><a href="#step-6.-setting-the-value-of-an-item" id="toc-step-6.-setting-the-value-of-an-item" class="nav-link" data-scroll-target="#step-6.-setting-the-value-of-an-item">Step 6. Setting the Value of an Item</a></li>
+  <li><a href="#step-7.-the-copy-constructor" id="toc-step-7.-the-copy-constructor" class="nav-link" data-scroll-target="#step-7.-the-copy-constructor">Step 7. The Copy Constructor</a></li>
+  <li><a href="#step-8.-the-destructor" id="toc-step-8.-the-destructor" class="nav-link" data-scroll-target="#step-8.-the-destructor">Step 8. The Destructor</a></li>
+  <li><a href="#step-9.-setting-a-vecs-size" id="toc-step-9.-setting-a-vecs-size" class="nav-link" data-scroll-target="#step-9.-setting-a-vecs-size">Step 9. Setting a Vec’s Size</a></li>
+  <li><a href="#step-10.-equality" id="toc-step-10.-equality" class="nav-link" data-scroll-target="#step-10.-equality">Step 10. Equality</a></li>
   <li><a href="#submission" id="toc-submission" class="nav-link" data-scroll-target="#submission">Submission</a></li>
   <li><a href="#grading-rubric" id="toc-grading-rubric" class="nav-link" data-scroll-target="#grading-rubric">Grading Rubric</a></li>
   </ul>
@@ -365,138 +361,122 @@ Note
 </div>
 </div>
 </section>
-<section id="part-2-fraction-class" class="level2">
-<h2 class="anchored" data-anchor-id="part-2-fraction-class">Part 2: Fraction class</h2>
-<p>A Fraction class is a useful class to create. It stores a numerator and denominator and can do things like represent itself nicely (e.g., “3/4”), simplify itself, multiply itself with another fraction, etc.</p>
-<section id="step-1.-test-the-fraction-class" class="level3">
-<h3 class="anchored" data-anchor-id="step-1.-test-the-fraction-class">Step 1. Test the Fraction class</h3>
-<p>We’ll continue to use <em>tests.cpp</em> – <strong>don’t remove any code from there</strong>. But, now we’ll also use it to create and test Fraction class instances. However, our <em>makefile</em> does not compile the Fraction stuff yet.</p>
-<p>Edit the <em>makefile</em>, <ins>adding</ins> Fraction.cpp to the SOURCES line.</p>
+<section id="step-6.-setting-the-value-of-an-item" class="level2">
+<h2 class="anchored" data-anchor-id="step-6.-setting-the-value-of-an-item">Step 6. Setting the Value of an Item</h2>
+<p>Our next operation is to set the value of a particular item in a Vec (e.g., <code>v.setItem(i, val);</code>). Since the method needs both the index of the item to change, and the new value for the item, we will start with this stub:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> Vec<span class="op">::</span>setItem<span class="op">(</span><span class="dt">unsigned</span> index<span class="op">,</span> <span class="at">const</span> Item<span class="op">&amp;</span> it<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Place a prototype for this method in the Vec class, and in <code>tests.cpp</code>, uncomment the code to test “setItem”.</p>
+<p>Try to build and run the test to see what errors you get; then complete the stub so that it passes the test. Again, for the sake of time, here is the code for Vec.cpp</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> Vec<span class="op">::</span>setItem<span class="op">(</span><span class="dt">unsigned</span> index<span class="op">,</span> <span class="at">const</span> Item<span class="op">&amp;</span> it<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="op">(</span>index <span class="op">&lt;</span> <span class="dv">0</span> <span class="op">||</span> index <span class="op">&gt;=</span> mySize<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>      <span class="cf">throw</span> range_error<span class="op">(</span><span class="st">"Bad index"</span><span class="op">);</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    myArray<span class="op">[</span>index<span class="op">]</span> <span class="op">=</span> it<span class="op">;</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>When all tests pass for testing setItem, also uncomment the getItem TEST_CASE. If you have everything working, you should be passing 29 assertions in 9 test cases.</p>
+</section>
+<section id="step-7.-the-copy-constructor" class="level2">
+<h2 class="anchored" data-anchor-id="step-7.-the-copy-constructor">Step 7. The Copy Constructor</h2>
+<p>The compiler invokes a special copy constructor any time it needs a copy of an object, for example:</p>
+<ul>
+<li>When a function returns an object; OR</li>
+<li>When an object is passed as an argument to a call-by-value parameter.</li>
+</ul>
+<p>The C++ compiler supplies a default copy constructor, but it merely does a bit-by-bit copy of the instance variables of the object being copied. This bit-copy is inadequate for classes with pointer instance variables, because it just copies the address within such variables, rather than making a distinct copy of the dynamically allocated memory to which that address points. Because of this, <strong>every class that contains a pointer instance variable should define its own copy constructor that makes a distinct copy of the object, including its dynamically allocated memory</strong>.</p>
+<p>The stub for a Vec copy constructor looks like this:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>Vec<span class="op">::</span>Vec<span class="op">(</span><span class="at">const</span> Vec<span class="op">&amp;</span> original<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note
+Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Space separated! <strong>Do not</strong> remove Students.cpp.</p>
+<p>If we were to mistakenly make the copy constructor’s parameter a call-by-value parameter instead of a call-by-const-reference parameter, an infinite recursion will occur when the copy constructor is invoked. The reason is that passing a Vec to a call-by-value parameter will invoke the copy constructor, which will take the thing to be copied as a parameter, which will invoke the copy constructor, which will take the thing to be copied as a parameter, which will invoke the copy constructor, which… To avoid this, the parameter of a copy constructor should always be a const-reference parameter, as shown above.</p>
 </div>
 </div>
-<p>In <strong>tests.cpp</strong>, below all your tests for the Student class, add the tests shown below</p>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Important!
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>You’ll have to <code>#include "Fraction.h"</code> at the top of the file.</p>
-</div>
-</div>
-<pre><code>TEST_CASE("Fraction class") {
-    SECTION("fraction constructors") {
-        SECTION("default") {
-            Fraction fr;
-            REQUIRE(fr.getNumerator() == 0);
-            REQUIRE(fr.getDenominator() == 1);
-        }
-        SECTION("explicit value") {
-            Fraction fr(2, 4);
-            REQUIRE(fr.getNumerator() == 2);
-            REQUIRE(fr.getDenominator() == 4);
-        }
-    }
-}</code></pre>
+<p>Add the code above to the .cpp file. Then, add a prototype to the Vec class, and in <code>tests.cpp</code> uncomment the code in the “copy” constructor SECTION to test it. Then add statements to your stub to construct a Vec that is a distinct copy of original, and check to see if the tests pass. Here is the algorithm to follow:</p>
+<ol type="1">
+<li>Set mySize to the size of original</li>
+<li>If <code>original.mySize</code> is greater than zero:
+<ol type="1">
+<li>Dynamically allocate an array of <code>mySize</code> values of type Item, and store the address of the array in <code>myArray</code>.</li>
+<li>Set each item<sub>i</sub> in the new array to item<sub>i</sub> from original.</li>
+</ol></li>
+<li>Otherwise, set <code>myArray</code> to <code>nullptr</code>.</li>
+</ol>
+<p>Continue when your constructor passes all tests. (I am now seeing 35 assertions in 9 test cases passing.)</p>
 </section>
-<section id="step-2.-add-the-instance-variables-and-constructors" class="level3">
-<h3 class="anchored" data-anchor-id="step-2.-add-the-instance-variables-and-constructors">Step 2. Add the instance variables and constructors</h3>
-<p>Add the two instance variables – <em>myNumerator</em> and <em>myDenominator</em> (both integers) – to the class definition in the .h file.</p>
-<p>Update the default constructor, to initialize <em>myNumerator</em> to 0 and <em>myDenominator</em> to 1.</p>
-<p>Now, implement the explicit-value constructor, which takes both the numerator and denominator as parameters, and stores them in <em>myNumerator</em> and <em>myDenominator</em>. Don’t forget to put the declaration in the .h file and implementation in the .cpp file.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>We will compile our tester after the next section.</p>
-</div>
-</div>
+<section id="step-8.-the-destructor" class="level2">
+<h2 class="anchored" data-anchor-id="step-8.-the-destructor">Step 8. The Destructor</h2>
+<p>The C++ compiler invokes an object’s <em>destructor</em> when the object ceases to exist. The role of the destructor is thus to perform any “clean up” actions that are needed to return the system to the same state it was in before the object existed. In a data structure that uses dynamic memory allocation, the main task is usually to return dynamically allocated memory to the system using the <strong>delete</strong> operation.</p>
+<p>A destructor cannot have any parameters, and its name is the name of the class preceded by the tilde character (~), so we can begin with the stub:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>Vec<span class="op">::~</span>Vec<span class="op">()</span> <span class="op">{</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Skeleton code is already in the .h and .cpp files. Uncomment the code to test the destructor in <code>tests.cpp</code>. Then add the statements to the destructor to reclaim the dynamic array whose address is in <code>myArray</code>, set <code>myArray</code> to nullptr, and set <code>mySize</code> to zero. Compile and see if your statements pass the test. Here is the algorithm to follow:</p>
+<ol type="1">
+<li>Use <code>delete []</code> to deallocate the array whose address is stored in <code>myArray</code> <code>delete [] myArray;</code></li>
+<li>Set <code>myArray</code> to <code>nullptr</code></li>
+<li>Set <code>mySize</code> to zero.</li>
+</ol>
+<p>Technically, only the first step is strictly necessary. The reason is that the destructor is only invoked at the end of an object’s lifetime. Since the object will no longer exist, resetting its instance variables is not necessary (except to pass the test).</p>
+<p>Continue when your destructor passes all tests.</p>
 </section>
-<section id="step-3.-getters" class="level3">
-<h3 class="anchored" data-anchor-id="step-3.-getters">Step 3. getters</h3>
-<p>Add a new SECTION (within the “Fraction class” TEST_CASE) called “fraction getters” and SECTIONs to call the getter functions and test their results. Compilation should fail, as expected.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-NOTE
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Yes, this is repetitive as we already used them for the default constructors. Just to make sure we cover all our bases, and this can easily be seen in our tests, make another SECTION to quickly check the getter functions again.</p>
-</div>
-</div>
-<p>Now, create getter functions for each.</p>
-<p>Now the compilation and execution should succeed with all tests passing.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-NOTE
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>You can run only some tests by putting the name of the test on the command line. E.g., you can run only the Fraction tests by running <code>./tester "Fraction class"</code>.</p>
-</div>
-</div>
+<section id="step-9.-setting-a-vecs-size" class="level2">
+<h2 class="anchored" data-anchor-id="step-9.-setting-a-vecs-size">Step 9. Setting a Vec’s Size</h2>
+<p>Our next operation is to set a Vec’s size via a method (e.g., <code>v.setSize(8);</code>). The role of this method is to allow us to change the size of an existing Vec to some new size. Since the user must specify this new size, we need a parameter to store it. We might start by defining this stub:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> Vec<span class="op">::</span>setSize<span class="op">(</span><span class="dt">unsigned</span> newSize<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Place a prototype for this method in the Vec class, and in <code>tests.cpp</code>, uncomment all the code in the TEST_CASE to test “setSize”. Then complete the stub so that it passes the test. Think carefully! This one is deceptively tricky to get right! Algorithm:</p>
+<ol type="1">
+<li>If <code>mySize</code> and <code>newSize</code> are different:
+<ol type="a">
+<li>If <code>newSize</code> is zero:
+<ol type="1">
+<li>Deallocate <code>myArray</code></li>
+<li>Set <code>myArray</code> to <code>nullptr</code></li>
+<li>Set <code>mySize</code> to zero.</li>
+</ol></li>
+<li>Otherwise:
+<ol type="1">
+<li>Declare a local variable <code>newArray</code> of type <code>Item *</code></li>
+<li>Allocate a new dynamic array of <code>newSize</code> Items, storing its address in <code>newArray</code>.</li>
+<li>If <code>mySize</code> is less than <code>newSize</code>:
+<ol type="1">
+<li>Copy <code>mySize</code> values from <code>myArray</code> into <code>newArray</code>.</li>
+<li>Set the remaining (<code>newSize - mySize</code>) values to zero.</li>
+</ol></li>
+<li>Otherwise, just copy <code>newSize</code> values from <code>myArray</code> into <code>newArray</code>.</li>
+<li>Set <code>mySize</code> to <code>newSize</code>.</li>
+<li>Deallocate <code>myArray</code>.</li>
+<li>Set <code>myArray</code> to <code>newArray</code>.</li>
+</ol></li>
+</ol></li>
+</ol>
+<p>When your method passes all tests, continue.</p>
 </section>
-<section id="step-4.-setters" class="level3">
-<h3 class="anchored" data-anchor-id="step-4.-setters">Step 4. setters</h3>
-<p>Create tests to test setters.</p>
-<p>Then, create the methods and the code so it will compile and run successfully.</p>
-</section>
-<section id="step-5.-fanciness" class="level3">
-<h3 class="anchored" data-anchor-id="step-5.-fanciness">Step 5. Fanciness</h3>
-<p>Now, in <em>setDenominator()</em>, check if the parameter is 0 – an illegal value. If so, throw an invalid_argument exception (remember to <code>#include &lt;stdexcept&gt;</code> first). You can do this by using the line:</p>
-<pre><code>throw invalid_argument("Your error message here!"); // (Change the error message please!)</code></pre>
-<p>Here is a test for that, assuming you have a fraction called f1:</p>
-<pre><code>SECTION("setDenominator") {
-    REQUIRE_THROWS_AS(f1.setDenominator(0), invalid_argument);
-}</code></pre>
-</section>
-<section id="step-6.-display-as-a-string" class="level3">
-<h3 class="anchored" data-anchor-id="step-6.-display-as-a-string">Step 6. Display as a string</h3>
-<p>Create a test to call <em>asString()</em> on a Fraction object: If you create a new Fraction object <em>newFrac</em> and call <em>newFrac.asString()</em>, you can REQUIRE that the result should be “0/1”. Initially, this test will fail, so create the method, which returns a string.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>In <em>asString()</em> you can use <ins>to_string(anInt)</ins> to convert an integer into a string. And, you can concatenate strings with +. <em>to_string()</em> is defined in <string> so you’ll have to #include that.</string></p>
-</div>
-</div>
-<p>When that works, use the setters to change the numerator and denominator for a fraction, and then write a test to ensure that <em>asString()</em> still produces the correct results.</p>
-</section>
+<section id="step-10.-equality" class="level2">
+<h2 class="anchored" data-anchor-id="step-10.-equality">Step 10. Equality</h2>
+<p>The purpose of the <strong>equality operation</strong> is to let us compare two objects (e.g., <code>if (v1 == v2) { ... }</code>), returning <strong>true</strong> if they are equal, and returning <strong>false</strong> if they are not. Since the equality operation returns a bool value, a call:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>v1 <span class="op">==</span> v2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>will be treated by the compiler as:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>v1<span class="op">.</span><span class="kw">operator</span><span class="op">==(</span>v2<span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This equality operator should not change either of its operands. We start by defining this stub:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="dt">bool</span> Vec<span class="op">::</span><span class="kw">operator</span><span class="op">==(</span><span class="at">const</span> Vec<span class="op">&amp;</span> v2<span class="op">)</span> <span class="at">const</span> <span class="op">{</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Place a prototype for this method in the Vec class, and in <code>tests.cpp</code>, uncomment the code to test “equality”. Then add statements to the stub so that it passes the test. Algorithm:</p>
+<ol type="1">
+<li>Check to see if <code>mySize</code> is NOT the same as the size of v2. If the two vectors are not the same size, return false.</li>
+<li>Compare each item<sub>i</sub> in <code>myArray</code> to each item<sub>i</sub> from v2’s array:<br>
+If any are not equal, return false.</li>
+<li>The two arrays are equal in size, and all their values are the same, so return true.</li>
+</ol>
+<p>Continue when your method passes all tests.</p>
 </section>
 <section id="submission" class="level2">
 <h2 class="anchored" data-anchor-id="submission">Submission</h2>

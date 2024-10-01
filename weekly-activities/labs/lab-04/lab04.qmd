@@ -166,111 +166,142 @@ When all tests pass, continue.
 There is a TEST_CASE in tests.cpp to fully test getItem(), but it relies on setItem(), which we have not implemented yet. So, don't uncomment that test case yet.
 :::
 
+## Step 6. Setting the Value of an Item
 
-
-## Part 2: Fraction class
-
-A Fraction class is a useful class to create. It stores a numerator and denominator and can do things like represent itself nicely (e.g., "3/4"), simplify itself, multiply itself with another fraction, etc.
-
-### Step 1. Test the Fraction class
-
-We'll continue to use *tests.cpp* -- **don't remove any code from there**. But, now we'll also use it to create and test Fraction class instances. However, our *makefile* does not compile the Fraction stuff yet.
-
-Edit the *makefile*, <ins>adding</ins> Fraction.cpp to the SOURCES line. 
-
-:::{.callout-important}
-## Note
-Space separated! **Do not** remove Students.cpp.
-:::
-
-In **tests.cpp**, below all your tests for the Student class, add the tests shown below 
-
-:::{.callout-important}
-## Important!
-You'll have to ```#include "Fraction.h"``` at the top of the file.
-:::
-
+Our next operation is to set the value of a particular item in a Vec (e.g., `v.setItem(i, val);`). Since the method needs both the index of the item to change, and the new value for the item, we will start with this stub:
+  	
+```cpp
+void Vec::setItem(unsigned index, const Item& it) {
+}
 ```
-TEST_CASE("Fraction class") {
-	SECTION("fraction constructors") {
-    	SECTION("default") {
-        	Fraction fr;
-        	REQUIRE(fr.getNumerator() == 0);
-        	REQUIRE(fr.getDenominator() == 1);
-    	}
-    	SECTION("explicit value") {
-        	Fraction fr(2, 4);
-        	REQUIRE(fr.getNumerator() == 2);
-        	REQUIRE(fr.getDenominator() == 4);
-    	}
+
+Place a prototype for this method in the Vec class, and in `tests.cpp`, uncomment the code to test "setItem". 
+
+Try to build and run the test to see what errors you get; then complete the stub so that it passes the test. Again, for the sake of time, here is the code for Vec.cpp
+
+```cpp
+void Vec::setItem(unsigned index, const Item& it) {
+	if (index < 0 || index >= mySize) {
+      throw range_error("Bad index");
 	}
+	myArray[index] = it;
 }
 ```
 
-### Step 2. Add the instance variables and constructors
-
-Add the two instance variables -- *myNumerator* and *myDenominator* (both integers) -- to the class definition in the .h file.
-
-Update the default constructor, to initialize *myNumerator* to 0 and *myDenominator* to 1. 
-
-Now, implement the explicit-value constructor, which takes both the numerator and denominator as parameters, and stores them in *myNumerator* and *myDenominator*. Don't forget to put the declaration in the .h file and implementation in the .cpp file.
-
-:::{.callout-note}
-## Note
-We will compile our tester after the next section.
-:::
+When all tests pass for testing setItem, also uncomment the getItem TEST_CASE. If you have everything working, you should be passing 29 assertions in 9 test cases.
 
 
-### Step 3. getters
+## Step 7. The Copy Constructor
 
-Add a new SECTION (within the "Fraction class" TEST_CASE) called "fraction getters" and SECTIONs to call the getter functions and test their results. Compilation should fail, as expected. 
+The compiler invokes a special copy constructor any time it needs a copy of an object, for example:
 
-:::{.callout-note}
-## NOTE
- Yes, this is repetitive as we already used them for the default constructors. Just to make sure we cover all our bases, and this can easily be seen in our tests, make another SECTION to quickly check the getter functions again.
-:::
+- When a function returns an object; OR
+- When an object is passed as an argument to a call-by-value parameter.
 
-Now, create getter functions for each.
+The C++ compiler supplies a default copy constructor, but it merely does a bit-by-bit copy of the instance variables of the object being copied. This bit-copy is inadequate for classes with pointer instance variables, because it just copies the address within such variables, rather than making a distinct copy of the dynamically allocated memory to which that address points. Because of this, **every class that contains a pointer instance variable should define its own copy constructor that makes a distinct copy of the object, including its dynamically allocated memory**.
 
-Now the compilation and execution should succeed with all tests passing. 
+The stub for a Vec copy constructor looks like this:
 
-:::{.callout-note}
-## NOTE
-You can run only some tests by putting the name of the test on the command line. E.g., you can run only the Fraction tests by running ```./tester "Fraction class"```.
-:::
-
-### Step 4. setters
-
-Create tests to test setters. 
-
-Then, create the methods and the code so it will compile and run successfully.
-
-### Step 5. Fanciness
-
-Now, in *setDenominator()*, check if the parameter is 0 -- an illegal value. If so, throw an invalid_argument exception (remember to ```#include <stdexcept>``` first). You can do this by using the line:
-
-```
-throw invalid_argument("Your error message here!"); // (Change the error message please!)
-```
-
-Here is a test for that, assuming you have a fraction called f1:
-
-```
-SECTION("setDenominator") {
-    REQUIRE_THROWS_AS(f1.setDenominator(0), invalid_argument);
+```cpp
+Vec::Vec(const Vec& original) {
 }
 ```
 
-### Step 6. Display as a string
-
-Create a test to call *asString()* on a Fraction object: If you create a new Fraction object *newFrac* and call *newFrac.asString()*, you can REQUIRE that the result should be "0/1". Initially, this test will fail, so create the method, which returns a string. 
-
-:::{.callout-note}
-## Note
-In *asString()* you can use <ins>to_string(anInt)</ins> to convert an integer into a string. And, you can concatenate strings with +. *to_string()* is defined in <string> so you'll have to #include that.
+:::{.callout-important}
+If we were to mistakenly make the copy constructor's parameter a call-by-value parameter instead of a call-by-const-reference parameter, an infinite recursion will occur when the copy constructor is invoked. The reason is that passing a Vec to a call-by-value parameter will invoke the copy constructor, which will take the thing to be copied as a parameter, which will invoke the copy constructor, which will take the thing to be copied as a parameter, which will invoke the copy constructor, which... To avoid this, the parameter of a copy constructor should always be a const-reference parameter, as shown above.
 :::
 
-When that works, use the setters to change the numerator and denominator for a fraction, and then write a test to ensure that *asString()* still produces the correct results.
+Add the code above to the .cpp file. Then, add a prototype to the Vec class, and in `tests.cpp` uncomment the code in the "copy" constructor SECTION  to test it. Then add statements to your stub to construct a Vec that is a distinct copy of original, and check to see if the tests pass. Here is the algorithm to follow:
+
+1. Set mySize to the size of original
+2. If `original.mySize` is greater than zero:
+   1. Dynamically allocate an array of `mySize` values of type Item, and store the address of the array in `myArray`.
+   2. Set each item~i~ in the new array to item~i~ from original.
+3. Otherwise, set `myArray` to `nullptr`. 
+
+Continue when your constructor passes all tests.  (I am now seeing 35 assertions in 9 test cases passing.)
+
+
+## Step 8. The Destructor
+
+The C++ compiler invokes an object's *destructor* when the object ceases to exist. The role of the destructor is thus to perform any "clean up" actions that are needed to return the system to the same state it was in before the object existed. In a data structure that uses dynamic memory allocation, the main task is usually to return dynamically allocated memory to the system using the **delete** operation.
+
+A destructor cannot have any parameters, and its name is the name of the class preceded by the tilde character (~), so we can begin with the stub:
+
+```cpp
+Vec::~Vec() {
+}
+```
+
+Skeleton code is already in the .h and .cpp files. Uncomment the code to test the destructor in `tests.cpp`. Then add the statements to the destructor to reclaim the dynamic array whose address is in `myArray`, set `myArray` to nullptr, and set `mySize` to zero. Compile and see if your statements pass the test. Here is the algorithm to follow:
+
+1. Use `delete []` to deallocate the array whose address is stored in `myArray`
+`delete [] myArray;`
+2. Set `myArray` to `nullptr`
+3. Set `mySize` to zero.
+
+Technically, only the first step is strictly necessary. The reason is that the destructor is only invoked at the end of an object's lifetime. Since the object will no longer exist, resetting its instance variables is not necessary (except to pass the test). 
+
+Continue when your destructor passes all tests.
+
+## Step 9. Setting a Vec's Size
+
+Our next operation is to set a Vec's size via a method (e.g., `v.setSize(8);`). The role of this method is to allow us to change the size of an existing Vec to some new size. Since the user must specify this new size, we need a parameter to store it. We might start by defining this stub:
+
+```cpp
+void Vec::setSize(unsigned newSize) {
+}
+```
+
+Place a prototype for this method in the Vec class, and in `tests.cpp`, uncomment all the code in the TEST_CASE to test "setSize". Then complete the stub so that it passes the test. Think carefully! This one is deceptively tricky to get right! Algorithm:
+
+1. If `mySize` and `newSize` are different:
+    a. If `newSize` is zero:
+        1. Deallocate `myArray`
+        2. Set `myArray` to `nullptr`
+        3. Set `mySize` to zero.
+    b. Otherwise:
+        1. Declare a local variable `newArray` of type `Item *`
+        2. Allocate a new dynamic array of `newSize` Items, storing its address in `newArray`.
+        3. If `mySize` is less than `newSize`:
+              1. Copy `mySize` values from `myArray` into `newArray`.
+              2. Set the remaining (`newSize - mySize`) values to zero.
+        4. Otherwise, just copy `newSize` values from `myArray` into `newArray`.
+        5. Set `mySize` to `newSize`.
+        6. Deallocate `myArray`.
+        7. Set `myArray` to `newArray`.
+
+When your method passes all tests, continue.
+
+## Step 10. Equality
+The purpose of the **equality operation** is to let us compare two objects (e.g., `if (v1 == v2) { ... }`), returning **true** if they are equal, and returning **false** if they are not. Since the equality operation returns a bool value, a call:
+
+```cpp
+v1 == v2
+```
+
+will be treated by the compiler as:
+
+```cpp
+v1.operator==(v2)
+```
+
+This equality operator should not change either of its operands. We start by defining this stub:
+
+```cpp
+bool Vec::operator==(const Vec& v2) const {
+}
+```
+
+Place a prototype for this method in the Vec class, and in `tests.cpp`, uncomment the code to test "equality". Then add statements to the stub so that it passes the test. Algorithm:
+
+1. Check to see if `mySize` is NOT the same as the size of v2. If the two vectors are not the same size, return false.
+2. Compare each item~i~ in `myArray` to each item~i~ from v2's array: 	 
+      If any are not equal, return false.
+3. The two arrays are equal in size, and all their values are the same, so return true.
+
+Continue when your method passes all tests.
+
 
 ## Submission
 
