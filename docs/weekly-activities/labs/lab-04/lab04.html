@@ -187,8 +187,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#step-8.-the-destructor" id="toc-step-8.-the-destructor" class="nav-link" data-scroll-target="#step-8.-the-destructor">Step 8. The Destructor</a></li>
   <li><a href="#step-9.-setting-a-vecs-size" id="toc-step-9.-setting-a-vecs-size" class="nav-link" data-scroll-target="#step-9.-setting-a-vecs-size">Step 9. Setting a Vec’s Size</a></li>
   <li><a href="#step-10.-equality" id="toc-step-10.-equality" class="nav-link" data-scroll-target="#step-10.-equality">Step 10. Equality</a></li>
-  <li><a href="#submission" id="toc-submission" class="nav-link" data-scroll-target="#submission">Submission</a></li>
-  <li><a href="#grading-rubric" id="toc-grading-rubric" class="nav-link" data-scroll-target="#grading-rubric">Grading Rubric</a></li>
+  <li><a href="#step-11.-ostream-output" id="toc-step-11.-ostream-output" class="nav-link" data-scroll-target="#step-11.-ostream-output">Step 11. ostream Output</a></li>
+  <li><a href="#step-12.-istream-input" id="toc-step-12.-istream-input" class="nav-link" data-scroll-target="#step-12.-istream-input">Step 12. istream Input</a></li>
+  <li><a href="#submit" id="toc-submit" class="nav-link" data-scroll-target="#submit">Submit</a></li>
+  <li><a href="#grading-rubric-24-pts-total" id="toc-grading-rubric-24-pts-total" class="nav-link" data-scroll-target="#grading-rubric-24-pts-total">Grading Rubric: 24 pts total</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/ericaraujophd/24fa-cs112/edit/main/weekly-activities/labs/lab-04/lab04.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/24fa-cs112/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -478,27 +480,64 @@ If any are not equal, return false.</li>
 </ol>
 <p>Continue when your method passes all tests.</p>
 </section>
-<section id="submission" class="level2">
-<h2 class="anchored" data-anchor-id="submission">Submission</h2>
-<p>Commit your changes to your github repo. After you do this, verify that the automated tests pass. The automated tests just run the <em>tests.cpp</em> file you have been editing.</p>
-<p>Don’t forget to look at the Grading Rubric at the top to make sure you get as many points as possible.</p>
-</section>
-<section id="grading-rubric" class="level2">
-<h2 class="anchored" data-anchor-id="grading-rubric">Grading Rubric</h2>
-<p>This lab is worth 20 pts:</p>
+<section id="step-11.-ostream-output" class="level2">
+<h2 class="anchored" data-anchor-id="step-11.-ostream-output">Step 11. ostream Output</h2>
+<p>It is useful to be able to write a vector to an <code>ostream</code>, as this allows us to display it on the screen (or write it to a file via an <code>ofstream</code>). This method should output the values of the items in the Vec, but not its size; if the user wants that size information displayed, they can do that separately using <code>getSize()</code>.</p>
+<p>Whereas (i) our method returns nothing to its caller, (ii) it needs to “know” the ostream to which it is to write, (iii) it modifies that ostream by inserting items, and (iv) it should not modify any Vec instance variables, we might begin with this stub:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> Vec<span class="op">::</span>writeTo<span class="op">(</span>ostream<span class="op">&amp;</span> out<span class="op">)</span> <span class="at">const</span> <span class="op">{</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Place a prototype for this method in the Vec class, and in <code>tests.cpp</code>, uncomment the test “writeToStream”. Then add statements to this stub so that it passes the test. Algorithm:</p>
 <ul>
-<li>10 points for each of Part 1 and Part the Second: 20 pts
-<ul>
-<li>6 pts for correctness</li>
-<li>1 pt for perfect indentation and good variable names, function names, and comments (i.e., hospitable code). You should write a comment in your code only when the following block of code is not <em>obvious</em> to the trained reader. You should not write a comment for each line of code.</li>
-<li>3 pts for sufficient test cases to prove that the code is correct.</li>
-</ul></li>
+<li>Send each value in <code>myArray</code> to the out stream, followed by a single space.</li>
 </ul>
-<p>Ways students have lost points in the past:</p>
+<p>Continue when your method passes all the tests.</p>
+</section>
+<section id="step-12.-istream-input" class="level2">
+<h2 class="anchored" data-anchor-id="step-12.-istream-input">Step 12. istream Input</h2>
+<p>It is also useful to be able to read a vector from an istream, as this lets us enter a vector’s values interactively, from a keyboard (or read them from a file via an <code>ifstream</code>). This method complements <code>writeTo()</code>, and should assume that the user has already constructed the Vec with the appropriate size.</p>
+<p>Since (i) our method returns nothing to its caller, (ii) it needs to “know” the istream from which it is to read, (iii) it modifies that istream by extracting items, and (iv) it might modify its instance variables, we might begin with this stub:</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> Vec<span class="op">::</span>readFrom<span class="op">(</span>istream<span class="op">&amp;</span> in<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Place a prototype for this method in the Vec class, and in <code>tests.cpp</code>, uncomment the test “readFromStream”. Then add statements to this stub so that it passes the test.</p>
+<p>Assuming that <code>mySize</code> equals the number of values in in, the Vec <code>readFrom(istream&amp; in)</code> method should:</p>
 <ul>
-<li>-2: Test doesn’t pass</li>
-<li>-1: Missing name and id</li>
-<li>-3: Missing steps, Next time speak to professor.</li>
+<li>Extract each value from in, storing each in “the next” item of <code>myArray</code>.</li>
+</ul>
+<p>Continue when your method passes all the tests. (My solution passes ~82 assertions!)</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Congratulations!
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You have just built a class that offers the basic functionality one would expect from a vector!</p>
+</div>
+</div>
+</section>
+<section id="submit" class="level2">
+<h2 class="anchored" data-anchor-id="submit">Submit</h2>
+<p>Use VSCode (or the command line) to commit and push your changes to your repo.</p>
+<p>To verify your submission to github.com, go to a browser and go to the location of your repo in github.com.</p>
+<p>Also, verify that your submission passes all the automated tests in github. The automated tests are the same as those in tests.cpp.</p>
+</section>
+<section id="grading-rubric-24-pts-total" class="level2">
+<h2 class="anchored" data-anchor-id="grading-rubric-24-pts-total">Grading Rubric: 24 pts total</h2>
+<ul>
+<li>16 pts for correct code that passes all the tests</li>
+<li>2 pts for clean, neat code, well-indented, and readable</li>
+<li>6 pts for correctness (see common mistakes below).</li>
+</ul>
+<p>Ways students lost points in the past:</p>
+<ul>
+<li>-1: Be careful about brace indentation <!-- + -1: Assignment operator leaks memory if the old `mySize > 0` and `original.mySize == 0` (remove Vec.cpp line <redacted>, check instructions carefully) --></li>
+<li>-1: Tester crashes at line <redacted>, should be &lt; newSize in case newSize is smaller than mySize (otherwise you index past the end of the array)</redacted></li>
+<li>-1: Memory leak in <code>setSize()</code> when mySize &lt; newSize. You need to delete[] myArray in both cases; move it outside the else statement.</li>
+<li>-2: Make sure you are using <code>delete[]</code> and not <code>delete</code>, which leaks memory</li>
+<li>-24: No submission, or partner forgot to include you in README.</li>
 </ul>
 <!-- [^1]: how to add footnotes. -->
 

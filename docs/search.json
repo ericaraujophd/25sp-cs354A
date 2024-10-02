@@ -463,7 +463,7 @@
     "href": "weekly-activities/week04.html#slides-videos-and-application-exercises",
     "title": "Week 4: Vectors – dynamic arrays",
     "section": "Slides, videos, and application exercises",
-    "text": "Slides, videos, and application exercises\n\nWeek 4: Slides\n\nSlides\n\n\n\nNo readings for Week 4.\n\n\n\n\n\n\nLab 4: Vectors\nVec – A First Dynamic Data Structure\n\nInstructions\n\n\nSource\n\n\nSlides\n\n\n\n\nProject 4: Classes\nModel validation and inference\n\nInstructions\n\n\n\nStarter\n\n\n\nExam 1\nExam on Friday during class. Bring your laptop. Content: Weeks 0 - 2.",
+    "text": "Slides, videos, and application exercises\n\nWeek 4: Slides\n\nSlides\n\n\n\nNo readings for Week 4.\n\n\n\n\n\n\nLab 4: Vectors\nVec – A First Dynamic Data Structure\n\nInstructions\n\n\nSource\n\n\nSlides\n\n\n\n\nProject 4: Vec – A First Dynamic Data Structure\nVec – A First Dynamic Data Structure\n\nInstructions\n\n\n\nStarter\n\n\n\nExam 1 Exam on Friday during class. Bring your laptop. Content: Weeks 0 - 2.",
     "crumbs": [
       "Content",
       "Week 4: Vectors -- dynamic arrays"
@@ -601,5 +601,68 @@
     "title": "Lab 4: Vec – A First Dynamic Data Structure",
     "section": "Step 10. Equality",
     "text": "Step 10. Equality\nThe purpose of the equality operation is to let us compare two objects (e.g., if (v1 == v2) { ... }), returning true if they are equal, and returning false if they are not. Since the equality operation returns a bool value, a call:\nv1 == v2\nwill be treated by the compiler as:\nv1.operator==(v2)\nThis equality operator should not change either of its operands. We start by defining this stub:\nbool Vec::operator==(const Vec& v2) const {\n}\nPlace a prototype for this method in the Vec class, and in tests.cpp, uncomment the code to test “equality”. Then add statements to the stub so that it passes the test. Algorithm:\n\nCheck to see if mySize is NOT the same as the size of v2. If the two vectors are not the same size, return false.\nCompare each itemi in myArray to each itemi from v2’s array:\nIf any are not equal, return false.\nThe two arrays are equal in size, and all their values are the same, so return true.\n\nContinue when your method passes all tests."
+  },
+  {
+    "objectID": "weekly-activities/labs/lab-04/lab04.html#step-10.",
+    "href": "weekly-activities/labs/lab-04/lab04.html#step-10.",
+    "title": "Lab 4: Vec – A First Dynamic Data Structure",
+    "section": "Step 10.",
+    "text": "Step 10."
+  },
+  {
+    "objectID": "weekly-activities/labs/lab-04/lab04.html#step-11.-ostream-output",
+    "href": "weekly-activities/labs/lab-04/lab04.html#step-11.-ostream-output",
+    "title": "Lab 4: Vec – A First Dynamic Data Structure",
+    "section": "Step 11. ostream Output",
+    "text": "Step 11. ostream Output\nIt is useful to be able to write a vector to an ostream, as this allows us to display it on the screen (or write it to a file via an ofstream). This method should output the values of the items in the Vec, but not its size; if the user wants that size information displayed, they can do that separately using getSize().\nWhereas (i) our method returns nothing to its caller, (ii) it needs to “know” the ostream to which it is to write, (iii) it modifies that ostream by inserting items, and (iv) it should not modify any Vec instance variables, we might begin with this stub:\nvoid Vec::writeTo(ostream& out) const {\n}\nPlace a prototype for this method in the Vec class, and in tests.cpp, uncomment the test “writeToStream”. Then add statements to this stub so that it passes the test. Algorithm:\n\nSend each value in myArray to the out stream, followed by a single space.\n\nContinue when your method passes all the tests."
+  },
+  {
+    "objectID": "weekly-activities/labs/lab-04/lab04.html#step-12.",
+    "href": "weekly-activities/labs/lab-04/lab04.html#step-12.",
+    "title": "Lab 4: Vec – A First Dynamic Data Structure",
+    "section": "Step 12.",
+    "text": "Step 12."
+  },
+  {
+    "objectID": "weekly-activities/labs/lab-04/lab04.html#step-12.-istream-input",
+    "href": "weekly-activities/labs/lab-04/lab04.html#step-12.-istream-input",
+    "title": "Lab 4: Vec – A First Dynamic Data Structure",
+    "section": "Step 12. istream Input",
+    "text": "Step 12. istream Input\nIt is also useful to be able to read a vector from an istream, as this lets us enter a vector’s values interactively, from a keyboard (or read them from a file via an ifstream). This method complements writeTo(), and should assume that the user has already constructed the Vec with the appropriate size.\nSince (i) our method returns nothing to its caller, (ii) it needs to “know” the istream from which it is to read, (iii) it modifies that istream by extracting items, and (iv) it might modify its instance variables, we might begin with this stub:\nvoid Vec::readFrom(istream& in) {\n}\nPlace a prototype for this method in the Vec class, and in tests.cpp, uncomment the test “readFromStream”. Then add statements to this stub so that it passes the test.\nAssuming that mySize equals the number of values in in, the Vec readFrom(istream& in) method should:\n\nExtract each value from in, storing each in “the next” item of myArray.\n\nContinue when your method passes all the tests. (My solution passes ~82 assertions!)\n\n\n\n\n\n\nCongratulations!\n\n\n\nYou have just built a class that offers the basic functionality one would expect from a vector!"
+  },
+  {
+    "objectID": "weekly-activities/labs/lab-04/lab04.html#submit",
+    "href": "weekly-activities/labs/lab-04/lab04.html#submit",
+    "title": "Lab 4: Vec – A First Dynamic Data Structure",
+    "section": "Submit",
+    "text": "Submit\nUse VSCode (or the command line) to commit and push your changes to your repo.\nTo verify your submission to github.com, go to a browser and go to the location of your repo in github.com.\nAlso, verify that your submission passes all the automated tests in github. The automated tests are the same as those in tests.cpp."
+  },
+  {
+    "objectID": "weekly-activities/labs/lab-04/lab04.html#grading-rubric-24-pts-total",
+    "href": "weekly-activities/labs/lab-04/lab04.html#grading-rubric-24-pts-total",
+    "title": "Lab 4: Vec – A First Dynamic Data Structure",
+    "section": "Grading Rubric: 24 pts total",
+    "text": "Grading Rubric: 24 pts total\n\n16 pts for correct code that passes all the tests\n2 pts for clean, neat code, well-indented, and readable\n6 pts for correctness (see common mistakes below).\n\nWays students lost points in the past:\n\n-1: Be careful about brace indentation \n-1: Tester crashes at line , should be &lt; newSize in case newSize is smaller than mySize (otherwise you index past the end of the array)\n-1: Memory leak in setSize() when mySize &lt; newSize. You need to delete[] myArray in both cases; move it outside the else statement.\n-2: Make sure you are using delete[] and not delete, which leaks memory\n-24: No submission, or partner forgot to include you in README."
+  },
+  {
+    "objectID": "weekly-activities/projects/proj-04/proj04.html",
+    "href": "weekly-activities/projects/proj-04/proj04.html",
+    "title": "Project 4: More Vec Operations",
+    "section": "",
+    "text": "Created by AI Prompt: a C++ array fading away"
+  },
+  {
+    "objectID": "weekly-activities/projects/proj-04/proj04.html#project-4-more-vec-operations",
+    "href": "weekly-activities/projects/proj-04/proj04.html#project-4-more-vec-operations",
+    "title": "Project 4: More Vec Operations",
+    "section": "Project 4: More Vec Operations",
+    "text": "Project 4: More Vec Operations"
+  },
+  {
+    "objectID": "weekly-activities/projects/proj-04/proj04.html#objectives",
+    "href": "weekly-activities/projects/proj-04/proj04.html#objectives",
+    "title": "Project 4: More Vec Operations",
+    "section": "Objectives",
+    "text": "Objectives\n\nBuild more vector operations.\nPractice using the debugger (if necessary).\n\n\nPrepare\n\n\n\n\n\n\nREAD THIS: IT IS DIFFERENT THAN NORMAL!\n\n\n\n\n\n\n\nClick the link and then “Accept this assignment”.\nWait a few seconds and refresh the page. Refresh until the page says “You’re ready to go!”. The page has a link to a github repo.\nClick the link to see your new repo on github.com.\nClick the green Code button and copy the link it shows.\nIn a terminal, + cd to the directory where you are putting all your CS112 assignments. + type git clone &lt;paste-the-contents-of-the-link-you-copied&gt;\ncd to the new directory containing your repo.\n\n\n\n\n\n\n\nBECAUSE your project depends on your lab code, you need to copy your lab code over to this repo. In a terminal:\n\n\n\n\ncd to your lab directory\ncp Vec.h Vec.cpp &lt;your project directory&gt;\ncd to your project directory\n\n\n\n\nOpen your project in VS Code, and open Vec.h\nAdd this prototype for the assignment operator to Vec.h, in the public area:\n\nVec& operator=(const Vec& original);\n\nAdd this code to Vec.cpp:\n\nVec& Vec::operator=(const Vec& original) {\n    if (this != &original) {\n        if (mySize != original.mySize) {\n            if (mySize &gt; 0) {\n                delete[] myArray;\n                myArray = nullptr;\n            }\n            if (original.mySize &gt; 0) {\n                myArray = new Item[original.mySize];\n            }\n            mySize = original.mySize;\n        }\n        for (int i = 0; i &lt; mySize; ++i) {\n            myArray[i] = original.myArray[i];\n        }\n    }\n    return *this;\n}\n\nIn the terminal, type make tester\nThe code should compile and give you an executable called “tester”\nRun the tester file: ./tester\nYour tests should all pass."
   }
 ]

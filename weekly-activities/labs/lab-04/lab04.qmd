@@ -302,27 +302,71 @@ Place a prototype for this method in the Vec class, and in `tests.cpp`, uncommen
 
 Continue when your method passes all tests.
 
+## Step 11. ostream Output
 
-## Submission
+It is useful to be able to write a vector to an `ostream`, as this allows us to display it on the screen (or write it to a file via an `ofstream`). This method should output the values of the items in the Vec, but not its size; if the user wants that size information displayed, they can do that separately using `getSize()`.
 
-Commit your changes to your github repo. After you do this, verify that the automated tests pass. The automated tests just run the *tests.cpp* file you have been editing.
+Whereas (i) our method returns nothing to its caller, (ii) it needs to "know" the ostream to which it is to write, (iii) it modifies that ostream by inserting items, and (iv) it should not modify any Vec instance variables, we might begin with this stub:
 
-Don't forget to look at the Grading Rubric at the top to make sure you get as many points as possible.
+```cpp
+void Vec::writeTo(ostream& out) const {
+}
+```
 
-## Grading Rubric
+Place a prototype for this method in the Vec class, and in `tests.cpp`, uncomment the test "writeToStream". Then add statements to this stub so that it passes the test. Algorithm:
 
-This lab is worth 20 pts:
+- Send each value in `myArray` to the out stream, followed by a single space.
 
-- 10 points for each of Part 1 and Part the Second: 20 pts
-  - 6 pts for correctness
-  - 1 pt for perfect indentation and good variable names, function names, and comments (i.e., hospitable code). You should write a comment in your code only when the following block of code is not *obvious* to the trained reader. You should not write a comment for each line of code.
-  - 3 pts for sufficient test cases to prove that the code is correct.
+Continue when your method passes all the tests.
 
-Ways students have lost points in the past:
 
-- -2: Test doesn't pass
-- -1: Missing name and id
-- -3: Missing steps, Next time speak to professor.
+## Step 12. istream Input
+
+It is also useful to be able to read a vector from an istream, as this lets us enter a vector's values interactively, from a keyboard (or read them from a file via an `ifstream`). This method complements `writeTo()`, and should assume that the user has already constructed the Vec with the appropriate size.
+
+Since (i) our method returns nothing to its caller, (ii) it needs to "know" the istream from which it is to read, (iii) it modifies that istream by extracting items, and (iv) it might modify its instance variables, we might begin with this stub:
+
+```cpp
+void Vec::readFrom(istream& in) {
+}
+```
+
+Place a prototype for this method in the Vec class, and in `tests.cpp`, uncomment the test "readFromStream". Then add statements to this stub so that it passes the test.
+
+Assuming that `mySize` equals the number of values in in, the Vec `readFrom(istream& in)` method should:
+
+- Extract each value from in, storing each in "the next" item of `myArray`.
+ 
+Continue when your method passes all the tests.  (My solution passes ~82 assertions!)
+
+:::{.callout-tip}
+## Congratulations! 
+You have just built a class that offers the basic functionality one would expect from a vector!
+:::
+
+
+## Submit
+
+Use VSCode (or the command line) to commit and push your changes to your repo.
+
+To verify your submission to github.com, go to a browser and go to the location of your repo in github.com. 
+
+Also, verify that your submission passes all the automated tests in github. The automated tests are the same as those in tests.cpp.
+
+## Grading Rubric: 24 pts total
+
+- 16 pts for correct code that passes all the tests
+- 2 pts for clean, neat code, well-indented, and readable
+- 6 pts for correctness (see common mistakes below).
+
+Ways students lost points in the past:
+
++ -1: Be careful about brace indentation
+<!-- + -1: Assignment operator leaks memory if the old `mySize > 0` and `original.mySize == 0` (remove Vec.cpp line <redacted>, check instructions carefully) -->
+<!-- + -1: Tester crashes at line <redacted>, should be < newSize in case newSize is smaller than mySize (otherwise you index past the end of the array) -->
++ -1: Memory leak in `setSize()` when mySize < newSize. You need to delete[] myArray in both cases; move it outside the else statement.
++ -2: Make sure you are using `delete[]` and not `delete`, which leaks memory
++ -24: No submission, or partner forgot to include you in README.
 
 
 <!-- [^1]: how to add footnotes. -->

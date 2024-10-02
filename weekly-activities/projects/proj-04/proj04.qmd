@@ -1,0 +1,82 @@
+---
+title: "Project 4: More Vec Operations"
+format: 
+  html:
+    css: ../styles.css
+---
+
+<center>
+<figure>
+    <img src="imgs/array.jpeg"
+         alt="Created by AI Prompt: a C++ array fading away"
+         width="350"  >
+    <figcaption>Created by AI Prompt: *a C++ array fading away*</figcaption>
+</figure>
+</center>
+
+
+## Project 4: More Vec Operations
+
+## Objectives
+
+1. Build more vector operations.
+2. Practice using the debugger (if necessary).
+
+
+### Prepare  
+
+:::{.callout-important}
+## READ THIS: IT IS DIFFERENT THAN NORMAL!
+:::
+
+- [Click the link](https://classroom.github.com/a/BR1S81yc) and then "Accept this assignment".
+- Wait a few seconds and refresh the page. Refresh until the page says "You're ready to go!". The page has a link to a github repo.
+- Click the link to see your new repo on github.com.
+- Click the green Code button and copy the link it shows.
+- In a terminal,
+        + `cd` to the directory where you are putting all your CS112 assignments.
+        + type `git clone <paste-the-contents-of-the-link-you-copied>`
+- `cd` to the new directory containing your repo.
+
+:::{.callout-important}
+## BECAUSE your project depends on your lab code, you need to copy your lab code over to this repo. In a terminal:
+- `cd` to your lab directory
+- `cp Vec.h Vec.cpp <your project directory>`
+- `cd` to your project directory
+:::
+
+- Open your project in VS Code, and open `Vec.h`
+- Add this prototype for the assignment operator to Vec.h, in the public area:
+
+```cpp
+Vec& operator=(const Vec& original);
+```
+
+- Add this code to Vec.cpp: 
+
+```cpp
+Vec& Vec::operator=(const Vec& original) {
+	if (this != &original) {
+    	if (mySize != original.mySize) {
+        	if (mySize > 0) {
+            	delete[] myArray;
+            	myArray = nullptr;
+        	}
+        	if (original.mySize > 0) {
+            	myArray = new Item[original.mySize];
+        	}
+        	mySize = original.mySize;
+    	}
+    	for (int i = 0; i < mySize; ++i) {
+        	myArray[i] = original.myArray[i];
+    	}
+	}
+	return *this;
+}
+```
+
+- In the terminal, type `make tester`
+- The code should compile and give you an executable called "tester"
+- Run the tester file: `./tester`
+- Your tests should all pass.
+
