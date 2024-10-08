@@ -1,0 +1,49 @@
+---
+title: "Lab 05 --- Generic Containers"
+subtitle: "<br><br> CS112 - Data Structures"
+author: "Eric Araújo"
+# output:
+#   xaringan::moon_reader:
+#     css: ["../xaringan-themer.css", "../slides.css"]
+#     lib_dir: libs
+#     nature:
+#       ratio: "16:9"
+#       highlightLines: true
+#       highlightStyle: solarized-light
+#       countIncrementalSlides: false
+format: 
+    revealjs:
+        theme: sky
+        menu: false
+        slide-level: 2
+        navigation-mode: linear
+        transition: slide
+        scrollable: true
+        simplemenu:
+            scale: 0.6
+            barhtml:
+                header: "<div class='menubar'><a href='../week05.html'>back</a><ul class='menu'></ul></div>"
+revealjs-plugins:
+    - simplemenu
+
+---
+
+## Lab 5
+
+- creating class template
+- pair programming
+
+---
+ 
+## Dad joke of the week 
+<!-- {background-image="https://blog.kialo-edu.com/wp-content/uploads/sites/3/2023/09/argumentcoverscaled.png" background-size="300px"} -->
+
+<!-- ::: {.incremental}
+- Q: Why do programmers prefer working with linked lists?
+- A: Because arrays make them feel static! 😄
+::: -->
+
+![](imgs/buffalo.jpg){width=600}
+
+--- 
+

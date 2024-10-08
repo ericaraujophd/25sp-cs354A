@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Course content – CS112 - Data Structures</title>
+<title>Week 5: Generic Containers – CS112 - Data Structures</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,26 +23,26 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./weekly-activities/week03.html" rel="next">
-<link href="././images/cs112-logo.png" rel="icon" type="image/png">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../weekly-activities/week04.html" rel="prev">
+<link href=".././images/cs112-logo.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -73,11 +73,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="https://kit.fontawesome.com/78ddb093ea.js" crossorigin="anonymous"></script>
 
 
-<link rel="stylesheet" href="weekly-activities/projects/styles.css">
-<meta property="og:title" content="Course content – CS112 - Data Structures">
+<meta property="og:title" content="Week 5: Generic Containers – CS112 - Data Structures">
 <meta property="og:description" content="CS112 will teach students to use C++ for creating data structures.">
 <meta property="og:site_name" content="CS112 - Data Structures">
-<meta name="twitter:title" content="Course content – CS112 - Data Structures">
+<meta name="twitter:title" content="Week 5: Generic Containers – CS112 - Data Structures">
 <meta name="twitter:description" content="CS112 will teach students to use C++ for creating data structures.">
 <meta name="twitter:image" content="https://ericaraujo.com/24fa-cs112/images/twitter-card.png">
 <meta name="twitter:creator" content="@ericfaraujo">
@@ -93,8 +92,8 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./images/cs112-logo.png" alt="" class="navbar-logo">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../images/cs112-logo.png" alt="" class="navbar-logo">
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -104,19 +103,19 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
+    <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Overview</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./policies.html"> 
+    <a class="nav-link" href="../policies.html"> 
 <span class="menu-text">Course Policies</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./content.html" aria-current="page"> 
+    <a class="nav-link active" href="../content.html" aria-current="page"> 
 <span class="menu-text">Content</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./extras.html"> 
+    <a class="nav-link" href="../extras.html"> 
 <span class="menu-text">Extras</span></a>
   </li>  
 </ul>
@@ -138,7 +137,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./content.html">Course content</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../weekly-activities/week05.html">Week 5: Generic Containers</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -152,25 +151,25 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./content.html" class="sidebar-item-text sidebar-link active">
+  <a href="../content.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Course content</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./weekly-activities/week03.html" class="sidebar-item-text sidebar-link">
+  <a href="../weekly-activities/week03.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 3: Classes, Operator Overloading, etc.</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./weekly-activities/week04.html" class="sidebar-item-text sidebar-link">
+  <a href="../weekly-activities/week04.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 4: Vectors – dynamic arrays</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./weekly-activities/week05.html" class="sidebar-item-text sidebar-link">
+  <a href="../weekly-activities/week05.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Week 5: Generic Containers</span></a>
   </div>
 </li>
@@ -179,15 +178,22 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#slos-for-week-5" id="toc-slos-for-week-5" class="nav-link active" data-scroll-target="#slos-for-week-5">SLOs for Week 5</a></li>
+  <li><a href="#slides-videos-and-application-exercises" id="toc-slides-videos-and-application-exercises" class="nav-link" data-scroll-target="#slides-videos-and-application-exercises">Slides, videos, and application exercises</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/ericaraujophd/24fa-cs112/edit/main/weekly-activities/week05.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/24fa-cs112/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Course content</h1>
+<h1 class="title">Week 5: Generic Containers</h1>
 </div>
 
 
@@ -204,167 +210,101 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>CS 112 is organized by week, with each week structured as follows:</p>
+<section id="slos-for-week-5" class="level2">
+<h2 class="anchored" data-anchor-id="slos-for-week-5">SLOs for Week 5</h2>
+<p>By the end of this unit, students will be able to…</p>
 <ul>
-<li>Classroom sessions are Monday-Wednesday-Friday.</li>
-<li>The lab sessions are on Tuesdays.</li>
-<li>Your lab submission is due Thursday at 23:59.</li>
-<li>Your project submission is due the next Monday at 23:59 (the night before your next lab).</li>
-<li>Tutoring Assistants are available in SB337 on Mondays and Thursdays, from 7 - 9 pm.</li>
+<li>describe when appending to a dynamic array is “inexpensive” and when it is “expensive”.</li>
+<li>reason about the difference between a dynamic array’s size and capacity.</li>
+<li>explain what a class template is to his or her grandma or grandpa.</li>
+<li>explain the reasons for creating class templates instead of classes.</li>
+<li>understand the Time Complexity terms linear time and constant time and amortized constant time.</li>
+<li>reason about the time complexity for operations on a dynamic array (append, insert, remove, copy constructor).</li>
 </ul>
-<p>The SLOs (Student Learning Objectives), labs, and projects for each week are given in the links on the left of this page. An overview of the semester is given in the table below:</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Week</th>
-<th>Readings<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></th>
-<th>Topics [SLOs]</th>
-<th>Lab</th>
-<th>Project</th>
-<th>Tests, Video Links, etc.</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>0</td>
-<td>1, 2, 5.1, 5.2</td>
-<td>Intro to C++, compilation, Data Types (including pointers), const, binary and hexadecimal, arrays, using cout/cin.</td>
-<td><a href="" target="_blank">Lab 0</a></td>
-<td><a href="" target="_blank">Project 0</a></td>
-<td><a href="https://integer.exposed/#0x0008" target="_blank">Binary Exposed</a></td>
-</tr>
-<tr class="even">
-<td>1</td>
-<td>3 and 4</td>
-<td>Control Structures, Functions, Parameter Passing modes.</td>
-<td><a href="">Lab 1</a></td>
-<td><a href="">Project 1</a></td>
-<td><a href="https://docs.google.com/document/d/1myVaJT3i1hECM4BHs9LpbLz3a3heVPp6SJiEjoEvG_M/edit#heading=h.im9274hm9wa0" target="_blank">Array Addressing POGIL activity</a> (<a href="https://drive.google.com/file/d/1mn5yCzIJuURMiP3MOtO9amEQzUVAQCQZ/view?usp=sharing" target="_blank">answers</a>) | <a href="https://docs.google.com/document/d/125hbFPo5PVcuGQ9pq4io23jns2kOEkfjo71S9WOkfjQ/edit" target="_blank">Parameter Passing POGIL activity</a> (<a href="https://drive.google.com/file/d/1rPum6ihNwUKRJpZBSTQF8v7QKfOdog11/view?usp=drive_link" target="_blank">answers</a>)</td>
-</tr>
-<tr class="odd">
-<td>2</td>
-<td>6 and 7</td>
-<td>File Input/Output, Exception Handling, Two-dimensional Arrays</td>
-<td><a href="">Lab 2</a></td>
-<td><a href="">Project 2</a></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>3</td>
-<td></td>
-<td>Classes, Operator Overloading, etc.</td>
-<td><a href="./weekly-activities/labs/lab-03/lab03.html">Lab 3</a></td>
-<td><a href="./weekly-activities/projects/proj-03/proj03.html">Project 3</a></td>
-<td>Test 1, Weeks 0 - 2, Friday.</td>
-</tr>
-<tr class="odd">
-<td>4</td>
-<td></td>
-<td>Vectors – dynamic arrays</td>
-<td><a href="./weekly-activities/labs/lab-04/lab04.html">Lab 4</a></td>
-<td><a href="./weekly-activities/projects/proj-04/proj04.html">Project 4</a></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>5</td>
-<td></td>
-<td>Generic Containers</td>
-<td><a href="./weekly-activities/labs/lab-05/lab05.html">Lab 5</a></td>
-<td>Project 5</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>6</td>
-<td></td>
-<td>Linked Lists [SLOs] [Slides] [code from class] Dynamic Array or Linked List</td>
-<td>Lab 6</td>
-<td>No project</td>
-<td>Test 2, Weeks 0 - 5 (Friday)</td>
-</tr>
-<tr class="even">
-<td>7</td>
-<td></td>
-<td>Algorithm Analysis and Big-Oh [Slides] [Videos] [SLOs]</td>
-<td>Lab 7</td>
-<td>Project 7</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>8</td>
-<td></td>
-<td>Stacks and Queues [SLOs] [Slides]</td>
-<td>Lab 8</td>
-<td>Project 8</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>9</td>
-<td></td>
-<td>Recursion Monday: Queues [Slides]</td>
-<td>No lab!</td>
-<td>Project 9</td>
-<td>Test 3, weeks 0 - 8 (Wednesday)</td>
-</tr>
-<tr class="odd">
-<td>10</td>
-<td></td>
-<td>Monday, Apr.&nbsp;1, No class. Wednesday: Recursion [SLOs] [Slides] Friday: BSTs</td>
-<td>No lab!</td>
-<td>Recursion Project</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>11</td>
-<td></td>
-<td>Apr.&nbsp;8, 10: BSTs [SLOs] [Slides]</td>
-<td>Lab 10</td>
-<td>Project 10</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>12</td>
-<td>Apr 12, 15</td>
-<td>AVL Trees, STL set and map containers, [SLOs] [Slides] [ [Slides]</td>
-<td>Lab 12</td>
-<td>No project</td>
-<td>Test 4: weeks 0 - 11 (Friday)</td>
-</tr>
-<tr class="even">
-<td>13</td>
-<td>Apr 17, 19, 22, 24, 26</td>
-<td>Hash Tables [Slides] Sorting Algorithms] [ [SLOs] [Slides]]</td>
-<td>Lab/Project 13</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>Final</td>
-<td></td>
-<td>Search calvin.edu for “Exam Schedule” to find the time of the exam (and all exams you have, this semester, and all future semesters).</td>
-<td></td>
-<td></td>
-<td>Test 5 Cumulative, during exam time (You may take it in either class’s exam time. Classes met at 11am MWF and 12:15 MWF.)</td>
-</tr>
-<tr class="even">
-<td>11</td>
-<td></td>
-<td>OpenMP, etc. [SLOs] [Slides]</td>
-<td>Lab 11</td>
-<td>Project 11</td>
-<td></td>
-</tr>
-</tbody>
-</table>
+</section>
+<section id="slides-videos-and-application-exercises" class="level2">
+<h2 class="anchored" data-anchor-id="slides-videos-and-application-exercises">Slides, videos, and application exercises</h2>
+<div class="slide-deck">
+<p><strong>Week 5: Slides</strong></p>
+<div class="slides">
+<p><a href="https://docs.google.com/presentation/d/19Dyq-ocaGfhTA623PzKYofXuDHr-gz8eRP19zv65Mu0/edit?usp=sharing">Slides</a></p>
+</div>
+<div class="source">
+<p><a href="https://calvincollege-my.sharepoint.com/:f:/g/personal/vtn2_calvin_edu/Eredz2bHiShCtI0CVssiaggB8tUES6QbacEf2cc4PBhTgQ?e=uoV7Uu">Code from Class</a></p>
+</div>
+<div class="reading">
+<p>No readings for Week 5.</p>
+<!-- -   R4DS :: [Chp 2 - Introduction](https://r4ds.had.co.nz/explore-intro.html)
+-   IMS :: [Sec 1.1 & 1.2 - Case study & Data basics](https://openintro-ims.netlify.app/data-hello.html) -->
+</div>
+<!-- ::: video
+[Video](https://youtu.be/_YqEHZccujc)
+:::
+-->
+</div>
+<!-- ## Lab -->
+<div class="lab">
+<p><strong>Lab 5: Generic Containers (Templates)</strong></p>
+<p>Generic Containers (Templates)</p>
+<div class="instructions">
+<p><a href="../weekly-activities/labs/lab-05/lab05.html">Instructions</a></p>
+</div>
+<div class="starter">
+<p><a href="https://classroom.github.com/a/_TFPzkme">Source</a></p>
+</div>
+<div class="slides">
+<p><a href="../weekly-activities/slides/lab05-slides.html">Slides</a></p>
+</div>
+</div>
+<!-- ## Homework assignments -->
+<div class="homework">
+<p><strong>Project 4: Vec – A First Dynamic Data Structure</strong></p>
+<p>Vec – A First Dynamic Data Structure</p>
+<!-- ::: instructions
+[Instructions](projects/proj-04/proj04.qmd)
+::: -->
+<!-- ::: source
+[Source](https://github.com/rstudio-education/datascience-box/tree/master/course-materials/hw-instructions/hw-10)
+::: -->
+<div class="starter">
+<p><a href="https://classroom.github.com/a/BR1S81yc">Starter</a></p>
+</div>
+</div>
+<!-- ::: exam
+**Exam 1**
+Exam on Friday during class. Bring your laptop. Content: Weeks 0 - 2.
+::: -->
+<!-- ::: application-exercise
+**First dataviz**
+
+> **Option 1 - UN Votes**
+>
+> ::: source
+> [Source](https://github.com/rstudio-education/datascience-box/tree/master/course-materials/application-exercises/ae-01a-un-votes/unvotes.qmd)
+> :::
+>
+> ::: video
+> [Video](https://youtu.be/r-uTBEclM1E)
+> :::
+
+> **Option 2 - COVID-19**
+>
+> ::: source
+> [Source](https://github.com/rstudio-education/datascience-box/blob/master/course-materials/application-exercises/ae-01b-covid/covid.qmd)
+> :::
+::: -->
+<!-- ::: guest-lecture
+**Alberto Cairo - How charts lie**
+
+::: video
+[Video](https://youtu.be/Low28hx4wyk)
+:::
+::: -->
 
 
+</section>
 
-
-<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
-
-<ol>
-<li id="fn1"><p><a href="https://runestone.academy/runestone/books/published/cpp4python/index.html" target="_blank">C++ for Python Programmers Book</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
-</section></div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -931,11 +871,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="../weekly-activities/week04.html" class="pagination-link" aria-label="Week 4: Vectors -- dynamic arrays">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Week 4: Vectors – dynamic arrays</span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./weekly-activities/week03.html" class="pagination-link" aria-label="Week 3: Classes, Operator Overloading, etc.">
-        <span class="nav-page-text">Week 3: Classes, Operator Overloading, etc.</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
@@ -946,16 +886,16 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/ericaraujophd/24fa-cs112/edit/main/content.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/24fa-cs112/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ericaraujophd/24fa-cs112/edit/main/weekly-activities/week05.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/24fa-cs112/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
-    <a class="nav-link" href="./LICENSE.html">
+    <a class="nav-link" href="../LICENSE.html">
 <p>License</p>
 </a>
   </li>  
     <li class="nav-item">
-    <a class="nav-link" href="./CODE_OF_CONDUCT.html">
+    <a class="nav-link" href="../CODE_OF_CONDUCT.html">
 <p>Code of Conduct</p>
 </a>
   </li>  
