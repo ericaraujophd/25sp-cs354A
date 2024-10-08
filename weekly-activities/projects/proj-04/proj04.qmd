@@ -3,6 +3,8 @@ title: "Project 4: More Vec Operations"
 format: 
   html:
     css: ../styles.css
+# engine: knitr
+eval: false
 ---
 
 <center>

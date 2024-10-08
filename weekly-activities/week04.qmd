@@ -71,9 +71,9 @@ Vec -- A First Dynamic Data Structure
 
 Vec -- A First Dynamic Data Structure
 
-::: instructions
+<!-- ::: instructions
 [Instructions](projects/proj-04/proj04.qmd)
-:::
+::: -->
 
 <!-- ::: source
 [Source](https://github.com/rstudio-education/datascience-box/tree/master/course-materials/hw-instructions/hw-10)

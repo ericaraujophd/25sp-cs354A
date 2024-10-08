@@ -55,6 +55,39 @@
     ]
   },
   {
+    "objectID": "weekly-activities/week04.html",
+    "href": "weekly-activities/week04.html",
+    "title": "Week 4: Vectors – dynamic arrays",
+    "section": "",
+    "text": "Students will be able to…\n\nrecognize a copy constructor and implement it.\nidentify the 3 situations in which a copy constructor is called\nreason about the difference between a shallow and deep copy of a data structure.\nuse the new operator to dynamically allocate memory and the delete and delete[] operators to free up the memory.\nexplain when C++ calls the destructor on an object.\nexplain when it is important to implement the destructor explicitly for a class.\nunderstand the implementation of a dynamic array data structure, including how it adapts its internal size to accommodate the number of values in the array.\nimplement operator overloading for a class.",
+    "crumbs": [
+      "Content",
+      "Week 4: Vectors -- dynamic arrays"
+    ]
+  },
+  {
+    "objectID": "weekly-activities/week04.html#slos-for-week-4",
+    "href": "weekly-activities/week04.html#slos-for-week-4",
+    "title": "Week 4: Vectors – dynamic arrays",
+    "section": "",
+    "text": "Students will be able to…\n\nrecognize a copy constructor and implement it.\nidentify the 3 situations in which a copy constructor is called\nreason about the difference between a shallow and deep copy of a data structure.\nuse the new operator to dynamically allocate memory and the delete and delete[] operators to free up the memory.\nexplain when C++ calls the destructor on an object.\nexplain when it is important to implement the destructor explicitly for a class.\nunderstand the implementation of a dynamic array data structure, including how it adapts its internal size to accommodate the number of values in the array.\nimplement operator overloading for a class.",
+    "crumbs": [
+      "Content",
+      "Week 4: Vectors -- dynamic arrays"
+    ]
+  },
+  {
+    "objectID": "weekly-activities/week04.html#slides-videos-and-application-exercises",
+    "href": "weekly-activities/week04.html#slides-videos-and-application-exercises",
+    "title": "Week 4: Vectors – dynamic arrays",
+    "section": "Slides, videos, and application exercises",
+    "text": "Slides, videos, and application exercises\n\nWeek 4: Slides\n\nSlides\n\n\n\nNo readings for Week 4.\n\n\n\n\n\n\nLab 4: Vectors\nVec – A First Dynamic Data Structure\n\nInstructions\n\n\nSource\n\n\nSlides\n\n\n\n\nProject 4: Vec – A First Dynamic Data Structure\nVec – A First Dynamic Data Structure\n\n\n\nStarter",
+    "crumbs": [
+      "Content",
+      "Week 4: Vectors -- dynamic arrays"
+    ]
+  },
+  {
     "objectID": "weekly-activities/projects/proj-03/proj03.html",
     "href": "weekly-activities/projects/proj-03/proj03.html",
     "title": "Project 3: a High Scores Class",
@@ -111,6 +144,125 @@
     "text": "Submission\nTake another look at the Grading Rubric below and make changes to maximize your score.\nCommit and Sync your code to your online repo.\n\n\n\n\n\n\nImportant\n\n\n\nVerify you have synced your code to github by going to your online repo webpage and looking to see that the files are correct.\nAlso, verify that the automated test passes. The test is the same as tests.cpp.\n\n\n\nGrading Rubric\nThis project is worth 22 pts:\n\n15 pts for correctness\n2 pt for perfect indentation and good variable names, function names, and comments (i.e., hospitable code). You should write a comment in your code only when the following block of code is not obvious to the trained reader. You should not write a comment for each line of code. Writing a comment above the non-obvious methods can be very useful.\n5 pts for sufficient test cases to prove that the code is correct.\n\nWays students have lost points in the past:\n\n-3: can’t make tester\n-2: Tests don’t pass\n-22: No submission"
   },
   {
+    "objectID": "weekly-activities/labs/lab-04/lab04.html",
+    "href": "weekly-activities/labs/lab-04/lab04.html",
+    "title": "Lab 4: Vec – A First Dynamic Data Structure",
+    "section": "",
+    "text": "In this exercise, you will:\n\nBuild a class that uses dynamic allocation/deallocation.\nUse pointer variables to access items in a dynamically-allocated array.\n\n\n\n\n\n\nAn array for a data structures assignment created by AI."
+  },
+  {
+    "objectID": "weekly-activities/labs/lab-04/lab04.html#objectives",
+    "href": "weekly-activities/labs/lab-04/lab04.html#objectives",
+    "title": "Lab 4: Vec – A First Dynamic Data Structure",
+    "section": "",
+    "text": "In this exercise, you will:\n\nBuild a class that uses dynamic allocation/deallocation.\nUse pointer variables to access items in a dynamically-allocated array.\n\n\n\n\n\n\nAn array for a data structures assignment created by AI."
+  },
+  {
+    "objectID": "weekly-activities/labs/lab-04/lab04.html#introduction",
+    "href": "weekly-activities/labs/lab-04/lab04.html#introduction",
+    "title": "Lab 4: Vec – A First Dynamic Data Structure",
+    "section": "Introduction",
+    "text": "Introduction\nYou should know how to get the assignment. So, do it.\n\nDon’t forget to edit the README.md file and put both of your names and emails in the file.\nYou might also at this time Manage Access to the repo, so that both of you can access it.\n\nThe Vec class is a simpler version of the vector class template available in the C++ standard template library (STL). It will provide the basic functionality, without some of the more advanced “bells and whistles” of the STL version.\nThe class in Vec.h is a mere shell at this point. Filling in this shell is our task this week."
+  },
+  {
+    "objectID": "weekly-activities/labs/lab-04/lab04.html#step-1.-getting-started",
+    "href": "weekly-activities/labs/lab-04/lab04.html#step-1.-getting-started",
+    "title": "Lab 4: Vec – A First Dynamic Data Structure",
+    "section": "Step 1. Getting Started",
+    "text": "Step 1. Getting Started\n\nOpen each file and take a moment to browse through them, to get a sense of what each one contains. Note that test.cpp contains tests for a variety of Vec operations.\n\nOur approach today will be to use the following steps to build each operation: - This exercise will provide you with a description of what the operation should do, and a stub for the method that provides that operation; - You will uncomment the call to the test for that operation in tests.cpp - You will complete the method by adding statements to the stub; and - You will compile and run the project. (do make tester && ./tester)\n\n\n\n\n\n\nCompile. debug and fix any errors.\n\n\n\nIf all is well, you can then proceed to the next operation; otherwise you will need to debug your operation to figure out why it is failing the test, recompile, and rerun the test, until it is passed."
+  },
+  {
+    "objectID": "weekly-activities/labs/lab-04/lab04.html#step-2.-instance-variables",
+    "href": "weekly-activities/labs/lab-04/lab04.html#step-2.-instance-variables",
+    "title": "Lab 4: Vec – A First Dynamic Data Structure",
+    "section": "Step 2. Instance Variables",
+    "text": "Step 2. Instance Variables\nIf you look in Vec.h, you’ll see that we are (for now) using a typedef to define the identifier Item as a synonym for the type double.\nYou’ll also see that the private: section of class Vec is currently empty. As a minimalist dynamic array, our Vec will need to “remember” two things:\n\nHow many Items it is currently storing; and\nThe Items it is currently storing.\n\nTo let a Vec “remember” the first of these, add an instance variable named mySize of type unsigned:\n  private:\n     unsigned mySize;\n  };\nTo let a Vec “remember” the second of these, add an instance variable named myArray capable of storing the address of an Item:\n  private:\n     unsigned mySize;\n     Item   *myArray;\n  };\nWith these two variables, a Vec object can “remember” (i) how many items it is storing, and (ii) the address of a dynamically allocated array in which its items are stored."
+  },
+  {
+    "objectID": "weekly-activities/labs/lab-04/lab04.html#step-3.-the-default-constructor",
+    "href": "weekly-activities/labs/lab-04/lab04.html#step-3.-the-default-constructor",
+    "title": "Lab 4: Vec – A First Dynamic Data Structure",
+    "section": "Step 3. The Default Constructor",
+    "text": "Step 3. The Default Constructor\nThe role of the default constructor is to provide the instance variables with default values. In a data structure, these are usually values that are appropriate for an “empty” structure. In Vec.cpp, complete the default constructor for the class, so that it sets mySize to zero, and sets myArray to nullptr. Compile and run the project (make tester && ./tester).\nThe test should pass, but notice that it isn’t actually doing anything… To make a useful test, we need to see if mySize is 0 and myArray is nullptr. However, myArray and mySize are private, so the test cannot “reach into” the innards of the Vec object to check the values. To resolve this, we will create a getter for mySize. In the .h file, in the public: section, add the prototypes:\nunsigned getSize() const;\nIn the Vec.cpp file, add this code:\nunsigned Vec::getSize() const {\n}\nand finish the code which returns mySize.\nNotice that we are NOT going to add a getter method for myArray, which would allow a user of the Vec class to get the address where the values are being stored. We do not want to expose this internal detail to the user, as the user could abuse it and start putting values directly into memory. So, because we won’t make a getter for myArray, we won’t be able to make tests to check the value of myArray.\nUncomment the lines in the first (“default”) SECTION and compile and run (make tester && ./tester).\n\n\n\n\n\n\nBefore you go the next step!\n\n\n\nWhen your definition passes the test, continue; otherwise fix and retest your constructor."
+  },
+  {
+    "objectID": "weekly-activities/labs/lab-04/lab04.html#step-4.-the-explicit-value-constructor",
+    "href": "weekly-activities/labs/lab-04/lab04.html#step-4.-the-explicit-value-constructor",
+    "title": "Lab 4: Vec – A First Dynamic Data Structure",
+    "section": "Step 4. The Explicit-Value Constructor",
+    "text": "Step 4. The Explicit-Value Constructor\nThe explicit-value constructor’s role is to initialize an object using values provided by the user. In a data structure, the user often wants to specify a non-zero starting size for the structure. (e.g., Vec v(5); should construct v as a vector capable of storing 5 items.) To store the value the user specifies, our constructor will need a parameter, so we might start by writing this stub for the constructor:\nVec::Vec(unsigned size) {\n}\nPut the above code in your .cpp file, and add a prototype for this constructor to the Vec class in Vec.h. Then in tests.cpp, uncomment the first 2 lines of code in the “explicit-value” SECTION that tests this constructor. Save/compile/run the tests. The test should fail. To make it pass, add code to your explicit-value constructor. Here is the algorithm to follow:\n\nSet mySize to size\nIf size is positive (greater than zero):\n\nDynamically allocate an array of size values of type Item, and store the address of the array in myArray; and\nSet each of the Items in that array to zero.\n\nOtherwise:\n\nSet myArray to nullptr.\n\n\nContinue when your class passes all tests."
+  },
+  {
+    "objectID": "weekly-activities/labs/lab-04/lab04.html#step-5.-getting-the-value-of-an-item",
+    "href": "weekly-activities/labs/lab-04/lab04.html#step-5.-getting-the-value-of-an-item",
+    "title": "Lab 4: Vec – A First Dynamic Data Structure",
+    "section": "Step 5. Getting the Value of an Item",
+    "text": "Step 5. Getting the Value of an Item\nThe rest of the test for the “explicit-value constructor” looks to see if myArray was initialized correctly. In order to do this, we need to be able to retrieve the value in each location in myArray. To do that, we’ll implement a getItem() method that lets us retrieve the value of an item at a given index (e.g., Item it = v.getItem(i);). Since this method (i) needs the index of the value it is to retrieve, and (ii) does not change its receiver’s instance variables, we will start by defining this stub:\nItem Vec::getItem(unsigned index) const {\n}\nPlace a prototype for this method in the Vec class, and in tests.cpp, uncomment the rest of the test code in the “explicit-value” constructor SECTION. For the sake of time, here is the code for .cpp file:\nItem Vec::getItem(unsigned index) const {\n    if (index &lt; 0 || index &gt;= mySize) {\n        throw range_error(\"Bad index\");\n    }\n    return myArray[index];\n}\nWhen all tests pass, continue.\n\n\n\n\n\n\nNote\n\n\n\nThere is a TEST_CASE in tests.cpp to fully test getItem(), but it relies on setItem(), which we have not implemented yet. So, don’t uncomment that test case yet."
+  },
+  {
+    "objectID": "weekly-activities/labs/lab-04/lab04.html#step-6.-setting-the-value-of-an-item",
+    "href": "weekly-activities/labs/lab-04/lab04.html#step-6.-setting-the-value-of-an-item",
+    "title": "Lab 4: Vec – A First Dynamic Data Structure",
+    "section": "Step 6. Setting the Value of an Item",
+    "text": "Step 6. Setting the Value of an Item\nOur next operation is to set the value of a particular item in a Vec (e.g., v.setItem(i, val);). Since the method needs both the index of the item to change, and the new value for the item, we will start with this stub:\nvoid Vec::setItem(unsigned index, const Item& it) {\n}\nPlace a prototype for this method in the Vec class, and in tests.cpp, uncomment the code to test “setItem”.\nTry to build and run the test to see what errors you get; then complete the stub so that it passes the test. Again, for the sake of time, here is the code for Vec.cpp\nvoid Vec::setItem(unsigned index, const Item& it) {\n    if (index &lt; 0 || index &gt;= mySize) {\n      throw range_error(\"Bad index\");\n    }\n    myArray[index] = it;\n}\nWhen all tests pass for testing setItem, also uncomment the getItem TEST_CASE. If you have everything working, you should be passing 29 assertions in 9 test cases."
+  },
+  {
+    "objectID": "weekly-activities/labs/lab-04/lab04.html#step-7.-the-copy-constructor",
+    "href": "weekly-activities/labs/lab-04/lab04.html#step-7.-the-copy-constructor",
+    "title": "Lab 4: Vec – A First Dynamic Data Structure",
+    "section": "Step 7. The Copy Constructor",
+    "text": "Step 7. The Copy Constructor\nThe compiler invokes a special copy constructor any time it needs a copy of an object, for example:\n\nWhen a function returns an object; OR\nWhen an object is passed as an argument to a call-by-value parameter.\n\nThe C++ compiler supplies a default copy constructor, but it merely does a bit-by-bit copy of the instance variables of the object being copied. This bit-copy is inadequate for classes with pointer instance variables, because it just copies the address within such variables, rather than making a distinct copy of the dynamically allocated memory to which that address points. Because of this, every class that contains a pointer instance variable should define its own copy constructor that makes a distinct copy of the object, including its dynamically allocated memory.\nThe stub for a Vec copy constructor looks like this:\nVec::Vec(const Vec& original) {\n}\n\n\n\n\n\n\nImportant\n\n\n\nIf we were to mistakenly make the copy constructor’s parameter a call-by-value parameter instead of a call-by-const-reference parameter, an infinite recursion will occur when the copy constructor is invoked. The reason is that passing a Vec to a call-by-value parameter will invoke the copy constructor, which will take the thing to be copied as a parameter, which will invoke the copy constructor, which will take the thing to be copied as a parameter, which will invoke the copy constructor, which… To avoid this, the parameter of a copy constructor should always be a const-reference parameter, as shown above.\n\n\nAdd the code above to the .cpp file. Then, add a prototype to the Vec class, and in tests.cpp uncomment the code in the “copy” constructor SECTION to test it. Then add statements to your stub to construct a Vec that is a distinct copy of original, and check to see if the tests pass. Here is the algorithm to follow:\n\nSet mySize to the size of original\nIf original.mySize is greater than zero:\n\nDynamically allocate an array of mySize values of type Item, and store the address of the array in myArray.\nSet each itemi in the new array to itemi from original.\n\nOtherwise, set myArray to nullptr.\n\nContinue when your constructor passes all tests. (I am now seeing 35 assertions in 9 test cases passing.)"
+  },
+  {
+    "objectID": "weekly-activities/labs/lab-04/lab04.html#step-8.-the-destructor",
+    "href": "weekly-activities/labs/lab-04/lab04.html#step-8.-the-destructor",
+    "title": "Lab 4: Vec – A First Dynamic Data Structure",
+    "section": "Step 8. The Destructor",
+    "text": "Step 8. The Destructor\nThe C++ compiler invokes an object’s destructor when the object ceases to exist. The role of the destructor is thus to perform any “clean up” actions that are needed to return the system to the same state it was in before the object existed. In a data structure that uses dynamic memory allocation, the main task is usually to return dynamically allocated memory to the system using the delete operation.\nA destructor cannot have any parameters, and its name is the name of the class preceded by the tilde character (~), so we can begin with the stub:\nVec::~Vec() {\n}\nSkeleton code is already in the .h and .cpp files. Uncomment the code to test the destructor in tests.cpp. Then add the statements to the destructor to reclaim the dynamic array whose address is in myArray, set myArray to nullptr, and set mySize to zero. Compile and see if your statements pass the test. Here is the algorithm to follow:\n\nUse delete [] to deallocate the array whose address is stored in myArray delete [] myArray;\nSet myArray to nullptr\nSet mySize to zero.\n\nTechnically, only the first step is strictly necessary. The reason is that the destructor is only invoked at the end of an object’s lifetime. Since the object will no longer exist, resetting its instance variables is not necessary (except to pass the test).\nContinue when your destructor passes all tests."
+  },
+  {
+    "objectID": "weekly-activities/labs/lab-04/lab04.html#step-9.-setting-a-vecs-size",
+    "href": "weekly-activities/labs/lab-04/lab04.html#step-9.-setting-a-vecs-size",
+    "title": "Lab 4: Vec – A First Dynamic Data Structure",
+    "section": "Step 9. Setting a Vec’s Size",
+    "text": "Step 9. Setting a Vec’s Size\nOur next operation is to set a Vec’s size via a method (e.g., v.setSize(8);). The role of this method is to allow us to change the size of an existing Vec to some new size. Since the user must specify this new size, we need a parameter to store it. We might start by defining this stub:\nvoid Vec::setSize(unsigned newSize) {\n}\nPlace a prototype for this method in the Vec class, and in tests.cpp, uncomment all the code in the TEST_CASE to test “setSize”. Then complete the stub so that it passes the test. Think carefully! This one is deceptively tricky to get right! Algorithm:\n\nIf mySize and newSize are different:\n\nIf newSize is zero:\n\nDeallocate myArray\nSet myArray to nullptr\nSet mySize to zero.\n\nOtherwise:\n\nDeclare a local variable newArray of type Item *\nAllocate a new dynamic array of newSize Items, storing its address in newArray.\nIf mySize is less than newSize:\n\nCopy mySize values from myArray into newArray.\nSet the remaining (newSize - mySize) values to zero.\n\nOtherwise, just copy newSize values from myArray into newArray.\nSet mySize to newSize.\nDeallocate myArray.\nSet myArray to newArray.\n\n\n\nWhen your method passes all tests, continue."
+  },
+  {
+    "objectID": "weekly-activities/labs/lab-04/lab04.html#step-10.-equality",
+    "href": "weekly-activities/labs/lab-04/lab04.html#step-10.-equality",
+    "title": "Lab 4: Vec – A First Dynamic Data Structure",
+    "section": "Step 10. Equality",
+    "text": "Step 10. Equality\nThe purpose of the equality operation is to let us compare two objects (e.g., if (v1 == v2) { ... }), returning true if they are equal, and returning false if they are not. Since the equality operation returns a bool value, a call:\nv1 == v2\nwill be treated by the compiler as:\nv1.operator==(v2)\nThis equality operator should not change either of its operands. We start by defining this stub:\nbool Vec::operator==(const Vec& v2) const {\n}\nPlace a prototype for this method in the Vec class, and in tests.cpp, uncomment the code to test “equality”. Then add statements to the stub so that it passes the test. Algorithm:\n\nCheck to see if mySize is NOT the same as the size of v2. If the two vectors are not the same size, return false.\nCompare each itemi in myArray to each itemi from v2’s array:\nIf any are not equal, return false.\nThe two arrays are equal in size, and all their values are the same, so return true.\n\nContinue when your method passes all tests."
+  },
+  {
+    "objectID": "weekly-activities/labs/lab-04/lab04.html#step-11.-ostream-output",
+    "href": "weekly-activities/labs/lab-04/lab04.html#step-11.-ostream-output",
+    "title": "Lab 4: Vec – A First Dynamic Data Structure",
+    "section": "Step 11. ostream Output",
+    "text": "Step 11. ostream Output\nIt is useful to be able to write a vector to an ostream, as this allows us to display it on the screen (or write it to a file via an ofstream). This method should output the values of the items in the Vec, but not its size; if the user wants that size information displayed, they can do that separately using getSize().\nWhereas (i) our method returns nothing to its caller, (ii) it needs to “know” the ostream to which it is to write, (iii) it modifies that ostream by inserting items, and (iv) it should not modify any Vec instance variables, we might begin with this stub:\nvoid Vec::writeTo(ostream& out) const {\n}\nPlace a prototype for this method in the Vec class, and in tests.cpp, uncomment the test “writeToStream”. Then add statements to this stub so that it passes the test. Algorithm:\n\nSend each value in myArray to the out stream, followed by a single space.\n\nContinue when your method passes all the tests."
+  },
+  {
+    "objectID": "weekly-activities/labs/lab-04/lab04.html#step-12.-istream-input",
+    "href": "weekly-activities/labs/lab-04/lab04.html#step-12.-istream-input",
+    "title": "Lab 4: Vec – A First Dynamic Data Structure",
+    "section": "Step 12. istream Input",
+    "text": "Step 12. istream Input\nIt is also useful to be able to read a vector from an istream, as this lets us enter a vector’s values interactively, from a keyboard (or read them from a file via an ifstream). This method complements writeTo(), and should assume that the user has already constructed the Vec with the appropriate size.\nSince (i) our method returns nothing to its caller, (ii) it needs to “know” the istream from which it is to read, (iii) it modifies that istream by extracting items, and (iv) it might modify its instance variables, we might begin with this stub:\nvoid Vec::readFrom(istream& in) {\n}\nPlace a prototype for this method in the Vec class, and in tests.cpp, uncomment the test “readFromStream”. Then add statements to this stub so that it passes the test.\nAssuming that mySize equals the number of values in in, the Vec readFrom(istream& in) method should:\n\nExtract each value from in, storing each in “the next” item of myArray.\n\nContinue when your method passes all the tests. (My solution passes ~82 assertions!)\n\n\n\n\n\n\nCongratulations!\n\n\n\nYou have just built a class that offers the basic functionality one would expect from a vector!"
+  },
+  {
+    "objectID": "weekly-activities/labs/lab-04/lab04.html#submit",
+    "href": "weekly-activities/labs/lab-04/lab04.html#submit",
+    "title": "Lab 4: Vec – A First Dynamic Data Structure",
+    "section": "Submit",
+    "text": "Submit\nUse VSCode (or the command line) to commit and push your changes to your repo.\nTo verify your submission to github.com, go to a browser and go to the location of your repo in github.com.\nAlso, verify that your submission passes all the automated tests in github. The automated tests are the same as those in tests.cpp."
+  },
+  {
+    "objectID": "weekly-activities/labs/lab-04/lab04.html#grading-rubric-24-pts-total",
+    "href": "weekly-activities/labs/lab-04/lab04.html#grading-rubric-24-pts-total",
+    "title": "Lab 4: Vec – A First Dynamic Data Structure",
+    "section": "Grading Rubric: 24 pts total",
+    "text": "Grading Rubric: 24 pts total\n\n16 pts for correct code that passes all the tests\n2 pts for clean, neat code, well-indented, and readable\n6 pts for correctness (see common mistakes below).\n\nWays students lost points in the past:\n\n-1: Be careful about brace indentation  \n-1: Memory leak in setSize() when mySize &lt; newSize. You need to delete[] myArray in both cases; move it outside the else statement.\n-2: Make sure you are using delete[] and not delete, which leaks memory\n-24: No submission, or partner forgot to include you in README."
+  },
+  {
     "objectID": "03-discussion.html",
     "href": "03-discussion.html",
     "title": "Discussion",
@@ -155,6 +307,17 @@
     "title": "Course content",
     "section": "",
     "text": "CS 112 is organized by week, with each week structured as follows:\nThe SLOs (Student Learning Objectives), labs, and projects for each week are given in the links on the left of this page. An overview of the semester is given in the table below:",
+    "crumbs": [
+      "Content",
+      "Course content"
+    ]
+  },
+  {
+    "objectID": "content.html#footnotes",
+    "href": "content.html#footnotes",
+    "title": "Course content",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nC++ for Python Programmers Book↩︎",
     "crumbs": [
       "Content",
       "Course content"
@@ -257,7 +420,7 @@
     "href": "instructors.html#office-hours",
     "title": "Instructors",
     "section": "Office Hours",
-    "text": "Office Hours\n\nProf. Norman’s hours\nProf. Araújo’s hours",
+    "text": "Office Hours\n\n\nProf. Norman’s hours\nProf. Araújo’s hours",
     "crumbs": [
       "Course Policies",
       "Instructors"
@@ -379,6 +542,62 @@
     "text": "Grading Rubric\nThis lab is worth 20 pts:\n\n10 points for each of Part 1 and Part the Second: 20 pts\n\n6 pts for correctness\n1 pt for perfect indentation and good variable names, function names, and comments (i.e., hospitable code). You should write a comment in your code only when the following block of code is not obvious to the trained reader. You should not write a comment for each line of code.\n3 pts for sufficient test cases to prove that the code is correct.\n\n\nWays students have lost points in the past:\n\n-2: Test doesn’t pass\n-1: Missing name and id\n-3: Missing steps, Next time speak to professor."
   },
   {
+    "objectID": "weekly-activities/projects/proj-04/proj04.html",
+    "href": "weekly-activities/projects/proj-04/proj04.html",
+    "title": "Project 4: More Vec Operations",
+    "section": "",
+    "text": "Created by AI Prompt: a C++ array fading away"
+  },
+  {
+    "objectID": "weekly-activities/projects/proj-04/proj04.html#project-4-more-vec-operations",
+    "href": "weekly-activities/projects/proj-04/proj04.html#project-4-more-vec-operations",
+    "title": "Project 4: More Vec Operations",
+    "section": "Project 4: More Vec Operations",
+    "text": "Project 4: More Vec Operations"
+  },
+  {
+    "objectID": "weekly-activities/projects/proj-04/proj04.html#objectives",
+    "href": "weekly-activities/projects/proj-04/proj04.html#objectives",
+    "title": "Project 4: More Vec Operations",
+    "section": "Objectives",
+    "text": "Objectives\n\nBuild more vector operations.\nPractice using the debugger (if necessary)."
+  },
+  {
+    "objectID": "weekly-activities/projects/proj-04/proj04.html#step-0.-prepare",
+    "href": "weekly-activities/projects/proj-04/proj04.html#step-0.-prepare",
+    "title": "Project 4: More Vec Operations",
+    "section": "Step 0. Prepare",
+    "text": "Step 0. Prepare\n\n\n\n\n\n\nREAD THIS: IT IS DIFFERENT THAN NORMAL!\n\n\n\n\n\n\n\nClick the link and then “Accept this assignment”.\nWait a few seconds and refresh the page. Refresh until the page says “You’re ready to go!”. The page has a link to a github repo.\nClick the link to see your new repo on github.com.\nClick the green Code button and copy the link it shows.\nIn a terminal, + cd to the directory where you are putting all your CS112 assignments. + type git clone &lt;paste-the-contents-of-the-link-you-copied&gt;\ncd to the new directory containing your repo.\n\n\n\n\n\n\n\nBECAUSE your project depends on your lab code, you need to copy your lab code over to this repo. In a terminal:\n\n\n\n\ncd to your lab directory\ncp Vec.h Vec.cpp &lt;your project directory&gt;\ncd to your project directory\n\n\n\n\nOpen your project in VS Code, and open Vec.h\nAdd this prototype for the assignment operator to Vec.h, in the public area:\n\nVec& operator=(const Vec& original);\n\nAdd this code to Vec.cpp:\n\nVec& Vec::operator=(const Vec& original) {\n    if (this != &original) {\n        if (mySize != original.mySize) {\n            if (mySize &gt; 0) {\n                delete[] myArray;\n                myArray = nullptr;\n            }\n            if (original.mySize &gt; 0) {\n                myArray = new Item[original.mySize];\n            }\n            mySize = original.mySize;\n        }\n        for (int i = 0; i &lt; mySize; ++i) {\n            myArray[i] = original.myArray[i];\n        }\n    }\n    return *this;\n}\n\nIn the terminal, type make tester\nThe code should compile and give you an executable called “tester”\nRun the tester file: ./tester\nYour tests should all pass."
+  },
+  {
+    "objectID": "weekly-activities/projects/proj-04/proj04.html#step-1.-introduction",
+    "href": "weekly-activities/projects/proj-04/proj04.html#step-1.-introduction",
+    "title": "Project 4: More Vec Operations",
+    "section": "Step 1. Introduction",
+    "text": "Step 1. Introduction\nThis week’s project adds more functionality to the Vec class we built in the lab. To illustrate, suppose that v1, v2, and v3 are Vec objects containing the following values:\nv1 == {1, 2, 3}\nv2 == {2, 4, 6}\nv3 == {1, 2, 3}\n\n1 - Subscript\nThe subscript operator ([i]) can be implemented such that using subscripting on the left-hand-side of an assignment (i.e., setting a value in the array) and using subscripting on the right-hand-side (i.e., getting a value in the array) both work. Thus, the method will be similar to both setItem(i) and getItem(i). + Normally, the subscript operation on an array does not perform bounds checking on the index value i, but yours should perform bounds checking. More precisely, your subscript operator should throw a range_error if it is passed a “bad” index value. + The method should return a reference to the item in the array.\nHere is the algorithm:\nItem &operator[](unsigned index)\n    check if index is legal. If not, throw a range_error\n    return myArray[index];\nBecause the method is returning a reference to the item in the array, subscripting works for both sides of an assignment.\n\n\n2 - Const subscript\nIf a Vec object is defined as constant then indexing the array in the Vec must also be constant – i.e., it cannot allow code to change the array. In tests.cpp, see a function called testConstSubscript(). This function takes a const-ref parameter. The subscripting of that Vec parameter will require us to implement the const subscripting method. The code in the method is identical to the code you wrote in the previous step above, but it returns const Item &, and is a const method – i.e., has const on the end of the line. Implement that method now so that all subscripting tests pass.\n\n\n3 - Vector Addition\nThe expression:\nv3 = v1 + v2;\nshould set v3 == {3, 6, 9}, without leaking memory.\nWhen C++ compiles v1 + v2, it looks at the types of the values that surround the +. It sees that v1 is a Vec object, so it actually will call operator+() on the v1 object, passing v2 as the parameter. Thus, the prototype is Vec Vec::operator+(const Vec &rhs) const. v1 is the “this” object that operator+ is being called on. v2 is being passed in as the rhs (right-hand-side) parameter.\nThe implementation is quite simple: make sure the sizes of the two Vecs are the same. If not, throw an error of type invalid_argument. If they are the same, create a new Vec object (of the correct size) and loop, repeated adding the values from myArray[i] and rhs[i] together and putting the result into the new Vec object.\n\n\n4 - Vector Subtraction\nThe expression:\nv3 = v1 - v2;\nshould set v3 == {-1, -2, -3}, without leaking memory.\nTo make life easier for you, tests.cpp contains tests for each of these operations. Use these tests and test-driven development to build your operations. If you get your program to compile, but it fails a test and you cannot figure out what is wrong, use the debugger! If necessary, draw a memory diagram and trace through the execution of the problematic function one statement at a time, until you identify the logic error."
+  },
+  {
+    "objectID": "weekly-activities/projects/proj-04/proj04.html#step-2.-application",
+    "href": "weekly-activities/projects/proj-04/proj04.html#step-2.-application",
+    "title": "Project 4: More Vec Operations",
+    "section": "Step 2. Application",
+    "text": "Step 2. Application\nCongratulations! You have been named the navigation officer on the starship U.S.S. Boobyprize, whose hyper-spatial engines allow the ship and its crew to explore the universe. Current theories suggest that reality consists of 11 or more dimensions, so you need a program to help you navigate through an N-dimensional space.\nVectors can be used to store positions (and/or directional forces) in a coordinate system. Vectors of length 2 can be used to store 2-dimensional (x, y) information; vectors of length 3 can be used to store 3-dimensional (x, y, z) information; and so on. Your task is to write a program that:\n\nPrompts for and has the user enter the number of dimensions in their space, storing this number in a variable N, which it can then use to define vector objects.\nPrompts for and has the user enter a starting position in that space, and stores that position in a vector object sum.\nUses a loop that:\n\nprompts for and has the user enter a position (relative to their current position), and stores that position in a vector,\nadds that vector to the sum vector.\n\nThis loop should let the user enter an arbitrary number of positions.\nOutputs the starting position plus the final position (i.e., the sum of the positions from the accumulator-vector).\n\nFor example, if the user is in a 3-dimensional system, enters the starting point {0, 0, 0}, and then enters the following four 3-dimensional relative-positions:\n{1, 0, 0}\n{0, 1, 0}\n{0, 0, 1}\n{1, 2, 3}\nthe program should then display the starting position ({0,0,0}) and the sum from the accumulator ({2, 3, 4}), which is the user’s final position within the 3-dimensional system.\nAs another example, if the user is navigating through a 5-dimensional space, enters {1, 0, 1, 0, 1} as the starting point, and enters three 5-dimensional relative-positions:\n{0, 1, 0, 1, 0}\n{2, 2, 2, 2, 2}\n{-3, -3, -3, -3, -3}\nthe program should then display the starting position and the final position ({0, 0, 0, 0, 0}).\n\n\n\n\n\n\nNote\n\n\n\nYou may (if you wish) have your program display the starship’s new position each time it is updated, rather than just displaying the final position at the end.\n\n\nYour application should have the user enter the vectors in the format expected by your readFrom(istream&) method: numbers separated by whitespace. (It does not have to parse through curly-brace and comma characters.) Likewise, your application can display the starship’s position using the format provided by your writeTo(ostream&) method – numbers separated by spaces.\nTo get you well on your way, your repo contains App.cpp and App.h. These files provide most of what you have to implement to finish this project. Just implement the missing TODO parts.\nNow that you have addition implemented, you’ll need to uncomment the line in App.cpp that reads\nres = res + v;\nYou will have to edit main() in main.cpp to:\n\ncall the App() constructor, and then\non the resulting object, call run().\n\nCompile the program with make proj4 and execute the program by doing ./proj4."
+  },
+  {
+    "objectID": "weekly-activities/projects/proj-04/proj04.html#submit",
+    "href": "weekly-activities/projects/proj-04/proj04.html#submit",
+    "title": "Project 4: More Vec Operations",
+    "section": "Submit",
+    "text": "Submit\nSubmit your changes using git, either from the command line or using VSCode. Push your changes up to github.\nVerify you have synced your code to github by going to your online repo webpage and looking to see that the files are correct.\nVerify that the autograding tests have successfully passed in github."
+  },
+  {
+    "objectID": "weekly-activities/projects/proj-04/proj04.html#grading-rubric",
+    "href": "weekly-activities/projects/proj-04/proj04.html#grading-rubric",
+    "title": "Project 4: More Vec Operations",
+    "section": "Grading Rubric",
+    "text": "Grading Rubric\n30 pts Total:\n\nPasses all tests: 8 pts.\noperator[]: 3 pts\noperator+: 3 pts\noperator-: 3 pts\nUSS Boobyprize application: 10 pts\nCode is clean and neat. Comments where appropriate, good spacing, etc: 3 pts.\n\nWays students lost points in the past: + -1: Const-qualified subscript operator [] should return const Item&, not Item&; + -3: Your readFrom() implementation never stops reading from input, so the app doesn’t work + -2: Missing call into App::run() from main().  + -2: Dynamically allocate the new vectors in addition and subtraction causes memory to leak + -2: Did not uncomment the line that adds each vector to the result in App.cpp, so it doesn’t work + -2: Needs two versions of the subscript operator for const and non-const + -2: setSize() was not fixed from the lab, tests do not pass"
+  },
+  {
     "objectID": "weekly-activities/slides/lab03-slides.html#lab-3",
     "href": "weekly-activities/slides/lab03-slides.html#lab-3",
     "title": "Lab 03 — Classes",
@@ -424,280 +643,5 @@
       "Content",
       "Week 3: Classes, Operator Overloading, etc."
     ]
-  },
-  {
-    "objectID": "content.html#footnotes",
-    "href": "content.html#footnotes",
-    "title": "Course content",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\nC++ for Python Programmers Book↩︎",
-    "crumbs": [
-      "Content",
-      "Course content"
-    ]
-  },
-  {
-    "objectID": "weekly-activities/week04.html",
-    "href": "weekly-activities/week04.html",
-    "title": "Week 4: Vectors – dynamic arrays",
-    "section": "",
-    "text": "Students will be able to…\n\nrecognize a copy constructor and implement it.\nidentify the 3 situations in which a copy constructor is called\nreason about the difference between a shallow and deep copy of a data structure.\nuse the new operator to dynamically allocate memory and the delete and delete[] operators to free up the memory.\nexplain when C++ calls the destructor on an object.\nexplain when it is important to implement the destructor explicitly for a class.\nunderstand the implementation of a dynamic array data structure, including how it adapts its internal size to accommodate the number of values in the array.\nimplement operator overloading for a class.",
-    "crumbs": [
-      "Content",
-      "Week 4: Vectors -- dynamic arrays"
-    ]
-  },
-  {
-    "objectID": "weekly-activities/week04.html#slos-for-week-4",
-    "href": "weekly-activities/week04.html#slos-for-week-4",
-    "title": "Week 4: Vectors – dynamic arrays",
-    "section": "",
-    "text": "Students will be able to…\n\nrecognize a copy constructor and implement it.\nidentify the 3 situations in which a copy constructor is called\nreason about the difference between a shallow and deep copy of a data structure.\nuse the new operator to dynamically allocate memory and the delete and delete[] operators to free up the memory.\nexplain when C++ calls the destructor on an object.\nexplain when it is important to implement the destructor explicitly for a class.\nunderstand the implementation of a dynamic array data structure, including how it adapts its internal size to accommodate the number of values in the array.\nimplement operator overloading for a class.",
-    "crumbs": [
-      "Content",
-      "Week 4: Vectors -- dynamic arrays"
-    ]
-  },
-  {
-    "objectID": "weekly-activities/week04.html#slides-videos-and-application-exercises",
-    "href": "weekly-activities/week04.html#slides-videos-and-application-exercises",
-    "title": "Week 4: Vectors – dynamic arrays",
-    "section": "Slides, videos, and application exercises",
-    "text": "Slides, videos, and application exercises\n\nWeek 4: Slides\n\nSlides\n\n\n\nNo readings for Week 4.\n\n\n\n\n\n\nLab 4: Vectors\nVec – A First Dynamic Data Structure\n\nInstructions\n\n\nSource\n\n\nSlides\n\n\n\n\nProject 4: Vec – A First Dynamic Data Structure\nVec – A First Dynamic Data Structure\n\nInstructions\n\n\n\nStarter\n\n\n\nExam 1 Exam on Friday during class. Bring your laptop. Content: Weeks 0 - 2.",
-    "crumbs": [
-      "Content",
-      "Week 4: Vectors -- dynamic arrays"
-    ]
-  },
-  {
-    "objectID": "weekly-activities/labs/lab-04/lab04.html",
-    "href": "weekly-activities/labs/lab-04/lab04.html",
-    "title": "Lab 4: Vec – A First Dynamic Data Structure",
-    "section": "",
-    "text": "In this exercise, you will:\n\nBuild a class that uses dynamic allocation/deallocation.\nUse pointer variables to access items in a dynamically-allocated array.\n\n\n\n\n\n\nAn array for a data structures assignment created by AI."
-  },
-  {
-    "objectID": "weekly-activities/labs/lab-04/lab04.html#objectives",
-    "href": "weekly-activities/labs/lab-04/lab04.html#objectives",
-    "title": "Lab 4: Vec – A First Dynamic Data Structure",
-    "section": "",
-    "text": "In this exercise, you will:\n\nBuild a class that uses dynamic allocation/deallocation.\nUse pointer variables to access items in a dynamically-allocated array.\n\n\n\n\n\n\nAn array for a data structures assignment created by AI."
-  },
-  {
-    "objectID": "weekly-activities/labs/lab-04/lab04.html#part-1-a-student-class",
-    "href": "weekly-activities/labs/lab-04/lab04.html#part-1-a-student-class",
-    "title": "Lab 4: Vec – A First Dynamic Data Structure",
-    "section": "Part 1: A Student Class",
-    "text": "Part 1: A Student Class\n\nStep 0. Prepare\n\nClick this link and then “Accept this assignment”.\nWait a few seconds and refresh the page. Refresh until the page says “You’re ready to go!”. The page has a link to a github repo.\nClick the link to see your new repo on github.com.\nClick the green Code button and copy the SSH link it shows.\nIn a terminal,\n\ncd to the directory where you are putting all your CS112 assignments.\ntype git clone &lt;paste-the-contents-of-the-link-you-copied&gt;\n\ncd to the new directory containing your repo.\ntype code . to start up Visual Studio Code in that directory.\nEdit README.md, putting your and your partner’s names and email addresses in the file.\nInspect the code you got in the assignment.\n\n\n\nStep 1. Create the class\nWe will create a class to represent a Student. You probably have not created a class in C++ before, so here are the Pair.h and Pair.cpp classes I created as an example in class. Use this code as an example/template.\nThe instance variables for a Student will be:\n\n\n\n\n\n\n\n\n\nInstance Variable Name\nType\nDefault value\nNotes\n\n\n\n\nmyName\nstring\n“”\nImmutable (NOTE: this is not a const in our class, but we will not be making setter functions for these immutable values.)\n\n\nmyId\nunsigned int\n0\nImmutable (NOTE: this is not a const in our class, but we will not be making setter functions for these immutable values.)\n\n\nmyGpa\nfloat\n0.0\n\n\n\nmyMajor\nstring\n“Undecided”\n\n\n\n\nIn Student.h, you should see the definition of the Student class. In that class, create the private: section, and in there define the 4 instance variables, shown in the table above. You’ll have to #include &lt;string&gt; and do the using namespace business…\nCompile (type: make tester) and fix any errors. (You may see warnings – you can ignore those for now.)\nIn Student.h define the default constructor (in the public: section). In Student.cpp, create the default constructor implementation, initializing the instance variables to their default values, as shown in the table above.\n\n\n\n\n\n\nCompile and fix any errors.\n\n\n\n\n\n\n\n\nStep 2. Create getters\nIn your tests.cpp, you’ll find the first SECTION of unit tests called “student getters”, within the TEST_CASE “Student class”. Uncomment the first SECTION, so that the code to construct a Student object and then test getMajor() runs.\n\n\n\n\n\n\nCompile\n\n\n\nThe compilation should fail because we haven’t defined getMajor() yet. There should be no other problems.\n\n\nSo, create a getter function (in both the Student.h and Student.cpp files) called getMajor().\nCompile and run (in a terminal, run ./tester \"Student class\") – this should work now.\nNow, repeat the above steps for the other tests and instance variables (maybe make this part more clear in the future). Start with a test in tests.cpp first, then implement the prototype and code.\n\n\n\n\n\n\nNOTE\n\n\n\nDon’t delete any old tests – just keep adding more. Put each test in its own SECTION within the “Student class” TEST_CASE.\n\n\n\n\nStep 3. Create setters\nFor the instance variables that are mutable (see the table above), create setter methods. But first, for each, create a test. Put all of these tests in a new SECTION within the “Student class” TEST_CASE.\nExample: for the setGpa test, set the student’s gpa to 3.25, then in a REQUIRE statement, call getGpa() and make sure the value is 3.25.\n\n\nStep 4. Create an explicit-value constructor\nNow, create a second constructor – the explicit-value constructor. This constructor should take the two immutable fields as parameters, and store their values in the instance variables. Initialize all the other variables to their default values. BUT FIRST, create tests. I called my SECTION “student explicit-value constructor”, and in it I create a Student with the explicit-value constructor and then use the getters on all instance variables to make sure the object has the correct values in it.\n\n\n\n\n\n\nCompile and test the result. Fix any errors.\n\n\n\n\n\n\nYou are now done with this simple class. We could add tons of other functionality to it, but not now…\nBefore you go on, commit and push your changes to your github repo. You can easily do this from VSCode. After you do this, you should be able to see that the automated tests fail – but the one test that tests the “Student class” passes. If it does not pass, fix your code (or your tests), and resubmit until it does pass."
-  },
-  {
-    "objectID": "weekly-activities/labs/lab-04/lab04.html#part-2-fraction-class",
-    "href": "weekly-activities/labs/lab-04/lab04.html#part-2-fraction-class",
-    "title": "Lab 4: Vec – A First Dynamic Data Structure",
-    "section": "Part 2: Fraction class",
-    "text": "Part 2: Fraction class\nA Fraction class is a useful class to create. It stores a numerator and denominator and can do things like represent itself nicely (e.g., “3/4”), simplify itself, multiply itself with another fraction, etc.\n\nStep 1. Test the Fraction class\nWe’ll continue to use tests.cpp – don’t remove any code from there. But, now we’ll also use it to create and test Fraction class instances. However, our makefile does not compile the Fraction stuff yet.\nEdit the makefile, adding Fraction.cpp to the SOURCES line.\n\n\n\n\n\n\nNote\n\n\n\nSpace separated! Do not remove Students.cpp.\n\n\nIn tests.cpp, below all your tests for the Student class, add the tests shown below\n\n\n\n\n\n\nImportant!\n\n\n\nYou’ll have to #include \"Fraction.h\" at the top of the file.\n\n\nTEST_CASE(\"Fraction class\") {\n    SECTION(\"fraction constructors\") {\n        SECTION(\"default\") {\n            Fraction fr;\n            REQUIRE(fr.getNumerator() == 0);\n            REQUIRE(fr.getDenominator() == 1);\n        }\n        SECTION(\"explicit value\") {\n            Fraction fr(2, 4);\n            REQUIRE(fr.getNumerator() == 2);\n            REQUIRE(fr.getDenominator() == 4);\n        }\n    }\n}\n\n\nStep 2. Add the instance variables and constructors\nAdd the two instance variables – myNumerator and myDenominator (both integers) – to the class definition in the .h file.\nUpdate the default constructor, to initialize myNumerator to 0 and myDenominator to 1.\nNow, implement the explicit-value constructor, which takes both the numerator and denominator as parameters, and stores them in myNumerator and myDenominator. Don’t forget to put the declaration in the .h file and implementation in the .cpp file.\n\n\n\n\n\n\nNote\n\n\n\nWe will compile our tester after the next section.\n\n\n\n\nStep 3. getters\nAdd a new SECTION (within the “Fraction class” TEST_CASE) called “fraction getters” and SECTIONs to call the getter functions and test their results. Compilation should fail, as expected.\n\n\n\n\n\n\nNOTE\n\n\n\nYes, this is repetitive as we already used them for the default constructors. Just to make sure we cover all our bases, and this can easily be seen in our tests, make another SECTION to quickly check the getter functions again.\n\n\nNow, create getter functions for each.\nNow the compilation and execution should succeed with all tests passing.\n\n\n\n\n\n\nNOTE\n\n\n\nYou can run only some tests by putting the name of the test on the command line. E.g., you can run only the Fraction tests by running ./tester \"Fraction class\".\n\n\n\n\nStep 4. setters\nCreate tests to test setters.\nThen, create the methods and the code so it will compile and run successfully.\n\n\nStep 5. Fanciness\nNow, in setDenominator(), check if the parameter is 0 – an illegal value. If so, throw an invalid_argument exception (remember to #include &lt;stdexcept&gt; first). You can do this by using the line:\nthrow invalid_argument(\"Your error message here!\"); // (Change the error message please!)\nHere is a test for that, assuming you have a fraction called f1:\nSECTION(\"setDenominator\") {\n    REQUIRE_THROWS_AS(f1.setDenominator(0), invalid_argument);\n}\n\n\nStep 6. Display as a string\nCreate a test to call asString() on a Fraction object: If you create a new Fraction object newFrac and call newFrac.asString(), you can REQUIRE that the result should be “0/1”. Initially, this test will fail, so create the method, which returns a string.\n\n\n\n\n\n\nNote\n\n\n\nIn asString() you can use to_string(anInt) to convert an integer into a string. And, you can concatenate strings with +. to_string() is defined in  so you’ll have to #include that.\n\n\nWhen that works, use the setters to change the numerator and denominator for a fraction, and then write a test to ensure that asString() still produces the correct results."
-  },
-  {
-    "objectID": "weekly-activities/labs/lab-04/lab04.html#submission",
-    "href": "weekly-activities/labs/lab-04/lab04.html#submission",
-    "title": "Lab 4: Vec – A First Dynamic Data Structure",
-    "section": "Submission",
-    "text": "Submission\nCommit your changes to your github repo. After you do this, verify that the automated tests pass. The automated tests just run the tests.cpp file you have been editing.\nDon’t forget to look at the Grading Rubric at the top to make sure you get as many points as possible."
-  },
-  {
-    "objectID": "weekly-activities/labs/lab-04/lab04.html#grading-rubric",
-    "href": "weekly-activities/labs/lab-04/lab04.html#grading-rubric",
-    "title": "Lab 4: Vec – A First Dynamic Data Structure",
-    "section": "Grading Rubric",
-    "text": "Grading Rubric\nThis lab is worth 20 pts:\n\n10 points for each of Part 1 and Part the Second: 20 pts\n\n6 pts for correctness\n1 pt for perfect indentation and good variable names, function names, and comments (i.e., hospitable code). You should write a comment in your code only when the following block of code is not obvious to the trained reader. You should not write a comment for each line of code.\n3 pts for sufficient test cases to prove that the code is correct.\n\n\nWays students have lost points in the past:\n\n-2: Test doesn’t pass\n-1: Missing name and id\n-3: Missing steps, Next time speak to professor."
-  },
-  {
-    "objectID": "weekly-activities/labs/lab-04/lab04.html#introduction",
-    "href": "weekly-activities/labs/lab-04/lab04.html#introduction",
-    "title": "Lab 4: Vec – A First Dynamic Data Structure",
-    "section": "Introduction",
-    "text": "Introduction\nYou should know how to get the assignment. So, do it.\n\nDon’t forget to edit the README.md file and put both of your names and emails in the file.\nYou might also at this time Manage Access to the repo, so that both of you can access it.\n\nThe Vec class is a simpler version of the vector class template available in the C++ standard template library (STL). It will provide the basic functionality, without some of the more advanced “bells and whistles” of the STL version.\nThe class in Vec.h is a mere shell at this point. Filling in this shell is our task this week."
-  },
-  {
-    "objectID": "weekly-activities/labs/lab-04/lab04.html#getting-started",
-    "href": "weekly-activities/labs/lab-04/lab04.html#getting-started",
-    "title": "Lab 4: Vec – A First Dynamic Data Structure",
-    "section": "Getting Started",
-    "text": "Getting Started\n\nOpen each file and take a moment to browse through them, to get a sense of what each one contains. Note that test.cpp contains tests for a variety of Vec operations.\n\nOur approach today will be to use the following steps to build each operation: - This exercise will provide you with a description of what the operation should do, and a stub for the method that provides that operation; - You will uncomment the call to the test for that operation in tests.cpp - You will complete the method by adding statements to the stub; and - You will compile and run the project. (do make tester && ./tester)\n\n\n\n\n\n\nCompile. debug and fix any errors.\n\n\n\nIf all is well, you can then proceed to the next operation; otherwise you will need to debug your operation to figure out why it is failing the test, recompile, and rerun the test, until it is passed.\n\n\n\nInstance Variables\nIf you look in Vec.h, you’ll see that we are (for now) using a typedef to define the identifier Item as a synonym for the type double. You’ll also see that the private: section of class Vec is currently empty. As a minimalist dynamic array, our Vec will need to “remember” two things: How many Items it is currently storing; and The Items it is currently storing. To let a Vec “remember” the first of these, add an instance variable named mySize of type unsigned: private: unsigned mySize; }; To let a Vec “remember” the second of these, add an instance variable named myArray capable of storing the address of an Item: private: unsigned mySize; Item * myArray; };\nWith these two variables, a Vec object can “remember” (i) how many items it is storing, and (ii) the address of a dynamically allocated array in which its items are stored.\n\n\n\n\n\n\nCompile\n\n\n\nThe compilation should fail because we haven’t defined getMajor() yet. There should be no other problems.\n\n\n\n\n\n\n\n\nNOTE\n\n\n\nDon’t delete any old tests – just keep adding more. Put each test in its own SECTION within the “Student class” TEST_CASE.\n\n\n\n\nStep 3. Create setters\nFor the instance variables that are mutable (see the table above), create setter methods. But first, for each, create a test. Put all of these tests in a new SECTION within the “Student class” TEST_CASE.\nExample: for the setGpa test, set the student’s gpa to 3.25, then in a REQUIRE statement, call getGpa() and make sure the value is 3.25.\n\n\nStep 4. Create an explicit-value constructor\nNow, create a second constructor – the explicit-value constructor. This constructor should take the two immutable fields as parameters, and store their values in the instance variables. Initialize all the other variables to their default values. BUT FIRST, create tests. I called my SECTION “student explicit-value constructor”, and in it I create a Student with the explicit-value constructor and then use the getters on all instance variables to make sure the object has the correct values in it.\n\n\n\n\n\n\nCompile and test the result. Fix any errors.\n\n\n\n\n\n\nYou are now done with this simple class. We could add tons of other functionality to it, but not now…\nBefore you go on, commit and push your changes to your github repo. You can easily do this from VSCode. After you do this, you should be able to see that the automated tests fail – but the one test that tests the “Student class” passes. If it does not pass, fix your code (or your tests), and resubmit until it does pass."
-  },
-  {
-    "objectID": "weekly-activities/labs/lab-04/lab04.html#step-1getting-started",
-    "href": "weekly-activities/labs/lab-04/lab04.html#step-1getting-started",
-    "title": "Lab 4: Vec – A First Dynamic Data Structure",
-    "section": "Step 1Getting Started",
-    "text": "Step 1Getting Started\n\nOpen each file and take a moment to browse through them, to get a sense of what each one contains. Note that test.cpp contains tests for a variety of Vec operations.\n\nOur approach today will be to use the following steps to build each operation: - This exercise will provide you with a description of what the operation should do, and a stub for the method that provides that operation; - You will uncomment the call to the test for that operation in tests.cpp - You will complete the method by adding statements to the stub; and - You will compile and run the project. (do make tester && ./tester)\n\n\n\n\n\n\nCompile. debug and fix any errors.\n\n\n\nIf all is well, you can then proceed to the next operation; otherwise you will need to debug your operation to figure out why it is failing the test, recompile, and rerun the test, until it is passed.\n\n\n\nInstance Variables\nIf you look in Vec.h, you’ll see that we are (for now) using a typedef to define the identifier Item as a synonym for the type double. You’ll also see that the private: section of class Vec is currently empty. As a minimalist dynamic array, our Vec will need to “remember” two things: How many Items it is currently storing; and The Items it is currently storing. To let a Vec “remember” the first of these, add an instance variable named mySize of type unsigned: private: unsigned mySize; }; To let a Vec “remember” the second of these, add an instance variable named myArray capable of storing the address of an Item: private: unsigned mySize; Item * myArray; };\nWith these two variables, a Vec object can “remember” (i) how many items it is storing, and (ii) the address of a dynamically allocated array in which its items are stored.\n\n\n\n\n\n\nCompile\n\n\n\nThe compilation should fail because we haven’t defined getMajor() yet. There should be no other problems.\n\n\n\n\n\n\n\n\nNOTE\n\n\n\nDon’t delete any old tests – just keep adding more. Put each test in its own SECTION within the “Student class” TEST_CASE.\n\n\n\n\nStep 3. Create setters\nFor the instance variables that are mutable (see the table above), create setter methods. But first, for each, create a test. Put all of these tests in a new SECTION within the “Student class” TEST_CASE.\nExample: for the setGpa test, set the student’s gpa to 3.25, then in a REQUIRE statement, call getGpa() and make sure the value is 3.25.\n\n\nStep 4. Create an explicit-value constructor\nNow, create a second constructor – the explicit-value constructor. This constructor should take the two immutable fields as parameters, and store their values in the instance variables. Initialize all the other variables to their default values. BUT FIRST, create tests. I called my SECTION “student explicit-value constructor”, and in it I create a Student with the explicit-value constructor and then use the getters on all instance variables to make sure the object has the correct values in it.\n\n\n\n\n\n\nCompile and test the result. Fix any errors.\n\n\n\n\n\n\nYou are now done with this simple class. We could add tons of other functionality to it, but not now…\nBefore you go on, commit and push your changes to your github repo. You can easily do this from VSCode. After you do this, you should be able to see that the automated tests fail – but the one test that tests the “Student class” passes. If it does not pass, fix your code (or your tests), and resubmit until it does pass."
-  },
-  {
-    "objectID": "weekly-activities/labs/lab-04/lab04.html#step-1.-getting-started",
-    "href": "weekly-activities/labs/lab-04/lab04.html#step-1.-getting-started",
-    "title": "Lab 4: Vec – A First Dynamic Data Structure",
-    "section": "Step 1. Getting Started",
-    "text": "Step 1. Getting Started\n\nOpen each file and take a moment to browse through them, to get a sense of what each one contains. Note that test.cpp contains tests for a variety of Vec operations.\n\nOur approach today will be to use the following steps to build each operation: - This exercise will provide you with a description of what the operation should do, and a stub for the method that provides that operation; - You will uncomment the call to the test for that operation in tests.cpp - You will complete the method by adding statements to the stub; and - You will compile and run the project. (do make tester && ./tester)\n\n\n\n\n\n\nCompile. debug and fix any errors.\n\n\n\nIf all is well, you can then proceed to the next operation; otherwise you will need to debug your operation to figure out why it is failing the test, recompile, and rerun the test, until it is passed."
-  },
-  {
-    "objectID": "weekly-activities/labs/lab-04/lab04.html#step-2.-instance-variables",
-    "href": "weekly-activities/labs/lab-04/lab04.html#step-2.-instance-variables",
-    "title": "Lab 4: Vec – A First Dynamic Data Structure",
-    "section": "Step 2. Instance Variables",
-    "text": "Step 2. Instance Variables\nIf you look in Vec.h, you’ll see that we are (for now) using a typedef to define the identifier Item as a synonym for the type double.\nYou’ll also see that the private: section of class Vec is currently empty. As a minimalist dynamic array, our Vec will need to “remember” two things:\n\nHow many Items it is currently storing; and\nThe Items it is currently storing.\n\nTo let a Vec “remember” the first of these, add an instance variable named mySize of type unsigned:\n  private:\n     unsigned mySize;\n  };\nTo let a Vec “remember” the second of these, add an instance variable named myArray capable of storing the address of an Item:\n  private:\n     unsigned mySize;\n     Item   *myArray;\n  };\nWith these two variables, a Vec object can “remember” (i) how many items it is storing, and (ii) the address of a dynamically allocated array in which its items are stored."
-  },
-  {
-    "objectID": "weekly-activities/labs/lab-04/lab04.html#step-3.-the-default-constructor",
-    "href": "weekly-activities/labs/lab-04/lab04.html#step-3.-the-default-constructor",
-    "title": "Lab 4: Vec – A First Dynamic Data Structure",
-    "section": "Step 3. The Default Constructor",
-    "text": "Step 3. The Default Constructor\nThe role of the default constructor is to provide the instance variables with default values. In a data structure, these are usually values that are appropriate for an “empty” structure. In Vec.cpp, complete the default constructor for the class, so that it sets mySize to zero, and sets myArray to nullptr. Compile and run the project (make tester && ./tester).\nThe test should pass, but notice that it isn’t actually doing anything… To make a useful test, we need to see if mySize is 0 and myArray is nullptr. However, myArray and mySize are private, so the test cannot “reach into” the innards of the Vec object to check the values. To resolve this, we will create a getter for mySize. In the .h file, in the public: section, add the prototypes:\nunsigned getSize() const;\nIn the Vec.cpp file, add this code:\nunsigned Vec::getSize() const {\n}\nand finish the code which returns mySize.\nNotice that we are NOT going to add a getter method for myArray, which would allow a user of the Vec class to get the address where the values are being stored. We do not want to expose this internal detail to the user, as the user could abuse it and start putting values directly into memory. So, because we won’t make a getter for myArray, we won’t be able to make tests to check the value of myArray.\nUncomment the lines in the first (“default”) SECTION and compile and run (make tester && ./tester).\n\n\n\n\n\n\nBefore you go the next step!\n\n\n\nWhen your definition passes the test, continue; otherwise fix and retest your constructor."
-  },
-  {
-    "objectID": "weekly-activities/labs/lab-04/lab04.html#step-4.-the-explicit-value-constructor",
-    "href": "weekly-activities/labs/lab-04/lab04.html#step-4.-the-explicit-value-constructor",
-    "title": "Lab 4: Vec – A First Dynamic Data Structure",
-    "section": "Step 4. The Explicit-Value Constructor",
-    "text": "Step 4. The Explicit-Value Constructor\nThe explicit-value constructor’s role is to initialize an object using values provided by the user. In a data structure, the user often wants to specify a non-zero starting size for the structure. (e.g., Vec v(5); should construct v as a vector capable of storing 5 items.) To store the value the user specifies, our constructor will need a parameter, so we might start by writing this stub for the constructor:\nVec::Vec(unsigned size) {\n}\nPut the above code in your .cpp file, and add a prototype for this constructor to the Vec class in Vec.h. Then in tests.cpp, uncomment the first 2 lines of code in the “explicit-value” SECTION that tests this constructor. Save/compile/run the tests. The test should fail. To make it pass, add code to your explicit-value constructor. Here is the algorithm to follow:\n\nSet mySize to size\nIf size is positive (greater than zero):\n\nDynamically allocate an array of size values of type Item, and store the address of the array in myArray; and\nSet each of the Items in that array to zero.\n\nOtherwise:\n\nSet myArray to nullptr.\n\n\nContinue when your class passes all tests."
-  },
-  {
-    "objectID": "weekly-activities/labs/lab-04/lab04.html#step-5.-getting-the-value-of-an-item",
-    "href": "weekly-activities/labs/lab-04/lab04.html#step-5.-getting-the-value-of-an-item",
-    "title": "Lab 4: Vec – A First Dynamic Data Structure",
-    "section": "Step 5. Getting the Value of an Item",
-    "text": "Step 5. Getting the Value of an Item\nThe rest of the test for the “explicit-value constructor” looks to see if myArray was initialized correctly. In order to do this, we need to be able to retrieve the value in each location in myArray. To do that, we’ll implement a getItem() method that lets us retrieve the value of an item at a given index (e.g., Item it = v.getItem(i);). Since this method (i) needs the index of the value it is to retrieve, and (ii) does not change its receiver’s instance variables, we will start by defining this stub:\nItem Vec::getItem(unsigned index) const {\n}\nPlace a prototype for this method in the Vec class, and in tests.cpp, uncomment the rest of the test code in the “explicit-value” constructor SECTION. For the sake of time, here is the code for .cpp file:\nItem Vec::getItem(unsigned index) const {\n    if (index &lt; 0 || index &gt;= mySize) {\n        throw range_error(\"Bad index\");\n    }\n    return myArray[index];\n}\nWhen all tests pass, continue.\n\n\n\n\n\n\nNote\n\n\n\nThere is a TEST_CASE in tests.cpp to fully test getItem(), but it relies on setItem(), which we have not implemented yet. So, don’t uncomment that test case yet."
-  },
-  {
-    "objectID": "weekly-activities/labs/lab-04/lab04.html#step-6.-setting-the-value-of-an-item",
-    "href": "weekly-activities/labs/lab-04/lab04.html#step-6.-setting-the-value-of-an-item",
-    "title": "Lab 4: Vec – A First Dynamic Data Structure",
-    "section": "Step 6. Setting the Value of an Item",
-    "text": "Step 6. Setting the Value of an Item\nOur next operation is to set the value of a particular item in a Vec (e.g., v.setItem(i, val);). Since the method needs both the index of the item to change, and the new value for the item, we will start with this stub:\nvoid Vec::setItem(unsigned index, const Item& it) {\n}\nPlace a prototype for this method in the Vec class, and in tests.cpp, uncomment the code to test “setItem”.\nTry to build and run the test to see what errors you get; then complete the stub so that it passes the test. Again, for the sake of time, here is the code for Vec.cpp\nvoid Vec::setItem(unsigned index, const Item& it) {\n    if (index &lt; 0 || index &gt;= mySize) {\n      throw range_error(\"Bad index\");\n    }\n    myArray[index] = it;\n}\nWhen all tests pass for testing setItem, also uncomment the getItem TEST_CASE. If you have everything working, you should be passing 29 assertions in 9 test cases."
-  },
-  {
-    "objectID": "weekly-activities/labs/lab-04/lab04.html#step-7.-the-copy-constructor",
-    "href": "weekly-activities/labs/lab-04/lab04.html#step-7.-the-copy-constructor",
-    "title": "Lab 4: Vec – A First Dynamic Data Structure",
-    "section": "Step 7. The Copy Constructor",
-    "text": "Step 7. The Copy Constructor\nThe compiler invokes a special copy constructor any time it needs a copy of an object, for example:\n\nWhen a function returns an object; OR\nWhen an object is passed as an argument to a call-by-value parameter.\n\nThe C++ compiler supplies a default copy constructor, but it merely does a bit-by-bit copy of the instance variables of the object being copied. This bit-copy is inadequate for classes with pointer instance variables, because it just copies the address within such variables, rather than making a distinct copy of the dynamically allocated memory to which that address points. Because of this, every class that contains a pointer instance variable should define its own copy constructor that makes a distinct copy of the object, including its dynamically allocated memory.\nThe stub for a Vec copy constructor looks like this:\nVec::Vec(const Vec& original) {\n}\n\n\n\n\n\n\nImportant\n\n\n\nIf we were to mistakenly make the copy constructor’s parameter a call-by-value parameter instead of a call-by-const-reference parameter, an infinite recursion will occur when the copy constructor is invoked. The reason is that passing a Vec to a call-by-value parameter will invoke the copy constructor, which will take the thing to be copied as a parameter, which will invoke the copy constructor, which will take the thing to be copied as a parameter, which will invoke the copy constructor, which… To avoid this, the parameter of a copy constructor should always be a const-reference parameter, as shown above.\n\n\nAdd the code above to the .cpp file. Then, add a prototype to the Vec class, and in tests.cpp uncomment the code in the “copy” constructor SECTION to test it. Then add statements to your stub to construct a Vec that is a distinct copy of original, and check to see if the tests pass. Here is the algorithm to follow:\n\nSet mySize to the size of original\nIf original.mySize is greater than zero:\n\nDynamically allocate an array of mySize values of type Item, and store the address of the array in myArray.\nSet each itemi in the new array to itemi from original.\n\nOtherwise, set myArray to nullptr.\n\nContinue when your constructor passes all tests. (I am now seeing 35 assertions in 9 test cases passing.)"
-  },
-  {
-    "objectID": "weekly-activities/labs/lab-04/lab04.html#step-8.-the-destructor",
-    "href": "weekly-activities/labs/lab-04/lab04.html#step-8.-the-destructor",
-    "title": "Lab 4: Vec – A First Dynamic Data Structure",
-    "section": "Step 8. The Destructor",
-    "text": "Step 8. The Destructor\nThe C++ compiler invokes an object’s destructor when the object ceases to exist. The role of the destructor is thus to perform any “clean up” actions that are needed to return the system to the same state it was in before the object existed. In a data structure that uses dynamic memory allocation, the main task is usually to return dynamically allocated memory to the system using the delete operation.\nA destructor cannot have any parameters, and its name is the name of the class preceded by the tilde character (~), so we can begin with the stub:\nVec::~Vec() {\n}\nSkeleton code is already in the .h and .cpp files. Uncomment the code to test the destructor in tests.cpp. Then add the statements to the destructor to reclaim the dynamic array whose address is in myArray, set myArray to nullptr, and set mySize to zero. Compile and see if your statements pass the test. Here is the algorithm to follow:\n\nUse delete [] to deallocate the array whose address is stored in myArray delete [] myArray;\nSet myArray to nullptr\nSet mySize to zero.\n\nTechnically, only the first step is strictly necessary. The reason is that the destructor is only invoked at the end of an object’s lifetime. Since the object will no longer exist, resetting its instance variables is not necessary (except to pass the test).\nContinue when your destructor passes all tests."
-  },
-  {
-    "objectID": "weekly-activities/labs/lab-04/lab04.html#step-9.-setting-a-vecs-size",
-    "href": "weekly-activities/labs/lab-04/lab04.html#step-9.-setting-a-vecs-size",
-    "title": "Lab 4: Vec – A First Dynamic Data Structure",
-    "section": "Step 9. Setting a Vec’s Size",
-    "text": "Step 9. Setting a Vec’s Size\nOur next operation is to set a Vec’s size via a method (e.g., v.setSize(8);). The role of this method is to allow us to change the size of an existing Vec to some new size. Since the user must specify this new size, we need a parameter to store it. We might start by defining this stub:\nvoid Vec::setSize(unsigned newSize) {\n}\nPlace a prototype for this method in the Vec class, and in tests.cpp, uncomment all the code in the TEST_CASE to test “setSize”. Then complete the stub so that it passes the test. Think carefully! This one is deceptively tricky to get right! Algorithm:\n\nIf mySize and newSize are different:\n\nIf newSize is zero:\n\nDeallocate myArray\nSet myArray to nullptr\nSet mySize to zero.\n\nOtherwise:\n\nDeclare a local variable newArray of type Item *\nAllocate a new dynamic array of newSize Items, storing its address in newArray.\nIf mySize is less than newSize:\n\nCopy mySize values from myArray into newArray.\nSet the remaining (newSize - mySize) values to zero.\n\nOtherwise, just copy newSize values from myArray into newArray.\nSet mySize to newSize.\nDeallocate myArray.\nSet myArray to newArray.\n\n\n\nWhen your method passes all tests, continue."
-  },
-  {
-    "objectID": "weekly-activities/labs/lab-04/lab04.html#step-10.-equality",
-    "href": "weekly-activities/labs/lab-04/lab04.html#step-10.-equality",
-    "title": "Lab 4: Vec – A First Dynamic Data Structure",
-    "section": "Step 10. Equality",
-    "text": "Step 10. Equality\nThe purpose of the equality operation is to let us compare two objects (e.g., if (v1 == v2) { ... }), returning true if they are equal, and returning false if they are not. Since the equality operation returns a bool value, a call:\nv1 == v2\nwill be treated by the compiler as:\nv1.operator==(v2)\nThis equality operator should not change either of its operands. We start by defining this stub:\nbool Vec::operator==(const Vec& v2) const {\n}\nPlace a prototype for this method in the Vec class, and in tests.cpp, uncomment the code to test “equality”. Then add statements to the stub so that it passes the test. Algorithm:\n\nCheck to see if mySize is NOT the same as the size of v2. If the two vectors are not the same size, return false.\nCompare each itemi in myArray to each itemi from v2’s array:\nIf any are not equal, return false.\nThe two arrays are equal in size, and all their values are the same, so return true.\n\nContinue when your method passes all tests."
-  },
-  {
-    "objectID": "weekly-activities/labs/lab-04/lab04.html#step-10.",
-    "href": "weekly-activities/labs/lab-04/lab04.html#step-10.",
-    "title": "Lab 4: Vec – A First Dynamic Data Structure",
-    "section": "Step 10.",
-    "text": "Step 10."
-  },
-  {
-    "objectID": "weekly-activities/labs/lab-04/lab04.html#step-11.-ostream-output",
-    "href": "weekly-activities/labs/lab-04/lab04.html#step-11.-ostream-output",
-    "title": "Lab 4: Vec – A First Dynamic Data Structure",
-    "section": "Step 11. ostream Output",
-    "text": "Step 11. ostream Output\nIt is useful to be able to write a vector to an ostream, as this allows us to display it on the screen (or write it to a file via an ofstream). This method should output the values of the items in the Vec, but not its size; if the user wants that size information displayed, they can do that separately using getSize().\nWhereas (i) our method returns nothing to its caller, (ii) it needs to “know” the ostream to which it is to write, (iii) it modifies that ostream by inserting items, and (iv) it should not modify any Vec instance variables, we might begin with this stub:\nvoid Vec::writeTo(ostream& out) const {\n}\nPlace a prototype for this method in the Vec class, and in tests.cpp, uncomment the test “writeToStream”. Then add statements to this stub so that it passes the test. Algorithm:\n\nSend each value in myArray to the out stream, followed by a single space.\n\nContinue when your method passes all the tests."
-  },
-  {
-    "objectID": "weekly-activities/labs/lab-04/lab04.html#step-12.",
-    "href": "weekly-activities/labs/lab-04/lab04.html#step-12.",
-    "title": "Lab 4: Vec – A First Dynamic Data Structure",
-    "section": "Step 12.",
-    "text": "Step 12."
-  },
-  {
-    "objectID": "weekly-activities/labs/lab-04/lab04.html#step-12.-istream-input",
-    "href": "weekly-activities/labs/lab-04/lab04.html#step-12.-istream-input",
-    "title": "Lab 4: Vec – A First Dynamic Data Structure",
-    "section": "Step 12. istream Input",
-    "text": "Step 12. istream Input\nIt is also useful to be able to read a vector from an istream, as this lets us enter a vector’s values interactively, from a keyboard (or read them from a file via an ifstream). This method complements writeTo(), and should assume that the user has already constructed the Vec with the appropriate size.\nSince (i) our method returns nothing to its caller, (ii) it needs to “know” the istream from which it is to read, (iii) it modifies that istream by extracting items, and (iv) it might modify its instance variables, we might begin with this stub:\nvoid Vec::readFrom(istream& in) {\n}\nPlace a prototype for this method in the Vec class, and in tests.cpp, uncomment the test “readFromStream”. Then add statements to this stub so that it passes the test.\nAssuming that mySize equals the number of values in in, the Vec readFrom(istream& in) method should:\n\nExtract each value from in, storing each in “the next” item of myArray.\n\nContinue when your method passes all the tests. (My solution passes ~82 assertions!)\n\n\n\n\n\n\nCongratulations!\n\n\n\nYou have just built a class that offers the basic functionality one would expect from a vector!"
-  },
-  {
-    "objectID": "weekly-activities/labs/lab-04/lab04.html#submit",
-    "href": "weekly-activities/labs/lab-04/lab04.html#submit",
-    "title": "Lab 4: Vec – A First Dynamic Data Structure",
-    "section": "Submit",
-    "text": "Submit\nUse VSCode (or the command line) to commit and push your changes to your repo.\nTo verify your submission to github.com, go to a browser and go to the location of your repo in github.com.\nAlso, verify that your submission passes all the automated tests in github. The automated tests are the same as those in tests.cpp."
-  },
-  {
-    "objectID": "weekly-activities/labs/lab-04/lab04.html#grading-rubric-24-pts-total",
-    "href": "weekly-activities/labs/lab-04/lab04.html#grading-rubric-24-pts-total",
-    "title": "Lab 4: Vec – A First Dynamic Data Structure",
-    "section": "Grading Rubric: 24 pts total",
-    "text": "Grading Rubric: 24 pts total\n\n16 pts for correct code that passes all the tests\n2 pts for clean, neat code, well-indented, and readable\n6 pts for correctness (see common mistakes below).\n\nWays students lost points in the past:\n\n-1: Be careful about brace indentation \n-1: Tester crashes at line , should be &lt; newSize in case newSize is smaller than mySize (otherwise you index past the end of the array)\n-1: Memory leak in setSize() when mySize &lt; newSize. You need to delete[] myArray in both cases; move it outside the else statement.\n-2: Make sure you are using delete[] and not delete, which leaks memory\n-24: No submission, or partner forgot to include you in README."
-  },
-  {
-    "objectID": "weekly-activities/projects/proj-04/proj04.html",
-    "href": "weekly-activities/projects/proj-04/proj04.html",
-    "title": "Project 4: More Vec Operations",
-    "section": "",
-    "text": "Created by AI Prompt: a C++ array fading away"
-  },
-  {
-    "objectID": "weekly-activities/projects/proj-04/proj04.html#project-4-more-vec-operations",
-    "href": "weekly-activities/projects/proj-04/proj04.html#project-4-more-vec-operations",
-    "title": "Project 4: More Vec Operations",
-    "section": "Project 4: More Vec Operations",
-    "text": "Project 4: More Vec Operations"
-  },
-  {
-    "objectID": "weekly-activities/projects/proj-04/proj04.html#objectives",
-    "href": "weekly-activities/projects/proj-04/proj04.html#objectives",
-    "title": "Project 4: More Vec Operations",
-    "section": "Objectives",
-    "text": "Objectives\n\nBuild more vector operations.\nPractice using the debugger (if necessary)."
-  },
-  {
-    "objectID": "weekly-activities/projects/proj-04/proj04.html#step-1.-introduction",
-    "href": "weekly-activities/projects/proj-04/proj04.html#step-1.-introduction",
-    "title": "Project 4: More Vec Operations",
-    "section": "Step 1. Introduction",
-    "text": "Step 1. Introduction\nThis week’s project adds more functionality to the Vec class we built in the lab. To illustrate, suppose that v1, v2, and v3 are Vec objects containing the following values:\nv1 == {1, 2, 3}\nv2 == {2, 4, 6}\nv3 == {1, 2, 3}\n\n1 - Subscript\nThe subscript operator ([i]) can be implemented such that using subscripting on the left-hand-side of an assignment (i.e., setting a value in the array) and using subscripting on the right-hand-side (i.e., getting a value in the array) both work. Thus, the method will be similar to both setItem(i) and getItem(i). + Normally, the subscript operation on an array does not perform bounds checking on the index value i, but yours should perform bounds checking. More precisely, your subscript operator should throw a range_error if it is passed a “bad” index value. + The method should return a reference to the item in the array.\nHere is the algorithm:\nItem &operator[](unsigned index)\n    check if index is legal. If not, throw a range_error\n    return myArray[index];\nBecause the method is returning a reference to the item in the array, subscripting works for both sides of an assignment.\n\n\n2 - Const subscript\nIf a Vec object is defined as constant then indexing the array in the Vec must also be constant – i.e., it cannot allow code to change the array. In tests.cpp, see a function called testConstSubscript(). This function takes a const-ref parameter. The subscripting of that Vec parameter will require us to implement the const subscripting method. The code in the method is identical to the code you wrote in the previous step above, but it returns const Item &, and is a const method – i.e., has const on the end of the line. Implement that method now so that all subscripting tests pass.\n\n\n3 - Vector Addition\nThe expression:\nv3 = v1 + v2;\nshould set v3 == {3, 6, 9}, without leaking memory.\nWhen C++ compiles v1 + v2, it looks at the types of the values that surround the +. It sees that v1 is a Vec object, so it actually will call operator+() on the v1 object, passing v2 as the parameter. Thus, the prototype is Vec Vec::operator+(const Vec &rhs) const. v1 is the “this” object that operator+ is being called on. v2 is being passed in as the rhs (right-hand-side) parameter.\nThe implementation is quite simple: make sure the sizes of the two Vecs are the same. If not, throw an error of type invalid_argument. If they are the same, create a new Vec object (of the correct size) and loop, repeated adding the values from myArray[i] and rhs[i] together and putting the result into the new Vec object.\n\n\n4 - Vector Subtraction\nThe expression:\nv3 = v1 - v2;\nshould set v3 == {-1, -2, -3}, without leaking memory.\nTo make life easier for you, tests.cpp contains tests for each of these operations. Use these tests and test-driven development to build your operations. If you get your program to compile, but it fails a test and you cannot figure out what is wrong, use the debugger! If necessary, draw a memory diagram and trace through the execution of the problematic function one statement at a time, until you identify the logic error."
-  },
-  {
-    "objectID": "weekly-activities/projects/proj-04/proj04.html#prepare",
-    "href": "weekly-activities/projects/proj-04/proj04.html#prepare",
-    "title": "Project 4: More Vec Operations",
-    "section": "Prepare",
-    "text": "Prepare\n\n\n\n\n\n\nREAD THIS: IT IS DIFFERENT THAN NORMAL!\n\n\n\n\n\n\n\nClick the link and then “Accept this assignment”.\nWait a few seconds and refresh the page. Refresh until the page says “You’re ready to go!”. The page has a link to a github repo.\nClick the link to see your new repo on github.com.\nClick the green Code button and copy the link it shows.\nIn a terminal, + cd to the directory where you are putting all your CS112 assignments. + type git clone &lt;paste-the-contents-of-the-link-you-copied&gt;\ncd to the new directory containing your repo.\n\n\n\n\n\n\n\nBECAUSE your project depends on your lab code, you need to copy your lab code over to this repo. In a terminal:\n\n\n\n\ncd to your lab directory\ncp Vec.h Vec.cpp &lt;your project directory&gt;\ncd to your project directory\n\n\n\n\nOpen your project in VS Code, and open Vec.h\nAdd this prototype for the assignment operator to Vec.h, in the public area:\n\nVec& operator=(const Vec& original);\n\nAdd this code to Vec.cpp:\n\nVec& Vec::operator=(const Vec& original) {\n    if (this != &original) {\n        if (mySize != original.mySize) {\n            if (mySize &gt; 0) {\n                delete[] myArray;\n                myArray = nullptr;\n            }\n            if (original.mySize &gt; 0) {\n                myArray = new Item[original.mySize];\n            }\n            mySize = original.mySize;\n        }\n        for (int i = 0; i &lt; mySize; ++i) {\n            myArray[i] = original.myArray[i];\n        }\n    }\n    return *this;\n}\n\nIn the terminal, type make tester\nThe code should compile and give you an executable called “tester”\nRun the tester file: ./tester\nYour tests should all pass."
-  },
-  {
-    "objectID": "weekly-activities/projects/proj-04/proj04.html#step-0.-prepare",
-    "href": "weekly-activities/projects/proj-04/proj04.html#step-0.-prepare",
-    "title": "Project 4: More Vec Operations",
-    "section": "Step 0. Prepare",
-    "text": "Step 0. Prepare\n\n\n\n\n\n\nREAD THIS: IT IS DIFFERENT THAN NORMAL!\n\n\n\n\n\n\n\nClick the link and then “Accept this assignment”.\nWait a few seconds and refresh the page. Refresh until the page says “You’re ready to go!”. The page has a link to a github repo.\nClick the link to see your new repo on github.com.\nClick the green Code button and copy the link it shows.\nIn a terminal, + cd to the directory where you are putting all your CS112 assignments. + type git clone &lt;paste-the-contents-of-the-link-you-copied&gt;\ncd to the new directory containing your repo.\n\n\n\n\n\n\n\nBECAUSE your project depends on your lab code, you need to copy your lab code over to this repo. In a terminal:\n\n\n\n\ncd to your lab directory\ncp Vec.h Vec.cpp &lt;your project directory&gt;\ncd to your project directory\n\n\n\n\nOpen your project in VS Code, and open Vec.h\nAdd this prototype for the assignment operator to Vec.h, in the public area:\n\nVec& operator=(const Vec& original);\n\nAdd this code to Vec.cpp:\n\nVec& Vec::operator=(const Vec& original) {\n    if (this != &original) {\n        if (mySize != original.mySize) {\n            if (mySize &gt; 0) {\n                delete[] myArray;\n                myArray = nullptr;\n            }\n            if (original.mySize &gt; 0) {\n                myArray = new Item[original.mySize];\n            }\n            mySize = original.mySize;\n        }\n        for (int i = 0; i &lt; mySize; ++i) {\n            myArray[i] = original.myArray[i];\n        }\n    }\n    return *this;\n}\n\nIn the terminal, type make tester\nThe code should compile and give you an executable called “tester”\nRun the tester file: ./tester\nYour tests should all pass."
-  },
-  {
-    "objectID": "weekly-activities/projects/proj-04/proj04.html#step-2",
-    "href": "weekly-activities/projects/proj-04/proj04.html#step-2",
-    "title": "Project 4: More Vec Operations",
-    "section": "Step 2",
-    "text": "Step 2"
-  },
-  {
-    "objectID": "weekly-activities/projects/proj-04/proj04.html#step-2.-application",
-    "href": "weekly-activities/projects/proj-04/proj04.html#step-2.-application",
-    "title": "Project 4: More Vec Operations",
-    "section": "Step 2. Application",
-    "text": "Step 2. Application\nCongratulations! You have been named the navigation officer on the starship U.S.S. Boobyprize, whose hyper-spatial engines allow the ship and its crew to explore the universe. Current theories suggest that reality consists of 11 or more dimensions, so you need a program to help you navigate through an N-dimensional space.\nVectors can be used to store positions (and/or directional forces) in a coordinate system. Vectors of length 2 can be used to store 2-dimensional (x, y) information; vectors of length 3 can be used to store 3-dimensional (x, y, z) information; and so on. Your task is to write a program that:\n\nPrompts for and has the user enter the number of dimensions in their space, storing this number in a variable N, which it can then use to define vector objects.\nPrompts for and has the user enter a starting position in that space, and stores that position in a vector object sum.\nUses a loop that:\n\nprompts for and has the user enter a position (relative to their current position), and stores that position in a vector,\nadds that vector to the sum vector.\n\nThis loop should let the user enter an arbitrary number of positions.\nOutputs the starting position plus the final position (i.e., the sum of the positions from the accumulator-vector).\n\nFor example, if the user is in a 3-dimensional system, enters the starting point {0, 0, 0}, and then enters the following four 3-dimensional relative-positions: {1, 0, 0} {0, 1, 0} {0, 0, 1} {1, 2, 3} the program should then display the starting position ({0,0,0}) and the sum from the accumulator ({2, 3, 4}), which is the user’s final position within the 3-dimensional system. As another example, if the user is navigating through a 5-dimensional space, enters {1, 0, 1, 0, 1} as the starting point, and enters three 5-dimensional relative-positions: {0, 1, 0, 1, 0} {2, 2, 2, 2, 2} {-3, -3, -3, -3, -3} the program should then display the starting position and the final position ({0, 0, 0, 0, 0}). You may (if you wish) have your program display the starship’s new position each time it is updated, rather than just displaying the final position at the end. Your application should have the user enter the vectors in the format expected by your readFrom(istream&) method: numbers separated by whitespace. (It does not have to parse through curly-brace and comma characters.) Likewise, your application can display the starship’s position using the format provided by your writeTo(ostream&) method – numbers separated by spaces. To get you well on your way, your repo contains App.cpp and App.h. These files provide most of what you have to implement to finish this project. Just implement the missing TODO parts. (Now that you have addition implemented, you’ll need to uncomment the line in App.cpp that reads res = res + v;) You will have to edit main() in main.cpp to 1) call the App() constructor, and then 2) on the resulting object, call run(). Compile the program with make proj4 and execute the program by doing ./proj4."
   }
 ]

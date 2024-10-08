@@ -533,8 +533,7 @@ Congratulations!
 </ul>
 <p>Ways students lost points in the past:</p>
 <ul>
-<li>-1: Be careful about brace indentation <!-- + -1: Assignment operator leaks memory if the old `mySize > 0` and `original.mySize == 0` (remove Vec.cpp line <redacted>, check instructions carefully) --></li>
-<li>-1: Tester crashes at line <redacted>, should be &lt; newSize in case newSize is smaller than mySize (otherwise you index past the end of the array)</redacted></li>
+<li>-1: Be careful about brace indentation <!-- + -1: Assignment operator leaks memory if the old `mySize > 0` and `original.mySize == 0` (remove Vec.cpp line <redacted>, check instructions carefully) --> <!-- + -1: Tester crashes at line <redacted>, should be < newSize in case newSize is smaller than mySize (otherwise you index past the end of the array) --></li>
 <li>-1: Memory leak in <code>setSize()</code> when mySize &lt; newSize. You need to delete[] myArray in both cases; move it outside the else statement.</li>
 <li>-2: Make sure you are using <code>delete[]</code> and not <code>delete</code>, which leaks memory</li>
 <li>-24: No submission, or partner forgot to include you in README.</li>

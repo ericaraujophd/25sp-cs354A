@@ -187,6 +187,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#vector-subtraction" id="toc-vector-subtraction" class="nav-link" data-scroll-target="#vector-subtraction">4 - Vector Subtraction</a></li>
   </ul></li>
   <li><a href="#step-2.-application" id="toc-step-2.-application" class="nav-link" data-scroll-target="#step-2.-application">Step 2. Application</a></li>
+  <li><a href="#submit" id="toc-submit" class="nav-link" data-scroll-target="#submit">Submit</a></li>
+  <li><a href="#grading-rubric" id="toc-grading-rubric" class="nav-link" data-scroll-target="#grading-rubric">Grading Rubric</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/ericaraujophd/24fa-cs112/edit/main/weekly-activities/projects/proj-04/proj04.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/24fa-cs112/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -353,7 +355,59 @@ BECAUSE your project depends on your lab code, you need to copy your lab code ov
 <li>This loop should let the user enter an arbitrary number of positions.</li>
 <li>Outputs the starting position plus the final position (i.e., the sum of the positions from the accumulator-vector).</li>
 </ol>
-<p>For example, if the user is in a 3-dimensional system, enters the starting point {0, 0, 0}, and then enters the following four 3-dimensional relative-positions: {1, 0, 0} {0, 1, 0} {0, 0, 1} {1, 2, 3} the program should then display the starting position ({0,0,0}) and the sum from the accumulator ({2, 3, 4}), which is the user’s final position within the 3-dimensional system. As another example, if the user is navigating through a 5-dimensional space, enters {1, 0, 1, 0, 1} as the starting point, and enters three 5-dimensional relative-positions: {0, 1, 0, 1, 0} {2, 2, 2, 2, 2} {-3, -3, -3, -3, -3} the program should then display the starting position and the final position ({0, 0, 0, 0, 0}). You may (if you wish) have your program display the starship’s new position each time it is updated, rather than just displaying the final position at the end. Your application should have the user enter the vectors in the format expected by your readFrom(istream&amp;) method: numbers separated by whitespace. (It does not have to parse through curly-brace and comma characters.) Likewise, your application can display the starship’s position using the format provided by your writeTo(ostream&amp;) method – numbers separated by spaces. To get you well on your way, your repo contains App.cpp and App.h. These files provide most of what you have to implement to finish this project. Just implement the missing TODO parts. (Now that you have addition implemented, you’ll need to uncomment the line in App.cpp that reads res = res + v;) You will have to edit main() in main.cpp to 1) call the App() constructor, and then 2) on the resulting object, call run(). Compile the program with make proj4 and execute the program by doing ./proj4.</p>
+<p>For example, if the user is in a 3-dimensional system, enters the starting point {0, 0, 0}, and then enters the following four 3-dimensional relative-positions:</p>
+<pre><code>{1, 0, 0}
+{0, 1, 0}
+{0, 0, 1}
+{1, 2, 3}</code></pre>
+<p>the program should then display the starting position (<code>{0,0,0}</code>) and the sum from the accumulator (<code>{2, 3, 4}</code>), which is the user’s final position within the 3-dimensional system.</p>
+<p>As another example, if the user is navigating through a 5-dimensional space, enters <code>{1, 0, 1, 0, 1}</code> as the starting point, and enters three 5-dimensional relative-positions:</p>
+<pre><code>{0, 1, 0, 1, 0}
+{2, 2, 2, 2, 2}
+{-3, -3, -3, -3, -3}</code></pre>
+<p>the program should then display the starting position and the final position (<code>{0, 0, 0, 0, 0}</code>).</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You may (if you wish) have your program display the starship’s new position each time it is updated, rather than just displaying the final position at the end.</p>
+</div>
+</div>
+<p>Your application should have the user enter the vectors in the format expected by your <code>readFrom(istream&amp;)</code> method: numbers separated by whitespace. (It does not have to parse through curly-brace and comma characters.) Likewise, your application can display the starship’s position using the format provided by your <code>writeTo(ostream&amp;)</code> method – numbers separated by spaces.</p>
+<p>To get you well on your way, your repo contains <code>App.cpp</code> and <code>App.h</code>. These files provide most of what you have to implement to finish this project. Just implement the missing TODO parts.</p>
+<p>Now that you have addition implemented, you’ll need to uncomment the line in <code>App.cpp</code> that reads</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>res <span class="op">=</span> res <span class="op">+</span> v<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>You will have to edit <code>main()</code> in <code>main.cpp</code> to:</p>
+<ol type="1">
+<li>call the <code>App()</code> constructor, and then</li>
+<li>on the resulting object, call <code>run()</code>.</li>
+</ol>
+<p>Compile the program with <code>make proj4</code> and execute the program by doing <code>./proj4</code>.</p>
+</section>
+<section id="submit" class="level2">
+<h2 class="anchored" data-anchor-id="submit">Submit</h2>
+<p>Submit your changes using git, either from the command line or using VSCode. Push your changes up to github.</p>
+<p>Verify you have synced your code to github by going to your online repo webpage and looking to see that the files are correct.</p>
+<p>Verify that the autograding tests have successfully passed in github.</p>
+</section>
+<section id="grading-rubric" class="level2">
+<h2 class="anchored" data-anchor-id="grading-rubric">Grading Rubric</h2>
+<p>30 pts Total:</p>
+<ul>
+<li>Passes all tests: 8 pts.</li>
+<li><code>operator[]</code>: 3 pts</li>
+<li><code>operator+</code>: 3 pts</li>
+<li><code>operator-</code>: 3 pts</li>
+<li>USS Boobyprize application: 10 pts</li>
+<li>Code is clean and neat. Comments where appropriate, good spacing, etc: 3 pts.</li>
+</ul>
+<p>Ways students lost points in the past: + -1: Const-qualified subscript operator [] should return <code>const Item&amp;</code>, not <code>Item&amp;</code>; + -3: Your <code>readFrom()</code> implementation never stops reading from input, so the app doesn’t work + -2: Missing call into <code>App::run()</code> from <code>main()</code>. <!-- + -15 (50%) for 5 days late. --> + -2: Dynamically allocate the new vectors in addition and subtraction causes memory to leak + -2: Did not uncomment the line that adds each vector to the result in <code>App.cpp</code>, so it doesn’t work + -2: Needs two versions of the subscript operator for const and non-const + -2: <code>setSize()</code> was not fixed from the lab, tests do not pass</p>
 
 
 </section>
