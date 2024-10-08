@@ -213,6 +213,7 @@ Verify that the autograding tests have successfully passed in github.
 + Code is clean and neat. Comments where appropriate, good spacing, etc: 3 pts.
 
 Ways students lost points in the past:
+
 + -1: Const-qualified subscript operator [] should return `const Item&`, not `Item&`; 
 + -3: Your `readFrom()` implementation never stops reading from input, so the app doesn't work
 + -2: Missing call into `App::run()` from `main()`. 
