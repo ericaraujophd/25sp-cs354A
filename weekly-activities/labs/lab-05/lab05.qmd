@@ -120,9 +120,9 @@ Note that you will need to update your Makefile! Find the `Vec.cpp` reference in
 
 We now have a class template, but our methods are still class methods. Our next step is to convert each class method into a template method. Test-driven development gives us a systematic, method-by-method means of doing this conversion, without getting overwhelmed by a zillion compiler errors.
 
-Begin by **commenting out all of the Vec prototypes**, and ****all of the method definitions you just pasted into the header file**. If you want to, compile (`make tester`) and run your project(`./tester`). You should see the message indicating there are no tests.
+You should see the message indicating there are no tests if you **comment out all of the Vec prototypes**, and ****all of the method definitions you just pasted into the header file** and compile (`make tester`) and run your project(`./tester`). Just remember that your code was drastically changed, and might not function anymore if you don't comment certain parts. 
 
-Our test-driven procedure will be to:  (don't do this yet -- just read the steps below)
+Our test-driven procedure will be to: (don't do this yet -- just read the steps below)
 
 1. In `tests.cpp`, uncomment the `TEST_CASE`. Convert all uses of Vec to be `Vec<sometype>`. You may choose what type to put in between the < and >, but the type should be an integer type -- int, unsigned, short, char, unsigned char, long, etc.
 2. In `Vec.h`, uncomment the corresponding method (i.e., its prototype within the class and its definition outside the class.)

@@ -21,10 +21,10 @@ The SLOs (Student Learning Objectives), labs, and projects for each week are giv
 | 0 	| 1, 2, 5.1, 5.2 	| Intro to C++, compilation, Data Types (including pointers), const, binary and hexadecimal, arrays, using cout/cin. 	| [Lab 0](){target="_blank"} 	| [Project 0](){target="_blank"} 	| [Binary Exposed](https://integer.exposed/#0x0008){target="_blank"} 	|
 | 1 	| 3 and 4 	| Control Structures, Functions, Parameter Passing modes. | [Lab 1]() 	| [Project 1]() 	| [Array Addressing POGIL activity](https://docs.google.com/document/d/1myVaJT3i1hECM4BHs9LpbLz3a3heVPp6SJiEjoEvG_M/edit#heading=h.im9274hm9wa0){target="_blank"}  ([answers](https://drive.google.com/file/d/1mn5yCzIJuURMiP3MOtO9amEQzUVAQCQZ/view?usp=sharing){target="_blank"}) \| [Parameter Passing POGIL activity](https://docs.google.com/document/d/125hbFPo5PVcuGQ9pq4io23jns2kOEkfjo71S9WOkfjQ/edit){target="_blank"}  ([answers](https://drive.google.com/file/d/1rPum6ihNwUKRJpZBSTQF8v7QKfOdog11/view?usp=drive_link){target="_blank"}) 	|
 | 2 	| 6 and 7 	| File Input/Output, Exception Handling, Two-dimensional Arrays	| [Lab 2]()  	| [Project 2]() 	|  	|
-| 3 	|  	| Classes, Operator Overloading, etc.	| [Lab 3](weekly-activities/labs/lab-03/lab03.qmd) 	| [Project 3](weekly-activities/projects/proj-03/proj03.qmd) 	| Test 1, Weeks 0 - 2, Friday.  	|
-| 4 	|  	| Vectors -- dynamic arrays 	| [Lab 4](weekly-activities/labs/lab-04/lab04.qmd) 	| [Project 4](weekly-activities/projects/proj-04/proj04.qmd) 	|  	|
-| 5 	|  	| Generic Containers 	| [Lab 5](weekly-activities/labs/lab-05/lab05.qmd) 	| Project 5  	|  	|
-| 6 	|  	| Linked Lists [SLOs] [Slides] [code from class] Dynamic Array or Linked List 	| Lab 6 	| No project 	| Test 2, Weeks 0 - 5 (Friday) 	|
+| 3 	|  	| [Classes, Operator Overloading, etc.](weekly-activities/week03.qmd)	| [Lab 3](weekly-activities/labs/lab-03/lab03.qmd) 	| [Project 3](weekly-activities/projects/proj-03/proj03.qmd) 	| Test 1, Weeks 0 - 2, Friday.  	|
+| 4 	|  	| [Vectors -- dynamic arrays](weekly-activities/week04.qmd) 	| [Lab 4](weekly-activities/labs/lab-04/lab04.qmd) 	| [Project 4](weekly-activities/projects/proj-04/proj04.qmd) 	|  	|
+| 5 	|  	| [Generic Containers](weekly-activities/week05.qmd) 	| [Lab 5](weekly-activities/labs/lab-05/lab05.qmd) 	| Project 5  	|  	|
+| 6 	|  	| Linked Lists  [code from class] Dynamic Array or Linked List 	| Lab 6 	| No project 	| Test 2, Weeks 0 - 5 (Friday) 	|
 | 7 	|  	| Algorithm Analysis and Big-Oh [Slides]  [Videos]  [SLOs] 	| Lab 7 	| Project 7 	|  	|
 | 8 	|  	| Stacks and Queues [SLOs]  [Slides] 	| Lab 8 	| Project 8 	|  	|
 | 9 	|  	| Recursion Monday: Queues [Slides] 	| No lab! 	| Project 9 	| Test 3, weeks 0 - 8 (Wednesday) 	|

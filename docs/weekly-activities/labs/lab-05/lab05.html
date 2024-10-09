@@ -310,7 +310,7 @@ Note
 <section id="converting-the-class-methods-to-method-templates" class="level3">
 <h3 class="anchored" data-anchor-id="converting-the-class-methods-to-method-templates">3. Converting the Class-Methods to method-templates</h3>
 <p>We now have a class template, but our methods are still class methods. Our next step is to convert each class method into a template method. Test-driven development gives us a systematic, method-by-method means of doing this conversion, without getting overwhelmed by a zillion compiler errors.</p>
-<p>Begin by <strong>commenting out all of the Vec prototypes</strong>, and ****all of the method definitions you just pasted into the header file**. If you want to, compile (<code>make tester</code>) and run your project(<code>./tester</code>). You should see the message indicating there are no tests.</p>
+<p>You should see the message indicating there are no tests if you <strong>comment out all of the Vec prototypes</strong>, and ****all of the method definitions you just pasted into the header file** and compile (<code>make tester</code>) and run your project(<code>./tester</code>). Just remember that your code was drastically changed, and might not function anymore if you don’t comment certain parts.</p>
 <p>Our test-driven procedure will be to: (don’t do this yet – just read the steps below)</p>
 <ol type="1">
 <li>In <code>tests.cpp</code>, uncomment the <code>TEST_CASE</code>. Convert all uses of Vec to be <code>Vec&lt;sometype&gt;</code>. You may choose what type to put in between the &lt; and &gt;, but the type should be an integer type – int, unsigned, short, char, unsigned char, long, etc.</li>
