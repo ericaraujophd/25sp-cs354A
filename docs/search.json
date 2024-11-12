@@ -536,7 +536,7 @@
     "href": "labs/lab09.html#part-2-binary-search-recursively",
     "title": "Lab 9: Recursion",
     "section": "Part 2: Binary search, recursively",
-    "text": "Part 2: Binary search, recursively\nAsk ChatGPT for C++ code to implement a recursive version of binary search over an array of integers. (doubles?)\nWhen you are happy with the resulting code, place it in bin_search.cpp, compile it, and run it (if you can’t figure out how to do these steps, inspect the makefile). Make sure the code works for arrays of different sizes, including size 0, size 1, size 10, etc.\nYour code probably contains this line:\n\\(int mid = low + (high - low) / 2;\\)\nDescribe in a comment above this line what this line does and why it works when the size of the array is odd (which means you cannot divide the array into two even parts). (Do not use the AI to generate this answer.)"
+    "text": "Part 2: Binary search, recursively\nAsk ChatGPT for C++ code to implement a recursive version of binary search over an array of integers. (doubles?)\nWhen you are happy with the resulting code, place it in bin_search.cpp, compile it, and run it (if you can’t figure out how to do these steps, inspect the makefile). Make sure the code works for arrays of different sizes, including size 0, size 1, size 10, etc.\nYour code probably contains this line:\nint mid = low + (high - low) / 2;\nDescribe in a comment above this line what this line does and why it works when the size of the array is odd (which means you cannot divide the array into two even parts). (Do not use the AI to generate this answer.)"
   },
   {
     "objectID": "labs/lab09.html#part-3-sum-of-values-in-an-array-recursively",

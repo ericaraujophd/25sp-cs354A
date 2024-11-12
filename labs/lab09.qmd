@@ -43,7 +43,9 @@ When you are happy with the resulting code, place it in `bin_search.cpp`, compil
 
 Your code probably contains this line:
 
-$int mid = low + (high - low) / 2;$
+```cpp
+int mid = low + (high - low) / 2;
+```
 
 Describe in a comment above this line what this line does and why it works when the size of the array is odd (which means you cannot divide the array into two even parts). (Do not use the AI to generate this answer.)
 
