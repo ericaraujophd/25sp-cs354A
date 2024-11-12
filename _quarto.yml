@@ -73,6 +73,8 @@ website:
         - href: weekly-activities/week04.qmd
         - href: weekly-activities/week05.qmd
         # - href: weekly-activities/week06.qmd
+        - href: weekly-activities/week08.qmd
+        
 
     - id: extras
       title: "Extras"

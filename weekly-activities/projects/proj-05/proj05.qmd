@@ -1,5 +1,5 @@
 ---
-title: "Project 4: More Vec Operations"
+title: "Project 5: Processing Video Game Data using the Bridges API"
 format: 
   html:
     css: ../styles.css
@@ -17,12 +17,26 @@ eval: false
 </center>
 
 
-## Project 4: More Vec Operations
+## Project 5: Processing Video Game Data using the Bridges API
 
-## Objectives
+## Introduction
 
-1. Build more vector operations.
-2. Practice using the debugger (if necessary).
+In this project, you will use the C++ Standard Template Library (STL) vector class to store and analyze video game data retrieved using the Bridges Library. 
+
+You can see an example application that pulls the video game data here. (Click on the C++ tab.)
+
+Each Game is stored in a Game object. Information about the Game class is here.
+Inspect that web page now to see what information you can retrieve about a Game.
+
+
+The database contains 17534 games in 33 genres. When you retrieve the games, they are not in any sorted order.
+
+This assignment is to process the games to 
+
+Discover all the unique genres and print them out.
+Ask the user to select a genre and print out all the games in that genre.
+Do one more task of your own choosing.
+
 
 
 ## Step 0. Prepare  

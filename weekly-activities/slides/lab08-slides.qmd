@@ -1,0 +1,66 @@
+---
+title: "Lab 08 --- Stacks, Queues and Exceptions"
+subtitle: "<br><br> CS112 - Data Structures"
+author: "Eric Araújo"
+# output:
+#   xaringan::moon_reader:
+#     css: ["../xaringan-themer.css", "../slides.css"]
+#     lib_dir: libs
+#     nature:
+#       ratio: "16:9"
+#       highlightLines: true
+#       highlightStyle: solarized-light
+#       countIncrementalSlides: false
+format: 
+    revealjs:
+        theme: blood
+        menu: false
+        slide-level: 2
+        navigation-mode: linear
+        transition: slide
+        scrollable: true
+        history: false
+        # simplemenu:
+        #     scale: 0.6
+        #     barhtml:
+        #         header: "<div class='menubar'><a href='../week05.html'>back</a><ul class='menu'></ul></div>"
+# revealjs-plugins:
+#     - simplemenu
+
+---
+
+## Dad joke of the week
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+![](imgs/catscan.png){fig-alt="." fig-align="left" width=100%}
+
+:::
+
+::: {.column width="5%"}
+<!-- empty column to create gap -->
+:::
+
+::: {.column width="35%"}
+
+Dogs can't operate MRI machines. But catscan.
+
+:::
+
+::::
+
+
+
+## Lab 6
+
+- creating methods for class list
+- pair programming
+
+---
+ 
+
+
+--- 
+
