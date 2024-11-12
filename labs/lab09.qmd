@@ -72,12 +72,15 @@ Add to your comment at the bottom of the file the results for when memoization i
 ## Submit
 
 Don't forget to submit all your code to github.
+
 Grading Rubric: 20 points total
+
 + 5 points for each of the 4 parts. Those 5 points consist of:
   - 2 points for code correctness
   - 3 points for your analysis of the code.
 
 Ways students lost points in the past:
+
 + -12: no analysis was given.
 + -3: some of the questions were not answered properly.
 

@@ -557,7 +557,7 @@
     "href": "labs/lab09.html#submit",
     "title": "Lab 9: Recursion",
     "section": "Submit",
-    "text": "Submit\nDon’t forget to submit all your code to github. Grading Rubric: 20 points total + 5 points for each of the 4 parts. Those 5 points consist of: - 2 points for code correctness - 3 points for your analysis of the code.\nWays students lost points in the past: + -12: no analysis was given. + -3: some of the questions were not answered properly."
+    "text": "Submit\nDon’t forget to submit all your code to github.\nGrading Rubric: 20 points total\n\n5 points for each of the 4 parts. Those 5 points consist of:\n\n2 points for code correctness\n3 points for your analysis of the code.\n\n\nWays students lost points in the past:\n\n-12: no analysis was given.\n-3: some of the questions were not answered properly."
   },
   {
     "objectID": "labs/lab09-slides.html#dad-joke-of-the-week",
