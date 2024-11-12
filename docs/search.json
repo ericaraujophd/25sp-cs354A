@@ -543,7 +543,7 @@
     "href": "labs/lab09.html#part-3-sum-of-values-in-an-array-recursively",
     "title": "Lab 9: Recursion",
     "section": "Part 3: Sum of values in an array, recursively",
-    "text": "Part 3: Sum of values in an array, recursively\nPlace the code from slide 5 of the lecture slides into file sum_array.cpp. Add other code to initialize an array with 6 values. Compile and run the value and verify that the result is correct.\nNow, modify the code so that the base case is not when \\(size == 0\\) but when \\(size == 1\\).\nDescribe in a comment in the file why this solution is slightly more efficient."
+    "text": "Part 3: Sum of values in an array, recursively\nPlace the code from slide 5 of the lecture slides into file sum_array.cpp. Add other code to initialize an array with 6 values. Compile and run the value and verify that the result is correct.\nNow, modify the code so that the base case is not when size == 0 but when size == 1.\nDescribe in a comment in the file why this solution is slightly more efficient."
   },
   {
     "objectID": "labs/lab09.html#part-4-fibonacci-sequence-recursively",

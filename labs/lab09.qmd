@@ -53,7 +53,7 @@ Describe in a comment above this line what this line does and why it works when 
 
 Place the code from slide 5 of the lecture slides into file `sum_array.cpp`. Add other code to initialize an array with 6 values. Compile and run the value and verify that the result is correct.
 
-Now, modify the code so that the base case is not when $size == 0$ but when $size == 1$.
+Now, modify the code so that the base case is not when `size == 0` but when `size == 1`.
 
 Describe in a comment in the file why this solution is slightly more efficient.
 
