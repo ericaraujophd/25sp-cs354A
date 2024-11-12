@@ -419,21 +419,33 @@
     "href": "week09.html",
     "title": "Week 9: Recursion",
     "section": "",
-    "text": "By the end of this unit, the student will be able to:\n\ndescribe recursion correctly to an elderly ancestor.\ndefine the structure of a recursive solution – base case and recursive case.\ncorrectly use the words “winding phase” and “unwinding phase”.\nimplement a basic recursive implementation – e.g., for the factorial function.\nargue why a recursive solution is generally less efficient than an equivalent iterative solution.\ndescribe the role the runtime stack plays in the execution of a recursive function.\nunderstand the time complexity of the Towers of Hanoi problem."
+    "text": "By the end of this unit, the student will be able to:\n\ndescribe recursion correctly to an elderly ancestor.\ndefine the structure of a recursive solution – base case and recursive case.\ncorrectly use the words “winding phase” and “unwinding phase”.\nimplement a basic recursive implementation – e.g., for the factorial function.\nargue why a recursive solution is generally less efficient than an equivalent iterative solution.\ndescribe the role the runtime stack plays in the execution of a recursive function.\nunderstand the time complexity of the Towers of Hanoi problem.",
+    "crumbs": [
+      "Content",
+      "Week 9: Recursion"
+    ]
   },
   {
     "objectID": "week09.html#slos-for-week-9",
     "href": "week09.html#slos-for-week-9",
     "title": "Week 9: Recursion",
     "section": "",
-    "text": "By the end of this unit, the student will be able to:\n\ndescribe recursion correctly to an elderly ancestor.\ndefine the structure of a recursive solution – base case and recursive case.\ncorrectly use the words “winding phase” and “unwinding phase”.\nimplement a basic recursive implementation – e.g., for the factorial function.\nargue why a recursive solution is generally less efficient than an equivalent iterative solution.\ndescribe the role the runtime stack plays in the execution of a recursive function.\nunderstand the time complexity of the Towers of Hanoi problem."
+    "text": "By the end of this unit, the student will be able to:\n\ndescribe recursion correctly to an elderly ancestor.\ndefine the structure of a recursive solution – base case and recursive case.\ncorrectly use the words “winding phase” and “unwinding phase”.\nimplement a basic recursive implementation – e.g., for the factorial function.\nargue why a recursive solution is generally less efficient than an equivalent iterative solution.\ndescribe the role the runtime stack plays in the execution of a recursive function.\nunderstand the time complexity of the Towers of Hanoi problem.",
+    "crumbs": [
+      "Content",
+      "Week 9: Recursion"
+    ]
   },
   {
     "objectID": "week09.html#slides-videos-and-application-exercises",
     "href": "week09.html#slides-videos-and-application-exercises",
     "title": "Week 9: Recursion",
     "section": "Slides, videos, and application exercises",
-    "text": "Slides, videos, and application exercises\n\nWeek 9: Slides\n\nSlides\n\n\n\nNo readings for Week 9.\n\n\n\n\n\n\nLab 9: Recursion\n\nInstructions\n\n\n\nSource\n\n\nSlides\n\n\n\n\nProject 9: \n\n\n\nStarter"
+    "text": "Slides, videos, and application exercises\n\nWeek 9: Slides\n\nSlides\n\n\n\nNo readings for Week 9.\n\n\n\n\n\n\nLab 9: Recursion\n\nInstructions\n\n\n\nSource\n\n\nSlides\n\n\n\n\nProject 9: \n\n\n\nStarter",
+    "crumbs": [
+      "Content",
+      "Week 9: Recursion"
+    ]
   },
   {
     "objectID": "CODE_OF_CONDUCT.html",

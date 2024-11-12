@@ -19,7 +19,7 @@ To log in to ChatGPT (as if you didn't already know :-), go to [https://chatgpt.
 
 After the AI generates C++ code, copy and paste it into a file, and compile and run it. You will be submitting multiple files each containing a `main()` in it.
 
-[Accept the assignment](https://classroom.github.com/a/cVv5pP0o).
+[Accept the assignment](https://classroom.github.com/a/cVv5pP0o){target="_blank"}.
 
 <center><figure>
 <img src="/labs/imgs/lab9-this-is-going-to-take-forever.png" alt="This is going to take forever..." width="400"/>
