@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -147,7 +181,11 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a>
   <ul class="collapse">
   <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example">Example</a></li>
+  <li><a href="#details" id="toc-details" class="nav-link" data-scroll-target="#details">Details</a></li>
+  <li><a href="#sample-output" id="toc-sample-output" class="nav-link" data-scroll-target="#sample-output">Sample output</a></li>
   </ul></li>
+  <li><a href="#submission" id="toc-submission" class="nav-link" data-scroll-target="#submission">Submission</a></li>
+  <li><a href="#grading-rubric" id="toc-grading-rubric" class="nav-link" data-scroll-target="#grading-rubric">Grading Rubric</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/ericaraujophd/24fa-cs112/edit/main/projects/proj08.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/24fa-cs112/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -175,9 +213,9 @@ ul.task-list li input[type="checkbox"] {
 
 <center>
 <figure class="figure">
-<img src="imgs/array.jpeg" alt="Created by AI Prompt: a C++ array fading away" width="350" class="figure-img">
+<img src="../projects/imgs/proj8-stack.png" alt="Created by AI Prompt: Here’s an illustration of a maze represented as a stack data structure, with pathways organized into stacked layers to convey the concept of sequential traversal. This design emphasizes the stack’s step-by-step process in navigating the maze." width="350" class="figure-img">
 <figcaption>
-Created by AI Prompt: <em>a C++ array fading away</em>
+Created by AI Prompt: an illustration of a maze represented as a stack data structure, with pathways organized into stacked layers to convey the concept of sequential traversal. This design emphasizes the stack’s step-by-step process in navigating the maze.*
 </figcaption>
 </figure>
 </center>
@@ -237,9 +275,86 @@ Extra credit
 </div>
 </div>
 <p>The code you have includes the file <code>maze.cpp</code>, and two sample mazes, <code>maze1.txt</code> and <code>maze2.txt</code>.</p>
-
-
 </section>
+<section id="details" class="level3">
+<h3 class="anchored" data-anchor-id="details">Details</h3>
+<p>Your implementation should use the STL stack.</p>
+<p>The <code>main.cpp</code> code contains a definition of a <code>Location</code> class, which stores an <code>x</code> and <code>y</code> location, and a <code>dir</code>, which is the direction you are facing.</p>
+<p>Your main task is to implement the <code>readMazeFromFile()</code> and <code>isReachable()</code> function. The algorithm for the latter is below.</p>
+<p><strong>Algorithm:</strong></p>
+<ol type="1">
+<li>Define a stack of Location objects this way: <code>stack&lt;Location&gt; st;</code></li>
+<li>Push a location object with values (0, 0, -1) on stack (-1 = haven’t tried any direction yet)</li>
+<li>while the stack is not empty:
+<ol type="1">
+<li><ol type="a">
+<li>current_loc = top of stack</li>
+</ol></li>
+<li>pop the stack;</li>
+<li>if current_loc is the goal,
+<ol type="1">
+<li>push the current_loc back on the stack</li>
+<li>return!</li>
+</ol></li>
+<li>mark the current location as true in the “visited” array.</li>
+<li>increment current_loc’s direction</li>
+<li>if direction is north:
+<ol type="1">
+<li>if there is not a wall to the north and we haven’t visited the location to the north:
+<ol type="1">
+<li>push the current_location on the stack</li>
+<li>push this new hallway on the stack</li>
+<li>continue (to the top while loop)</li>
+</ol></li>
+<li>else: increment current_loc’s direction</li>
+</ol></li>
+<li>Repeat step f.&nbsp;for west, then for south, then for east.</li>
+<li>// We must be at a dead end: nothing to do – we already popped this dead-end node off the stack.</li>
+</ol></li>
+</ol>
+</section>
+<section id="sample-output" class="level3">
+<h3 class="anchored" data-anchor-id="sample-output">Sample output</h3>
+<p>Here is sample output from running against file <code>maze1.txt</code>.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> ./main</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">Enter</span> the name of the file containing the maze: maze1.txt</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="ex">push</span> on stack. stack is now <span class="er">(</span><span class="ex">0,</span> 0, S<span class="kw">)</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="ex">push</span> on stack. stack is now <span class="er">(</span><span class="ex">1,</span> 0, E<span class="kw">)</span> <span class="kw">(</span><span class="ex">0,</span> 0, S<span class="kw">)</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="ex">push</span> on stack. stack is now <span class="er">(</span><span class="ex">1,</span> 1, S<span class="kw">)</span> <span class="kw">(</span><span class="ex">1,</span> 0, E<span class="kw">)</span> <span class="kw">(</span><span class="ex">0,</span> 0, S<span class="kw">)</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="ex">push</span> on stack. stack is now <span class="er">(</span><span class="ex">2,</span> 1, S<span class="kw">)</span> <span class="kw">(</span><span class="ex">1,</span> 1, S<span class="kw">)</span> <span class="kw">(</span><span class="ex">1,</span> 0, E<span class="kw">)</span> <span class="kw">(</span><span class="ex">0,</span> 0, S<span class="kw">)</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="ex">push</span> on stack. stack is now <span class="er">(</span><span class="ex">3,</span> 1, W<span class="kw">)</span> <span class="kw">(</span><span class="ex">2,</span> 1, S<span class="kw">)</span> <span class="kw">(</span><span class="ex">1,</span> 1, S<span class="kw">)</span> <span class="kw">(</span><span class="ex">1,</span> 0, E<span class="kw">)</span> <span class="kw">(</span><span class="ex">0,</span> 0, S<span class="kw">)</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="ex">dead</span> end: going back to <span class="er">(</span><span class="ex">3,</span> 1, W<span class="kw">)</span> <span class="kw">(</span><span class="ex">2,</span> 1, S<span class="kw">)</span> <span class="kw">(</span><span class="ex">1,</span> 1, S<span class="kw">)</span> <span class="kw">(</span><span class="ex">1,</span> 0, E<span class="kw">)</span> <span class="kw">(</span><span class="ex">0,</span> 0, S<span class="kw">)</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="ex">push</span> on stack. stack is now <span class="er">(</span><span class="ex">3,</span> 1, E<span class="kw">)</span> <span class="kw">(</span><span class="ex">2,</span> 1, S<span class="kw">)</span> <span class="kw">(</span><span class="ex">1,</span> 1, S<span class="kw">)</span> <span class="kw">(</span><span class="ex">1,</span> 0, E<span class="kw">)</span> <span class="kw">(</span><span class="ex">0,</span> 0, S<span class="kw">)</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="ex">push</span> on stack. stack is now <span class="er">(</span><span class="ex">3,</span> 2, E<span class="kw">)</span> <span class="kw">(</span><span class="ex">3,</span> 1, E<span class="kw">)</span> <span class="kw">(</span><span class="ex">2,</span> 1, S<span class="kw">)</span> <span class="kw">(</span><span class="ex">1,</span> 1, S<span class="kw">)</span> <span class="kw">(</span><span class="ex">1,</span> 0, E<span class="kw">)</span> <span class="kw">(</span><span class="ex">0,</span> 0, S<span class="kw">)</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="ex">push</span> on stack. stack is now <span class="er">(</span><span class="ex">3,</span> 3, N<span class="kw">)</span> <span class="kw">(</span><span class="ex">3,</span> 2, E<span class="kw">)</span> <span class="kw">(</span><span class="ex">3,</span> 1, E<span class="kw">)</span> <span class="kw">(</span><span class="ex">2,</span> 1, S<span class="kw">)</span> <span class="kw">(</span><span class="ex">1,</span> 1, S<span class="kw">)</span> <span class="kw">(</span><span class="ex">1,</span> 0, E<span class="kw">)</span> <span class="kw">(</span><span class="ex">0,</span> 0, S<span class="kw">)</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="ex">FINAL</span> PATH: <span class="er">(</span><span class="ex">2,</span> 3, X<span class="kw">)</span> <span class="kw">(</span><span class="ex">3,</span> 3, N<span class="kw">)</span> <span class="kw">(</span><span class="ex">3,</span> 2, E<span class="kw">)</span> <span class="kw">(</span><span class="ex">3,</span> 1, E<span class="kw">)</span> <span class="kw">(</span><span class="ex">2,</span> 1, S<span class="kw">)</span> <span class="kw">(</span><span class="ex">1,</span> 1, S<span class="kw">)</span> <span class="kw">(</span><span class="ex">1,</span> 0, E<span class="kw">)</span> <span class="kw">(</span><span class="ex">0,</span> 0, S<span class="kw">)</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="ex">Path</span> Found!</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Extra credit
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>For extra credit</strong>, you may implement code to print out the maze pictorially, as shown above in the Example section.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="submission" class="level2">
+<h2 class="anchored" data-anchor-id="submission">Submission</h2>
+<p>Don’t forget to check in your code to github.</p>
+</section>
+<section id="grading-rubric" class="level2">
+<h2 class="anchored" data-anchor-id="grading-rubric">Grading Rubric</h2>
+<p>The assignment will be graded as follows:</p>
+<p>Total points: 20 (23 with extra credit) + 4 pts for <code>readMazeFromFile()</code> + 10 pts for <code>isReachable()</code> + 3 pts for correct output + 3 pts for style / documentation + +3 pts for pictorial displays as the maze is solved.</p>
+<p>Ways students lost points in the past: + -8: isReachable does not follow algorithm in instructions and does not compile or work + -1: <code>readMazeFromFile</code> creates a new local “maze” variable instead of reading into the global one + -3: Missing text output for path tracing + -2: Text output for path tracing is not detailed enough, see assignment + -2: Missing continue step + -2: Need to push the current location back onto the stack before pushing the next one + -1: Missing dead end output + -1: Mistake in north check + -4: The entire <code>readFromFile()</code> function does not work. Please test run your code!</p>
+
+
 </section>
 
 </main> <!-- /main -->

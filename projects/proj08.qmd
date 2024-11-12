@@ -9,8 +9,8 @@ eval: false
 
 <center><figure>
 
-<img src="imgs/array.jpeg" alt="Created by AI Prompt: a C++ array fading away" width="350"/>
-<figcaption>Created by AI Prompt: *a C++ array fading away*</figcaption>
+<img src="/projects/imgs/proj8-stack.png" alt="Created by AI Prompt: Here’s an illustration of a maze represented as a stack data structure, with pathways organized into stacked layers to convey the concept of sequential traversal. This design emphasizes the stack’s step-by-step process in navigating the maze." width="350"/>
+<figcaption>Created by AI Prompt: an illustration of a maze represented as a stack data structure, with pathways organized into stacked layers to convey the concept of sequential traversal. This design emphasizes the stack’s step-by-step process in navigating the maze.*</figcaption>
 
 </figure></center>
 
@@ -77,3 +77,84 @@ Your task is to implement the code to
 :::
 
 The code you have includes the file `maze.cpp`, and two sample mazes, `maze1.txt` and `maze2.txt`.
+
+### Details
+
+Your implementation should use the STL stack.
+
+The `main.cpp` code contains a definition of a `Location` class, which stores an `x` and `y` location, and a `dir`, which is the direction you are facing.
+
+Your main task is to implement the `readMazeFromFile()` and `isReachable()` function. The algorithm for the latter is below.
+
+**Algorithm:**
+
+1. Define a stack of Location objects this way: `stack<Location> st;`
+2. Push a location object with values (0, 0, -1) on stack  (-1 = haven't tried any direction yet)
+3. while the stack is not empty:
+   1. a. current_loc = top of stack
+   2. pop the stack;
+   3. if current_loc is the goal, 
+      1. push the current_loc back on the stack
+      2. return!
+   4. mark the current location as true in the "visited" array.
+   5. increment current_loc's direction
+   6. if direction is north:
+      1. if there is not a wall to the north and we haven't visited the location to the north:
+         1. push the current_location on the stack
+         2. push this new hallway on the stack
+         3. continue (to the top while loop)
+      2. else: increment current_loc's direction
+   7. Repeat step f. for west, then for south, then for east.
+   8. // We must be at a dead end: nothing to do -- we already popped this dead-end node off the stack.
+
+### Sample output
+
+Here is sample output from running against file `maze1.txt`.
+
+```{.bash}
+$ ./main
+Enter the name of the file containing the maze: maze1.txt
+push on stack. stack is now (0, 0, S)
+push on stack. stack is now (1, 0, E) (0, 0, S)
+push on stack. stack is now (1, 1, S) (1, 0, E) (0, 0, S)
+push on stack. stack is now (2, 1, S) (1, 1, S) (1, 0, E) (0, 0, S)
+push on stack. stack is now (3, 1, W) (2, 1, S) (1, 1, S) (1, 0, E) (0, 0, S)
+dead end: going back to (3, 1, W) (2, 1, S) (1, 1, S) (1, 0, E) (0, 0, S)
+push on stack. stack is now (3, 1, E) (2, 1, S) (1, 1, S) (1, 0, E) (0, 0, S)
+push on stack. stack is now (3, 2, E) (3, 1, E) (2, 1, S) (1, 1, S) (1, 0, E) (0, 0, S)
+push on stack. stack is now (3, 3, N) (3, 2, E) (3, 1, E) (2, 1, S) (1, 1, S) (1, 0, E) (0, 0, S)
+FINAL PATH: (2, 3, X) (3, 3, N) (3, 2, E) (3, 1, E) (2, 1, S) (1, 1, S) (1, 0, E) (0, 0, S)
+Path Found!
+```
+
+:::{.callout-important}
+### Extra credit
+**For extra credit**, you may implement code to print out the maze pictorially, as shown above in the Example section.
+:::
+
+## Submission
+
+Don't forget to check in your code to github.
+
+
+## Grading Rubric
+
+The assignment will be graded as follows:
+
+Total points: 20 (23 with extra credit)
++ 4 pts for `readMazeFromFile()`
++ 10 pts for `isReachable()`
++ 3 pts for correct output
++ 3 pts for style / documentation
++ +3 pts for pictorial displays as the maze is solved.
+
+Ways students lost points in the past:
++ -8: isReachable does not follow algorithm in instructions and does not compile or work 
++ -1: `readMazeFromFile` creates a new local "maze" variable instead of reading into the global one 
++ -3: Missing text output for path tracing
++ -2: Text output for path tracing is not detailed enough, see assignment 
++ -2: Missing continue step
++ -2: Need to push the current location back onto the stack before pushing the next one
++ -1: Missing dead end output
++ -1: Mistake in north check
++ -4: The entire `readFromFile()` function does not work. Please test run your code!
