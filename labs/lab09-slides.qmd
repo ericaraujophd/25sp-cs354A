@@ -13,7 +13,7 @@ author: "Eric Araújo"
 #       countIncrementalSlides: false
 format: 
     revealjs:
-        theme: blood
+        theme: dark
         menu: false
         slide-level: 2
         navigation-mode: linear
@@ -46,8 +46,8 @@ Pete and Repete are on a boat. Pete falls off. Who's left on the boat?
 
 ## Lab 9
 
--   creating methods for class list
--   pair programming
+-   creating recursive functions using ChatGPT
+-   discussing efficiency by calculating the number of times a function is called
 
 ------------------------------------------------------------------------
 
