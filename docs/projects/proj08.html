@@ -176,8 +176,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#project-8-navigate-a-maze-using-a-stack" id="toc-project-8-navigate-a-maze-using-a-stack" class="nav-link active" data-scroll-target="#project-8-navigate-a-maze-using-a-stack">Project 8: Navigate a Maze Using a Stack</a></li>
-  <li><a href="#prepare" id="toc-prepare" class="nav-link" data-scroll-target="#prepare">Prepare</a></li>
+  <li><a href="#prepare" id="toc-prepare" class="nav-link active" data-scroll-target="#prepare">Prepare</a></li>
   <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a>
   <ul class="collapse">
   <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example">Example</a></li>
@@ -211,17 +210,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
+<!-- ## Project 8: Navigate a Maze Using a Stack -->
 <center>
 <figure class="figure">
-<img src="../projects/imgs/proj8-stack.png" alt="Created by AI Prompt: Here’s an illustration of a maze represented as a stack data structure, with pathways organized into stacked layers to convey the concept of sequential traversal. This design emphasizes the stack’s step-by-step process in navigating the maze." width="350" class="figure-img">
+<img src="../projects/imgs/proj8-stack.png" alt="Created by AI Prompt: Here’s an illustration of a maze represented as a stack data structure, with pathways organized into stacked layers to convey the concept of sequential traversal. This design emphasizes the stack’s step-by-step process in navigating the maze." width="400" class="figure-img">
 <figcaption>
 Created by AI Prompt: an illustration of a maze represented as a stack data structure, with pathways organized into stacked layers to convey the concept of sequential traversal. This design emphasizes the stack’s step-by-step process in navigating the maze.*
 </figcaption>
 </figure>
 </center>
-<section id="project-8-navigate-a-maze-using-a-stack" class="level2">
-<h2 class="anchored" data-anchor-id="project-8-navigate-a-maze-using-a-stack">Project 8: Navigate a Maze Using a Stack</h2>
-</section>
 <section id="prepare" class="level2">
 <h2 class="anchored" data-anchor-id="prepare">Prepare</h2>
 <p><a href="https://classroom.github.com/a/3j-1oMeu">Accept the assignment</a> and use git clone to create your copy of the code.</p>
@@ -351,8 +348,26 @@ Extra credit
 <section id="grading-rubric" class="level2">
 <h2 class="anchored" data-anchor-id="grading-rubric">Grading Rubric</h2>
 <p>The assignment will be graded as follows:</p>
-<p>Total points: 20 (23 with extra credit) + 4 pts for <code>readMazeFromFile()</code> + 10 pts for <code>isReachable()</code> + 3 pts for correct output + 3 pts for style / documentation + +3 pts for pictorial displays as the maze is solved.</p>
-<p>Ways students lost points in the past: + -8: isReachable does not follow algorithm in instructions and does not compile or work + -1: <code>readMazeFromFile</code> creates a new local “maze” variable instead of reading into the global one + -3: Missing text output for path tracing + -2: Text output for path tracing is not detailed enough, see assignment + -2: Missing continue step + -2: Need to push the current location back onto the stack before pushing the next one + -1: Missing dead end output + -1: Mistake in north check + -4: The entire <code>readFromFile()</code> function does not work. Please test run your code!</p>
+<p>Total points: 20 (23 with extra credit)</p>
+<ul>
+<li>4 pts for <code>readMazeFromFile()</code></li>
+<li>10 pts for <code>isReachable()</code></li>
+<li>3 pts for correct output</li>
+<li>3 pts for style / documentation</li>
+<li>+3 pts for pictorial displays as the maze is solved.</li>
+</ul>
+<p>Ways students lost points in the past:</p>
+<ul>
+<li>-8: isReachable does not follow algorithm in instructions and does not compile or work</li>
+<li>-1: <code>readMazeFromFile</code> creates a new local “maze” variable instead of reading into the global one</li>
+<li>-3: Missing text output for path tracing</li>
+<li>-2: Text output for path tracing is not detailed enough, see assignment</li>
+<li>-2: Missing continue step</li>
+<li>-2: Need to push the current location back onto the stack before pushing the next one</li>
+<li>-1: Missing dead end output</li>
+<li>-1: Mistake in north check</li>
+<li>-4: The entire <code>readFromFile()</code> function does not work. Please test run your code!</li>
+</ul>
 
 
 </section>

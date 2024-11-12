@@ -518,13 +518,6 @@
     "text": "Created by AI Prompt: an illustration of a maze represented as a stack data structure, with pathways organized into stacked layers to convey the concept of sequential traversal. This design emphasizes the stack’s step-by-step process in navigating the maze.*"
   },
   {
-    "objectID": "projects/proj08.html#project-8-navigate-a-maze-using-a-stack",
-    "href": "projects/proj08.html#project-8-navigate-a-maze-using-a-stack",
-    "title": "Project 8: Navigate a Maze Using a Stack",
-    "section": "Project 8: Navigate a Maze Using a Stack",
-    "text": "Project 8: Navigate a Maze Using a Stack"
-  },
-  {
     "objectID": "projects/proj08.html#prepare",
     "href": "projects/proj08.html#prepare",
     "title": "Project 8: Navigate a Maze Using a Stack",
@@ -550,7 +543,7 @@
     "href": "projects/proj08.html#grading-rubric",
     "title": "Project 8: Navigate a Maze Using a Stack",
     "section": "Grading Rubric",
-    "text": "Grading Rubric\nThe assignment will be graded as follows:\nTotal points: 20 (23 with extra credit) + 4 pts for readMazeFromFile() + 10 pts for isReachable() + 3 pts for correct output + 3 pts for style / documentation + +3 pts for pictorial displays as the maze is solved.\nWays students lost points in the past: + -8: isReachable does not follow algorithm in instructions and does not compile or work + -1: readMazeFromFile creates a new local “maze” variable instead of reading into the global one + -3: Missing text output for path tracing + -2: Text output for path tracing is not detailed enough, see assignment + -2: Missing continue step + -2: Need to push the current location back onto the stack before pushing the next one + -1: Missing dead end output + -1: Mistake in north check + -4: The entire readFromFile() function does not work. Please test run your code!"
+    "text": "Grading Rubric\nThe assignment will be graded as follows:\nTotal points: 20 (23 with extra credit)\n\n4 pts for readMazeFromFile()\n10 pts for isReachable()\n3 pts for correct output\n3 pts for style / documentation\n+3 pts for pictorial displays as the maze is solved.\n\nWays students lost points in the past:\n\n-8: isReachable does not follow algorithm in instructions and does not compile or work\n-1: readMazeFromFile creates a new local “maze” variable instead of reading into the global one\n-3: Missing text output for path tracing\n-2: Text output for path tracing is not detailed enough, see assignment\n-2: Missing continue step\n-2: Need to push the current location back onto the stack before pushing the next one\n-1: Missing dead end output\n-1: Mistake in north check\n-4: The entire readFromFile() function does not work. Please test run your code!"
   },
   {
     "objectID": "content.html",

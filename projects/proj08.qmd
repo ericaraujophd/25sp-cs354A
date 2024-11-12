@@ -7,14 +7,15 @@ format:
 eval: false
 ---
 
+
+<!-- ## Project 8: Navigate a Maze Using a Stack -->
+
 <center><figure>
 
-<img src="/projects/imgs/proj8-stack.png" alt="Created by AI Prompt: Here’s an illustration of a maze represented as a stack data structure, with pathways organized into stacked layers to convey the concept of sequential traversal. This design emphasizes the stack’s step-by-step process in navigating the maze." width="350"/>
+<img src="/projects/imgs/proj8-stack.png" alt="Created by AI Prompt: Here’s an illustration of a maze represented as a stack data structure, with pathways organized into stacked layers to convey the concept of sequential traversal. This design emphasizes the stack’s step-by-step process in navigating the maze." width="400"/>
 <figcaption>Created by AI Prompt: an illustration of a maze represented as a stack data structure, with pathways organized into stacked layers to convey the concept of sequential traversal. This design emphasizes the stack’s step-by-step process in navigating the maze.*</figcaption>
 
 </figure></center>
-
-## Project 8: Navigate a Maze Using a Stack
 
 ## Prepare
 
@@ -142,6 +143,7 @@ Don't forget to check in your code to github.
 The assignment will be graded as follows:
 
 Total points: 20 (23 with extra credit)
+
 + 4 pts for `readMazeFromFile()`
 + 10 pts for `isReachable()`
 + 3 pts for correct output
@@ -149,6 +151,7 @@ Total points: 20 (23 with extra credit)
 + +3 pts for pictorial displays as the maze is solved.
 
 Ways students lost points in the past:
+
 + -8: isReachable does not follow algorithm in instructions and does not compile or work 
 + -1: `readMazeFromFile` creates a new local "maze" variable instead of reading into the global one 
 + -3: Missing text output for path tracing
