@@ -1,0 +1,79 @@
+---
+title: "Project 8: Navigate a Maze Using a Stack"
+format: 
+  html:
+    css: /projects/proj-styles.css
+# engine: knitr
+eval: false
+---
+
+<center><figure>
+
+<img src="imgs/array.jpeg" alt="Created by AI Prompt: a C++ array fading away" width="350"/>
+<figcaption>Created by AI Prompt: *a C++ array fading away*</figcaption>
+
+</figure></center>
+
+## Project 8: Navigate a Maze Using a Stack
+
+## Prepare
+
+[Accept the assignment](https://classroom.github.com/a/3j-1oMeu) and use git clone to create your copy of the code.
+
+## Introduction
+
+A stack can be used to find a path through a maze from a starting point to a finish point (the "goal"). The idea is that at each location (starting from the starting point), you record in the stack where you are in the maze and which direction you are facing. If there is a hallway in front of you, you move to that new point and push a new "record" on the stack. Each time you go to a new location, you always look north first, then west, then south, then east. If you get to a location that is a dead end, you pop the stack, thus moving back to a previous location. A dead-end is when you've looked all 4 directions and found no opportunity to move forward. Also, as you work your way through the maze, you record which locations you have already visited -- and you never visit a location twice.
+
+When you reach the goal, the stack will contain the path from the goal back to the starting point. Each location on the path will also record which direction you moved to get to the next location on the path.
+
+### Example
+
+Consider this example:
+
+Pictorially the maze looks like this, with S being the starting point (at 0, 0) and G being the goal (at 2, 3).
+
+```
+-------
+|SX  X|
+|   X |
+|X XG |
+| 	|
+-------
+```
+
+After the code solves the maze, the stack and pictorial representation look like this:
+
+```
+FINAL PATH: (2, 3, X) (3, 3, N) (3, 2, E) (3, 1, E) (2, 1, S) (1, 1, S) (1, 0, E) (0, 0, S)
+-------
+|SX  X|
+|pp X |
+|XpXG |
+| ppp |
+-------
+```
+
+This maze was read from a file that looks like this:
+
+```
+4 5
+SX__X
+___X_
+X_XG_
+_____
+```
+
+The first row contains the number of rows and columns. The subsequent rows use _ for an empty space, X for a barrier, S for the start, and G for the goal.
+
+Your task is to implement the code to 
+
+1. Read in a maze from a file.
+2. Implement the algorithm given below to solve the maze.
+3. Print out the stack as you solve the maze.
+
+:::{.callout-important}
+### Extra credit
+**For extra credit**, you may implement code to print out the maze pictorially, as seen above.
+:::
+
+The code you have includes the file `maze.cpp`, and two sample mazes, `maze1.txt` and `maze2.txt`.

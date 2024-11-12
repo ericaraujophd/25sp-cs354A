@@ -4,94 +4,96 @@ title: "Week 8: Advising days"
 # draft-mode: visible
 ---
 
-## SLOs for Week 7
+## SLOs for Week 8
 
 By the end of this unit, students will be able to...
 
-- describe the organization of a linked list -- how Nodes are chained together.
-- reason about the time complexity of the typical operations: prepend, append, remove, traverse, searching, indexing, etc.
-- explain how the Node destructor causes a chain reaction to delete all Nodes in the list.
-- write code to walk through the linked list.
-- compare and contrast the strengths and weaknesses of a linked list vs. a dynamic array.
-
-
 ## Slides, videos, and application exercises
 
-::: slide-deck
-**Week 7: Slides**
+::::: slide-deck
+**Week 8: Slides**
 
 ::: slides
-[Slides](https://calvincollege-my.sharepoint.com/:p:/g/personal/vtn2_calvin_edu/EVUHPdmKVURIiLt6RGsWGUgBMWUBvWAUeP3IdaHpoNjQVg?e=BRbwiB)
+[Slides]()
 :::
 
+```{=html}
 <!-- ::: source
 [Code from Class](https://calvincollege-my.sharepoint.com/:f:/g/personal/vtn2_calvin_edu/Eredz2bHiShCtI0CVssiaggB8tUES6QbacEf2cc4PBhTgQ?e=uoV7Uu)
 ::: -->
+```
 
 ::: reading
-No readings for Week 7.
+No readings for Week 8.
 
+```{=html}
 <!-- -   R4DS :: [Chp 2 - Introduction](https://r4ds.had.co.nz/explore-intro.html)
 -   IMS :: [Sec 1.1 & 1.2 - Case study & Data basics](https://openintro-ims.netlify.app/data-hello.html) -->
+```
 :::
+
+```{=html}
 <!-- ::: video
 [Video](https://youtu.be/_YqEHZccujc)
 :::
 -->
-
-:::
+```
+:::::
 
 <!-- ## Lab -->
 
-::: lab
-**Lab 7: Timing List and Vector Operations
-**
-
-Timing List and Vector Operations
+:::::: lab
+**Lab 8:**
 
 ::: instructions
-[Instructions](labs/lab-07/lab07.qmd)
+[Instructions]()
 :::
 
+```{=html}
 <!-- ::: instructions
 [Instructions](slides/lab06-slides.qmd)
 ::: -->
+```
 
 ::: starter
-[Source](https://classroom.github.com/a/MWR_tSue)
+[Source]()
 :::
 
 ::: slides
-[Slides](./slides/lab08-slides.qmd)
+[Slides]()
 :::
-:::
-
+::::::
 
 <!-- ## Homework assignments -->
 
-::: homework
-**Project 4: Vec -- A First Dynamic Data Structure**
+::::: homework
+**Project 8: Navigate a Maze Using a Stack**
 
-Vec -- A First Dynamic Data Structure
+Navigate a Maze Using a Stack
 
-<!-- ::: instructions
-[Instructions](projects/proj-04/proj04.qmd)
-::: -->
+::: instructions
+[Instructions](/projects/proj08.qmd)
+:::
 
+```{=html}
 <!-- ::: source
 [Source](https://github.com/rstudio-education/datascience-box/tree/master/course-materials/hw-instructions/hw-10)
 ::: -->
+```
 
 ::: starter
-[Starter](https://classroom.github.com/a/BR1S81yc)
+[Starter](https://classroom.github.com/a/3j-1oMeu)
 :::
-:::
+:::::
 
+```{=html}
 <!-- ::: exam
 **Exam 1**
 Exam on Friday during class. Bring your laptop. Content: Weeks 0 - 2.
 ::: -->
+```
 
+```{=html}
 <!-- ::: application-exercise
 **First dataviz**
 
@@ -111,8 +113,9 @@ Exam on Friday during class. Bring your laptop. Content: Weeks 0 - 2.
 > [Source](https://github.com/rstudio-education/datascience-box/blob/master/course-materials/application-exercises/ae-01b-covid/covid.qmd)
 > :::
 ::: -->
+```
 
-
+```{=html}
 <!-- ::: guest-lecture
 **Alberto Cairo - How charts lie**
 
@@ -120,3 +123,4 @@ Exam on Friday during class. Bring your laptop. Content: Weeks 0 - 2.
 [Video](https://youtu.be/Low28hx4wyk)
 :::
 ::: -->
+```
