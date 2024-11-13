@@ -92,7 +92,7 @@ Your main task is to implement the `readMazeFromFile()` and `isReachable()` func
 1. Define a stack of Location objects this way: `stack<Location> st;`
 2. Push a location object with values (0, 0, -1) on stack  (-1 = haven't tried any direction yet)
 3. while the stack is not empty:
-   1. a. current_loc = top of stack
+   1. current_loc = top of stack
    2. pop the stack;
    3. if current_loc is the goal, 
       1. push the current_loc back on the stack
@@ -152,7 +152,7 @@ Total points: 20 (23 with extra credit)
 
 Ways students lost points in the past:
 
-+ -8: isReachable does not follow algorithm in instructions and does not compile or work 
++ -8: `isReachable` does not follow algorithm in instructions and does not compile or work 
 + -1: `readMazeFromFile` creates a new local "maze" variable instead of reading into the global one 
 + -3: Missing text output for path tracing
 + -2: Text output for path tracing is not detailed enough, see assignment 
