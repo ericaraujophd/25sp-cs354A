@@ -17,7 +17,7 @@ CS 112 is organized by week, with each week structured as follows:
 The SLOs (Student Learning Objectives), labs, and projects for each week are given in the links on the left of this page. An overview of the semester is given in the table below:
 
 | Week 	| Readings[^1] 	| Topics [SLOs] 	| Lab 	| Project 	| Tests, Video Links, etc. 	|
-|---	|-------------	|--------------------	|---	|---	|------------	|
+|---	|-------------	|--------------------	|---	|-----------	|------------	|
 | 0 	| 1, 2, 5.1, 5.2 	| Intro to C++, compilation, Data Types (including pointers), const, binary and hexadecimal, arrays, using cout/cin. 	| [Lab 0](){target="_blank"} 	| [Project 0](){target="_blank"} 	| [Binary Exposed](https://integer.exposed/#0x0008){target="_blank"} 	|
 | 1 	| 3 and 4 	| Control Structures, Functions, Parameter Passing modes. | [Lab 1]() 	| [Project 1]() 	| [Array Addressing POGIL activity](https://docs.google.com/document/d/1myVaJT3i1hECM4BHs9LpbLz3a3heVPp6SJiEjoEvG_M/edit#heading=h.im9274hm9wa0){target="_blank"}  ([answers](https://drive.google.com/file/d/1mn5yCzIJuURMiP3MOtO9amEQzUVAQCQZ/view?usp=sharing){target="_blank"}) \| [Parameter Passing POGIL activity](https://docs.google.com/document/d/125hbFPo5PVcuGQ9pq4io23jns2kOEkfjo71S9WOkfjQ/edit){target="_blank"}  ([answers](https://drive.google.com/file/d/1rPum6ihNwUKRJpZBSTQF8v7QKfOdog11/view?usp=drive_link){target="_blank"}) 	|
 | 2 	| 6 and 7 	| File Input/Output, Exception Handling, Two-dimensional Arrays	| [Lab 2]()  	| [Project 2]() 	|  	|

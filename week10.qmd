@@ -25,7 +25,7 @@ At the end of this unit, students will be able to...
 **Week 10: Slides**
 
 ::: slides
-[Slides](https://docs.google.com/presentation/d/1-QiovhFtewcbIpT3x4bbeZXwb0aUgIa4Sj7Nt1ZC_as/edit?usp=sharing)
+[Slides](https://docs.google.com/presentation/d/1-QiovhFtewcbIpT3x4bbeZXwb0aUgIa4Sj7Nt1ZC_as/edit?usp=sharing){target="_blank"}
 :::
 
 <!-- ::: source
