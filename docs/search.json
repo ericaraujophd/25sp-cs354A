@@ -557,7 +557,7 @@
     "href": "projects/proj09.html#grading-rubric",
     "title": "Project 9: Using Queues to Implement the Snake Game",
     "section": "Grading Rubric",
-    "text": "Grading Rubric\nThe assignment will be graded as follows:\nTotal points: 25 pts total:\n\n4 pts: drawSnake() correct\n5 pts: updateSnake() correct\n3 pts: plantTarget() correct\n4 pts: detectTarget() correct\n7 pts: detectDeath() correct\n2 pts: code is clean and neat.\nWays students lost points in the past:\n-2: Can’t make file. Error occurs\n-2: Does not allow me to play the game.\n-4: program does not detect collisions correctly.\n-3: program does not “eat” the target correctly.\n-12.5: code is identical with one other person.\n-18: code is identical with 2 other people."
+    "text": "Grading Rubric\nThe assignment will be graded as follows:\nTotal points: 25 pts total:\n\n4 pts: drawSnake() correct\n5 pts: updateSnake() correct\n3 pts: plantTarget() correct\n4 pts: detectTarget() correct\n7 pts: detectDeath() correct\n2 pts: code is clean and neat.\n\nWays students lost points in the past:\n\n-2: Can’t make file. Error occurs\n-2: Does not allow me to play the game.\n-4: program does not detect collisions correctly.\n-3: program does not “eat” the target correctly.\n-12.5: code is identical with one other person.\n-18: code is identical with 2 other people."
   },
   {
     "objectID": "instructors.html",
