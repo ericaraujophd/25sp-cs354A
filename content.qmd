@@ -27,11 +27,11 @@ The SLOs (Student Learning Objectives), labs, and projects for each week are giv
 | 6 	|  	| Linked Lists  [code from class] Dynamic Array or Linked List 	| Lab 6 	| No project 	| Test 2, Weeks 0 - 5 (Friday) 	|
 | 7 	|  	| Algorithm Analysis and Big-Oh [Slides]  [Videos]  [SLOs] 	| Lab 7 	| Project 7 	|  	|
 | 8 	|  	| [Stacks and Queues](/week08.qmd) 	| Lab 8 	| [Project 8](/projects/proj08.qmd) 	|  	|
-| 9 	|  	| [Recursion](/week09.qmd) 	| [Lab 9](/labs/lab09.qmd) 	| Project 9 	| Test 3, weeks 0 - 8 (Friday) 	|
-| 10 	|  	| Monday, Apr. 1, No class. Wednesday: Recursion [SLOs] [Slides] Friday: BSTs 	| No lab! 	| Recursion Project 	|  	|
-| 11 	|  	| Apr. 8, 10: BSTs [SLOs] [Slides] 	| Lab 10 	| Project 10 	|  	|
-| 12 	| Apr 12, 15 	| AVL Trees, STL set and map containers,  [SLOs] [Slides] [ [Slides]  	| Lab 12 	| No project 	| Test 4: weeks 0 - 11 (Friday) 	|
-| 13 	| Apr 17, 19, 22, 24, 26 	| Hash Tables [Slides] Sorting Algorithms] [  [SLOs] [Slides]]  	| Lab/Project 13 	|  	|  	|
+| 9 	|  	| [Recursion](/week09.qmd) 	| [Lab 9](/labs/lab09.qmd) 	| [Project 9](/projects/proj09.qmd) 	| Test 3, weeks 0 - 8 (Friday) 	|
+| 10 	|  	| BSTs 	| Lab 10 	| Project 10 	|  	|
+| 11 	|  	| BSTs, continued 	|  	|  	|  	|
+| 12 	|  	| AVL Trees, STL set and map containers,  [SLOs] [Slides] [ [Slides]  	| Lab 12 	| No project 	| Test 4: weeks 0 - 11 (Friday) 	|
+| 13 	|  	| Hash Tables [Slides] Sorting Algorithms] [  [SLOs] [Slides]]  	| Lab/Project 13 	|  	|  	|
 | Final 	|  	| Search calvin.edu for "Exam Schedule" to find the time of the exam (and all exams you have, this semester, and all future semesters). 	|  	|  	| Test 5 Cumulative, during exam time  (You may take it in either class's exam time. Classes met at 11am MWF and 12:15 MWF.) 	|
 | 11 	|  	| OpenMP, etc. [SLOs] [Slides] 	| Lab 11 	| Project 11 	|  	|
 
