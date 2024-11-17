@@ -511,178 +511,119 @@
     ]
   },
   {
-    "objectID": "projects/proj08.html",
-    "href": "projects/proj08.html",
-    "title": "Project 8: Navigate a Maze Using a Stack",
+    "objectID": "projects/proj09.html",
+    "href": "projects/proj09.html",
+    "title": "Project 9: Using Queues to Implement the Snake Game",
     "section": "",
-    "text": "Created by AI Prompt: an illustration of a maze represented as a stack data structure, with pathways organized into stacked layers to convey the concept of sequential traversal. This design emphasizes the stack’s step-by-step process in navigating the maze.*"
+    "text": "Created by AI Prompt: Here’s an illustration of a stylized depiction of the Snake game in a retro pixel-art aesthetic."
   },
   {
-    "objectID": "projects/proj08.html#prepare",
-    "href": "projects/proj08.html#prepare",
-    "title": "Project 8: Navigate a Maze Using a Stack",
-    "section": "Prepare",
-    "text": "Prepare\nAccept the assignment and use git clone to create your copy of the code."
+    "objectID": "projects/proj09.html#objectives",
+    "href": "projects/proj09.html#objectives",
+    "title": "Project 9: Using Queues to Implement the Snake Game",
+    "section": "Objectives",
+    "text": "Objectives\n\nUse a Queue to implement the snake game.\nGain experience using more complex data structures."
   },
   {
-    "objectID": "projects/proj08.html#introduction",
-    "href": "projects/proj08.html#introduction",
-    "title": "Project 8: Navigate a Maze Using a Stack",
-    "section": "Introduction",
-    "text": "Introduction\nA stack can be used to find a path through a maze from a starting point to a finish point (the “goal”). The idea is that at each location (starting from the starting point), you record in the stack where you are in the maze and which direction you are facing. If there is a hallway in front of you, you move to that new point and push a new “record” on the stack. Each time you go to a new location, you always look north first, then west, then south, then east. If you get to a location that is a dead end, you pop the stack, thus moving back to a previous location. A dead-end is when you’ve looked all 4 directions and found no opportunity to move forward. Also, as you work your way through the maze, you record which locations you have already visited – and you never visit a location twice.\nWhen you reach the goal, the stack will contain the path from the goal back to the starting point. Each location on the path will also record which direction you moved to get to the next location on the path.\n\nExample\nConsider this example:\nPictorially the maze looks like this, with S being the starting point (at 0, 0) and G being the goal (at 2, 3).\n-------\n|SX  X|\n|   X |\n|X XG |\n|   |\n-------\nAfter the code solves the maze, the stack and pictorial representation look like this:\nFINAL PATH: (2, 3, X) (3, 3, N) (3, 2, E) (3, 1, E) (2, 1, S) (1, 1, S) (1, 0, E) (0, 0, S)\n-------\n|SX  X|\n|pp X |\n|XpXG |\n| ppp |\n-------\nThis maze was read from a file that looks like this:\n4 5\nSX__X\n___X_\nX_XG_\n_____\nThe first row contains the number of rows and columns. The subsequent rows use _ for an empty space, X for a barrier, S for the start, and G for the goal.\nYour task is to implement the code to\n\nRead in a maze from a file.\nImplement the algorithm given below to solve the maze.\nPrint out the stack as you solve the maze.\n\n\n\n\n\n\n\nExtra credit\n\n\n\nFor extra credit, you may implement code to print out the maze pictorially, as seen above.\n\n\nThe code you have includes the file maze.cpp, and two sample mazes, maze1.txt and maze2.txt.\n\n\nDetails\nYour implementation should use the STL stack.\nThe main.cpp code contains a definition of a Location class, which stores an x and y location, and a dir, which is the direction you are facing.\nYour main task is to implement the readMazeFromFile() and isReachable() function. The algorithm for the latter is below.\nAlgorithm:\n\nDefine a stack of Location objects this way: stack&lt;Location&gt; st;\nPush a location object with values (0, 0, -1) on stack (-1 = haven’t tried any direction yet)\nwhile the stack is not empty:\n\ncurrent_loc = top of stack\npop the stack;\nif current_loc is the goal,\n\npush the current_loc back on the stack\nreturn!\n\nmark the current location as true in the “visited” array.\nincrement current_loc’s direction\nif direction is north:\n\nif there is not a wall to the north and we haven’t visited the location to the north:\n\npush the current_location on the stack\npush this new hallway on the stack\ncontinue (to the top while loop)\n\nelse: increment current_loc’s direction\n\nRepeat step f. for west, then for south, then for east.\n// We must be at a dead end: nothing to do – we already popped this dead-end node off the stack.\n\n\n\n\nSample output\nHere is sample output from running against file maze1.txt.\n$ ./main\nEnter the name of the file containing the maze: maze1.txt\npush on stack. stack is now (0, 0, S)\npush on stack. stack is now (1, 0, E) (0, 0, S)\npush on stack. stack is now (1, 1, S) (1, 0, E) (0, 0, S)\npush on stack. stack is now (2, 1, S) (1, 1, S) (1, 0, E) (0, 0, S)\npush on stack. stack is now (3, 1, W) (2, 1, S) (1, 1, S) (1, 0, E) (0, 0, S)\ndead end: going back to (3, 1, W) (2, 1, S) (1, 1, S) (1, 0, E) (0, 0, S)\npush on stack. stack is now (3, 1, E) (2, 1, S) (1, 1, S) (1, 0, E) (0, 0, S)\npush on stack. stack is now (3, 2, E) (3, 1, E) (2, 1, S) (1, 1, S) (1, 0, E) (0, 0, S)\npush on stack. stack is now (3, 3, N) (3, 2, E) (3, 1, E) (2, 1, S) (1, 1, S) (1, 0, E) (0, 0, S)\nFINAL PATH: (2, 3, X) (3, 3, N) (3, 2, E) (3, 1, E) (2, 1, S) (1, 1, S) (1, 0, E) (0, 0, S)\nPath Found!\n\n\n\n\n\n\nExtra credit\n\n\n\nFor extra credit, you may implement code to print out the maze pictorially, as shown above in the Example section."
+    "objectID": "projects/proj09.html#set-up",
+    "href": "projects/proj09.html#set-up",
+    "title": "Project 9: Using Queues to Implement the Snake Game",
+    "section": "Set Up",
+    "text": "Set Up\nAccept the assignment and use git clone to create your copy of the code."
   },
   {
-    "objectID": "projects/proj08.html#submission",
-    "href": "projects/proj08.html#submission",
-    "title": "Project 8: Navigate a Maze Using a Stack",
+    "objectID": "projects/proj09.html#step-1.-try-it-out",
+    "href": "projects/proj09.html#step-1.-try-it-out",
+    "title": "Project 9: Using Queues to Implement the Snake Game",
+    "section": "Step 1. Try it out",
+    "text": "Step 1. Try it out\nIf you are not familiar with “the snake game”, then you can try it out on google. Just type “snake game” into google and it will give you a pop-up game you can try. Use the arrow keys to move the head of the snake and go after the apple in order to make the snake longer and gain points. Don’t run into the edges or the snake itself!\nIn our version of the game, we will allow the snake to wrap round from top to bottom (and vice versa) and left to right (and vice versa). The only way to die is to run into yourself.\nWe will use the Bridges library to visualize the game online. We’ll use the “Game mode” which requires you to start your program then open the browser and connect to your game. You’ll see a button on the web page that looks like this:\n\n\n\nButton to connect to game\n\n\n\n\n\n\n\n\nWarning\n\n\n\nBecause we are using the BRIDGES library, you will have to work on machines in the lab!\n\n\nFor our implementation, we’ll use a queue to represent the body of the snake. As the snake moves a new block is added to the end of the queue – which is the front of the snake – and the last block of the body is removed from the tail – which is the head of the queue. Each item in the queue will be a Pair of integers, representing the \\((x, y)\\) location of the block (\\(x\\) is vertical and \\(y\\) is horizontal). So, the snake’s queue will be defined as\nQueue&lt;Pair&lt;int&gt;&gt; snake; // (see line 58 of Snake.h)\nThe only other kinda tricky part of the code is how we grow the snake. The screen is redrawn each frame. A variable, skipDeletingTailNodesCount, exists which keeps track of how many subsequent frames should not delete the tail of the snake. So, if the variable has the value 2, the snake will grow by two new segments, because for the next 2 frames the snake’s tail will not be deleted.\n\nStep 2. Your task\nThere are TODOs littered throughout Snake.cpp. Your task is to replace the TODOs with code. Each TODO contains a description of what your code should do.\n\n\n\n\n\n\nA Note about Iterators\n\n\n\nYou will have to write some code to use the iterator class defined inside the Queue class. An iterator is an abstract pointer – meaning that it can be used like a pointer, but isn’t actually a pointer. So, you can get an iterator, it, that “points” to an item in the queue and then get the item itself by doing *it.\nYou can use iterators to walk through the snake object, like this:\nfor (Queue&lt;Pair&lt;int&gt;&gt;::iterator it = snake.begin(); it != snake.end(); it++) {\n      // use it here -- remember it points to an item in the queue, and those items are Pair objects.\n}\n\n\nTo run your program you have to provide two command-line arguments: your Bridges UserName and your Bridges Id. E.g., I run the program this way:\n./snake VictorNorman 1313148564\nRecall that you can get your username and id from the bridges website: http://bridges-cs.herokuapp.com/"
+  },
+  {
+    "objectID": "projects/proj09.html#plan-of-attack",
+    "href": "projects/proj09.html#plan-of-attack",
+    "title": "Project 9: Using Queues to Implement the Snake Game",
+    "section": "Plan of Attack",
+    "text": "Plan of Attack\nI recommend you replace the TODOs in this order:\n\ndo drawSnake()\nFix updateSnake(). After this, you should be able to run your program and see the snake move around.\ndo plantTarget()\ndo detectTarget()\ndo detectDeath()\n\nNote: for some of these there are easy ways and hard ways to implement them. Study the Queue class to see what methods exist on a Queue object. I’ve created some of those methods to help you implement the functions above more easily."
+  },
+  {
+    "objectID": "projects/proj09.html#submission",
+    "href": "projects/proj09.html#submission",
+    "title": "Project 9: Using Queues to Implement the Snake Game",
     "section": "Submission",
-    "text": "Submission\nDon’t forget to check in your code to github."
+    "text": "Submission\nDon’t forget to commit your code to your online repo on github.com so that the grader can grade it.\nIf, after you submit your code, you want to enhance the game, you could:\n\nmake the game run faster as the snake gets longer.\nmake the target be a number between 1 and 9 inclusive, and the snake grows that much longer each time the target is eaten.\n\n(If you make these enhancements, don’t submit them. The grader will just grade the basic implementation.)"
   },
   {
-    "objectID": "projects/proj08.html#grading-rubric",
-    "href": "projects/proj08.html#grading-rubric",
-    "title": "Project 8: Navigate a Maze Using a Stack",
+    "objectID": "projects/proj09.html#grading-rubric",
+    "href": "projects/proj09.html#grading-rubric",
+    "title": "Project 9: Using Queues to Implement the Snake Game",
     "section": "Grading Rubric",
-    "text": "Grading Rubric\nThe assignment will be graded as follows:\nTotal points: 20 (23 with extra credit)\n\n4 pts for readMazeFromFile()\n10 pts for isReachable()\n3 pts for correct output\n3 pts for style / documentation\n+3 pts for pictorial displays as the maze is solved.\n\nWays students lost points in the past:\n\n-8: isReachable does not follow algorithm in instructions and does not compile or work\n-1: readMazeFromFile creates a new local “maze” variable instead of reading into the global one\n-3: Missing text output for path tracing\n-2: Text output for path tracing is not detailed enough, see assignment\n-2: Missing continue step\n-2: Need to push the current location back onto the stack before pushing the next one\n-1: Missing dead end output\n-1: Mistake in north check\n-4: The entire readFromFile() function does not work. Please test run your code!"
+    "text": "Grading Rubric\nThe assignment will be graded as follows:\nTotal points: 25 pts total:\n\n4 pts: drawSnake() correct\n5 pts: updateSnake() correct\n3 pts: plantTarget() correct\n4 pts: detectTarget() correct\n7 pts: detectDeath() correct\n2 pts: code is clean and neat.\nWays students lost points in the past:\n-2: Can’t make file. Error occurs\n-2: Does not allow me to play the game.\n-4: program does not detect collisions correctly.\n-3: program does not “eat” the target correctly.\n-12.5: code is identical with one other person.\n-18: code is identical with 2 other people."
   },
   {
-    "objectID": "content.html",
-    "href": "content.html",
-    "title": "Course content",
+    "objectID": "instructors.html",
+    "href": "instructors.html",
+    "title": "Instructors",
     "section": "",
-    "text": "CS 112 is organized by week, with each week structured as follows:\nThe SLOs (Student Learning Objectives), labs, and projects for each week are given in the links on the left of this page. An overview of the semester is given in the table below:",
+    "text": "This course has as instructors: - Prof. Victor Norman - Prof. Eric Araújo",
     "crumbs": [
-      "Content",
-      "Course content"
+      "Course Policies",
+      "Instructors"
     ]
   },
   {
-    "objectID": "content.html#footnotes",
-    "href": "content.html#footnotes",
-    "title": "Course content",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\nC++ for Python Programmers Book↩︎",
+    "objectID": "instructors.html#office-hours",
+    "href": "instructors.html#office-hours",
+    "title": "Instructors",
+    "section": "Office Hours",
+    "text": "Office Hours\n\n\nProf. Norman’s hours\nProf. Araújo’s hours",
     "crumbs": [
-      "Content",
-      "Course content"
+      "Course Policies",
+      "Instructors"
     ]
   },
   {
-    "objectID": "week08.html",
-    "href": "week08.html",
-    "title": "Week 8: Advising days",
+    "objectID": "extras.html",
+    "href": "extras.html",
+    "title": "Extras for the Course",
     "section": "",
-    "text": "By the end of this unit, students will be able to…",
+    "text": "Here you will see extra documentation and material for the course.",
     "crumbs": [
-      "Content",
-      "Week 8: Advising days"
+      "Extras",
+      "Extras for the Course"
     ]
   },
   {
-    "objectID": "week08.html#slos-for-week-8",
-    "href": "week08.html#slos-for-week-8",
-    "title": "Week 8: Advising days",
+    "objectID": "week09.html",
+    "href": "week09.html",
+    "title": "Week 9: Recursion",
     "section": "",
-    "text": "By the end of this unit, students will be able to…",
+    "text": "By the end of this unit, the student will be able to:\n\ndescribe recursion correctly to an elderly ancestor.\ndefine the structure of a recursive solution – base case and recursive case.\ncorrectly use the words “winding phase” and “unwinding phase”.\nimplement a basic recursive implementation – e.g., for the factorial function.\nargue why a recursive solution is generally less efficient than an equivalent iterative solution.\ndescribe the role the runtime stack plays in the execution of a recursive function.\nunderstand the time complexity of the Towers of Hanoi problem.",
     "crumbs": [
       "Content",
-      "Week 8: Advising days"
+      "Week 9: Recursion"
     ]
   },
   {
-    "objectID": "week08.html#slides-videos-and-application-exercises",
-    "href": "week08.html#slides-videos-and-application-exercises",
-    "title": "Week 8: Advising days",
+    "objectID": "week09.html#slos-for-week-9",
+    "href": "week09.html#slos-for-week-9",
+    "title": "Week 9: Recursion",
+    "section": "",
+    "text": "By the end of this unit, the student will be able to:\n\ndescribe recursion correctly to an elderly ancestor.\ndefine the structure of a recursive solution – base case and recursive case.\ncorrectly use the words “winding phase” and “unwinding phase”.\nimplement a basic recursive implementation – e.g., for the factorial function.\nargue why a recursive solution is generally less efficient than an equivalent iterative solution.\ndescribe the role the runtime stack plays in the execution of a recursive function.\nunderstand the time complexity of the Towers of Hanoi problem.",
+    "crumbs": [
+      "Content",
+      "Week 9: Recursion"
+    ]
+  },
+  {
+    "objectID": "week09.html#slides-videos-and-application-exercises",
+    "href": "week09.html#slides-videos-and-application-exercises",
+    "title": "Week 9: Recursion",
     "section": "Slides, videos, and application exercises",
-    "text": "Slides, videos, and application exercises\n\nWeek 8: Slides\n\nSlides\n\n\n\nNo readings for Week 8.\n\n\n\n\n\n\nLab 8:\n\nInstructions\n\n\n\nSource\n\n\nSlides\n\n\n\n\nProject 8: Navigate a Maze Using a Stack\nNavigate a Maze Using a Stack\n\nInstructions\n\n\n\nStarter",
+    "text": "Slides, videos, and application exercises\n\nWeek 9: Slides\n\nSlides\n\n\n\nNo readings for Week 9.\n\n\n\n\n\n\nLab 9: Recursion\n\nInstructions\n\n\n\nSource\n\n\nSlides\n\n\n\n\nProject 9: Snake Game\n\nInstructions\n\n\n\nStarter",
     "crumbs": [
       "Content",
-      "Week 8: Advising days"
+      "Week 9: Recursion"
     ]
-  },
-  {
-    "objectID": "LICENSE.html",
-    "href": "LICENSE.html",
-    "title": "Attribution-ShareAlike 4.0 International",
-    "section": "",
-    "text": "Creative Commons Corporation (“Creative Commons”) is not a law firm and does not provide legal services or legal advice. Distribution of Creative Commons public licenses does not create a lawyer-client or other relationship. Creative Commons makes its licenses and related information available on an “as-is” basis. Creative Commons gives no warranties regarding its licenses, any material licensed under their terms and conditions, or any related information. Creative Commons disclaims all liability for damages resulting from their use to the fullest extent possible."
-  },
-  {
-    "objectID": "LICENSE.html#creative-commons-attribution-sharealike-4.0-international-public-license",
-    "href": "LICENSE.html#creative-commons-attribution-sharealike-4.0-international-public-license",
-    "title": "Attribution-ShareAlike 4.0 International",
-    "section": "Creative Commons Attribution-ShareAlike 4.0 International Public License",
-    "text": "Creative Commons Attribution-ShareAlike 4.0 International Public License\nBy exercising the Licensed Rights (defined below), You accept and agree to be bound by the terms and conditions of this Creative Commons Attribution-ShareAlike 4.0 International Public License (“Public License”). To the extent this Public License may be interpreted as a contract, You are granted the Licensed Rights in consideration of Your acceptance of these terms and conditions, and the Licensor grants You such rights in consideration of benefits the Licensor receives from making the Licensed Material available under these terms and conditions.\n\nSection 1 – Definitions.\n\nAdapted Material means material subject to Copyright and Similar Rights that is derived from or based upon the Licensed Material and in which the Licensed Material is translated, altered, arranged, transformed, or otherwise modified in a manner requiring permission under the Copyright and Similar Rights held by the Licensor. For purposes of this Public License, where the Licensed Material is a musical work, performance, or sound recording, Adapted Material is always produced where the Licensed Material is synched in timed relation with a moving image.\nAdapter’s License means the license You apply to Your Copyright and Similar Rights in Your contributions to Adapted Material in accordance with the terms and conditions of this Public License.\nBY-SA Compatible License means a license listed at creativecommons.org/compatiblelicenses, approved by Creative Commons as essentially the equivalent of this Public License.\nCopyright and Similar Rights means copyright and/or similar rights closely related to copyright including, without limitation, performance, broadcast, sound recording, and Sui Generis Database Rights, without regard to how the rights are labeled or categorized. For purposes of this Public License, the rights specified in Section 2(b)(1)-(2) are not Copyright and Similar Rights.\nEffective Technological Measures means those measures that, in the absence of proper authority, may not be circumvented under laws fulfilling obligations under Article 11 of the WIPO Copyright Treaty adopted on December 20, 1996, and/or similar international agreements.\nExceptions and Limitations means fair use, fair dealing, and/or any other exception or limitation to Copyright and Similar Rights that applies to Your use of the Licensed Material.\nLicense Elements means the license attributes listed in the name of a Creative Commons Public License. The License Elements of this Public License are Attribution and ShareAlike.\nLicensed Material means the artistic or literary work, database, or other material to which the Licensor applied this Public License.\nLicensed Rights means the rights granted to You subject to the terms and conditions of this Public License, which are limited to all Copyright and Similar Rights that apply to Your use of the Licensed Material and that the Licensor has authority to license.\nLicensor means the individual(s) or entity(ies) granting rights under this Public License.\nShare means to provide material to the public by any means or process that requires permission under the Licensed Rights, such as reproduction, public display, public performance, distribution, dissemination, communication, or importation, and to make material available to the public including in ways that members of the public may access the material from a place and at a time individually chosen by them.\nSui Generis Database Rights means rights other than copyright resulting from Directive 96/9/EC of the European Parliament and of the Council of 11 March 1996 on the legal protection of databases, as amended and/or succeeded, as well as other essentially equivalent rights anywhere in the world.\nYou means the individual or entity exercising the Licensed Rights under this Public License. Your has a corresponding meaning.\n\n\n\nSection 2 – Scope.\n\nLicense grant.\n\nSubject to the terms and conditions of this Public License, the Licensor hereby grants You a worldwide, royalty-free, non-sublicensable, non-exclusive, irrevocable license to exercise the Licensed Rights in the Licensed Material to:\n\nreproduce and Share the Licensed Material, in whole or in part; and\nproduce, reproduce, and Share Adapted Material.\n\nExceptions and Limitations. For the avoidance of doubt, where Exceptions and Limitations apply to Your use, this Public License does not apply, and You do not need to comply with its terms and conditions.\nTerm. The term of this Public License is specified in Section 6(a).\nMedia and formats; technical modifications allowed. The Licensor authorizes You to exercise the Licensed Rights in all media and formats whether now known or hereafter created, and to make technical modifications necessary to do so. The Licensor waives and/or agrees not to assert any right or authority to forbid You from making technical modifications necessary to exercise the Licensed Rights, including technical modifications necessary to circumvent Effective Technological Measures. For purposes of this Public License, simply making modifications authorized by this Section 2(a)(4) never produces Adapted Material.\nDownstream recipients.\nA. Offer from the Licensor – Licensed Material. Every recipient of the Licensed Material automatically receives an offer from the Licensor to exercise the Licensed Rights under the terms and conditions of this Public License.\n\n__Additional offer from the Licensor – Adapted Material. Every recipient of Adapted Material from You automatically receives an offer from the Licensor to exercise the Licensed Rights in the Adapted Material under the conditions of the Adapter’s License You apply.\n\nC. No downstream restrictions. You may not offer or impose any additional or different terms or conditions on, or apply any Effective Technological Measures to, the Licensed Material if doing so restricts exercise of the Licensed Rights by any recipient of the Licensed Material.\nNo endorsement. Nothing in this Public License constitutes or may be construed as permission to assert or imply that You are, or that Your use of the Licensed Material is, connected with, or sponsored, endorsed, or granted official status by, the Licensor or others designated to receive attribution as provided in Section 3(a)(1)(A)(i).\n\nOther rights.\n\nMoral rights, such as the right of integrity, are not licensed under this Public License, nor are publicity, privacy, and/or other similar personality rights; however, to the extent possible, the Licensor waives and/or agrees not to assert any such rights held by the Licensor to the limited extent necessary to allow You to exercise the Licensed Rights, but not otherwise.\nPatent and trademark rights are not licensed under this Public License.\nTo the extent possible, the Licensor waives any right to collect royalties from You for the exercise of the Licensed Rights, whether directly or through a collecting society under any voluntary or waivable statutory or compulsory licensing scheme. In all other cases the Licensor expressly reserves any right to collect such royalties.\n\n\n\n\nSection 3 – License Conditions.\nYour exercise of the Licensed Rights is expressly made subject to the following conditions.\n\nAttribution.\n\nIf You Share the Licensed Material (including in modified form), You must:\n\nretain the following if it is supplied by the Licensor with the Licensed Material:\n\n\n\nidentification of the creator(s) of the Licensed Material and any others designated to receive attribution, in any reasonable manner requested by the Licensor (including by pseudonym if designated);\na copyright notice;\na notice that refers to this Public License;\na notice that refers to the disclaimer of warranties;\na URI or hyperlink to the Licensed Material to the extent reasonably practicable;\n\n\n\nindicate if You modified the Licensed Material and retain an indication of any previous modifications; and\nindicate the Licensed Material is licensed under this Public License, and include the text of, or the URI or hyperlink to, this Public License.\n\nYou may satisfy the conditions in Section 3(a)(1) in any reasonable manner based on the medium, means, and context in which You Share the Licensed Material. For example, it may be reasonable to satisfy the conditions by providing a URI or hyperlink to a resource that includes the required information.\nIf requested by the Licensor, You must remove any of the information required by Section 3(a)(1)(A) to the extent reasonably practicable.\n\nShareAlike.\n\nIn addition to the conditions in Section 3(a), if You Share Adapted Material You produce, the following conditions also apply.\n\nThe Adapter’s License You apply must be a Creative Commons license with the same License Elements, this version or later, or a BY-SA Compatible License.\nYou must include the text of, or the URI or hyperlink to, the Adapter’s License You apply. You may satisfy this condition in any reasonable manner based on the medium, means, and context in which You Share Adapted Material.\nYou may not offer or impose any additional or different terms or conditions on, or apply any Effective Technological Measures to, Adapted Material that restrict exercise of the rights granted under the Adapter’s License You apply.\n\n\n\nSection 4 – Sui Generis Database Rights.\nWhere the Licensed Rights include Sui Generis Database Rights that apply to Your use of the Licensed Material:\n\nfor the avoidance of doubt, Section 2(a)(1) grants You the right to extract, reuse, reproduce, and Share all or a substantial portion of the contents of the database;\nif You include all or a substantial portion of the database contents in a database in which You have Sui Generis Database Rights, then the database in which You have Sui Generis Database Rights (but not its individual contents) is Adapted Material, including for purposes of Section 3(b); and\nYou must comply with the conditions in Section 3(a) if You Share all or a substantial portion of the contents of the database.\n\nFor the avoidance of doubt, this Section 4 supplements and does not replace Your obligations under this Public License where the Licensed Rights include other Copyright and Similar Rights.\n\n\nSection 5 – Disclaimer of Warranties and Limitation of Liability.\n\nUnless otherwise separately undertaken by the Licensor, to the extent possible, the Licensor offers the Licensed Material as-is and as-available, and makes no representations or warranties of any kind concerning the Licensed Material, whether express, implied, statutory, or other. This includes, without limitation, warranties of title, merchantability, fitness for a particular purpose, non-infringement, absence of latent or other defects, accuracy, or the presence or absence of errors, whether or not known or discoverable. Where disclaimers of warranties are not allowed in full or in part, this disclaimer may not apply to You.\nTo the extent possible, in no event will the Licensor be liable to You on any legal theory (including, without limitation, negligence) or otherwise for any direct, special, indirect, incidental, consequential, punitive, exemplary, or other losses, costs, expenses, or damages arising out of this Public License or use of the Licensed Material, even if the Licensor has been advised of the possibility of such losses, costs, expenses, or damages. Where a limitation of liability is not allowed in full or in part, this limitation may not apply to You.\nThe disclaimer of warranties and limitation of liability provided above shall be interpreted in a manner that, to the extent possible, most closely approximates an absolute disclaimer and waiver of all liability.\n\n\n\nSection 6 – Term and Termination.\n\nThis Public License applies for the term of the Copyright and Similar Rights licensed here. However, if You fail to comply with this Public License, then Your rights under this Public License terminate automatically.\nWhere Your right to use the Licensed Material has terminated under Section 6(a), it reinstates:\n\nautomatically as of the date the violation is cured, provided it is cured within 30 days of Your discovery of the violation; or\nupon express reinstatement by the Licensor.\n\nFor the avoidance of doubt, this Section 6(b) does not affect any right the Licensor may have to seek remedies for Your violations of this Public License.\nFor the avoidance of doubt, the Licensor may also offer the Licensed Material under separate terms or conditions or stop distributing the Licensed Material at any time; however, doing so will not terminate this Public License.\nSections 1, 5, 6, 7, and 8 survive termination of this Public License.\n\n\n\nSection 7 – Other Terms and Conditions.\n\nThe Licensor shall not be bound by any additional or different terms or conditions communicated by You unless expressly agreed.\nAny arrangements, understandings, or agreements regarding the Licensed Material not stated herein are separate from and independent of the terms and conditions of this Public License.t stated herein are separate from and independent of the terms and conditions of this Public License.\n\n\n\nSection 8 – Interpretation.\n\nFor the avoidance of doubt, this Public License does not, and shall not be interpreted to, reduce, limit, restrict, or impose conditions on any use of the Licensed Material that could lawfully be made without permission under this Public License.\nTo the extent possible, if any provision of this Public License is deemed unenforceable, it shall be automatically reformed to the minimum extent necessary to make it enforceable. If the provision cannot be reformed, it shall be severed from this Public License without affecting the enforceability of the remaining terms and conditions.\nNo term or condition of this Public License will be waived and no failure to comply consented to unless expressly agreed to by the Licensor.\nNothing in this Public License constitutes or may be interpreted as a limitation upon, or waiver of, any privileges and immunities that apply to the Licensor or You, including from the legal processes of any jurisdiction or authority.\n\n\nCreative Commons is not a party to its public licenses. Notwithstanding, Creative Commons may elect to apply one of its public licenses to material it publishes and in those instances will be considered the “Licensor.” Except for the limited purpose of indicating that material is shared under a Creative Commons public license or as otherwise permitted by the Creative Commons policies published at creativecommons.org/policies, Creative Commons does not authorize the use of the trademark “Creative Commons” or any other trademark or logo of Creative Commons without its prior written consent including, without limitation, in connection with any unauthorized modifications to any of its public licenses or any other arrangements, understandings, or agreements concerning use of licensed material. For the avoidance of doubt, this paragraph does not form part of the public licenses.\nCreative Commons may be contacted at creativecommons.org"
-  },
-  {
-    "objectID": "labs/lab09-slides.html#dad-joke-of-the-week",
-    "href": "labs/lab09-slides.html#dad-joke-of-the-week",
-    "title": "Lab 09 — Recursion",
-    "section": "Dad joke of the week",
-    "text": "Dad joke of the week\n\n\n\n\n\n\n\n\n\n\nPete and Repete are on a boat. Pete falls off. Who’s left on the boat?"
-  },
-  {
-    "objectID": "labs/lab09-slides.html#lab-9",
-    "href": "labs/lab09-slides.html#lab-9",
-    "title": "Lab 09 — Recursion",
-    "section": "Lab 9",
-    "text": "Lab 9\n\ncreating recursive functions using ChatGPT\ndiscussing efficiency by calculating the number of times a function is called"
-  },
-  {
-    "objectID": "labs/lab09.html",
-    "href": "labs/lab09.html",
-    "title": "Lab 9: Recursion",
-    "section": "",
-    "text": "Students will be able to…\n\nuse an AI model to write code to implement recursive algorithms.\nanalyze the code from an AI model"
-  },
-  {
-    "objectID": "labs/lab09.html#learning-objectives",
-    "href": "labs/lab09.html#learning-objectives",
-    "title": "Lab 9: Recursion",
-    "section": "",
-    "text": "Students will be able to…\n\nuse an AI model to write code to implement recursive algorithms.\nanalyze the code from an AI model"
-  },
-  {
-    "objectID": "labs/lab09.html#introduction",
-    "href": "labs/lab09.html#introduction",
-    "title": "Lab 9: Recursion",
-    "section": "Introduction",
-    "text": "Introduction\nIn this lab, for most steps, you will use ChatGPT or another AI model to generate recursive solutions to some simple problems. You will then analyze the code to verify it is correct and/or improve it.\nTo log in to ChatGPT (as if you didn’t already know :-), go to https://chatgpt.com.\nAfter the AI generates C++ code, copy and paste it into a file, and compile and run it. You will be submitting multiple files each containing a main() in it.\nAccept the assignment.\n\n\n\n\nThis is going to take forever…"
-  },
-  {
-    "objectID": "labs/lab09.html#part-1-reverse-an-array-recursively",
-    "href": "labs/lab09.html#part-1-reverse-an-array-recursively",
-    "title": "Lab 9: Recursion",
-    "section": "Part 1: Reverse an array, recursively",
-    "text": "Part 1: Reverse an array, recursively\nAsk ChatGPT for C++ code to reverse an array of integers recursively. When you are happy with the code that has been generated for you, copy and paste it into file rev_array.cpp. Compile and run the file by doing make rev_array and ./rev_array.\nDescribe in a few complete English sentences how the solution works. Put your answers in comments in the file. (Do not use the AI to generate this answer.)\nWhat if the array has an odd number of values? How does the algorithm handle this? (Do not use the AI to generate this answer.)"
-  },
-  {
-    "objectID": "labs/lab09.html#part-2-binary-search-recursively",
-    "href": "labs/lab09.html#part-2-binary-search-recursively",
-    "title": "Lab 9: Recursion",
-    "section": "Part 2: Binary search, recursively",
-    "text": "Part 2: Binary search, recursively\nAsk ChatGPT for C++ code to implement a recursive version of binary search over an array of integers. (doubles?)\nWhen you are happy with the resulting code, place it in bin_search.cpp, compile it, and run it (if you can’t figure out how to do these steps, inspect the makefile). Make sure the code works for arrays of different sizes, including size 0, size 1, size 10, etc.\nYour code probably contains this line:\nint mid = low + (high - low) / 2;\nDescribe in a comment above this line what this line does and why it works when the size of the array is odd (which means you cannot divide the array into two even parts). (Do not use the AI to generate this answer.)"
-  },
-  {
-    "objectID": "labs/lab09.html#part-3-sum-of-values-in-an-array-recursively",
-    "href": "labs/lab09.html#part-3-sum-of-values-in-an-array-recursively",
-    "title": "Lab 9: Recursion",
-    "section": "Part 3: Sum of values in an array, recursively",
-    "text": "Part 3: Sum of values in an array, recursively\nPlace the code from slide 5 of the lecture slides into file sum_array.cpp. Add other code to initialize an array with 6 values. Compile and run the value and verify that the result is correct.\nNow, modify the code so that the base case is not when size == 0 but when size == 1.\nDescribe in a comment in the file why this solution is slightly more efficient."
-  },
-  {
-    "objectID": "labs/lab09.html#part-4-fibonacci-sequence-recursively",
-    "href": "labs/lab09.html#part-4-fibonacci-sequence-recursively",
-    "title": "Lab 9: Recursion",
-    "section": "Part 4: Fibonacci sequence, recursively",
-    "text": "Part 4: Fibonacci sequence, recursively\nAsk the AI to generate C++ code to compute recursively the nth fibonacci number, where the user provides the value for \\(n\\). Copy and paste the code into file fib.cpp. Then, compile and run the code. Verify that the results are correct (you can ask the AI for the correct answer when \\(n\\) is 20).\nAsk the AI to modify the C++ code so that it counts how many times the recursive function is called and prints out the results at the end.\nPut the code into your file and compile and run it. Add the results for when \\(n\\) is 20 in a comment in the code at the bottom of the file.\nNow, ask the AI to modify the code to use memoization. The code should still count and display the number of times the function fibonacci() is called.\nAdd to your comment at the bottom of the file the results for when memoization is used. Also, write a sentence or two (in the comment) to describe how memoization works and how it improves the run time of the algorithm. (Do not use the AI to generate this answer.)"
-  },
-  {
-    "objectID": "labs/lab09.html#submit",
-    "href": "labs/lab09.html#submit",
-    "title": "Lab 9: Recursion",
-    "section": "Submit",
-    "text": "Submit\nDon’t forget to submit all your code to github.\nGrading Rubric: 20 points total\n\n5 points for each of the 4 parts. Those 5 points consist of:\n\n2 points for code correctness\n3 points for your analysis of the code.\n\n\nWays students lost points in the past:\n\n-12: no analysis was given.\n-3: some of the questions were not answered properly."
   },
   {
     "objectID": "CODE_OF_CONDUCT.html",
@@ -741,70 +682,178 @@
     "text": "Attribution\nThis Code of Conduct is adapted from the Contributor Covenant, version 2.0, available at https://www.contributor-covenant.org/version/2/0/ code_of_conduct.html.\nCommunity Impact Guidelines were inspired by Mozilla’s code of conduct enforcement ladder.\nFor answers to common questions about this code of conduct, see the FAQ at https://www.contributor-covenant.org/faq. Translations are available at https:// www.contributor-covenant.org/translations."
   },
   {
-    "objectID": "week09.html",
-    "href": "week09.html",
-    "title": "Week 9: Recursion",
+    "objectID": "labs/lab09.html",
+    "href": "labs/lab09.html",
+    "title": "Lab 9: Recursion",
     "section": "",
-    "text": "By the end of this unit, the student will be able to:\n\ndescribe recursion correctly to an elderly ancestor.\ndefine the structure of a recursive solution – base case and recursive case.\ncorrectly use the words “winding phase” and “unwinding phase”.\nimplement a basic recursive implementation – e.g., for the factorial function.\nargue why a recursive solution is generally less efficient than an equivalent iterative solution.\ndescribe the role the runtime stack plays in the execution of a recursive function.\nunderstand the time complexity of the Towers of Hanoi problem.",
+    "text": "Students will be able to…\n\nuse an AI model to write code to implement recursive algorithms.\nanalyze the code from an AI model"
+  },
+  {
+    "objectID": "labs/lab09.html#learning-objectives",
+    "href": "labs/lab09.html#learning-objectives",
+    "title": "Lab 9: Recursion",
+    "section": "",
+    "text": "Students will be able to…\n\nuse an AI model to write code to implement recursive algorithms.\nanalyze the code from an AI model"
+  },
+  {
+    "objectID": "labs/lab09.html#introduction",
+    "href": "labs/lab09.html#introduction",
+    "title": "Lab 9: Recursion",
+    "section": "Introduction",
+    "text": "Introduction\nIn this lab, for most steps, you will use ChatGPT or another AI model to generate recursive solutions to some simple problems. You will then analyze the code to verify it is correct and/or improve it.\nTo log in to ChatGPT (as if you didn’t already know :-), go to https://chatgpt.com.\nAfter the AI generates C++ code, copy and paste it into a file, and compile and run it. You will be submitting multiple files each containing a main() in it.\nAccept the assignment.\n\n\n\n\nThis is going to take forever…"
+  },
+  {
+    "objectID": "labs/lab09.html#part-1-reverse-an-array-recursively",
+    "href": "labs/lab09.html#part-1-reverse-an-array-recursively",
+    "title": "Lab 9: Recursion",
+    "section": "Part 1: Reverse an array, recursively",
+    "text": "Part 1: Reverse an array, recursively\nAsk ChatGPT for C++ code to reverse an array of integers recursively. When you are happy with the code that has been generated for you, copy and paste it into file rev_array.cpp. Compile and run the file by doing make rev_array and ./rev_array.\nDescribe in a few complete English sentences how the solution works. Put your answers in comments in the file. (Do not use the AI to generate this answer.)\nWhat if the array has an odd number of values? How does the algorithm handle this? (Do not use the AI to generate this answer.)"
+  },
+  {
+    "objectID": "labs/lab09.html#part-2-binary-search-recursively",
+    "href": "labs/lab09.html#part-2-binary-search-recursively",
+    "title": "Lab 9: Recursion",
+    "section": "Part 2: Binary search, recursively",
+    "text": "Part 2: Binary search, recursively\nAsk ChatGPT for C++ code to implement a recursive version of binary search over an array of integers. (doubles?)\nWhen you are happy with the resulting code, place it in bin_search.cpp, compile it, and run it (if you can’t figure out how to do these steps, inspect the makefile). Make sure the code works for arrays of different sizes, including size 0, size 1, size 10, etc.\nYour code probably contains this line:\nint mid = low + (high - low) / 2;\nDescribe in a comment above this line what this line does and why it works when the size of the array is odd (which means you cannot divide the array into two even parts). (Do not use the AI to generate this answer.)"
+  },
+  {
+    "objectID": "labs/lab09.html#part-3-sum-of-values-in-an-array-recursively",
+    "href": "labs/lab09.html#part-3-sum-of-values-in-an-array-recursively",
+    "title": "Lab 9: Recursion",
+    "section": "Part 3: Sum of values in an array, recursively",
+    "text": "Part 3: Sum of values in an array, recursively\nPlace the code from slide 5 of the lecture slides into file sum_array.cpp. Add other code to initialize an array with 6 values. Compile and run the value and verify that the result is correct.\nNow, modify the code so that the base case is not when size == 0 but when size == 1.\nDescribe in a comment in the file why this solution is slightly more efficient."
+  },
+  {
+    "objectID": "labs/lab09.html#part-4-fibonacci-sequence-recursively",
+    "href": "labs/lab09.html#part-4-fibonacci-sequence-recursively",
+    "title": "Lab 9: Recursion",
+    "section": "Part 4: Fibonacci sequence, recursively",
+    "text": "Part 4: Fibonacci sequence, recursively\nAsk the AI to generate C++ code to compute recursively the nth fibonacci number, where the user provides the value for \\(n\\). Copy and paste the code into file fib.cpp. Then, compile and run the code. Verify that the results are correct (you can ask the AI for the correct answer when \\(n\\) is 20).\nAsk the AI to modify the C++ code so that it counts how many times the recursive function is called and prints out the results at the end.\nPut the code into your file and compile and run it. Add the results for when \\(n\\) is 20 in a comment in the code at the bottom of the file.\nNow, ask the AI to modify the code to use memoization. The code should still count and display the number of times the function fibonacci() is called.\nAdd to your comment at the bottom of the file the results for when memoization is used. Also, write a sentence or two (in the comment) to describe how memoization works and how it improves the run time of the algorithm. (Do not use the AI to generate this answer.)"
+  },
+  {
+    "objectID": "labs/lab09.html#submit",
+    "href": "labs/lab09.html#submit",
+    "title": "Lab 9: Recursion",
+    "section": "Submit",
+    "text": "Submit\nDon’t forget to submit all your code to github.\nGrading Rubric: 20 points total\n\n5 points for each of the 4 parts. Those 5 points consist of:\n\n2 points for code correctness\n3 points for your analysis of the code.\n\n\nWays students lost points in the past:\n\n-12: no analysis was given.\n-3: some of the questions were not answered properly."
+  },
+  {
+    "objectID": "labs/lab09-slides.html#dad-joke-of-the-week",
+    "href": "labs/lab09-slides.html#dad-joke-of-the-week",
+    "title": "Lab 09 — Recursion",
+    "section": "Dad joke of the week",
+    "text": "Dad joke of the week\n\n\n\n\n\n\n\n\n\n\nPete and Repete are on a boat. Pete falls off. Who’s left on the boat?"
+  },
+  {
+    "objectID": "labs/lab09-slides.html#lab-9",
+    "href": "labs/lab09-slides.html#lab-9",
+    "title": "Lab 09 — Recursion",
+    "section": "Lab 9",
+    "text": "Lab 9\n\ncreating recursive functions using ChatGPT\ndiscussing efficiency by calculating the number of times a function is called"
+  },
+  {
+    "objectID": "LICENSE.html",
+    "href": "LICENSE.html",
+    "title": "Attribution-ShareAlike 4.0 International",
+    "section": "",
+    "text": "Creative Commons Corporation (“Creative Commons”) is not a law firm and does not provide legal services or legal advice. Distribution of Creative Commons public licenses does not create a lawyer-client or other relationship. Creative Commons makes its licenses and related information available on an “as-is” basis. Creative Commons gives no warranties regarding its licenses, any material licensed under their terms and conditions, or any related information. Creative Commons disclaims all liability for damages resulting from their use to the fullest extent possible."
+  },
+  {
+    "objectID": "LICENSE.html#creative-commons-attribution-sharealike-4.0-international-public-license",
+    "href": "LICENSE.html#creative-commons-attribution-sharealike-4.0-international-public-license",
+    "title": "Attribution-ShareAlike 4.0 International",
+    "section": "Creative Commons Attribution-ShareAlike 4.0 International Public License",
+    "text": "Creative Commons Attribution-ShareAlike 4.0 International Public License\nBy exercising the Licensed Rights (defined below), You accept and agree to be bound by the terms and conditions of this Creative Commons Attribution-ShareAlike 4.0 International Public License (“Public License”). To the extent this Public License may be interpreted as a contract, You are granted the Licensed Rights in consideration of Your acceptance of these terms and conditions, and the Licensor grants You such rights in consideration of benefits the Licensor receives from making the Licensed Material available under these terms and conditions.\n\nSection 1 – Definitions.\n\nAdapted Material means material subject to Copyright and Similar Rights that is derived from or based upon the Licensed Material and in which the Licensed Material is translated, altered, arranged, transformed, or otherwise modified in a manner requiring permission under the Copyright and Similar Rights held by the Licensor. For purposes of this Public License, where the Licensed Material is a musical work, performance, or sound recording, Adapted Material is always produced where the Licensed Material is synched in timed relation with a moving image.\nAdapter’s License means the license You apply to Your Copyright and Similar Rights in Your contributions to Adapted Material in accordance with the terms and conditions of this Public License.\nBY-SA Compatible License means a license listed at creativecommons.org/compatiblelicenses, approved by Creative Commons as essentially the equivalent of this Public License.\nCopyright and Similar Rights means copyright and/or similar rights closely related to copyright including, without limitation, performance, broadcast, sound recording, and Sui Generis Database Rights, without regard to how the rights are labeled or categorized. For purposes of this Public License, the rights specified in Section 2(b)(1)-(2) are not Copyright and Similar Rights.\nEffective Technological Measures means those measures that, in the absence of proper authority, may not be circumvented under laws fulfilling obligations under Article 11 of the WIPO Copyright Treaty adopted on December 20, 1996, and/or similar international agreements.\nExceptions and Limitations means fair use, fair dealing, and/or any other exception or limitation to Copyright and Similar Rights that applies to Your use of the Licensed Material.\nLicense Elements means the license attributes listed in the name of a Creative Commons Public License. The License Elements of this Public License are Attribution and ShareAlike.\nLicensed Material means the artistic or literary work, database, or other material to which the Licensor applied this Public License.\nLicensed Rights means the rights granted to You subject to the terms and conditions of this Public License, which are limited to all Copyright and Similar Rights that apply to Your use of the Licensed Material and that the Licensor has authority to license.\nLicensor means the individual(s) or entity(ies) granting rights under this Public License.\nShare means to provide material to the public by any means or process that requires permission under the Licensed Rights, such as reproduction, public display, public performance, distribution, dissemination, communication, or importation, and to make material available to the public including in ways that members of the public may access the material from a place and at a time individually chosen by them.\nSui Generis Database Rights means rights other than copyright resulting from Directive 96/9/EC of the European Parliament and of the Council of 11 March 1996 on the legal protection of databases, as amended and/or succeeded, as well as other essentially equivalent rights anywhere in the world.\nYou means the individual or entity exercising the Licensed Rights under this Public License. Your has a corresponding meaning.\n\n\n\nSection 2 – Scope.\n\nLicense grant.\n\nSubject to the terms and conditions of this Public License, the Licensor hereby grants You a worldwide, royalty-free, non-sublicensable, non-exclusive, irrevocable license to exercise the Licensed Rights in the Licensed Material to:\n\nreproduce and Share the Licensed Material, in whole or in part; and\nproduce, reproduce, and Share Adapted Material.\n\nExceptions and Limitations. For the avoidance of doubt, where Exceptions and Limitations apply to Your use, this Public License does not apply, and You do not need to comply with its terms and conditions.\nTerm. The term of this Public License is specified in Section 6(a).\nMedia and formats; technical modifications allowed. The Licensor authorizes You to exercise the Licensed Rights in all media and formats whether now known or hereafter created, and to make technical modifications necessary to do so. The Licensor waives and/or agrees not to assert any right or authority to forbid You from making technical modifications necessary to exercise the Licensed Rights, including technical modifications necessary to circumvent Effective Technological Measures. For purposes of this Public License, simply making modifications authorized by this Section 2(a)(4) never produces Adapted Material.\nDownstream recipients.\nA. Offer from the Licensor – Licensed Material. Every recipient of the Licensed Material automatically receives an offer from the Licensor to exercise the Licensed Rights under the terms and conditions of this Public License.\n\n__Additional offer from the Licensor – Adapted Material. Every recipient of Adapted Material from You automatically receives an offer from the Licensor to exercise the Licensed Rights in the Adapted Material under the conditions of the Adapter’s License You apply.\n\nC. No downstream restrictions. You may not offer or impose any additional or different terms or conditions on, or apply any Effective Technological Measures to, the Licensed Material if doing so restricts exercise of the Licensed Rights by any recipient of the Licensed Material.\nNo endorsement. Nothing in this Public License constitutes or may be construed as permission to assert or imply that You are, or that Your use of the Licensed Material is, connected with, or sponsored, endorsed, or granted official status by, the Licensor or others designated to receive attribution as provided in Section 3(a)(1)(A)(i).\n\nOther rights.\n\nMoral rights, such as the right of integrity, are not licensed under this Public License, nor are publicity, privacy, and/or other similar personality rights; however, to the extent possible, the Licensor waives and/or agrees not to assert any such rights held by the Licensor to the limited extent necessary to allow You to exercise the Licensed Rights, but not otherwise.\nPatent and trademark rights are not licensed under this Public License.\nTo the extent possible, the Licensor waives any right to collect royalties from You for the exercise of the Licensed Rights, whether directly or through a collecting society under any voluntary or waivable statutory or compulsory licensing scheme. In all other cases the Licensor expressly reserves any right to collect such royalties.\n\n\n\n\nSection 3 – License Conditions.\nYour exercise of the Licensed Rights is expressly made subject to the following conditions.\n\nAttribution.\n\nIf You Share the Licensed Material (including in modified form), You must:\n\nretain the following if it is supplied by the Licensor with the Licensed Material:\n\n\n\nidentification of the creator(s) of the Licensed Material and any others designated to receive attribution, in any reasonable manner requested by the Licensor (including by pseudonym if designated);\na copyright notice;\na notice that refers to this Public License;\na notice that refers to the disclaimer of warranties;\na URI or hyperlink to the Licensed Material to the extent reasonably practicable;\n\n\n\nindicate if You modified the Licensed Material and retain an indication of any previous modifications; and\nindicate the Licensed Material is licensed under this Public License, and include the text of, or the URI or hyperlink to, this Public License.\n\nYou may satisfy the conditions in Section 3(a)(1) in any reasonable manner based on the medium, means, and context in which You Share the Licensed Material. For example, it may be reasonable to satisfy the conditions by providing a URI or hyperlink to a resource that includes the required information.\nIf requested by the Licensor, You must remove any of the information required by Section 3(a)(1)(A) to the extent reasonably practicable.\n\nShareAlike.\n\nIn addition to the conditions in Section 3(a), if You Share Adapted Material You produce, the following conditions also apply.\n\nThe Adapter’s License You apply must be a Creative Commons license with the same License Elements, this version or later, or a BY-SA Compatible License.\nYou must include the text of, or the URI or hyperlink to, the Adapter’s License You apply. You may satisfy this condition in any reasonable manner based on the medium, means, and context in which You Share Adapted Material.\nYou may not offer or impose any additional or different terms or conditions on, or apply any Effective Technological Measures to, Adapted Material that restrict exercise of the rights granted under the Adapter’s License You apply.\n\n\n\nSection 4 – Sui Generis Database Rights.\nWhere the Licensed Rights include Sui Generis Database Rights that apply to Your use of the Licensed Material:\n\nfor the avoidance of doubt, Section 2(a)(1) grants You the right to extract, reuse, reproduce, and Share all or a substantial portion of the contents of the database;\nif You include all or a substantial portion of the database contents in a database in which You have Sui Generis Database Rights, then the database in which You have Sui Generis Database Rights (but not its individual contents) is Adapted Material, including for purposes of Section 3(b); and\nYou must comply with the conditions in Section 3(a) if You Share all or a substantial portion of the contents of the database.\n\nFor the avoidance of doubt, this Section 4 supplements and does not replace Your obligations under this Public License where the Licensed Rights include other Copyright and Similar Rights.\n\n\nSection 5 – Disclaimer of Warranties and Limitation of Liability.\n\nUnless otherwise separately undertaken by the Licensor, to the extent possible, the Licensor offers the Licensed Material as-is and as-available, and makes no representations or warranties of any kind concerning the Licensed Material, whether express, implied, statutory, or other. This includes, without limitation, warranties of title, merchantability, fitness for a particular purpose, non-infringement, absence of latent or other defects, accuracy, or the presence or absence of errors, whether or not known or discoverable. Where disclaimers of warranties are not allowed in full or in part, this disclaimer may not apply to You.\nTo the extent possible, in no event will the Licensor be liable to You on any legal theory (including, without limitation, negligence) or otherwise for any direct, special, indirect, incidental, consequential, punitive, exemplary, or other losses, costs, expenses, or damages arising out of this Public License or use of the Licensed Material, even if the Licensor has been advised of the possibility of such losses, costs, expenses, or damages. Where a limitation of liability is not allowed in full or in part, this limitation may not apply to You.\nThe disclaimer of warranties and limitation of liability provided above shall be interpreted in a manner that, to the extent possible, most closely approximates an absolute disclaimer and waiver of all liability.\n\n\n\nSection 6 – Term and Termination.\n\nThis Public License applies for the term of the Copyright and Similar Rights licensed here. However, if You fail to comply with this Public License, then Your rights under this Public License terminate automatically.\nWhere Your right to use the Licensed Material has terminated under Section 6(a), it reinstates:\n\nautomatically as of the date the violation is cured, provided it is cured within 30 days of Your discovery of the violation; or\nupon express reinstatement by the Licensor.\n\nFor the avoidance of doubt, this Section 6(b) does not affect any right the Licensor may have to seek remedies for Your violations of this Public License.\nFor the avoidance of doubt, the Licensor may also offer the Licensed Material under separate terms or conditions or stop distributing the Licensed Material at any time; however, doing so will not terminate this Public License.\nSections 1, 5, 6, 7, and 8 survive termination of this Public License.\n\n\n\nSection 7 – Other Terms and Conditions.\n\nThe Licensor shall not be bound by any additional or different terms or conditions communicated by You unless expressly agreed.\nAny arrangements, understandings, or agreements regarding the Licensed Material not stated herein are separate from and independent of the terms and conditions of this Public License.t stated herein are separate from and independent of the terms and conditions of this Public License.\n\n\n\nSection 8 – Interpretation.\n\nFor the avoidance of doubt, this Public License does not, and shall not be interpreted to, reduce, limit, restrict, or impose conditions on any use of the Licensed Material that could lawfully be made without permission under this Public License.\nTo the extent possible, if any provision of this Public License is deemed unenforceable, it shall be automatically reformed to the minimum extent necessary to make it enforceable. If the provision cannot be reformed, it shall be severed from this Public License without affecting the enforceability of the remaining terms and conditions.\nNo term or condition of this Public License will be waived and no failure to comply consented to unless expressly agreed to by the Licensor.\nNothing in this Public License constitutes or may be interpreted as a limitation upon, or waiver of, any privileges and immunities that apply to the Licensor or You, including from the legal processes of any jurisdiction or authority.\n\n\nCreative Commons is not a party to its public licenses. Notwithstanding, Creative Commons may elect to apply one of its public licenses to material it publishes and in those instances will be considered the “Licensor.” Except for the limited purpose of indicating that material is shared under a Creative Commons public license or as otherwise permitted by the Creative Commons policies published at creativecommons.org/policies, Creative Commons does not authorize the use of the trademark “Creative Commons” or any other trademark or logo of Creative Commons without its prior written consent including, without limitation, in connection with any unauthorized modifications to any of its public licenses or any other arrangements, understandings, or agreements concerning use of licensed material. For the avoidance of doubt, this paragraph does not form part of the public licenses.\nCreative Commons may be contacted at creativecommons.org"
+  },
+  {
+    "objectID": "week08.html",
+    "href": "week08.html",
+    "title": "Week 8: Advising days",
+    "section": "",
+    "text": "By the end of this unit, students will be able to…",
     "crumbs": [
       "Content",
-      "Week 9: Recursion"
+      "Week 8: Advising days"
     ]
   },
   {
-    "objectID": "week09.html#slos-for-week-9",
-    "href": "week09.html#slos-for-week-9",
-    "title": "Week 9: Recursion",
+    "objectID": "week08.html#slos-for-week-8",
+    "href": "week08.html#slos-for-week-8",
+    "title": "Week 8: Advising days",
     "section": "",
-    "text": "By the end of this unit, the student will be able to:\n\ndescribe recursion correctly to an elderly ancestor.\ndefine the structure of a recursive solution – base case and recursive case.\ncorrectly use the words “winding phase” and “unwinding phase”.\nimplement a basic recursive implementation – e.g., for the factorial function.\nargue why a recursive solution is generally less efficient than an equivalent iterative solution.\ndescribe the role the runtime stack plays in the execution of a recursive function.\nunderstand the time complexity of the Towers of Hanoi problem.",
+    "text": "By the end of this unit, students will be able to…",
     "crumbs": [
       "Content",
-      "Week 9: Recursion"
+      "Week 8: Advising days"
     ]
   },
   {
-    "objectID": "week09.html#slides-videos-and-application-exercises",
-    "href": "week09.html#slides-videos-and-application-exercises",
-    "title": "Week 9: Recursion",
+    "objectID": "week08.html#slides-videos-and-application-exercises",
+    "href": "week08.html#slides-videos-and-application-exercises",
+    "title": "Week 8: Advising days",
     "section": "Slides, videos, and application exercises",
-    "text": "Slides, videos, and application exercises\n\nWeek 9: Slides\n\nSlides\n\n\n\nNo readings for Week 9.\n\n\n\n\n\n\nLab 9: Recursion\n\nInstructions\n\n\n\nSource\n\n\nSlides\n\n\n\n\nProject 9: \n\n\n\nStarter",
+    "text": "Slides, videos, and application exercises\n\nWeek 8: Slides\n\nSlides\n\n\n\nNo readings for Week 8.\n\n\n\n\n\n\nLab 8:\n\nInstructions\n\n\n\nSource\n\n\nSlides\n\n\n\n\nProject 8: Navigate a Maze Using a Stack\nNavigate a Maze Using a Stack\n\nInstructions\n\n\n\nStarter",
     "crumbs": [
       "Content",
-      "Week 9: Recursion"
+      "Week 8: Advising days"
     ]
   },
   {
-    "objectID": "extras.html",
-    "href": "extras.html",
-    "title": "Extras for the Course",
+    "objectID": "content.html",
+    "href": "content.html",
+    "title": "Course content",
     "section": "",
-    "text": "Here you will see extra documentation and material for the course.",
+    "text": "CS 112 is organized by week, with each week structured as follows:\nThe SLOs (Student Learning Objectives), labs, and projects for each week are given in the links on the left of this page. An overview of the semester is given in the table below:",
     "crumbs": [
-      "Extras",
-      "Extras for the Course"
+      "Content",
+      "Course content"
     ]
   },
   {
-    "objectID": "instructors.html",
-    "href": "instructors.html",
-    "title": "Instructors",
+    "objectID": "content.html#footnotes",
+    "href": "content.html#footnotes",
+    "title": "Course content",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nC++ for Python Programmers Book↩︎",
+    "crumbs": [
+      "Content",
+      "Course content"
+    ]
+  },
+  {
+    "objectID": "projects/proj08.html",
+    "href": "projects/proj08.html",
+    "title": "Project 8: Navigate a Maze Using a Stack",
     "section": "",
-    "text": "This course has as instructors: - Prof. Victor Norman - Prof. Eric Araújo",
-    "crumbs": [
-      "Course Policies",
-      "Instructors"
-    ]
+    "text": "Created by AI Prompt: an illustration of a maze represented as a stack data structure, with pathways organized into stacked layers to convey the concept of sequential traversal. This design emphasizes the stack’s step-by-step process in navigating the maze."
   },
   {
-    "objectID": "instructors.html#office-hours",
-    "href": "instructors.html#office-hours",
-    "title": "Instructors",
-    "section": "Office Hours",
-    "text": "Office Hours\n\n\nProf. Norman’s hours\nProf. Araújo’s hours",
-    "crumbs": [
-      "Course Policies",
-      "Instructors"
-    ]
+    "objectID": "projects/proj08.html#prepare",
+    "href": "projects/proj08.html#prepare",
+    "title": "Project 8: Navigate a Maze Using a Stack",
+    "section": "Prepare",
+    "text": "Prepare\nAccept the assignment and use git clone to create your copy of the code."
+  },
+  {
+    "objectID": "projects/proj08.html#introduction",
+    "href": "projects/proj08.html#introduction",
+    "title": "Project 8: Navigate a Maze Using a Stack",
+    "section": "Introduction",
+    "text": "Introduction\nA stack can be used to find a path through a maze from a starting point to a finish point (the “goal”). The idea is that at each location (starting from the starting point), you record in the stack where you are in the maze and which direction you are facing. If there is a hallway in front of you, you move to that new point and push a new “record” on the stack. Each time you go to a new location, you always look north first, then west, then south, then east. If you get to a location that is a dead end, you pop the stack, thus moving back to a previous location. A dead-end is when you’ve looked all 4 directions and found no opportunity to move forward. Also, as you work your way through the maze, you record which locations you have already visited – and you never visit a location twice.\nWhen you reach the goal, the stack will contain the path from the goal back to the starting point. Each location on the path will also record which direction you moved to get to the next location on the path.\n\nExample\nConsider this example:\nPictorially the maze looks like this, with S being the starting point (at 0, 0) and G being the goal (at 2, 3).\n-------\n|SX  X|\n|   X |\n|X XG |\n|   |\n-------\nAfter the code solves the maze, the stack and pictorial representation look like this:\nFINAL PATH: (2, 3, X) (3, 3, N) (3, 2, E) (3, 1, E) (2, 1, S) (1, 1, S) (1, 0, E) (0, 0, S)\n-------\n|SX  X|\n|pp X |\n|XpXG |\n| ppp |\n-------\nThis maze was read from a file that looks like this:\n4 5\nSX__X\n___X_\nX_XG_\n_____\nThe first row contains the number of rows and columns. The subsequent rows use _ for an empty space, X for a barrier, S for the start, and G for the goal.\nYour task is to implement the code to\n\nRead in a maze from a file.\nImplement the algorithm given below to solve the maze.\nPrint out the stack as you solve the maze.\n\n\n\n\n\n\n\nExtra credit\n\n\n\nFor extra credit, you may implement code to print out the maze pictorially, as seen above.\n\n\nThe code you have includes the file maze.cpp, and two sample mazes, maze1.txt and maze2.txt.\n\n\nDetails\nYour implementation should use the STL stack.\nThe main.cpp code contains a definition of a Location class, which stores an x and y location, and a dir, which is the direction you are facing.\nYour main task is to implement the readMazeFromFile() and isReachable() function. The algorithm for the latter is below.\nAlgorithm:\n\nDefine a stack of Location objects this way: stack&lt;Location&gt; st;\nPush a location object with values (0, 0, -1) on stack (-1 = haven’t tried any direction yet)\nwhile the stack is not empty:\n\ncurrent_loc = top of stack\npop the stack;\nif current_loc is the goal,\n\npush the current_loc back on the stack\nreturn!\n\nmark the current location as true in the “visited” array.\nincrement current_loc’s direction\nif direction is north:\n\nif there is not a wall to the north and we haven’t visited the location to the north:\n\npush the current_location on the stack\npush this new hallway on the stack\ncontinue (to the top while loop)\n\nelse: increment current_loc’s direction\n\nRepeat step f. for west, then for south, then for east.\n// We must be at a dead end: nothing to do – we already popped this dead-end node off the stack.\n\n\n\n\nSample output\nHere is sample output from running against file maze1.txt.\n$ ./main\nEnter the name of the file containing the maze: maze1.txt\npush on stack. stack is now (0, 0, S)\npush on stack. stack is now (1, 0, E) (0, 0, S)\npush on stack. stack is now (1, 1, S) (1, 0, E) (0, 0, S)\npush on stack. stack is now (2, 1, S) (1, 1, S) (1, 0, E) (0, 0, S)\npush on stack. stack is now (3, 1, W) (2, 1, S) (1, 1, S) (1, 0, E) (0, 0, S)\ndead end: going back to (3, 1, W) (2, 1, S) (1, 1, S) (1, 0, E) (0, 0, S)\npush on stack. stack is now (3, 1, E) (2, 1, S) (1, 1, S) (1, 0, E) (0, 0, S)\npush on stack. stack is now (3, 2, E) (3, 1, E) (2, 1, S) (1, 1, S) (1, 0, E) (0, 0, S)\npush on stack. stack is now (3, 3, N) (3, 2, E) (3, 1, E) (2, 1, S) (1, 1, S) (1, 0, E) (0, 0, S)\nFINAL PATH: (2, 3, X) (3, 3, N) (3, 2, E) (3, 1, E) (2, 1, S) (1, 1, S) (1, 0, E) (0, 0, S)\nPath Found!\n\n\n\n\n\n\nExtra credit\n\n\n\nFor extra credit, you may implement code to print out the maze pictorially, as shown above in the Example section."
+  },
+  {
+    "objectID": "projects/proj08.html#submission",
+    "href": "projects/proj08.html#submission",
+    "title": "Project 8: Navigate a Maze Using a Stack",
+    "section": "Submission",
+    "text": "Submission\nDon’t forget to check in your code to github."
+  },
+  {
+    "objectID": "projects/proj08.html#grading-rubric",
+    "href": "projects/proj08.html#grading-rubric",
+    "title": "Project 8: Navigate a Maze Using a Stack",
+    "section": "Grading Rubric",
+    "text": "Grading Rubric\nThe assignment will be graded as follows:\nTotal points: 20 (23 with extra credit)\n\n4 pts for readMazeFromFile()\n10 pts for isReachable()\n3 pts for correct output\n3 pts for style / documentation\n+3 pts for pictorial displays as the maze is solved.\n\nWays students lost points in the past:\n\n-8: isReachable does not follow algorithm in instructions and does not compile or work\n-1: readMazeFromFile creates a new local “maze” variable instead of reading into the global one\n-3: Missing text output for path tracing\n-2: Text output for path tracing is not detailed enough, see assignment\n-2: Missing continue step\n-2: Need to push the current location back onto the stack before pushing the next one\n-1: Missing dead end output\n-1: Mistake in north check\n-4: The entire readFromFile() function does not work. Please test run your code!"
   },
   {
     "objectID": "index.html",

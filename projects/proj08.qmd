@@ -7,15 +7,19 @@ format:
 eval: false
 ---
 
-
 <!-- ## Project 8: Navigate a Maze Using a Stack -->
 
-<center><figure>
+<center>
+
+<figure>
 
 <img src="/projects/imgs/proj8-stack.png" alt="Created by AI Prompt: Here’s an illustration of a maze represented as a stack data structure, with pathways organized into stacked layers to convey the concept of sequential traversal. This design emphasizes the stack’s step-by-step process in navigating the maze." width="400"/>
-<figcaption>Created by AI Prompt: an illustration of a maze represented as a stack data structure, with pathways organized into stacked layers to convey the concept of sequential traversal. This design emphasizes the stack’s step-by-step process in navigating the maze.*</figcaption>
 
-</figure></center>
+<figcaption>Created by AI Prompt: an illustration of a maze represented as a stack data structure, with pathways organized into stacked layers to convey the concept of sequential traversal. This design emphasizes the stack’s step-by-step process in navigating the maze.</figcaption>
+
+</figure>
+
+</center>
 
 ## Prepare
 
@@ -33,18 +37,18 @@ Consider this example:
 
 Pictorially the maze looks like this, with S being the starting point (at 0, 0) and G being the goal (at 2, 3).
 
-```
+```         
 -------
 |SX  X|
 |   X |
 |X XG |
-| 	|
+|   |
 -------
 ```
 
 After the code solves the maze, the stack and pictorial representation look like this:
 
-```
+```         
 FINAL PATH: (2, 3, X) (3, 3, N) (3, 2, E) (3, 1, E) (2, 1, S) (1, 1, S) (1, 0, E) (0, 0, S)
 -------
 |SX  X|
@@ -56,7 +60,7 @@ FINAL PATH: (2, 3, X) (3, 3, N) (3, 2, E) (3, 1, E) (2, 1, S) (1, 1, S) (1, 0, E
 
 This maze was read from a file that looks like this:
 
-```
+```         
 4 5
 SX__X
 ___X_
@@ -64,16 +68,17 @@ X_XG_
 _____
 ```
 
-The first row contains the number of rows and columns. The subsequent rows use _ for an empty space, X for a barrier, S for the start, and G for the goal.
+The first row contains the number of rows and columns. The subsequent rows use \_ for an empty space, X for a barrier, S for the start, and G for the goal.
 
-Your task is to implement the code to 
+Your task is to implement the code to
 
-1. Read in a maze from a file.
-2. Implement the algorithm given below to solve the maze.
-3. Print out the stack as you solve the maze.
+1.  Read in a maze from a file.
+2.  Implement the algorithm given below to solve the maze.
+3.  Print out the stack as you solve the maze.
 
-:::{.callout-important}
+::: callout-important
 ### Extra credit
+
 **For extra credit**, you may implement code to print out the maze pictorially, as seen above.
 :::
 
@@ -89,30 +94,30 @@ Your main task is to implement the `readMazeFromFile()` and `isReachable()` func
 
 **Algorithm:**
 
-1. Define a stack of Location objects this way: `stack<Location> st;`
-2. Push a location object with values (0, 0, -1) on stack  (-1 = haven't tried any direction yet)
-3. while the stack is not empty:
-   1. current_loc = top of stack
-   2. pop the stack;
-   3. if current_loc is the goal, 
-      1. push the current_loc back on the stack
-      2. return!
-   4. mark the current location as true in the "visited" array.
-   5. increment current_loc's direction
-   6. if direction is north:
-      1. if there is not a wall to the north and we haven't visited the location to the north:
-         1. push the current_location on the stack
-         2. push this new hallway on the stack
-         3. continue (to the top while loop)
-      2. else: increment current_loc's direction
-   7. Repeat step f. for west, then for south, then for east.
-   8. // We must be at a dead end: nothing to do -- we already popped this dead-end node off the stack.
+1.  Define a stack of Location objects this way: `stack<Location> st;`
+2.  Push a location object with values (0, 0, -1) on stack (-1 = haven't tried any direction yet)
+3.  while the stack is not empty:
+    1.  current_loc = top of stack
+    2.  pop the stack;
+    3.  if current_loc is the goal,
+        1.  push the current_loc back on the stack
+        2.  return!
+    4.  mark the current location as true in the "visited" array.
+    5.  increment current_loc's direction
+    6.  if direction is north:
+        1.  if there is not a wall to the north and we haven't visited the location to the north:
+            1.  push the current_location on the stack
+            2.  push this new hallway on the stack
+            3.  continue (to the top while loop)
+        2.  else: increment current_loc's direction
+    7.  Repeat step f. for west, then for south, then for east.
+    8.  // We must be at a dead end: nothing to do -- we already popped this dead-end node off the stack.
 
 ### Sample output
 
 Here is sample output from running against file `maze1.txt`.
 
-```{.bash}
+``` bash
 $ ./main
 Enter the name of the file containing the maze: maze1.txt
 push on stack. stack is now (0, 0, S)
@@ -128,8 +133,9 @@ FINAL PATH: (2, 3, X) (3, 3, N) (3, 2, E) (3, 1, E) (2, 1, S) (1, 1, S) (1, 0, E
 Path Found!
 ```
 
-:::{.callout-important}
+::: callout-important
 ### Extra credit
+
 **For extra credit**, you may implement code to print out the maze pictorially, as shown above in the Example section.
 :::
 
@@ -137,27 +143,26 @@ Path Found!
 
 Don't forget to check in your code to github.
 
-
 ## Grading Rubric
 
 The assignment will be graded as follows:
 
 Total points: 20 (23 with extra credit)
 
-+ 4 pts for `readMazeFromFile()`
-+ 10 pts for `isReachable()`
-+ 3 pts for correct output
-+ 3 pts for style / documentation
-+ +3 pts for pictorial displays as the maze is solved.
+-   4 pts for `readMazeFromFile()`
+-   10 pts for `isReachable()`
+-   3 pts for correct output
+-   3 pts for style / documentation
+-   +3 pts for pictorial displays as the maze is solved.
 
 Ways students lost points in the past:
 
-+ -8: `isReachable` does not follow algorithm in instructions and does not compile or work 
-+ -1: `readMazeFromFile` creates a new local "maze" variable instead of reading into the global one 
-+ -3: Missing text output for path tracing
-+ -2: Text output for path tracing is not detailed enough, see assignment 
-+ -2: Missing continue step
-+ -2: Need to push the current location back onto the stack before pushing the next one
-+ -1: Missing dead end output
-+ -1: Mistake in north check
-+ -4: The entire `readFromFile()` function does not work. Please test run your code!
+-   -8: `isReachable` does not follow algorithm in instructions and does not compile or work
+-   -1: `readMazeFromFile` creates a new local "maze" variable instead of reading into the global one
+-   -3: Missing text output for path tracing
+-   -2: Text output for path tracing is not detailed enough, see assignment
+-   -2: Missing continue step
+-   -2: Need to push the current location back onto the stack before pushing the next one
+-   -1: Missing dead end output
+-   -1: Mistake in north check
+-   -4: The entire `readFromFile()` function does not work. Please test run your code!

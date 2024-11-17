@@ -27,7 +27,7 @@ The SLOs (Student Learning Objectives), labs, and projects for each week are giv
 | 6 	|  	| Linked Lists  [code from class] Dynamic Array or Linked List 	| Lab 6 	| No project 	| Test 2, Weeks 0 - 5 (Friday) 	|
 | 7 	|  	| Algorithm Analysis and Big-Oh [Slides]  [Videos]  [SLOs] 	| Lab 7 	| Project 7 	|  	|
 | 8 	|  	| [Stacks and Queues](/week08.qmd) 	| Lab 8 	| [Project 8](/projects/proj08.qmd) 	|  	|
-| 9 	|  	| [Recursion](week09.qmd) 	| [Lab 9](/labs/lab09.qmd) 	| Project 9 	| Test 3, weeks 0 - 8 (Friday) 	|
+| 9 	|  	| [Recursion](/week09.qmd) 	| [Lab 9](/labs/lab09.qmd) 	| Project 9 	| Test 3, weeks 0 - 8 (Friday) 	|
 | 10 	|  	| Monday, Apr. 1, No class. Wednesday: Recursion [SLOs] [Slides] Friday: BSTs 	| No lab! 	| Recursion Project 	|  	|
 | 11 	|  	| Apr. 8, 10: BSTs [SLOs] [Slides] 	| Lab 10 	| Project 10 	|  	|
 | 12 	| Apr 12, 15 	| AVL Trees, STL set and map containers,  [SLOs] [Slides] [ [Slides]  	| Lab 12 	| No project 	| Test 4: weeks 0 - 11 (Friday) 	|

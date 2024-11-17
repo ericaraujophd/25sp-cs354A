@@ -25,11 +25,10 @@ By the end of this unit, the student will be able to:
 [Slides](https://docs.google.com/presentation/d/1EIIaRDPBVApQs5nbDBY_qB0RRxzh4gJsNDz7pqoORxo/edit?usp=drive_link)
 :::
 
-```{=html}
+
 <!-- ::: source
 [Code from Class](https://calvincollege-my.sharepoint.com/:f:/g/personal/vtn2_calvin_edu/Eredz2bHiShCtI0CVssiaggB8tUES6QbacEf2cc4PBhTgQ?e=uoV7Uu)
 ::: -->
-```
 
 ::: reading
 No readings for Week 9.
@@ -75,24 +74,19 @@ No readings for Week 9.
 <!-- ## Homework assignments -->
 
 :::: homework
-**Project 9: **
+**Project 9: Snake Game**
 
+::: instructions
+[Instructions](/projects/proj09.qmd)
+:::
 
-
-```{=html}
-<!-- ::: instructions
-[Instructions](projects/proj-04/proj04.qmd)
-::: -->
-```
-
-```{=html}
 <!-- ::: source
 [Source](https://github.com/rstudio-education/datascience-box/tree/master/course-materials/hw-instructions/hw-10)
 ::: -->
-```
+
 
 ::: starter
-[Starter]()
+[Starter](https://classroom.github.com/a/y1MFWgHx)
 :::
 ::::
 
