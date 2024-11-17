@@ -75,14 +75,15 @@ website:
         # - href: weekly-activities/week06.qmd
         - href: week08.qmd
         - href: week09.qmd
+        - href: week10.qmd
         
 
-    - id: extras
-      title: "Extras"
-      contents:
-        - href: extras.qmd
-        - href: 03-version-control.qmd
-        - href: 03-discussion.qmd
+    # - id: extras
+    #   title: "Extras"
+    #   contents:
+    #     - href: extras.qmd
+    #     - href: 03-version-control.qmd
+    #     - href: 03-discussion.qmd
 
 format:
   html:
