@@ -52,8 +52,8 @@ website:
         href: policies.qmd
       - text: "Content"
         href: content.qmd
-      - text: "Extras"
-        href: extras.qmd
+      # - text: "Extras"
+      #   href: extras.qmd
 
   sidebar:
     - id: policies
