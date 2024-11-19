@@ -489,7 +489,7 @@
     "href": "labs/lab10.html#introduction",
     "title": "Lab 10: Binary Search Trees",
     "section": "Introduction",
-    "text": "Introduction\nToday’s exercise is to complete a class template named BST from which binary search tree classes and objects can be created. The exercise provides you with a test-class and a partially-built BST class template; your task is to complete the BST class template."
+    "text": "Introduction\nToday’s exercise is to complete a class template named BST from which binary search tree classes and objects can be created. The exercise provides you with a test-class and a partially-built BST class template; your task is to complete the BST class template.\n\n\n\n\nAI Prompt: Here is a creative illustration of a Christmas tree designed as a binary search tree (BST). The tree’s structure represents nodes with festive decorations like ornaments and lights, arranged according to BST properties."
   },
   {
     "objectID": "labs/lab10.html#getting-started",
@@ -503,7 +503,7 @@
     "href": "labs/lab10.html#the-bst-constructor",
     "title": "Lab 10: Binary Search Trees",
     "section": "The BST Constructor",
-    "text": "The BST Constructor\nAs you can see, our BST class contains just two instance variables:\nNode*    myRoot;       // pointer to the first item we insert\nunsigned myNumItems;   // number of items I contain\nIn the default constructor, our BST is empty, so myRoot should have the value nullptr and myNumItems should equal zero.\nCompile the project and run the tester. The tests should pass.\n\n\n\n\nAI Prompt: Here is a creative illustration of a Christmas tree designed as a binary search tree (BST). The tree’s structure represents nodes with festive decorations like ornaments and lights, arranged according to BST properties."
+    "text": "The BST Constructor\nAs you can see, our BST class contains just two instance variables:\nNode*    myRoot;       // pointer to the first item we insert\nunsigned myNumItems;   // number of items I contain\nIn the default constructor, our BST is empty, so myRoot should have the value nullptr and myNumItems should equal zero.\nCompile the project and run the tester. The tests should pass."
   },
   {
     "objectID": "labs/lab10.html#the-insert-method",

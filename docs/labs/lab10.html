@@ -246,11 +246,19 @@ window.Quarto = {
 <section id="introduction" class="level2">
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
 <p>Today’s exercise is to complete a class template named BST from which binary search tree classes and objects can be created. The exercise provides you with a test-class and a partially-built BST class template; your task is to complete the BST class template.</p>
+<center>
+<figure class="figure">
+<img src="../images/labs/lab10-xmas-bst.png" alt="Here is a creative illustration of a Christmas tree designed as a binary search tree (BST). The tree's structure represents nodes with festive decorations like ornaments and lights, arranged according to BST properties." width="500" class="figure-img">
+<figcaption>
+AI Prompt: Here is a creative illustration of a Christmas tree designed as a binary search tree (BST). The tree’s structure represents nodes with festive decorations like ornaments and lights, arranged according to BST properties.
+</figcaption>
+</figure>
+</center>
 </section>
 <section id="getting-started" class="level2">
 <h2 class="anchored" data-anchor-id="getting-started">Getting Started</h2>
 <p>Accept the <a href="https://classroom.github.com/a/m5CoIaV3" target="_blank">invitation from github classroom</a> and use git clone, as usual.</p>
-<p>Edit the <em>README.md</em> file to add both your names and your partner’s, and share the git repo, as usual.</p>
+<p>Edit the <strong>README.md</strong> file to add both your names and your partner’s, and share the git repo, as usual.</p>
 </section>
 <section id="the-bst-constructor" class="level2">
 <h2 class="anchored" data-anchor-id="the-bst-constructor">The BST Constructor</h2>
@@ -259,14 +267,6 @@ window.Quarto = {
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="dt">unsigned</span> myNumItems<span class="op">;</span>   <span class="co">// number of items I contain</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>In the default constructor, our BST is empty, so myRoot should have the value <code>nullptr</code> and <code>myNumItems</code> should equal zero.</p>
 <p>Compile the project and run the tester. The tests should pass.</p>
-<center>
-<figure class="figure">
-<img src="../images/labs/lab10-xmas-bst.png" alt="Here is a creative illustration of a Christmas tree designed as a binary search tree (BST). The tree's structure represents nodes with festive decorations like ornaments and lights, arranged according to BST properties." width="400" class="figure-img">
-<figcaption>
-AI Prompt: Here is a creative illustration of a Christmas tree designed as a binary search tree (BST). The tree’s structure represents nodes with festive decorations like ornaments and lights, arranged according to BST properties.
-</figcaption>
-</figure>
-</center>
 </section>
 <section id="the-insert-method" class="level2">
 <h2 class="anchored" data-anchor-id="the-insert-method">The insert() Method</h2>
@@ -300,12 +300,12 @@ AI Prompt: Here is a creative illustration of a Christmas tree designed as a bin
 <p>As before, this tree’s height is 7, its diameter is 7, and its maximum width is 1.</p>
 <p>In <strong>tests.cpp</strong>, uncomment the <code>TEST_CASE</code> for “insert()”. Save/compile, and verify that you get a compilation error indicating that <code>insert()</code> is undeclared.</p>
 <p>Add a prototype of <code>insert()</code> to our BST class; then recompile and verify that only a linking error remains.</p>
-<p>In <strong>BST.h</strong>, below the class declaration, create a stub for <code>BST::insert()</code> (a “stub” is code that does nothing – it just returns). Recompile, and when all errors have been eliminated, run the test. Then define <code>BST::insert()</code> so that it passes the test. Here is a <a href="../labs/lab10-hint.html">hint</a>, in case you get stuck, but do your best to build this method without looking at the hint. Run the project, and verify that everything works correctly at the outset.</p>
+<p>In <strong>BST.h</strong>, below the class declaration, create a stub for <code>BST::insert()</code> (a “stub” is code that does nothing – it just returns). Recompile, and when all errors have been eliminated, run the test. Then define <code>BST::insert()</code> so that it passes the test. Here is a <a href="../labs/lab10-hint.html" target="_blank">hint</a>, in case you get stuck, but do your best to build this method without looking at the hint. Run the project, and verify that everything works correctly at the outset.</p>
 </section>
 <section id="the-contains-method" class="level2">
 <h2 class="anchored" data-anchor-id="the-contains-method">The contains() Method</h2>
 <p>In <strong>tests.cpp</strong>, uncomment the <code>TEST_CASE</code> for <code>contains()</code>. Take a few minutes to look over the tests it contains, specifically how <code>contains()</code> is used. As can be seen, the <code>contains(it)</code> method returns <em>true</em> if it is in its BST; otherwise it returns false. Save/compile your project. You should see an error indicating that there is no method matching the calls in our test-method.</p>
-<p>Modify <strong>BST.h</strong> as necessary to fix any compilation/linking errors, using an approach similar to the approach used in <code>insert()</code>. Recompile and run the tests. If you get stuck, here is a <a href="../labs/lab10-hint2.html">hint</a>, but don’t use it unless you have to.</p>
+<p>Modify <strong>BST.h</strong> as necessary to fix any compilation/linking errors, using an approach similar to the approach used in <code>insert()</code>. Recompile and run the tests. If you get stuck, here is a <a href="../labs/lab10-hint2.html" target="_blank">hint</a>, but don’t use it unless you have to.</p>
 <p>Continue when your method passes the test.</p>
 </section>
 <section id="three-traversal-methods" class="level2">
