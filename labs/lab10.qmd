@@ -90,22 +90,85 @@ Add a prototype of `insert()` to our BST class; then recompile and verify that o
 In **BST.h**, below the class declaration, create a stub for `BST::insert()` (a "stub" is code that does nothing -- it just returns). Recompile, and when all errors have been eliminated, run the test. Then define `BST::insert()` so that it passes the test. Here is a [hint](./lab10-hint.qmd), in case you get stuck, but do your best to build this method without looking at the hint. Run the project, and verify that everything works correctly at the outset.
 
 
+## The contains() Method
 
+In **tests.cpp**, uncomment the `TEST_CASE` for `contains()`. Take a few minutes to look over the tests it contains, specifically how `contains()` is used. As can be seen, the `contains(it)` method returns *true* if it is in its BST; otherwise it returns false. Save/compile your project. You should see an error indicating that there is no method matching the calls in our test-method.
+
+Modify **BST.h** as necessary to fix any compilation/linking errors, using an approach similar to the approach used in `insert()`. Recompile and run the tests. If you get stuck, here is a [hint](./lab10-hint2.qmd), but don't use it unless you have to.
+
+Continue when your method passes the test.
+
+## Three Traversal Methods
+
+To **traverse** a data structure is to pass through each of its items, processing each item in turn. For example, outputting the values in an array, vector, or list usually involves traversing the structure and outputting each item in turn.
+
+When it comes to binary search trees, there are a variety of ways to traverse a BST:
+
+* A **preorder traversal** "processes" the item in a node before the items in the left and right subtrees are (recursively) processed.
+* A **postorder traversal** "processes" the item in a node after the items in the left and right subtrees are (recursively) processed.
+* An **inorder traversal** "processes" the item in a node after the items in the left subtree have been processed, but before the items in the right subtree have been (recursively) processed.
+
+To illustrate, the BST class template contains a `traversePreorder()` method, defined as follows:
+
+```cpp
+void BST::traversePreorder(ostream &out) const {
+    if (!isEmpty()) {
+    myRoot->traversePreorder(ostream &out);
+    }
+  }
+```
+
+If the BST is not empty, this method "passes the buck" by sending the `traversePreorder()` message to the node whose address is in `myRoot`. The Node struct defines that (recursive) method as follows:
+
+```cpp
+void BST::Node::traversePreorder(ostream &out) const {
+    // 1. process myItem first (preorder)
+    processItem(out);
+    // 2. then recursively process the items in the left subtree
+    if (myLeft != nullptr) {
+        myLeft->traversePreorder(out);
+    }
+    // 3. then recursively process the items in the right subtree
+    if (myRight != nullptr) {
+        myRight->traversePreorder(out);
+    }
+  }
+```
+
+The `processItem()` method can be defined to do any kind of processing of a node's item. To illustrate, our Node struct defines `processItem()` to insert a space and then `myItem` into `cout`:
+
+```cpp
+void BST::Node::processItem(ostream &out) {
+    out << myItem << ' ';
+  }
+```
+
+Note that all of these functions take an `ostream` as a parameter and pass it on in their method calls. The `processItem()` method writes its output to the `ostream`. By passing in an output stream this way, the caller can have `processItem` write to standard out (`cout`) or a file (`fout`) or even a string, which is what **test.cpp** does.
+
+Uncomment the `TEST_CASE` for `traversal`, and take a moment to look over its tests. Your final task is to define `traversePostorder()` and `traverseInorder()` methods that will produce the output expected by the test-method. Use the provided `traversePreorder()` methods as a model; the other two sets of traversal methods are quite similar.
+
+When your code passes all the tests, congratulations! You now have a basic binary search tree class!
 
 
 ## Submit
 
-Don't forget to submit all your code to github.
+Don't forget to commit your changes.
 
-Grading Rubric: 20 points total
+Grading Rubric: 25 points total
 
--   5 points for each of the 4 parts. Those 5 points consist of:
-    -   2 points for code correctness
-    -   3 points for your analysis of the code.
+-   5 pts: `insert()` correct
+-   5 pts: `contains()` correct
+-   4 pts x 3 = 12 pts: traversals are correct
+-   3 pts: code is neat and clean (hospitable)
 
 Ways students lost points in the past:
 
--   -12: no analysis was given.
--   -3: some of the questions were not answered properly.
+-   -1: `Node::contains` has to RETURN the value gotten from recursive calls of contains
+-   -2: `insert()` should be recursive; 
+-   -1: `insert()` should throw an exception when item is already in tree
+-   -2: very poor indentation
+-   -2: `traversePostorder` and `traverseInorder` should call themselves, not traversePreorder
+-   -2: `Node::traverseInOrder` needs to process item in the *middle* (and use `processItem` method) insert
+
 
 <!-- [^1]: how to add footnotes. -->

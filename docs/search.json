@@ -513,11 +513,53 @@
     "text": "The insert() Method\nLooking at the code, your BST class provides methods to:\n\nCreate an empty BST;\nDetermine whether a BST is empty or not;\nDetermine the number of items in a BST;\nReclaim the dynamic memory of a BST; and\nTraverse the tree using preorder.\n\nOur next task is to be able to insert items into a BST. The insert(it) method adds an item it to the tree by storing it in a node such that:\n\nall nodes to the “left” of the node containing it contain items that are less than it; and\nall nodes to the “right” of the node containing it contain items that are greater than it.\n\nNote that if we use a simple approach to insert() in which the first item is stored in the root node, the second item is stored in a child node of the root node, and so on, then the order in which we add items can make a big difference in the shape of the tree. For example, if we insert items in a “carefully chosen random” order: 44, 66, 22, 55, 11, 77, 33, then our tree will be balanced:\n\nA tree’s shape can be characterized in different ways. One way is by comparing its height, diameter, and maximum width:\n\nA tree’s height is the number of nodes on the longest path from the root node to any of the leaf nodes.\nA tree’s diameter is the number of nodes on the longest path between any two leaves in the tree. This path often includes the root node, but not necessarily.\nA tree’s maximum width is the largest number of nodes on any given level of the tree.\n\nThe preceding tree’s height is 3, its diameter is 5, and its maximum width is 4. If a binary search tree is balanced, then its height should be about \\(log_2(n)\\), where \\(n\\) is the number of items in the tree.\nBy contrast, if we insert items in ascending order: 11, 22, 33, 44, 55, 66, 77, then our tree will be imbalanced one way:\n\nThis tree’s height is 7, its diameter is 7, and its maximum width is 1.\nLikewise, if we insert the items in descending order : 77, 66, 55, 44, 33, 22, 11, then our tree will be imbalanced the other way:\n\nAs before, this tree’s height is 7, its diameter is 7, and its maximum width is 1.\nIn tests.cpp, uncomment the TEST_CASE for “insert()”. Save/compile, and verify that you get a compilation error indicating that insert() is undeclared.\nAdd a prototype of insert() to our BST class; then recompile and verify that only a linking error remains.\nIn BST.h, below the class declaration, create a stub for BST::insert() (a “stub” is code that does nothing – it just returns). Recompile, and when all errors have been eliminated, run the test. Then define BST::insert() so that it passes the test. Here is a hint, in case you get stuck, but do your best to build this method without looking at the hint. Run the project, and verify that everything works correctly at the outset."
   },
   {
+    "objectID": "labs/lab10.html#the-contains-method",
+    "href": "labs/lab10.html#the-contains-method",
+    "title": "Lab 10: Binary Search Trees",
+    "section": "The contains() Method",
+    "text": "The contains() Method\nIn tests.cpp, uncomment the TEST_CASE for contains(). Take a few minutes to look over the tests it contains, specifically how contains() is used. As can be seen, the contains(it) method returns true if it is in its BST; otherwise it returns false. Save/compile your project. You should see an error indicating that there is no method matching the calls in our test-method.\nModify BST.h as necessary to fix any compilation/linking errors, using an approach similar to the approach used in insert(). Recompile and run the tests. If you get stuck, here is a hint, but don’t use it unless you have to.\nContinue when your method passes the test."
+  },
+  {
+    "objectID": "labs/lab10.html#three-traversal-methods",
+    "href": "labs/lab10.html#three-traversal-methods",
+    "title": "Lab 10: Binary Search Trees",
+    "section": "Three Traversal Methods",
+    "text": "Three Traversal Methods\nTo traverse a data structure is to pass through each of its items, processing each item in turn. For example, outputting the values in an array, vector, or list usually involves traversing the structure and outputting each item in turn.\nWhen it comes to binary search trees, there are a variety of ways to traverse a BST:\n\nA preorder traversal “processes” the item in a node before the items in the left and right subtrees are (recursively) processed.\nA postorder traversal “processes” the item in a node after the items in the left and right subtrees are (recursively) processed.\nAn inorder traversal “processes” the item in a node after the items in the left subtree have been processed, but before the items in the right subtree have been (recursively) processed.\n\nTo illustrate, the BST class template contains a traversePreorder() method, defined as follows:\nvoid BST::traversePreorder(ostream &out) const {\n    if (!isEmpty()) {\n    myRoot-&gt;traversePreorder(ostream &out);\n    }\n  }\nIf the BST is not empty, this method “passes the buck” by sending the traversePreorder() message to the node whose address is in myRoot. The Node struct defines that (recursive) method as follows:\nvoid BST::Node::traversePreorder(ostream &out) const {\n    // 1. process myItem first (preorder)\n    processItem(out);\n    // 2. then recursively process the items in the left subtree\n    if (myLeft != nullptr) {\n        myLeft-&gt;traversePreorder(out);\n    }\n    // 3. then recursively process the items in the right subtree\n    if (myRight != nullptr) {\n        myRight-&gt;traversePreorder(out);\n    }\n  }\nThe processItem() method can be defined to do any kind of processing of a node’s item. To illustrate, our Node struct defines processItem() to insert a space and then myItem into cout:\nvoid BST::Node::processItem(ostream &out) {\n    out &lt;&lt; myItem &lt;&lt; ' ';\n  }\nNote that all of these functions take an ostream as a parameter and pass it on in their method calls. The processItem() method writes its output to the ostream. By passing in an output stream this way, the caller can have processItem write to standard out (cout) or a file (fout) or even a string, which is what test.cpp does.\nUncomment the TEST_CASE for traversal, and take a moment to look over its tests. Your final task is to define traversePostorder() and traverseInorder() methods that will produce the output expected by the test-method. Use the provided traversePreorder() methods as a model; the other two sets of traversal methods are quite similar.\nWhen your code passes all the tests, congratulations! You now have a basic binary search tree class!"
+  },
+  {
     "objectID": "labs/lab10.html#submit",
     "href": "labs/lab10.html#submit",
     "title": "Lab 10: Binary Search Trees",
     "section": "Submit",
-    "text": "Submit\nDon’t forget to submit all your code to github.\nGrading Rubric: 20 points total\n\n5 points for each of the 4 parts. Those 5 points consist of:\n\n2 points for code correctness\n3 points for your analysis of the code.\n\n\nWays students lost points in the past:\n\n-12: no analysis was given.\n-3: some of the questions were not answered properly."
+    "text": "Submit\nDon’t forget to commit your changes.\nGrading Rubric: 25 points total\n\n5 pts: insert() correct\n5 pts: contains() correct\n4 pts x 3 = 12 pts: traversals are correct\n3 pts: code is neat and clean (hospitable)\n\nWays students lost points in the past:\n\n-1: Node::contains has to RETURN the value gotten from recursive calls of contains\n-2: insert() should be recursive;\n-1: insert() should throw an exception when item is already in tree\n-2: very poor indentation\n-2: traversePostorder and traverseInorder should call themselves, not traversePreorder\n-2: Node::traverseInOrder needs to process item in the middle (and use processItem method) insert"
+  },
+  {
+    "objectID": "labs/lab10-hint2.html",
+    "href": "labs/lab10-hint2.html",
+    "title": "Lab 10: Hint 2",
+    "section": "",
+    "text": "The stub of BST::contains() should look like this:\nbool BST::contains(const Item& item) const {\n}\nThe BST::contains() method should distinguish between the two cases:\n\nIf the BST is empty: return false.\nOtherwise: “pass the buck” by returning whatever myRoot-&gt;contains(item) returns."
+  },
+  {
+    "objectID": "labs/lab10-hint2.html#defining-bstcontains",
+    "href": "labs/lab10-hint2.html#defining-bstcontains",
+    "title": "Lab 10: Hint 2",
+    "section": "",
+    "text": "The stub of BST::contains() should look like this:\nbool BST::contains(const Item& item) const {\n}\nThe BST::contains() method should distinguish between the two cases:\n\nIf the BST is empty: return false.\nOtherwise: “pass the buck” by returning whatever myRoot-&gt;contains(item) returns."
+  },
+  {
+    "objectID": "labs/lab10-hint2.html#designing-nodecontains",
+    "href": "labs/lab10-hint2.html#designing-nodecontains",
+    "title": "Lab 10: Hint 2",
+    "section": "Designing Node::contains()",
+    "text": "Designing Node::contains()\nSince a Node is recursively defined, we might define Node::contains(item) recursively. One way to design a recursive algorithm for this method is as follows:\nBasis. There are three trivial cases:\n\nIf item is equal to myItem:\n\nReturn true.\n\nIf item belongs in my left subtree and my left subtree is empty:\n\nReturn false.\n\nIf item belongs in my right subtree and my right subtree is empty:\n\nReturn false.\n\n\nInduction Step. There are two cases:\n\nIf item belongs in my left subtree and my left subtree is not empty:\n\n“Pass the buck” to the node in my left subtree and return whatever it returns.\n\nIf item belongs in my right subtree and my right subtree is not empty:\n\n“Pass the buck” to the node in my right subtree and return whatever it returns."
+  },
+  {
+    "objectID": "labs/lab10-hint2.html#defining-nodecontains",
+    "href": "labs/lab10-hint2.html#defining-nodecontains",
+    "title": "Lab 10: Hint 2",
+    "section": "Defining Node::contains()",
+    "text": "Defining Node::contains()\nThese observations can be reorganized into the following algorithm for our Node::contains(item) method:\n\nIf item is less than myItem:\n\nIf myLeft is nullptr:\n\nReturn false.\n\nOtherwise:\n\n“Pass the buck” by returning whatever myLeft-&gt;contains(item) returns.\n\n\nOtherwise, if item is greater than myItem:\n\nIf myRight is nullptr:\n\nReturn false.\n\nOtherwise:\n\n“Pass the buck” by returning whatever myRight-&gt;contains(item) returns.\n\n\nOtherwise (item is equal to myItem):\n\nReturn true."
   },
   {
     "objectID": "labs/lab09.html",
