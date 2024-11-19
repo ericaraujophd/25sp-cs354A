@@ -54,7 +54,7 @@ No readings for Week 10.
 **Lab 10: Binary Seach Trees**
 
 ::: instructions
-[Instructions]()
+[Instructions](/labs/lab10.qmd)
 :::
 
 <!-- ::: instructions
@@ -63,12 +63,12 @@ No readings for Week 10.
 
 
 ::: starter
-[Source]()
+[Source](https://classroom.github.com/a/m5CoIaV3)
 :::
 
-::: slides
+<!-- ::: slides
 [Slides]()
-:::
+::: -->
 ::::::
 
 <!-- ## Homework assignments -->

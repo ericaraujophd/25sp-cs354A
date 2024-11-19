@@ -443,6 +443,83 @@
     "text": "Lab 9\n\ncreating recursive functions using ChatGPT\ndiscussing efficiency by calculating the number of times a function is called"
   },
   {
+    "objectID": "labs/lab10-hint.html",
+    "href": "labs/lab10-hint.html",
+    "title": "Lab 10: Hint",
+    "section": "",
+    "text": "The stub of BST::insert() should look like this:\nvoid BST::insert(const Item& item) {\n\n }\n## Defining BST::insert()\nThe BST::insert(item) method needs to distinguish between the two cases (empty and non-empty):\n\nIf the BST is empty:\n\nCreate a new node containing item and store that node’s address in myRoot.\n\nOtherwise (there is at least one node):\n\n“Pass the buck” to the root node by invoking Node::insert(item) on the node whose address is in myRoot.\nAny exception it throws will be sent back to the calling insert() message.\n\nIn either case (when no exception was thrown), increment myNumItems."
+  },
+  {
+    "objectID": "labs/lab10-hint.html#declaring-bstinsert",
+    "href": "labs/lab10-hint.html#declaring-bstinsert",
+    "title": "Lab 10: Hint",
+    "section": "",
+    "text": "The stub of BST::insert() should look like this:\nvoid BST::insert(const Item& item) {\n\n }\n## Defining BST::insert()\nThe BST::insert(item) method needs to distinguish between the two cases (empty and non-empty):\n\nIf the BST is empty:\n\nCreate a new node containing item and store that node’s address in myRoot.\n\nOtherwise (there is at least one node):\n\n“Pass the buck” to the root node by invoking Node::insert(item) on the node whose address is in myRoot.\nAny exception it throws will be sent back to the calling insert() message.\n\nIn either case (when no exception was thrown), increment myNumItems."
+  },
+  {
+    "objectID": "labs/lab10-hint.html#designing-nodeinsert",
+    "href": "labs/lab10-hint.html#designing-nodeinsert",
+    "title": "Lab 10: Hint",
+    "section": "Designing Node::insert()",
+    "text": "Designing Node::insert()\nSince a Node is recursively defined, we might define Node::insert(item) as a recursive method. One way to design a recursive algorithm for this method is as follows:\nBasis. There are three trivial cases:\n\nIf item belongs in my left subtree and my left subtree is empty:\n\nMake my left subtree a new node containing item.\n\nIf item belongs in my right subtree and my right subtree is empty:\n\nMake my right subtree a new node containing item.\n\nIf item does not belong in our left or right subtrees (i.e., its value is the same as myItem):\n\nWe will treat our BST like a mathematical set (which has no redundant elements) and throw an exception to alert the user that they have inserted the same Item more than once.\n\n\nInduction Step. Again, there are two cases:\n\nIf item belongs in my left subtree and my left subtree is not empty:\n\n“Pass the buck” to the node in my left subtree by asking it to insert item.\n\nIf item belongs in my right subtree and my right subtree is not empty:\n\n“Pass the buck” to the node in my right subtree by asking it to insert item."
+  },
+  {
+    "objectID": "labs/lab10-hint.html#defining-nodeinsert",
+    "href": "labs/lab10-hint.html#defining-nodeinsert",
+    "title": "Lab 10: Hint",
+    "section": "Defining Node::insert()",
+    "text": "Defining Node::insert()\nThese observations can then be reorganized into the following algorithm for our Node::insert() method:\n\nIf item is less than myItem:\n\nIf myLeft is nullptr:\n\nSet myLeft to the address of a new node containing item.\n\nOtherwise:\n\n“Pass the buck” by recursively calling myLeft-&gt;insert(item).\n\n\nOtherwise, if item is greater than myItem:\n\nIf myRight is nullptr:\n\nSet myRight to the address of a new node containing item.\n\nOtherwise:\n\n“Pass the buck” by recursively calling myRight-&gt;insert(item).\n\n\nOtherwise (item must be equal to myItem):\n\nthrow an Exception indicating that item is already in the BST."
+  },
+  {
+    "objectID": "labs/lab10.html",
+    "href": "labs/lab10.html",
+    "title": "Lab 10: Binary Search Trees",
+    "section": "",
+    "text": "In this exercise, you will:\n\nComplete a linked-node-based binary search tree class.\nPractice building recursive operations.\nPractice thinking recursively."
+  },
+  {
+    "objectID": "labs/lab10.html#objectives",
+    "href": "labs/lab10.html#objectives",
+    "title": "Lab 10: Binary Search Trees",
+    "section": "",
+    "text": "In this exercise, you will:\n\nComplete a linked-node-based binary search tree class.\nPractice building recursive operations.\nPractice thinking recursively."
+  },
+  {
+    "objectID": "labs/lab10.html#introduction",
+    "href": "labs/lab10.html#introduction",
+    "title": "Lab 10: Binary Search Trees",
+    "section": "Introduction",
+    "text": "Introduction\nToday’s exercise is to complete a class template named BST from which binary search tree classes and objects can be created. The exercise provides you with a test-class and a partially-built BST class template; your task is to complete the BST class template."
+  },
+  {
+    "objectID": "labs/lab10.html#getting-started",
+    "href": "labs/lab10.html#getting-started",
+    "title": "Lab 10: Binary Search Trees",
+    "section": "Getting Started",
+    "text": "Getting Started\nAccept the invitation from github classroom and use git clone, as usual.\nEdit the README.md file to add both your names and your partner’s, and share the git repo, as usual."
+  },
+  {
+    "objectID": "labs/lab10.html#the-bst-constructor",
+    "href": "labs/lab10.html#the-bst-constructor",
+    "title": "Lab 10: Binary Search Trees",
+    "section": "The BST Constructor",
+    "text": "The BST Constructor\nAs you can see, our BST class contains just two instance variables:\nNode*    myRoot;       // pointer to the first item we insert\nunsigned myNumItems;   // number of items I contain\nIn the default constructor, our BST is empty, so myRoot should have the value nullptr and myNumItems should equal zero.\nCompile the project and run the tester. The tests should pass.\n\n\n\n\nAI Prompt: Here is a creative illustration of a Christmas tree designed as a binary search tree (BST). The tree’s structure represents nodes with festive decorations like ornaments and lights, arranged according to BST properties."
+  },
+  {
+    "objectID": "labs/lab10.html#the-insert-method",
+    "href": "labs/lab10.html#the-insert-method",
+    "title": "Lab 10: Binary Search Trees",
+    "section": "The insert() Method",
+    "text": "The insert() Method\nLooking at the code, your BST class provides methods to:\n\nCreate an empty BST;\nDetermine whether a BST is empty or not;\nDetermine the number of items in a BST;\nReclaim the dynamic memory of a BST; and\nTraverse the tree using preorder.\n\nOur next task is to be able to insert items into a BST. The insert(it) method adds an item it to the tree by storing it in a node such that:\n\nall nodes to the “left” of the node containing it contain items that are less than it; and\nall nodes to the “right” of the node containing it contain items that are greater than it.\n\nNote that if we use a simple approach to insert() in which the first item is stored in the root node, the second item is stored in a child node of the root node, and so on, then the order in which we add items can make a big difference in the shape of the tree. For example, if we insert items in a “carefully chosen random” order: 44, 66, 22, 55, 11, 77, 33, then our tree will be balanced:\n\nA tree’s shape can be characterized in different ways. One way is by comparing its height, diameter, and maximum width:\n\nA tree’s height is the number of nodes on the longest path from the root node to any of the leaf nodes.\nA tree’s diameter is the number of nodes on the longest path between any two leaves in the tree. This path often includes the root node, but not necessarily.\nA tree’s maximum width is the largest number of nodes on any given level of the tree.\n\nThe preceding tree’s height is 3, its diameter is 5, and its maximum width is 4. If a binary search tree is balanced, then its height should be about \\(log_2(n)\\), where \\(n\\) is the number of items in the tree.\nBy contrast, if we insert items in ascending order: 11, 22, 33, 44, 55, 66, 77, then our tree will be imbalanced one way:\n\nThis tree’s height is 7, its diameter is 7, and its maximum width is 1.\nLikewise, if we insert the items in descending order : 77, 66, 55, 44, 33, 22, 11, then our tree will be imbalanced the other way:\n\nAs before, this tree’s height is 7, its diameter is 7, and its maximum width is 1.\nIn tests.cpp, uncomment the TEST_CASE for “insert()”. Save/compile, and verify that you get a compilation error indicating that insert() is undeclared.\nAdd a prototype of insert() to our BST class; then recompile and verify that only a linking error remains.\nIn BST.h, below the class declaration, create a stub for BST::insert() (a “stub” is code that does nothing – it just returns). Recompile, and when all errors have been eliminated, run the test. Then define BST::insert() so that it passes the test. Here is a hint, in case you get stuck, but do your best to build this method without looking at the hint. Run the project, and verify that everything works correctly at the outset."
+  },
+  {
+    "objectID": "labs/lab10.html#submit",
+    "href": "labs/lab10.html#submit",
+    "title": "Lab 10: Binary Search Trees",
+    "section": "Submit",
+    "text": "Submit\nDon’t forget to submit all your code to github.\nGrading Rubric: 20 points total\n\n5 points for each of the 4 parts. Those 5 points consist of:\n\n2 points for code correctness\n3 points for your analysis of the code.\n\n\nWays students lost points in the past:\n\n-12: no analysis was given.\n-3: some of the questions were not answered properly."
+  },
+  {
     "objectID": "labs/lab09.html",
     "href": "labs/lab09.html",
     "title": "Lab 9: Recursion",
@@ -1148,7 +1225,7 @@
     "href": "week10.html#slides-videos-and-application-exercises",
     "title": "Week 10: BSTs",
     "section": "Slides, videos, and application exercises",
-    "text": "Slides, videos, and application exercises\n\nWeek 10: Slides\n\nSlides\n\n\n\nNo readings for Week 10.\n\n\n\n\n\n\nLab 10: Binary Seach Trees\n\nInstructions\n\n\n\nSource\n\n\nSlides\n\n\n\n\nProject 10: Binary Search Trees\n\nInstructions\n\n\n\nStarter",
+    "text": "Slides, videos, and application exercises\n\nWeek 10: Slides\n\nSlides\n\n\n\nNo readings for Week 10.\n\n\n\n\n\n\nLab 10: Binary Seach Trees\n\nInstructions\n\n\n\nSource\n\n\n\n\n\nProject 10: Binary Search Trees\n\nInstructions\n\n\n\nStarter",
     "crumbs": [
       "Content",
       "Week 10: BSTs"

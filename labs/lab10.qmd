@@ -1,0 +1,111 @@
+---
+title: "Lab 10: Binary Search Trees"
+format: 
+  html:
+    css: /labs/lab-styles.css
+---
+
+## Objectives
+
+In this exercise, you will:
+
+- Complete a linked-node-based binary search tree class.
+- Practice building recursive operations.
+- Practice thinking recursively.
+
+## Introduction
+
+Today's exercise is to complete a class template named BST from which binary search tree classes and objects can be created. The exercise provides you with a test-class and a partially-built BST class template; your task is to complete the BST class template.
+
+## Getting Started
+
+Accept the [invitation from github classroom](https://classroom.github.com/a/m5CoIaV3){target="_blank"} and use git clone, as usual.
+
+Edit the *README.md* file to add both your names and your partner's, and share the git repo, as usual.
+
+## The BST Constructor
+
+As you can see, our BST class contains just two instance variables:
+
+```cpp
+Node*    myRoot;       // pointer to the first item we insert
+unsigned myNumItems;   // number of items I contain
+```
+
+In the default constructor, our BST is empty, so myRoot should have the value `nullptr` and `myNumItems` should equal zero.
+
+Compile the project and run the tester. The tests should pass.
+
+<center><figure>
+
+<img src="/images/labs/lab10-xmas-bst.png" alt="Here is a creative illustration of a Christmas tree designed as a binary search tree (BST). The tree's structure represents nodes with festive decorations like ornaments and lights, arranged according to BST properties." width="400"/>
+<figcaption>AI Prompt: Here is a creative illustration of a Christmas tree designed as a binary search tree (BST). The tree's structure represents nodes with festive decorations like ornaments and lights, arranged according to BST properties.</figcaption>
+
+</figure></center>
+
+
+## The insert() Method
+
+Looking at the code, your BST class provides methods to:
+
+- Create an empty BST;
+- Determine whether a BST is empty or not;
+- Determine the number of items in a BST; 
+- Reclaim the dynamic memory of a BST; and
+- Traverse the tree using preorder.
+
+Our next task is to be able to *insert* items into a BST. The `insert(it)` method adds an item it to the tree by storing it in a node such that:
+
+- all nodes to the "left" of the node containing it contain items that are less than it; and
+- all nodes to the "right" of the node containing it contain items that are greater than it.
+
+Note that if we use a simple approach to `insert()` in which the first item is stored in the root node, the second item is stored in a child node of the root node, and so on, then the order in which we add items can make a big difference in the shape of the tree. For example, if we insert items in a "carefully chosen random" order: 44, 66, 22, 55, 11, 77, 33, then our tree will be *balanced*:
+
+![](/images/labs/lab10-tree01.png)
+
+A tree's shape can be characterized in different ways. One way is by comparing its height, diameter, and maximum width:
+
+- A tree's *height* is the number of nodes on the longest path from the root node to any of the leaf nodes.
+- A tree's *diameter* is the number of nodes on the longest path between any two leaves in the tree. This path often includes the root node, but not necessarily.
+- A tree's *maximum width* is the largest number of nodes on any given level of the tree.
+
+The preceding tree's height is 3, its diameter is 5, and its maximum width is 4. If a binary search tree is *balanced*, then its height should be about $log_2(n)$, where $n$ is the number of items in the tree.
+
+By contrast, if we insert items in *ascending* order: 11, 22, 33, 44, 55, 66, 77, then our tree will be imbalanced one way:
+
+![](/images/labs/lab10-tree02.png)
+
+This tree's height is 7, its diameter is 7, and its maximum width is 1.
+
+Likewise, if we insert the items in descending order : 77, 66, 55, 44, 33, 22, 11, then our tree will be imbalanced the other way:
+
+![](/images/labs/lab10-tree03.png)
+
+As before, this tree's height is 7, its diameter is 7, and its maximum width is 1.
+
+In **tests.cpp**, uncomment the `TEST_CASE` for "insert()". Save/compile, and verify that you get a compilation error indicating that `insert()` is undeclared.
+
+Add a prototype of `insert()` to our BST class; then recompile and verify that only a linking error remains.
+
+In **BST.h**, below the class declaration, create a stub for `BST::insert()` (a "stub" is code that does nothing -- it just returns). Recompile, and when all errors have been eliminated, run the test. Then define `BST::insert()` so that it passes the test. Here is a [hint](./lab10-hint.qmd), in case you get stuck, but do your best to build this method without looking at the hint. Run the project, and verify that everything works correctly at the outset.
+
+
+
+
+
+## Submit
+
+Don't forget to submit all your code to github.
+
+Grading Rubric: 20 points total
+
+-   5 points for each of the 4 parts. Those 5 points consist of:
+    -   2 points for code correctness
+    -   3 points for your analysis of the code.
+
+Ways students lost points in the past:
+
+-   -12: no analysis was given.
+-   -3: some of the questions were not answered properly.
+
+<!-- [^1]: how to add footnotes. -->
