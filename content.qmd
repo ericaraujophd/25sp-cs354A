@@ -28,7 +28,7 @@ The SLOs (Student Learning Objectives), labs, and projects for each week are giv
 | 7 	|  	| Algorithm Analysis and Big-Oh [Slides]  [Videos]  [SLOs] 	| Lab 7 	| Proj 7 	|  	|
 | 8 	|  	| [Stacks and Queues](/week08.qmd) 	| Lab 8 	| [Proj 8](/projects/proj08.qmd) 	|  	|
 | 9 	|  	| [Recursion](/week09.qmd) 	| [Lab 9](/labs/lab09.qmd) 	| [Proj 9](/projects/proj09.qmd) 	| Test 3, weeks 0 - 8 (Friday) 	|
-| 10 	|  	| [BSTs](/week10.qmd) 	| [Lab 10](/labs/lab10.qmd) 	| Proj 10 	|  	|
+| 10 	|  	| [BSTs](/week10.qmd) 	| [Lab 10](/labs/lab10.qmd) 	| [Proj 10](/projects/proj10.qmd) 	|  	|
 | 11 	|  	| BSTs, continued 	|  	|  	|  	|
 | 12 	|  	| AVL Trees, STL set and map containers,  [SLOs] [Slides] [ [Slides]  	| Lab 12 	| No project 	| Test 4: weeks 0 - 11 (Friday) 	|
 | 13 	|  	| Hash Tables [Slides] Sorting Algorithms] [  [SLOs] [Slides]]  	| Lab/Project 13 	|  	|  	|

@@ -77,7 +77,7 @@ No readings for Week 10.
 **Project 10: Binary Search Trees**
 
 ::: instructions
-[Instructions]()
+[Instructions](/projects/proj10.qmd)
 :::
 
 <!-- ::: source
@@ -86,7 +86,7 @@ No readings for Week 10.
 
 
 ::: starter
-[Starter]()
+[Starter](https://classroom.github.com/a/f0Ju72P9){target={"_blank"}}
 :::
 :::::
 
