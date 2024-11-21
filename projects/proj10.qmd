@@ -9,7 +9,7 @@ eval: false
 
 <center><figure>
 
-<img src="/projects/imgs/proj10-header.png" alt="Created by AI Prompt: Here is the illustration of a scientist creating a binary search tree with random numbers in a futuristic lab setting." width="400"/>
+<img src="/images/projects/proj10-header.png" alt="Created by AI Prompt: Here is the illustration of a scientist creating a binary search tree with random numbers in a futuristic lab setting." width="400"/>
 <figcaption>Here is the illustration of a scientist creating a binary search tree with random numbers in a futuristic lab setting.</figcaption>
 
 </figure></center>
