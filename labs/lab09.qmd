@@ -22,17 +22,13 @@ After the AI generates C++ code, copy and paste it into a file, and compile and 
 
 [Accept the assignment](https://classroom.github.com/a/cVv5pP0o){target="_blank"}.
 
-<center>
-
-<figure>
+<center><figure>
 
 <img src="/labs/imgs/lab9-this-is-going-to-take-forever.png" alt="This is going to take forever..." width="400"/>
 
 <figcaption>This is going to take forever...</figcaption>
 
-</figure>
-
-</center>
+</figure></center>
 
 ## Part 1: Reverse an array, recursively
 
