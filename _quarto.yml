@@ -76,6 +76,8 @@ website:
         - href: week08.qmd
         - href: week09.qmd
         - href: week10.qmd
+        - href: week11.qmd
+        - href: week12.qmd
         
 
     # - id: extras

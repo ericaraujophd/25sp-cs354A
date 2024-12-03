@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Lab 10: Binary Search Trees – CS112 - Data Structures</title>
+<title>Lab 12: The STL set and map Containers – CS112 - Data Structures</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -105,41 +105,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 <script src="https://kit.fontawesome.com/78ddb093ea.js" crossorigin="anonymous"></script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="../labs/lab-styles.css">
-<meta property="og:title" content="Lab 10: Binary Search Trees – CS112 - Data Structures">
+<meta property="og:title" content="Lab 12: The STL set and map Containers – CS112 - Data Structures">
 <meta property="og:description" content="CS112 will teach students to use C++ for creating data structures.">
 <meta property="og:site_name" content="CS112 - Data Structures">
-<meta name="twitter:title" content="Lab 10: Binary Search Trees – CS112 - Data Structures">
+<meta name="twitter:title" content="Lab 12: The STL set and map Containers – CS112 - Data Structures">
 <meta name="twitter:description" content="CS112 will teach students to use C++ for creating data structures.">
 <meta name="twitter:image" content="https://ericaraujo.com/24fa-cs112/images/twitter-card.png">
 <meta name="twitter:creator" content="@ericfaraujo">
@@ -203,21 +174,31 @@ window.Quarto = {
   <ul>
   <li><a href="#objectives" id="toc-objectives" class="nav-link active" data-scroll-target="#objectives">Objectives</a></li>
   <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#menu" id="toc-menu" class="nav-link" data-scroll-target="#menu">Menu</a></li>
   <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started">Getting Started</a></li>
-  <li><a href="#the-bst-constructor" id="toc-the-bst-constructor" class="nav-link" data-scroll-target="#the-bst-constructor">The BST Constructor</a></li>
-  <li><a href="#the-insert-method" id="toc-the-insert-method" class="nav-link" data-scroll-target="#the-insert-method">The insert() Method</a></li>
-  <li><a href="#the-contains-method" id="toc-the-contains-method" class="nav-link" data-scroll-target="#the-contains-method">The contains() Method</a></li>
-  <li><a href="#three-traversal-methods" id="toc-three-traversal-methods" class="nav-link" data-scroll-target="#three-traversal-methods">Three Traversal Methods</a></li>
-  <li><a href="#submit" id="toc-submit" class="nav-link" data-scroll-target="#submit">Submit</a></li>
+  <li><a href="#part-i.-the-menu-class" id="toc-part-i.-the-menu-class" class="nav-link" data-scroll-target="#part-i.-the-menu-class">Part I. The Menu Class</a>
+  <ul class="collapse">
+  <li><a href="#the-menu-constructor" id="toc-the-menu-constructor" class="nav-link" data-scroll-target="#the-menu-constructor">The Menu Constructor</a></li>
+  <li><a href="#the-menucontainschoice-method" id="toc-the-menucontainschoice-method" class="nav-link" data-scroll-target="#the-menucontainschoice-method">The <code>Menu::containsChoice()</code> Method</a></li>
+  </ul></li>
+  <li><a href="#part-ii.-the-app-class" id="toc-part-ii.-the-app-class" class="nav-link" data-scroll-target="#part-ii.-the-app-class">Part II. The App Class</a>
+  <ul class="collapse">
+  <li><a href="#constructor" id="toc-constructor" class="nav-link" data-scroll-target="#constructor">Constructor</a></li>
+  <li><a href="#show-all-movies-option" id="toc-show-all-movies-option" class="nav-link" data-scroll-target="#show-all-movies-option">Show All Movies Option</a></li>
+  <li><a href="#show-all-actors-for-a-single-movie-option" id="toc-show-all-actors-for-a-single-movie-option" class="nav-link" data-scroll-target="#show-all-actors-for-a-single-movie-option">Show All Actors For a Single Movie Option</a></li>
+  <li><a href="#show-all-movies-for-an-actor-option" id="toc-show-all-movies-for-an-actor-option" class="nav-link" data-scroll-target="#show-all-movies-for-an-actor-option">Show All Movies For an Actor Option</a></li>
+  </ul></li>
+  <li><a href="#turn-in" id="toc-turn-in" class="nav-link" data-scroll-target="#turn-in">Turn In</a></li>
+  <li><a href="#grading-rubric" id="toc-grading-rubric" class="nav-link" data-scroll-target="#grading-rubric">Grading Rubric</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/ericaraujophd/24fa-cs112/edit/main/labs/lab10.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/24fa-cs112/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/ericaraujophd/24fa-cs112/edit/main/labs/lab12.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/24fa-cs112/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Lab 10: Binary Search Trees</h1>
+<h1 class="title">Lab 12: The STL set and map Containers</h1>
 </div>
 
 
@@ -234,134 +215,163 @@ window.Quarto = {
 </header>
 
 
+<center>
+<figure class="figure">
+<p><img src="../images/labs/lab11-homealone.jpg" alt="Home Alone (1990)." width="500" class="figure-img"></p>
+<figcaption>
+Home Alone (1990).
+</figcaption>
+</figure>
+</center>
 <section id="objectives" class="level2">
 <h2 class="anchored" data-anchor-id="objectives">Objectives</h2>
 <p>In this exercise, you will:</p>
 <ul>
-<li>Complete a linked-node-based binary search tree class.</li>
-<li>Practice building recursive operations.</li>
-<li>Practice thinking recursively.</li>
+<li>Use the STL set container to store a set of values.</li>
+<li>Use the STL map container to create an associative array whose keys are string values, and whose values are sets of strings.</li>
+<li>Use iterators to access the items in these containers.</li>
 </ul>
 </section>
 <section id="introduction" class="level2">
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<p>Today’s exercise is to complete a class template named BST from which binary search tree classes and objects can be created. The exercise provides you with a test-class and a partially-built BST class template; your task is to complete the BST class template.</p>
-<center>
-<figure class="figure">
-<p><img src="../images/labs/lab10-xmas-bst.png" alt="Here is a creative illustration of a Christmas tree designed as a binary search tree (BST). The tree's structure represents nodes with festive decorations like ornaments and lights, arranged according to BST properties." width="500" class="figure-img"></p>
-<figcaption>
-AI Prompt: Here is a creative illustration of a Christmas tree designed as a binary search tree (BST). The tree’s structure represents nodes with festive decorations like ornaments and lights, arranged according to BST properties.
-</figcaption>
-</figure>
-</center>
+<p>This lab/project has you creating a simple database of movies and the actors in the movies. Then the user of the program can choose to:</p>
+<ul>
+<li>Show all movies</li>
+<li>Show all actors in a movie</li>
+<li>Show all movies an actor was in.</li>
+<li>The main data structure you’ll create is an STL map that maps:</li>
+</ul>
+<pre><code>movie name → set of actors in the movie.</code></pre>
+<p>This is a complex data structure: each entry in the map contains a set (Thus, we’ll have a binary search tree of binary search trees).</p>
+<p>We’ll use the Bridges database of movie information. When you get the information from the <a href="https://bridgesuncc.github.io/doc/cxx-api/current/html/classbridges_1_1dataset_1_1_movie_actor_wikidata.html">Bridges API</a>, you get a vector of objects of type <code>MovieActorWikidata</code>. Each object contains a movie and an actor in the movie (among other things). If you printed out those two things from <code>MovieActorWikidata</code> objects, you might see these values.</p>
+<pre><code>Movie: Young at Heart         Actor: Alan Hale, Jr.
+Movie: Wichita                Actor: Carl Benton Reid
+Movie: We're No Angels        Actor: Aldo Ray
+Movie: Young at Heart         Actor: Doris Day
+Movie: Wichita                Actor: Joel McCrea
+etc...</code></pre>
+<p>Thus, you see that the objects are not in any order, and do not have all the actors in a movie in each object. To get all actors for a movie, you’ll have to iterate over all the elements of the vector and learn 1) all the movies, and 2) all the actors in the movies.</p>
+<p>Note that sometimes an actor is listed multiple times for a movie. But, because we are using an <code>STL set</code>, it automatically handles attempts to insert an element multiple times.</p>
+</section>
+<section id="menu" class="level2">
+<h2 class="anchored" data-anchor-id="menu">Menu</h2>
+<p>The application presents a menu from which the user can select the operation s/he wishes to perform. To validate a user’s menu-choice, our project uses a tree-based data structure – the <code>STL set</code>. For example, if the valid menu choices are <em>a</em>, <em>b</em>, <em>c</em>, <em>d</em>, <em>e</em>, <em>f</em>, and <em>q</em>, and we store these choices in a set named <code>myValidChoices</code>, then we might (simplistically) visualize this set as follows:</p>
+<p><img src="../images/labs/lab11-bst.png" class="img-fluid"></p>
+<p>To determine whether or not a character is present in this set, the STL <code>find(value)</code> method does a binary search down through this tree until it either locates value, or reaches the bottom of the tree. It should be evident that the maximum time to search is <em>O(lg(n))</em>, where <em>n</em> is the number of items in the set.</p>
+<p>The exercise will provide you with a “skeleton” application, which you will then complete by adding additional functionality.</p>
 </section>
 <section id="getting-started" class="level2">
 <h2 class="anchored" data-anchor-id="getting-started">Getting Started</h2>
-<p>Accept the <a href="https://classroom.github.com/a/m5CoIaV3" target="_blank">invitation from github classroom</a> and use git clone, as usual.</p>
+<p>Accept the <a href="https://classroom.github.com/a/ZtXfpjDl" target="_blank">invitation from github classroom</a> and use git clone, as usual.</p>
 <p>Edit the <strong>README.md</strong> file to add both your names and your partner’s, and share the git repo, as usual.</p>
 </section>
-<section id="the-bst-constructor" class="level2">
-<h2 class="anchored" data-anchor-id="the-bst-constructor">The BST Constructor</h2>
-<p>As you can see, our BST class contains just two instance variables:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>Node<span class="op">*</span>    myRoot<span class="op">;</span>       <span class="co">// pointer to the first item we insert</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="dt">unsigned</span> myNumItems<span class="op">;</span>   <span class="co">// number of items I contain</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>In the default constructor, our BST is empty, so myRoot should have the value <code>nullptr</code> and <code>myNumItems</code> should equal zero.</p>
-<p>Compile the project and run the tester. The tests should pass.</p>
+<section id="part-i.-the-menu-class" class="level2">
+<h2 class="anchored" data-anchor-id="part-i.-the-menu-class">Part I. The Menu Class</h2>
+<p>When dealing with menu-driven systems, one thing that can go wrong is if the user enters an invalid choice – something that is not on the menu. When this happens, the program must detect it and take remedial action.</p>
+<p>One way to detect such a problem is to build a <strong>Menu class</strong> that, besides “remembering” its menu, “remembers” its set of valid menu choices. Then when the user enters a choice, we can validate their choice by checking whether or not their choice is an element of that set.</p>
+<p>As you can see, our Menu class contains two instance variables: a string storing the menu, and a set to store those menu choices that are valid:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>string myValue<span class="op">;</span>             <span class="co">// the menu that is displayed</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>set<span class="op">&lt;</span><span class="dt">char</span><span class="op">&gt;</span> myValidChoices<span class="op">;</span>   <span class="co">// the valid menu choices</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Save/compile your project, and verify that everything compiles without errors.</p>
+<section id="the-menu-constructor" class="level3">
+<h3 class="anchored" data-anchor-id="the-menu-constructor">The Menu Constructor</h3>
+<p>The Menu constructor currently initializes our <code>myValue</code> member; it must also initialize <code>myValidChoices</code> so that it stores the valid menu choices. To do so, we can use the <code>insert()</code> method:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>setVariable<span class="op">.</span>insert<span class="op">(</span>value<span class="op">);</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>that inserts a single value into a set.</p>
+<p>In <strong>Menu.cpp</strong>, add <code>insert()</code> calls to make <code>myValidChoices</code> represent the set {‘a’, ‘b’, ‘c’, ‘q’}.</p>
 </section>
-<section id="the-insert-method" class="level2">
-<h2 class="anchored" data-anchor-id="the-insert-method">The insert() Method</h2>
-<p>Looking at the code, your BST class provides methods to:</p>
-<ul>
-<li>Create an empty BST;</li>
-<li>Determine whether a BST is empty or not;</li>
-<li>Determine the number of items in a BST;</li>
-<li>Reclaim the dynamic memory of a BST; and</li>
-<li>Traverse the tree using preorder.</li>
-</ul>
-<p>Our next task is to be able to <em>insert</em> items into a BST. The <code>insert(it)</code> method adds an item it to the tree by storing it in a node such that:</p>
-<ul>
-<li>all nodes to the “left” of the node containing it contain items that are less than it; and</li>
-<li>all nodes to the “right” of the node containing it contain items that are greater than it.</li>
-</ul>
-<p>Note that if we use a simple approach to <code>insert()</code> in which the first item is stored in the root node, the second item is stored in a child node of the root node, and so on, then the order in which we add items can make a big difference in the shape of the tree. For example, if we insert items in a “carefully chosen random” order: 44, 66, 22, 55, 11, 77, 33, then our tree will be <em>balanced</em>:</p>
-<p><img src="../images/labs/lab10-tree01.png" class="img-fluid"></p>
-<p>A tree’s shape can be characterized in different ways. One way is by comparing its height, diameter, and maximum width:</p>
-<ul>
-<li>A tree’s <em>height</em> is the number of nodes on the longest path from the root node to any of the leaf nodes.</li>
-<li>A tree’s <em>diameter</em> is the number of nodes on the longest path between any two leaves in the tree. This path often includes the root node, but not necessarily.</li>
-<li>A tree’s <em>maximum width</em> is the largest number of nodes on any given level of the tree.</li>
-</ul>
-<p>The preceding tree’s height is 3, its diameter is 5, and its maximum width is 4. If a binary search tree is <em>balanced</em>, then its height should be about <span class="math inline">\(log_2(n)\)</span>, where <span class="math inline">\(n\)</span> is the number of items in the tree.</p>
-<p>By contrast, if we insert items in <em>ascending</em> order: 11, 22, 33, 44, 55, 66, 77, then our tree will be imbalanced one way:</p>
-<p><img src="../images/labs/lab10-tree02.png" class="img-fluid"></p>
-<p>This tree’s height is 7, its diameter is 7, and its maximum width is 1.</p>
-<p>Likewise, if we insert the items in descending order : 77, 66, 55, 44, 33, 22, 11, then our tree will be imbalanced the other way:</p>
-<p><img src="../images/labs/lab10-tree03.png" class="img-fluid"></p>
-<p>As before, this tree’s height is 7, its diameter is 7, and its maximum width is 1.</p>
-<p>In <strong>tests.cpp</strong>, uncomment the <code>TEST_CASE</code> for “insert()”. Save/compile, and verify that you get a compilation error indicating that <code>insert()</code> is undeclared.</p>
-<p>Add a prototype of <code>insert()</code> to our BST class; then recompile and verify that only a linking error remains.</p>
-<p>In <strong>BST.h</strong>, below the class declaration, create a stub for <code>BST::insert()</code> (a “stub” is code that does nothing – it just returns). Recompile, and when all errors have been eliminated, run the test. Then define <code>BST::insert()</code> so that it passes the test. Here is a <a href="../labs/lab10-hint.html" target="_blank">hint</a>, in case you get stuck, but do your best to build this method without looking at the hint. Run the project, and verify that everything works correctly at the outset.</p>
+<section id="the-menucontainschoice-method" class="level3">
+<h3 class="anchored" data-anchor-id="the-menucontainschoice-method">The <code>Menu::containsChoice()</code> Method</h3>
+<p>To let a program conveniently check whether or not a given character is a valid menu choice, the Menu class provides a boolean method <code>containsChoice(choice)</code> that returns <strong>true</strong> if and only if choice is a valid menu choice. Currently, this method is a stub-definition that returns <strong>false</strong>. Your next task is to revise this stub so that it returns <strong>true</strong> if and only if choice is in the set <code>myValidChoices</code>.</p>
+<p>We can accomplish this using the <code>find()</code> method.</p>
+<p>Save/compile your project, and when it is free of compilation errors, run the program. When it is free of errors, go on.</p>
+<p>When you run your program, you will need to provide your Bridges UserName and Id on the command line: e.g.,</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./movies</span> CS112StudentUsingBridges 123555666</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="the-contains-method" class="level2">
-<h2 class="anchored" data-anchor-id="the-contains-method">The contains() Method</h2>
-<p>In <strong>tests.cpp</strong>, uncomment the <code>TEST_CASE</code> for <code>contains()</code>. Take a few minutes to look over the tests it contains, specifically how <code>contains()</code> is used. As can be seen, the <code>contains(it)</code> method returns <em>true</em> if it is in its BST; otherwise it returns false. Save/compile your project. You should see an error indicating that there is no method matching the calls in our test-method.</p>
-<p>Modify <strong>BST.h</strong> as necessary to fix any compilation/linking errors, using an approach similar to the approach used in <code>insert()</code>. Recompile and run the tests. If you get stuck, here is a <a href="../labs/lab10-hint2.html" target="_blank">hint</a>, but don’t use it unless you have to.</p>
-<p>Continue when your method passes the test.</p>
 </section>
-<section id="three-traversal-methods" class="level2">
-<h2 class="anchored" data-anchor-id="three-traversal-methods">Three Traversal Methods</h2>
-<p>To <strong>traverse</strong> a data structure is to pass through each of its items, processing each item in turn. For example, outputting the values in an array, vector, or list usually involves traversing the structure and outputting each item in turn.</p>
-<p>When it comes to binary search trees, there are a variety of ways to traverse a BST:</p>
-<ul>
-<li>A <strong>preorder traversal</strong> “processes” the item in a node before the items in the left and right subtrees are (recursively) processed.</li>
-<li>A <strong>postorder traversal</strong> “processes” the item in a node after the items in the left and right subtrees are (recursively) processed.</li>
-<li>An <strong>inorder traversal</strong> “processes” the item in a node after the items in the left subtree have been processed, but before the items in the right subtree have been (recursively) processed.</li>
-</ul>
-<p>To illustrate, the BST class template contains a <code>traversePreorder()</code> method, defined as follows:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> BST<span class="op">::</span>traversePreorder<span class="op">(</span>ostream <span class="op">&amp;</span>out<span class="op">)</span> <span class="at">const</span> <span class="op">{</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="op">(!</span>isEmpty<span class="op">())</span> <span class="op">{</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    myRoot<span class="op">-&gt;</span>traversePreorder<span class="op">(</span>ostream <span class="op">&amp;</span>out<span class="op">);</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>If the BST is not empty, this method “passes the buck” by sending the <code>traversePreorder()</code> message to the node whose address is in <code>myRoot</code>. The Node struct defines that (recursive) method as follows:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> BST<span class="op">::</span>Node<span class="op">::</span>traversePreorder<span class="op">(</span>ostream <span class="op">&amp;</span>out<span class="op">)</span> <span class="at">const</span> <span class="op">{</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">// 1. process myItem first (preorder)</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    processItem<span class="op">(</span>out<span class="op">);</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="co">// 2. then recursively process the items in the left subtree</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="op">(</span>myLeft <span class="op">!=</span> <span class="kw">nullptr</span><span class="op">)</span> <span class="op">{</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>        myLeft<span class="op">-&gt;</span>traversePreorder<span class="op">(</span>out<span class="op">);</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    <span class="co">// 3. then recursively process the items in the right subtree</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="op">(</span>myRight <span class="op">!=</span> <span class="kw">nullptr</span><span class="op">)</span> <span class="op">{</span></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>        myRight<span class="op">-&gt;</span>traversePreorder<span class="op">(</span>out<span class="op">);</span></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>The <code>processItem()</code> method can be defined to do any kind of processing of a node’s item. To illustrate, our Node struct defines <code>processItem()</code> to insert a space and then <code>myItem</code> into <code>cout</code>:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> BST<span class="op">::</span>Node<span class="op">::</span>processItem<span class="op">(</span>ostream <span class="op">&amp;</span>out<span class="op">)</span> <span class="op">{</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    out <span class="op">&lt;&lt;</span> myItem <span class="op">&lt;&lt;</span> <span class="ch">' '</span><span class="op">;</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Note that all of these functions take an <code>ostream</code> as a parameter and pass it on in their method calls. The <code>processItem()</code> method writes its output to the <code>ostream</code>. By passing in an output stream this way, the caller can have <code>processItem</code> write to standard out (<code>cout</code>) or a file (<code>fout</code>) or even a string, which is what <strong>test.cpp</strong> does.</p>
-<p>Uncomment the <code>TEST_CASE</code> for <code>traversal</code>, and take a moment to look over its tests. Your final task is to define <code>traversePostorder()</code> and <code>traverseInorder()</code> methods that will produce the output expected by the test-method. Use the provided <code>traversePreorder()</code> methods as a model; the other two sets of traversal methods are quite similar.</p>
-<p>When your code passes all the tests, congratulations! You now have a basic binary search tree class!</p>
+<section id="part-ii.-the-app-class" class="level2">
+<h2 class="anchored" data-anchor-id="part-ii.-the-app-class">Part II. The App Class</h2>
+<p>The file <strong>App.h</strong> contains the declaration of class App. This class uses an STL map to store (movieName, set of actors) pairs:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>map<span class="op">&lt;</span>string<span class="op">,</span> set<span class="op">&lt;</span>string<span class="op">&gt;&gt;</span> movies_by_name<span class="op">;</span>   <span class="co">// key is movie name; value is set of actors' names.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Note that the code actually reads like this:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="dt">db_type</span> movies_by_name<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>In order to not have to type <code>map&lt;string, set&lt;string&gt;&gt;</code> too often, I created two <strong>typedefs</strong> at the top of <strong>App.h</strong>:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">typedef</span> map<span class="op">&lt;</span>string<span class="op">,</span> set<span class="op">&lt;</span>string<span class="op">&gt;&gt;</span> <span class="dt">db_type</span><span class="op">;</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="kw">typedef</span> map<span class="op">&lt;</span>string<span class="op">,</span> set<span class="op">&lt;</span>string<span class="op">&gt;&gt;::</span>iterator db_iter<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Now, the code can use <code>db_type</code> and <code>db_iter</code> instead of <code>map&lt;string, set&lt;string&gt;&gt;</code> and <code>map&lt;string, set&lt;string&gt;&gt;::iterator</code>, respectively. So much easier to type!</p>
+<section id="constructor" class="level3">
+<h3 class="anchored" data-anchor-id="constructor">Constructor</h3>
+<p>The App constructor has been defined for you. It takes a vector of <code>MovieActorWikidata</code> entries as a parameter.</p>
+<p>The constructor code contains the algorithm you should implement to process these entries, building up entries in the <code>movies_by_name</code> map.</p>
+<p>If you use the hint I gave in class about how accessing a map with <code>[ ]</code> will either create a new entry or update it if it already exists, then the body of the for loop is one line. Otherwise, the body is about 9 lines, and is very tricky code.</p>
+<p>Write the code now. This code will be difficult to test until you implement the next step.</p>
 </section>
-<section id="submit" class="level2">
-<h2 class="anchored" data-anchor-id="submit">Submit</h2>
-<p>Don’t forget to commit your changes.</p>
-<p>Grading Rubric: 25 points total</p>
+<section id="show-all-movies-option" class="level3">
+<h3 class="anchored" data-anchor-id="show-all-movies-option">Show All Movies Option</h3>
+<p>Implement code for <code>showAllMovies()</code>, to iterate through all entries in <code>movies_by_name</code>, and print out the movie name and then iterate through all actors for that movie, printing them out. I’ve indented the actor’s name, so the output is more readable.</p>
+<p>You might find it very useful to make the inner loop a separate function. I called that function <code>showActorsInAMovie()</code>. It takes an iterator “pointing” to an object from the <code>movies_by_name</code> collection, and iterates over the “second” field (a set), printing each actor in the set. If you implement this function, you’ll find you can use it again below.</p>
+<p>When you think your code is correct (for this and the previous step), try loading all movies from 1955 and printing them all out. The first movie should be:</p>
+<pre><code>Movie: 5 Against the House
+        Alvy Moore
+        Brian Keith
+        George Cisar
+        Guy Madison
+        Hugh Sanders
+        Jean Willes
+        John Larch
+        John Zaremba
+        Kathryn Crosby
+        Kerwin Mathews
+        Kim Novak
+        Mark Hanna
+        Robert Sampson
+        William Conrad</code></pre>
+<p>The last movie you should see should look like this:</p>
+<pre><code>Movie: Young at Heart
+        Alan Hale, Jr.
+        Doris Day
+        Dorothy Malone
+        Elisabeth Fraser
+        Ethel Barrymore
+        Frank Ferguson
+        Frank Sinatra
+        Gig Young
+        Lonny Chapman
+        Robert Keith</code></pre>
+</section>
+<section id="show-all-actors-for-a-single-movie-option" class="level3">
+<h3 class="anchored" data-anchor-id="show-all-actors-for-a-single-movie-option">Show All Actors For a Single Movie Option</h3>
+<p>Complete the code in the <code>getMovienameAndShowActors()</code> method. If you created a function to show all actors for a given movie, then you are half done already.</p>
+</section>
+<section id="show-all-movies-for-an-actor-option" class="level3">
+<h3 class="anchored" data-anchor-id="show-all-movies-for-an-actor-option">Show All Movies For an Actor Option</h3>
+<p>Finally, implement this option. Create a set of strings (I called my variable <code>movies_by_actor</code>.) And then go through all movies, looking for that actor. When you find him/her, add the movie to the <code>movies_by_actor</code>. Then, when you are done, print out the set.</p>
+<p>Here is a sample output:</p>
+<pre><code>Enter an actor name to show all movies for that actor: Alfred Hitchcock
+Rear Window
+The Trouble with Harry
+To Catch a Thief</code></pre>
+</section>
+</section>
+<section id="turn-in" class="level2">
+<h2 class="anchored" data-anchor-id="turn-in">Turn In</h2>
+<p>Submit your project to github as usual. If you worked with your lab partner on the project, make sure you update <strong>README.md</strong> to include both of your names/login-ids.</p>
+</section>
+<section id="grading-rubric" class="level2">
+<h2 class="anchored" data-anchor-id="grading-rubric">Grading Rubric</h2>
+<p>21 points total:</p>
 <ul>
-<li>5 pts: <code>insert()</code> correct</li>
-<li>5 pts: <code>contains()</code> correct</li>
-<li>4 pts x 3 = 12 pts: traversals are correct</li>
-<li>3 pts: code is neat and clean (hospitable)</li>
+<li>Menu class works: 2 pts.</li>
+<li>App constructor: 5 pts.</li>
+<li>Each App menu item: 4 pts each: 12 pts.</li>
+<li>Hospitable code: code is clean and neat, perfectly indented, with good variable names, etc.: 2 pts.</li>
 </ul>
-<p>Ways students lost points in the past:</p>
+<p>Ways students have lost points in the past:</p>
 <ul>
-<li>-1: <code>Node::contains</code> has to RETURN the value gotten from recursive calls of contains</li>
-<li>-2: <code>insert()</code> should be recursive;</li>
-<li>-1: <code>insert()</code> should throw an exception when item is already in tree</li>
-<li>-2: very poor indentation</li>
-<li>-2: <code>traversePostorder</code> and <code>traverseInorder</code> should call themselves, not traversePreorder</li>
-<li>-2: <code>Node::traverseInOrder</code> needs to process item in the <em>middle</em> (and use <code>processItem</code> method) insert</li>
+<li>-2: showAllMovies needs to show the names of each movie’s actors</li>
+<li>-2: getMovieNameAndShowActors implementation is incorrect, the result of movies_by_name.find will return the iterator value you want to pass to showActorsInAMovie, the for loop is unnecessary</li>
+<li>-2: code is very poorly indented</li>
+<li>-2: parameter names are very poorly chosen</li>
 </ul>
 <!-- [^1]: how to add footnotes. -->
 
@@ -941,7 +951,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ericaraujophd/24fa-cs112/edit/main/labs/lab10.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/24fa-cs112/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ericaraujophd/24fa-cs112/edit/main/labs/lab12.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/24fa-cs112/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">

@@ -35,6 +35,39 @@
     "text": "Learn more\nIf you would like to learn more about teaching with version control, I recommend the following paper.\n\nBeckman, M. D., Çetinkaya-Rundel, M., Horton, N. J., Rundel, C. W., Sullivan, A. J., & Tackett, M. (2020). Implementing version control with Git and GitHub as a learning objective in statistics and data science courses. doi.org/10.1080/10691898.2020.1848485\n\nIf you would like to learn more about using version control with R, I strongly recommend Happy Git with R."
   },
   {
+    "objectID": "week11.html",
+    "href": "week11.html",
+    "title": "Week 11: AVL Trees",
+    "section": "",
+    "text": "At the end of this unit, students will be able to…\n\ndefine what makes a BST balanced.\nAVL trees:\n\nidentify an AVL tree as a self-balancing tree.\narticulate the importance of the balance factor in determining when the tree needs to be rebalanced.\ncompute the balance factor for a node.",
+    "crumbs": [
+      "Content",
+      "Week 11: AVL Trees"
+    ]
+  },
+  {
+    "objectID": "week11.html#slos-for-week-11",
+    "href": "week11.html#slos-for-week-11",
+    "title": "Week 11: AVL Trees",
+    "section": "",
+    "text": "At the end of this unit, students will be able to…\n\ndefine what makes a BST balanced.\nAVL trees:\n\nidentify an AVL tree as a self-balancing tree.\narticulate the importance of the balance factor in determining when the tree needs to be rebalanced.\ncompute the balance factor for a node.",
+    "crumbs": [
+      "Content",
+      "Week 11: AVL Trees"
+    ]
+  },
+  {
+    "objectID": "week11.html#slides-videos-and-application-exercises",
+    "href": "week11.html#slides-videos-and-application-exercises",
+    "title": "Week 11: AVL Trees",
+    "section": "Slides, videos, and application exercises",
+    "text": "Slides, videos, and application exercises\n\nWeek 11: Slides\n\nSlides\n\n\n\nNo readings for Week 11.\n\n\n\n\n\n\nLab 11: No Lab\n\n\n\n\n\n\n\nProject 11: No Project",
+    "crumbs": [
+      "Content",
+      "Week 11: AVL Trees"
+    ]
+  },
+  {
     "objectID": "weekly-activities/week03.html",
     "href": "weekly-activities/week03.html",
     "title": "Week 3: Classes, Operator Overloading, etc.",
@@ -637,6 +670,69 @@
     "title": "Lab 10: Binary Search Trees",
     "section": "Submit",
     "text": "Submit\nDon’t forget to commit your changes.\nGrading Rubric: 25 points total\n\n5 pts: insert() correct\n5 pts: contains() correct\n4 pts x 3 = 12 pts: traversals are correct\n3 pts: code is neat and clean (hospitable)\n\nWays students lost points in the past:\n\n-1: Node::contains has to RETURN the value gotten from recursive calls of contains\n-2: insert() should be recursive;\n-1: insert() should throw an exception when item is already in tree\n-2: very poor indentation\n-2: traversePostorder and traverseInorder should call themselves, not traversePreorder\n-2: Node::traverseInOrder needs to process item in the middle (and use processItem method) insert"
+  },
+  {
+    "objectID": "labs/lab12.html",
+    "href": "labs/lab12.html",
+    "title": "Lab 12: The STL set and map Containers",
+    "section": "",
+    "text": "Home Alone (1990)."
+  },
+  {
+    "objectID": "labs/lab12.html#objectives",
+    "href": "labs/lab12.html#objectives",
+    "title": "Lab 12: The STL set and map Containers",
+    "section": "Objectives",
+    "text": "Objectives\nIn this exercise, you will:\n\nUse the STL set container to store a set of values.\nUse the STL map container to create an associative array whose keys are string values, and whose values are sets of strings.\nUse iterators to access the items in these containers."
+  },
+  {
+    "objectID": "labs/lab12.html#introduction",
+    "href": "labs/lab12.html#introduction",
+    "title": "Lab 12: The STL set and map Containers",
+    "section": "Introduction",
+    "text": "Introduction\nThis lab/project has you creating a simple database of movies and the actors in the movies. Then the user of the program can choose to:\n\nShow all movies\nShow all actors in a movie\nShow all movies an actor was in.\nThe main data structure you’ll create is an STL map that maps:\n\nmovie name → set of actors in the movie.\nThis is a complex data structure: each entry in the map contains a set (Thus, we’ll have a binary search tree of binary search trees).\nWe’ll use the Bridges database of movie information. When you get the information from the Bridges API, you get a vector of objects of type MovieActorWikidata. Each object contains a movie and an actor in the movie (among other things). If you printed out those two things from MovieActorWikidata objects, you might see these values.\nMovie: Young at Heart         Actor: Alan Hale, Jr.\nMovie: Wichita                Actor: Carl Benton Reid\nMovie: We're No Angels        Actor: Aldo Ray\nMovie: Young at Heart         Actor: Doris Day\nMovie: Wichita                Actor: Joel McCrea\netc...\nThus, you see that the objects are not in any order, and do not have all the actors in a movie in each object. To get all actors for a movie, you’ll have to iterate over all the elements of the vector and learn 1) all the movies, and 2) all the actors in the movies.\nNote that sometimes an actor is listed multiple times for a movie. But, because we are using an STL set, it automatically handles attempts to insert an element multiple times."
+  },
+  {
+    "objectID": "labs/lab12.html#menu",
+    "href": "labs/lab12.html#menu",
+    "title": "Lab 12: The STL set and map Containers",
+    "section": "Menu",
+    "text": "Menu\nThe application presents a menu from which the user can select the operation s/he wishes to perform. To validate a user’s menu-choice, our project uses a tree-based data structure – the STL set. For example, if the valid menu choices are a, b, c, d, e, f, and q, and we store these choices in a set named myValidChoices, then we might (simplistically) visualize this set as follows:\n\nTo determine whether or not a character is present in this set, the STL find(value) method does a binary search down through this tree until it either locates value, or reaches the bottom of the tree. It should be evident that the maximum time to search is O(lg(n)), where n is the number of items in the set.\nThe exercise will provide you with a “skeleton” application, which you will then complete by adding additional functionality."
+  },
+  {
+    "objectID": "labs/lab12.html#getting-started",
+    "href": "labs/lab12.html#getting-started",
+    "title": "Lab 12: The STL set and map Containers",
+    "section": "Getting Started",
+    "text": "Getting Started\nAccept the invitation from github classroom and use git clone, as usual.\nEdit the README.md file to add both your names and your partner’s, and share the git repo, as usual."
+  },
+  {
+    "objectID": "labs/lab12.html#part-i.-the-menu-class",
+    "href": "labs/lab12.html#part-i.-the-menu-class",
+    "title": "Lab 12: The STL set and map Containers",
+    "section": "Part I. The Menu Class",
+    "text": "Part I. The Menu Class\nWhen dealing with menu-driven systems, one thing that can go wrong is if the user enters an invalid choice – something that is not on the menu. When this happens, the program must detect it and take remedial action.\nOne way to detect such a problem is to build a Menu class that, besides “remembering” its menu, “remembers” its set of valid menu choices. Then when the user enters a choice, we can validate their choice by checking whether or not their choice is an element of that set.\nAs you can see, our Menu class contains two instance variables: a string storing the menu, and a set to store those menu choices that are valid:\nstring myValue;             // the menu that is displayed\nset&lt;char&gt; myValidChoices;   // the valid menu choices\nSave/compile your project, and verify that everything compiles without errors.\n\nThe Menu Constructor\nThe Menu constructor currently initializes our myValue member; it must also initialize myValidChoices so that it stores the valid menu choices. To do so, we can use the insert() method:\nsetVariable.insert(value);\nthat inserts a single value into a set.\nIn Menu.cpp, add insert() calls to make myValidChoices represent the set {‘a’, ‘b’, ‘c’, ‘q’}.\n\n\nThe Menu::containsChoice() Method\nTo let a program conveniently check whether or not a given character is a valid menu choice, the Menu class provides a boolean method containsChoice(choice) that returns true if and only if choice is a valid menu choice. Currently, this method is a stub-definition that returns false. Your next task is to revise this stub so that it returns true if and only if choice is in the set myValidChoices.\nWe can accomplish this using the find() method.\nSave/compile your project, and when it is free of compilation errors, run the program. When it is free of errors, go on.\nWhen you run your program, you will need to provide your Bridges UserName and Id on the command line: e.g.,\n./movies CS112StudentUsingBridges 123555666"
+  },
+  {
+    "objectID": "labs/lab12.html#part-ii.-the-app-class",
+    "href": "labs/lab12.html#part-ii.-the-app-class",
+    "title": "Lab 12: The STL set and map Containers",
+    "section": "Part II. The App Class",
+    "text": "Part II. The App Class\nThe file App.h contains the declaration of class App. This class uses an STL map to store (movieName, set of actors) pairs:\nmap&lt;string, set&lt;string&gt;&gt; movies_by_name;   // key is movie name; value is set of actors' names.\nNote that the code actually reads like this:\ndb_type movies_by_name;\nIn order to not have to type map&lt;string, set&lt;string&gt;&gt; too often, I created two typedefs at the top of App.h:\ntypedef map&lt;string, set&lt;string&gt;&gt; db_type;\ntypedef map&lt;string, set&lt;string&gt;&gt;::iterator db_iter;\nNow, the code can use db_type and db_iter instead of map&lt;string, set&lt;string&gt;&gt; and map&lt;string, set&lt;string&gt;&gt;::iterator, respectively. So much easier to type!\n\nConstructor\nThe App constructor has been defined for you. It takes a vector of MovieActorWikidata entries as a parameter.\nThe constructor code contains the algorithm you should implement to process these entries, building up entries in the movies_by_name map.\nIf you use the hint I gave in class about how accessing a map with [ ] will either create a new entry or update it if it already exists, then the body of the for loop is one line. Otherwise, the body is about 9 lines, and is very tricky code.\nWrite the code now. This code will be difficult to test until you implement the next step.\n\n\nShow All Movies Option\nImplement code for showAllMovies(), to iterate through all entries in movies_by_name, and print out the movie name and then iterate through all actors for that movie, printing them out. I’ve indented the actor’s name, so the output is more readable.\nYou might find it very useful to make the inner loop a separate function. I called that function showActorsInAMovie(). It takes an iterator “pointing” to an object from the movies_by_name collection, and iterates over the “second” field (a set), printing each actor in the set. If you implement this function, you’ll find you can use it again below.\nWhen you think your code is correct (for this and the previous step), try loading all movies from 1955 and printing them all out. The first movie should be:\nMovie: 5 Against the House\n        Alvy Moore\n        Brian Keith\n        George Cisar\n        Guy Madison\n        Hugh Sanders\n        Jean Willes\n        John Larch\n        John Zaremba\n        Kathryn Crosby\n        Kerwin Mathews\n        Kim Novak\n        Mark Hanna\n        Robert Sampson\n        William Conrad\nThe last movie you should see should look like this:\nMovie: Young at Heart\n        Alan Hale, Jr.\n        Doris Day\n        Dorothy Malone\n        Elisabeth Fraser\n        Ethel Barrymore\n        Frank Ferguson\n        Frank Sinatra\n        Gig Young\n        Lonny Chapman\n        Robert Keith\n\n\nShow All Actors For a Single Movie Option\nComplete the code in the getMovienameAndShowActors() method. If you created a function to show all actors for a given movie, then you are half done already.\n\n\nShow All Movies For an Actor Option\nFinally, implement this option. Create a set of strings (I called my variable movies_by_actor.) And then go through all movies, looking for that actor. When you find him/her, add the movie to the movies_by_actor. Then, when you are done, print out the set.\nHere is a sample output:\nEnter an actor name to show all movies for that actor: Alfred Hitchcock\nRear Window\nThe Trouble with Harry\nTo Catch a Thief"
+  },
+  {
+    "objectID": "labs/lab12.html#turn-in",
+    "href": "labs/lab12.html#turn-in",
+    "title": "Lab 12: The STL set and map Containers",
+    "section": "Turn In",
+    "text": "Turn In\nSubmit your project to github as usual. If you worked with your lab partner on the project, make sure you update README.md to include both of your names/login-ids."
+  },
+  {
+    "objectID": "labs/lab12.html#grading-rubric",
+    "href": "labs/lab12.html#grading-rubric",
+    "title": "Lab 12: The STL set and map Containers",
+    "section": "Grading Rubric",
+    "text": "Grading Rubric\n21 points total:\n\nMenu class works: 2 pts.\nApp constructor: 5 pts.\nEach App menu item: 4 pts each: 12 pts.\nHospitable code: code is clean and neat, perfectly indented, with good variable names, etc.: 2 pts.\n\nWays students have lost points in the past:\n\n-2: showAllMovies needs to show the names of each movie’s actors\n-2: getMovieNameAndShowActors implementation is incorrect, the result of movies_by_name.find will return the iterator value you want to pass to showActorsInAMovie, the for loop is unnecessary\n-2: code is very poorly indented\n-2: parameter names are very poorly chosen"
   },
   {
     "objectID": "labs/lab10-hint.html",
@@ -1280,6 +1376,39 @@
     "crumbs": [
       "Content",
       "Week 4: Vectors -- dynamic arrays"
+    ]
+  },
+  {
+    "objectID": "week12.html",
+    "href": "week12.html",
+    "title": "Week 12: STL set and map containers",
+    "section": "",
+    "text": "At the end of this unit, students will be able to…\n\ndescribe the unique characteristics of the STL set container – e.g., that a set stores unique values in sorted order.\ndescribe the time complexity of set container operations, like find, insert, remove.\nwrite code using iterators to traverse all items in a set.\nexplain the behavior of an iterator.\ndescribe the unique characteristics of the STL map container – e.g., that a map stores key, value pairs, with unique keys stored in sorted order.\ndescribe the time complexity of map container operations, like find, insert, remove, and indexing/subscripting.\nreason about the unique behavior of indexing in a map object.\nwrite code using iterators to traverse all items in a map.\ndescribe the crucial ideas behind Insertion Sort and Selection Sort.\nidentify the crucial differences between Insertion and Selection Sort.\nidentify the time complexity of Insertion and Selection sort in best and worst cases.",
+    "crumbs": [
+      "Content",
+      "Week 12: STL set and map containers"
+    ]
+  },
+  {
+    "objectID": "week12.html#slos-for-week-12",
+    "href": "week12.html#slos-for-week-12",
+    "title": "Week 12: STL set and map containers",
+    "section": "",
+    "text": "At the end of this unit, students will be able to…\n\ndescribe the unique characteristics of the STL set container – e.g., that a set stores unique values in sorted order.\ndescribe the time complexity of set container operations, like find, insert, remove.\nwrite code using iterators to traverse all items in a set.\nexplain the behavior of an iterator.\ndescribe the unique characteristics of the STL map container – e.g., that a map stores key, value pairs, with unique keys stored in sorted order.\ndescribe the time complexity of map container operations, like find, insert, remove, and indexing/subscripting.\nreason about the unique behavior of indexing in a map object.\nwrite code using iterators to traverse all items in a map.\ndescribe the crucial ideas behind Insertion Sort and Selection Sort.\nidentify the crucial differences between Insertion and Selection Sort.\nidentify the time complexity of Insertion and Selection sort in best and worst cases.",
+    "crumbs": [
+      "Content",
+      "Week 12: STL set and map containers"
+    ]
+  },
+  {
+    "objectID": "week12.html#slides-videos-and-application-exercises",
+    "href": "week12.html#slides-videos-and-application-exercises",
+    "title": "Week 12: STL set and map containers",
+    "section": "Slides, videos, and application exercises",
+    "text": "Slides, videos, and application exercises\n\nWeek 12: Slides\n\nSlides\n\n\n\nNo readings for Week 12.\n\n\n\n\n\n\nLab 12: The STL set and map Containers\n\nInstructions\n\n\n\nSource\n\n\n\n\n\nProject 12: No Project\n\n\n\n\n\nExam 4 Exam on Wednesday during class. Bring your laptop. Content: Weeks 0 - 11.",
+    "crumbs": [
+      "Content",
+      "Week 12: STL set and map containers"
     ]
   },
   {

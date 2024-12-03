@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Lab 10: Binary Search Trees – CS112 - Data Structures</title>
+<title>Week 11: AVL Trees – CS112 - Data Structures</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,62 +20,30 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<link href=".././images/cs112-logo.png" rel="icon" type="image/png">
-<script src="../site_libs/quarto-html/quarto.js"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./week12.html" rel="next">
+<link href="./week10.html" rel="prev">
+<link href="././images/cs112-logo.png" rel="icon" type="image/png">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -105,41 +73,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 <script src="https://kit.fontawesome.com/78ddb093ea.js" crossorigin="anonymous"></script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="../labs/lab-styles.css">
-<meta property="og:title" content="Lab 10: Binary Search Trees – CS112 - Data Structures">
+<meta property="og:title" content="Week 11: AVL Trees – CS112 - Data Structures">
 <meta property="og:description" content="CS112 will teach students to use C++ for creating data structures.">
 <meta property="og:site_name" content="CS112 - Data Structures">
-<meta name="twitter:title" content="Lab 10: Binary Search Trees – CS112 - Data Structures">
+<meta name="twitter:title" content="Week 11: AVL Trees – CS112 - Data Structures">
 <meta name="twitter:description" content="CS112 will teach students to use C++ for creating data structures.">
 <meta name="twitter:image" content="https://ericaraujo.com/24fa-cs112/images/twitter-card.png">
 <meta name="twitter:creator" content="@ericfaraujo">
@@ -148,15 +86,15 @@ window.Quarto = {
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-sidebar floating nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../images/cs112-logo.png" alt="" class="navbar-logo">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <img src="./images/cs112-logo.png" alt="" class="navbar-logo">
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -166,15 +104,15 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html"> 
+    <a class="nav-link" href="./index.html"> 
 <span class="menu-text">Overview</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../policies.html"> 
+    <a class="nav-link" href="./policies.html"> 
 <span class="menu-text">Course Policies</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../content.html"> 
+    <a class="nav-link active" href="./content.html" aria-current="page"> 
 <span class="menu-text">Content</span></a>
   </li>  
 </ul>
@@ -191,33 +129,98 @@ window.Quarto = {
 </div>
       </div> <!-- /container-fluid -->
     </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./week11.html">Week 11: AVL Trees</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./content.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Course content</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./weekly-activities/week03.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 3: Classes, Operator Overloading, etc.</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./weekly-activities/week04.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 4: Vectors – dynamic arrays</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./weekly-activities/week05.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 5: Generic Containers</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week08.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 8: Advising days</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week09.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 9: Recursion</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week10.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 10: BSTs</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week11.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Week 11: AVL Trees</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week12.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 12: STL set and map containers</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#objectives" id="toc-objectives" class="nav-link active" data-scroll-target="#objectives">Objectives</a></li>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started">Getting Started</a></li>
-  <li><a href="#the-bst-constructor" id="toc-the-bst-constructor" class="nav-link" data-scroll-target="#the-bst-constructor">The BST Constructor</a></li>
-  <li><a href="#the-insert-method" id="toc-the-insert-method" class="nav-link" data-scroll-target="#the-insert-method">The insert() Method</a></li>
-  <li><a href="#the-contains-method" id="toc-the-contains-method" class="nav-link" data-scroll-target="#the-contains-method">The contains() Method</a></li>
-  <li><a href="#three-traversal-methods" id="toc-three-traversal-methods" class="nav-link" data-scroll-target="#three-traversal-methods">Three Traversal Methods</a></li>
-  <li><a href="#submit" id="toc-submit" class="nav-link" data-scroll-target="#submit">Submit</a></li>
+  <li><a href="#slos-for-week-11" id="toc-slos-for-week-11" class="nav-link active" data-scroll-target="#slos-for-week-11">SLOs for Week 11</a></li>
+  <li><a href="#slides-videos-and-application-exercises" id="toc-slides-videos-and-application-exercises" class="nav-link" data-scroll-target="#slides-videos-and-application-exercises">Slides, videos, and application exercises</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/ericaraujophd/24fa-cs112/edit/main/labs/lab10.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/24fa-cs112/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/ericaraujophd/24fa-cs112/edit/main/week11.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/24fa-cs112/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Lab 10: Binary Search Trees</h1>
+<h1 class="title">Week 11: AVL Trees</h1>
 </div>
 
 
@@ -234,136 +237,98 @@ window.Quarto = {
 </header>
 
 
-<section id="objectives" class="level2">
-<h2 class="anchored" data-anchor-id="objectives">Objectives</h2>
-<p>In this exercise, you will:</p>
+<section id="slos-for-week-11" class="level2">
+<h2 class="anchored" data-anchor-id="slos-for-week-11">SLOs for Week 11</h2>
+<p>At the end of this unit, students will be able to…</p>
 <ul>
-<li>Complete a linked-node-based binary search tree class.</li>
-<li>Practice building recursive operations.</li>
-<li>Practice thinking recursively.</li>
+<li>define what makes a BST <strong>balanced</strong>.</li>
+<li>AVL trees:
+<ul>
+<li>identify an AVL tree as a self-balancing tree.</li>
+<li>articulate the importance of the balance factor in determining when the tree needs to be rebalanced.</li>
+<li>compute the balance factor for a node.</li>
+</ul></li>
 </ul>
 </section>
-<section id="introduction" class="level2">
-<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<p>Today’s exercise is to complete a class template named BST from which binary search tree classes and objects can be created. The exercise provides you with a test-class and a partially-built BST class template; your task is to complete the BST class template.</p>
-<center>
-<figure class="figure">
-<p><img src="../images/labs/lab10-xmas-bst.png" alt="Here is a creative illustration of a Christmas tree designed as a binary search tree (BST). The tree's structure represents nodes with festive decorations like ornaments and lights, arranged according to BST properties." width="500" class="figure-img"></p>
-<figcaption>
-AI Prompt: Here is a creative illustration of a Christmas tree designed as a binary search tree (BST). The tree’s structure represents nodes with festive decorations like ornaments and lights, arranged according to BST properties.
-</figcaption>
-</figure>
-</center>
-</section>
-<section id="getting-started" class="level2">
-<h2 class="anchored" data-anchor-id="getting-started">Getting Started</h2>
-<p>Accept the <a href="https://classroom.github.com/a/m5CoIaV3" target="_blank">invitation from github classroom</a> and use git clone, as usual.</p>
-<p>Edit the <strong>README.md</strong> file to add both your names and your partner’s, and share the git repo, as usual.</p>
-</section>
-<section id="the-bst-constructor" class="level2">
-<h2 class="anchored" data-anchor-id="the-bst-constructor">The BST Constructor</h2>
-<p>As you can see, our BST class contains just two instance variables:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>Node<span class="op">*</span>    myRoot<span class="op">;</span>       <span class="co">// pointer to the first item we insert</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="dt">unsigned</span> myNumItems<span class="op">;</span>   <span class="co">// number of items I contain</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>In the default constructor, our BST is empty, so myRoot should have the value <code>nullptr</code> and <code>myNumItems</code> should equal zero.</p>
-<p>Compile the project and run the tester. The tests should pass.</p>
-</section>
-<section id="the-insert-method" class="level2">
-<h2 class="anchored" data-anchor-id="the-insert-method">The insert() Method</h2>
-<p>Looking at the code, your BST class provides methods to:</p>
-<ul>
-<li>Create an empty BST;</li>
-<li>Determine whether a BST is empty or not;</li>
-<li>Determine the number of items in a BST;</li>
-<li>Reclaim the dynamic memory of a BST; and</li>
-<li>Traverse the tree using preorder.</li>
-</ul>
-<p>Our next task is to be able to <em>insert</em> items into a BST. The <code>insert(it)</code> method adds an item it to the tree by storing it in a node such that:</p>
-<ul>
-<li>all nodes to the “left” of the node containing it contain items that are less than it; and</li>
-<li>all nodes to the “right” of the node containing it contain items that are greater than it.</li>
-</ul>
-<p>Note that if we use a simple approach to <code>insert()</code> in which the first item is stored in the root node, the second item is stored in a child node of the root node, and so on, then the order in which we add items can make a big difference in the shape of the tree. For example, if we insert items in a “carefully chosen random” order: 44, 66, 22, 55, 11, 77, 33, then our tree will be <em>balanced</em>:</p>
-<p><img src="../images/labs/lab10-tree01.png" class="img-fluid"></p>
-<p>A tree’s shape can be characterized in different ways. One way is by comparing its height, diameter, and maximum width:</p>
-<ul>
-<li>A tree’s <em>height</em> is the number of nodes on the longest path from the root node to any of the leaf nodes.</li>
-<li>A tree’s <em>diameter</em> is the number of nodes on the longest path between any two leaves in the tree. This path often includes the root node, but not necessarily.</li>
-<li>A tree’s <em>maximum width</em> is the largest number of nodes on any given level of the tree.</li>
-</ul>
-<p>The preceding tree’s height is 3, its diameter is 5, and its maximum width is 4. If a binary search tree is <em>balanced</em>, then its height should be about <span class="math inline">\(log_2(n)\)</span>, where <span class="math inline">\(n\)</span> is the number of items in the tree.</p>
-<p>By contrast, if we insert items in <em>ascending</em> order: 11, 22, 33, 44, 55, 66, 77, then our tree will be imbalanced one way:</p>
-<p><img src="../images/labs/lab10-tree02.png" class="img-fluid"></p>
-<p>This tree’s height is 7, its diameter is 7, and its maximum width is 1.</p>
-<p>Likewise, if we insert the items in descending order : 77, 66, 55, 44, 33, 22, 11, then our tree will be imbalanced the other way:</p>
-<p><img src="../images/labs/lab10-tree03.png" class="img-fluid"></p>
-<p>As before, this tree’s height is 7, its diameter is 7, and its maximum width is 1.</p>
-<p>In <strong>tests.cpp</strong>, uncomment the <code>TEST_CASE</code> for “insert()”. Save/compile, and verify that you get a compilation error indicating that <code>insert()</code> is undeclared.</p>
-<p>Add a prototype of <code>insert()</code> to our BST class; then recompile and verify that only a linking error remains.</p>
-<p>In <strong>BST.h</strong>, below the class declaration, create a stub for <code>BST::insert()</code> (a “stub” is code that does nothing – it just returns). Recompile, and when all errors have been eliminated, run the test. Then define <code>BST::insert()</code> so that it passes the test. Here is a <a href="../labs/lab10-hint.html" target="_blank">hint</a>, in case you get stuck, but do your best to build this method without looking at the hint. Run the project, and verify that everything works correctly at the outset.</p>
-</section>
-<section id="the-contains-method" class="level2">
-<h2 class="anchored" data-anchor-id="the-contains-method">The contains() Method</h2>
-<p>In <strong>tests.cpp</strong>, uncomment the <code>TEST_CASE</code> for <code>contains()</code>. Take a few minutes to look over the tests it contains, specifically how <code>contains()</code> is used. As can be seen, the <code>contains(it)</code> method returns <em>true</em> if it is in its BST; otherwise it returns false. Save/compile your project. You should see an error indicating that there is no method matching the calls in our test-method.</p>
-<p>Modify <strong>BST.h</strong> as necessary to fix any compilation/linking errors, using an approach similar to the approach used in <code>insert()</code>. Recompile and run the tests. If you get stuck, here is a <a href="../labs/lab10-hint2.html" target="_blank">hint</a>, but don’t use it unless you have to.</p>
-<p>Continue when your method passes the test.</p>
-</section>
-<section id="three-traversal-methods" class="level2">
-<h2 class="anchored" data-anchor-id="three-traversal-methods">Three Traversal Methods</h2>
-<p>To <strong>traverse</strong> a data structure is to pass through each of its items, processing each item in turn. For example, outputting the values in an array, vector, or list usually involves traversing the structure and outputting each item in turn.</p>
-<p>When it comes to binary search trees, there are a variety of ways to traverse a BST:</p>
-<ul>
-<li>A <strong>preorder traversal</strong> “processes” the item in a node before the items in the left and right subtrees are (recursively) processed.</li>
-<li>A <strong>postorder traversal</strong> “processes” the item in a node after the items in the left and right subtrees are (recursively) processed.</li>
-<li>An <strong>inorder traversal</strong> “processes” the item in a node after the items in the left subtree have been processed, but before the items in the right subtree have been (recursively) processed.</li>
-</ul>
-<p>To illustrate, the BST class template contains a <code>traversePreorder()</code> method, defined as follows:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> BST<span class="op">::</span>traversePreorder<span class="op">(</span>ostream <span class="op">&amp;</span>out<span class="op">)</span> <span class="at">const</span> <span class="op">{</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="op">(!</span>isEmpty<span class="op">())</span> <span class="op">{</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    myRoot<span class="op">-&gt;</span>traversePreorder<span class="op">(</span>ostream <span class="op">&amp;</span>out<span class="op">);</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>If the BST is not empty, this method “passes the buck” by sending the <code>traversePreorder()</code> message to the node whose address is in <code>myRoot</code>. The Node struct defines that (recursive) method as follows:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> BST<span class="op">::</span>Node<span class="op">::</span>traversePreorder<span class="op">(</span>ostream <span class="op">&amp;</span>out<span class="op">)</span> <span class="at">const</span> <span class="op">{</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">// 1. process myItem first (preorder)</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    processItem<span class="op">(</span>out<span class="op">);</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="co">// 2. then recursively process the items in the left subtree</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="op">(</span>myLeft <span class="op">!=</span> <span class="kw">nullptr</span><span class="op">)</span> <span class="op">{</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>        myLeft<span class="op">-&gt;</span>traversePreorder<span class="op">(</span>out<span class="op">);</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    <span class="co">// 3. then recursively process the items in the right subtree</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="op">(</span>myRight <span class="op">!=</span> <span class="kw">nullptr</span><span class="op">)</span> <span class="op">{</span></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>        myRight<span class="op">-&gt;</span>traversePreorder<span class="op">(</span>out<span class="op">);</span></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>The <code>processItem()</code> method can be defined to do any kind of processing of a node’s item. To illustrate, our Node struct defines <code>processItem()</code> to insert a space and then <code>myItem</code> into <code>cout</code>:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> BST<span class="op">::</span>Node<span class="op">::</span>processItem<span class="op">(</span>ostream <span class="op">&amp;</span>out<span class="op">)</span> <span class="op">{</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    out <span class="op">&lt;&lt;</span> myItem <span class="op">&lt;&lt;</span> <span class="ch">' '</span><span class="op">;</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Note that all of these functions take an <code>ostream</code> as a parameter and pass it on in their method calls. The <code>processItem()</code> method writes its output to the <code>ostream</code>. By passing in an output stream this way, the caller can have <code>processItem</code> write to standard out (<code>cout</code>) or a file (<code>fout</code>) or even a string, which is what <strong>test.cpp</strong> does.</p>
-<p>Uncomment the <code>TEST_CASE</code> for <code>traversal</code>, and take a moment to look over its tests. Your final task is to define <code>traversePostorder()</code> and <code>traverseInorder()</code> methods that will produce the output expected by the test-method. Use the provided <code>traversePreorder()</code> methods as a model; the other two sets of traversal methods are quite similar.</p>
-<p>When your code passes all the tests, congratulations! You now have a basic binary search tree class!</p>
-</section>
-<section id="submit" class="level2">
-<h2 class="anchored" data-anchor-id="submit">Submit</h2>
-<p>Don’t forget to commit your changes.</p>
-<p>Grading Rubric: 25 points total</p>
-<ul>
-<li>5 pts: <code>insert()</code> correct</li>
-<li>5 pts: <code>contains()</code> correct</li>
-<li>4 pts x 3 = 12 pts: traversals are correct</li>
-<li>3 pts: code is neat and clean (hospitable)</li>
-</ul>
-<p>Ways students lost points in the past:</p>
-<ul>
-<li>-1: <code>Node::contains</code> has to RETURN the value gotten from recursive calls of contains</li>
-<li>-2: <code>insert()</code> should be recursive;</li>
-<li>-1: <code>insert()</code> should throw an exception when item is already in tree</li>
-<li>-2: very poor indentation</li>
-<li>-2: <code>traversePostorder</code> and <code>traverseInorder</code> should call themselves, not traversePreorder</li>
-<li>-2: <code>Node::traverseInOrder</code> needs to process item in the <em>middle</em> (and use <code>processItem</code> method) insert</li>
-</ul>
-<!-- [^1]: how to add footnotes. -->
+<section id="slides-videos-and-application-exercises" class="level2">
+<h2 class="anchored" data-anchor-id="slides-videos-and-application-exercises">Slides, videos, and application exercises</h2>
+<div class="slide-deck">
+<p><strong>Week 11: Slides</strong></p>
+<div class="slides">
+<p><a href="https://docs.google.com/presentation/d/1SeV3cE7iJItPtG4V9eSg_0HgpqkHDeVSyMvwP2n5m8Y/edit?usp=sharing" target="_blank">Slides</a></p>
+</div>
+<!-- ::: source
+[Code from Class](https://calvincollege-my.sharepoint.com/:f:/g/personal/vtn2_calvin_edu/Eredz2bHiShCtI0CVssiaggB8tUES6QbacEf2cc4PBhTgQ?e=uoV7Uu)
+::: -->
+<div class="reading">
+<p>No readings for Week 11.</p>
+<!-- -   R4DS :: [Chp 2 - Introduction](https://r4ds.had.co.nz/explore-intro.html)
+-   IMS :: [Sec 1.1 & 1.2 - Case study & Data basics](https://openintro-ims.netlify.app/data-hello.html) -->
+</div>
+<!-- ::: video
+[Video](https://youtu.be/_YqEHZccujc)
+:::
+-->
+</div>
+<!-- ## Lab -->
+<div class="lab">
+<p><strong>Lab 11: No Lab</strong></p>
+<!-- ::: instructions
+[Instructions](/labs/lab10.qmd)
+::: -->
+<!-- ::: instructions
+[Instructions](slides/lab06-slides.qmd)
+::: -->
+<!-- ::: starter
+[Source](https://classroom.github.com/a/m5CoIaV3)
+::: -->
+<!-- ::: slides
+[Slides]()
+::: -->
+</div>
+<!-- ## Homework assignments -->
+<div class="homework">
+<p><strong>Project 11: No Project</strong></p>
+<!-- ::: instructions
+[Instructions](/projects/proj10.qmd)
+::: -->
+<!-- ::: source
+[Source](https://github.com/rstudio-education/datascience-box/tree/master/course-materials/hw-instructions/hw-10)
+::: -->
+<!-- ::: starter
+[Starter](https://classroom.github.com/a/f0Ju72P9){target="{\"_blank\""}}
+::: -->
+</div>
+<!-- ::: exam
+**Exam 3**
+Exam on Friday during class. Bring your laptop. Content: Weeks 0 - 8.
+::: -->
+<!-- ::: application-exercise
+**First dataviz**
+
+> **Option 1 - UN Votes**
+>
+> ::: source
+> [Source](https://github.com/rstudio-education/datascience-box/tree/master/course-materials/application-exercises/ae-01a-un-votes/unvotes.qmd)
+> :::
+>
+> ::: video
+> [Video](https://youtu.be/r-uTBEclM1E)
+> :::
+
+> **Option 2 - COVID-19**
+>
+> ::: source
+> [Source](https://github.com/rstudio-education/datascience-box/blob/master/course-materials/application-exercises/ae-01b-covid/covid.qmd)
+> :::
+::: -->
+<!-- ::: guest-lecture
+**Alberto Cairo - How charts lie**
+
+::: video
+[Video](https://youtu.be/Low28hx4wyk)
+:::
+::: -->
 
 
 </section>
@@ -933,6 +898,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./week10.html" class="pagination-link" aria-label="Week 10: BSTs">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Week 10: BSTs</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./week12.html" class="pagination-link" aria-label="Week 12: STL set and map containers">
+        <span class="nav-page-text">Week 12: STL set and map containers</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -941,16 +918,16 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ericaraujophd/24fa-cs112/edit/main/labs/lab10.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/24fa-cs112/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ericaraujophd/24fa-cs112/edit/main/week11.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/24fa-cs112/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
-    <a class="nav-link" href="../LICENSE.html">
+    <a class="nav-link" href="./LICENSE.html">
 <p>License</p>
 </a>
   </li>  
     <li class="nav-item">
-    <a class="nav-link" href="../CODE_OF_CONDUCT.html">
+    <a class="nav-link" href="./CODE_OF_CONDUCT.html">
 <p>Code of Conduct</p>
 </a>
   </li>  
