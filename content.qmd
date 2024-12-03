@@ -29,7 +29,7 @@ The SLOs (Student Learning Objectives), labs, and projects for each week are giv
 | 8 	|  	| [Stacks and Queues](/week08.qmd) 	| Lab 8 	| [Proj 8](/projects/proj08.qmd) 	|  	|
 | 9 	|  	| [Recursion](/week09.qmd) 	| [Lab 9](/labs/lab09.qmd) 	| [Proj 9](/projects/proj09.qmd) 	| Test 3, weeks 0 - 8 (Friday) 	|
 | 10 	|  	| [BSTs](/week10.qmd) 	| [Lab 10](/labs/lab10.qmd) 	| [Proj 10](/projects/proj10.qmd) 	|  	|
-| 11 	|  	| AVL Trees 	| No lab 	| No project 	|  	|
+| 11 	|  	| [AVL Trees](/week11.qmd) 	| No lab 	| No project 	|  	|
 | 12 	|  	| [STL set and map containers](/week12.qmd)   	| [Lab 12](/labs/lab12.qmd) 	| No project 	| Test 4: weeks 0 - 11 (Wednesday, Dec. 4) 	|
 | 13 	|  	| Hash Tables, Sorting Algorithms [  [SLOs] [Slides]]  	| Lab/Project 13 	|  	|  	|
 | Final 	|  	| Search calvin.edu for "Exam Schedule" to find the time of the exam (and all exams you have, this semester, and all future semesters). 	|  	|  	| Test 5 Cumulative, during exam time  (You may take it in either class's exam time. Classes met at 11am MWF and 12:15 MWF.) 	|
