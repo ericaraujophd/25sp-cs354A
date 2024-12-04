@@ -48,12 +48,12 @@ website:
     left:
       - text: "Overview"
         href: index.qmd
+      - text: "Instructors"
+        href: instructors.qmd
       - text: "Course Policies"
         href: policies.qmd
       - text: "Content"
         href: content.qmd
-      # - text: "Extras"
-      #   href: extras.qmd
 
   sidebar:
     - id: policies
@@ -61,9 +61,9 @@ website:
       style: "floating"
       collapse-level: 2
       align: left
-      contents:
-        - href: policies.qmd
-        - href: instructors.qmd
+      # contents:
+      #   - href: policies.qmd
+        # - href: instructors.qmd
 
     - id: content
       title: "Content"
