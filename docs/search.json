@@ -851,7 +851,7 @@
     "href": "labs/lab13.html",
     "title": "Lab 13: Hash Tables Project",
     "section": "",
-    "text": "Home Alone (1990)."
+    "text": "Definition of Grinch."
   },
   {
     "objectID": "labs/lab13.html#learning-objectives",
@@ -900,21 +900,21 @@
     "href": "labs/lab13.html#step-5-tweak-your-hashing-algorithm-and-table-size",
     "title": "Lab 13: Hash Tables Project",
     "section": "Step 5: Tweak Your Hashing Algorithm and Table Size",
-    "text": "Step 5: Tweak Your Hashing Algorithm and Table Size\nYou will notice that the basic hashing algorithm (adding up the first and last characters of each string) does a very poor job of distributing strings across all buckets in the hash table. Your goal now is to improve the hashing algorithm to improve the distribution.\nExperiment with different algorithms, but make sure they follow the criteria laid out in class: O(1) distribute values across all buckets. deterministic.\nYou MAY increase the number of buckets, but it must remain at or below 250 total. Do not change how buckets are implemented – they should remain sets.\nDo not spend more than 1 hour tweaking your algorithm. Make sure your final code implements your best algorithm.\nWrite a comment in your hash() function that describes your algorithm, explaining why you think it works as well as it does."
+    "text": "Step 5: Tweak Your Hashing Algorithm and Table Size\nYou will notice that the basic hashing algorithm (adding up the first and last characters of each string) does a very poor job of distributing strings across all buckets in the hash table. Your goal now is to improve the hashing algorithm to improve the distribution.\nExperiment with different algorithms, but make sure they follow the criteria laid out in class:\n\nO(1)\ndistribute values across all buckets.\ndeterministic.\n\nYou MAY increase the number of buckets, but it must remain at or below 250 total. Do not change how buckets are implemented – they should remain sets.\nDo not spend more than 1 hour tweaking your algorithm. Make sure your final code implements your best algorithm.\n\n\n\n\n\n\nImportant\n\n\n\nWrite a comment in your hash() function that describes your algorithm, explaining why you think it works as well as it does."
   },
   {
-    "objectID": "labs/lab13.html#turn-in",
-    "href": "labs/lab13.html#turn-in",
+    "objectID": "labs/lab13.html#step-6-submit",
+    "href": "labs/lab13.html#step-6-submit",
     "title": "Lab 13: Hash Tables Project",
-    "section": "Turn In",
-    "text": "Turn In\nSubmit your project to github as usual. If you worked with your lab partner on the project, make sure you update README.md to include both of your names/login-ids."
+    "section": "Step 6: Submit",
+    "text": "Step 6: Submit\nSubmit your code via github, as normal.\n\n\n\n\n\n\nWarning\n\n\n\nIF YOU WORKED WITH A PARTNER, ONLY ONE OF YOU HAS TO SUBMIT, but UPDATE THE README.md to INCLUDE BOTH NAMES."
   },
   {
     "objectID": "labs/lab13.html#grading-rubric",
     "href": "labs/lab13.html#grading-rubric",
     "title": "Lab 13: Hash Tables Project",
     "section": "Grading Rubric",
-    "text": "Grading Rubric\n21 points total:\n\nMenu class works: 2 pts.\nApp constructor: 5 pts.\nEach App menu item: 4 pts each: 12 pts.\nHospitable code: code is clean and neat, perfectly indented, with good variable names, etc.: 2 pts.\n\nWays students have lost points in the past:\n\n-2: showAllMovies needs to show the names of each movie’s actors\n-2: getMovieNameAndShowActors implementation is incorrect, the result of movies_by_name.find will return the iterator value you want to pass to showActorsInAMovie, the for loop is unnecessary\n-2: code is very poorly indented\n-2: parameter names are very poorly chosen"
+    "text": "Grading Rubric\n20 points total:\n\n10 pts: hash table code (not including the hash function) is correct\n5 pts: hash function obeys the criteria laid out in class.\n3 pts: hash function works well (not obviously leaving many buckets empty and have some be very full).\n2 pts: code is clean and hospitable.\n\nWays students lost points in the past:\n\n-2: Hash function does not appear to be evenly distributed but fills lower-numbered buckets way more (~2000 vs ~50)\n-4: Main function does not load words from file or call dumpInfo\n-1: Missing call to dumpInfo in main\n-3: Buckets are not evenly distributed (with many below 50 or above 2000) and some are empty. The smallest buckets are odd-numbered, which indicates a quirk in the algorithm which disfavors that half of the buckets\n-4: Most of the buckets are empty; a hashing algorithm should seek to evenly distribute words into buckets\n-1: Please output all bucket counts per instructions so the distribution can be seen."
   },
   {
     "objectID": "labs/lab10-hint2.html",

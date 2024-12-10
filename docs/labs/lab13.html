@@ -183,7 +183,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#step-3-main" id="toc-step-3-main" class="nav-link" data-scroll-target="#step-3-main">Step 3: main()</a></li>
   <li><a href="#step-4-testing" id="toc-step-4-testing" class="nav-link" data-scroll-target="#step-4-testing">Step 4: Testing</a></li>
   <li><a href="#step-5-tweak-your-hashing-algorithm-and-table-size" id="toc-step-5-tweak-your-hashing-algorithm-and-table-size" class="nav-link" data-scroll-target="#step-5-tweak-your-hashing-algorithm-and-table-size">Step 5: Tweak Your Hashing Algorithm and Table Size</a></li>
-  <li><a href="#turn-in" id="toc-turn-in" class="nav-link" data-scroll-target="#turn-in">Turn In</a></li>
+  <li><a href="#step-6-submit" id="toc-step-6-submit" class="nav-link" data-scroll-target="#step-6-submit">Step 6: Submit</a></li>
   <li><a href="#grading-rubric" id="toc-grading-rubric" class="nav-link" data-scroll-target="#grading-rubric">Grading Rubric</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/ericaraujophd/24fa-cs112/edit/main/labs/lab13.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/24fa-cs112/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -212,9 +212,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <center>
 <figure class="figure">
-<p><img src="../images/labs/lab11-homealone.jpg" alt="Home Alone (1990)." width="500" class="figure-img"></p>
+<p><img src="../images/labs/lab13-grinch.png" alt="Definition of Grinch." width="500" class="figure-img"></p>
 <figcaption>
-Home Alone (1990).
+Definition of Grinch.
 </figcaption>
 </figure>
 </center>
@@ -294,30 +294,62 @@ Note
 <section id="step-5-tweak-your-hashing-algorithm-and-table-size" class="level2">
 <h2 class="anchored" data-anchor-id="step-5-tweak-your-hashing-algorithm-and-table-size">Step 5: Tweak Your Hashing Algorithm and Table Size</h2>
 <p>You will notice that the basic hashing algorithm (adding up the first and last characters of each string) does a very poor job of distributing strings across all buckets in the hash table. Your goal now is to improve the hashing algorithm to improve the distribution.</p>
-<p>Experiment with different algorithms, but make sure they follow the criteria laid out in class: O(1) distribute values across all buckets. deterministic.</p>
-<p>You MAY increase the number of buckets, but it must remain at or below 250 total. Do not change how buckets are implemented – they should remain sets.</p>
+<p>Experiment with different algorithms, but make sure they follow the criteria laid out in class:</p>
+<ul>
+<li>O(1)</li>
+<li>distribute values across all buckets.</li>
+<li>deterministic.</li>
+</ul>
+<p>You <strong>MAY</strong> increase the number of buckets, but it must remain at or below 250 total. <strong>Do not</strong> change how buckets are implemented – they should remain sets.</p>
 <p>Do not spend more than 1 hour tweaking your algorithm. Make sure your final code implements your best algorithm.</p>
-<p>Write a comment in your hash() function that describes your algorithm, explaining why you think it works as well as it does.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Write a comment in your <code>hash()</code> function that describes your algorithm, explaining why you think it works as well as it does.</p>
+</div>
+</div>
 </section>
-<section id="turn-in" class="level2">
-<h2 class="anchored" data-anchor-id="turn-in">Turn In</h2>
-<p>Submit your project to github as usual. If you worked with your lab partner on the project, make sure you update <strong>README.md</strong> to include both of your names/login-ids.</p>
+<section id="step-6-submit" class="level2">
+<h2 class="anchored" data-anchor-id="step-6-submit">Step 6: Submit</h2>
+<p>Submit your code via github, as normal.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>IF YOU WORKED WITH A PARTNER, ONLY ONE OF YOU HAS TO SUBMIT, but UPDATE THE README.md to INCLUDE BOTH NAMES.</p>
+</div>
+</div>
 </section>
 <section id="grading-rubric" class="level2">
 <h2 class="anchored" data-anchor-id="grading-rubric">Grading Rubric</h2>
-<p>21 points total:</p>
+<p>20 points total:</p>
 <ul>
-<li>Menu class works: 2 pts.</li>
-<li>App constructor: 5 pts.</li>
-<li>Each App menu item: 4 pts each: 12 pts.</li>
-<li>Hospitable code: code is clean and neat, perfectly indented, with good variable names, etc.: 2 pts.</li>
+<li>10 pts: hash table code (not including the hash function) is correct</li>
+<li>5 pts: hash function obeys the criteria laid out in class.</li>
+<li>3 pts: hash function works well (not obviously leaving many buckets empty and have some be very full).</li>
+<li>2 pts: code is clean and hospitable.</li>
 </ul>
-<p>Ways students have lost points in the past:</p>
+<p>Ways students lost points in the past:</p>
 <ul>
-<li>-2: showAllMovies needs to show the names of each movie’s actors</li>
-<li>-2: getMovieNameAndShowActors implementation is incorrect, the result of movies_by_name.find will return the iterator value you want to pass to showActorsInAMovie, the for loop is unnecessary</li>
-<li>-2: code is very poorly indented</li>
-<li>-2: parameter names are very poorly chosen</li>
+<li>-2: Hash function does not appear to be evenly distributed but fills lower-numbered buckets way more (~2000 vs ~50)</li>
+<li>-4: Main function does not load words from file or call dumpInfo</li>
+<li>-1: Missing call to dumpInfo in main</li>
+<li>-3: Buckets are not evenly distributed (with many below 50 or above 2000) and some are empty. The smallest buckets are odd-numbered, which indicates a quirk in the algorithm which disfavors that half of the buckets</li>
+<li>-4: Most of the buckets are empty; a hashing algorithm should seek to evenly distribute words into buckets</li>
+<li>-1: Please output all bucket counts per instructions so the distribution can be seen.</li>
 </ul>
 <!-- [^1]: how to add footnotes. -->
 
