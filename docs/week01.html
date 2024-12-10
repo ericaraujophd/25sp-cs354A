@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Course content – CS112 - Data Structures</title>
+<title>Week 01: Control Structures, Functions, Parameter Passing modes – CS112 - Data Structures</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,7 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./week00.html" rel="next">
+<link href="./week02.html" rel="next">
+<link href="./week00.html" rel="prev">
 <link href="././images/cs112-logo.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -73,11 +74,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="https://kit.fontawesome.com/78ddb093ea.js" crossorigin="anonymous"></script>
 
 
-<link rel="stylesheet" href="weekly-activities/projects/styles.css">
-<meta property="og:title" content="Course content – CS112 - Data Structures">
+<meta property="og:title" content="Week 01: Control Structures, Functions, Parameter Passing modes – CS112 - Data Structures">
 <meta property="og:description" content="CS112 will teach students to use C++ for creating data structures.">
 <meta property="og:site_name" content="CS112 - Data Structures">
-<meta name="twitter:title" content="Course content – CS112 - Data Structures">
+<meta name="twitter:title" content="Week 01: Control Structures, Functions, Parameter Passing modes – CS112 - Data Structures">
 <meta name="twitter:description" content="CS112 will teach students to use C++ for creating data structures.">
 <meta name="twitter:image" content="https://ericaraujo.com/24fa-cs112/images/twitter-card.png">
 <meta name="twitter:creator" content="@ericfaraujo">
@@ -138,7 +138,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./content.html">Course content</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./week01.html">Week 01: Control Structures, Functions, Parameter Passing modes</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -152,7 +152,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./content.html" class="sidebar-item-text sidebar-link active">
+  <a href="./content.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Course content</span></a>
   </div>
 </li>
@@ -164,7 +164,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./week01.html" class="sidebar-item-text sidebar-link">
+  <a href="./week01.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Week 01: Control Structures, Functions, Parameter Passing modes</span></a>
   </div>
 </li>
@@ -233,15 +233,22 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#slos-for-week-01" id="toc-slos-for-week-01" class="nav-link active" data-scroll-target="#slos-for-week-01">SLOs for Week 01</a></li>
+  <li><a href="#slides-videos-and-application-exercises" id="toc-slides-videos-and-application-exercises" class="nav-link" data-scroll-target="#slides-videos-and-application-exercises">Slides, videos, and application exercises</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/ericaraujophd/24fa-cs112/edit/main/week01.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/24fa-cs112/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Course content</h1>
+<h1 class="title">Week 01: Control Structures, Functions, Parameter Passing modes</h1>
 </div>
 
 
@@ -258,136 +265,104 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>CS 112 is organized by week, with each week structured as follows:</p>
+<section id="slos-for-week-01" class="level2">
+<h2 class="anchored" data-anchor-id="slos-for-week-01">SLOs for Week 01</h2>
+<p>At the end of this unit, students will be able to…</p>
 <ul>
-<li>Classroom sessions are Monday-Wednesday-Friday.</li>
-<li>The lab sessions are on Tuesdays.</li>
-<li>Your lab submission is due Thursday at 23:59.</li>
-<li>Your project submission is due the next Monday at 23:59 (the night before your next lab).</li>
-<li>Tutoring Assistants are available in SB337 on Mondays and Thursdays, from 7 - 9 pm.</li>
+<li>write if, if-else, if-else-if, and switch statements correctly.</li>
+<li>create correct while loops and for loops, including using break and continue statements.</li>
+<li>define and call functions correctly.</li>
+<li>use function overloading, define default arguments, and define const parameters.</li>
+<li>pass arrays as parameters.</li>
+<li>articulate the differences between in, out, and in/out parameters.</li>
+<li>correctly choose between pass-by-value, pass-by-reference, and pass-by-const-ref parameters.</li>
 </ul>
-<p>The SLOs (Student Learning Objectives), labs, and projects for each week are given in the links below. The readings are from <a href="https://runestone.academy/runestone/books/published/cpp4python/index.html" target="_blank">C++ for Python Programmers Book</a>.</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Week</th>
-<th>Topics [SLOs]</th>
-<th>Laboratories</th>
-<th>Projects</th>
-<th>Tests, Video Links, etc.</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>0</td>
-<td><a href="./week00.html">Intro to C++, compilation, Data Types (including pointers), const, binary and hexadecimal, arrays, using cout/cin.</a></td>
-<td><a href="" target="_blank">Lab 0</a></td>
-<td><a href="" target="_blank">Proj 0</a></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>1</td>
-<td><a href="./week01.html">Control Structures, Functions, Parameter Passing modes.</a></td>
-<td><a href="">Lab 1</a></td>
-<td><a href="">Proj 1</a></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>2</td>
-<td><a href="./week02.html">File Input/Output, Exception Handling, Two-dimensional Arrays</a></td>
-<td><a href="">Lab 2</a></td>
-<td><a href="">Proj 2</a></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>3</td>
-<td><a href="./weekly-activities/week03.html">Classes, Operator Overloading, etc.</a></td>
-<td><a href="./weekly-activities/labs/lab-03/lab03.html">Lab 3</a></td>
-<td><a href="./weekly-activities/projects/proj-03/proj03.html">Proj 3</a></td>
-<td>Test 1, Weeks 0 - 2, Friday.</td>
-</tr>
-<tr class="odd">
-<td>4</td>
-<td><a href="./weekly-activities/week04.html">Vectors – dynamic arrays</a></td>
-<td><a href="./weekly-activities/labs/lab-04/lab04.html">Lab 4</a></td>
-<td><a href="./weekly-activities/projects/proj-04/proj04.html">Proj 4</a></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>5</td>
-<td><a href="./weekly-activities/week05.html">Generic Containers</a></td>
-<td><a href="./weekly-activities/labs/lab-05/lab05.html">Lab 5</a></td>
-<td>Proj 5</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>6</td>
-<td>Linked Lists [code from class] Dynamic Array or Linked List</td>
-<td>Lab 6</td>
-<td>No project</td>
-<td>Test 2, Weeks 0 - 5 (Friday)</td>
-</tr>
-<tr class="even">
-<td>7</td>
-<td>Algorithm Analysis and Big-Oh [Slides] [Videos] [SLOs]</td>
-<td>Lab 7</td>
-<td>Proj 7</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>8</td>
-<td><a href="./week08.html">Stacks and Queues</a></td>
-<td>Lab 8</td>
-<td><a href="./projects/proj08.html">Proj 8</a></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>9</td>
-<td><a href="./week09.html">Recursion</a></td>
-<td><a href="./labs/lab09.html">Lab 9</a></td>
-<td><a href="./projects/proj09.html">Proj 9</a></td>
-<td>Test 3, weeks 0 - 8 (Friday)</td>
-</tr>
-<tr class="odd">
-<td>10</td>
-<td><a href="./week10.html">BSTs</a></td>
-<td><a href="./labs/lab10.html">Lab 10</a></td>
-<td><a href="./projects/proj10.html">Proj 10</a></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>11</td>
-<td><a href="./week11.html">AVL Trees</a></td>
-<td>No lab</td>
-<td>No project</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>12</td>
-<td><a href="./week12.html">STL set and map containers</a></td>
-<td><a href="./labs/lab12.html">Lab 12</a></td>
-<td>No project</td>
-<td>Test 4: weeks 0 - 11 (Wednesday, Dec.&nbsp;4)</td>
-</tr>
-<tr class="even">
-<td>13</td>
-<td><a href="./week13.html">Hash Tables, Sorting Algorithms</a></td>
-<td><a href="./labs/lab13.html">Lab 13</a></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>Final</td>
-<td>Search calvin.edu for “Exam Schedule” to find the time of the exam (and all exams you have, this semester, and all future semesters).</td>
-<td></td>
-<td></td>
-<td>Test 5 Cumulative, during exam time (You may take it in either class’s exam time. Classes met at 11am MWF and 12:15 MWF.)</td>
-</tr>
-</tbody>
-</table>
-<!-- | 11   |   | OpenMP, etc. [SLOs] [Slides]  | Lab 11    | Project 11    |   | -->
+</section>
+<section id="slides-videos-and-application-exercises" class="level2">
+<h2 class="anchored" data-anchor-id="slides-videos-and-application-exercises">Slides, videos, and application exercises</h2>
+<div class="slide-deck">
+<p><strong>Week 01: Slides</strong></p>
+<div class="slides">
+<p><a href="https://docs.google.com/presentation/d/1uux2sZHfW1BRzdjNmUDpt5TDD7hOEgbLBW-G7KJNNUc/edit?usp=sharing" target="_blank">Slides</a></p>
+</div>
+<!-- ::: source
+[Binary Exposed](https://integer.exposed/#0x0008){target="_blank"}
+::: -->
+<!-- ::: source
+[Code from Class](https://calvincollege-my.sharepoint.com/:f:/g/personal/vtn2_calvin_edu/Eredz2bHiShCtI0CVssiaggB8tUES6QbacEf2cc4PBhTgQ?e=uoV7Uu)
+::: -->
+<div class="reading">
+<ul>
+<li><a href="https://runestone.academy/runestone/books/published/cpp4python/index.html" target="_blank">Chapters 3 and 4</a></li>
+</ul>
+</div>
+<!-- ::: video
+[Video](https://youtu.be/_YqEHZccujc)
+:::
+-->
+</div>
+<!-- ## Lab -->
+<div class="lab">
+<p><strong>Lab 01: Control Structures</strong></p>
+<div class="instructions">
+<p><a href="./labs/lab01.qmd">Instructions</a></p>
+</div>
+<div class="starter">
+<p><a href="" target="_blank">Source</a></p>
+</div>
+<div class="slides">
+<p><a href="" target="_blank">Dad Joke + Reflection</a></p>
+</div>
+</div>
+<!-- ## Homework assignments -->
+<div class="homework">
+<p><strong>Project 01: More Control Structures</strong></p>
+<div class="instructions">
+<p><a href="./projects/proj01.qmd">Instructions</a></p>
+</div>
+<!-- ::: source
+[Source](){target="_blank"}
+::: -->
+<div class="starter">
+<p><a href="" target="_blank">Starter</a></p>
+</div>
+</div>
+<div class="exam">
+<p><strong>POGIL</strong></p>
+<ul>
+<li><a href="https://docs.google.com/document/d/1myVaJT3i1hECM4BHs9LpbLz3a3heVPp6SJiEjoEvG_M/edit?tab=t.0#heading=h.im9274hm9wa0" target="_blank">Array Addressing</a> (<a href="https://drive.google.com/file/d/1mn5yCzIJuURMiP3MOtO9amEQzUVAQCQZ/view?usp=sharing" target="_blank">Answers</a>)</li>
+<li><a href="https://docs.google.com/document/d/125hbFPo5PVcuGQ9pq4io23jns2kOEkfjo71S9WOkfjQ/edit" target="_blank">Parameter Passing</a> (<a href="https://drive.google.com/file/d/1rPum6ihNwUKRJpZBSTQF8v7QKfOdog11/view?usp=drive_link" target="_blank">Answers</a>)</li>
+</ul>
+</div>
+<!-- ::: application-exercise
+**First dataviz**
+
+> **Option 1 - UN Votes**
+>
+> ::: source
+> [Source](https://github.com/rstudio-education/datascience-box/tree/master/course-materials/application-exercises/ae-01a-un-votes/unvotes.qmd)
+> :::
+>
+> ::: video
+> [Video](https://youtu.be/r-uTBEclM1E)
+> :::
+
+> **Option 2 - COVID-19**
+>
+> ::: source
+> [Source](https://github.com/rstudio-education/datascience-box/blob/master/course-materials/application-exercises/ae-01b-covid/covid.qmd)
+> :::
+::: -->
+<!-- ::: guest-lecture
+**Alberto Cairo - How charts lie**
+
+::: video
+[Video](https://youtu.be/Low28hx4wyk)
+:::
+::: -->
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -956,10 +931,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./week00.html" class="pagination-link" aria-label="Week 00: Intro do C++">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Week 00: Intro do C++</span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./week00.html" class="pagination-link" aria-label="Week 00: Intro do C++">
-        <span class="nav-page-text">Week 00: Intro do C++</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./week02.html" class="pagination-link" aria-label="Week 02: File Input/Output, Exception Handling, Two-dimensional Arrays">
+        <span class="nav-page-text">Week 02: File Input/Output, Exception Handling, Two-dimensional Arrays</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -971,7 +949,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/ericaraujophd/24fa-cs112/edit/main/content.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/24fa-cs112/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ericaraujophd/24fa-cs112/edit/main/week01.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/24fa-cs112/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">

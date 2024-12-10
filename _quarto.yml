@@ -69,6 +69,9 @@ website:
       title: "Content"
       contents:
         - href: content.qmd
+        - href: week00.qmd
+        - href: week01.qmd
+        - href: week02.qmd
         - href: weekly-activities/week03.qmd
         - href: weekly-activities/week04.qmd
         - href: weekly-activities/week05.qmd

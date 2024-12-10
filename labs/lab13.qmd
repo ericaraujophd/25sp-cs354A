@@ -7,7 +7,7 @@ format:
 
 <center><figure>
 
-<img src="/images/labs/lab13-grinch.png" alt="Definition of Grinch." width="500"/>
+<img src="/images/labs/lab13-grinch.png" alt="Definition of Grinch." width="700"/>
 
 <figcaption>Definition of Grinch.</figcaption>
 
