@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Week 4: Vectors – dynamic arrays – CS112 - Data Structures</title>
+<title>Week 13: Hash Tables and Sorting Algorithms – CS112 - Data Structures</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,27 +23,26 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<link href="../weekly-activities/week05.html" rel="next">
-<link href="../weekly-activities/week03.html" rel="prev">
-<link href=".././images/cs112-logo.png" rel="icon" type="image/png">
-<script src="../site_libs/quarto-html/quarto.js"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./week12.html" rel="prev">
+<link href="././images/cs112-logo.png" rel="icon" type="image/png">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -74,10 +73,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="https://kit.fontawesome.com/78ddb093ea.js" crossorigin="anonymous"></script>
 
 
-<meta property="og:title" content="Week 4: Vectors – dynamic arrays – CS112 - Data Structures">
+<meta property="og:title" content="Week 13: Hash Tables and Sorting Algorithms – CS112 - Data Structures">
 <meta property="og:description" content="CS112 will teach students to use C++ for creating data structures.">
 <meta property="og:site_name" content="CS112 - Data Structures">
-<meta name="twitter:title" content="Week 4: Vectors – dynamic arrays – CS112 - Data Structures">
+<meta name="twitter:title" content="Week 13: Hash Tables and Sorting Algorithms – CS112 - Data Structures">
 <meta name="twitter:description" content="CS112 will teach students to use C++ for creating data structures.">
 <meta name="twitter:image" content="https://ericaraujo.com/24fa-cs112/images/twitter-card.png">
 <meta name="twitter:creator" content="@ericfaraujo">
@@ -93,8 +92,8 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../images/cs112-logo.png" alt="" class="navbar-logo">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <img src="./images/cs112-logo.png" alt="" class="navbar-logo">
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -104,19 +103,19 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html"> 
+    <a class="nav-link" href="./index.html"> 
 <span class="menu-text">Overview</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../instructors.html"> 
+    <a class="nav-link" href="./instructors.html"> 
 <span class="menu-text">Instructors</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../policies.html"> 
+    <a class="nav-link" href="./policies.html"> 
 <span class="menu-text">Course Policies</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../content.html" aria-current="page"> 
+    <a class="nav-link active" href="./content.html" aria-current="page"> 
 <span class="menu-text">Content</span></a>
   </li>  
 </ul>
@@ -138,7 +137,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../weekly-activities/week04.html">Week 4: Vectors – dynamic arrays</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./week13.html">Week 13: Hash Tables and Sorting Algorithms</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -152,61 +151,61 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../content.html" class="sidebar-item-text sidebar-link">
+  <a href="./content.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Course content</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../weekly-activities/week03.html" class="sidebar-item-text sidebar-link">
+  <a href="./weekly-activities/week03.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 3: Classes, Operator Overloading, etc.</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../weekly-activities/week04.html" class="sidebar-item-text sidebar-link active">
+  <a href="./weekly-activities/week04.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 4: Vectors – dynamic arrays</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../weekly-activities/week05.html" class="sidebar-item-text sidebar-link">
+  <a href="./weekly-activities/week05.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 5: Generic Containers</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../week08.html" class="sidebar-item-text sidebar-link">
+  <a href="./week08.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 8: Advising days</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../week09.html" class="sidebar-item-text sidebar-link">
+  <a href="./week09.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 9: Recursion</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../week10.html" class="sidebar-item-text sidebar-link">
+  <a href="./week10.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 10: BSTs</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../week11.html" class="sidebar-item-text sidebar-link">
+  <a href="./week11.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 11: AVL Trees</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../week12.html" class="sidebar-item-text sidebar-link">
+  <a href="./week12.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Week 12: STL set and map containers</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../week13.html" class="sidebar-item-text sidebar-link">
+  <a href="./week13.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Week 13: Hash Tables and Sorting Algorithms</span></a>
   </div>
 </li>
@@ -220,17 +219,17 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#slos-for-week-4" id="toc-slos-for-week-4" class="nav-link active" data-scroll-target="#slos-for-week-4">SLOs for Week 4</a></li>
+  <li><a href="#slos-for-week-13" id="toc-slos-for-week-13" class="nav-link active" data-scroll-target="#slos-for-week-13">SLOs for Week 13</a></li>
   <li><a href="#slides-videos-and-application-exercises" id="toc-slides-videos-and-application-exercises" class="nav-link" data-scroll-target="#slides-videos-and-application-exercises">Slides, videos, and application exercises</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/ericaraujophd/24fa-cs112/edit/main/weekly-activities/week04.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/24fa-cs112/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/ericaraujophd/24fa-cs112/edit/main/week13.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/24fa-cs112/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Week 4: Vectors – dynamic arrays</h1>
+<h1 class="title">Week 13: Hash Tables and Sorting Algorithms</h1>
 </div>
 
 
@@ -247,32 +246,40 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="slos-for-week-4" class="level2">
-<h2 class="anchored" data-anchor-id="slos-for-week-4">SLOs for Week 4</h2>
-<p>Students will be able to…</p>
+<section id="slos-for-week-13" class="level2">
+<h2 class="anchored" data-anchor-id="slos-for-week-13">SLOs for Week 13</h2>
+<p>At the end of this unit, students will be able to…</p>
 <ul>
-<li>recognize a copy constructor and implement it.</li>
-<li>identify the 3 situations in which a copy constructor is called</li>
-<li>reason about the difference between a <strong>shallow</strong> and <strong>deep</strong> copy of a data structure.</li>
-<li>use the <strong>new</strong> operator to dynamically allocate memory and the <strong>delete</strong> and <strong>delete[]</strong> operators to free up the memory.</li>
-<li>explain when C++ calls the destructor on an object.</li>
-<li>explain when it is important to implement the destructor explicitly for a class.</li>
-<li>understand the implementation of a dynamic array data structure, including how it adapts its internal size to accommodate the number of values in the array.</li>
-<li>implement operator overloading for a class.</li>
+<li>Hash Tables:
+<ul>
+<li>write the basic data structure for storing items in a hash table.</li>
+<li>reason about important properties of a good hash algorithm.</li>
+<li>identify the time complexity of each operation on a hash table.</li>
+<li>reason about the time-space tradeoff manifested in a hash table.</li>
+</ul></li>
+<li>Sorting Algorithms
+<ul>
+<li>describe the crucial ideas behind Insertion Sort and Selection Sort.</li>
+<li>identify the crucial differences between Insertion and Selection Sort.</li>
+<li>identify the time complexity of Insertion and Selection sort in best and worst cases.</li>
+</ul></li>
 </ul>
 </section>
 <section id="slides-videos-and-application-exercises" class="level2">
 <h2 class="anchored" data-anchor-id="slides-videos-and-application-exercises">Slides, videos, and application exercises</h2>
 <div class="slide-deck">
-<p><strong>Week 4: Slides</strong></p>
+<p><strong>Week 13: Slides</strong></p>
 <div class="slides">
-<p><a href="https://docs.google.com/presentation/d/1drjTrJ0TrHNiqr7g0B_HxnN6MwswAR7SRWENpsPyLJw/edit?usp=sharing">Slides</a></p>
+<p><a href="https://calvincollege-my.sharepoint.com/:p:/g/personal/vtn2_calvin_edu/EaCjYGAo6VBBrf55UKfcutAB4UsUT03-Ik7egbfJOB0_PQ?e=U7yIYO" target="_blank">Hash Tables</a></p>
+</div>
+<div class="slides">
+<p><a href="https://docs.google.com/presentation/d/1H8e0eAfmzyISfkwiURrIYJkz-hvlqen8r4tZder2KnE/edit?usp=sharing" target="_blank">Sorting Algorithms</a></p>
 </div>
 <!-- ::: source
-[Source](https://github.com/rstudio-education/datascience-box/tree/main/course-materials/_slides/u5-d01-text-analysis)
+[Code from Class](https://calvincollege-my.sharepoint.com/:f:/g/personal/vtn2_calvin_edu/Eredz2bHiShCtI0CVssiaggB8tUES6QbacEf2cc4PBhTgQ?e=uoV7Uu)
 ::: -->
 <div class="reading">
-<p>No readings for Week 4.</p>
+<p>No readings for Week 13.</p>
 <!-- -   R4DS :: [Chp 2 - Introduction](https://r4ds.had.co.nz/explore-intro.html)
 -   IMS :: [Sec 1.1 & 1.2 - Case study & Data basics](https://openintro-ims.netlify.app/data-hello.html) -->
 </div>
@@ -283,35 +290,35 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <!-- ## Lab -->
 <div class="lab">
-<p><strong>Lab 4: Vectors</strong></p>
-<p>Vec – A First Dynamic Data Structure</p>
+<p><strong>Lab 13: Hash Tables</strong></p>
 <div class="instructions">
-<p><a href="../weekly-activities/labs/lab-04/lab04.html">Instructions</a></p>
+<p><a href="./labs/lab13.html">Instructions</a></p>
 </div>
+<!-- ::: instructions
+[Instructions](slides/lab06-slides.qmd)
+::: -->
 <div class="starter">
-<p><a href="https://classroom.github.com/a/VP5OQop2">Source</a></p>
+<p><a href="https://classroom.github.com/a/7abeJcnj" target="_blank">Source</a></p>
 </div>
-<div class="slides">
-<p><a href="./slides/lab04-slides.qmd">Slides</a></p>
-</div>
+<!-- ::: slides
+[Slides]()
+::: -->
 </div>
 <!-- ## Homework assignments -->
 <div class="homework">
-<p><strong>Project 4: Vec – A First Dynamic Data Structure</strong></p>
-<p>Vec – A First Dynamic Data Structure</p>
+<p><strong>Project 13: No Project</strong></p>
 <!-- ::: instructions
-[Instructions](projects/proj-04/proj04.qmd)
+[Instructions](/projects/proj10.qmd)
 ::: -->
 <!-- ::: source
 [Source](https://github.com/rstudio-education/datascience-box/tree/master/course-materials/hw-instructions/hw-10)
 ::: -->
-<div class="starter">
-<p><a href="https://classroom.github.com/a/BR1S81yc">Starter</a></p>
-</div>
+<!-- ::: starter
+[Starter](https://classroom.github.com/a/f0Ju72P9){target="{\"_blank\""}}
+::: -->
 </div>
 <!-- ::: exam
-**Exam 1**
-Exam on Friday during class. Bring your laptop. Content: Weeks 0 - 2.
+**Exam 4** Exam on Wednesday during class. Bring your laptop. Content: Weeks 0 - 11.
 ::: -->
 <!-- ::: application-exercise
 **First dataviz**
@@ -910,14 +917,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../weekly-activities/week03.html" class="pagination-link" aria-label="Week 3: Classes, Operator Overloading, etc.">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Week 3: Classes, Operator Overloading, etc.</span>
+      <a href="./week12.html" class="pagination-link" aria-label="Week 12: STL set and map containers">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Week 12: STL set and map containers</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../weekly-activities/week05.html" class="pagination-link" aria-label="Week 5: Generic Containers">
-        <span class="nav-page-text">Week 5: Generic Containers</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
@@ -928,16 +932,16 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ericaraujophd/24fa-cs112/edit/main/weekly-activities/week04.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/24fa-cs112/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ericaraujophd/24fa-cs112/edit/main/week13.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/24fa-cs112/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
-    <a class="nav-link" href="../LICENSE.html">
+    <a class="nav-link" href="./LICENSE.html">
 <p>License</p>
 </a>
   </li>  
     <li class="nav-item">
-    <a class="nav-link" href="../CODE_OF_CONDUCT.html">
+    <a class="nav-link" href="./CODE_OF_CONDUCT.html">
 <p>Code of Conduct</p>
 </a>
   </li>  
