@@ -18,7 +18,7 @@ The SLOs (Student Learning Objectives), labs, and projects for each week are giv
 
 | Week | Topics | Laboratories | Projects | Tests, Video Links, etc. |
 |--------------|------------------|--------------|--------------|--------------|
-| 0 | Intro to C++, compilation, Data Types (including pointers), const, binary and hexadecimal, arrays, using cout/cin. <br> [Week's page](/week00.qmd) | [Lab 0](/labs/lab00.qmd){target="_blank"} | [Proj 0](){target="_blank"} |  |
+| 0 | Intro to C++, compilation, Data Types (including pointers), const, binary and hexadecimal, arrays, using cout/cin. <br> [Week's page](/week00.qmd) | [Lab 0](/labs/lab00.qmd){target="_blank"} | [Proj 0](/projects/proj00.qmd){target="_blank"} |  |
 | 1 | Control Structures, Functions, Parameter Passing modes. <br>[Week's page](/week01.qmd) | [Lab 1]() | [Proj 1]() |  |
 | 2 | File Input/Output, Exception Handling, Two-dimensional Arrays. <br>[Week's page](/week02.qmd) | [Lab 2]() | [Proj 2]() |  |
 | 3 | Classes, Operator Overloading, etc. <br>[Week's page](weekly-activities/week03.qmd) | [Lab 3](weekly-activities/labs/lab-03/lab03.qmd) | [Proj 3](weekly-activities/projects/proj-03/proj03.qmd) | Test 1, Weeks 0 - 2, Friday. |

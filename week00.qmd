@@ -60,7 +60,7 @@ At the end of this unit, students will be able to...
 :::
 
 ::: starter
-[Source](){target="_blank"}
+[Source](https://classroom.github.com/a/QYJE3sJ0){target="_blank"}
 :::
 
 ::: slides
@@ -84,7 +84,7 @@ At the end of this unit, students will be able to...
 ```
 
 ::: starter
-[Starter](){target="_blank"}
+[Starter](https://classroom.github.com/a/hz4_ylIx){target="_blank"}
 :::
 :::::
 

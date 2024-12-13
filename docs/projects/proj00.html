@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Course content – CS112 - Data Structures</title>
+<title>Project 00: Exploring types, etc. – CS112 - Data Structures</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,29 +20,62 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./week00.html" rel="next">
-<link href="././images/cs112-logo.png" rel="icon" type="image/png">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href=".././images/cs112-logo.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -73,11 +106,11 @@ ul.task-list li input[type="checkbox"] {
 <script src="https://kit.fontawesome.com/78ddb093ea.js" crossorigin="anonymous"></script>
 
 
-<link rel="stylesheet" href="weekly-activities/projects/styles.css">
-<meta property="og:title" content="Course content – CS112 - Data Structures">
+<link rel="stylesheet" href="../projects/proj-styles.css">
+<meta property="og:title" content="Project 00: Exploring types, etc. – CS112 - Data Structures">
 <meta property="og:description" content="CS112 will teach students to use C++ for creating data structures.">
 <meta property="og:site_name" content="CS112 - Data Structures">
-<meta name="twitter:title" content="Course content – CS112 - Data Structures">
+<meta name="twitter:title" content="Project 00: Exploring types, etc. – CS112 - Data Structures">
 <meta name="twitter:description" content="CS112 will teach students to use C++ for creating data structures.">
 <meta name="twitter:image" content="https://ericaraujo.com/24fa-cs112/images/twitter-card.png">
 <meta name="twitter:creator" content="@ericfaraujo">
@@ -86,15 +119,15 @@ ul.task-list li input[type="checkbox"] {
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
-<body class="nav-sidebar floating nav-fixed">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./images/cs112-logo.png" alt="" class="navbar-logo">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../images/cs112-logo.png" alt="" class="navbar-logo">
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -104,19 +137,19 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
+    <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Overview</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./instructors.html"> 
+    <a class="nav-link" href="../instructors.html"> 
 <span class="menu-text">Instructors</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./policies.html"> 
+    <a class="nav-link" href="../policies.html"> 
 <span class="menu-text">Course Policies</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./content.html" aria-current="page"> 
+    <a class="nav-link" href="../content.html"> 
 <span class="menu-text">Content</span></a>
   </li>  
 </ul>
@@ -133,115 +166,34 @@ ul.task-list li input[type="checkbox"] {
 </div>
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./content.html">Course content</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-    </div>
-  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./content.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Course content</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week00.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 00: Intro do C++</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week01.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 01: Control Structures, Functions, Parameter Passing modes</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week02.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 02: File Input/Output, Exception Handling, Two-dimensional Arrays</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./weekly-activities/week03.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 3: Classes, Operator Overloading, etc.</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./weekly-activities/week04.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 4: Vectors – dynamic arrays</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./weekly-activities/week05.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 5: Generic Containers</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week08.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 8: Advising days</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week09.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 9: Recursion</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week10.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 10: BSTs</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week11.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 11: AVL Trees</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week12.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 12: STL set and map containers</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week13.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 13: Hash Tables and Sorting Algorithms</span></a>
-  </div>
-</li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#objectives" id="toc-objectives" class="nav-link active" data-scroll-target="#objectives">Objectives</a></li>
+  <li><a href="#step-1.-setup" id="toc-step-1.-setup" class="nav-link" data-scroll-target="#step-1.-setup">Step 1. Setup</a></li>
+  <li><a href="#step-2." id="toc-step-2." class="nav-link" data-scroll-target="#step-2.">Step 2.</a></li>
+  <li><a href="#step-3." id="toc-step-3." class="nav-link" data-scroll-target="#step-3.">Step 3.</a></li>
+  <li><a href="#step-4." id="toc-step-4." class="nav-link" data-scroll-target="#step-4.">Step 4.</a></li>
+  <li><a href="#step-5." id="toc-step-5." class="nav-link" data-scroll-target="#step-5.">Step 5.</a></li>
+  <li><a href="#step-6." id="toc-step-6." class="nav-link" data-scroll-target="#step-6.">Step 6.</a></li>
+  <li><a href="#submit" id="toc-submit" class="nav-link" data-scroll-target="#submit">Submit</a></li>
+  <li><a href="#grading-rubric" id="toc-grading-rubric" class="nav-link" data-scroll-target="#grading-rubric">Grading Rubric</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/ericaraujophd/24fa-cs112/edit/main/projects/proj00.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/24fa-cs112/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Course content</h1>
+<h1 class="title">Project 00: Exploring types, etc.</h1>
 </div>
 
 
@@ -258,136 +210,167 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>CS 112 is organized by week, with each week structured as follows:</p>
+<center>
+<figure class="figure">
+<p><img src="../images/projects/proj00-header.png" alt="Created by AI Prompt: Here is the image illustrating different types of data in C++ without any text. Let me know if further adjustments are needed!" width="400" class="figure-img"></p>
+<figcaption>
+Created by AI Prompt: Here is the image illustrating different types of data in C++ without any text. Let me know if further adjustments are needed!
+</figcaption>
+</figure>
+</center>
+<section id="objectives" class="level2">
+<h2 class="anchored" data-anchor-id="objectives">Objectives</h2>
+<ol type="1">
+<li>Practice creating variables, printing values, printing locations of variables, and so on.</li>
+</ol>
+</section>
+<section id="step-1.-setup" class="level2">
+<h2 class="anchored" data-anchor-id="step-1.-setup">Step 1. Setup</h2>
 <ul>
-<li>Classroom sessions are Monday-Wednesday-Friday.</li>
-<li>The lab sessions are on Tuesdays.</li>
-<li>Your lab submission is due Thursday at 23:59.</li>
-<li>Your project submission is due the next Monday at 23:59 (the night before your next lab).</li>
-<li>Tutoring Assistants are available in SB337 on Mondays and Thursdays, from 7 - 9 pm.</li>
+<li>Click on this assignment invitation and then <a href="https://classroom.github.com/a/hz4_ylIx" target="_blank">“Accept this assignment”</a>.</li>
+<li>Wait a few seconds and refresh the page. Refresh until the page says “You’re ready to go!”.</li>
+<li>Click the link to see your new repo on github.com.</li>
+<li>Click the green <span style="color:green;"><strong>Code</strong></span> button, then SSH, and copy the link it shows.</li>
+<li>In a terminal,
+<ul>
+<li><code>cd</code> to the directory where you are putting all your CS112 assignments.</li>
+<li>type: <code>git clone &lt;paste-the-contents-of-the-link-you-copied&gt;</code></li>
+</ul></li>
+<li><code>cd</code> to the new directory containing your repo.</li>
+<li>type <code>code .</code> to start up Visual Studio Code in that directory.</li>
+<li>Inspect the code you got in the assignment.</li>
+<li>In the terminal, type <code>make</code></li>
+<li>The code should compile and give you an executable called “<strong>tester</strong>”. You can see if it is there by typing <code>ls</code></li>
+<li>Run the program: type <code>./tester</code></li>
+<li>You should get some basic output – or at least it should not crash.</li>
 </ul>
-<p>The SLOs (Student Learning Objectives), labs, and projects for each week are given in the links below. The readings are from <a href="https://runestone.academy/runestone/books/published/cpp4python/index.html" target="_blank">C++ for Python Programmers Book</a>.</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Week</th>
-<th>Topics</th>
-<th>Laboratories</th>
-<th>Projects</th>
-<th>Tests, Video Links, etc.</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>0</td>
-<td>Intro to C++, compilation, Data Types (including pointers), const, binary and hexadecimal, arrays, using cout/cin. <br> <a href="./week00.html">Week’s page</a></td>
-<td><a href="./labs/lab00.html" target="_blank">Lab 0</a></td>
-<td><a href="./projects/" target="_blank">Proj 0</a></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>1</td>
-<td>Control Structures, Functions, Parameter Passing modes. <br><a href="./week01.html">Week’s page</a></td>
-<td><a href="">Lab 1</a></td>
-<td><a href="">Proj 1</a></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>2</td>
-<td>File Input/Output, Exception Handling, Two-dimensional Arrays. <br><a href="./week02.html">Week’s page</a></td>
-<td><a href="">Lab 2</a></td>
-<td><a href="">Proj 2</a></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>3</td>
-<td>Classes, Operator Overloading, etc. <br><a href="./weekly-activities/week03.html">Week’s page</a></td>
-<td><a href="./weekly-activities/labs/lab-03/lab03.html">Lab 3</a></td>
-<td><a href="./weekly-activities/projects/proj-03/proj03.html">Proj 3</a></td>
-<td>Test 1, Weeks 0 - 2, Friday.</td>
-</tr>
-<tr class="odd">
-<td>4</td>
-<td>Vectors – dynamic arrays <br><a href="./weekly-activities/week04.html">Week’s page</a></td>
-<td><a href="./weekly-activities/labs/lab-04/lab04.html">Lab 4</a></td>
-<td><a href="./weekly-activities/projects/proj-04/proj04.html">Proj 4</a></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>5</td>
-<td>Generic Containers <br><a href="./weekly-activities/week05.html">Week’s page</a></td>
-<td><a href="./weekly-activities/labs/lab-05/lab05.html">Lab 5</a></td>
-<td>Proj 5</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>6</td>
-<td>Linked Lists [code from class] Dynamic Array or Linked List</td>
-<td>Lab 6</td>
-<td>No project</td>
-<td>Test 2, Weeks 0 - 5 (Friday)</td>
-</tr>
-<tr class="even">
-<td>7</td>
-<td>Algorithm Analysis and Big-Oh [Slides] [Videos] [SLOs]</td>
-<td>Lab 7</td>
-<td>Proj 7</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>8</td>
-<td>Stacks and Queues <br><a href="./week08.html">Week’s page</a></td>
-<td>Lab 8</td>
-<td><a href="./projects/proj08.html">Proj 8</a></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>9</td>
-<td>Recursion <br><a href="./week09.html">Week’s page</a></td>
-<td><a href="./labs/lab09.html">Lab 9</a></td>
-<td><a href="./projects/proj09.html">Proj 9</a></td>
-<td>Test 3, weeks 0 - 8 (Friday)</td>
-</tr>
-<tr class="odd">
-<td>10</td>
-<td>BSTs <br><a href="./week10.html">Week’s page</a></td>
-<td><a href="./labs/lab10.html">Lab 10</a></td>
-<td><a href="./projects/proj10.html">Proj 10</a></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>11</td>
-<td>AVL Trees <br><a href="./week11.html">Week’s page</a></td>
-<td>No lab</td>
-<td>No project</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>12</td>
-<td>STL set and map containers <br><a href="./week12.html">Week’s page</a></td>
-<td><a href="./labs/lab12.html">Lab 12</a></td>
-<td>No project</td>
-<td>Test 4: weeks 0 - 11 (Wednesday, Dec.&nbsp;4)</td>
-</tr>
-<tr class="even">
-<td>13</td>
-<td>Hash Tables, Sorting Algorithms <br><a href="./week13.html">Week’s page</a></td>
-<td><a href="./labs/lab13.html">Lab 13</a></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>Final</td>
-<td>Search calvin.edu for “Exam Schedule” to find the time of the exam (and all exams you have, this semester, and all future semesters).</td>
-<td></td>
-<td></td>
-<td>Test 5 Cumulative, during exam time (You may take it in either class’s exam time. Classes met at 11am MWF and 12:15 MWF.)</td>
-</tr>
-</tbody>
-</table>
-<!-- | 11   |   | OpenMP, etc. [SLOs] [Slides]  | Lab 11    | Project 11    |   | -->
+</section>
+<section id="step-2." class="level2">
+<h2 class="anchored" data-anchor-id="step-2.">Step 2.</h2>
+<ul>
+<li>In <strong>functions.cpp</strong>, in <code>vars()</code>, create a <strong>constant unsigned integer</strong> called <strong>BIG_NUMBER</strong>, initialized to 10 million.</li>
+<li>Then, create a variable of type <strong>string</strong> and initialize it to your name. (Note: you will have to <code>#include &lt;string&gt;</code> to make this work.)</li>
+<li>Then, create a variable of type <strong>char</strong> and initialize it to the first letter of your last name.</li>
+<li>Then, create a variable of type <strong>double</strong> and initialize it to the value 3.1415.</li>
+<li>Then, create a variable of type <strong>bool</strong> and initialize it to <strong>false</strong>.</li>
+<li>Then, create a variable of type <strong>long</strong> and initialize it to 0.</li>
+<li>Compile and run your code by typing <code>make tester</code> in the terminal.</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You’ll get warnings about unused variables. Ignore them.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>At this point in the course, our tester program does not actually test the results in the output. However, when you submit your code to github, an automated testing script will run, which will test if the output is correct. If it isn’t, you can then make fixes and resubmit to github.</p>
+</div>
+</div>
+</section>
+<section id="step-3." class="level2">
+<h2 class="anchored" data-anchor-id="step-3.">Step 3.</h2>
+<p>Write code to print out the locations of each of the variables, in hexadecimal, on separate lines. Compile and then run your program like this:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./tester</span> step3</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you get a weird answer for when you print out the location of the char variable, don’t worry about it. Just go on.</p>
+</div>
+</div>
+</section>
+<section id="step-4." class="level2">
+<h2 class="anchored" data-anchor-id="step-4.">Step 4.</h2>
+<ul>
+<li>In <code>ns()</code>, write code to initialize a variable of type int to the value 37.</li>
+<li>Write code to print out the value of that variable in decimal, octal, and hexadecimal, each on its own separate line. You will have to google how to do this in C++.</li>
+<li>Compile and then test your output by running</li>
+</ul>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./tester</span> step4</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="step-5." class="level2">
+<h2 class="anchored" data-anchor-id="step-5.">Step 5.</h2>
+<ul>
+<li>In <code>arrays()</code>, create a variable that will hold an array of 20 floats.</li>
+<li>Write a line of code to print out the total size of that variable in decimal. Note that you might find <code>sizeof()</code> useful.</li>
+<li>Compile and then test your output by running</li>
+</ul>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./tester</span> step5</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="step-6." class="level2">
+<h2 class="anchored" data-anchor-id="step-6.">Step 6.</h2>
+<ul>
+<li>In <code>dec()</code>, create a variable that is an <strong>unsigned integer</strong>, initialized to 0.</li>
+<li>Write code to decrement the value, and then print it out.</li>
+<li>Add a comment to your code to explain why you do not see -1 in the output. You may have to ask Google for the answer.</li>
+<li>Compile and then test your output by running</li>
+</ul>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./tester</span> step6</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="submit" class="level2">
+<h2 class="anchored" data-anchor-id="submit">Submit</h2>
+<p>In VS Code, click on the <strong>Source Control</strong> icon on the upper left and type in a commit message, then click the checkmark icon to submit your code. Go through the various pop-up boxes to commit your changes to your repo. You should check to see if the automated tests pass. If they do not, then make fixes to your code and commit them and sync them to github, then watch to see if the automated tests pass.</p>
+</section>
+<section id="grading-rubric" class="level2">
+<h2 class="anchored" data-anchor-id="grading-rubric">Grading Rubric</h2>
+<p>This lab is worth 12 pts:</p>
+<ul>
+<li>2 points for each of steps 3, 4, 5, 6 passing the automated tests.</li>
+<li>2 points for clean, hospitable code.</li>
+<li>2 points for following directions correctly.</li>
+</ul>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The project is due at midnight on Monday. You will receive a 10% per day penalty for lateness.</p>
+</div>
+</div>
+<p>Examples of how students lost points in the past: - -1: Need a comment explaining why the output isn’t -1 (Step 6). Output is incorrect for Step 6 because a post-decrement was used. - -1: unsigned int needs to be const unsigned int (Step 2). - -1: Code for Step 2 doesn’t compile; your string needs to be quoted. - -1: Hexadecimal output is wrong for Step 4. - -1: Step 2 doesn’t compile. Chars need to be single-quoted.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Add the name of participants of the project in the README.md file from the repo.</p>
+</div>
+</div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -954,15 +937,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="./week00.html" class="pagination-link" aria-label="Week 00: Intro do C++">
-        <span class="nav-page-text">Week 00: Intro do C++</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -971,16 +945,16 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/ericaraujophd/24fa-cs112/edit/main/content.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/24fa-cs112/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ericaraujophd/24fa-cs112/edit/main/projects/proj00.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/24fa-cs112/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
-    <a class="nav-link" href="./LICENSE.html">
+    <a class="nav-link" href="../LICENSE.html">
 <p>License</p>
 </a>
   </li>  
     <li class="nav-item">
-    <a class="nav-link" href="./CODE_OF_CONDUCT.html">
+    <a class="nav-link" href="../CODE_OF_CONDUCT.html">
 <p>Code of Conduct</p>
 </a>
   </li>  
