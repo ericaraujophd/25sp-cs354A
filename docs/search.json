@@ -1602,5 +1602,180 @@
     "title": "Version control",
     "section": "Learn more",
     "text": "Learn more\nIf you would like to learn more about teaching with version control, I recommend the following paper.\n\nBeckman, M. D., Çetinkaya-Rundel, M., Horton, N. J., Rundel, C. W., Sullivan, A. J., & Tackett, M. (2020). Implementing version control with Git and GitHub as a learning objective in statistics and data science courses. doi.org/10.1080/10691898.2020.1848485\n\nIf you would like to learn more about using version control with R, I strongly recommend Happy Git with R."
+  },
+  {
+    "objectID": "labs/lab00.html",
+    "href": "labs/lab00.html",
+    "title": "Lab 00: Getting Started",
+    "section": "",
+    "text": "LOtR warm up."
+  },
+  {
+    "objectID": "labs/lab00.html#learning-objectives",
+    "href": "labs/lab00.html#learning-objectives",
+    "title": "Lab 00: Getting Started",
+    "section": "Learning Objectives",
+    "text": "Learning Objectives\nIn this exercise, you will:\n\nbuild a hash table data structure\nexperiment with hashing algorithms to distribute data across all buckets, as much as possible."
+  },
+  {
+    "objectID": "labs/lab00.html#step-0",
+    "href": "labs/lab00.html#step-0",
+    "title": "Lab 00: Getting Started",
+    "section": "Step 0",
+    "text": "Step 0\nAccept the Assignment.\nOur hash table will be a STL vector of STL sets (in class we used a vector of linked lists). Your code will read a file, dictionary.txt, that contains “all” the words in the English language, and insert each word into the hash table. There are about ~127,000 words in the file, but we will use a fairly small number of buckets, so there will be many collisions.\nThe goal of this exercise is to experiment with hashing algorithms to see if you can find one that distributes items well."
+  },
+  {
+    "objectID": "labs/lab00.html#step-1-build-the-hashtable-data-structure-and-constructor",
+    "href": "labs/lab00.html#step-1-build-the-hashtable-data-structure-and-constructor",
+    "title": "Lab 00: Getting Started",
+    "section": "Step 1: Build the HashTable data structure and constructor",
+    "text": "Step 1: Build the HashTable data structure and constructor\nInspect the code in HashTable.h and HashTable.cpp. There is not much there, but it is a start. Do notice that there is a static constant integer called TABLE_SIZE, initialized to the value 200.\nCreate the hash table data structure in the private: section, calling it myTable. For this project, the table must be a vector of sets of strings (in class we used a vector of lists).\nIn the constructor, initialize myTable to have TABLE_SIZE buckets by calling\nmyTable.resize(TABLE_SIZE);\nAlso, in the constructor initialize mySize to 0.\nCompile your code to make sure what you have written compiles."
+  },
+  {
+    "objectID": "labs/lab00.html#step-2-insert-and-hash",
+    "href": "labs/lab00.html#step-2-insert-and-hash",
+    "title": "Lab 00: Getting Started",
+    "section": "Step 2: insert() and hash()",
+    "text": "Step 2: insert() and hash()\nThe prototypes for insert() and hash() are defined in the .h file. Now, you must implement them in the .cpp file. Use the code we saw in the slides in class for the hash function. The function should add up the first and last characters of the string, modding the result by TABLE_SIZE.\nTry to compile the code using make. It should compile. Fix any issues if your compilation fails."
+  },
+  {
+    "objectID": "labs/lab00.html#step-3-main",
+    "href": "labs/lab00.html#step-3-main",
+    "title": "Lab 00: Getting Started",
+    "section": "Step 3: main()",
+    "text": "Step 3: main()\nNow, create code in main(). Your code should define a HashTable object first.\nThen, open the file dictionary.txt for reading, and read each word from the file, one at a time, inserting each word into the hash table.\nNext, have the code close the file.\nCompile your code."
+  },
+  {
+    "objectID": "labs/lab00.html#step-4-testing",
+    "href": "labs/lab00.html#step-4-testing",
+    "title": "Lab 00: Getting Started",
+    "section": "Step 4: Testing",
+    "text": "Step 4: Testing\nOf course, at this point, we have no idea if the items have been distributed well in the hash table, because we have no way to inspect the hash table contents.\nNotice that there is a method called dumpInfo() defined, but currently the code does nothing. Fill in the code to do the following:\n\nFor each bucket, print how many items are in it.\nCount and print the number of empty buckets.\nCalculate and print the average number of items in non-empty buckets.\n\nHere is a snippet of my output. Make your output look similar:\nnumber of items in bucket 0: 415\nnumber of items in bucket 1: 351\nnumber of items in bucket 2: 307\nnumber of items in bucket 3: 414\nnumber of items in bucket 4: 293\n...\nnumber of items in bucket 197: 560\nnumber of items in bucket 198: 484\nnumber of items in bucket 199: 341\n--------------------------\nTotal number of elements in the hash table: 127141\nNumber of empty buckets: 0\nAverage number of items in non-empty buckets: 635\n\n\n\n\n\n\nNote\n\n\n\nNote: the output above is from after I changed the number of buckets in my data structure, and tweaked the hash algorithm, which you’ll do below.\n\n\nAfter you implement your dumpInfo() method, call it from your main() code."
+  },
+  {
+    "objectID": "labs/lab00.html#step-5-tweak-your-hashing-algorithm-and-table-size",
+    "href": "labs/lab00.html#step-5-tweak-your-hashing-algorithm-and-table-size",
+    "title": "Lab 00: Getting Started",
+    "section": "Step 5: Tweak Your Hashing Algorithm and Table Size",
+    "text": "Step 5: Tweak Your Hashing Algorithm and Table Size\nYou will notice that the basic hashing algorithm (adding up the first and last characters of each string) does a very poor job of distributing strings across all buckets in the hash table. Your goal now is to improve the hashing algorithm to improve the distribution.\nExperiment with different algorithms, but make sure they follow the criteria laid out in class:\n\nO(1)\ndistribute values across all buckets.\ndeterministic.\n\nYou MAY increase the number of buckets, but it must remain at or below 250 total. Do not change how buckets are implemented – they should remain sets.\nDo not spend more than 1 hour tweaking your algorithm. Make sure your final code implements your best algorithm.\n\n\n\n\n\n\nImportant\n\n\n\nWrite a comment in your hash() function that describes your algorithm, explaining why you think it works as well as it does."
+  },
+  {
+    "objectID": "labs/lab00.html#step-6-submit",
+    "href": "labs/lab00.html#step-6-submit",
+    "title": "Lab 00: Getting Started",
+    "section": "Step 6: Submit",
+    "text": "Step 6: Submit\nSubmit your code via github, as normal.\n\n\n\n\n\n\nWarning\n\n\n\nIF YOU WORKED WITH A PARTNER, ONLY ONE OF YOU HAS TO SUBMIT, but UPDATE THE README.md to INCLUDE BOTH NAMES."
+  },
+  {
+    "objectID": "labs/lab00.html#grading-rubric",
+    "href": "labs/lab00.html#grading-rubric",
+    "title": "Lab 00: Getting Started",
+    "section": "Grading Rubric",
+    "text": "Grading Rubric\n20 points total:\n\n10 pts: hash table code (not including the hash function) is correct\n5 pts: hash function obeys the criteria laid out in class.\n3 pts: hash function works well (not obviously leaving many buckets empty and have some be very full).\n2 pts: code is clean and hospitable.\n\nWays students lost points in the past:\n\n-2: Hash function does not appear to be evenly distributed but fills lower-numbered buckets way more (~2000 vs ~50)\n-4: Main function does not load words from file or call dumpInfo\n-1: Missing call to dumpInfo in main\n-3: Buckets are not evenly distributed (with many below 50 or above 2000) and some are empty. The smallest buckets are odd-numbered, which indicates a quirk in the algorithm which disfavors that half of the buckets\n-4: Most of the buckets are empty; a hashing algorithm should seek to evenly distribute words into buckets\n-1: Please output all bucket counts per instructions so the distribution can be seen."
+  },
+  {
+    "objectID": "labs/lab00-slides.html#dad-joke-of-the-week",
+    "href": "labs/lab00-slides.html#dad-joke-of-the-week",
+    "title": "Lab 00 — Intro do C++",
+    "section": "Dad joke of the week",
+    "text": "Dad joke of the week\n\n\n\n\n\n\n\n\n\n\nPete and Repete are on a boat. Pete falls off. Who’s left on the boat?"
+  },
+  {
+    "objectID": "labs/lab00-slides.html#bible-reflection-for-a-data-structures-lab-session",
+    "href": "labs/lab00-slides.html#bible-reflection-for-a-data-structures-lab-session",
+    "title": "Lab 00 — Intro do C++",
+    "section": "Bible Reflection for a Data Structures Lab Session",
+    "text": "Bible Reflection for a Data Structures Lab Session\nVerse: “Let all things be done decently and in order.” — 1 Corinthians 14:40\nAs we dive into the intricacies of data structures, this verse reminds us of the importance of organization and structure, not just in our code but also in life. Data structures like arrays, trees, and graphs teach us that even the most complex systems can be understood and managed when approached with order and clarity.\nGod’s creation reflects His intentional design—everything has a purpose and place, from the smallest atom to the vastness of the universe. Similarly, in our programming, we use data structures to bring order to chaos, enabling efficiency and clarity in solving problems.\nAs we work on today’s lab, let us remember that the discipline and creativity we apply to our work reflect the order and purpose God calls us to embody. Let’s strive to build systems that not only function well but also mirror the excellence and intentionality of our Creator.\nPrayer:\nLord, thank You for the gift of logic and creativity. Help us to approach our work with diligence and clarity, bringing order to our ideas just as You bring order to all creation. May our efforts in this lab glorify You and serve as a reflection of Your wisdom. Amen."
+  },
+  {
+    "objectID": "labs/lab00-slides.html#lab-9",
+    "href": "labs/lab00-slides.html#lab-9",
+    "title": "Lab 00 — Intro do C++",
+    "section": "Lab 9",
+    "text": "Lab 9\n\ncreating recursive functions using ChatGPT\ndiscussing efficiency by calculating the number of times a function is called"
+  },
+  {
+    "objectID": "labs/lab00.html#objectives",
+    "href": "labs/lab00.html#objectives",
+    "title": "Lab 00: Getting Started",
+    "section": "Objectives:",
+    "text": "Objectives:\nIn this exercise, you will:\n\nLogin to a workstation in the Unix Lab.\nUse Linux commands to interact with files and folders.\nUse VS Code to edit, compile, and run a program."
+  },
+  {
+    "objectID": "labs/lab00.html#introduction",
+    "href": "labs/lab00.html#introduction",
+    "title": "Lab 00: Getting Started",
+    "section": "Introduction",
+    "text": "Introduction\nWelcome to CS112! In this first lab exercise, we will introduce the Visual Studio Code editor, and see how we can use it to write a C++ program. The exercise assumes that a C++ compiler (e.g., GNU’s gcc/g++), the make utility, and VSCode have all been installed on your system. You should also be familiar with basic C++ principles – review 1.4. Let’s look at a C++ program — C++ for Python Programmers if you are coming into this class from CS10X and are used to Python.\nThis lab tells you how to use VS Code in the CS Dept’s Unix Lab (SB 354), which is currently using Ubuntu Linux. If you have not used Linux before, you may want to work through this Introductory Exercise."
+  },
+  {
+    "objectID": "labs/lab00.html#using-linux",
+    "href": "labs/lab00.html#using-linux",
+    "title": "Lab 00: Getting Started",
+    "section": "Using Linux",
+    "text": "Using Linux\nI would recommend that you bookmark this Linux Quick Reference, so that you can locate it quickly in the future. Your instructor will conduct a quick introduction to using the Linux command-line. These are useful skills to practice, as they will allow you to login to a remote system (e.g., from home) and work with your files remotely."
+  },
+  {
+    "objectID": "labs/lab00.html#where-to-store-your-cs112-work",
+    "href": "labs/lab00.html#where-to-store-your-cs112-work",
+    "title": "Lab 00: Getting Started",
+    "section": "Where to Store your CS112 Work",
+    "text": "Where to Store your CS112 Work\nYou will have many assignments in CS112, and it is useful to put them all under one directory (“folder”). I recommend you create a directory called cs112, in your home directory. You can do this from the Terminal Window you opened before. Just type this:\nmkdir cs112\nTo change your current working directory to cs112, do this:\ncd cs112\nTo verify what is your current directory, do this:\npwd\nYou should remember to do this before starting each lab and assignment."
+  },
+  {
+    "objectID": "labs/lab00.html#launching-vs-code",
+    "href": "labs/lab00.html#launching-vs-code",
+    "title": "Lab 00: Getting Started",
+    "section": "Launching VS Code",
+    "text": "Launching VS Code\nThere are different ways to launch VS Code, but for now, just do this:\nOpen a terminal window; and\nIf you haven’t already (e.i., your terminal prompt doesn’t have a ~/cs112 in it),\ncd cs112\nEnter the following command:\ncode . \nThe VSCode window should pop up pretty quickly. (If you see something about a password not matching your keychain, just cancel it a few times. We’ll work on fixing that in the future.)"
+  },
+  {
+    "objectID": "labs/lab00.html#create-your-github-account",
+    "href": "labs/lab00.html#create-your-github-account",
+    "title": "Lab 00: Getting Started",
+    "section": "Create your GitHub Account",
+    "text": "Create your GitHub Account\nGitHub is a web service where all your code for this course will be stored. Graders will be able to go to your code and see it and grade it. Additionally, you’ll be able to access your code from any machine – the lab machines or your personal machine – as long as you submit your code to your repository.\nIf you do not already have a GitHub account, you should go to https://github.com and create a new account. I would prefer it if you would use your Calvin email address here. After getting a verification code via email and verifying your account, the website asks you what kind of features you will be using. At the bottom of this page it says “Skip Personalization”. Just click that to skip all the personalization stuff. You will likely need to set up two factor authentication - 2FA - as part of this process. If you have good texting capabilities in the CS computer labs, you can use the SMS text option for 2FA authentication.\nKeep your github.com web page open in the browser for the next step."
+  },
+  {
+    "objectID": "labs/lab00.html#creating-ssh-key-pair",
+    "href": "labs/lab00.html#creating-ssh-key-pair",
+    "title": "Lab 00: Getting Started",
+    "section": "Creating SSH Key Pair",
+    "text": "Creating SSH Key Pair\nGithub security now requires that you use an SSH Key Pair. An SSH key pair is two numbers – a public key and a private key – stored in two files. The public key can be shared publicly, but the private key should not be shared.\nThe manual process is below, but it can be skipped as we’ll use an automated tool to generate a key specifically for this lab. Run the following command in your terminal:\n/usr/local/scripts/gen-sshkey-github.sh\nYou will need to copy the bottom of the output you see into github. To copy that output, select it with your mouse, and either do Ctrl+Shift+c or choose Edit -&gt; Copy from the menu. Do that now.\nNow, go to your github.com account in the browser. You will need to go to this page https://github.com/settings/keys while in your account. (Try clicking on the link, but if that does not work, do the following: in your github.com account page, find the image in the upper-right corner of the page, click on it, then choose Settings from the dropdown menu, then choose SSH and GPG Keys on the left menu, and click that.)\nClick the New SSH Key button in the upper right. Choose a Title: CS112 works well. Then paste the key you copied earlier into the Key textbox. Click the Add SSH Key button.\n\n\n\n\n\n\nNote\n\n\n\nIf you plan to work on your own machine instead of a lab machine, you will have to repeat this step on your own laptop. But, the script at /usr/local/scripts/gen-sshkey-github.sh will not work on your machine. Use ssh-keygen instead. It is available on most operating systems already."
+  },
+  {
+    "objectID": "labs/lab00.html#creating-a-project",
+    "href": "labs/lab00.html#creating-a-project",
+    "title": "Lab 00: Getting Started",
+    "section": "Creating a Project",
+    "text": "Creating a Project\nEach lab and homework will contain a link to a GitHub Classroom assignment invitation. The lab or homework will give you instructions on how to accept the invitation and then download the code for that assignment.\nWhen you click on the link, a repository for you will be created. The webpage will give you instructions on how to see that repository. The webpage for your repo will look something like this: https://github.com/24SP-CS112/lab0-yourgithubaccount\nClick on the invitation for this lab: https://classroom.github.com/a/QYJE3sJ0\nGo to the webpage for your repository. You will need to get the ID of the repo. To get this, you click on the button &lt;&gt; Code, then click on the SSH tab. Then click on the two boxes to the right of where it says git@github.com:.... This copies your repo id to your clipboard.\n\n(Keep this tab open in your browser – you’ll need it later in the lab.)\nThe instructions in each assignment will remind you what to do:\n\nOpen a terminal (it could be the terminal from Linux or you can use the terminal from VS Code by typing Ctr + Shift + `).\ncd cs112\ngit clone &lt;your github repo here&gt; (replace everything between &lt; and &gt;)\n\nFor Lab 0, do this now replacing &lt;your github repo here&gt; with what you copied to your clipboard (i.e., paste it in).\nWhen you do this, git clone will download your repo to your cs112 directory, into a directory called lab0-yourgithubaccount (where yourgithubaccount is actually your github account name.\nIn the terminal do the following:\nls \nThis will show you the name of the directory containing the lab0 code.\ncd into that directory, replacing yourgithubaccount with your actual github account name:\ncd lab0-yourgithubaccount       \nls \nThis will show you what files have been installed for you for this lab.\nAlso, do the following, which you will never have to do again. In the terminal type (replacing John Doe, johndoe etc. with your information):\ngit config --global user.name \"John Doe\"\ngit config --global user.email johndoe@calvin.edu\nIf you want to check your credentials at any time, in the terminal type:\ngit config --global --list"
+  },
+  {
+    "objectID": "labs/lab00.html#customizing-vscode",
+    "href": "labs/lab00.html#customizing-vscode",
+    "title": "Lab 00: Getting Started",
+    "section": "Customizing VSCode",
+    "text": "Customizing VSCode\nVS Code has tons of features. We will configure only a few of them at this point.\nFirst, let’s install the C++ extensions. In the menu bar of VS Code, select File -&gt; Open Folder. Choose the directory that you downloaded when you did git clone above. That directory will be under your cs112 directory. Next, open the main.cpp file. When you open that file VS Code is going to suggest (in the lower-right corner) that you install some extensions to help you work with C++ files. The extension that you want to install is called the C/C++ Extension Pack. Select that and install it.\n\nGo to your VS Code window. Hit the F1 key, which should open the Command Palette at the top of the window. Start typing Preferences:\nWhen you see Preferences: Open User Settings appear, select it. On the resulting page there is a search bar at the top. In the search bar, type Auto Save. You should see a control appear labeled Files: Auto Save. From the dropdown menu, select onFocusChange. This will make sure that your files are automatically saved any time you select another file or another window. No more remembering to save!!\n\nDon’t close the Settings page yet! Instead, erase where you typed Auto Save, and now search for Tab Size. You should see a control called Editor: Tab Size. Set this value to 4.\nNow, erase Tab Size so that you are not searching for anything.\nUnder Extensions, you should see a C/C++ section. Select that, and then Formatting as shown below.\nScroll down until you see C_Cpp: Clang_format_style. Replace whatever you find in the input box with this:\n{ BasedOnStyle: Google, IndentWidth: 4, AccessModifierOffset: -4, AllowShortFunctionsOnASingleLine: InlineOnly }\n\nYou can close the Settings window now."
+  },
+  {
+    "objectID": "labs/lab00.html#compiling-your-program",
+    "href": "labs/lab00.html#compiling-your-program",
+    "title": "Lab 00: Getting Started",
+    "section": "Compiling your Program",
+    "text": "Compiling your Program\nTake a look at your main.cpp file. It should look like this:\n/* main.cpp\n * Author: Prof. Victor Norman\n * For: CS 112, Lab 0 at Calvin University.\n */\n\n#include &lt;iostream&gt;\n#include &lt;string&gt;\nusing namespace std;\n\nint main() {\n    cout &lt;&lt; \"Welcome to CS112!\" &lt;&lt; endl;\n    return 0;\n}\nGo back to your Terminal window. Make sure you are in the directory where your code is. You can confirm this by typing pwd and/or type ls to list the files in the current working directory. You should see that you are in cs112/lab0-yourgithubaccount, and that there is a file called makefile there.\nTo compile your program, type make. This command reads your makefile, which gives instructions on how to build your program. When the build succeeds, do ls again to see that now there is a file called lab0. This is your executable that you just built."
+  },
+  {
+    "objectID": "labs/lab00.html#running-your-program",
+    "href": "labs/lab00.html#running-your-program",
+    "title": "Lab 00: Getting Started",
+    "section": "Running Your Program",
+    "text": "Running Your Program\nTo run the executable, in the terminal, type\n./lab0  \nThis is telling the terminal shell to run the lab0 executable that is in this directory."
+  },
+  {
+    "objectID": "labs/lab00.html#practice-writing-code",
+    "href": "labs/lab00.html#practice-writing-code",
+    "title": "Lab 00: Getting Started",
+    "section": "Practice Writing Code",
+    "text": "Practice Writing Code\nIn main.cpp, select all the code and delete it. Then, rewrite the code so that it prints out Welcome to CS112 and C++!. Don’t cheat! Practice makes perfect. If you can’t figure out why you are seeing an error, collaborate with your neighbor. Remember you have to compile your program each time before you try to execute it. In your main(), define a variable name of type string, and initialize it to your name by asking for an input from the keyboard (take a look at the cin command in C++). When you run your executable, it will be waiting for you to type your name and hit Enter! Note: strings are surrounded by double quotes in C++. But in the case of entering them by using cin, double quotes are unnecessary.\nChange main, so that it now prints out Welcome to CS112 and C++, your name here! using the variable. To do this, use multiple &lt;&lt; operators, similar to this: cout &lt;&lt; “Welcome” &lt;&lt; aVariable &lt;&lt; endl; Make sure you put the exclamation point on the end. Now, try recompiling and running ./lab0 Now, create a second file called utils.cpp and in there, put this code:\nint courseNumber() { return 112; }\nThen, create a file called utils.h and in there, put this code:\n\nint courseNumber();\nIn your main.cpp file, add #include “utils.h” to the area where you have #include . NOTE: use “utils.h” not &lt;utils.h&gt; Now, in your code in main(), instead of hard-coding 112 in your output, call the function courseNumber() to get the course number. Compile your project, fix any problems the compiler finds, and run your project. When you have your code working (i.e., the output looks identical to what you had after step 2 above), go on.\nSubmitting your Code for Grading ❗❗❗NOTE NOTE NOTE: if you do not submit your code, the grader cannot see it and grade it! Do not forget to do this step! When you get your code working, submit your code to github: In VS Code, click on the Source Control icon on the upper left and type in a commit message, then click the checkmark icon to submit your code. Go through the various pop-up boxes to commit and push your changes to your online repo. When you push your changes to your online repo, a set of automated tests may be run (Prof. Norman is adding automated tests to most labs and projects). To find out if your automated tests passed, look at your online repo. If you see a green checkmark, tests have passed! But, in mine, I see this:"
   }
 ]

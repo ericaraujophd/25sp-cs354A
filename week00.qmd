@@ -8,16 +8,16 @@ title: "Week 00: Intro do C++"
 
 At the end of this unit, students will be able to...
 
-- describe the process of compilation of a program.
-- perform basic I/O using cout and cin, with << and >>.
-- create variables of various data types and initialize them.
-- articulate the importance of initializing variables.
-- write values in decimal, hexadecimal, and binary, and convert between them.
-- create constant values using the const keyword.
-- declare array variables and initialize them.
-- identify the size of the different data types.
-- create and use pointers.
-- use the dereferencing and address-of operators on pointer variables.
+-   describe the process of compilation of a program.
+-   perform basic I/O using cout and cin, with `<<` and `>>`.
+-   create variables of various data types and initialize them.
+-   articulate the importance of initializing variables.
+-   write values in decimal, hexadecimal, and binary, and convert between them.
+-   create constant values using the const keyword.
+-   declare array variables and initialize them.
+-   identify the size of the different data types.
+-   create and use pointers.
+-   use the dereferencing and address-of operators on pointer variables.
 
 ## Slides, videos, and application exercises
 
@@ -32,26 +32,27 @@ At the end of this unit, students will be able to...
 [Binary Exposed](https://integer.exposed/#0x0008){target="_blank"}
 :::
 
+```{=html}
 <!-- ::: source
 [Code from Class](https://calvincollege-my.sharepoint.com/:f:/g/personal/vtn2_calvin_edu/Eredz2bHiShCtI0CVssiaggB8tUES6QbacEf2cc4PBhTgQ?e=uoV7Uu)
 ::: -->
+```
 
 ::: reading
-- [Chapters 1, 2, and Sections 5.1, 5.2](https://runestone.academy/runestone/books/published/cpp4python/index.html){target="_blank"}
+-   [Chapters 1, 2, and Sections 5.1, 5.2](https://runestone.academy/runestone/books/published/cpp4python/index.html){target="_blank"}
 :::
 
-
-
+```{=html}
 <!-- ::: video
 [Video](https://youtu.be/_YqEHZccujc)
 :::
 -->
-
+```
 ::::::
 
 <!-- ## Lab -->
 
-::::: lab
+:::::: lab
 **Lab 00: Getting Started**
 
 ::: instructions
@@ -65,33 +66,35 @@ At the end of this unit, students will be able to...
 ::: slides
 [Dad Joke + Reflection](){target="_blank"}
 :::
-:::::
+::::::
 
 <!-- ## Homework assignments -->
 
 ::::: homework
 **Project 00: Exploring Types**
 
-
 ::: instructions
 [Instructions](/projects/proj00.qmd)
 :::
 
+```{=html}
 <!-- ::: source
 [Source](){target="_blank"}
 ::: -->
+```
 
 ::: starter
 [Starter](){target="_blank"}
 :::
-
 :::::
 
-
+```{=html}
 <!-- ::: exam
 **Exam 4** Exam on Wednesday during class. Bring your laptop. Content: Weeks 0 - 11.
 ::: -->
+```
 
+```{=html}
 <!-- ::: application-exercise
 **First dataviz**
 
@@ -111,7 +114,9 @@ At the end of this unit, students will be able to...
 > [Source](https://github.com/rstudio-education/datascience-box/blob/master/course-materials/application-exercises/ae-01b-covid/covid.qmd)
 > :::
 ::: -->
+```
 
+```{=html}
 <!-- ::: guest-lecture
 **Alberto Cairo - How charts lie**
 
@@ -119,3 +124,4 @@ At the end of this unit, students will be able to...
 [Video](https://youtu.be/Low28hx4wyk)
 :::
 ::: -->
+```
