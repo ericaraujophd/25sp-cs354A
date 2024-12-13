@@ -188,7 +188,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#compiling-your-program" id="toc-compiling-your-program" class="nav-link" data-scroll-target="#compiling-your-program">Compiling your Program</a></li>
   <li><a href="#running-your-program" id="toc-running-your-program" class="nav-link" data-scroll-target="#running-your-program">Running Your Program</a></li>
   <li><a href="#practice-writing-code" id="toc-practice-writing-code" class="nav-link" data-scroll-target="#practice-writing-code">Practice Writing Code</a></li>
-  <li><a href="#step-6-submit" id="toc-step-6-submit" class="nav-link" data-scroll-target="#step-6-submit">Step 6: Submit</a></li>
+  <li><a href="#submitting-your-code-for-grading" id="toc-submitting-your-code-for-grading" class="nav-link" data-scroll-target="#submitting-your-code-for-grading">Submitting your Code for Grading</a></li>
   <li><a href="#grading-rubric" id="toc-grading-rubric" class="nav-link" data-scroll-target="#grading-rubric">Grading Rubric</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/ericaraujophd/24fa-cs112/edit/main/labs/lab00.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/24fa-cs112/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -362,53 +362,120 @@ Note
 </section>
 <section id="practice-writing-code" class="level2">
 <h2 class="anchored" data-anchor-id="practice-writing-code">Practice Writing Code</h2>
-<p>In main.cpp, select all the code and delete it. Then, rewrite the code so that it prints out Welcome to CS112 and C++!. Don’t cheat! Practice makes perfect. If you can’t figure out why you are seeing an error, collaborate with your neighbor. Remember you have to compile your program each time before you try to execute it. In your main(), define a variable name of type string, and initialize it to your name by asking for an input from the keyboard (take a look at the cin command in C++). When you run your executable, it will be waiting for you to type your name and hit Enter! Note: strings are surrounded by double quotes in C++. But in the case of entering them by using cin, double quotes are unnecessary.</p>
-<p>Change main, so that it now prints out Welcome to CS112 and C++, your name here! using the variable. To do this, use multiple &lt;&lt; operators, similar to this: cout &lt;&lt; “Welcome” &lt;&lt; aVariable &lt;&lt; endl; Make sure you put the exclamation point on the end. Now, try recompiling and running ./lab0 Now, create a second file called utils.cpp and in there, put this code:</p>
-<p>int courseNumber() { return 112; }</p>
-<pre><code>Then, create a file called utils.h and in there, put this code:
-
-int courseNumber();</code></pre>
-<p>In your main.cpp file, add #include “utils.h” to the area where you have #include <iostream>. NOTE: use “utils.h” not &lt;utils.h&gt; Now, in your code in main(), instead of hard-coding 112 in your output, call the function courseNumber() to get the course number. Compile your project, fix any problems the compiler finds, and run your project. When you have your code working (i.e., the output looks identical to what you had after step 2 above), go on.</iostream></p>
-<p>Submitting your Code for Grading ❗❗❗NOTE NOTE NOTE: if you do not submit your code, the grader cannot see it and grade it! Do not forget to do this step! When you get your code working, submit your code to github: In VS Code, click on the Source Control icon on the upper left and type in a commit message, then click the checkmark icon to submit your code. Go through the various pop-up boxes to commit and push your changes to your online repo. When you push your changes to your online repo, a set of automated tests may be run (Prof.&nbsp;Norman is adding automated tests to most labs and projects). To find out if your automated tests passed, look at your online repo. If you see a green checkmark, tests have passed! But, in mine, I see this:</p>
+<ol type="1">
+<li>In <strong>main.cpp</strong>, select all the code and delete it. Then, rewrite the code so that it prints out <strong>Welcome to CS112 and C++!</strong>. Don’t cheat! Practice makes perfect. If you can’t figure out why you are seeing an error, collaborate with your neighbor. Remember you have to compile your program each time before you try to execute it.</li>
+<li>In your <code>main()</code>, define a variable name of type <strong>string</strong>, and initialize it to your name by asking for an input from the keyboard (take a look at the <strong>cin</strong> command in C++). When you run your executable, it will be waiting for you to type your name and hit Enter!</li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>strings</strong> are surrounded by double quotes in C++. But in the case of entering them by using <strong>cin</strong>, double quotes are unnecessary.</p>
+</div>
+</div>
+<p>Change main, so that it now prints out</p>
+<pre><code>Welcome to CS112 and C++, your name here!</code></pre>
+<p>using the variable. To do this, use multiple <code>&lt;&lt;</code> operators, similar to this:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>cout <span class="op">&lt;&lt;</span> <span class="st">"Welcome"</span> <span class="op">&lt;&lt;</span> aVariable <span class="op">&lt;&lt;</span> endl<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Make sure you put the exclamation point on the end. Now, try recompiling and running</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./lab0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="3" type="1">
+<li>Now, create a second file called <strong>utils.cpp</strong> and in there, put this code:</li>
+</ol>
+<div class="sourceCode" id="cb17"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a> <span class="dt">int</span> courseNumber<span class="op">()</span> <span class="op">{</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="dv">112</span><span class="op">;</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Then, create a file called <strong>utils.h</strong> and in there, put this code:</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> courseNumber<span class="op">();</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="4" type="1">
+<li>In your <strong>main.cpp</strong> file, add</li>
+</ol>
+<div class="sourceCode" id="cb19"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">"utils.h"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>to the area where you have <code>#include &lt;iostream&gt;</code>.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Use <code>"utils.h"</code> not <code>&lt;utils.h&gt;</code></p>
+</div>
+</div>
+<p>Now, in your code in <code>main()</code>, instead of hard-coding <strong>112</strong> in your output, call the function <code>courseNumber()</code> to get the course number.</p>
+<p>Compile your project, fix any problems the compiler finds, and run your project. When you have your code working (i.e., the output looks identical to what you had after step 2 above), go on.</p>
 </section>
-<section id="step-6-submit" class="level2">
-<h2 class="anchored" data-anchor-id="step-6-submit">Step 6: Submit</h2>
-<p>Submit your code via github, as normal.</p>
+<section id="submitting-your-code-for-grading" class="level2">
+<h2 class="anchored" data-anchor-id="submitting-your-code-for-grading">Submitting your Code for Grading</h2>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Warning
+❗❗❗NOTE NOTE NOTE
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>IF YOU WORKED WITH A PARTNER, ONLY ONE OF YOU HAS TO SUBMIT, but UPDATE THE README.md to INCLUDE BOTH NAMES.</p>
+<p>If you do not submit your code, the grader cannot see it and grade it! Do not forget to do this step!</p>
 </div>
 </div>
+<p>When you get your code working, submit your code to github:</p>
+<blockquote class="blockquote">
+<p>In VS Code, click on the Source Control icon on the upper left and type in a commit message, then click the checkmark icon to submit your code. Go through the various pop-up boxes to commit and push your changes to your online repo.</p>
+</blockquote>
+<p>When you push your changes to your online repo, a set of automated tests may be run (for most labs and projects). To find out if your automated tests passed, look at your online repo. If you see a green checkmark, tests have passed! But, in mine, I see this:</p>
+<p><img src="../images/labs/lab00-error-tester.png" class="img-fluid"></p>
+<p>If I click on the red <span style="color:red"><strong>X</strong></span>, I see this:</p>
+<p><img src="../images/labs/lab00-all-checks-failed.png" class="img-fluid"></p>
+<p>To see the steps to get your errors report, see video below.</p>
+<p><img src="../images/labs/lab00-errors.gif" class="img-fluid"></p>
+<p>Click on <span style="color:blue"><strong>Details</strong></span> to see information about what automated test failed. In this case, there is only 1 automated test, so if it fails your output is not what is expected.</p>
+<p>If your code is not passing, make sure the output exactly matches those tests, including spaces – there is a space after <code>"C++, "</code>. Also make sure the autograder can receive an input command to enter your name. In the autograding test, the name <strong>Amunzle</strong> is given as input to the program, so the test expects this as output:</p>
+<pre><code>Welcome to CS112 and C++, Amunzle!</code></pre>
+<p>If you have problems, you should go back and fix them, and then resubmit until the automated test passes. When you are done, you are free to go. Be sure to logout from your workstation, so that no one plays any pranks with your account!</p>
 </section>
 <section id="grading-rubric" class="level2">
 <h2 class="anchored" data-anchor-id="grading-rubric">Grading Rubric</h2>
-<p>20 points total:</p>
+<p>10 points total</p>
 <ul>
-<li>10 pts: hash table code (not including the hash function) is correct</li>
-<li>5 pts: hash function obeys the criteria laid out in class.</li>
-<li>3 pts: hash function works well (not obviously leaving many buckets empty and have some be very full).</li>
-<li>2 pts: code is clean and hospitable.</li>
+<li>code compiles and passes autograder tests: 5 pts.</li>
+<li>code is clean and neat: 2 pts.</li>
+<li>miscellaneous (see below for examples): 3 pts.</li>
 </ul>
-<p>Ways students lost points in the past:</p>
+<p>Ways students have lost points in the past:</p>
 <ul>
-<li>-2: Hash function does not appear to be evenly distributed but fills lower-numbered buckets way more (~2000 vs ~50)</li>
-<li>-4: Main function does not load words from file or call dumpInfo</li>
-<li>-1: Missing call to dumpInfo in main</li>
-<li>-3: Buckets are not evenly distributed (with many below 50 or above 2000) and some are empty. The smallest buckets are odd-numbered, which indicates a quirk in the algorithm which disfavors that half of the buckets</li>
-<li>-4: Most of the buckets are empty; a hashing algorithm should seek to evenly distribute words into buckets</li>
-<li>-1: Please output all bucket counts per instructions so the distribution can be seen.</li>
+<li>-1: No implementation for <code>courseNumber()</code></li>
+<li>-1: No call to <code>courseNumber()</code> in <code>main()</code></li>
+<li>-2: No variable to display your name</li>
+<li>-1: Implementation for <code>courseNumber()</code> should be in <strong>utils.cpp</strong>, not the header file <strong>utils.h</strong>.</li>
+<li>-1: Good, but please format your code!</li>
 </ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you have time and you have your laptop with you, this would be a good time to follow the instructions on the CS112 Moodle page to set up your laptop to access the CS lab machines remotely using VS Code Tunnels.</p>
 <!-- [^1]: how to add footnotes. -->
 
 
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->
