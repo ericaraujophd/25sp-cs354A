@@ -21,7 +21,7 @@ eval: false
 
 ## Objectives
 
-1.  Practice creating variables, printing values, printing locations of variables, and so on.
+-  Practice creating variables, printing values, printing locations of variables, and so on.
 
 ## Step 1. Setup
 
