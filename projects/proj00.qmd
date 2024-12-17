@@ -25,7 +25,7 @@ eval: false
 
 ## Step 1. Setup
 
--   Click on this assignment invitation and then ["Accept this assignment"](https://classroom.github.com/a/hz4_ylIx){target="_blank"}.
+-   Click on this assignment invitation and then ["Accept this assignment"](){target="_blank"}.
 -   Wait a few seconds and refresh the page. Refresh until the page says "You're ready to go!".
 -   Click the link to see your new repo on github.com.
 -   Click the green <span style="color:green;">**Code**</span> button, then SSH, and copy the link it shows. 

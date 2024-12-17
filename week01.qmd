@@ -8,42 +8,46 @@ title: "Week 01: Control Structures, Functions, Parameter Passing modes"
 
 At the end of this unit, students will be able to...
 
-- write if, if-else, if-else-if, and switch statements correctly.
-- create correct while loops and for loops, including using break and continue statements.
-- define and call functions correctly.
-- use function overloading, define default arguments, and define const parameters.
-- pass arrays as parameters.
-- articulate the differences between in, out, and in/out parameters.
-- correctly choose between pass-by-value, pass-by-reference, and pass-by-const-ref parameters.
+-   write if, if-else, if-else-if, and switch statements correctly.
+-   create correct while loops and for loops, including using break and continue statements.
+-   define and call functions correctly.
+-   use function overloading, define default arguments, and define const parameters.
+-   pass arrays as parameters.
+-   articulate the differences between in, out, and in/out parameters.
+-   correctly choose between pass-by-value, pass-by-reference, and pass-by-const-ref parameters.
 
 ## Slides, videos, and application exercises
 
-:::::: slide-deck
+::::: slide-deck
 **Week 01: Slides**
 
 ::: slides
 [Slides](https://docs.google.com/presentation/d/1uux2sZHfW1BRzdjNmUDpt5TDD7hOEgbLBW-G7KJNNUc/edit?usp=sharing){target="_blank"}
 :::
 
+```{=html}
 <!-- ::: source
 [Binary Exposed](https://integer.exposed/#0x0008){target="_blank"}
 ::: -->
+```
 
+```{=html}
 <!-- ::: source
 [Code from Class](https://calvincollege-my.sharepoint.com/:f:/g/personal/vtn2_calvin_edu/Eredz2bHiShCtI0CVssiaggB8tUES6QbacEf2cc4PBhTgQ?e=uoV7Uu)
 ::: -->
-
+```
 
 ::: reading
 -   [Chapters 3 and 4](https://runestone.academy/runestone/books/published/cpp4python/index.html){target="_blank"}
 :::
 
-
+```{=html}
 <!-- ::: video
 [Video](https://youtu.be/_YqEHZccujc)
 :::
 -->
-::::::
+```
+:::::
 
 <!-- ## Lab -->
 
@@ -72,9 +76,11 @@ At the end of this unit, students will be able to...
 [Instructions](/projects/proj01.qmd)
 :::
 
+```{=html}
 <!-- ::: source
 [Source](){target="_blank"}
 ::: -->
+```
 
 ::: starter
 [Starter](){target="_blank"}
@@ -82,12 +88,13 @@ At the end of this unit, students will be able to...
 :::::
 
 ::: exam
-**POGIL** 
+**POGIL**
 
-- [Array Addressing](https://docs.google.com/document/d/1myVaJT3i1hECM4BHs9LpbLz3a3heVPp6SJiEjoEvG_M/edit?tab=t.0#heading=h.im9274hm9wa0){target="_blank"} ([Answers](https://drive.google.com/file/d/1mn5yCzIJuURMiP3MOtO9amEQzUVAQCQZ/view?usp=sharing){target="_blank"})
-- [Parameter Passing](https://docs.google.com/document/d/125hbFPo5PVcuGQ9pq4io23jns2kOEkfjo71S9WOkfjQ/edit){target="_blank"} ([Answers](https://drive.google.com/file/d/1rPum6ihNwUKRJpZBSTQF8v7QKfOdog11/view?usp=drive_link){target="_blank"})
+-   [Array Addressing](https://docs.google.com/document/d/1myVaJT3i1hECM4BHs9LpbLz3a3heVPp6SJiEjoEvG_M/edit?tab=t.0#heading=h.im9274hm9wa0){target="_blank"} 
+    <!-- -   ([Answers](https://drive.google.com/file/d/1mn5yCzIJuURMiP3MOtO9amEQzUVAQCQZ/view?usp=sharing){target="_blank"}) -->
+-   [Parameter Passing](https://docs.google.com/document/d/125hbFPo5PVcuGQ9pq4io23jns2kOEkfjo71S9WOkfjQ/edit){target="_blank"} 
+    <!-- -   ([Answers](https://drive.google.com/file/d/1rPum6ihNwUKRJpZBSTQF8v7QKfOdog11/view?usp=drive_link){target="_blank"}) -->
 :::
-
 
 ```{=html}
 <!-- ::: application-exercise

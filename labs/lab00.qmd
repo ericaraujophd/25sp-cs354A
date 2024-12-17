@@ -111,9 +111,13 @@ If you plan to work on your own machine instead of a lab machine, you will have 
 
 Each lab and homework will contain a link to a **GitHub Classroom** assignment invitation. The lab or homework will give you instructions on how to accept the invitation and then download the code for that assignment.
 
-When you click on the link, a repository for you will be created. The webpage will give you instructions on how to see that repository. The webpage for your repo will look something like this: **https://github.com/24SP-CS112/lab0-yourgithubaccount**
+When you click on the link, a repository for you will be created. The webpage will give you instructions on how to see that repository. The webpage for your repo will look something like this: **https://github.com/24SP-CS112/lab00-yourgithubteam**
 
-Click on the invitation for this lab: [https://classroom.github.com/a/QYJE3sJ0](https://classroom.github.com/a/QYJE3sJ0){target="_blank"}
+Click on the [invitation for this lab.](https://classroom.github.com/a/AloYXnvi){target="_blank"}
+
+::: callout-important
+All labs are meant to be done in pairs using pair programming. That is: you **must** find a pair before accepting the invitation. For the labs, **and only for the labs**, the invitation will require you create or join a Team. The first to accept the invitation should create a Team name, so your partner can join in afterwards.
+:::
 
 Go to the webpage for your repository. You will need to get the ID of the repo. To get this, you click on the button **\<\> Code**, then click on the SSH tab. Then click on the two boxes to the right of where it says `git@github.com:...`. This copies your repo id to your clipboard.
 
