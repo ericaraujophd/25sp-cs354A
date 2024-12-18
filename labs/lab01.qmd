@@ -5,49 +5,50 @@ format:
     css: /labs/lab-styles.css
 ---
 
-<center><figure>
+<center>
+
+<figure>
 
 <img src="/images/labs/lab01/darthvader.gif" alt="May the force be with you." width="450"/>
 
 <figcaption>May the force be with you.</figcaption>
 
-</figure></center>
+</figure>
+
+</center>
 
 ## Objectives:
 
-1. Practice using for loops, while loops, and if statements.
-2. Practice creating functions and passing parameters.
-3. Practice Committing and Syncing often to GitHub to run autograding tests.
+1.  Practice using for loops, while loops, and if statements.
+2.  Practice creating functions and passing parameters.
+3.  Practice Committing and Syncing often to GitHub to run autograding tests.
 
 ## Step 0. Prepare
- 
-* Click [this link](https://classroom.github.com/a/Aqowwp7J){target="_blank"} and then "Accept this assignment".
-* Wait a few seconds and refresh the page. Refresh until the page says "You're ready to go!". The page has a link to a github repo.
-* Click the link to see your new repo on github.com.
-* Click the green <span style="color:green">**Code**</span> button and copy the SSH link it shows.
-* In a terminal,
-  * `cd` to the directory where you are putting all your CS112 assignments.
-  * type `git clone <paste-the-contents-of-the-link-you-copied>`
-* `cd` to the new directory containing your repo.
-* type `code .` to start up Visual Studio Code in that directory.
-* Make sure yo and your partner are in the same Team when creating the repo.
-* Inspect the code you got in the assignment.
-* In the terminal, type `make`
-* The code should compile and give you an executable called **tester**.
-* Run the program: type `./tester`
-* You should get some basic output -- or at least it should not crash.
+
+-   Click [this link](){target="_blank"} and then "Accept this assignment".
+<!-- -   Click [this link](https://classroom.github.com/a/Aqowwp7J){target="_blank"} and then "Accept this assignment". -->
+-   Wait a few seconds and refresh the page. Refresh until the page says "You're ready to go!". The page has a link to a github repo.
+-   Click the link to see your new repo on github.com.
+-   Click the green [**Code**]{style="color:green"} button and copy the SSH link it shows.
+-   In a terminal,
+    -   `cd` to the directory where you are putting all your CS112 assignments.
+    -   type `git clone <paste-the-contents-of-the-link-you-copied>`
+-   `cd` to the new directory containing your repo.
+-   type `code .` to start up Visual Studio Code in that directory.
+-   Make sure yo and your partner are in the same Team when creating the repo.
+-   Inspect the code you got in the assignment.
+-   In the terminal, type `make`
+-   The code should compile and give you an executable called **tester**.
+-   Run the program: type `./tester`
+-   You should get some basic output -- or at least it should not crash.
 
 ## Step 1. *if* statement practice, 1
 
-In **functions.cpp** in the `grade()` function, add code that
-1. prints "Enter your grade: "
-2. reads in an **unsigned** value from the user
-3. computes whether the letter grade (a **char**) is an A, B, C, D, or F. An A is 90 or above, a B is 80 - 89, etc.
-4. prints out the grade saying "Your grade is *grade*.".
+In **functions.cpp** in the `grade()` function, add code that 1. prints "Enter your grade: " 2. reads in an **unsigned** value from the user 3. computes whether the letter grade (a **char**) is an A, B, C, D, or F. An A is 90 or above, a B is 80 - 89, etc. 4. prints out the grade saying "Your grade is *grade*.".
 
 Compile your program by typing `make` in a terminal. Run it by typing `./tester step1`. Verify that your output looks exactly like this:
 
-```
+```         
 Your grade is B.
 ```
 
@@ -59,7 +60,7 @@ Now, **Commit** and **Sync** your code to github. Use "step 1 complete" as your 
 
 Add code in **functions.cpp** in `insurance()` to implement the insurance plan shown in the table below, computing the result in as few lines as possible -- but still using readable/hospitable code. To review the syntax of if statements in C++, you might find this useful: [https://www.w3schools.com/cpp/cpp_conditions_elseif.asp](https://www.w3schools.com/cpp/cpp_conditions_elseif.asp){target="_blank"}
 
-
+```{=html}
 <style type="text/css">
 .tg  {border-collapse:collapse;border-color:#ccc;border-spacing:0;margin:0px auto;}
 .tg td{background-color:#fff;border-color:#ccc;border-style:solid;border-width:1px;color:#333;
@@ -69,31 +70,19 @@ Add code in **functions.cpp** in `insurance()` to implement the insurance plan s
 .tg .tg-baqh{text-align:center;vertical-align:top}
 .tg .tg-wa1i{font-weight:bold;text-align:center;vertical-align:middle}
 @media screen and (max-width: 767px) {.tg {width: auto !important;}.tg col {width: auto !important;}.tg-wrap {overflow-x: auto;-webkit-overflow-scrolling: touch;margin: auto 0px;}}</style>
-<div class="tg-wrap"><table class="tg"><thead>
-  <tr>
-    <th class="tg-wa1i" rowspan="2">Plan Name</th>
-    <th class="tg-wa1i" colspan="3">Months</th>
-  </tr>
-  <tr>
-    <th class="tg-wa1i">1</th>
-    <th class="tg-wa1i">2-6</th>
-    <th class="tg-wa1i">7+</th>
-  </tr></thead>
-<tbody>
-  <tr>
-    <td class="tg-baqh">silver</td>
-    <td class="tg-baqh">$90</td>
-    <td class="tg-baqh">$60</td>
-    <td class="tg-baqh">$60</td>
-  </tr>
-  <tr>
-    <td class="tg-baqh">gold</td>
-    <td class="tg-baqh">$90</td>
-    <td class="tg-baqh">$70</td>
-    <td class="tg-baqh">$35</td>
-  </tr>
-</tbody>
-</table></div>
+```
+
+::: tg-wrap
++-----------+--------+
+| Plan Name | Months |
++===========+========+
+| 1         | 2-6    |
++-----------+--------+
+| silver    | \\\$90 |
++-----------+--------+
+| gold      | \\\$90 |
++-----------+--------+
+:::
 
 <!-- ![Plan table](/images/labs/lab01/plan-table.png) -->
 
@@ -101,26 +90,25 @@ The program first asks the user for the Plan Name -- a **string**. Then, the pro
 
 Finally, of course, your code prints out the results in nice English. Your output should match this output exactly. (Note the period at the end of the number at the end.)
 
-```
+```         
 The cost for your plan is $60.
 ```
 
 Compile your code and run:
 
-```bash
+``` bash
 ./tester step2and3 -c step2
-``` 
+```
 
 The output should match the output above.
 
 Now, **Commit** and **Sync** your code to github. Use "step 2 complete" as your "message". When you submit the automated tests will run. Only the "step1" and "step2" tests should pass at this time. If they don't, fix your code, and then resubmit. Repeat until the "step1" and "step2" tests pass.
 
-
 ## Step 3. *while* loop practice
 
 Improve your code from Step 2 by adding a **while** loop that checks if the user entered a legal plan name ("silver" or "gold"), and if not tells the user to try again. E.g.,
 
-```
+```         
     Enter a plan name: maroon
     I'm sorry, "maroon" is not a known plan.
     Enter a plan name: sliver
@@ -133,7 +121,7 @@ The while loop repeats until the user enters either **silver** or **gold**.
 
 Compile your code and run:
 
-```bash
+``` bash
 ./tester step2and3 -c step3
 ```
 
@@ -149,19 +137,19 @@ Use **default** in your **switch** statement for the "consonant" case.
 
 Have your code produce output like this:
 
-```
+```         
 The letter is a vowel.
 ```
 
 or
 
-```
+```         
 The letter is a consonant.
 ```
 
 Compile your code and run:
 
-```bash
+``` bash
 ./tester step4
 ```
 
@@ -171,17 +159,17 @@ Now, Commit and Sync your code to github. Make sure the first 4 tests pass.
 
 ## Step 5. *for* loop, 1
 
-Now, write code in `sevens()`: 
+Now, write code in `sevens()`:
 
-1. create an array of **unsigned** of size 8 called values
-2. a for loop to initialize the values array to 0, 7, 14, 21, ...
-3. a series of **assert** statements to check that the 0th value is 0, 3rd value is 21, and 7th value is 49.
-4. A line to print out "All tests passed!"
-5. You may have to `#include <cassert>`
+1.  create an array of **unsigned** of size 8 called values
+2.  a for loop to initialize the values array to 0, 7, 14, 21, ...
+3.  a series of **assert** statements to check that the 0th value is 0, 3rd value is 21, and 7th value is 49.
+4.  A line to print out "All tests passed!"
+5.  You may have to `#include <cassert>`
 
 Test with:
 
-```bash
+``` bash
 ./tester step5
 ```
 
@@ -189,21 +177,21 @@ Now, Commit and Sync your code to github. Make sure the appropriate tests pass.
 
 ## Step 6. *for* loop, 2
 
-Now, write code in `sum()`: 
+Now, write code in `sum()`:
 
-1. create an array of **doubles**, of size 100.
-2. write a for loop to fill in the array with the values 0.0, 0.1, 0.2, 0.3, etc.
-3. write a for loop to sum up all the values in the array -- but this loop has to iterate from the last item down to the first. 
+1.  create an array of **doubles**, of size 100.
+2.  write a for loop to fill in the array with the values 0.0, 0.1, 0.2, 0.3, etc.
+3.  write a for loop to sum up all the values in the array -- but this loop has to iterate from the last item down to the first.
 
-:::{.callout-note}
+::: callout-note
 Make the loop variable be of type **int**, not unsigned, as this variable will be decremented down to -1, which cannot be represented by an unsigned.
 :::
 
-4. print out the resulting sum
-   
+4.  print out the resulting sum
+
 Test with:
 
-```bash
+``` bash
 ./tester step6
 ```
 
@@ -213,19 +201,19 @@ Now, Commit and Sync your code to github. Make sure the appropriate tests pass.
 
 Now, write code to:
 
-1. implement a function called `getPlan()` and move your code from **Step 3** above into it. The function returns the **string** ("silver" or "gold") that the user enters. This function (and the ones in the next steps) is again in **functions.cpp** and **functions.h**.
-2. move the code that gets the number of months from the user into a function called `getMonths()`. This function returns the number of months a user enters. Note that the prompt asking the user to enter the number of months should read something nice, like this:
+1.  implement a function called `getPlan()` and move your code from **Step 3** above into it. The function returns the **string** ("silver" or "gold") that the user enters. This function (and the ones in the next steps) is again in **functions.cpp** and **functions.h**.
+2.  move the code that gets the number of months from the user into a function called `getMonths()`. This function returns the number of months a user enters. Note that the prompt asking the user to enter the number of months should read something nice, like this:
 
-```
+```         
 Enter the number of months: 
 ```
 
-3. move the code that computes the cost into a function called `computeCost()`. This function takes the plan name and the months as arguments and returns the cost.
-4. Uncomment and study step7 of **tests.cpp**. The code just does 4 things: call `getPlan()`, call `getMonths()`, call `computeCost()`, and print out the cost. Anyone who looks at that code will understand it because the code is short and uses good function names.
+3.  move the code that computes the cost into a function called `computeCost()`. This function takes the plan name and the months as arguments and returns the cost.
+4.  Uncomment and study step7 of **tests.cpp**. The code just does 4 things: call `getPlan()`, call `getMonths()`, call `computeCost()`, and print out the cost. Anyone who looks at that code will understand it because the code is short and uses good function names.
 
 Test with:
 
-```bash
+``` bash
 ./tester step7
 ```
 
@@ -233,23 +221,21 @@ Run the test multiple times with various inputs to make sure the computation is 
 
 Now, Commit and Sync your code to github. Make sure all tests pass.
 
-
 ## Grading Rubric
 
 This lab is worth 16 pts:
 
-* 2 points for each of the 7 steps
-  * 1 pt: output is correct and 
-  * 1 pt: you followed the directions
-* 2 pt for perfect indentation and good variable names, function names, and comments (i.e., hospitable code). You should write a comment in your code only when the following block of code is not obvious to the trained reader. You should not write a comment for each line of code.
-  
+-   2 points for each of the 7 steps
+    -   1 pt: output is correct and
+    -   1 pt: you followed the directions
+-   2 pt for perfect indentation and good variable names, function names, and comments (i.e., hospitable code). You should write a comment in your code only when the following block of code is not obvious to the trained reader. You should not write a comment for each line of code.
+
 Ways students have lost points in the past:
 
-* -1: no output for step7
-* -1: you didn’t init step 5 with a for loop
-* -1: step6 should be 495
-* -0.5: step1 you should use elseif not nested elses
-* -0.5: part4 the inside of each case should be indented
-
+-   -1: no output for step7
+-   -1: you didn’t init step 5 with a for loop
+-   -1: step6 should be 495
+-   -0.5: step1 you should use elseif not nested elses
+-   -0.5: part4 the inside of each case should be indented
 
 <!-- [^1]: how to add footnotes. -->

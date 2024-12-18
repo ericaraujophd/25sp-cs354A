@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://ericaraujo.com/24fa-cs112/week02.html</loc>
-    <lastmod>2024-12-13T20:31:31.605Z</lastmod>
+    <lastmod>2024-12-18T03:10:30.685Z</lastmod>
   </url>
   <url>
     <loc>https://ericaraujo.com/24fa-cs112/week00.html</loc>
@@ -65,64 +65,64 @@
     <lastmod>2024-12-11T16:20:23.022Z</lastmod>
   </url>
   <url>
-    <loc>https://ericaraujo.com/24fa-cs112/extras.html</loc>
-    <lastmod>2024-12-11T16:20:23.006Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ericaraujo.com/24fa-cs112/week09.html</loc>
+    <loc>https://ericaraujo.com/24fa-cs112/week08.html</loc>
     <lastmod>2024-12-11T16:20:23.047Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ericaraujo.com/24fa-cs112/labs/lab09-slides.html</loc>
-    <lastmod>2024-12-11T16:20:23.026Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ericaraujo.com/24fa-cs112/labs/lab10-hint.html</loc>
-    <lastmod>2024-12-11T16:20:23.026Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ericaraujo.com/24fa-cs112/labs/lab10-hint2.html</loc>
-    <lastmod>2024-12-11T16:20:23.027Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ericaraujo.com/24fa-cs112/labs/lab13.html</loc>
-    <lastmod>2024-12-13T16:35:42.094Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ericaraujo.com/24fa-cs112/labs/lab00.html</loc>
-    <lastmod>2024-12-17T20:36:08.189Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ericaraujo.com/24fa-cs112/labs/lab01.html</loc>
-    <lastmod>2024-12-18T01:54:27.951Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ericaraujo.com/24fa-cs112/labs/lab10.html</loc>
-    <lastmod>2024-12-11T16:20:23.027Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ericaraujo.com/24fa-cs112/labs/lab12.html</loc>
-    <lastmod>2024-12-11T16:20:23.027Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ericaraujo.com/24fa-cs112/labs/lab00-slides.html</loc>
-    <lastmod>2024-12-14T19:04:21.266Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ericaraujo.com/24fa-cs112/labs/lab09.html</loc>
-    <lastmod>2024-12-11T16:20:23.026Z</lastmod>
   </url>
   <url>
     <loc>https://ericaraujo.com/24fa-cs112/LICENSE.html</loc>
     <lastmod>2024-12-11T16:20:20.607Z</lastmod>
   </url>
   <url>
-    <loc>https://ericaraujo.com/24fa-cs112/week08.html</loc>
+    <loc>https://ericaraujo.com/24fa-cs112/labs/lab09.html</loc>
+    <lastmod>2024-12-11T16:20:23.026Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ericaraujo.com/24fa-cs112/labs/lab00-slides.html</loc>
+    <lastmod>2024-12-14T19:04:21.266Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ericaraujo.com/24fa-cs112/labs/lab12.html</loc>
+    <lastmod>2024-12-11T16:20:23.027Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ericaraujo.com/24fa-cs112/labs/lab10.html</loc>
+    <lastmod>2024-12-11T16:20:23.027Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ericaraujo.com/24fa-cs112/labs/lab01.html</loc>
+    <lastmod>2024-12-18T03:32:59.089Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ericaraujo.com/24fa-cs112/labs/lab02.html</loc>
+    <lastmod>2024-12-18T04:10:19.419Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ericaraujo.com/24fa-cs112/labs/lab00.html</loc>
+    <lastmod>2024-12-17T20:36:08.189Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ericaraujo.com/24fa-cs112/labs/lab13.html</loc>
+    <lastmod>2024-12-13T16:35:42.094Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ericaraujo.com/24fa-cs112/labs/lab10-hint2.html</loc>
+    <lastmod>2024-12-11T16:20:23.027Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ericaraujo.com/24fa-cs112/labs/lab10-hint.html</loc>
+    <lastmod>2024-12-11T16:20:23.026Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ericaraujo.com/24fa-cs112/labs/lab09-slides.html</loc>
+    <lastmod>2024-12-11T16:20:23.026Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ericaraujo.com/24fa-cs112/week09.html</loc>
     <lastmod>2024-12-11T16:20:23.047Z</lastmod>
   </url>
   <url>
     <loc>https://ericaraujo.com/24fa-cs112/content.html</loc>
-    <lastmod>2024-12-18T02:37:59.090Z</lastmod>
+    <lastmod>2024-12-18T03:09:54.366Z</lastmod>
   </url>
   <url>
     <loc>https://ericaraujo.com/24fa-cs112/projects/proj08.html</loc>
