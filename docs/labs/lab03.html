@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Lab 02: File I/O, Control Structures, and the Debugger – CS112 - Data Structures</title>
+<title>Lab 3: Classes – CS112 - Data Structures</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -107,10 +107,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <link rel="stylesheet" href="../labs/lab-styles.css">
-<meta property="og:title" content="Lab 02: File I/O, Control Structures, and the Debugger – CS112 - Data Structures">
+<meta property="og:title" content="Lab 3: Classes – CS112 - Data Structures">
 <meta property="og:description" content="CS112 will teach students to use C++ for creating data structures.">
+<meta property="og:image" content="https://ericaraujo.com/24fa-cs112/images/labs/lab03/student-cover.jpeg">
 <meta property="og:site_name" content="CS112 - Data Structures">
-<meta name="twitter:title" content="Lab 02: File I/O, Control Structures, and the Debugger – CS112 - Data Structures">
+<meta name="twitter:title" content="Lab 3: Classes – CS112 - Data Structures">
 <meta name="twitter:description" content="CS112 will teach students to use C++ for creating data structures.">
 <meta name="twitter:image" content="https://ericaraujo.com/24fa-cs112/images/twitter-card.png">
 <meta name="twitter:creator" content="@ericfaraujo">
@@ -176,24 +177,34 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#objectives" id="toc-objectives" class="nav-link active" data-scroll-target="#objectives">Objectives:</a></li>
-  <li><a href="#step-0.-prepare" id="toc-step-0.-prepare" class="nav-link" data-scroll-target="#step-0.-prepare">Step 0. Prepare</a></li>
-  <li><a href="#finding-duplicates-in-an-array-of-integers" id="toc-finding-duplicates-in-an-array-of-integers" class="nav-link" data-scroll-target="#finding-duplicates-in-an-array-of-integers">Finding duplicates in an array of integers</a></li>
-  <li><a href="#step-1.-write-the-function" id="toc-step-1.-write-the-function" class="nav-link" data-scroll-target="#step-1.-write-the-function">Step 1. Write the function</a></li>
-  <li><a href="#step-2.-unit-test-your-function" id="toc-step-2.-unit-test-your-function" class="nav-link" data-scroll-target="#step-2.-unit-test-your-function">Step 2. Unit test your function</a></li>
-  <li><a href="#step-3.-using-the-debugger" id="toc-step-3.-using-the-debugger" class="nav-link" data-scroll-target="#step-3.-using-the-debugger">Step 3. Using the Debugger</a></li>
-  <li><a href="#step-3.5-caveats" id="toc-step-3.5-caveats" class="nav-link" data-scroll-target="#step-3.5-caveats"></a><a name="step35" class="nav-link" data-scroll-target="undefined"></a> Step 3.5 Caveats</li>
-  <li><a href="#step-4.-get-your-code-working-against-all-tests" id="toc-step-4.-get-your-code-working-against-all-tests" class="nav-link" data-scroll-target="#step-4.-get-your-code-working-against-all-tests">Step 4. Get your code working against all tests</a></li>
-  <li><a href="#step-5.-implement-your-application" id="toc-step-5.-implement-your-application" class="nav-link" data-scroll-target="#step-5.-implement-your-application">Step 5. Implement your application</a></li>
+  <li><a href="#step-0.-prepare" id="toc-step-0.-prepare" class="nav-link active" data-scroll-target="#step-0.-prepare">Step 0. Prepare</a></li>
+  <li><a href="#part-1-a-student-class" id="toc-part-1-a-student-class" class="nav-link" data-scroll-target="#part-1-a-student-class">Part 1: A Student Class</a>
+  <ul class="collapse">
+  <li><a href="#step-1.-create-the-class" id="toc-step-1.-create-the-class" class="nav-link" data-scroll-target="#step-1.-create-the-class">Step 1. Create the class</a></li>
+  <li><a href="#step-2.-create-getters" id="toc-step-2.-create-getters" class="nav-link" data-scroll-target="#step-2.-create-getters">Step 2. Create <em>getters</em></a></li>
+  <li><a href="#step-3.-create-setters" id="toc-step-3.-create-setters" class="nav-link" data-scroll-target="#step-3.-create-setters">Step 3. Create <em>setters</em></a></li>
+  <li><a href="#step-4.-create-an-explicit-value-constructor" id="toc-step-4.-create-an-explicit-value-constructor" class="nav-link" data-scroll-target="#step-4.-create-an-explicit-value-constructor">Step 4. Create an explicit-value constructor</a></li>
+  </ul></li>
+  <li><a href="#part-2-fraction-class" id="toc-part-2-fraction-class" class="nav-link" data-scroll-target="#part-2-fraction-class">Part 2: Fraction class</a>
+  <ul class="collapse">
+  <li><a href="#step-1.-test-the-fraction-class" id="toc-step-1.-test-the-fraction-class" class="nav-link" data-scroll-target="#step-1.-test-the-fraction-class">Step 1. Test the Fraction class</a></li>
+  <li><a href="#step-2.-add-the-instance-variables-and-constructors" id="toc-step-2.-add-the-instance-variables-and-constructors" class="nav-link" data-scroll-target="#step-2.-add-the-instance-variables-and-constructors">Step 2. Add the instance variables and constructors</a></li>
+  <li><a href="#step-3.-getters" id="toc-step-3.-getters" class="nav-link" data-scroll-target="#step-3.-getters">Step 3. getters</a></li>
+  <li><a href="#step-4.-setters" id="toc-step-4.-setters" class="nav-link" data-scroll-target="#step-4.-setters">Step 4. setters</a></li>
+  <li><a href="#step-5.-fanciness" id="toc-step-5.-fanciness" class="nav-link" data-scroll-target="#step-5.-fanciness">Step 5. Fanciness</a></li>
+  <li><a href="#step-6.-display-as-a-string" id="toc-step-6.-display-as-a-string" class="nav-link" data-scroll-target="#step-6.-display-as-a-string">Step 6. Display as a <em>string</em></a></li>
+  </ul></li>
+  <li><a href="#submission" id="toc-submission" class="nav-link" data-scroll-target="#submission">Submission</a></li>
+  <li><a href="#grading-rubric" id="toc-grading-rubric" class="nav-link" data-scroll-target="#grading-rubric">Grading Rubric</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/ericaraujophd/24fa-cs112/edit/main/labs/lab02.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/24fa-cs112/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/ericaraujophd/24fa-cs112/edit/main/labs/lab03.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/24fa-cs112/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Lab 02: File I/O, Control Structures, and the Debugger</h1>
+<h1 class="title">Lab 3: Classes</h1>
 </div>
 
 
@@ -212,26 +223,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <center>
 <figure class="figure">
-<p><img src="../images/labs/lab02/header.gif" alt="Beware of the bugs!" width="350" class="figure-img"></p>
+<p><img src="../images/labs/lab03/student-cover.jpeg" alt="A cartoon style image of a computer science student wearing a T-shirt with a binary code pattern" width="400" class="figure-img"></p>
 <figcaption>
-Beware of the bugs!
+A student created by AI.
 </figcaption>
 </figure>
 </center>
-<section id="objectives" class="level2">
-<h2 class="anchored" data-anchor-id="objectives">Objectives:</h2>
-<p>In this exercise, you will:</p>
-<ol type="1">
-<li>Read in a file and process its contents.</li>
-<li>Practice creating functions</li>
-<li>Practice writing for loops and if statements.</li>
-<li>Use the debugger to execute a program statement by statement.</li>
-</ol>
-</section>
 <section id="step-0.-prepare" class="level2">
 <h2 class="anchored" data-anchor-id="step-0.-prepare">Step 0. Prepare</h2>
 <ul>
-<li>Click <a href="">this link</a> and then “Accept this assignment”.</li>
+<li>Click this <a href="" target="_blank">link</a> and then “Accept this assignment”. Make sure you and your partner are in the same Team.</li>
 <li>Wait a few seconds and refresh the page. Refresh until the page says “You’re ready to go!”. The page has a link to a github repo.</li>
 <li>Click the link to see your new repo on github.com.</li>
 <li>Click the green <span style="color:green"><strong>Code</strong></span> button and copy the SSH link it shows.</li>
@@ -242,234 +243,241 @@ Beware of the bugs!
 </ul></li>
 <li><code>cd</code> to the new directory containing your repo.</li>
 <li>type <code>code .</code> to start up Visual Studio Code in that directory.</li>
-<li>Make sure both you and your partner are in the same Team for this assignment.</li>
 <li>Inspect the code you got in the assignment.</li>
 </ul>
 </section>
-<section id="finding-duplicates-in-an-array-of-integers" class="level2">
-<h2 class="anchored" data-anchor-id="finding-duplicates-in-an-array-of-integers">Finding duplicates in an array of integers</h2>
-<p>In this assignment, you will write a short function, <code>findDuplicate()</code>, that searches an array of integers to find the first pair of duplicate values. If a duplicate value is found, the function returns <strong>true</strong>, and “returns” the duplicate value through an <em>Out</em> parameter. If no duplicate value is found, the function returns <strong>false</strong>.</p>
-<p>Think about the algorithm to find a duplicate value in an array. Consider the following array:</p>
+<section id="part-1-a-student-class" class="level2">
+<h2 class="anchored" data-anchor-id="part-1-a-student-class">Part 1: A Student Class</h2>
+<section id="step-1.-create-the-class" class="level3">
+<h3 class="anchored" data-anchor-id="step-1.-create-the-class">Step 1. Create the class</h3>
+<p>We will create a class to represent a Student. You probably have not created a class in C++ before, so here are the <a href="../materials/lab03/Pair.h">Pair.h</a> and <a href="../materials/lab03/Pair.cpp">Pair.cpp</a> classes I created as an example in class. Use this code as an example/template.</p>
+<p>The instance variables for a Student will be:</p>
 <style type="text/css">
-.tg  {border-collapse:collapse;border-spacing:0;margin:0px auto;}
-.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
-  overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
-  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg  {border-collapse:collapse;border-color:#ccc;border-spacing:0;margin:0px auto;}
+.tg td{background-color:#fff;border-color:#ccc;border-style:solid;border-width:1px;color:#333;
+  font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{background-color:#f0f0f0;border-color:#ccc;border-style:solid;border-width:1px;color:#333;
+  font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-1wig{font-weight:bold;text-align:left;vertical-align:top}
 .tg .tg-0lax{text-align:left;vertical-align:top}
 @media screen and (max-width: 767px) {.tg {width: auto !important;}.tg col {width: auto !important;}.tg-wrap {overflow-x: auto;-webkit-overflow-scrolling: touch;margin: auto 0px;}}</style>
 <div class="tg-wrap">
-<table class="caption-top table">
-<colgroup>
-<col style="width: 6%">
-<col style="width: 5%">
-<col style="width: 6%">
-<col style="width: 5%">
-<col style="width: 5%">
-</colgroup>
+<table class="tg">
+<thead>
+<tr>
+<th class="tg-1wig">
+<span style="color:unset;background-color:unset">Instance Variable Name</span>
+</th>
+<th class="tg-1wig">
+<span style="color:unset;background-color:unset">Type</span>
+</th>
+<th class="tg-1wig">
+<span style="color:unset;background-color:unset">Default value</span>
+</th>
+<th class="tg-1wig">
+<span style="color:unset;background-color:unset">Notes</span>
+</th>
+</tr>
+</thead>
 <tbody>
-<tr class="odd">
-<td>11</td>
-<td>7</td>
-<td>31</td>
-<td>4</td>
-<td>7</td>
+<tr>
+<td class="tg-0lax">
+<span style="color:unset;background-color:unset">myName</span>
+</td>
+<td class="tg-0lax">
+<span style="color:unset;background-color:unset">string</span>
+</td>
+<td class="tg-0lax">
+<span style="color:unset;background-color:unset">“”</span>
+</td>
+<td class="tg-0lax">
+<span style="color:unset;background-color:unset">Immutable (NOTE: this</span> <span style="font-weight:bolder">is not</span> <span style="color:unset;background-color:unset">a const in our class, but we will</span> <span style="font-weight:bolder">not</span> <span style="color:unset;background-color:unset">be making setter functions for these immutable values.)</span>
+</td>
+</tr>
+<tr>
+<td class="tg-0lax">
+<span style="color:unset;background-color:unset">myId</span>
+</td>
+<td class="tg-0lax">
+<span style="color:unset;background-color:unset">unsigned int</span>
+</td>
+<td class="tg-0lax">
+<span style="color:unset;background-color:unset">0</span>
+</td>
+<td class="tg-0lax">
+<span style="color:unset;background-color:unset">Immutable (NOTE: this</span> <span style="font-weight:bolder">is not</span> <span style="color:unset;background-color:unset">a const in our class, but we will</span> <span style="font-weight:bolder">not</span> <span style="color:unset;background-color:unset">be making setter functions for these immutable values.)</span>
+</td>
+</tr>
+<tr>
+<td class="tg-0lax">
+<span style="color:unset;background-color:unset">myGpa</span>
+</td>
+<td class="tg-0lax">
+<span style="color:unset;background-color:unset">float</span>
+</td>
+<td class="tg-0lax">
+<span style="color:unset;background-color:unset">0.0</span>
+</td>
+<td class="tg-0lax">
+</td>
+</tr>
+<tr>
+<td class="tg-0lax">
+<span style="color:unset;background-color:unset">myMajor</span>
+</td>
+<td class="tg-0lax">
+<span style="color:unset;background-color:unset">string</span>
+</td>
+<td class="tg-0lax">
+<span style="color:unset;background-color:unset">“Undecided”</span>
+</td>
+<td class="tg-0lax">
+</td>
 </tr>
 </tbody>
 </table>
 </div>
-<p>How would you write code to detect that 7 is in the array twice? Talk to your partner about your algorithm. I highly recommend you write pseudo-code for your algorithm. If you want to finish the lab in an efficient way, you’ll take time to write the algorithm and test it on some inputs, revising it until you get it right.</p>
-<p>When you have an algorithm, consider this array:</p>
-<style type="text/css">
-.tg  {border-collapse:collapse;border-spacing:0;}
-.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
-  overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
-  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
-</style>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 6%">
-<col style="width: 5%">
-<col style="width: 5%">
-<col style="width: 5%">
-<col style="width: 6%">
-</colgroup>
-<tbody>
-<tr class="odd">
-<td>11</td>
-<td>7</td>
-<td>7</td>
-<td>4</td>
-<td>71</td>
-</tr>
-</tbody>
-</table>
-<p>And this array:</p>
-<style type="text/css">
-.tg  {border-collapse:collapse;border-spacing:0;}
-.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
-  overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
-  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
-</style>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 5%">
-<col style="width: 6%">
-<col style="width: 6%">
-<col style="width: 6%">
-<col style="width: 6%">
-</colgroup>
-<tbody>
-<tr class="odd">
-<td>7</td>
-<td>43</td>
-<td>31</td>
-<td>12</td>
-<td>71</td>
-</tr>
-</tbody>
-</table>
-<p>Does your algorithm seem to work on these arrays? Will your algorithm work for arrays with 10,000 values? How about an array with 0 elements or 1 element? Does it work?</p>
+<p>In <strong>Student.h</strong>, you should see the definition of the <code>Student</code> class. In that class, create the <strong>private:</strong> section, and in there define the 4 instance variables, shown in the table above. You’ll have to <code>#include &lt;string&gt;</code> and do the using <code>namespace</code> business…</p>
+<p>Compile (type: <code>make tester</code>) and fix any errors. (You may see warnings – you can ignore those for now.)</p>
+<p>In <strong>Student.h</strong> define the default constructor (in the <strong>public:</strong> section). In <strong>Student.cpp</strong>, create the default constructor implementation, initializing the instance variables to their default values, as shown in the table above.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Compile and fix any errors.
+</div>
+</div>
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
 </section>
-<section id="step-1.-write-the-function" class="level2">
-<h2 class="anchored" data-anchor-id="step-1.-write-the-function">Step 1. Write the function</h2>
-<p>In <strong>functions.h</strong>, write the <strong>prototype</strong> for your function. The prototype is just the first line of the function, without the actual implementation. Study the table below to understand what parameters the function should take. Then try to write that first line of the function. If you can’t get it, I’ll give the answer just below the table.</p>
-<p>Your function is called <code>findDuplicate()</code>, has 3 parameters, and returns <strong>bool</strong>.</p>
-<style type="text/css">
-.tg  {border-collapse:collapse;border-spacing:0;}
-.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
-  overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
-  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
-.tg .tg-gpin{background-color:#C9DAF8;text-align:left;vertical-align:top}
-.tg .tg-0lax{text-align:left;vertical-align:top}
-</style>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 18%">
-<col style="width: 18%">
-<col style="width: 61%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Parameter name</th>
-<th>Parameter type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>arr</td>
-<td>array of int</td>
-<td>arr of integers to search</td>
-</tr>
-<tr class="even">
-<td>size</td>
-<td>int</td>
-<td>size of the array</td>
-</tr>
-<tr class="odd">
-<td>dup_value</td>
-<td>int &amp;</td>
-<td>The out parameter containing the first duplicate value, if one is found.</td>
-</tr>
-</tbody>
-</table>
-<p>The function’s prototype should look like this:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dt">bool</span> findDuplicate<span class="op">(</span><span class="dt">int</span> arr<span class="op">[],</span> <span class="dt">int</span> size<span class="op">,</span> <span class="dt">int</span> <span class="op">&amp;</span>dup_value<span class="op">);</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>That’s all that you should have in your .h file.</p>
-<p>In <strong>functions.cpp</strong>, implement your function. To repeat from above: If a duplicate value is found, the function returns <strong>true</strong>, and “returns” the duplicate value through the <em>out</em> parameter, <strong>dup_value</strong>. If no duplicate value is found, the function returns <strong>false</strong>. Work from your algorithm. Do your best to implement the function correctly, but don’t take too much time on this, as the next steps will help you make sure your code is correct.</p>
-</section>
-<section id="step-2.-unit-test-your-function" class="level2">
-<h2 class="anchored" data-anchor-id="step-2.-unit-test-your-function">Step 2. Unit test your function</h2>
-<p>Take a look at the file <strong>tests.cpp</strong>. This file uses a unit testing framework called <strong>catch</strong>, implemented in <strong>catch.hpp</strong>.</p>
-<p>Notice that the file <code>#includes "functions.h"</code> and calls <code>findDuplicate()</code> one or more times in each test. The results of the call to <code>findDuplicate()</code> are tested by <code>REQUIRE</code> statements, which are basically identical to the <code>assert()</code> statements we’ve been using.</p>
-<p>When you compile your code using <code>make tester</code>, a <strong>tester</strong> executable is created. That executable runs the code in <strong>tests.cpp</strong>, but also allows you to do much more: you can just list the tests, run only some of the tests, configure how the output should look, etc.</p>
-<p>Try compiling your code by typing <code>make tester</code>. If it builds, try running <code>./tester -s</code> to see output from all the tests that are executed.</p>
-<p>To run only the first test, you can do:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./tester</span> <span class="st">"findDuplicate size 0"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>If your code does not pass this test, try fixing it. Take 5 minutes maximum to try to fix your code. Whether you succeed or not, go on.</p>
-</section>
-<section id="step-3.-using-the-debugger" class="level2">
-<h2 class="anchored" data-anchor-id="step-3.-using-the-debugger">Step 3. Using the Debugger</h2>
-<p>A debugger is a program that allows you to set breakpoints in your code, and then run your code. When a breakpoint is encountered, the debugger stops, and allows you to view variables’ values, the call stack, etc.</p>
-<p><a href="https://youtu.be/vfPY7qFnDZI">This video</a> shows you how to use the debugger with VS Code. You probably won’t be able to watch this video on a lab machine, but if you have a laptop and/or phone and have earbuds or headphones, you should watch the video. Then, go down to <a href="#step35">Step 3.5</a> below.</p>
-<p>If you cannot watch the video, I’ll describe how to use the debugger here:</p>
-<p>Open your file that you want to debug. E.g., your <strong>functions.cpp</strong> file. Here is mine:</p>
-<p><img src="../images/labs/lab02/img1.png" class="img-fluid"></p>
-<p>You can see that I have a good start on the function, but it isn’t complete. But, I want to make sure I’m passing in my parameters correctly, and a good way to do that is to use the debugger.</p>
-<p><strong>The first thing I have to do</strong> is build the project:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> tester</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>If you look at <strong>tests.cpp</strong>, you can see a bunch of calls to <code>findDuplicate()</code>, from line 10, line 21, etc.</p>
-<p>To check if our parameters are being passed in correctly, <strong>let’s set a breakpoint</strong> on line 2. To do that, put your pointer to the left of the 2 on line 2, and click. You should see a red dot.</p>
-<p><img src="../images/labs/lab02/img2.png" class="img-fluid"></p>
-<p>You can set multiple breakpoints at the same time. You could, for example, set a breakpoint on line 3 and line 5, so that you can see in what circumstances your code returns <strong>true</strong> or <strong>false</strong>.</p>
-<p>Now, we can <strong>start the debugger</strong>. The easiest way is to hit F5. Or you can go to <strong>Run -&gt; Start Debugging</strong>.</p>
-<p>(If you get a weird error, just go on here. You might be trying to debug the wrong executable.)</p>
-<p>When you start debugging (successfully), your screen changes quite a bit.</p>
-<p>You’ll see a menu bar appear at the top of the screen. You’ll also see the debugging icon on the left side become bright:</p>
-<p><img src="../images/labs/lab02/img3.png" class="img-fluid"></p>
-<p>You’ll see a debugging window on the left side. And, you’ll see your code run and the debugger will stop at the first breakpoint:</p>
-<p><img src="../images/labs/lab02/img4.png" class="img-fluid"></p>
+<section id="step-2.-create-getters" class="level3">
+<h3 class="anchored" data-anchor-id="step-2.-create-getters">Step 2. Create <em>getters</em></h3>
+<p>In your <strong>tests.cpp</strong>, you’ll find the first <code>SECTION</code> of unit tests called “student getters”, within the <code>TEST_CASE</code> “Student class”. Uncomment the first <code>SECTION</code>, so that the code to construct a Student object and then test <code>getMajor()</code> runs.</p>
 <div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Caution
+Compile
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><strong>If you saw an error when you started debugging, you might be trying to debug the wrong executable. Look at the image just above. Notice that next to the green arrow is a small menu, with a dropdown arrow. You might be trying to debug the “lab2” program instead of the tester program. If you don’t see “tester”, click on the dropdown arrow and choose “Launch tester”, then click the green right-arrow and try again.</strong></p>
+<p>The compilation should fail because we haven’t defined <code>getMajor()</code> yet. There should be no other problems.</p>
 </div>
 </div>
-<p>You know where your code has stopped because you see the yellow “arrow” overlaying the red dot. This means your code has run to this point and is stopped.</p>
-<p>On the lower-left corner you see the call stack. The top frame in the call stack is <code>findDuplicate()</code>. Below that you see that <code>findDuplicate()</code> was called from <strong>C_A_T_C_H_T_E_S_T_0()</strong> in <strong>tests.cpp</strong> at line 10. Click on that to see <strong>tests.cpp</strong> and where it called <code>findDuplicate()</code>.</p>
-<p><img src="../images/labs/lab02/img5.gif" class="img-fluid"></p>
-<p>Now, to continue from the breakpoint, we can use the menu bar at the top. If you hover your mouse over the items in the menu bar, you’ll see: Continue (F5), Step Over (F10), Step Into (F11), Step Out (Shift F11), and Stop (Shift-F5). Step Over really means “go to the next line”.</p>
-<p><img src="../images/labs/lab02/img6.gif" class="img-fluid"></p>
-<p>Click on <strong>Step Over</strong> now. You should see your pointer go to line 3, which returns <strong>false</strong>. Step Over a few more times, and you’ll get back to <strong>tests.cpp</strong>, line 11. Now, click <strong>Continue</strong>. That will make the debugger run the code again until it encounters the next breakpoint – which is back at line 2 of <strong>functions.cpp</strong>. You can again inspect the parameter values.</p>
-<p>Click <strong>Continue</strong> again. Notice that you are still at line 2, but look closely to see where <code>findDuplicates()</code> was called from. Which line of <strong>tests.cpp</strong> called <code>findDuplicates()</code>?</p>
-<p>Click on <strong>C_A_T_C_H_T_E_S_T_6()</strong> on the lower-left corner of the screen, and look at the values of the Local variables in the upper-right corner. What values are in the numbers array?</p>
-<p>This really concludes our introduction to using the debugger.</p>
+<p>So, create a getter function (in both the <strong>Student.h</strong> and <strong>Student.cpp</strong> files) called <code>getMajor()</code>.</p>
+<p>Compile and run (in a terminal, run <code>./tester "Student class"</code>) – this should work now.</p>
+<p>Now, repeat the above steps for the other tests and instance variables <strong>(maybe make this part more clear in the future)</strong>. Start with a test in <strong>tests.cpp</strong> first, then implement the prototype and code.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+NOTE
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Don’t delete any old tests – just keep adding more. Put each test in its own <code>SECTION</code> within the “Student class” TEST_CASE.</p>
+</div>
+</div>
 </section>
-<section id="step-3.5-caveats" class="level2">
-<h2 class="anchored" data-anchor-id="step-3.5-caveats"><a name="step35"></a> Step 3.5 Caveats</h2>
-<p>📌 <strong>Please note these caveats:</strong></p>
-<ul>
-<li>If you make changes to your code, you have to recompile before using the debugger again. Starting or restarting the debugger will not first recompile your code! (To recompile, use make tester .)</li>
-<li>Running the debugger on MacOS (gdb) has problems. I’ve never gotten it to work on my Mac. Prof.&nbsp;Araújo has been working on that and is comming up with a solution “soon”.</li>
-<li>I haven’t tested running the debugger on Windows. If you want to try that, you will probably have to change the .vscode/launch.json file. When you open that file in VSCode, you get a menu that allows you to insert new configurations – so it might be super easy to get this working – or not easy at all. 🙂</li>
-</ul>
+<section id="step-3.-create-setters" class="level3">
+<h3 class="anchored" data-anchor-id="step-3.-create-setters">Step 3. Create <em>setters</em></h3>
+<p>For the instance variables that are mutable (see the table above), create setter methods. But first, for each, create a test. Put all of these tests in a new <code>SECTION</code> within the “Student class” <code>TEST_CASE</code>.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Example:</strong> for the setGpa test, set the student’s gpa to 3.25, then in a REQUIRE statement, call <code>getGpa()</code> and make sure the value is 3.25.</p>
+</div>
+</div>
 </section>
-<section id="step-4.-get-your-code-working-against-all-tests" class="level2">
-<h2 class="anchored" data-anchor-id="step-4.-get-your-code-working-against-all-tests">Step 4. Get your code working against all tests</h2>
-<p>Using the debugger and your brain 🧠, fix your code such that it passes all the tests when you run</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./tester</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="step-4.-create-an-explicit-value-constructor" class="level3">
+<h3 class="anchored" data-anchor-id="step-4.-create-an-explicit-value-constructor">Step 4. Create an explicit-value constructor</h3>
+<p>Now, create a second constructor – the explicit-value constructor. This constructor should take the two immutable fields as parameters, and store their values in the instance variables. Initialize all the other variables to their default values. BUT FIRST, create tests. I called my SECTION “student explicit-value constructor”, and in it I create a Student with the explicit-value constructor and then use the getters on all instance variables to make sure the object has the correct values in it.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Compile and test the result. Fix any errors.
+</div>
+</div>
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+<p>You are now done with this simple class. We could add tons of other functionality to it, but not now…</p>
+<p>Before you go on, <strong>Commit and Sync</strong> your changes to your github repo. You can easily do this from VSCode. After you do this, you should be able to see that the automated tests fail – but the one test that tests the “Student class” passes. If it does not pass, fix your code (or your tests), and resubmit until it does pass.</p>
 </section>
-<section id="step-5.-implement-your-application" class="level2">
-<h2 class="anchored" data-anchor-id="step-5.-implement-your-application">Step 5. Implement your application</h2>
-<p>Now that you have a good function that finds duplicates, use it to implement a simple application.</p>
-<p>Look in <strong>main.cpp</strong>, where you will find the steps to implement, as comments.</p>
-<p>Compile your code with</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> lab2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Implement steps 1 - 6 of the algorithm. Step 4 is implemented for you already (assuming you read in the number of lines in the file into a variable named size).</p>
-<p>I <strong>HIGHLY RECOMMEND YOU IMPLEMENT</strong> your code in small iterations: just write the code for Step 1., compile it and make sure it is correct. Then go on to Step 2. Repeat…</p>
-<p>Step 7. says to “print appropriate output”. This means your application should either print out that there are no duplicates, or should print out that a duplicate was found, and should print what that duplicate value is. E.g., here are a few runs of my solution:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">%</span> ./lab2</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ex">Enter</span> a filename: input_files/in3.txt</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="ex">Enter</span> the number of lines in the file: 0</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="ex">No</span> duplicate number was found.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>and another run:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">%</span> ./lab2</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="ex">Enter</span> a filename: input_files/in5.txt</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="ex">Enter</span> the number of lines in the file: 5</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="ex">A</span> duplicate number, 91, has been found.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="part-2-fraction-class" class="level2">
+<h2 class="anchored" data-anchor-id="part-2-fraction-class">Part 2: Fraction class</h2>
+<p>A Fraction class is a useful class to create. It stores a numerator and denominator and can do things like represent itself nicely (e.g., “3/4”), simplify itself, multiply itself with another fraction, etc.</p>
+<section id="step-1.-test-the-fraction-class" class="level3">
+<h3 class="anchored" data-anchor-id="step-1.-test-the-fraction-class">Step 1. Test the Fraction class</h3>
+<p>We’ll continue to use <strong>tests.cpp</strong> – <strong>don’t remove any code from there</strong>. But, now we’ll also use it to create and test Fraction class instances. However, our <strong>makefile</strong> does not compile the Fraction stuff yet.</p>
+<p>Edit the <strong>makefile</strong>, adding <strong>Fraction.cpp</strong> to the <code>SOURCES</code> line.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Space separated! <strong>Do not</strong> remove Students.cpp.</p>
+</div>
+</div>
+<p>In <strong>tests.cpp</strong>, below all your tests for the Student class, add the tests shown below:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>TEST_CASE<span class="op">(</span><span class="st">"Fraction class"</span><span class="op">)</span> <span class="op">{</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    SECTION<span class="op">(</span><span class="st">"fraction constructors"</span><span class="op">)</span> <span class="op">{</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>        SECTION<span class="op">(</span><span class="st">"default"</span><span class="op">)</span> <span class="op">{</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>            Fraction fr<span class="op">;</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>            REQUIRE<span class="op">(</span>fr<span class="op">.</span>getNumerator<span class="op">()</span> <span class="op">==</span> <span class="dv">0</span><span class="op">);</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>            REQUIRE<span class="op">(</span>fr<span class="op">.</span>getDenominator<span class="op">()</span> <span class="op">==</span> <span class="dv">1</span><span class="op">);</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>        SECTION<span class="op">(</span><span class="st">"explicit value"</span><span class="op">)</span> <span class="op">{</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>            Fraction fr<span class="op">(</span><span class="dv">2</span><span class="op">,</span> <span class="dv">4</span><span class="op">);</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>            REQUIRE<span class="op">(</span>fr<span class="op">.</span>getNumerator<span class="op">()</span> <span class="op">==</span> <span class="dv">2</span><span class="op">);</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>            REQUIRE<span class="op">(</span>fr<span class="op">.</span>getDenominator<span class="op">()</span> <span class="op">==</span> <span class="dv">4</span><span class="op">);</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You’ll have to <code>#include "Fraction.h"</code> at the top of the file.</p>
+</div>
+</div>
+</section>
+<section id="step-2.-add-the-instance-variables-and-constructors" class="level3">
+<h3 class="anchored" data-anchor-id="step-2.-add-the-instance-variables-and-constructors">Step 2. Add the instance variables and constructors</h3>
+<p>Add the two instance variables – <code>myNumerator</code> and <code>myDenominator</code> (both integers) – to the class definition in the .h file.</p>
+<p>Update the default constructor, to initialize <code>myNumerator</code> to 0 and <code>myDenominator</code> to 1.</p>
+<p>Now, implement the explicit-value constructor, which takes both the numerator and denominator as parameters, and stores them in <code>myNumerator</code> and <code>myDenominator</code>. Don’t forget to put the declaration in the .h file and implementation in the .cpp file.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -480,9 +488,98 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Your output must match the output above EXACTLY. You should try your solution against all the files in the <code>input_files/</code> directory. These files will be used in the autograding tests run when you submit.</p>
+<p>We will compile our tester after the next section.</p>
 </div>
 </div>
+</section>
+<section id="step-3.-getters" class="level3">
+<h3 class="anchored" data-anchor-id="step-3.-getters">Step 3. getters</h3>
+<p>Add a new <code>SECTION</code> (within the “Fraction class” TEST_CASE) called “fraction getters” and SECTIONs to call the getter functions and test their results. Compilation should fail, as expected.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Yes, this is repetitive as we already used them for the default constructors. Just to make sure we cover all our bases, and this can easily be seen in our tests, make another SECTION to quickly check the getter functions again.</p>
+</div>
+</div>
+<p>Now, create getter functions for each.</p>
+<p>Now the compilation and execution should succeed with all tests passing.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You can run only some tests by putting the name of the test on the command line. E.g., you can run only the Fraction tests by running:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./tester</span> <span class="st">"Fraction class"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</section>
+<section id="step-4.-setters" class="level3">
+<h3 class="anchored" data-anchor-id="step-4.-setters">Step 4. setters</h3>
+<p>Create tests to test setters.</p>
+<p>Then, create the methods and the code so it will compile and run successfully.</p>
+</section>
+<section id="step-5.-fanciness" class="level3">
+<h3 class="anchored" data-anchor-id="step-5.-fanciness">Step 5. Fanciness</h3>
+<p>Now, in <code>setDenominator()</code>, check if the parameter is 0 – an illegal value. If so, throw an <strong>invalid_argument exception</strong> (remember to <code>#include &lt;stdexcept&gt;</code> first). You can do this by using the line:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="cf">throw</span> invalid_argument<span class="op">(</span><span class="st">"Your error message here!"</span><span class="op">);</span> <span class="co">// (Change the error message please!)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Here is a test for that, assuming you have a fraction called f1:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>SECTION<span class="op">(</span><span class="st">"setDenominator"</span><span class="op">)</span> <span class="op">{</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    REQUIRE_THROWS_AS<span class="op">(</span>f1<span class="op">.</span>setDenominator<span class="op">(</span><span class="dv">0</span><span class="op">),</span> invalid_argument<span class="op">);</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="step-6.-display-as-a-string" class="level3">
+<h3 class="anchored" data-anchor-id="step-6.-display-as-a-string">Step 6. Display as a <em>string</em></h3>
+<p>Create a test to call <code>asString()</code> on a Fraction object: If you create a new Fraction object <code>newFrac</code> and call <code>newFrac.asString()</code>, you can <code>REQUIRE</code> that the result should be “0/1”. Initially, this test will fail, so create the method, which returns a string.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In <code>asString()</code> you can use <code>to_string(anInt)</code> to convert an integer into a string. And, you can concatenate strings with +. <code>to_string()</code> is defined in <code>&lt;string&gt;</code> so you’ll have to <code>#include</code> that.</p>
+</div>
+</div>
+<p>When that works, use the setters to change the numerator and denominator for a fraction, and then write a test to ensure that <code>asString()</code> still produces the correct results.</p>
+</section>
+</section>
+<section id="submission" class="level2">
+<h2 class="anchored" data-anchor-id="submission">Submission</h2>
+<p>Commit your changes to your github repo. After you do this, verify that the automated tests pass. The automated tests just run the <strong>tests.cpp</strong> file you have been editing.</p>
+<p>Don’t forget to look at the Grading Rubric at the top to make sure you get as many points as possible.</p>
+</section>
+<section id="grading-rubric" class="level2">
+<h2 class="anchored" data-anchor-id="grading-rubric">Grading Rubric</h2>
+<p>This lab is worth 20 pts:</p>
+<ul>
+<li>10 points for each of Part 1 and Part the Second: 20 pts
+<ul>
+<li>6 pts for correctness</li>
+<li>1 pt for perfect indentation and good variable names, function names, and comments (i.e., hospitable code). You should write a comment in your code only when the following block of code is not <em>obvious</em> to the trained reader. You should not write a comment for each line of code.</li>
+<li>3 pts for sufficient test cases to prove that the code is correct.</li>
+</ul></li>
+</ul>
+<p>Ways students have lost points in the past:</p>
+<ul>
+<li>-2: Test doesn’t pass.</li>
+<li>-1: Missing name and id.</li>
+<li>-3: Missing steps. Next time speak to professor.</li>
+</ul>
 <!-- [^1]: how to add footnotes. -->
 
 
@@ -1061,7 +1158,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ericaraujophd/24fa-cs112/edit/main/labs/lab02.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/24fa-cs112/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ericaraujophd/24fa-cs112/edit/main/labs/lab03.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/24fa-cs112/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">

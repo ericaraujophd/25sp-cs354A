@@ -1,0 +1,255 @@
+---
+title: "Lab 3: Classes"
+format: 
+  html:
+    css: /labs/lab-styles.css
+---
+
+<center><figure>
+
+<img src="/images/labs/lab03/student-cover.jpeg" alt="A cartoon style image of a computer science student wearing a T-shirt with a binary code pattern" width="400"/>
+
+<figcaption>A student created by AI.</figcaption>
+
+</figure></center>
+
+## Step 0. Prepare
+
+- Click this [link](){target="_blank"} and then "Accept this assignment". Make sure you and your partner are in the same Team.
+- Wait a few seconds and refresh the page. Refresh until the page says "You're ready to go!". The page has a link to a github repo.
+- Click the link to see your new repo on github.com.
+- Click the green [**Code**]{style="color:green"} button and copy the SSH link it shows.
+-   In a terminal,
+    -   `cd` to the directory where you are putting all your CS112 assignments.
+    -   type `git clone <paste-the-contents-of-the-link-you-copied>`
+-   `cd` to the new directory containing your repo.
+-   type `code .` to start up Visual Studio Code in that directory.
+-   Inspect the code you got in the assignment.
+
+## Part 1: A Student Class
+
+### Step 1. Create the class
+
+We will create a class to represent a Student. You probably have not created a class in C++ before, so here are the [Pair.h](/materials/lab03/Pair.h) and [Pair.cpp](/materials/lab03/Pair.cpp) classes I created as an example in class. Use this code as an example/template.
+
+The instance variables for a Student will be:
+
+<style type="text/css">
+.tg  {border-collapse:collapse;border-color:#ccc;border-spacing:0;margin:0px auto;}
+.tg td{background-color:#fff;border-color:#ccc;border-style:solid;border-width:1px;color:#333;
+  font-family:Arial, sans-serif;font-size:14px;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{background-color:#f0f0f0;border-color:#ccc;border-style:solid;border-width:1px;color:#333;
+  font-family:Arial, sans-serif;font-size:14px;font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-1wig{font-weight:bold;text-align:left;vertical-align:top}
+.tg .tg-0lax{text-align:left;vertical-align:top}
+@media screen and (max-width: 767px) {.tg {width: auto !important;}.tg col {width: auto !important;}.tg-wrap {overflow-x: auto;-webkit-overflow-scrolling: touch;margin: auto 0px;}}</style>
+<div class="tg-wrap"><table class="tg"><thead>
+  <tr>
+    <th class="tg-1wig"><span style="color:unset;background-color:unset">Instance Variable Name</span></th>
+    <th class="tg-1wig"><span style="color:unset;background-color:unset">Type</span></th>
+    <th class="tg-1wig"><span style="color:unset;background-color:unset">Default value</span></th>
+    <th class="tg-1wig"><span style="color:unset;background-color:unset">Notes</span></th>
+  </tr></thead>
+<tbody>
+  <tr>
+    <td class="tg-0lax"><span style="color:unset;background-color:unset">myName</span></td>
+    <td class="tg-0lax"><span style="color:unset;background-color:unset">string</span></td>
+    <td class="tg-0lax"><span style="color:unset;background-color:unset">“”</span></td>
+    <td class="tg-0lax"><span style="color:unset;background-color:unset">Immutable (NOTE: this</span> <span style="font-weight:bolder">is not</span> <span style="color:unset;background-color:unset">a const in our class, but we will</span> <span style="font-weight:bolder">not</span> <span style="color:unset;background-color:unset">be making setter functions for these immutable values.)</span></td>
+  </tr>
+  <tr>
+    <td class="tg-0lax"><span style="color:unset;background-color:unset">myId</span></td>
+    <td class="tg-0lax"><span style="color:unset;background-color:unset">unsigned int</span></td>
+    <td class="tg-0lax"><span style="color:unset;background-color:unset">0</span></td>
+    <td class="tg-0lax"><span style="color:unset;background-color:unset">Immutable (NOTE: this</span> <span style="font-weight:bolder">is not</span> <span style="color:unset;background-color:unset">a const in our class, but we will</span> <span style="font-weight:bolder">not</span> <span style="color:unset;background-color:unset">be making setter functions for these immutable values.)</span></td>
+  </tr>
+  <tr>
+    <td class="tg-0lax"><span style="color:unset;background-color:unset">myGpa</span></td>
+    <td class="tg-0lax"><span style="color:unset;background-color:unset">float</span></td>
+    <td class="tg-0lax"><span style="color:unset;background-color:unset">0.0</span></td>
+    <td class="tg-0lax"></td>
+  </tr>
+  <tr>
+    <td class="tg-0lax"><span style="color:unset;background-color:unset">myMajor</span></td>
+    <td class="tg-0lax"><span style="color:unset;background-color:unset">string</span></td>
+    <td class="tg-0lax"><span style="color:unset;background-color:unset">“Undecided”</span></td>
+    <td class="tg-0lax"></td>
+  </tr>
+</tbody></table></div>
+
+
+In **Student.h**, you should see the definition of the `Student` class. In that class, create the **private:** section, and in there define the 4 instance variables, shown in the table above. You'll have to `#include <string>` and do the using `namespace` business...
+
+Compile (type: `make tester`) and fix any errors. (You may see warnings -- you can ignore those for now.)
+
+In **Student.h** define the default constructor (in the **public:** section). In **Student.cpp**, create the default constructor implementation, initializing the instance variables to their default values, as shown in the table above.
+
+::: callout-important
+## Compile and fix any errors.
+:::
+
+### Step 2. Create *getters*
+
+In your **tests.cpp**, you'll find the first `SECTION` of unit tests called "student getters", within the `TEST_CASE` "Student class". Uncomment the first `SECTION`, so that the code to construct a Student object and then test `getMajor()` runs.
+
+::: callout-caution
+## Compile
+The compilation should fail because we haven't defined `getMajor()` yet. There should be no other problems.
+:::
+
+So, create a getter function (in both the **Student.h** and **Student.cpp** files) called `getMajor()`.
+
+Compile and run (in a terminal, run `./tester "Student class"`) -- this should work now.
+
+Now, repeat the above steps for the other tests and instance variables **(maybe make this part more clear in the future)**. Start with a test in **tests.cpp** first, then implement the prototype and code.
+
+::: callout-note
+## NOTE
+Don't delete any old tests -- just keep adding more. Put each test in its own `SECTION` within the "Student class" TEST_CASE.
+:::
+
+### Step 3. Create *setters*
+
+For the instance variables that are mutable (see the table above), create setter methods. But first, for each, create a test. Put all of these tests in a new `SECTION` within the "Student class" `TEST_CASE`.
+
+:::{.callout-tip}
+**Example:** for the setGpa test, set the student's gpa to 3.25, then in a REQUIRE statement, call `getGpa()` and make sure the value is 3.25.
+:::
+
+### Step 4. Create an explicit-value constructor
+
+Now, create a second constructor -- the explicit-value constructor. This constructor should take the two immutable fields as parameters, and store their values in the instance variables. Initialize all the other variables to their default values. BUT FIRST, create tests. I called my SECTION "student explicit-value constructor", and in it I create a Student with the explicit-value constructor and then use the getters on all instance variables to make sure the object has the correct values in it.
+
+::: callout-important
+## Compile and test the result. Fix any errors.
+:::
+
+You are now done with this simple class. We could add tons of other functionality to it, but not now...
+
+Before you go on, **Commit and Sync** your changes to your github repo. You can easily do this from VSCode. After you do this, you should be able to see that the automated tests fail -- but the one test that tests the "Student class" passes. If it does not pass, fix your code (or your tests), and resubmit until it does pass.
+
+## Part 2: Fraction class
+
+A Fraction class is a useful class to create. It stores a numerator and denominator and can do things like represent itself nicely (e.g., "3/4"), simplify itself, multiply itself with another fraction, etc.
+
+### Step 1. Test the Fraction class
+
+We'll continue to use **tests.cpp** -- **don't remove any code from there**. But, now we'll also use it to create and test Fraction class instances. However, our **makefile** does not compile the Fraction stuff yet.
+
+Edit the **makefile**, adding **Fraction.cpp** to the `SOURCES` line.
+
+::: callout-tip
+Space separated! **Do not** remove Students.cpp.
+:::
+
+In **tests.cpp**, below all your tests for the Student class, add the tests shown below:
+
+
+```cpp
+TEST_CASE("Fraction class") {
+    SECTION("fraction constructors") {
+        SECTION("default") {
+            Fraction fr;
+            REQUIRE(fr.getNumerator() == 0);
+            REQUIRE(fr.getDenominator() == 1);
+        }
+        SECTION("explicit value") {
+            Fraction fr(2, 4);
+            REQUIRE(fr.getNumerator() == 2);
+            REQUIRE(fr.getDenominator() == 4);
+        }
+    }
+}
+```
+
+::: callout-important
+You'll have to `#include "Fraction.h"` at the top of the file.
+:::
+
+
+### Step 2. Add the instance variables and constructors
+
+Add the two instance variables -- `myNumerator` and `myDenominator` (both integers) -- to the class definition in the .h file.
+
+Update the default constructor, to initialize `myNumerator` to 0 and `myDenominator` to 1.
+
+Now, implement the explicit-value constructor, which takes both the numerator and denominator as parameters, and stores them in `myNumerator` and `myDenominator`. Don't forget to put the declaration in the .h file and implementation in the .cpp file.
+
+::: callout-note
+We will compile our tester after the next section.
+:::
+
+### Step 3. getters
+
+Add a new `SECTION` (within the "Fraction class" TEST_CASE) called "fraction getters" and SECTIONs to call the getter functions and test their results. Compilation should fail, as expected.
+
+::: callout-warning
+Yes, this is repetitive as we already used them for the default constructors. Just to make sure we cover all our bases, and this can easily be seen in our tests, make another SECTION to quickly check the getter functions again.
+:::
+
+Now, create getter functions for each.
+
+Now the compilation and execution should succeed with all tests passing.
+
+::: callout-note
+You can run only some tests by putting the name of the test on the command line. E.g., you can run only the Fraction tests by running:
+
+```bash
+./tester "Fraction class"
+```
+:::
+
+### Step 4. setters
+
+Create tests to test setters.
+
+Then, create the methods and the code so it will compile and run successfully.
+
+### Step 5. Fanciness
+
+Now, in `setDenominator()`, check if the parameter is 0 -- an illegal value. If so, throw an **invalid_argument exception** (remember to `#include <stdexcept>` first). You can do this by using the line:
+
+```cpp
+throw invalid_argument("Your error message here!"); // (Change the error message please!)
+```
+
+Here is a test for that, assuming you have a fraction called f1:
+
+```cpp
+SECTION("setDenominator") {
+    REQUIRE_THROWS_AS(f1.setDenominator(0), invalid_argument);
+}
+```
+
+### Step 6. Display as a *string*
+
+Create a test to call `asString()` on a Fraction object: If you create a new Fraction object `newFrac` and call `newFrac.asString()`, you can `REQUIRE` that the result should be "0/1". Initially, this test will fail, so create the method, which returns a string.
+
+::: callout-note
+In `asString()` you can use `to_string(anInt)` to convert an integer into a string. And, you can concatenate strings with +. `to_string()` is defined in `<string>` so you'll have to `#include` that.
+:::
+
+When that works, use the setters to change the numerator and denominator for a fraction, and then write a test to ensure that `asString()` still produces the correct results.
+
+## Submission
+
+Commit your changes to your github repo. After you do this, verify that the automated tests pass. The automated tests just run the **tests.cpp** file you have been editing.
+
+Don't forget to look at the Grading Rubric at the top to make sure you get as many points as possible.
+
+## Grading Rubric
+
+This lab is worth 20 pts:
+
+-   10 points for each of Part 1 and Part the Second: 20 pts
+    -   6 pts for correctness
+    -   1 pt for perfect indentation and good variable names, function names, and comments (i.e., hospitable code). You should write a comment in your code only when the following block of code is not *obvious* to the trained reader. You should not write a comment for each line of code.
+    -   3 pts for sufficient test cases to prove that the code is correct.
+
+Ways students have lost points in the past:
+
+-   -2: Test doesn't pass.
+-   -1: Missing name and id.
+-   -3: Missing steps. Next time speak to professor.
+
+<!-- [^1]: how to add footnotes. -->

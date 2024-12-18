@@ -58,47 +58,9 @@ Think about the algorithm to find a duplicate value in an array. Consider the fo
 ```
 
 ::: tg-wrap
-<table class="tg">
-
-<thead>
-
-<tr>
-
-<td class="tg-0lax">
-
-11
-
-</td>
-
-<td class="tg-0lax">
-
-7
-
-</td>
-
-<td class="tg-0lax">
-
-31
-
-</td>
-
-<td class="tg-0lax">
-
-4
-
-</td>
-
-<td class="tg-0lax">
-
-7
-
-</td>
-
-</tr>
-
-</thead>
-
-</table>
++----+---+----+---+---+
+| 11 | 7 | 31 | 4 | 7 |
++----+---+----+---+---+
 :::
 
 How would you write code to detect that 7 is in the array twice? Talk to your partner about your algorithm. I highly recommend you write pseudo-code for your algorithm. If you want to finish the lab in an efficient way, you'll take time to write the algorithm and test it on some inputs, revising it until you get it right.
@@ -157,11 +119,15 @@ Your function is called `findDuplicate()`, has 3 parameters, and returns **bool*
 </style>
 ```
 
-| Parameter name | Parameter type | Description |
-|----|----|----|
-| arr | array of int | arr of integers to search |
-| size | int | size of the array |
-| dup_value | int & | The out parameter containing the first duplicate value, if one is found. |
++----------------------+----------------------+--------------------------------------------------------------------------+
+| Parameter name       | Parameter type       | Description                                                              |
++======================+======================+==========================================================================+
+| arr                  | array of int         | arr of integers to search                                                |
++----------------------+----------------------+--------------------------------------------------------------------------+
+| size                 | int                  | size of the array                                                        |
++----------------------+----------------------+--------------------------------------------------------------------------+
+| dup_value            | int &                | The out parameter containing the first duplicate value, if one is found. |
++----------------------+----------------------+--------------------------------------------------------------------------+
 
 The function's prototype should look like this:
 
