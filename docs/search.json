@@ -503,7 +503,7 @@
     "href": "content.html",
     "title": "Course content",
     "section": "",
-    "text": "CS 112 is organized by week, with each week structured as follows:\n\nClassroom sessions are Monday-Wednesday-Friday.\nThe lab sessions are on Tuesdays.\nYour lab submission is due Thursday at 23:59.\nYour project submission is due the next Monday at 23:59 (the night before your next lab).\nTutoring Assistants are available in SB337 on Mondays and Thursdays, from 7 - 9 pm.\n\nThe SLOs (Student Learning Objectives), labs, and projects for each week are given in the links below. The readings are from C++ for Python Programmers Book.\n\n\n\nWeek\nTopics\nLaboratories\nProjects\nTests, Video Links, etc.\n\n\n\n\n0  1/21\nIntro to C++, compilation, Data Types (including pointers), const, binary and hexadecimal, arrays, using cout/cin.  Week’s page\nLab 0\nProj 0\n\n\n\n1  1/27\nControl Structures, Functions, Parameter Passing modes. Week’s page\nLab 1\nProj 1\n\n\n\n2  2/3\nFile Input/Output, Exception Handling, Two-dimensional Arrays. Week’s page\nLab 2\nProj 2\n\n\n\n3  2/10\nClasses, Operator Overloading, etc. Week’s page\nLab 3\nProj 3\nTest 1, Weeks 0 - 2, Friday.\n\n\n4  2/17\nVectors – dynamic arrays Week’s page\nLab 4\nProj 4\n\n\n\n5  2/24\nGeneric Containers Week’s page\nLab 5\nProj 5\n\n\n\n6  3/3\nLinked Lists [code from class] Dynamic Array or Linked List\nLab 6\nNo project\nTest 2, Weeks 0 - 5 (Friday)\n\n\n7  3/10\nSpring Break\nNo labs\nNo project\n\n\n\n8  3/17\nAlgorithm Analysis and Big-Oh [Slides] [Videos] [SLOs]\nLab 7\nProj 7\n\n\n\n9  3/24\nStacks and Queues  Advising days – no class 26-27 Week’s page\nLab 8\nProj 8\n\n\n\n10  3/31\nRecursion Week’s page\nLab 9\nProj 9\nTest 3, weeks 0 - 8 (Friday)\n\n\n11  4/7\nBSTs Week’s page\nLab 10\nProj 10\n\n\n\n12  4/14\nAVL Trees  Good Friday & Easter Monday – no class 18-21  Week’s page\nNo lab\nNo project\n\n\n\n13  4/22\nSTL set and map containers Week’s page\nLab 12\nNo project\nTest 4: weeks 0 - 11 (Wednesday, Dec. 4)\n\n\n14  4/28\nHash Tables, Sorting Algorithms Week’s page\nLab 13\n\n\n\n\nFinal  May 3-8\nSearch calvin.edu for “Exam Schedule” to find the time of the exam (and all exams you have, this semester, and all future semesters).\n\n\nTest 5 Cumulative, during exam time (You may take it in either class’s exam time. Classes met at 11am MWF and 12:15 MWF.)",
+    "text": "CS 112 is organized by week, with each week structured as follows:\n\nClassroom sessions are Monday-Wednesday-Friday.\nThe lab sessions are on Tuesdays.\nYour lab submission is due Thursday at 23:59.\nYour project submission is due the next Monday at 23:59 (the night before your next lab).\nTutoring Assistants are available in SB337 on Mondays and Thursdays, from 7 - 9 pm.\n\nThe SLOs (Student Learning Objectives), labs, and projects for each week are given in the links below. The readings are from C++ for Python Programmers Book.\n\n\n\nWeek\nTopics\nLaboratories\nProjects\nTests, Video Links, etc.\n\n\n\n\n0  —  1/21\nIntro to C++, compilation, Data Types (including pointers), const, binary and hexadecimal, arrays, using cout/cin.  Week’s page\nLab 0\nProj 0\n\n\n\n1  —  1/27\nControl Structures, Functions, Parameter Passing modes. Week’s page\nLab 1\nProj 1\n\n\n\n2  —  2/3\nFile Input/Output, Exception Handling, Two-dimensional Arrays. Week’s page\nLab 2\nProj 2\n\n\n\n3  —  2/10\nClasses, Operator Overloading, etc. Week’s page\nLab 3\nProj 3\nTest 1, Weeks 0 - 2, Friday.\n\n\n4  —  2/17\nVectors – dynamic arrays Week’s page\nLab 4\nProj 4\n\n\n\n5  —  2/24\nGeneric Containers Week’s page\nLab 5\nProj 5\n\n\n\n6  —  3/3\nLinked Lists [code from class] Dynamic Array or Linked List\nLab 6\nNo project\nTest 2, Weeks 0 - 5 (Friday)\n\n\n7  —  3/10\nSpring Break\nNo labs\nNo project\n\n\n\n8  —  3/17\nAlgorithm Analysis and Big-Oh [Slides] [Videos] [SLOs]\nLab 7\nProj 7\n\n\n\n9  —  3/24\nStacks and Queues  Advising days – no class 26-27 Week’s page\nLab 8\nProj 8\n\n\n\n10  —  3/31\nRecursion Week’s page\nLab 9\nProj 9\nTest 3, weeks 0 - 8 (Friday)\n\n\n11  —  4/7\nBSTs Week’s page\nLab 10\nProj 10\n\n\n\n12  —  4/14\nAVL Trees  Good Friday & Easter Monday – no class 18-21  Week’s page\nNo lab\nNo project\n\n\n\n13  —  4/22\nSTL set and map containers Week’s page\nLab 12\nNo project\nTest 4: weeks 0 - 11 (Wednesday, Dec. 4)\n\n\n14  —  4/28\nHash Tables, Sorting Algorithms Week’s page\nLab 13\n\n\n\n\nFinal  —  May 3-8\nSearch calvin.edu for “Exam Schedule” to find the time of the exam (and all exams you have, this semester, and all future semesters).\n\n\nTest 5 Cumulative, during exam time (You may take it in either class’s exam time. Classes met at 11am MWF and 12:15 MWF.)",
     "crumbs": [
       "Content",
       "Course content"
@@ -800,6 +800,83 @@
     "title": "Lab 00: Getting Started",
     "section": "Grading Rubric",
     "text": "Grading Rubric\n10 points total\n\ncode compiles and passes autograder tests: 5 pts.\ncode is clean and neat: 2 pts.\nmiscellaneous (see below for examples): 3 pts.\n\nWays students have lost points in the past:\n\n-1: No implementation for courseNumber()\n-1: No call to courseNumber() in main()\n-2: No variable to display your name\n-1: Implementation for courseNumber() should be in utils.cpp, not the header file utils.h.\n-1: Good, but please format your code!\n\n\n\n\n\n\n\nTip\n\n\n\nIf you have time and you have your laptop with you, this would be a good time to follow the instructions on the CS112 Moodle page to set up your laptop to access the CS lab machines remotely using VS Code Tunnels."
+  },
+  {
+    "objectID": "labs/lab01.html",
+    "href": "labs/lab01.html",
+    "title": "Lab 01: Control Structures",
+    "section": "",
+    "text": "May the force be with you."
+  },
+  {
+    "objectID": "labs/lab01.html#objectives",
+    "href": "labs/lab01.html#objectives",
+    "title": "Lab 01: Control Structures",
+    "section": "Objectives:",
+    "text": "Objectives:\n\nPractice using for loops, while loops, and if statements.\nPractice creating functions and passing parameters.\nPractice Committing and Syncing often to GitHub to run autograding tests."
+  },
+  {
+    "objectID": "labs/lab01.html#step-0.-prepare",
+    "href": "labs/lab01.html#step-0.-prepare",
+    "title": "Lab 01: Control Structures",
+    "section": "Step 0. Prepare",
+    "text": "Step 0. Prepare\n\nClick this link and then “Accept this assignment”.\nWait a few seconds and refresh the page. Refresh until the page says “You’re ready to go!”. The page has a link to a github repo.\nClick the link to see your new repo on github.com.\nClick the green Code button and copy the SSH link it shows.\nIn a terminal,\n\ncd to the directory where you are putting all your CS112 assignments.\ntype git clone &lt;paste-the-contents-of-the-link-you-copied&gt;\n\ncd to the new directory containing your repo.\ntype code . to start up Visual Studio Code in that directory.\nMake sure yo and your partner are in the same Team when creating the repo.\nInspect the code you got in the assignment.\nIn the terminal, type make\nThe code should compile and give you an executable called tester.\nRun the program: type ./tester\nYou should get some basic output – or at least it should not crash."
+  },
+  {
+    "objectID": "labs/lab01.html#step-1.-if-statement-practice-1",
+    "href": "labs/lab01.html#step-1.-if-statement-practice-1",
+    "title": "Lab 01: Control Structures",
+    "section": "Step 1. if statement practice, 1",
+    "text": "Step 1. if statement practice, 1\nIn functions.cpp in the grade() function, add code that 1. prints “Enter your grade:” 2. reads in an unsigned value from the user 3. computes whether the letter grade (a char) is an A, B, C, D, or F. An A is 90 or above, a B is 80 - 89, etc. 4. prints out the grade saying “Your grade is grade.”.\nCompile your program by typing make in a terminal. Run it by typing ./tester step1. Verify that your output looks exactly like this:\nYour grade is B.\nNow, Commit and Sync your code to github. Use “step 1 complete” as your Message. When you Commit and Sync, the automated tests will run on github. Only the “step1” test should pass at this time. If it doesn’t, fix your code, and then resubmit (use any Message you want). Repeat until the “step1” test passes.\n\n\n\nCommiting and Syncing"
+  },
+  {
+    "objectID": "labs/lab01.html#step-2.-if-statement-practice-2",
+    "href": "labs/lab01.html#step-2.-if-statement-practice-2",
+    "title": "Lab 01: Control Structures",
+    "section": "Step 2. if statement practice, 2",
+    "text": "Step 2. if statement practice, 2\nAdd code in functions.cpp in insurance() to implement the insurance plan shown in the table below, computing the result in as few lines as possible – but still using readable/hospitable code. To review the syntax of if statements in C++, you might find this useful: https://www.w3schools.com/cpp/cpp_conditions_elseif.asp\n\n\n\n\n\n\nPlan Name\n\n\nMonths\n\n\n\n\n1\n\n\n2-6\n\n\n7+\n\n\n\n\n\n\nsilver\n\n\n$90\n\n\n$60\n\n\n$60\n\n\n\n\ngold\n\n\n$90\n\n\n$70\n\n\n$35\n\n\n\n\n\n\nThe program first asks the user for the Plan Name – a string. Then, the program asks for the number of months – an unsigned. Then, the code uses a series of if statements to compute the cost – an unsigned – printing it out at the end. My implementation uses 2 if statements, 1 else if, and 2 else statements, not in that order. Part of my solution has an if-else pair embedded in another if/else body.\nFinally, of course, your code prints out the results in nice English. Your output should match this output exactly. (Note the period at the end of the number at the end.)\nThe cost for your plan is $60.\nCompile your code and run:\n./tester step2and3 -c step2\nThe output should match the output above.\nNow, Commit and Sync your code to github. Use “step 2 complete” as your “message”. When you submit the automated tests will run. Only the “step1” and “step2” tests should pass at this time. If they don’t, fix your code, and then resubmit. Repeat until the “step1” and “step2” tests pass."
+  },
+  {
+    "objectID": "labs/lab01.html#step-3.-while-loop-practice",
+    "href": "labs/lab01.html#step-3.-while-loop-practice",
+    "title": "Lab 01: Control Structures",
+    "section": "Step 3. while loop practice",
+    "text": "Step 3. while loop practice\nImprove your code from Step 2 by adding a while loop that checks if the user entered a legal plan name (“silver” or “gold”), and if not tells the user to try again. E.g.,\n    Enter a plan name: maroon\n    I'm sorry, \"maroon\" is not a known plan.\n    Enter a plan name: sliver\n    I'm sorry, \"sliver\" is not a known plan.\n    Enter a plan name: gold\n  ... code goes on now ...\nThe while loop repeats until the user enters either silver or gold.\nCompile your code and run:\n./tester step2and3 -c step3\nThe output should match the output above.\nNow, Commit and Sync your code to github. Make sure the first 3 tests pass."
+  },
+  {
+    "objectID": "labs/lab01.html#step-4.-switch-statement",
+    "href": "labs/lab01.html#step-4.-switch-statement",
+    "title": "Lab 01: Control Structures",
+    "section": "Step 4. switch statement",
+    "text": "Step 4. switch statement\nNow, write in code in vowel() that asks the user to enter a single lowercase letter. Your code must use a switch statement to test if the letter is a vowel or consonant. Vowels are ‘a’, ‘e’, ‘i’, ‘o’, and ‘u’. We’ll call ‘y’ a consonant for this exercise.\nUse default in your switch statement for the “consonant” case.\nHave your code produce output like this:\nThe letter is a vowel.\nor\nThe letter is a consonant.\nCompile your code and run:\n./tester step4\nThe output should match the output above.\nNow, Commit and Sync your code to github. Make sure the first 4 tests pass."
+  },
+  {
+    "objectID": "labs/lab01.html#step-5.-for-loop-1",
+    "href": "labs/lab01.html#step-5.-for-loop-1",
+    "title": "Lab 01: Control Structures",
+    "section": "Step 5. for loop, 1",
+    "text": "Step 5. for loop, 1\nNow, write code in sevens():\n\ncreate an array of unsigned of size 8 called values\na for loop to initialize the values array to 0, 7, 14, 21, …\na series of assert statements to check that the 0th value is 0, 3rd value is 21, and 7th value is 49.\nA line to print out “All tests passed!”\nYou may have to #include &lt;cassert&gt;\n\nTest with:\n./tester step5\nNow, Commit and Sync your code to github. Make sure the appropriate tests pass."
+  },
+  {
+    "objectID": "labs/lab01.html#step-6.-for-loop-2",
+    "href": "labs/lab01.html#step-6.-for-loop-2",
+    "title": "Lab 01: Control Structures",
+    "section": "Step 6. for loop, 2",
+    "text": "Step 6. for loop, 2\nNow, write code in sum():\n\ncreate an array of doubles, of size 100.\nwrite a for loop to fill in the array with the values 0.0, 0.1, 0.2, 0.3, etc.\nwrite a for loop to sum up all the values in the array – but this loop has to iterate from the last item down to the first.\n\n\n\n\n\n\n\nNote\n\n\n\nMake the loop variable be of type int, not unsigned, as this variable will be decremented down to -1, which cannot be represented by an unsigned.\n\n\n\nprint out the resulting sum\n\nTest with:\n./tester step6\nNow, Commit and Sync your code to github. Make sure the appropriate tests pass."
+  },
+  {
+    "objectID": "labs/lab01.html#step-7.-defining-a-function",
+    "href": "labs/lab01.html#step-7.-defining-a-function",
+    "title": "Lab 01: Control Structures",
+    "section": "Step 7. defining a function",
+    "text": "Step 7. defining a function\nNow, write code to:\n\nimplement a function called getPlan() and move your code from Step 3 above into it. The function returns the string (“silver” or “gold”) that the user enters. This function (and the ones in the next steps) is again in functions.cpp and functions.h.\nmove the code that gets the number of months from the user into a function called getMonths(). This function returns the number of months a user enters. Note that the prompt asking the user to enter the number of months should read something nice, like this:\n\nEnter the number of months: \n\nmove the code that computes the cost into a function called computeCost(). This function takes the plan name and the months as arguments and returns the cost.\nUncomment and study step7 of tests.cpp. The code just does 4 things: call getPlan(), call getMonths(), call computeCost(), and print out the cost. Anyone who looks at that code will understand it because the code is short and uses good function names.\n\nTest with:\n./tester step7\nRun the test multiple times with various inputs to make sure the computation is correct.\nNow, Commit and Sync your code to github. Make sure all tests pass."
+  },
+  {
+    "objectID": "labs/lab01.html#grading-rubric",
+    "href": "labs/lab01.html#grading-rubric",
+    "title": "Lab 01: Control Structures",
+    "section": "Grading Rubric",
+    "text": "Grading Rubric\nThis lab is worth 16 pts:\n\n2 points for each of the 7 steps\n\n1 pt: output is correct and\n1 pt: you followed the directions\n\n2 pt for perfect indentation and good variable names, function names, and comments (i.e., hospitable code). You should write a comment in your code only when the following block of code is not obvious to the trained reader. You should not write a comment for each line of code.\n\nWays students have lost points in the past:\n\n-1: no output for step7\n-1: you didn’t init step 5 with a for loop\n-1: step6 should be 495\n-0.5: step1 you should use elseif not nested elses\n-0.5: part4 the inside of each case should be indented"
   },
   {
     "objectID": "labs/lab10.html",
