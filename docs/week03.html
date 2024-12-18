@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Week 3: Classes, Operator Overloading, etc. – CS112 - Data Structures</title>
+<title>Week 03: Classes, Operator Overloading, etc. – CS112 - Data Structures</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,6 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./weekly-activities/week04.html" rel="next">
+<link href="./week02.html" rel="prev">
 <link href="././images/cs112-logo.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -73,10 +75,10 @@ ul.task-list li input[type="checkbox"] {
 
 
 <link rel="stylesheet" href="../styles.css">
-<meta property="og:title" content="Week 3: Classes, Operator Overloading, etc. – CS112 - Data Structures">
+<meta property="og:title" content="Week 03: Classes, Operator Overloading, etc. – CS112 - Data Structures">
 <meta property="og:description" content="CS112 will teach students to use C++ for creating data structures.">
 <meta property="og:site_name" content="CS112 - Data Structures">
-<meta name="twitter:title" content="Week 3: Classes, Operator Overloading, etc. – CS112 - Data Structures">
+<meta name="twitter:title" content="Week 03: Classes, Operator Overloading, etc. – CS112 - Data Structures">
 <meta name="twitter:description" content="CS112 will teach students to use C++ for creating data structures.">
 <meta name="twitter:image" content="https://ericaraujo.com/24fa-cs112/images/twitter-card.png">
 <meta name="twitter:creator" content="@ericfaraujo">
@@ -85,7 +87,7 @@ ul.task-list li input[type="checkbox"] {
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-sidebar floating nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -115,7 +117,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Course Policies</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./content.html"> 
+    <a class="nav-link active" href="./content.html" aria-current="page"> 
 <span class="menu-text">Content</span></a>
   </li>  
 </ul>
@@ -132,10 +134,105 @@ ul.task-list li input[type="checkbox"] {
 </div>
       </div> <!-- /container-fluid -->
     </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./week03.html">Week 03: Classes, Operator Overloading, etc.</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./content.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Course content</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week00.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 00: Intro do C++</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 01: Control Structures, Functions, Parameter Passing modes</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week02.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 02: File Input/Output, Exception Handling, Two-dimensional Arrays</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week03.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Week 03: Classes, Operator Overloading, etc.</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./weekly-activities/week04.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 4: Vectors – dynamic arrays</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./weekly-activities/week05.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 5: Generic Containers</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week08.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 8: Advising days</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week09.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 9: Recursion</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week10.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 10: BSTs</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week11.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 11: AVL Trees</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week12.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 12: STL set and map containers</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week13.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 13: Hash Tables and Sorting Algorithms</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -152,7 +249,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Week 3: Classes, Operator Overloading, etc.</h1>
+<h1 class="title">Week 03: Classes, Operator Overloading, etc.</h1>
 </div>
 
 
@@ -793,6 +890,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./week02.html" class="pagination-link" aria-label="Week 02: File Input/Output, Exception Handling, Two-dimensional Arrays">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Week 02: File Input/Output, Exception Handling, Two-dimensional Arrays</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./weekly-activities/week04.html" class="pagination-link" aria-label="Week 4: Vectors -- dynamic arrays">
+        <span class="nav-page-text">Week 4: Vectors – dynamic arrays</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">

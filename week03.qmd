@@ -1,5 +1,5 @@
 ---
-title: "Week 3: Classes, Operator Overloading, etc."
+title: "Week 03: Classes, Operator Overloading, etc."
 format: 
   html:
     css: ../styles.css

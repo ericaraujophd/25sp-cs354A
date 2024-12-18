@@ -1923,22 +1923,34 @@
   {
     "objectID": "week03.html",
     "href": "week03.html",
-    "title": "Week 3: Classes, Operator Overloading, etc.",
+    "title": "Week 03: Classes, Operator Overloading, etc.",
     "section": "",
-    "text": "Students will be able to:\n\ndefine a class and implement it in .h and .cpp files, respectively.\nreason about the access modifiers public and private.\ndefine and implement constructors and destructors, and general methods.\ninstantiate objects statically\nimplement Test-driven development for a class."
+    "text": "Students will be able to:\n\ndefine a class and implement it in .h and .cpp files, respectively.\nreason about the access modifiers public and private.\ndefine and implement constructors and destructors, and general methods.\ninstantiate objects statically\nimplement Test-driven development for a class.",
+    "crumbs": [
+      "Content",
+      "Week 03: Classes, Operator Overloading, etc."
+    ]
   },
   {
     "objectID": "week03.html#slos-for-week-3",
     "href": "week03.html#slos-for-week-3",
-    "title": "Week 3: Classes, Operator Overloading, etc.",
+    "title": "Week 03: Classes, Operator Overloading, etc.",
     "section": "",
-    "text": "Students will be able to:\n\ndefine a class and implement it in .h and .cpp files, respectively.\nreason about the access modifiers public and private.\ndefine and implement constructors and destructors, and general methods.\ninstantiate objects statically\nimplement Test-driven development for a class."
+    "text": "Students will be able to:\n\ndefine a class and implement it in .h and .cpp files, respectively.\nreason about the access modifiers public and private.\ndefine and implement constructors and destructors, and general methods.\ninstantiate objects statically\nimplement Test-driven development for a class.",
+    "crumbs": [
+      "Content",
+      "Week 03: Classes, Operator Overloading, etc."
+    ]
   },
   {
     "objectID": "week03.html#slides-videos-and-application-exercises",
     "href": "week03.html#slides-videos-and-application-exercises",
-    "title": "Week 3: Classes, Operator Overloading, etc.",
+    "title": "Week 03: Classes, Operator Overloading, etc.",
     "section": "Slides, videos, and application exercises",
-    "text": "Slides, videos, and application exercises\n\nWeek 3: Slides\n\nSlides\n\n\nPair class code\n\n\nNo readings for Week 3.\n\n\n\n\nLab 03: Classes\nFitting and interpreting simple linear regression models\n\nInstructions\n\n\nStarter\n\n\nSlides\n\n\n\n\nProject 03: Classes\nModel validation and inference\n\nInstructions\n\n\nStarter\n\n\n\nExam 1\nExam on Friday during class. Bring your laptop. Content: Weeks 0 - 2."
+    "text": "Slides, videos, and application exercises\n\nWeek 3: Slides\n\nSlides\n\n\nPair class code\n\n\nNo readings for Week 3.\n\n\n\n\nLab 03: Classes\nFitting and interpreting simple linear regression models\n\nInstructions\n\n\nStarter\n\n\nSlides\n\n\n\n\nProject 03: Classes\nModel validation and inference\n\nInstructions\n\n\nStarter\n\n\n\nExam 1\nExam on Friday during class. Bring your laptop. Content: Weeks 0 - 2.",
+    "crumbs": [
+      "Content",
+      "Week 03: Classes, Operator Overloading, etc."
+    ]
   }
 ]
