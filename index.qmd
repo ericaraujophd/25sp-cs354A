@@ -1,6 +1,5 @@
 ---
 title: "Welcome to CS112 - Data Structures"
-
 ---
 
 ![](images/cs112-logo.png){style="float: right;" fig-alt="A tree of bits" fig-align="right" width="250"}
@@ -17,42 +16,23 @@ Here you will find all information needed to do well during the course.
 
 Upon successful completion of this course students will be able to:
 
-- Use indirection (pointers) and run-time memory allocation to implement dynamic, generic container classes (e.g., vectors, lists, stacks, queues, trees, etc.).  
-- Analyze, categorize, and compare the complexity of data structure operations using "big-oh" notation.  
-- Design and implement recursive data structure operations.  
-- Design, create, and use unit-tests to test the correctness of data structure operations.  
-- For select algorithms, use simple parallel computing techniques to improve algorithm performance and measure the improvement. 
+-   Use indirection (pointers) and run-time memory allocation to implement dynamic, generic container classes (e.g., vectors, lists, stacks, queues, trees, etc.).\
+-   Analyze, categorize, and compare the complexity of data structure operations using "big-oh" notation.\
+-   Design and implement recursive data structure operations.\
+-   Design, create, and use unit-tests to test the correctness of data structure operations.\
+-   For select algorithms, use simple parallel computing techniques to improve algorithm performance and measure the improvement.
 
 ## Course Organization {.unnumbered}
 
 The course is organized around these components:
 
-1. The lectures that will introduce data structures topics at the conceptual level;
-2. The labs in which students will (in pairs) practice using and building data structures; and
-3. The projects in which students will (individually) practice using and building data structures.
+1.  The lectures that will introduce data structures topics at the conceptual level;
+2.  The labs in which students will (in pairs) practice using and building data structures; and
+3.  The projects in which students will (individually) practice using and building data structures.
 
 Each week's lectures, labs and projects will cover the same concepts, but will do so in different ways.
 
 The first 4 weeks will be dedicated to learning C++. After that, we will begin studying data structures.
-
-
-<!-- Data Science in a Box contains the materials required to teach (or learn from) the course described above, all of which are [freely-available and open-source](https://github.com/rstudio-education/datascience-box/blob/master/LICENSE.md). -->
-<!-- They include course materials such as slide decks, lecture and live coding videos, homework assignments, guided labs, sample exams, a final project assignment, as well as materials for instructors such as pedagogical tips, information on computing infrastructure, technology stack, and course logistics. -->
-
-<!-- Majority of the materials linked live in the GitHub repo serving this website. -->
-<!-- You can access the repo at <https://github.com/rstudio-education/datascience-box>. -->
-
-<!-- Please note that Data Science in a Box uses a [Contributor Code of Conduct](https://contributor-covenant.org/version/2/0/CODE_OF_CONDUCT.html). -->
-<!-- By contributing to this project, you agree to abide by its terms. -->
-
-<!-- ## License {.unnumbered}
-
-<a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/"><img src="https://licensebuttons.net/l/by-sa/4.0/88x31.png" alt="Creative Commons License" style="border-width:0"/></a><br />This online work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International</a>.
-Visit [here](https://github.com/rstudio-education/datascience-box/blob/master/LICENSE.md) for more information about the license. -->
-
-<!-- ## Acknowledements {.unnumbered}
-
-Huge thanks to the #rstats education community who have made numerous suggestions for this resource, to Lee Suddaby and Zeno Kujawa for converting the homework assignments to learnr tutorials, and to [Müge Çetinkaya](http://muge.fr/) for the hex logo! -->
 
 ## Acknowledgements
 

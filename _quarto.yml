@@ -26,10 +26,7 @@ website:
     background: "#A7D5E8"
     right:
     - text: "License"
-      href: LICENSE.md
-    - text: "Code of Conduct"
-      href: CODE_OF_CONDUCT.md
-
+      # href: LICENSE.md
   navbar:
     background: "#A7D5E8"
     logo: "images/cs112-logo.png"
