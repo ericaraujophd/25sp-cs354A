@@ -1,5 +1,5 @@
 ---
-title: "Project 3: a High Scores Class"
+title: "Project 03: a High Scores Class"
 format: 
   html:
     css: /projects/proj-styles.css

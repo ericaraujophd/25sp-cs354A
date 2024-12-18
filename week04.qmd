@@ -1,0 +1,74 @@
+---
+title: "Week 04: Vectors -- Dynamic Arrays"
+format: 
+  html:
+    css: /styles.css
+# draft: true
+# draft-mode: visible
+---
+
+## SLOs for Week 04
+
+Students will be able to...
+
+-   recognize a copy constructor and implement it.
+-   identify the 3 situations in which a copy constructor is called
+-   reason about the difference between a **shallow** and **deep** copy of a data structure.
+-   use the **new** operator to dynamically allocate memory and the **delete** and **delete\[\]** operators to free up the memory.
+-   explain when C++ calls the destructor on an object.
+-   explain when it is important to implement the destructor explicitly for a class.
+-   understand the implementation of a dynamic array data structure, including how it adapts its internal size to accommodate the number of values in the array.
+-   implement operator overloading for a class.
+
+## Slides, videos, and application exercises
+
+::::: slide-deck
+**Week 04: Slides**
+
+::: slides
+[Slides](https://docs.google.com/presentation/d/1drjTrJ0TrHNiqr7g0B_HxnN6MwswAR7SRWENpsPyLJw/edit?usp=sharing)
+:::
+
+
+::: reading
+No readings for Week 4.
+:::
+
+:::::
+
+<!-- ## Lab -->
+
+:::::: lab
+**Lab 04: Vectors**
+
+Vec -- A First Dynamic Data Structure
+
+::: instructions
+[Instructions](/labs/lab04.qmd)
+:::
+
+::: starter
+[Starter](){target="_blank"}
+:::
+
+::: slides
+[Slides](./slides/lab04-slides.qmd)
+:::
+::::::
+
+<!-- ## Homework assignments -->
+
+:::: homework
+**Project 04: Vec -- A First Dynamic Data Structure**
+
+Vec -- A First Dynamic Data Structure
+
+::: instructions
+[Instructions](/projects/proj04.qmd)
+:::
+
+
+::: starter
+[Starter](){target="_blank"}
+:::
+::::

@@ -9,7 +9,7 @@ format:
 
 <figure>
 
-<img src="/images/labs/lab00-soitbegins.gif" alt="LOtR warm up." width="700"/>
+<img src="/images/labs/lab00/lab00-soitbegins.gif" alt="LOtR warm up." width="700"/>
 
 <figcaption>LOtR warm up.</figcaption>
 
@@ -57,7 +57,7 @@ pwd
 
 You should remember to do this before starting each lab and assignment.
 
-![](/images/labs/lab00-mkdir.gif)
+![](/images/labs/lab00/lab00-mkdir.gif)
 
 ## Launching VS Code
 
@@ -121,7 +121,7 @@ All labs are meant to be done in pairs using pair programming. That is: you **mu
 
 Go to the webpage for your repository. You will need to get the ID of the repo. To get this, you click on the button **\<\> Code**, then click on the SSH tab. Then click on the two boxes to the right of where it says `git@github.com:...`. This copies your repo id to your clipboard.
 
-![](/images/labs/lab00-clone.gif)
+![](/images/labs/lab00/lab00-clone.gif)
 
 (Keep this tab open in your browser -- you'll need it later in the lab.)
 
@@ -171,13 +171,13 @@ VS Code has tons of features. We will configure only a few of them at this point
 
 First, let's install the C++ extensions. In the menu bar of VS Code, select **File -\> Open Folder**. Choose the directory that you downloaded when you did git clone above. That directory will be under your **cs112** directory. Next, open the **main.cpp** file. When you open that file VS Code is going to suggest (in the lower-right corner) that you install some extensions to help you work with C++ files. The extension that you want to install is called the **C/C++ Extension Pack**. Select that and install it.
 
-![](/images/labs/lab00-InstallCpp.gif)
+![](/images/labs/lab00/lab00-InstallCpp.gif)
 
 Go to your VS Code window. Hit the **F1** key, which should open the **Command Palette** at the top of the window. Start typing **Preferences:**
 
 When you see `Preferences: Open User Settings` appear, select it. On the resulting page there is a search bar at the top. In the search bar, type **Auto Save**. You should see a control appear labeled `Files: Auto Save`. From the dropdown menu, select **onFocusChange**. This will make sure that your files are automatically saved any time you select another file or another window. No more remembering to save!!
 
-![](/images/labs/lab00-onFocus.gif)
+![](/images/labs/lab00/lab00-onFocus.gif)
 
 Don't close the **Settings** page yet! Instead, erase where you typed **Auto Save**, and now search for **Tab Size**. You should see a control called `Editor: Tab Size`. Set this value to 4.
 
@@ -191,7 +191,7 @@ Scroll down until you see `C_Cpp: Clang_format_style`. Replace whatever you find
 { BasedOnStyle: Google, IndentWidth: 4, AccessModifierOffset: -4, AllowShortFunctionsOnASingleLine: InlineOnly }
 ```
 
-![](/images/labs/lab00-Cpp-Settings.gif)
+![](/images/labs/lab00/lab00-Cpp-Settings.gif)
 
 You can close the Settings window now.
 
@@ -300,15 +300,15 @@ When you get your code working, submit your code to github:
 
 When you push your changes to your online repo, a set of automated tests may be run (for most labs and projects). To find out if your automated tests passed, look at your online repo. If you see a green checkmark, tests have passed! But, in mine, I see this:
 
-![](/images/labs/lab00-error-tester.png)
+![](/images/labs/lab00/lab00-error-tester.png)
 
 If I click on the red [**X**]{style="color:red"}, I see this:
 
-![](/images/labs/lab00-all-checks-failed.png)
+![](/images/labs/lab00/lab00-all-checks-failed.png)
 
 To see the steps to get your errors report, see video below.
 
-![](/images/labs/lab00-errors.gif)
+![](/images/labs/lab00/lab00-errors.gif)
 
 Click on [**Details**]{style="color:blue"} to see information about what automated test failed. In this case, there is only 1 automated test, so if it fails your output is not what is expected.
 

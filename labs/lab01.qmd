@@ -25,8 +25,7 @@ format:
 
 ## Step 0. Prepare
 
--   Click [this link](){target="_blank"} and then "Accept this assignment".
-<!-- -   Click [this link](https://classroom.github.com/a/Aqowwp7J){target="_blank"} and then "Accept this assignment". -->
+-   Click [this link](){target="_blank"} and then "Accept this assignment". <!-- -   Click [this link](https://classroom.github.com/a/Aqowwp7J){target="_blank"} and then "Accept this assignment". -->
 -   Wait a few seconds and refresh the page. Refresh until the page says "You're ready to go!". The page has a link to a github repo.
 -   Click the link to see your new repo on github.com.
 -   Click the green [**Code**]{style="color:green"} button and copy the SSH link it shows.
@@ -73,15 +72,11 @@ Add code in **functions.cpp** in `insurance()` to implement the insurance plan s
 ```
 
 ::: tg-wrap
-+-----------+--------+
 | Plan Name | Months |
-+===========+========+
+|-----------|--------|
 | 1         | 2-6    |
-+-----------+--------+
 | silver    | \\\$90 |
-+-----------+--------+
 | gold      | \\\$90 |
-+-----------+--------+
 :::
 
 <!-- ![Plan table](/images/labs/lab01/plan-table.png) -->

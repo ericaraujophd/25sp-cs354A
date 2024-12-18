@@ -217,7 +217,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <center>
 <figure class="figure">
-<p><img src="../images/labs/lab00-soitbegins.gif" alt="LOtR warm up." width="700" class="figure-img"></p>
+<p><img src="../images/labs/lab00/lab00-soitbegins.gif" alt="LOtR warm up." width="700" class="figure-img"></p>
 <figcaption>
 LOtR warm up.
 </figcaption>
@@ -250,7 +250,7 @@ LOtR warm up.
 <p>To verify what is your current directory, do this:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">pwd</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>You should remember to do this before starting each lab and assignment.</p>
-<p><img src="../images/labs/lab00-mkdir.gif" class="img-fluid"></p>
+<p><img src="../images/labs/lab00/lab00-mkdir.gif" class="img-fluid"></p>
 </section>
 <section id="launching-vs-code" class="level2">
 <h2 class="anchored" data-anchor-id="launching-vs-code">Launching VS Code</h2>
@@ -309,7 +309,7 @@ Important
 </div>
 </div>
 <p>Go to the webpage for your repository. You will need to get the ID of the repo. To get this, you click on the button <strong>&lt;&gt; Code</strong>, then click on the SSH tab. Then click on the two boxes to the right of where it says <code>git@github.com:...</code>. This copies your repo id to your clipboard.</p>
-<p><img src="../images/labs/lab00-clone.gif" class="img-fluid"></p>
+<p><img src="../images/labs/lab00/lab00-clone.gif" class="img-fluid"></p>
 <p>(Keep this tab open in your browser – you’ll need it later in the lab.)</p>
 <p>The instructions in each assignment will remind you what to do:</p>
 <ul>
@@ -336,16 +336,16 @@ Important
 <h2 class="anchored" data-anchor-id="customizing-vscode">Customizing VSCode</h2>
 <p>VS Code has tons of features. We will configure only a few of them at this point.</p>
 <p>First, let’s install the C++ extensions. In the menu bar of VS Code, select <strong>File -&gt; Open Folder</strong>. Choose the directory that you downloaded when you did git clone above. That directory will be under your <strong>cs112</strong> directory. Next, open the <strong>main.cpp</strong> file. When you open that file VS Code is going to suggest (in the lower-right corner) that you install some extensions to help you work with C++ files. The extension that you want to install is called the <strong>C/C++ Extension Pack</strong>. Select that and install it.</p>
-<p><img src="../images/labs/lab00-InstallCpp.gif" class="img-fluid"></p>
+<p><img src="../images/labs/lab00/lab00-InstallCpp.gif" class="img-fluid"></p>
 <p>Go to your VS Code window. Hit the <strong>F1</strong> key, which should open the <strong>Command Palette</strong> at the top of the window. Start typing <strong>Preferences:</strong></p>
 <p>When you see <code>Preferences: Open User Settings</code> appear, select it. On the resulting page there is a search bar at the top. In the search bar, type <strong>Auto Save</strong>. You should see a control appear labeled <code>Files: Auto Save</code>. From the dropdown menu, select <strong>onFocusChange</strong>. This will make sure that your files are automatically saved any time you select another file or another window. No more remembering to save!!</p>
-<p><img src="../images/labs/lab00-onFocus.gif" class="img-fluid"></p>
+<p><img src="../images/labs/lab00/lab00-onFocus.gif" class="img-fluid"></p>
 <p>Don’t close the <strong>Settings</strong> page yet! Instead, erase where you typed <strong>Auto Save</strong>, and now search for <strong>Tab Size</strong>. You should see a control called <code>Editor: Tab Size</code>. Set this value to 4.</p>
 <p>Now, erase <strong>Tab Size</strong> so that you are not searching for anything.</p>
 <p>Under <strong>Extensions</strong>, you should see a <strong>C/C++ section</strong>. Select that, and then <strong>Formatting</strong> as shown below.</p>
 <p>Scroll down until you see <code>C_Cpp: Clang_format_style</code>. Replace whatever you find in the input box with this:</p>
 <pre><code>{ BasedOnStyle: Google, IndentWidth: 4, AccessModifierOffset: -4, AllowShortFunctionsOnASingleLine: InlineOnly }</code></pre>
-<p><img src="../images/labs/lab00-Cpp-Settings.gif" class="img-fluid"></p>
+<p><img src="../images/labs/lab00/lab00-Cpp-Settings.gif" class="img-fluid"></p>
 <p>You can close the Settings window now.</p>
 </section>
 <section id="compiling-your-program" class="level2">
@@ -447,11 +447,11 @@ Note
 <p>In VS Code, click on the Source Control icon on the upper left and type in a commit message, then click the checkmark icon to submit your code. Go through the various pop-up boxes to commit and push your changes to your online repo.</p>
 </blockquote>
 <p>When you push your changes to your online repo, a set of automated tests may be run (for most labs and projects). To find out if your automated tests passed, look at your online repo. If you see a green checkmark, tests have passed! But, in mine, I see this:</p>
-<p><img src="../images/labs/lab00-error-tester.png" class="img-fluid"></p>
+<p><img src="../images/labs/lab00/lab00-error-tester.png" class="img-fluid"></p>
 <p>If I click on the red <span style="color:red"><strong>X</strong></span>, I see this:</p>
-<p><img src="../images/labs/lab00-all-checks-failed.png" class="img-fluid"></p>
+<p><img src="../images/labs/lab00/lab00-all-checks-failed.png" class="img-fluid"></p>
 <p>To see the steps to get your errors report, see video below.</p>
-<p><img src="../images/labs/lab00-errors.gif" class="img-fluid"></p>
+<p><img src="../images/labs/lab00/lab00-errors.gif" class="img-fluid"></p>
 <p>Click on <span style="color:blue"><strong>Details</strong></span> to see information about what automated test failed. In this case, there is only 1 automated test, so if it fails your output is not what is expected.</p>
 <p>If your code is not passing, make sure the output exactly matches those tests, including spaces – there is a space after <code>"C++, "</code>. Also make sure the autograder can receive an input command to enter your name. In the autograding test, the name <strong>Amunzle</strong> is given as input to the program, so the test expects this as output:</p>
 <pre><code>Welcome to CS112 and C++, Amunzle!</code></pre>

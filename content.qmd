@@ -3,7 +3,7 @@ title: "Course content"
 editor: visual
 format: 
   html:
-    css: weekly-activities/projects/styles.css
+    css: /styles.css
 ---
 
 CS 112 is organized by week, with each week structured as follows:
@@ -18,16 +18,16 @@ The SLOs (Student Learning Objectives), labs, and projects for each week are giv
 
 | Week | Topics | Laboratories | Projects | Tests, Video Links, etc. |
 |--------------|------------------|--------------|--------------|--------------|
-| 0 <br> --- <br> 1/21 | Intro to C++, compilation, Data Types (including pointers), const, binary and hexadecimal, arrays, using cout/cin. <br> [Week's page](/week00.qmd) | [Lab 0](/labs/lab00.qmd) | [Proj 0](/projects/proj00.qmd) |  |
-| 1 <br> --- <br> 1/27 | Control Structures, Functions, Parameter Passing modes. <br>[Week's page](/week01.qmd) | [Lab 1](/labs/lab01.qmd) | [Proj 1](/projects/proj01.qmd) |  |
-| 2 <br> --- <br> 2/3 | File Input/Output, Exception Handling, Two-dimensional Arrays. <br>[Week's page](/week02.qmd) | [Lab 2](/labs/lab02.qmd) | [Proj 2](/projects/proj02.qmd) |  |
-| 3 <br> --- <br> 2/10 | Classes, Operator Overloading, etc. <br>[Week's page](week03.qmd) | [Lab 3](/labs/lab03.qmd) | [Proj 3](/projects/proj03.qmd) | **Test 1**, Weeks 0 - 2, Friday. |
-| 4 <br> --- <br> 2/17 | Vectors -- dynamic arrays <br>[Week's page](weekly-activities/week04.qmd) | [Lab 4](weekly-activities/labs/lab-04/lab04.qmd) | [Proj 4](weekly-activities/projects/proj-04/proj04.qmd) |  |
-| 5 <br> --- <br> 2/24 | Generic Containers <br>[Week's page](weekly-activities/week05.qmd) | [Lab 5](weekly-activities/labs/lab-05/lab05.qmd) | Proj 5 |  |
-| 6 <br> --- <br> 3/3| Linked Lists \[code from class\] Dynamic Array or Linked List | Lab 6 | No project | Test 2, Weeks 0 - 5 (Friday) |
-| 7 <br> --- <br> 3/10| Spring Break | No labs | No project |  |
-| 8 <br> --- <br> 3/17 | Algorithm Analysis and Big-Oh \[Slides\] \[Videos\] \[SLOs\] | Lab 7 | Proj 7 |  |
-| 9 <br> --- <br> 3/24 | Stacks and Queues <br> Advising days – no class 26-27 <br>[Week's page](/week08.qmd) | Lab 8 | [Proj 8](/projects/proj08.qmd) |  |
+| 00 <br> --- <br> 1/21 | Intro to C++, compilation, Data Types (including pointers), const, binary and hexadecimal, arrays, using cout/cin. <br> [Week's page](/week00.qmd) | [Lab 0](/labs/lab00.qmd) | [Proj 0](/projects/proj00.qmd) |  |
+| 01 <br> --- <br> 1/27 | Control Structures, Functions, Parameter Passing modes. <br>[Week's page](/week01.qmd) | [Lab 1](/labs/lab01.qmd) | [Proj 1](/projects/proj01.qmd) |  |
+| 02 <br> --- <br> 2/3 | File Input/Output, Exception Handling, Two-dimensional Arrays. <br>[Week's page](/week02.qmd) | [Lab 2](/labs/lab02.qmd) | [Proj 2](/projects/proj02.qmd) |  |
+| 03 <br> --- <br> 2/10 | Classes, Operator Overloading, etc. <br>[Week's page](/week03.qmd) | [Lab 3](/labs/lab03.qmd) | [Proj 3](/projects/proj03.qmd) | **Test 1**, Weeks 0 - 2, Friday. |
+| 04 <br> --- <br> 2/17 | Vectors -- Dynamic Arrays <br>[Week's page](/week04.qmd) | [Lab 4](/labs/lab04.qmd) | [Proj 4](/projects/proj04.qmd) |  |
+| 05 <br> --- <br> 2/24 | Generic Containers <br>[Week's page](weekly-activities/week05.qmd) | [Lab 5](weekly-activities/labs/lab-05/lab05.qmd) | Proj 5 |  |
+| 06 <br> --- <br> 3/3| Linked Lists \[code from class\] Dynamic Array or Linked List | Lab 6 | No project | Test 2, Weeks 0 - 5 (Friday) |
+| 07 <br> --- <br> 3/10| Spring Break | No labs | No project |  |
+| 08 <br> --- <br> 3/17 | Algorithm Analysis and Big-Oh \[Slides\] \[Videos\] \[SLOs\] | Lab 7 | Proj 7 |  |
+| 09 <br> --- <br> 3/24 | Stacks and Queues <br> Advising days – no class 26-27 <br>[Week's page](/week08.qmd) | Lab 8 | [Proj 8](/projects/proj08.qmd) |  |
 | 10 <br> --- <br> 3/31 | Recursion <br>[Week's page](/week09.qmd) | [Lab 9](/labs/lab09.qmd) | [Proj 9](/projects/proj09.qmd) | Test 3, weeks 0 - 8 (Friday) |
 | 11 <br> --- <br> 4/7 | BSTs <br>[Week's page](/week10.qmd) | [Lab 10](/labs/lab10.qmd) | [Proj 10](/projects/proj10.qmd) |  |
 | 12 <br> --- <br> 4/14 | AVL Trees <br> Good Friday & Easter Monday – no class 18-21  <br> [Week's page](/week11.qmd) | No lab | No project |  |
