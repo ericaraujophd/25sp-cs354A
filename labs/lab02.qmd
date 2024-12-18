@@ -9,7 +9,7 @@ format:
 
 <figure>
 
-<img src="/images/labs/lab02/header.gif" alt="Beware of the bugs!" width="350"/>
+<img src="/images/labs/lab02/header.gif" alt="Beware of the bugs!" width="250"/>
 
 <figcaption>Beware of the bugs!</figcaption>
 
