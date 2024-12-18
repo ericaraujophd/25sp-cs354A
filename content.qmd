@@ -21,7 +21,7 @@ The SLOs (Student Learning Objectives), labs, and projects for each week are giv
 | 0 <br> --- <br> 1/21 | Intro to C++, compilation, Data Types (including pointers), const, binary and hexadecimal, arrays, using cout/cin. <br> [Week's page](/week00.qmd) | [Lab 0](/labs/lab00.qmd) | [Proj 0](/projects/proj00.qmd) |  |
 | 1 <br> --- <br> 1/27 | Control Structures, Functions, Parameter Passing modes. <br>[Week's page](/week01.qmd) | [Lab 1](/labs/lab01.qmd) | [Proj 1](/projects/proj01.qmd) |  |
 | 2 <br> --- <br> 2/3 | File Input/Output, Exception Handling, Two-dimensional Arrays. <br>[Week's page](/week02.qmd) | [Lab 2](/labs/lab02.qmd) | [Proj 2](/projects/proj02.qmd) |  |
-| 3 <br> --- <br> 2/10 | Classes, Operator Overloading, etc. <br>[Week's page](week03.qmd) | [Lab 3](/labs/lab03.qmd) | [Proj 3](weekly-activities/projects/proj-03/proj03.qmd) | Test 1, Weeks 0 - 2, Friday. |
+| 3 <br> --- <br> 2/10 | Classes, Operator Overloading, etc. <br>[Week's page](week03.qmd) | [Lab 3](/labs/lab03.qmd) | [Proj 3](/projects/proj03.qmd) | **Test 1**, Weeks 0 - 2, Friday. |
 | 4 <br> --- <br> 2/17 | Vectors -- dynamic arrays <br>[Week's page](weekly-activities/week04.qmd) | [Lab 4](weekly-activities/labs/lab-04/lab04.qmd) | [Proj 4](weekly-activities/projects/proj-04/proj04.qmd) |  |
 | 5 <br> --- <br> 2/24 | Generic Containers <br>[Week's page](weekly-activities/week05.qmd) | [Lab 5](weekly-activities/labs/lab-05/lab05.qmd) | Proj 5 |  |
 | 6 <br> --- <br> 3/3| Linked Lists \[code from class\] Dynamic Array or Linked List | Lab 6 | No project | Test 2, Weeks 0 - 5 (Friday) |

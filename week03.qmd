@@ -2,7 +2,7 @@
 title: "Week 03: Classes, Operator Overloading, etc."
 format: 
   html:
-    css: ../styles.css
+    css: /styles.css
 ---
 
 ## SLOs for Week 3
@@ -40,8 +40,6 @@ No readings for Week 3.
 :::::: lab
 **Lab 03: Classes**
 
-Fitting and interpreting simple linear regression models
-
 ::: instructions
 [Instructions](labs/lab03.qmd)
 :::
@@ -60,12 +58,9 @@ Fitting and interpreting simple linear regression models
 ::::: homework
 **Project 03: Classes**
 
-Model validation and inference
-
 ::: instructions
-[Instructions](projects/proj-03/proj03.qmd)
+[Instructions](projects/proj03.qmd)
 :::
-
 
 ::: starter
 [Starter](){target="_blank"}
@@ -76,6 +71,4 @@ Model validation and inference
 **Exam 1**
 
 Exam on Friday during class. Bring your laptop. Content: Weeks 0 - 2.
-
-<!-- [\[Instructions\]](course-materials/exams/exam-01/exam-01.qmd) [\[Source\]](https://github.com/rstudio-education/datascience-box/tree/master/course-materials/exams/exam-01) -->
 :::
