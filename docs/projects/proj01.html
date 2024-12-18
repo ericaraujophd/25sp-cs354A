@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Week 01: Control Structures, Functions, Parameter Passing modes – CS112 - Data Structures</title>
+<title>Project 01: More Control Structures – CS112 - Data Structures</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,30 +20,62 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./week02.html" rel="next">
-<link href="./week00.html" rel="prev">
-<link href="././images/cs112-logo.png" rel="icon" type="image/png">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href=".././images/cs112-logo.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -73,11 +105,41 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 <script src="https://kit.fontawesome.com/78ddb093ea.js" crossorigin="anonymous"></script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<meta property="og:title" content="Week 01: Control Structures, Functions, Parameter Passing modes – CS112 - Data Structures">
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../projects/proj-styles.css">
+<meta property="og:title" content="Project 01: More Control Structures – CS112 - Data Structures">
 <meta property="og:description" content="CS112 will teach students to use C++ for creating data structures.">
 <meta property="og:site_name" content="CS112 - Data Structures">
-<meta name="twitter:title" content="Week 01: Control Structures, Functions, Parameter Passing modes – CS112 - Data Structures">
+<meta name="twitter:title" content="Project 01: More Control Structures – CS112 - Data Structures">
 <meta name="twitter:description" content="CS112 will teach students to use C++ for creating data structures.">
 <meta name="twitter:image" content="https://ericaraujo.com/24fa-cs112/images/twitter-card.png">
 <meta name="twitter:creator" content="@ericfaraujo">
@@ -86,15 +148,15 @@ ul.task-list li input[type="checkbox"] {
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
-<body class="nav-sidebar floating nav-fixed">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./images/cs112-logo.png" alt="" class="navbar-logo">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../images/cs112-logo.png" alt="" class="navbar-logo">
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -104,19 +166,19 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
+    <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Overview</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./instructors.html"> 
+    <a class="nav-link" href="../instructors.html"> 
 <span class="menu-text">Instructors</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./policies.html"> 
+    <a class="nav-link" href="../policies.html"> 
 <span class="menu-text">Course Policies</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./content.html" aria-current="page"> 
+    <a class="nav-link" href="../content.html"> 
 <span class="menu-text">Content</span></a>
   </li>  
 </ul>
@@ -133,122 +195,32 @@ ul.task-list li input[type="checkbox"] {
 </div>
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./week01.html">Week 01: Control Structures, Functions, Parameter Passing modes</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-    </div>
-  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./content.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Course content</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week00.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 00: Intro do C++</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week01.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Week 01: Control Structures, Functions, Parameter Passing modes</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week02.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 02: File Input/Output, Exception Handling, Two-dimensional Arrays</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./weekly-activities/week03.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 3: Classes, Operator Overloading, etc.</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./weekly-activities/week04.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 4: Vectors – dynamic arrays</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./weekly-activities/week05.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 5: Generic Containers</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week08.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 8: Advising days</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week09.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 9: Recursion</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week10.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 10: BSTs</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week11.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 11: AVL Trees</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week12.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 12: STL set and map containers</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week13.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 13: Hash Tables and Sorting Algorithms</span></a>
-  </div>
-</li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#slos-for-week-01" id="toc-slos-for-week-01" class="nav-link active" data-scroll-target="#slos-for-week-01">SLOs for Week 01</a></li>
-  <li><a href="#slides-videos-and-application-exercises" id="toc-slides-videos-and-application-exercises" class="nav-link" data-scroll-target="#slides-videos-and-application-exercises">Slides, videos, and application exercises</a></li>
+  <li><a href="#objectives" id="toc-objectives" class="nav-link active" data-scroll-target="#objectives">Objectives:</a></li>
+  <li><a href="#step-0.-prepare" id="toc-step-0.-prepare" class="nav-link" data-scroll-target="#step-0.-prepare">Step 0. Prepare</a></li>
+  <li><a href="#step-1.-function-practice-1" id="toc-step-1.-function-practice-1" class="nav-link" data-scroll-target="#step-1.-function-practice-1">Step 1. function practice, 1</a></li>
+  <li><a href="#step-2.-function-practice-2" id="toc-step-2.-function-practice-2" class="nav-link" data-scroll-target="#step-2.-function-practice-2">Step 2. function practice, 2</a></li>
+  <li><a href="#step-3.-compute-prime-numbers" id="toc-step-3.-compute-prime-numbers" class="nav-link" data-scroll-target="#step-3.-compute-prime-numbers">Step 3. Compute prime numbers</a></li>
+  <li><a href="#step-4.-collecting-prime-numbers" id="toc-step-4.-collecting-prime-numbers" class="nav-link" data-scroll-target="#step-4.-collecting-prime-numbers">Step 4. Collecting prime numbers</a></li>
+  <li><a href="#grading-rubric" id="toc-grading-rubric" class="nav-link" data-scroll-target="#grading-rubric">Grading Rubric</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/ericaraujophd/24fa-cs112/edit/main/week01.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/24fa-cs112/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/ericaraujophd/24fa-cs112/edit/main/projects/proj01.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/24fa-cs112/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Week 01: Control Structures, Functions, Parameter Passing modes</h1>
+<h1 class="title">Project 01: More Control Structures</h1>
 </div>
 
 
@@ -265,101 +237,149 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="slos-for-week-01" class="level2">
-<h2 class="anchored" data-anchor-id="slos-for-week-01">SLOs for Week 01</h2>
-<p>At the end of this unit, students will be able to…</p>
+<center>
+<figure class="figure">
+<p><img src="../images/projects/proj01-header.jpg" alt="Prime Numbers." width="500" class="figure-img"></p>
+<figcaption>
+Prime Numbers.
+</figcaption>
+</figure>
+</center>
+<section id="objectives" class="level2">
+<h2 class="anchored" data-anchor-id="objectives">Objectives:</h2>
+<ol type="1">
+<li>Practice using for loops, while loops, and if statements.</li>
+<li>Practice creating functions and passing parameters.</li>
+<li>Practice writing unit tests.</li>
+</ol>
+</section>
+<section id="step-0.-prepare" class="level2">
+<h2 class="anchored" data-anchor-id="step-0.-prepare">Step 0. Prepare</h2>
 <ul>
-<li>write if, if-else, if-else-if, and switch statements correctly.</li>
-<li>create correct while loops and for loops, including using break and continue statements.</li>
-<li>define and call functions correctly.</li>
-<li>use function overloading, define default arguments, and define const parameters.</li>
-<li>pass arrays as parameters.</li>
-<li>articulate the differences between in, out, and in/out parameters.</li>
-<li>correctly choose between pass-by-value, pass-by-reference, and pass-by-const-ref parameters.</li>
+<li>Click <a href="https://classroom.github.com/a/_PwngVPD" target="_blank">this link</a> and then “Accept this assignment”.</li>
+<li>Wait a few seconds and refresh the page. Refresh until the page says “You’re ready to go!”. The page has a link to a github repo.</li>
+<li>Click the link to see your new repo on github.com.</li>
+<li>Click the green <span style="color:green;"><strong>Code</strong></span> button and copy the SSH link it shows.</li>
+<li>In a terminal,
+<ul>
+<li><code>cd</code> to the directory where you are putting all your CS112 assignments.</li>
+<li>type <code>git clone &lt;paste-the-contents-of-the-link-you-copied&gt;</code></li>
+</ul></li>
+<li><code>cd</code> to the new directory containing your repo.</li>
+<li>type <code>code .</code> to start up Visual Studio Code in that directory.</li>
+<li>Inspect the code you got in the assignment.</li>
 </ul>
 </section>
-<section id="slides-videos-and-application-exercises" class="level2">
-<h2 class="anchored" data-anchor-id="slides-videos-and-application-exercises">Slides, videos, and application exercises</h2>
-<div class="slide-deck">
-<p><strong>Week 01: Slides</strong></p>
-<div class="slides">
-<p><a href="https://docs.google.com/presentation/d/1uux2sZHfW1BRzdjNmUDpt5TDD7hOEgbLBW-G7KJNNUc/edit?usp=sharing" target="_blank">Slides</a></p>
-</div>
-<!-- ::: source
-[Binary Exposed](https://integer.exposed/#0x0008){target="_blank"}
-::: -->
-<!-- ::: source
-[Code from Class](https://calvincollege-my.sharepoint.com/:f:/g/personal/vtn2_calvin_edu/Eredz2bHiShCtI0CVssiaggB8tUES6QbacEf2cc4PBhTgQ?e=uoV7Uu)
-::: -->
-<div class="reading">
+<section id="step-1.-function-practice-1" class="level2">
+<h2 class="anchored" data-anchor-id="step-1.-function-practice-1">Step 1. function practice, 1</h2>
+<p>In <strong>utils.h</strong>, create a function <strong>prototype</strong> called <code>constrain()</code> that has 3 parameters:</p>
 <ul>
-<li><a href="https://runestone.academy/runestone/books/published/cpp4python/index.html" target="_blank">Chapters 3 and 4</a></li>
+<li>value, a double</li>
+<li>low, a double</li>
+<li>high, a double</li>
 </ul>
+<p><code>constrain()</code> returns a <strong>double</strong>, which is the value constrained by low and high. I.e., if the value is greater than high then, return high. If it is less than low, return low. Else, return the value itself unchanged. Remember, in <strong>utils.h</strong> you are writing just the prototype.</p>
+<p>Now, in <strong>utils.cpp</strong>, implement the function.</p>
+<p>In <strong>tests.cpp</strong>, in the <code>TEST_CASE("step1")</code>, add more <code>REQUIRES()</code> function calls to test that your function is correct in all cases. We have provided one test there already.</p>
+<p>Compile using <code>make</code>. Then, run like this:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./tester</span> step1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>When you pass the test, <strong>Commit and Sync</strong> your code to github (use a Message like “step 1 done”) and check that the autograding test for step1 passes. (It should, as all it does is run <code>./tester step1</code>.) (Tests for the other steps will pass, because the test cases are currently empty.)</p>
+</section>
+<section id="step-2.-function-practice-2" class="level2">
+<h2 class="anchored" data-anchor-id="step-2.-function-practice-2">Step 2. function practice, 2</h2>
+<p>Now, make a second function in <strong>utils.h</strong> and <strong>utils.cpp</strong>, <code>constrain2()</code>, which is the same as <code>constrain()</code>, but has the default value of <span class="math inline">\(0.0\)</span> for the low parameter, and the default of <span class="math inline">\(100.0\)</span> for the high parameter. Uncomment the test case in step2 and then add more <code>REQUIRE</code> tests to make sure these default arguments work correctly.</p>
+<p>When you have your code completed (and perfectly indented!), compile and run:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./tester</span> step2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Commit and Sync</strong> your code to github.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-<!-- ::: video
-[Video](https://youtu.be/_YqEHZccujc)
-:::
--->
-</div>
-<!-- ## Lab -->
-<div class="lab">
-<p><strong>Lab 01: Control Structures</strong></p>
-<div class="instructions">
-<p><a href="./labs/lab01.html">Instructions</a></p>
-</div>
-<div class="starter">
-<p><a href="https://classroom.github.com/a/Aqowwp7J" target="_blank">Starter</a></p>
-</div>
-<div class="slides">
-<p><a href="" target="_blank">Dad Joke + Reflection</a></p>
-</div>
-</div>
-<!-- ## Homework assignments -->
-<div class="homework">
-<p><strong>Project 01: More Control Structures</strong></p>
-<div class="instructions">
-<p><a href="./projects/proj01.html">Instructions</a></p>
-</div>
-<!-- ::: source
-[Source](){target="_blank"}
-::: -->
-<div class="starter">
-<p><a href="https://classroom.github.com/a/_PwngVPD" target="_blank">Starter</a></p>
+<div class="callout-title-container flex-fill">
+Note
 </div>
 </div>
-<div class="exam">
-<p><strong>POGIL</strong></p>
+<div class="callout-body-container callout-body">
+<p>The autograding tests should now pass “step1” and “step2”. (Tests for the other steps will pass, because the test cases are currently empty.)</p>
+</div>
+</div>
+</section>
+<section id="step-3.-compute-prime-numbers" class="level2">
+<h2 class="anchored" data-anchor-id="step-3.-compute-prime-numbers">Step 3. Compute prime numbers</h2>
+<p>Write a function prototype <code>isPrime()</code> in the <strong>primes.h</strong> file. The function takes an <strong>unsigned integer</strong> and returns a <strong>boolean</strong>.</p>
+<p>For the implementation in the .cpp file, <code>isPrime()</code> returns <strong>true</strong> if the value is a prime number (and <strong>false</strong> otherwise). Here is the pseudo-code:</p>
+<pre><code>A prime number is a number that is evenly divisible by only itself and 1. That is,
+  for each integer "divisor" value from 2 through n / 2,
+    if you divide the number by that divisor, and the remainder is 0, 
+          that number is not prime -- return false.
+  if you get through all possible divisors, the number is prime: return true.</code></pre>
+<p>Note that 1 is not a prime (for some reason). 2 is the first prime. Your code may have to handle this case specially (my code does).</p>
+<p>Add code to the “step3” <code>TEST_CASE</code> in the <strong>tests.cpp</strong> file to test <code>isPrime()</code>.</p>
+<p>Make sure you test if 4 is a prime (it isn’t). Write other <code>REQUIRE()</code> calls to test other values.</p>
+<p>When you are satisfied that your code is complete, <strong>Commit and Sync</strong> it to github and check that the “step3” test succeeds.</p>
+</section>
+<section id="step-4.-collecting-prime-numbers" class="level2">
+<h2 class="anchored" data-anchor-id="step-4.-collecting-prime-numbers">Step 4. Collecting prime numbers</h2>
+<p>In your <strong>primes.h</strong> and <strong>primes.cpp</strong> files, create a function that:</p>
 <ul>
-<li><a href="https://docs.google.com/document/d/1myVaJT3i1hECM4BHs9LpbLz3a3heVPp6SJiEjoEvG_M/edit?tab=t.0#heading=h.im9274hm9wa0" target="_blank">Array Addressing</a> <!-- -   ([Answers](https://drive.google.com/file/d/1mn5yCzIJuURMiP3MOtO9amEQzUVAQCQZ/view?usp=sharing){target="_blank"}) --></li>
-<li><a href="https://docs.google.com/document/d/125hbFPo5PVcuGQ9pq4io23jns2kOEkfjo71S9WOkfjQ/edit" target="_blank">Parameter Passing</a> <!-- -   ([Answers](https://drive.google.com/file/d/1rPum6ihNwUKRJpZBSTQF8v7QKfOdog11/view?usp=drive_link){target="_blank"}) --></li>
+<li>is called <code>findNPrimes()</code> that returns <strong>void</strong></li>
+<li>takes as a parameter an array of <strong>unsigned</strong> called primes</li>
+<li>takes as a parameter an <strong>unsigned</strong> called size that is the size of the array</li>
+<li>computes the first size prime numbers, putting them into the array (of course, the code calls <code>isPrime()</code> to do the hard work)</li>
 </ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-<!-- ::: application-exercise
-**First dataviz**
-
-> **Option 1 - UN Votes**
->
-> ::: source
-> [Source](https://github.com/rstudio-education/datascience-box/tree/master/course-materials/application-exercises/ae-01a-un-votes/unvotes.qmd)
-> :::
->
-> ::: video
-> [Video](https://youtu.be/r-uTBEclM1E)
-> :::
-
-> **Option 2 - COVID-19**
->
-> ::: source
-> [Source](https://github.com/rstudio-education/datascience-box/blob/master/course-materials/application-exercises/ae-01b-covid/covid.qmd)
-> :::
-::: -->
-<!-- ::: guest-lecture
-**Alberto Cairo - How charts lie**
-
-::: video
-[Video](https://youtu.be/Low28hx4wyk)
-:::
-::: -->
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Note that this is a little tricky – if the size of the array is 100, do you loop up to 1000 to find the first 100 primes? Or 2000? You don’t know… So, use a while loop that keeps looping as long as the array is not full.</p>
+</div>
+</div>
+<p>In <strong>tests.cpp</strong> in the “step4” TEST_CASE, write code to define an array of a certain size, call the function, and then <code>REQUIRE</code> that various correct values are in the array at the correct indices. You might find it useful to know that the 100th prime is 541.</p>
+<p>When you are satisfied that your code is complete, <strong>Commit and Sync</strong> it to github and check that the “step4” test succeeds.</p>
+<p>At this point, all autograding tests should pass. You are done!</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+OPTIONAL:
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For fun, create an array of 100000 and fill it with primes. See how long it takes to compute and print out the last prime.</p>
+<p>You can get the exact run time by running your project this way:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">time</span> ./tester <span class="st">"step4"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</section>
+<section id="grading-rubric" class="level2">
+<h2 class="anchored" data-anchor-id="grading-rubric">Grading Rubric</h2>
+<p>This project is worth 20 pts:</p>
+<ul>
+<li>3 points for each of steps 1 and 2 (6 pts total)</li>
+<li>2 pts for correctness</li>
+<li>1 pt for thorough tests</li>
+<li>5 points for step 3</li>
+<li>6 points for step 4</li>
+<li>3 pts for code beauty and hospitality.</li>
+</ul>
+<p>Here are some ways students lost points in the past:</p>
+<ul>
+<li>-6: Missing step 4</li>
+<li>-1: poor indentation</li>
+<li>-1: low and high are supposed to be parameters</li>
+<li>-3: Missing step 2</li>
+<li>-1: tests in step1 are insufficient.</li>
+<li>-1: tests in step2 do not test all cases.</li>
+</ul>
 
 
 </section>
@@ -929,18 +949,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="./week00.html" class="pagination-link" aria-label="Week 00: Intro do C++">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Week 00: Intro do C++</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="./week02.html" class="pagination-link" aria-label="Week 02: File Input/Output, Exception Handling, Two-dimensional Arrays">
-        <span class="nav-page-text">Week 02: File Input/Output, Exception Handling, Two-dimensional Arrays</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -949,7 +957,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ericaraujophd/24fa-cs112/edit/main/week01.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/24fa-cs112/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ericaraujophd/24fa-cs112/edit/main/projects/proj01.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/24fa-cs112/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
