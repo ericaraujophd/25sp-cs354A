@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Week 02: File Input/Output, Exception Handling, Two-dimensional Arrays – CS112 - Data Structures</title>
+<title>Project 02: Falling Sand Simulator – CS112 - Data Structures</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,30 +20,62 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./weekly-activities/week03.html" rel="next">
-<link href="./week01.html" rel="prev">
-<link href="././images/cs112-logo.png" rel="icon" type="image/png">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href=".././images/cs112-logo.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -74,10 +106,11 @@ ul.task-list li input[type="checkbox"] {
 <script src="https://kit.fontawesome.com/78ddb093ea.js" crossorigin="anonymous"></script>
 
 
-<meta property="og:title" content="Week 02: File Input/Output, Exception Handling, Two-dimensional Arrays – CS112 - Data Structures">
+<link rel="stylesheet" href="../projects/proj-styles.css">
+<meta property="og:title" content="Project 02: Falling Sand Simulator – CS112 - Data Structures">
 <meta property="og:description" content="CS112 will teach students to use C++ for creating data structures.">
 <meta property="og:site_name" content="CS112 - Data Structures">
-<meta name="twitter:title" content="Week 02: File Input/Output, Exception Handling, Two-dimensional Arrays – CS112 - Data Structures">
+<meta name="twitter:title" content="Project 02: Falling Sand Simulator – CS112 - Data Structures">
 <meta name="twitter:description" content="CS112 will teach students to use C++ for creating data structures.">
 <meta name="twitter:image" content="https://ericaraujo.com/24fa-cs112/images/twitter-card.png">
 <meta name="twitter:creator" content="@ericfaraujo">
@@ -86,15 +119,15 @@ ul.task-list li input[type="checkbox"] {
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
-<body class="nav-sidebar floating nav-fixed">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./images/cs112-logo.png" alt="" class="navbar-logo">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../images/cs112-logo.png" alt="" class="navbar-logo">
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -104,19 +137,19 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
+    <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Overview</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./instructors.html"> 
+    <a class="nav-link" href="../instructors.html"> 
 <span class="menu-text">Instructors</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./policies.html"> 
+    <a class="nav-link" href="../policies.html"> 
 <span class="menu-text">Course Policies</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./content.html" aria-current="page"> 
+    <a class="nav-link" href="../content.html"> 
 <span class="menu-text">Content</span></a>
   </li>  
 </ul>
@@ -133,122 +166,31 @@ ul.task-list li input[type="checkbox"] {
 </div>
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./week02.html">Week 02: File Input/Output, Exception Handling, Two-dimensional Arrays</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-    </div>
-  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./content.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Course content</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week00.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 00: Intro do C++</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week01.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 01: Control Structures, Functions, Parameter Passing modes</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week02.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Week 02: File Input/Output, Exception Handling, Two-dimensional Arrays</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./weekly-activities/week03.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 3: Classes, Operator Overloading, etc.</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./weekly-activities/week04.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 4: Vectors – dynamic arrays</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./weekly-activities/week05.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 5: Generic Containers</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week08.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 8: Advising days</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week09.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 9: Recursion</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week10.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 10: BSTs</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week11.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 11: AVL Trees</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week12.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 12: STL set and map containers</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week13.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 13: Hash Tables and Sorting Algorithms</span></a>
-  </div>
-</li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#slos-for-week-02" id="toc-slos-for-week-02" class="nav-link active" data-scroll-target="#slos-for-week-02">SLOs for Week 02</a></li>
-  <li><a href="#slides-videos-and-application-exercises" id="toc-slides-videos-and-application-exercises" class="nav-link" data-scroll-target="#slides-videos-and-application-exercises">Slides, videos, and application exercises</a></li>
+  <li><a href="#step-0.-prepare" id="toc-step-0.-prepare" class="nav-link active" data-scroll-target="#step-0.-prepare">Step 0. Prepare</a></li>
+  <li><a href="#step-0.1.-setting-up-your-bridges-account" id="toc-step-0.1.-setting-up-your-bridges-account" class="nav-link" data-scroll-target="#step-0.1.-setting-up-your-bridges-account">Step 0.1. Setting Up Your Bridges Account</a></li>
+  <li><a href="#step-0.2.-instructions" id="toc-step-0.2.-instructions" class="nav-link" data-scroll-target="#step-0.2.-instructions">Step 0.2. Instructions</a></li>
+  <li><a href="#step-1.-what-you-need-to-do" id="toc-step-1.-what-you-need-to-do" class="nav-link" data-scroll-target="#step-1.-what-you-need-to-do">Step 1. What you need to do</a></li>
+  <li><a href="#submit" id="toc-submit" class="nav-link" data-scroll-target="#submit">Submit</a></li>
+  <li><a href="#grading-rubric" id="toc-grading-rubric" class="nav-link" data-scroll-target="#grading-rubric">Grading Rubric</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/ericaraujophd/24fa-cs112/edit/main/week02.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/24fa-cs112/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/ericaraujophd/24fa-cs112/edit/main/projects/proj02.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/24fa-cs112/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Week 02: File Input/Output, Exception Handling, Two-dimensional Arrays</h1>
+<h1 class="title">Project 02: Falling Sand Simulator</h1>
 </div>
 
 
@@ -265,97 +207,110 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="slos-for-week-02" class="level2">
-<h2 class="anchored" data-anchor-id="slos-for-week-02">SLOs for Week 02</h2>
-<p>At the end of this unit, students will be able to…</p>
+<center>
+<figure class="figure">
+<p><img src="../images/projects/proj02-header.png" alt="Falling AI Sand." width="500" class="figure-img"></p>
+<figcaption>
+Falling AI Sand.
+</figcaption>
+</figure>
+</center>
+<section id="step-0.-prepare" class="level2">
+<h2 class="anchored" data-anchor-id="step-0.-prepare">Step 0. Prepare</h2>
 <ul>
-<li>open, read from, write to, and close files.</li>
-<li>detect end-of-file conditions.</li>
-<li>properly use try, catch, and throw in C++ code.</li>
-<li>define two-dimensional arrays, iterate over them, and manipulate them.</li>
+<li>Click <a href="" target="_blank">the link</a> and then “Accept this assignment”.</li>
+<li>Wait a few seconds and refresh the page. Refresh until the page says “You’re ready to go!”. The page has a link to a github repo.</li>
+<li>Click the link to see your new repo on github.com.</li>
+<li>Click the green <span style="color:green;"><strong>Code</strong></span> button and copy the SSH link it shows.</li>
+<li>In a terminal,
+<ul>
+<li><code>cd</code> to the directory where you are putting all your CS112 assignments.</li>
+<li>type <code>git clone &lt;paste-the-contents-of-the-link-you-copied&gt;</code></li>
+</ul></li>
+<li><code>cd</code> to the new directory containing your repo.</li>
+<li>type <code>code .</code> to start up Visual Studio Code in that directory.</li>
+<li>Inspect the code you got in the assignment.</li>
+<li>In the terminal, type <code>make</code></li>
+<li>The code should compile and give you an executable called <strong>FallingSand</strong>.</li>
+<li>Run the program: type</li>
 </ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./FallingSand</span> <span class="op">&lt;</span>YourBridgesName<span class="op">&gt;</span> <span class="op">&lt;</span>YourBridgesId<span class="op">&gt;</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="slides-videos-and-application-exercises" class="level2">
-<h2 class="anchored" data-anchor-id="slides-videos-and-application-exercises">Slides, videos, and application exercises</h2>
-<div class="slide-deck">
-<p><strong>Week 02: Slides</strong></p>
-<div class="slides">
-<p><a href="https://docs.google.com/presentation/d/139fGoEzMcGycckESU3UlmyPdpwa0e93m95YBBCK-IWw/edit?usp=sharing" target="_blank">Slides</a></p>
+<section id="step-0.1.-setting-up-your-bridges-account" class="level2">
+<h2 class="anchored" data-anchor-id="step-0.1.-setting-up-your-bridges-account">Step 0.1. Setting Up Your Bridges Account</h2>
+<p>You will need to make yourself a <a href="http://bridges-cs.herokuapp.com/signup" target="_blank">Bridges Account here</a>.</p>
+<p>Please use your Calvin information, and do fill in the optional fields correctly. Use “CS 112” as the Course number.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-<!-- ::: source
-[Binary Exposed](https://integer.exposed/#0x0008){target="_blank"}
-::: -->
-<div class="source">
-<p><a href="https://calvincollege-my.sharepoint.com/:f:/g/personal/vtn2_calvin_edu/Eo1D4OQEyclJux96KZoZlVIBY4ktPhJFxY8nFxSsuSJw9g?e=k2OPt9">Code from Class</a></p>
+<div class="callout-title-container flex-fill">
+Warning
 </div>
-<div class="reading">
+</div>
+<div class="callout-body-container callout-body">
+<p><span style="color:red;"><strong>NOTE NOTE NOTE:</strong></span> you will not be able to build your program on your own machine unless you <a href="https://bridgesuncc.github.io/bridges_setup.html" target="_blank">download and install the Bridges libraries</a> and include (header) files correctly. <strong>DO NOT</strong> ask Prof.&nbsp;Norman or Prof.&nbsp;Araújo to help you do that. Instead, just use the machines in the lab!</p>
+</div>
+</div>
+<p>To get your username and id, login to the bridges project, and go to the <strong>Profile</strong> page where you will see your “User Name” and “API Sha1 Key”. That second thing is your unique id.</p>
+</section>
+<section id="step-0.2.-instructions" class="level2">
+<h2 class="anchored" data-anchor-id="step-0.2.-instructions">Step 0.2. Instructions</h2>
+<p>In this simulation, you can move your cursor around a two-dimensional “board” and create or delete one of 3 different “elements” – a square of sand, a drop of water, or a block of metal. Here is what happens when each element is created:</p>
 <ul>
-<li><a href="https://runestone.academy/runestone/books/published/cpp4python/index.html" target="_blank">Chapters 6 and 7</a></li>
+<li><strong>Metal:</strong> it sticks to the board where you place it.</li>
+<li><strong>Sand:</strong> it falls down the board, stacking up on Metal or other Sand, or on the bottom. If Sand encounters water below it, the two switch places, so that it seems the sand is falling through the water.</li>
+<li><strong>Water:</strong> it falls down the board and fills in any “cups” created by Metal or Sand, or resting on the bottom. If it encounters Metal, Sand, or Water below it, and there is nothing to the left or right of it, it moves sideways left or right, randomly. This makes the water flow around obstacles.</li>
 </ul>
+<p><img src="../images/projects/proj02-falling-sand.png" class="img-fluid"></p>
+<p>In the image above you can see how <strong>Sand</strong> stacks on top of <strong>Sand</strong> and <strong>Metal</strong>. The <strong>Water</strong> will fill in any area that is a “cup”. If one were to move the <strong>Cursor</strong> (the 6-point star) over above the <strong>Water</strong> that is in the cup in the middle and drop a <strong>Sand</strong>, it would slide down the board, falling through the <strong>Water</strong>, leaving a <strong>Water</strong> up above the level of the <strong>Sand</strong>. The <strong>Water</strong> would then randomly move back and forth until falling down to the bottom.</p>
+<p>The user interface for the “game” is a little strange, IMO. You use arrow keys to move the cursor around – this should all work. Then, you choose W, A, S, or D to choose whether you are in Water mode, Metal mode, Sand mode, or Delete mode. When you hit the <strong>space bar</strong>, a Water, Metal, or Sand is created, or whatever the cursor on is deleted, if in Delete mode.</p>
+<p>Note that if you move the <strong>Cursor</strong> on top of a <strong>Metal</strong> and go into <strong>Sand</strong> mode, you can replace a metal with a sand – a little strange, but don’t worry about that – it isn’t a bug.</p>
+</section>
+<section id="step-1.-what-you-need-to-do" class="level2">
+<h2 class="anchored" data-anchor-id="step-1.-what-you-need-to-do">Step 1. What you need to do</h2>
+<p>Look at the code in the file <strong>FallingSand.cpp</strong> and search for the word <strong>TODO</strong>. You need to follow the instructions and implement code below each <strong>TODO</strong> comment. There are <strong>5 places</strong> where you have to implement the code.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-<!-- ::: video
-[Video](https://youtu.be/_YqEHZccujc)
-:::
--->
-</div>
-<!-- ## Lab -->
-<div class="lab">
-<p><strong>Lab 02: File I/O, Control Structures, and the Debugger</strong></p>
-<div class="instructions">
-<p><a href="./labs/lab02.html">Instructions</a></p>
-</div>
-<div class="starter">
-<p><a href="" target="_blank">Source</a></p>
-</div>
-<div class="slides">
-<p><a href="" target="_blank">Dad Joke + Reflection</a></p>
+<div class="callout-title-container flex-fill">
+STRONG HINT
 </div>
 </div>
-<!-- ## Homework assignments -->
-<div class="homework">
-<p><strong>Project 02: Falling Sand Simulator</strong></p>
-<div class="instructions">
-<p><a href="./projects/proj02.html">Instructions</a></p>
-</div>
-<!-- ::: source
-[Source](){target="_blank"}
-::: -->
-<div class="starter">
-<p><a href="" target="_blank">Starter</a></p>
+<div class="callout-body-container callout-body">
+<p>Implement one TODO, and then see if you can compile, run, and connect to the online server. If you can and what you implemented seems correct, then repeat these steps. <strong>Do NOT implement too much</strong> before trying your code with the online server. If you do that and something is wrong, you don’t know where the problem is.</p>
 </div>
 </div>
-<!-- ::: exam
-**POGIL**
-
--   [Array Addressing](https://docs.google.com/document/d/1myVaJT3i1hECM4BHs9LpbLz3a3heVPp6SJiEjoEvG_M/edit?tab=t.0#heading=h.im9274hm9wa0){target="_blank"} ([Answers](https://drive.google.com/file/d/1mn5yCzIJuURMiP3MOtO9amEQzUVAQCQZ/view?usp=sharing){target="_blank"})
--   [Parameter Passing](https://docs.google.com/document/d/125hbFPo5PVcuGQ9pq4io23jns2kOEkfjo71S9WOkfjQ/edit){target="_blank"} ([Answers](https://drive.google.com/file/d/1rPum6ihNwUKRJpZBSTQF8v7QKfOdog11/view?usp=drive_link){target="_blank"})
-::: -->
-<!-- ::: application-exercise
-**First dataviz**
-
-> **Option 1 - UN Votes**
->
-> ::: source
-> [Source](https://github.com/rstudio-education/datascience-box/tree/master/course-materials/application-exercises/ae-01a-un-votes/unvotes.qmd)
-> :::
->
-> ::: video
-> [Video](https://youtu.be/r-uTBEclM1E)
-> :::
-
-> **Option 2 - COVID-19**
->
-> ::: source
-> [Source](https://github.com/rstudio-education/datascience-box/blob/master/course-materials/application-exercises/ae-01b-covid/covid.qmd)
-> :::
-::: -->
-<!-- ::: guest-lecture
-**Alberto Cairo - How charts lie**
-
-::: video
-[Video](https://youtu.be/Low28hx4wyk)
-:::
-::: -->
+<p>In each place, you’ll get practice with looping over a 2-dimensional grid, using the switch statement, using many if statements, and calling functions from the Bridges API. For those API calls, there are other examples in the code already which you should refer to.</p>
+</section>
+<section id="submit" class="level2">
+<h2 class="anchored" data-anchor-id="submit">Submit</h2>
+<p>In VS Code, click on the Source Control icon on the upper left and type in a commit message, then click the checkmark icon to submit your code. Go through the various pop-up boxes to commit and sync your changes to your repo.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Verify you have synced your code to github by going to your online repo webpage and looking to see that the files are correct.</p>
+</div>
+</div>
+</section>
+<section id="grading-rubric" class="level2">
+<h2 class="anchored" data-anchor-id="grading-rubric">Grading Rubric</h2>
+<p>This project is worth 20 pts:</p>
+<ul>
+<li>15 points for generating a correct Falling Sand Simulator.</li>
+<li>5 points for clean, neat, well-indented code, with good variable names, etc.</li>
+<li>The project is due at midnight next Monday. You will receive a 10% per day penalty for lateness.</li>
+</ul>
 
 
 </section>
@@ -925,18 +880,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="./week01.html" class="pagination-link" aria-label="Week 01: Control Structures, Functions, Parameter Passing modes">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Week 01: Control Structures, Functions, Parameter Passing modes</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="./weekly-activities/week03.html" class="pagination-link" aria-label="Week 3: Classes, Operator Overloading, etc.">
-        <span class="nav-page-text">Week 3: Classes, Operator Overloading, etc.</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -945,7 +888,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ericaraujophd/24fa-cs112/edit/main/week02.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/24fa-cs112/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ericaraujophd/24fa-cs112/edit/main/projects/proj02.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/24fa-cs112/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">

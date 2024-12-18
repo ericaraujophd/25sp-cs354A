@@ -9,16 +9,15 @@ format:
 
 The stub of `BST::contains()` should look like this:
 
-```cpp
+``` cpp
 bool BST::contains(const Item& item) const {
 }
 ```
 
 The `BST::contains()` method should distinguish between the two cases:
 
-+ If the BST is empty: return **false**.
-+ Otherwise: "pass the buck" by returning whatever `myRoot->contains(item)` returns.
-
+-   If the BST is empty: return **false**.
+-   Otherwise: "pass the buck" by returning whatever `myRoot->contains(item)` returns.
 
 ## Designing Node::contains()
 
@@ -26,34 +25,33 @@ Since a Node is recursively defined, we might define `Node::contains(item)` recu
 
 **Basis**. There are <u>three</u> trivial cases:
 
-* If `item` is equal to `myItem`:
-  * Return **true**.
-* If `item` belongs in my left subtree and my left subtree is empty:
-  * Return **false**.
-* If `item` belongs in my right subtree and my right subtree is empty:
-  * Return **false**.
+-   If `item` is equal to `myItem`:
+    -   Return **true**.
+-   If `item` belongs in my left subtree and my left subtree is empty:
+    -   Return **false**.
+-   If `item` belongs in my right subtree and my right subtree is empty:
+    -   Return **false**.
 
 **Induction Step**. There are two cases:
 
-* If `item` belongs in my left subtree and my left subtree is not empty:
-  * "Pass the buck" to the node in my left subtree and return whatever it returns.
-* If `item` belongs in my right subtree and my right subtree is not empty:
-  * "Pass the buck" to the node in my right subtree and return whatever it returns.
-
+-   If `item` belongs in my left subtree and my left subtree is not empty:
+    -   "Pass the buck" to the node in my left subtree and return whatever it returns.
+-   If `item` belongs in my right subtree and my right subtree is not empty:
+    -   "Pass the buck" to the node in my right subtree and return whatever it returns.
 
 ## Defining Node::contains()
 
 These observations can be reorganized into the following algorithm for our `Node::contains(item)` method:
 
-1. If `item` is less than `myItem`:
-   1. If `myLeft` is `nullptr`:
-      1. Return **false**.
-   2. Otherwise:
-      1. "Pass the buck" by returning whatever `myLeft->contains(item)` returns.
-2. Otherwise, if `item` is greater than `myItem`:
-   1. If `myRight` is `nullptr`:
-      1. Return **false**.
-   2. Otherwise:
-      1. "Pass the buck" by returning whatever `myRight->contains(item)` returns.
-3. Otherwise (`item` is equal to `myItem`):
-   1. Return true.
+1.  If `item` is less than `myItem`:
+    1.  If `myLeft` is `nullptr`:
+        1.  Return **false**.
+    2.  Otherwise:
+        1.  "Pass the buck" by returning whatever `myLeft->contains(item)` returns.
+2.  Otherwise, if `item` is greater than `myItem`:
+    1.  If `myRight` is `nullptr`:
+        1.  Return **false**.
+    2.  Otherwise:
+        1.  "Pass the buck" by returning whatever `myRight->contains(item)` returns.
+3.  Otherwise (`item` is equal to `myItem`):
+    1.  Return true.
