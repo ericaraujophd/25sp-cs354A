@@ -7,9 +7,9 @@ format:
 
 <center><figure>
 
-<img src="/images/labs/lab01/darthvader.gif" alt="May the force be with you." width="450"/>
+<img src="/images/labs/lab01/header.gif" alt="Beware of the bugs!" width="450"/>
 
-<figcaption>May the force be with you.</figcaption>
+<figcaption>Beware of the bugs!</figcaption>
 
 </figure></center>
 
