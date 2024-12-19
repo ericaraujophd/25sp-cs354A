@@ -72,7 +72,8 @@ website:
         - href: week03.qmd
         - href: week04.qmd
         - href: week05.qmd
-        # - href: weekly-activities/week06.qmd
+        - href: week06.qmd
+        - href: week07.qmd
         - href: week08.qmd
         - href: week09.qmd
         - href: week10.qmd
