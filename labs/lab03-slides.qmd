@@ -25,21 +25,20 @@ format:
                 header: "<div class='menubar'><a href='../week03.html'>back</a><ul class='menu'></ul></div>"
 revealjs-plugins:
     - simplemenu
-
 ---
 
-## Lab 3  
+## Lab 3
 
-- creating a Student class
-- pair programming (**change your pairs!**)
+-   creating a Student class
+-   pair programming (**change your pairs!**)
 
----
- 
+------------------------------------------------------------------------
+
 ## Dad joke of the week {background-image="https://blog.kialo-edu.com/wp-content/uploads/sites/3/2023/09/argumentcoverscaled.png" background-size="400px"}
-::: {.incremental}
-- Q: Why did the functions stop calling each other?
-- A: Because they had constant arguments.
+
+::: incremental
+-   Q: Why did the functions stop calling each other?
+-   A: Because they had constant arguments.
 :::
 
---- 
-
+------------------------------------------------------------------------

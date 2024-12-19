@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Lab 5: Generic Containers (Templates) – CS112 - Data Structures</title>
+<title>Lab 05: Generic Containers (Templates) – CS112 - Data Structures</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -57,25 +57,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../../">
-<link href="../../.././images/cs112-logo.png" rel="icon" type="image/png">
-<script src="../../../site_libs/quarto-html/quarto.js"></script>
-<script src="../../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href=".././images/cs112-logo.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -106,11 +106,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="https://kit.fontawesome.com/78ddb093ea.js" crossorigin="anonymous"></script>
 
 
-<link rel="stylesheet" href="../lab-styles.css">
-<meta property="og:title" content="Lab 5: Generic Containers (Templates) – CS112 - Data Structures">
+<link rel="stylesheet" href="../labs/lab-styles.css">
+<meta property="og:title" content="Lab 05: Generic Containers (Templates) – CS112 - Data Structures">
 <meta property="og:description" content="CS112 will teach students to use C++ for creating data structures.">
 <meta property="og:site_name" content="CS112 - Data Structures">
-<meta name="twitter:title" content="Lab 5: Generic Containers (Templates) – CS112 - Data Structures">
+<meta name="twitter:title" content="Lab 05: Generic Containers (Templates) – CS112 - Data Structures">
 <meta name="twitter:description" content="CS112 will teach students to use C++ for creating data structures.">
 <meta name="twitter:image" content="https://ericaraujo.com/24fa-cs112/images/twitter-card.png">
 <meta name="twitter:creator" content="@ericfaraujo">
@@ -126,8 +126,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../../../images/cs112-logo.png" alt="" class="navbar-logo">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../images/cs112-logo.png" alt="" class="navbar-logo">
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -137,19 +137,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../../index.html"> 
+    <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Overview</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../instructors.html"> 
+    <a class="nav-link" href="../instructors.html"> 
 <span class="menu-text">Instructors</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../policies.html"> 
+    <a class="nav-link" href="../policies.html"> 
 <span class="menu-text">Course Policies</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../content.html"> 
+    <a class="nav-link" href="../content.html"> 
 <span class="menu-text">Content</span></a>
   </li>  
 </ul>
@@ -180,23 +180,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#set-up" id="toc-set-up" class="nav-link" data-scroll-target="#set-up">Set up</a></li>
   <li><a href="#part-i" id="toc-part-i" class="nav-link" data-scroll-target="#part-i">Part I</a>
   <ul class="collapse">
-  <li><a href="#converting-the-class-declaration" id="toc-converting-the-class-declaration" class="nav-link" data-scroll-target="#converting-the-class-declaration">1. Converting the Class Declaration</a></li>
-  <li><a href="#eliminating-the-implementation-file" id="toc-eliminating-the-implementation-file" class="nav-link" data-scroll-target="#eliminating-the-implementation-file">2. Eliminating the Implementation File</a></li>
-  <li><a href="#converting-the-class-methods-to-method-templates" id="toc-converting-the-class-methods-to-method-templates" class="nav-link" data-scroll-target="#converting-the-class-methods-to-method-templates">3. Converting the Class-Methods to method-templates</a></li>
-  <li><a href="#discussion" id="toc-discussion" class="nav-link" data-scroll-target="#discussion">Discussion</a></li>
+  <li><a href="#step-1.-converting-the-class-declaration" id="toc-step-1.-converting-the-class-declaration" class="nav-link" data-scroll-target="#step-1.-converting-the-class-declaration">Step 1. Converting the Class Declaration</a></li>
+  <li><a href="#step-2.-eliminating-the-implementation-file" id="toc-step-2.-eliminating-the-implementation-file" class="nav-link" data-scroll-target="#step-2.-eliminating-the-implementation-file">Step 2. Eliminating the Implementation File</a></li>
+  <li><a href="#step-3.-converting-the-class-methods-to-method-templates" id="toc-step-3.-converting-the-class-methods-to-method-templates" class="nav-link" data-scroll-target="#step-3.-converting-the-class-methods-to-method-templates">Step 3. Converting the Class-Methods to method-templates</a></li>
+  <li><a href="#discussion---part-i" id="toc-discussion---part-i" class="nav-link" data-scroll-target="#discussion---part-i">Discussion - Part I</a></li>
   </ul></li>
-  <li><a href="#part-ii.-add-support-for-python-like-indexing-to-pylist" id="toc-part-ii.-add-support-for-python-like-indexing-to-pylist" class="nav-link" data-scroll-target="#part-ii.-add-support-for-python-like-indexing-to-pylist">Part II. Add support for python-like indexing to PyList</a></li>
+  <li><a href="#part-ii.-add-support-for-python-like-indexing-to-pylist" id="toc-part-ii.-add-support-for-python-like-indexing-to-pylist" class="nav-link" data-scroll-target="#part-ii.-add-support-for-python-like-indexing-to-pylist">Part II. Add support for Python-like indexing to PyList</a></li>
   <li><a href="#submit" id="toc-submit" class="nav-link" data-scroll-target="#submit">Submit</a></li>
   <li><a href="#grading-rubric-24-pts-total" id="toc-grading-rubric-24-pts-total" class="nav-link" data-scroll-target="#grading-rubric-24-pts-total">Grading Rubric: 24 pts total</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/ericaraujophd/24fa-cs112/edit/main/weekly-activities/labs/lab-05/lab05.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/24fa-cs112/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/ericaraujophd/24fa-cs112/edit/main/labs/lab05.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/24fa-cs112/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Lab 5: Generic Containers (Templates)</h1>
+<h1 class="title">Lab 05: Generic Containers (Templates)</h1>
 </div>
 
 
@@ -220,10 +220,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Learn about generic containers.</li>
 <li>Convert a container class into a class template.</li>
 </ol>
-<!-- ![A student created by AI](imgs/student-cover.jpeg "A cartoon style image of a computer science student wearing a T-shirt with a binary code pattern") -->
 <center>
 <figure class="figure">
-<p><img src="imgs/dalle-datastructure.jpeg" alt="A surreal scene of a data structure visually represented by the beach, specifically a vector. The vector is made of sand or driftwood, extending in a straight line across the beach, symbolizing a one-dimensional array. The nodes or elements of the vector are placed evenly along the shore, with the ocean waves gently lapping at the base of the structure. The sky is clear and bright, with sunlight reflecting off the water. The overall vibe is peaceful, blending the abstract logic of programming with the tranquility of a seaside environment. (created by AI)" width="400" class="figure-img"></p>
+<p><img src="../images/labs/lab05/lab05-header.jpeg" alt="A surreal scene of a data structure visually represented by the beach, specifically a vector. The vector is made of sand or driftwood, extending in a straight line across the beach, symbolizing a one-dimensional array. The nodes or elements of the vector are placed evenly along the shore, with the ocean waves gently lapping at the base of the structure. The sky is clear and bright, with sunlight reflecting off the water. The overall vibe is peaceful, blending the abstract logic of programming with the tranquility of a seaside environment. (created by AI)" width="400" class="figure-img"></p>
 <figcaption>
 Prompt: A surreal scene of a data structure visually represented by the beach, specifically a vector. The vector is made of sand or driftwood, extending in a straight line across the beach, symbolizing a one-dimensional array. The nodes or elements of the vector are placed evenly along the shore, with the ocean waves gently lapping at the base of the structure. The sky is clear and bright, with sunlight reflecting off the water. The overall vibe is peaceful, blending the abstract logic of programming with the tranquility of a seaside environment.
 </figcaption>
@@ -233,10 +232,10 @@ Prompt: A surreal scene of a data structure visually represented by the beach, s
 <section id="set-up" class="level2">
 <h2 class="anchored" data-anchor-id="set-up">Set up</h2>
 <ul>
-<li>Click <a href="https://classroom.github.com/a/_TFPzkme">this link</a> and then “Accept this assignment”.</li>
+<li>Click <a href="" target="_blank">this link</a> and then “Accept this assignment”.</li>
 <li>Wait a few seconds and refresh the page. Refresh until the page says “You’re ready to go!”. The page has a link to a github repo.</li>
 <li>Click the link to see your new repo on github.com.</li>
-<li>Click the green Code button and copy the SSH link it shows.</li>
+<li>Click the green <span style="color:green"><strong>Code</strong></span> button and copy the SSH link it shows.</li>
 <li>In a terminal,
 <ul>
 <li><code>cd</code> to the directory where you are putting all your CS112 assignments.</li>
@@ -245,7 +244,7 @@ Prompt: A surreal scene of a data structure visually represented by the beach, s
 <li><code>cd</code> to the new directory containing your repo.</li>
 <li>type <code>code .</code> to start up Visual Studio Code in that directory.</li>
 <li>Inspect the code you got in the assignment.</li>
-<li><strong>Edit <code>README.md</code> and put your name and your programming partner’s name in the file.</strong> <!-- - You might at this time also share the repo in github.com with the partner. --></li>
+<li><strong>Make sure you and your partner are in the same Team. Edit <code>README.md</code> and put your name and your programming partner’s name in the file.</strong> <!-- - You might at this time also share the repo in github.com with the partner. --></li>
 </ul>
 </section>
 <section id="part-i" class="level2">
@@ -257,7 +256,7 @@ Prompt: A surreal scene of a data structure visually represented by the beach, s
 <p>recompile, and our Vec would be a vector of integers!</p>
 <p>This approach works fine for simple problems where all of the vectors store the same types of values. However suppose you need vectors of both integer and real items (or some other type of item) in the same program? In this situation, the typedef approach cannot help us – we need a different approach.</p>
 <p>Part I of today’s exercise is to convert our Vec class into a <strong>generic container</strong> – a container capable of storing any type of item. To do so in C++, we convert the Vec class into a <strong>class template</strong>. Because we have used the typedef-Item approach to define our Vec class, this conversion is fairly simple.</p>
-<p>The tests in the provided <code>tests.cpp</code> have <strong>not</strong> been revised to use a <strong>Vec template</strong>. You will be changing <code>Vec.h</code>, <code>Vec.cpp</code>, and <code>tests.cpp</code> in today’s exercise.</p>
+<p>The tests in the provided <strong>tests.cpp</strong> have <strong>not</strong> been revised to use a <strong>Vec template</strong>. You will be changing <strong>Vec.h</strong>, <strong>Vec.cpp</strong>, and <strong>tests.cpp</strong> in today’s exercise.</p>
 <p>As its name suggests, a <strong>class template</strong> is a plan or blueprint from which the compiler can build a class. Once we have converted our Vec class into a <code>Vec&lt;Item&gt;</code> template, a user of the class will be able to write:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>Vec<span class="op">&lt;</span><span class="dt">int</span><span class="op">&gt;</span> v1<span class="op">;</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>Vec<span class="op">&lt;</span><span class="dt">double</span><span class="op">&gt;</span> v2<span class="op">;</span></span>
@@ -270,9 +269,9 @@ Prompt: A surreal scene of a data structure visually represented by the beach, s
 </ol>
 <p>The compiler will use these behind-the-scenes classes as the types of <code>v1</code>, <code>v2</code>, and <code>v3</code>. For every declaration in which we pass a new type into the template, the compiler will build a new class, and then use that class as the declaration’s type.</p>
 <p>With that as our introduction, let’s get on with turning our Vec class into a <code>Vec&lt;Item&gt;</code> class template.</p>
-<section id="converting-the-class-declaration" class="level3">
-<h3 class="anchored" data-anchor-id="converting-the-class-declaration">1. Converting the Class Declaration</h3>
-<p>The first step in converting a class into a class template is to delete the typedef declaration we used previously – so remove the line defining <code>Item</code> as a double. In its place, we place the phrase <code>template&lt;class Item&gt;</code> immediately before the class declaration:</p>
+<section id="step-1.-converting-the-class-declaration" class="level3">
+<h3 class="anchored" data-anchor-id="step-1.-converting-the-class-declaration">Step 1. Converting the Class Declaration</h3>
+<p>The first step in converting a class into a class template is to <strong>delete the typedef declaration</strong> we used previously – so remove the line defining <code>Item</code> as a double. In its place, we place the phrase <code>template&lt;class Item&gt;</code> immediately before the class declaration:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">template</span> <span class="op">&lt;</span><span class="kw">class</span> Item<span class="op">&gt;</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Vec <span class="op">{</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>       <span class="op">...</span></span>
@@ -281,18 +280,18 @@ Prompt: A surreal scene of a data structure visually represented by the beach, s
 <p>This revised declaration tells the C++ compiler that</p>
 <ol type="1">
 <li>What’s coming is a class template, not a class.</li>
-<li>This template has a single parameter, whose name is Item.</li>
+<li>This template has a single parameter, whose name is <code>Item</code>.</li>
 <li>The word class before <code>Item</code> indicates that <code>Item</code> represents a type, not a variable or object.</li>
 </ol>
 <p>It is worth mentioning that the name <code>Item</code> is an identifier we have chosen, since it is what we used for our typedef. The words template and class are C++ keywords, they cannot be changed.</p>
 <p>Once this declaration has been processed, the name of the template is <code>Vec&lt;Item&gt;</code>.</p>
 </section>
-<section id="eliminating-the-implementation-file" class="level3">
-<h3 class="anchored" data-anchor-id="eliminating-the-implementation-file">2. Eliminating the Implementation File</h3>
+<section id="step-2.-eliminating-the-implementation-file" class="level3">
+<h3 class="anchored" data-anchor-id="step-2.-eliminating-the-implementation-file">Step 2. Eliminating the Implementation File</h3>
 <p>Because the C++ compiler uses a template as a blueprint from which it builds a class, the compiler needs to be able to see the entire class – class declaration plus method definitions – when a program using the template is compiled. This means that the entire class template – template declaration plus method definitions – must appear in the header file, in order for a program that <code>#include</code>s the header file to compile, or linking errors will occur. So our next step is to select the method definitions in the implementation file, cut them, and paste them into the header file, between the template declaration and the <code>#endif</code>.</p>
-<p>In <code>Vec.cpp</code>, select all of the method definitions, cut them (Ctrl-X or Cmd-X) from the .cpp file. Switch to the <code>Vec.h</code>, move the cursor to a point between the end of the template declaration and the <code>#endif</code>, and paste them in (using Ctrl-v).</p>
-<p>If there are <code>#include</code> directives in the <code>Vec.cpp</code> file that are <strong>not</strong> in <code>Vec.h</code> (except for <code>Vec.h</code> itself), they will also need to be cut-and-pasted into <code>Vec.h</code>. (It is often necessary to cut-and-paste <code>#include &lt;iostream&gt;</code>.)</p>
-<p>Now that the method definitions have been moved from <code>Vec.cpp</code> to <code>Vec.h</code>, you should delete <code>Vec.cpp</code> from your project.</p>
+<p>In <strong>Vec.cpp</strong>, select all of the method definitions, cut them (Ctrl-X or Cmd-X) from the .cpp file. Switch to the <strong>Vec.h</strong>, move the cursor to a point between the end of the template declaration and the <code>#endif</code>, and paste them in (using Ctrl-v).</p>
+<p>If there are <code>#include</code> directives in the <strong>Vec.cpp</strong> file that are <strong>not</strong> in <strong>Vec.h</strong> (except for <strong>Vec.h</strong> itself), they will also need to be cut-and-pasted into <strong>Vec.h</strong>. (It is often necessary to cut-and-paste <code>#include &lt;iostream&gt;</code>.)</p>
+<p>Now that the method definitions have been moved from <strong>Vec.cpp</strong> to <strong>Vec.h</strong>, you should delete <strong>Vec.cpp</strong> from your project.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -303,25 +302,23 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Note that you will need to update your Makefile! Find the <code>Vec.cpp</code> reference in the SOURCES line and remove it.</p>
+<p>Note that you will need to update your <strong>Makefile</strong>! Find the <strong>Vec.cpp</strong> reference in the SOURCES line and <span style="color:red"><strong>remove</strong></span> it.</p>
 </div>
 </div>
 </section>
-<section id="converting-the-class-methods-to-method-templates" class="level3">
-<h3 class="anchored" data-anchor-id="converting-the-class-methods-to-method-templates">3. Converting the Class-Methods to method-templates</h3>
+<section id="step-3.-converting-the-class-methods-to-method-templates" class="level3">
+<h3 class="anchored" data-anchor-id="step-3.-converting-the-class-methods-to-method-templates">Step 3. Converting the Class-Methods to method-templates</h3>
 <p>We now have a class template, but our methods are still class methods. Our next step is to convert each class method into a template method. Test-driven development gives us a systematic, method-by-method means of doing this conversion, without getting overwhelmed by a zillion compiler errors.</p>
-<p>You should see the message indicating there are no tests if you <strong>comment out all of the Vec prototypes</strong>, and ****all of the method definitions you just pasted into the header file** and compile (<code>make tester</code>) and run your project(<code>./tester</code>). Just remember that your code was drastically changed, and might not function anymore if you don’t comment certain parts.</p>
+<p>You should see the message indicating there are no tests if you <strong>comment out all of the Vec prototypes</strong>, and <strong>all of the method definitions you just pasted into the header file</strong>. If you want to, and compile (<code>make tester</code>) and run your project(<code>./tester</code>). Just remember that your code was drastically changed, and might not function anymore if you don’t comment certain parts. <strong>You should see the message indicating there are no tests.</strong></p>
 <p>Our test-driven procedure will be to: (don’t do this yet – just read the steps below)</p>
 <ol type="1">
-<li>In <code>tests.cpp</code>, uncomment the <code>TEST_CASE</code>. Convert all uses of Vec to be <code>Vec&lt;sometype&gt;</code>. You may choose what type to put in between the &lt; and &gt;, but the type should be an integer type – int, unsigned, short, char, unsigned char, long, etc.</li>
-<li>In <code>Vec.h</code>, uncomment the corresponding method (i.e., its prototype within the class and its definition outside the class.)</li>
-<li>Convert the method’s definition into a method-template.</li>
-<li>Compile and run the tester.</li>
-<li>If any errors are reported, find and fix them;</li>
+<li><p>In <strong>tests.cpp</strong>, uncomment the <code>TEST_CASE</code>. Convert all uses of Vec to be <code>Vec&lt;sometype&gt;</code>. You may choose what type to put in between the <code>&lt;</code> and <code>&gt;</code>, but the type should be an integer type – int, unsigned, short, char, unsigned char, long, etc.</p></li>
+<li><p>In <strong>Vec.h</strong>, uncomment the corresponding method (i.e., its prototype within the class and its definition outside the class.)</p></li>
+<li><p>Convert the method’s definition into a method-template.</p></li>
+<li><p>Compile and run the tester.</p></li>
+<li><p>If any errors are reported, find and fix them;</p>
+<p>Otherwise, return to step 1.</p></li>
 </ol>
-<ul>
-<li>Otherwise, return to step 1.</li>
-</ul>
 <p>Converting a method definition (step 3) to a method-template is fairly simple:</p>
 <ol type="1">
 <li>Place <code>template &lt;class Item&gt;</code> before the beginning of the method’s definition.</li>
@@ -329,9 +326,9 @@ Note
 </ol>
 <p>So the rest of Part I is to use these steps to convert each of the Vec methods to method-templates.</p>
 <p>To illustrate this conversion process, let’s run through these steps using some of the Vec constructors.</p>
-<section id="a.-the-default-constructor." class="level4">
-<h4 class="anchored" data-anchor-id="a.-the-default-constructor.">3a. The Default Constructor.</h4>
-<p>In <code>tests.cpp</code>, uncomment the test that tests the default constructor and convert it to use <code>Vec&lt;sometype&gt;</code>. (Make sure to uncomment the matching curly brackets (}) at the end of the test case section.) Then switch to <code>Vec.h</code> and find the definition of the default constructor. We can perform step 1 by placing <code>template&lt;class Item&gt;</code> before the constructor definition:</p>
+<section id="step-3a.-the-default-constructor." class="level4">
+<h4 class="anchored" data-anchor-id="step-3a.-the-default-constructor.">Step 3a. The Default Constructor.</h4>
+<p>In <strong>tests.cpp</strong>, uncomment the test that tests the default constructor and convert it to use <code>Vec&lt;sometype&gt;</code>. (Make sure to uncomment the matching curly brackets (}) at the end of the test case section.) Then switch to <strong>Vec.h</strong> and find the definition of the default constructor. We can perform step 1 by placing <code>template&lt;class Item&gt;</code> before the constructor definition:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">template</span><span class="op">&lt;</span><span class="kw">class</span> Item<span class="op">&gt;</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>Vec<span class="op">::</span>Vec<span class="op">()</span> <span class="op">{</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="op">...</span></span>
@@ -358,18 +355,18 @@ Hint
 </div>
 <p>Congratulations! You have just converted your first class-method into a method-template!</p>
 </section>
-<section id="b.-the-explicit-value-constructor." class="level4">
-<h4 class="anchored" data-anchor-id="b.-the-explicit-value-constructor.">3b. The Explicit-Value Constructor.</h4>
+<section id="step-3b.-the-explicit-value-constructor." class="level4">
+<h4 class="anchored" data-anchor-id="step-3b.-the-explicit-value-constructor.">Step 3b. The Explicit-Value Constructor.</h4>
 <p>Using what we just did to the default constructor as a model, uncomment the explicit constructor’s test, fix the types, then convert the explicit constructor into a method-template. Compile and run your project. If errors occur, fix them. When it passes all tests continue.</p>
-<p>Note that within this constructor, the allocation of the dynamic array uses <code>Item</code>. Previously, this Item was determined by the typedef declaration; but now, Item refers to the name of our template’s parameter. If the user declares:</p>
+<p>Note that within this constructor, the allocation of the dynamic array uses <code>Item</code>. Previously, this <code>Item</code> was determined by the <code>typedef</code> declaration; but now, <code>Item</code> refers to the name of our template’s parameter. If the user declares:</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>Vec<span class="op">&lt;</span><span class="dt">double</span><span class="op">&gt;</span> v1<span class="op">;</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>Vec<span class="op">&lt;</span><span class="dt">int</span><span class="op">&gt;</span> v2<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>then in <code>v1</code>, all of the occurrences of Item will be replaced by double, while in <code>v2</code>, all the occurrences of Item will be replaced by int.</p>
+<p>then in <code>v1</code>, all of the occurrences of <code>Item</code> will be replaced by double, while in <code>v2</code>, all the occurrences of <code>Item</code> will be replaced by <strong>int</strong>.</p>
 <p>Congratulations! You’ve just done another method-to-method-template conversion!</p>
 </section>
-<section id="c.-the-copy-constructor." class="level4">
-<h4 class="anchored" data-anchor-id="c.-the-copy-constructor.">3c. The Copy Constructor.</h4>
-<p>Uncomment and fix the copy constructor’s test. In <code>Vec.h</code>, find the copy constructor’s definition. As before, we place <code>template&lt;class Item&gt;</code> before the definition, and replace each occurrence of the name of the class that is not the name of an operation with the name of the template:</p>
+<section id="step-3c.-the-copy-constructor." class="level4">
+<h4 class="anchored" data-anchor-id="step-3c.-the-copy-constructor.">Step 3c. The Copy Constructor.</h4>
+<p>Uncomment and fix the copy constructor’s test. In <strong>Vec.h</strong>, find the copy constructor’s definition. As before, we place <code>template&lt;class Item&gt;</code> before the definition, and replace each occurrence of the name of the class that is not the name of an operation with the name of the template:</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">template</span><span class="op">&lt;</span><span class="kw">class</span> Item<span class="op">&gt;</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>Vec<span class="op">&lt;</span>Item<span class="op">&gt;::</span>Vec<span class="op">(</span><span class="at">const</span> Vec<span class="op">&lt;</span>Item<span class="op">&gt;&amp;</span> original<span class="op">)</span> <span class="op">{</span></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="op">...</span></span>
@@ -377,12 +374,12 @@ Hint
 <p>Note that the type of any Vec parameter or local variable must be replaced by <code>Vec&lt;Item&gt;</code>. This is consistent with our “conversion rule” – any use of the name of the class that is not the name of an operation (i.e., a constructor or destructor) must be replaced.</p>
 <p>Compile and run your project. Continue when it passes all tests.</p>
 </section>
-<section id="d.-the-destructor." class="level4">
-<h4 class="anchored" data-anchor-id="d.-the-destructor.">3d. The Destructor.</h4>
+<section id="step-3d.-the-destructor." class="level4">
+<h4 class="anchored" data-anchor-id="step-3d.-the-destructor.">Step 3d. The Destructor.</h4>
 <p>If you have not already done so, convert the destructor to a method-template. Continue when your conversion passes all tests.</p>
 </section>
-<section id="e.-the-remaining-operations." class="level4">
-<h4 class="anchored" data-anchor-id="e.-the-remaining-operations.">3e. The Remaining Operations.</h4>
+<section id="step-3e.-the-remaining-operations." class="level4">
+<h4 class="anchored" data-anchor-id="step-3e.-the-remaining-operations.">Step 3e. The Remaining Operations.</h4>
 <p>Now that you know how to do the conversion, we can speed up this mechanical process a bit.</p>
 <p>At the destructor definition, comment out the line <code>template&lt;class Item&gt;</code>. Then copy the line <code>//template&lt;class Item&gt;</code>. With the remaining operations still commented out, use Ctrl-v to paste that line at the beginning of each of the remaining operations in the header file.</p>
 <p>Return to the destructor’s definition and uncomment the line <code>template&lt;class Item&gt;</code> in the destructor. Then copy the “phrase” <item>. With the remaining operations still commented out, paste this after each use of the name of the class that is not the name of an operation, throughout the rest of the header file.</item></p>
@@ -398,8 +395,8 @@ Hint
 <p>Congratulations! You have just built your first class template!</p>
 </section>
 </section>
-<section id="discussion" class="level3">
-<h3 class="anchored" data-anchor-id="discussion">Discussion</h3>
+<section id="discussion---part-i" class="level3">
+<h3 class="anchored" data-anchor-id="discussion---part-i">Discussion - Part I</h3>
 <p>As you can see, the C++ syntax to build class templates is a bit complicated, and it is quite easy to make syntax errors if you try to build a template container from the outset. For this reason, we recommend this 2-step approach to building containers:</p>
 <ol type="1">
 <li>Use the typedef-Item mechanism to build a container class and thoroughly test its operations.</li>
@@ -410,22 +407,22 @@ Hint
 </section>
 </section>
 <section id="part-ii.-add-support-for-python-like-indexing-to-pylist" class="level2">
-<h2 class="anchored" data-anchor-id="part-ii.-add-support-for-python-like-indexing-to-pylist">Part II. Add support for python-like indexing to PyList</h2>
-<p>Before proceeding, comment out all code in the <code>tests.cpp</code> file that runs the tests for Part I – including the <code>#include “Vec.h”</code> statement.</p>
+<h2 class="anchored" data-anchor-id="part-ii.-add-support-for-python-like-indexing-to-pylist">Part II. Add support for Python-like indexing to PyList</h2>
+<p>Before proceeding, comment out all code in the <strong>tests.cpp</strong> file that runs the tests for Part I – including the <code>#include “Vec.h”</code> statement.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-NOTE
+Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><strong>Make sure that <code>catch.hpp</code> stays included!</strong> And uncomment PyList testing code (i.e., toggle the comments that are there).</p>
+<p><strong>Make sure that <em>catch.hpp</em> stays included!</strong> And uncomment PyList testing code (i.e., toggle the comments that are there).</p>
 </div>
 </div>
-<p>The makefile is currently not compiling <code>PyList.cpp</code>, so you need to change it. Change the SOURCES line, adding <code>PyList.cpp</code>.</p>
+<p>The makefile is currently not compiling <strong>PyList.cpp</strong>, so you need to change it. Change the SOURCES line, adding <strong>PyList.cpp</strong>.</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -436,12 +433,12 @@ Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>If Vec.cpp is still there, it should be removed at this time.</p>
+<p>If <strong>Vec.cpp</strong> is still there, it should be removed at this time.</p>
 </div>
 </div>
-<p>Look at the <code>PyList.cpp</code> and <code>PyList.h</code> files.</p>
+<p>Look at the <strong>PyList.cpp</strong> and <strong>PyList.h</strong> files.</p>
 <p>Build and run. The execution should succeed, testing the existing PyList functionality.</p>
-<p>In Python, you can index a list using negative numbers. The last item in the list is at index -1, the second-to-last at -2, etc. The first item in the list, e.g., lst[0], is the same as lst[-10], if there are 10 items in the list. Here are some examples of how python behaves:</p>
+<p>In Python, you can index a list using negative numbers. The last item in the list is at index -1, the second-to-last at -2, etc. The first item in the list, e.g., <code>lst[0]</code>, is the same as <code>lst[-10]</code>, if there are 10 items in the list. Here are some examples of how python behaves:</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> lst <span class="op">=</span> <span class="bu">list</span>(<span class="bu">range</span>(<span class="dv">10</span>))</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> lst</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>[<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>]  <span class="co"># in this example, the values are the same as the indices</span></span>
@@ -459,7 +456,7 @@ Important
 <span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>Traceback (most recent call last):</span>
 <span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>  File <span class="st">"&lt;stdin&gt;"</span>, line <span class="dv">1</span>, <span class="kw">in</span> <span class="op">&lt;</span>module<span class="op">&gt;</span></span>
 <span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a><span class="pp">IndexError</span>: <span class="bu">list</span> index out of <span class="bu">range</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>In the <code>tests.cpp</code> file, there are already tests for this feature, but they are still commented out. Uncomment them, and run the test. You’ll see failures. In fact, you might see a Segmentation Fault.</p>
+<p>In the <strong>tests.cpp</strong> file, there are already tests for this feature, but they are still commented out. Uncomment them, and run the test. You’ll see failures. In fact, you might see a <strong>Segmentation Fault</strong>.</p>
 <p>Now, implement the feature. You’ll have to alter <code>getValue()</code>, <code>setValue()</code>, and <code>operator[]</code>, so that the Python-like index is converted to a legal C++ index before accessing <code>myArray</code>. Because the code to check for a legal index is the same in those three methods, I put the common code into a new private method called <code>validate_index(index)</code>, described in the table below. Then, my whole implementation of <code>getValue()</code> becomes very short: <code>return myArray[validate_index(index)];</code></p>
 <p>Here is a summary of <code>validate_index()</code>:</p>
 <table class="caption-top table">
@@ -500,25 +497,25 @@ Important
 <tbody>
 <tr class="odd">
 <td>find()</td>
-<td>an Item to search for</td>
+<td>an <code>Item</code> to search for</td>
 <td>If the item is found in the array, return the index. Otherwise, return -1.</td>
 </tr>
 </tbody>
 </table>
-<p>First, add a <code>SECTION("find")</code> to the “PyLists” TEST_CASE in <code>tests.cpp</code> to test the find command. You’ll want to make sure you try to find items that are in a PyList and items that are not in the list. You should also make sure that if an <code>Item</code> is in a list more than one time, the index of the first item is returned.</p>
+<p>First, add a <code>SECTION("find")</code> to the “PyLists” TEST_CASE in <strong>tests.cpp</strong> to test the find command. You’ll want to make sure you try to find items that are in a PyList and items that are not in the list. You should also make sure that if an <code>Item</code> is in a list more than one time, the index of the first item is returned.</p>
 <p>After you are satisfied with your tests, and you prove that your tests fail, then implement the <code>find()</code> method.</p>
-<p>After you do this and have all your tests passing, then <strong>UNcomment all the Vec tests</strong> in <code>tests.cpp</code>, so that ALL tests are now available, both for Vec and for PyList. Then, of course, recompile and run <code>./tester</code> to make sure it tests both Vec and PyList.</p>
+<p>After you do this and have all your tests passing, then <strong>Uncomment all the Vec tests</strong> in <strong>tests.cpp</strong>, so that ALL tests are now available, both for Vec and for PyList. Then, of course, recompile and run <code>./tester</code> to make sure it tests both Vec and PyList.</p>
 </section>
 <section id="submit" class="level2">
 <h2 class="anchored" data-anchor-id="submit">Submit</h2>
 <p>Don’t forget to commit AND sync your code to your repo for grading.</p>
-<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Warning
+Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1141,7 +1138,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ericaraujophd/24fa-cs112/edit/main/weekly-activities/labs/lab-05/lab05.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/24fa-cs112/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ericaraujophd/24fa-cs112/edit/main/labs/lab05.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/24fa-cs112/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">

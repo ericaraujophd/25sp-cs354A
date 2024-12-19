@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<link href="../.././images/cs112-logo.png" rel="icon" type="image/png">
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-html/tabby.min.js"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<link href=".././images/cs112-logo.png" rel="icon" type="image/png">
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-html/tabby.min.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.5.57">
 
   <meta name="author" content="Eric Araújo">
-  <title>CS112 - Data Structures – Lab 08 — Stacks, Queues and Exceptions</title>
+  <title>CS112 - Data Structures – Lab 06 — Linked Lists</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="../../site_libs/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="../../site_libs/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -31,11 +31,11 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto.css">
-  <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-  <link href="../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-  <link href="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="../../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css">
+  <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
 
   .callout {
@@ -322,10 +322,10 @@
       margin-right: 0; 
     }
   </style>
-<meta property="og:title" content="Lab 08 — Stacks, Queues and Exceptions – CS112 - Data Structures">
+<meta property="og:title" content="Lab 06 — Linked Lists – CS112 - Data Structures">
 <meta property="og:description" content=" CS112 - Data Structures">
 <meta property="og:site_name" content="CS112 - Data Structures">
-<meta name="twitter:title" content="Lab 08 — Stacks, Queues and Exceptions – CS112 - Data Structures">
+<meta name="twitter:title" content="Lab 06 — Linked Lists – CS112 - Data Structures">
 <meta name="twitter:description" content=" CS112 - Data Structures">
 <meta name="twitter:image" content="https://ericaraujo.com/24fa-cs112/images/twitter-card.png">
 <meta name="twitter:creator" content="@ericfaraujo">
@@ -338,7 +338,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Lab 08 — Stacks, Queues and Exceptions</h1>
+  <h1 class="title">Lab 06 — Linked Lists</h1>
   <p class="subtitle"><br><br> CS112 - Data Structures</p>
 
 <div class="quarto-title-authors">
@@ -350,19 +350,55 @@ Eric Araújo
 </div>
 
 </section>
-<section id="dad-joke-of-the-week" class="slide level2">
-<h2>Dad joke of the week</h2>
+<section id="some-reflection-13" class="slide level2">
+<h2>Some reflection (1/3)</h2>
 <div class="columns">
-<div class="column" style="width:50%;">
+<div class="column" style="width:20%;">
 <div class="quarto-figure quarto-figure-left">
 <figure>
-<p><img data-src="imgs/catscan.png" class="quarto-figure quarto-figure-left" style="width:100.0%" alt="."></p>
+<p><img data-src="imgs/dietrich.jpg" class="quarto-figure quarto-figure-left" style="width:100.0%" alt="Life Together, by Dietrich Bonhoeffer."></p>
 </figure>
 </div>
-</div><div class="column" style="width:5%;">
+</div><div class="column" style="width:10%;">
 <!-- empty column to create gap -->
-</div><div class="column" style="width:35%;">
-<p>Dogs can’t operate MRI machines. But catscan.</p>
+</div><div class="column" style="width:70%;">
+<blockquote>
+<p>“In a Christian community everything depends upon whether each individual is an indispensable link in a chain. Only when even the smallest link is securely interlocked is the chain unbreakable. (…)</p>
+</blockquote>
+</div></div>
+</section>
+<section id="some-reflection-23" class="slide level2">
+<h2>Some reflection (2/3)</h2>
+<div class="columns">
+<div class="column" style="width:20%;">
+<div class="quarto-figure quarto-figure-left">
+<figure>
+<p><img data-src="imgs/dietrich.jpg" class="quarto-figure quarto-figure-left" style="width:100.0%" alt="Life Together, by Dietrich Bonhoeffer."></p>
+</figure>
+</div>
+</div><div class="column" style="width:10%;">
+<!-- empty column to create gap -->
+</div><div class="column" style="width:70%;">
+<blockquote>
+<p>“(…) A community which allows unemployed members to exist within it will perish because of them. It may be well, therefore, if every member receives a definite task to perform for the community, that he may know in hours of doubt that he, too, is not useless and unusable. (…)</p>
+</blockquote>
+</div></div>
+</section>
+<section id="some-reflection-33" class="slide level2">
+<h2>Some reflection (3/3)</h2>
+<div class="columns">
+<div class="column" style="width:20%;">
+<div class="quarto-figure quarto-figure-left">
+<figure>
+<p><img data-src="imgs/dietrich.jpg" class="quarto-figure quarto-figure-left" style="width:100.0%" alt="Life Together, by Dietrich Bonhoeffer."></p>
+</figure>
+</div>
+</div><div class="column" style="width:10%;">
+<!-- empty column to create gap -->
+</div><div class="column" style="width:70%;">
+<blockquote>
+<p>(…) Every Christian community must realize that not only do the weak need the strong, but also that the strong cannot exist without the weak. The elimination of the weak is the death of fellowship.” -Bonhoeffer, Life Together, 94.</p>
+</blockquote>
 </div></div>
 </section>
 <section id="lab-6" class="slide level2">
@@ -372,8 +408,16 @@ Eric Araújo
 <li>pair programming</li>
 </ul>
 </section>
-<section class="slide level2">
-
+<section id="dad-joke-of-the-week" class="slide level2">
+<h2>Dad joke of the week</h2>
+<!-- {background-image="https://blog.kialo-edu.com/wp-content/uploads/sites/3/2023/09/argumentcoverscaled.png" background-size="300px"} -->
+<div>
+<ul>
+<li class="fragment">Q: Why did the man fall down the deep hole?</li>
+<li class="fragment">A: ’Cause he couldn’t see that well.</li>
+</ul>
+</div>
+<!-- ![](imgs/buffalo.jpg){width=600} -->
 </section>
 <section class="slide level2">
 
@@ -388,19 +432,19 @@ Eric Araújo
   </div>
 
   <script>window.backupDefine = window.define; window.define = undefined;</script>
-  <script src="../../site_libs/revealjs/dist/reveal.js"></script>
+  <script src="../site_libs/revealjs/dist/reveal.js"></script>
   <!-- reveal.js plugins -->
-  <script src="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
-  <script src="../../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
-  <script src="../../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
-  <script src="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="../../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  <script src="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
-  <script src="../../site_libs/revealjs/plugin/notes/notes.js"></script>
-  <script src="../../site_libs/revealjs/plugin/search/search.js"></script>
-  <script src="../../site_libs/revealjs/plugin/zoom/zoom.js"></script>
-  <script src="../../site_libs/revealjs/plugin/math/math.js"></script>
+  <script src="../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="../site_libs/revealjs/plugin/math/math.js"></script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
 
   <script>
