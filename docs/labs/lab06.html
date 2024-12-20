@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Course content – CS112 - Data Structures</title>
+<title>Lab 06: More List Operations – CS112 - Data Structures</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,29 +20,62 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./week00.html" rel="next">
-<link href="././images/cs112-logo.png" rel="icon" type="image/png">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href=".././images/cs112-logo.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -72,12 +105,41 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 <script src="https://kit.fontawesome.com/78ddb093ea.js" crossorigin="anonymous"></script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<link rel="stylesheet" href="./styles.css">
-<meta property="og:title" content="Course content – CS112 - Data Structures">
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../labs/lab-styles.css">
+<meta property="og:title" content="Lab 06: More List Operations – CS112 - Data Structures">
 <meta property="og:description" content="CS112 will teach students to use C++ for creating data structures.">
 <meta property="og:site_name" content="CS112 - Data Structures">
-<meta name="twitter:title" content="Course content – CS112 - Data Structures">
+<meta name="twitter:title" content="Lab 06: More List Operations – CS112 - Data Structures">
 <meta name="twitter:description" content="CS112 will teach students to use C++ for creating data structures.">
 <meta name="twitter:image" content="https://ericaraujo.com/24fa-cs112/images/twitter-card.png">
 <meta name="twitter:creator" content="@ericfaraujo">
@@ -86,15 +148,15 @@ ul.task-list li input[type="checkbox"] {
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
-<body class="nav-sidebar floating nav-fixed">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./images/cs112-logo.png" alt="" class="navbar-logo">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../images/cs112-logo.png" alt="" class="navbar-logo">
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -104,19 +166,19 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
+    <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Overview</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./instructors.html"> 
+    <a class="nav-link" href="../instructors.html"> 
 <span class="menu-text">Instructors</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./policies.html"> 
+    <a class="nav-link" href="../policies.html"> 
 <span class="menu-text">Course Policies</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./content.html" aria-current="page"> 
+    <a class="nav-link" href="../content.html"> 
 <span class="menu-text">Content</span></a>
   </li>  
 </ul>
@@ -133,127 +195,34 @@ ul.task-list li input[type="checkbox"] {
 </div>
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./content.html">Course content</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-    </div>
-  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./content.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Course content</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week00.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 00: Intro do C++</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week01.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 01: Control Structures, Functions, Parameter Passing modes</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week02.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 02: File Input/Output, Exception Handling, Two-dimensional Arrays</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week03.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 03: Classes, Operator Overloading, etc.</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week04.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 04: Vectors – Dynamic Arrays</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week05.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 05: Generic Containers</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week06.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 06: Linked Lists, Dynamic Array or Linked List</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week07.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 07: Spring Break</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week08.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 08: Algorithm Analysis and Big-Oh</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week09.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 9: Recursion</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week10.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 10: BSTs</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week11.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 11: AVL Trees</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week12.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 12: STL set and map containers</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week13.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 13: Hash Tables and Sorting Algorithms</span></a>
-  </div>
-</li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#objectives" id="toc-objectives" class="nav-link active" data-scroll-target="#objectives">Objectives:</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#step-1.-append" id="toc-step-1.-append" class="nav-link" data-scroll-target="#step-1.-append">Step 1. Append</a></li>
+  <li><a href="#step-2.-searching" id="toc-step-2.-searching" class="nav-link" data-scroll-target="#step-2.-searching">Step 2. Searching</a></li>
+  <li><a href="#step-3.-copy-constructor" id="toc-step-3.-copy-constructor" class="nav-link" data-scroll-target="#step-3.-copy-constructor">Step 3. Copy constructor</a></li>
+  <li><a href="#step-4.-equality" id="toc-step-4.-equality" class="nav-link" data-scroll-target="#step-4.-equality">Step 4. Equality</a></li>
+  <li><a href="#step-5.-templatize" id="toc-step-5.-templatize" class="nav-link" data-scroll-target="#step-5.-templatize">Step 5. Templatize</a></li>
+  <li><a href="#submit" id="toc-submit" class="nav-link" data-scroll-target="#submit">Submit</a></li>
+  <li><a href="#grading-rubric" id="toc-grading-rubric" class="nav-link" data-scroll-target="#grading-rubric">Grading Rubric:</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/ericaraujophd/24fa-cs112/edit/main/labs/lab06.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/24fa-cs112/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Course content</h1>
+<h1 class="title">Lab 06: More List Operations</h1>
 </div>
 
 
@@ -270,143 +239,117 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>CS 112 is organized by week, with each week structured as follows:</p>
+<section id="objectives" class="level2">
+<h2 class="anchored" data-anchor-id="objectives">Objectives:</h2>
+<p>In this exercise, you will:</p>
+<ol type="1">
+<li>Build more List operations.</li>
+<li>Practice using pointers.</li>
+</ol>
+<center>
+<figure class="figure">
+<p><img src="../images/labs/lab05/lab05-header.jpeg" alt="A surreal scene of a data structure visually represented by the beach, specifically a vector. The vector is made of sand or driftwood, extending in a straight line across the beach, symbolizing a one-dimensional array. The nodes or elements of the vector are placed evenly along the shore, with the ocean waves gently lapping at the base of the structure. The sky is clear and bright, with sunlight reflecting off the water. The overall vibe is peaceful, blending the abstract logic of programming with the tranquility of a seaside environment. (created by AI)" width="400" class="figure-img"></p>
+<figcaption>
+Prompt: A surreal scene of a data structure visually represented by the beach, specifically a vector. The vector is made of sand or driftwood, extending in a straight line across the beach, symbolizing a one-dimensional array. The nodes or elements of the vector are placed evenly along the shore, with the ocean waves gently lapping at the base of the structure. The sky is clear and bright, with sunlight reflecting off the water. The overall vibe is peaceful, blending the abstract logic of programming with the tranquility of a seaside environment.
+</figcaption>
+</figure>
+</center>
+</section>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>In this week’s lab you will add more functionality to the List class we built in class.</p>
+<p><a href="" target="_blank">Here is the invite</a>.</p>
+<p>Use git clone to get your copy of the assignment, as we have been doing. You should have these files: <strong>List.cpp</strong>, <strong>List.h</strong>, <strong>tests.cpp</strong>, plus a <strong>makefile</strong>, etc.</p>
+<p>If you are working with a partner, so make sure you join the same Team when creating your repos. Also, put both your names in the README.md file now.</p>
+</section>
+<section id="step-1.-append" class="level2">
+<h2 class="anchored" data-anchor-id="step-1.-append">Step 1. Append</h2>
+<p>The <code>append()</code> method is easy to understand: given a new <code>Item</code>, add it to the end of the linked list. The <strong>tests.cpp</strong> file contains tests already for <code>append()</code>.</p>
+<p>Now, implement the code for <code>append()</code>. You might find looking at the implementation of <code>prepend()</code> to be helpful – although <code>append()</code> is a bit more complicated. DRAW PICTURES! (Or, don’t draw pictures, if you want to make this step of the lab take much longer…)</p>
+</section>
+<section id="step-2.-searching" class="level2">
+<h2 class="anchored" data-anchor-id="step-2.-searching">Step 2. Searching</h2>
+<p>Let’s implement a method that searches the linked list for a given <code>Item</code>, and returns the index of where the item is found, or -1 if it is not found. Name the method <code>getIndexOf()</code>. Here is the prototype:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> getIndexOf<span class="op">(</span><span class="at">const</span> Item <span class="op">&amp;</span>it<span class="op">)</span> <span class="at">const</span><span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>First implement tests of <code>getIndexOf()</code> in <strong>tests.cpp</strong>, and then implement the method. You must call the <code>TEST_CASE</code> “lookfor”. I.e., put this in the <strong>tests.cpp</strong> file:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>TEST_CASE<span class="op">(</span><span class="st">"lookfor"</span><span class="op">)</span> <span class="op">{</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>     <span class="co">// add your tests here -- either inside SECTION()s or not.</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="step-3.-copy-constructor" class="level2">
+<h2 class="anchored" data-anchor-id="step-3.-copy-constructor">Step 3. Copy constructor</h2>
+<p>You knew it was coming…</p>
+<p><strong>tests.cpp</strong> does not contain any test cases for this, so you’ll have to implement them yourself. My solution has 1 <code>TEST_CASE</code> with 3 <code>SECTIONS</code>: copying a 0-element List, copying a 1-element List, and copying a <span class="math inline">\(&gt;1\)</span>-element list. The name of the TEST_CASE must be copy constructor:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>TEST_CASE<span class="op">(</span><span class="st">"copy"</span><span class="op">)</span> <span class="op">{</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>     <span class="co">// add your tests here -- either inside SECTION()s or not.</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The prototype of the copy constructor will be:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>List<span class="op">(</span><span class="at">const</span> List <span class="op">&amp;</span> original<span class="op">);</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Here is the algorithm to implement the copy constructor:</p>
 <ul>
-<li>Classroom sessions are Monday-Wednesday-Friday.</li>
-<li>The lab sessions are on Tuesdays.</li>
-<li>Your lab submission is due Thursday at 23:59.</li>
-<li>Your project submission is due the next Monday at 23:59 (the night before your next lab).</li>
-<li>Tutoring Assistants are available in SB337 on Mondays and Thursdays, from 7 - 9 pm.</li>
+<li>Set all the instance variables (<code>myFirst</code>, <code>myLast</code>, <code>mySize</code>) to default values.</li>
+<li>Walk the list of nodes in original, calling <code>append()</code> on the value in each node. (You are calling <code>append()</code> on “this” node, thus adding a new node each time to the <code>List</code> being constructed.)</li>
 </ul>
-<p>The SLOs (Student Learning Objectives), labs, and projects for each week are given in the links below. The readings are from <a href="https://runestone.academy/runestone/books/published/cpp4python/index.html" target="_blank">C++ for Python Programmers Book</a>.</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Week</th>
-<th>Topics</th>
-<th>Laboratories</th>
-<th>Projects</th>
-<th>Tests, Video Links, etc.</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>00 <br> — <br> 1/21</td>
-<td>Intro to C++, compilation, Data Types (including pointers), const, binary and hexadecimal, arrays, using cout/cin. <br> <a href="./week00.html">Week’s page</a></td>
-<td><a href="./labs/lab00.html">Lab 0</a></td>
-<td><a href="./projects/proj00.html">Proj 0</a></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>01 <br> — <br> 1/27</td>
-<td>Control Structures, Functions, Parameter Passing modes. <br><a href="./week01.html">Week’s page</a></td>
-<td><a href="./labs/lab01.html">Lab 1</a></td>
-<td><a href="./projects/proj01.html">Proj 1</a></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>02 <br> — <br> 2/3</td>
-<td>File Input/Output, Exception Handling, Two-dimensional Arrays. <br><a href="./week02.html">Week’s page</a></td>
-<td><a href="./labs/lab02.html">Lab 2</a></td>
-<td><a href="./projects/proj02.html">Proj 2</a></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>03 <br> — <br> 2/10</td>
-<td>Classes, Operator Overloading, etc. <br><a href="./week03.html">Week’s page</a></td>
-<td><a href="./labs/lab03.html">Lab 3</a></td>
-<td><a href="./projects/proj03.html">Proj 3</a></td>
-<td><strong>Test 1:</strong> Weeks 0 - 2, Friday.</td>
-</tr>
-<tr class="odd">
-<td>04 <br> — <br> 2/17</td>
-<td>Vectors – Dynamic Arrays <br><a href="./week04.html">Week’s page</a></td>
-<td><a href="./labs/lab04.html">Lab 4</a></td>
-<td><a href="./projects/proj04.html">Proj 4</a></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>05 <br> — <br> 2/24</td>
-<td>Generic Containers <br><a href="./week05.html">Week’s page</a></td>
-<td><a href="./labs/lab05.html">Lab 5</a></td>
-<td><a href="./projects/proj05.html">Proj 5</a></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>06 <br> — <br> 3/3</td>
-<td>Linked Lists, Dynamic Array or Linked List <br> <a href="./week06.html">Week’s page</a></td>
-<td><a href="./labs/lab06.html">Lab 6</a></td>
-<td>No project</td>
-<td><strong>Test 2:</strong> Weeks 0 - 5, Friday</td>
-</tr>
-<tr class="even">
-<td>07 <br> — <br> 3/10</td>
-<td>Spring Break <br> <a href="./week07.html">Week’s page</a></td>
-<td>No lab</td>
-<td>No project</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>08 <br> — <br> 3/17</td>
-<td>Algorithm Analysis and Big-Oh <br> <a href="./week08.html">Week’s page</a></td>
-<td>Lab 7</td>
-<td>Proj 7</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>09 <br> — <br> 3/24</td>
-<td>Stacks and Queues <br> Advising days – no class 26-27 <br><a href="./week08.html">Week’s page</a></td>
-<td>Lab 8</td>
-<td><a href="./projects/proj08.html">Proj 8</a></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>10 <br> — <br> 3/31</td>
-<td>Recursion <br><a href="./week09.html">Week’s page</a></td>
-<td><a href="./labs/lab09.html">Lab 9</a></td>
-<td><a href="./projects/proj09.html">Proj 9</a></td>
-<td><strong>Test 3:</strong> Weeks 0 - 8, Friday</td>
-</tr>
-<tr class="even">
-<td>11 <br> — <br> 4/7</td>
-<td>BSTs <br><a href="./week10.html">Week’s page</a></td>
-<td><a href="./labs/lab10.html">Lab 10</a></td>
-<td><a href="./projects/proj10.html">Proj 10</a></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>12 <br> — <br> 4/14</td>
-<td>AVL Trees <br> Good Friday &amp; Easter Monday – no class 18-21 <br> <a href="./week11.html">Week’s page</a></td>
-<td>No lab</td>
-<td>No project</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>13 <br> — <br> 4/22</td>
-<td>STL set and map containers <br><a href="./week12.html">Week’s page</a></td>
-<td><a href="./labs/lab12.html">Lab 12</a></td>
-<td>No project</td>
-<td><strong>Test 4:</strong> Weeks 0 - 11, Wednesday</td>
-</tr>
-<tr class="odd">
-<td>14 <br> — <br> 4/28</td>
-<td>Hash Tables, Sorting Algorithms <br><a href="./week13.html">Week’s page</a></td>
-<td><a href="./labs/lab13.html">Lab 13</a></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>Final <br> — <br> May 3-8</td>
-<td>Search calvin.edu for “Exam Schedule” to find the time of the exam (and all exams you have, this semester, and all future semesters).</td>
-<td></td>
-<td></td>
-<td>Test 5 Cumulative, during exam time (You may take it in either class’s exam time. Classes met at 11am MWF and 12:15 MWF.)</td>
-</tr>
-</tbody>
-</table>
-<!-- | 11   |   | OpenMP, etc. [SLOs] [Slides]  | Lab 11    | Project 11    |   | -->
+</section>
+<section id="step-4.-equality" class="level2">
+<h2 class="anchored" data-anchor-id="step-4.-equality">Step 4. Equality</h2>
+<p>Implement the equality method, so that you can test if two <code>List</code> objects have the same number of nodes and the items in the nodes are the same. The equality operator returns <strong>true</strong> or <strong>false</strong>.</p>
+<p>E.g.,</p>
+<p>if <code>list1</code> contains 3 values: 11, 22, 33 and <code>list2</code> contains four values: 11, 22, 33, 44, then <code>list1 == list2</code> should return <strong>false</strong>.</p>
+<p>To test this you have to use <code>==</code> (not <code>!=</code>), so your test might look like this:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>REQUIRE<span class="op">(!</span> <span class="op">(</span>list1 <span class="op">==</span> list2<span class="op">)</span> <span class="op">);</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Create your tests first in a test case called “equality”:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>TEST_CASE<span class="op">(</span><span class="st">"equality"</span><span class="op">)</span> <span class="op">{</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>     <span class="co">// add your tests here -- either inside SECTION()s or not.</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Use a “curr” pointer to each list’s <code>myFirst</code> node, then in a loop, check if the items are the same for the two nodes, then move each <code>curr</code> pointer to its next node.</p>
+</div>
+</div>
+</section>
+<section id="step-5.-templatize" class="level2">
+<h2 class="anchored" data-anchor-id="step-5.-templatize">Step 5. Templatize</h2>
+<p>Now, convert your <code>List</code> class to a <code>List&lt;Item&gt;</code> template and modify the tests in <strong>tests.cpp</strong> to test your new template. Remember to edit the <strong>makefile</strong> to remove <strong>List.cpp</strong> from the <code>SOURCES</code> line near the top of the file. You should also delete the <strong>List.cpp</strong> file completely from your tree.</p>
+</section>
+<section id="submit" class="level2">
+<h2 class="anchored" data-anchor-id="submit">Submit</h2>
+<p>A part of your grade will be based on the thoroughness of your tests; you may want to model your tests after those provided for you in previous projects.</p>
+<p>Don’t forget to <strong>Commit</strong> and <strong>Push</strong> your changes to your repo.</p>
+<p>Verify you have synced your code to github by going to your online repo webpage and looking to see that the files are correct.</p>
+<p>Verify that the autograding tests have passed in github.com.</p>
+</section>
+<section id="grading-rubric" class="level2">
+<h2 class="anchored" data-anchor-id="grading-rubric">Grading Rubric:</h2>
+<p>You will be graded this way: 19 pts total</p>
+<ul>
+<li>4 pts each for <code>append()</code>, <code>getIndexOf()</code>, copy constructor, and equality operator (16 pts)</li>
+<li>3 pts for correctness,</li>
+<li>1 pt for thorough tests (you get this point free for <code>append()</code> for which I’ve provided tests).</li>
+<li>3 pts for correctly converting to a class template.</li>
+</ul>
+<p>Ways students lost points in the past:</p>
+<ul>
+<li>-3: Incorrect class template conversion, code does not compile;</li>
+<li>-3: Missing tests for <code>getIndexOf()</code>, copy constructor, and equality operator</li>
+<li>-1: Incomplete equality tests, no tests for when equality is true</li>
+<li>-1: Append implementation needs to adjust the <code>myNext</code> of the current last element</li>
+<li>-1: Copy constructor: <code>myFirst</code> is not initialized to <strong>nullptr</strong>, causing tests to fail;</li>
+<li>-1: Missing test for equality operator;</li>
+<li>-1: Incomplete test for copy constructor;</li>
+</ul>
+<!-- [^1]: how to add footnotes. -->
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -973,15 +916,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="./week00.html" class="pagination-link" aria-label="Week 00: Intro do C++">
-        <span class="nav-page-text">Week 00: Intro do C++</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -990,7 +924,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/ericaraujophd/24fa-cs112/edit/main/content.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/24fa-cs112/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ericaraujophd/24fa-cs112/edit/main/labs/lab06.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/24fa-cs112/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
