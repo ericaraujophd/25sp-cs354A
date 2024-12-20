@@ -1348,14 +1348,14 @@
     "href": "labs/lab06.html",
     "title": "Lab 06: More List Operations",
     "section": "",
-    "text": "In this exercise, you will:\n\nBuild more List operations.\nPractice using pointers.\n\n\n\n\n\nPrompt: A surreal scene of a data structure visually represented by the beach, specifically a vector. The vector is made of sand or driftwood, extending in a straight line across the beach, symbolizing a one-dimensional array. The nodes or elements of the vector are placed evenly along the shore, with the ocean waves gently lapping at the base of the structure. The sky is clear and bright, with sunlight reflecting off the water. The overall vibe is peaceful, blending the abstract logic of programming with the tranquility of a seaside environment."
+    "text": "Equality."
   },
   {
     "objectID": "labs/lab06.html#objectives",
     "href": "labs/lab06.html#objectives",
     "title": "Lab 06: More List Operations",
-    "section": "",
-    "text": "In this exercise, you will:\n\nBuild more List operations.\nPractice using pointers.\n\n\n\n\n\nPrompt: A surreal scene of a data structure visually represented by the beach, specifically a vector. The vector is made of sand or driftwood, extending in a straight line across the beach, symbolizing a one-dimensional array. The nodes or elements of the vector are placed evenly along the shore, with the ocean waves gently lapping at the base of the structure. The sky is clear and bright, with sunlight reflecting off the water. The overall vibe is peaceful, blending the abstract logic of programming with the tranquility of a seaside environment."
+    "section": "Objectives:",
+    "text": "Objectives:\nIn this exercise, you will:\n\nBuild more List operations.\nPractice using pointers."
   },
   {
     "objectID": "labs/lab06.html#introduction",
