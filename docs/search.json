@@ -569,165 +569,249 @@
     ]
   },
   {
-    "objectID": "labs/lab09.html",
-    "href": "labs/lab09.html",
-    "title": "Lab 09: Stacks and Exceptions and Queues",
+    "objectID": "labs/lab09-hint-isfull.html",
+    "href": "labs/lab09-hint-isfull.html",
+    "title": "Lab 09: Hint isFull()",
+    "section": "",
+    "text": "The stub of isFull() should look like this:\nbool Stack::isFull() const {\n}\nThe isFull() method should return true when mySize equals myCapacity, and return false otherwise. How can you write this in a single line?"
+  },
+  {
+    "objectID": "labs/lab08.html",
+    "href": "labs/lab08.html",
+    "title": "Lab 08: Timing List and Vector Operations",
     "section": "",
     "text": "Road Runner."
   },
   {
-    "objectID": "labs/lab09.html#objectives",
-    "href": "labs/lab09.html#objectives",
-    "title": "Lab 09: Stacks and Exceptions and Queues",
+    "objectID": "labs/lab08.html#objectives",
+    "href": "labs/lab08.html#objectives",
+    "title": "Lab 08: Timing List and Vector Operations",
     "section": "Objectives:",
-    "text": "Objectives:\nIn this exercise, you will:\n\nBuild a dynamically-allocated-array-based Stack class.\nBuild a simple Exception class hierarchy.\nThrow and catch exceptions.\nBuild a Queue class that uses a linked list."
+    "text": "Objectives:\nIn this exercise, you will:\n\nCompare performance of list&lt;T&gt; and vector&lt;T&gt; operations.\nIntroduce iterators.\nIntroduce empirical analysis."
   },
   {
-    "objectID": "labs/lab09.html#introduction",
-    "href": "labs/lab09.html#introduction",
-    "title": "Lab 09: Stacks and Exceptions and Queues",
+    "objectID": "labs/lab08.html#introduction",
+    "href": "labs/lab08.html#introduction",
+    "title": "Lab 08: Timing List and Vector Operations",
     "section": "Introduction",
-    "text": "Introduction\nToday’s exercise has two parts:\n\nIn Part I, we will build a simple Stack class that stores its items in a fixed-size, dynamically-allocated array.\nIn Part II, we will see how to define, throw, catch, and handle exceptions.\nIn Part III, we will build a simple Queue class that stores its items in a linked list."
+    "text": "Introduction\nToday, we want to time a few list and vector operations, using the STL list and vector templates. While we have talked in class about “Big Oh” notation, today’s lab should give you some hands-on experience with the difference between an \\(O(1)\\) operation and an \\(O(n)\\) operation.\nFor a given operation and several values of \\(n\\), our basic methodology will be to build a vector of length \\(n\\), measure how long that operation takes for the vector, build a list of length \\(n\\), and measure how long that operation takes for the list. By choosing five different values for n (10, 100, 1000, 10000, and 100000), we can then plot our measurements and see empirically how fast or slow a given operation is."
   },
   {
-    "objectID": "labs/lab09.html#getting-started",
-    "href": "labs/lab09.html#getting-started",
-    "title": "Lab 09: Stacks and Exceptions and Queues",
+    "objectID": "labs/lab08.html#getting-started",
+    "href": "labs/lab08.html#getting-started",
+    "title": "Lab 08: Timing List and Vector Operations",
     "section": "Getting Started",
     "text": "Getting Started\nAccept the invitation to the lab and do git clone to get the files, as usual. Make sure your partner is part of the same Team and edit the README.md file and share your repo on github.com"
   },
   {
-    "objectID": "labs/lab09.html#part-i-the-stack-class",
-    "href": "labs/lab09.html#part-i-the-stack-class",
-    "title": "Lab 09: Stacks and Exceptions and Queues",
-    "section": "Part I: The Stack Class",
-    "text": "Part I: The Stack Class\nAs you can see, this Stack class contains three instance variables:\n   unsigned myCapacity;\n   unsigned mySize;\n   Item*    myArray;\nWe will be storing the address of a dynamically allocated array in myArray. We will be storing the length of that array in myCapacity, and in mySize, we will be storing the number of items in the array. As we shall see, this value will correspond to the index of the spot in that array where the next Item that we push() will be stored.\nAs we have seen in class, the primary Stack operations are:\n\nbool isEmpty(), that returns true if and only if the Stack contains no items;\nbool isFull(), that returns true if and only if the Stack has no room for more items;\nvoid push(Item it), that places it on top of the Stack;\nItem peekTop(), that returns the top item from the Stack (without modifying the Stack); and\nItem pop(), that removes and returns the top item from the Stack.\n\nTo let you focus on these Stack operations, the Stack class already contains prototypes and definitions for:\n\nan explicit-value constructor;\na copy constructor;\na destructor; and\nan assignment operator.\n\nTake a few minutes to look these over. Look carefully at the explicit-value constructor, and note the initial values each member is given. We might visualize the Stack objects it constructs as follows:"
+    "objectID": "labs/lab08.html#experiment-0-vector-subscript",
+    "href": "labs/lab08.html#experiment-0-vector-subscript",
+    "title": "Lab 08: Timing List and Vector Operations",
+    "section": "Experiment 0: Vector Subscript",
+    "text": "Experiment 0: Vector Subscript\nThe purpose of this experiment is to get a feel for how to use the Timer class to time the vector subscript operation. This experiment contains a method named timeAccessAtIndex() that uses Timer to measure how long it takes to access the item at a given index in a vector. The run() method calls timeAccessesForVectorOfSize() for various vector sizes. This method calls the timeAccessesAtIndex() method three times, to see how long it takes to access the first, middle and last value in the vector.\nCompile (make all) and run ./lab7.\nTo report your results, create an online spreadsheet – either Google Sheets or online Excel. On the worksheet, write Lab 7: Experiment 0 in the first row; on the next row create column-headings labeled size, first, middle, and last. Then add rows for each vector size (i.e., 10, 100, 1000, 10000, 100000). For each row size, enter the times your program displayed for accessing the first, middle, and last value in the vector of size size.\nWhen you have entered all of your data, create a well-labeled line chart from your timing results. Your chart should look something like this:\n\nNote these properties of the graph:\n\nThe horizontal scale is logarithmic.\nThe vertical lab gives the units.\nI have chosen to show the values with little circles – you can choose any shape (circle, square, etc.)\n\nAnalysis. On the chart shown above, the data are “noisy” (thanks to our imprecise clock), ranging from a low of 30.7667 nsec to a high of 33.6957 nsec. However the lines are basically flat – there is no significant change to the access time as the vector size increases by orders of magnitudes. If I use the spreadsheet to compute the averages for the first, middle, and last columns, they are all approximately the same. Your chart should be similar. (Note that I ran my tests on my MacBookPro. The values you get on the lab machines may be quite different.)\nThe relative flatness of these lines and their close proximity to one another indicate that the time to perform this operation remains constant as the size of the vector increases. These results thus indicate empirically that the vector subscript operation is an \\(O(1)\\) (i.e., constant time) operation."
   },
   {
-    "objectID": "labs/lab10-slides.html#dad-joke-of-the-week",
-    "href": "labs/lab10-slides.html#dad-joke-of-the-week",
-    "title": "Lab 09 — Recursion",
-    "section": "Dad joke of the week",
-    "text": "Dad joke of the week\n\n\n\n\n\n\n\n\n\n\nPete and Repete are on a boat. Pete falls off. Who’s left on the boat?"
+    "objectID": "labs/lab08.html#experiment-1-vector-list-appending",
+    "href": "labs/lab08.html#experiment-1-vector-list-appending",
+    "title": "Lab 08: Timing List and Vector Operations",
+    "section": "Experiment 1: Vector & List Appending",
+    "text": "Experiment 1: Vector & List Appending\nIn our next experiment, we will use a similar procedure to measure how long it takes to append an item to a vector and compare that with how long it takes to append an item to a list.\nIn main.cpp, comment out the lines referring to Experiment0 and uncomment the lines referring to Experiment1.\nIn your makefile, replace Experiment0.cpp with Experiment1.cpp on the 4th line.\nRecompile your project (make all) and run ./lab7. As you can see, Experiment1 contains code to time how long it takes to append a value to a vector. It does this two ways:\n\nIt first invokes timeAppendToVectorOfSize(n) for varying values of n.\nIt then uses timeRepeatedAppendUntilVectorIsSize(n) to measure the average time an append operation takes as a vector grows very large.\n\nOur timeAppendToVectorOfSize(n) method uses an approach similar to that of Experiment0, but timing how long it takes the vector push_back(item) method to append a single value. By contrast, our timeRepeatedAppendUntilVectorIsSize(n) starts with an empty vector and then times the average length of time to append a value, as push_back() is called repeatedly.\nYour task is to write two methods that do the same things for lists:\n\ntimeAppendToListOfSize(n) that can be used to measure the average time to append an item to a list of size n; and\ntimeRepeatedAppendUntilListIsSize(n) that measures the average time an append operation takes as a list grows very large.\n\nUsing the existing vector methods in Experiment 1 as a model, write these two methods; then compile and run the executable to display the append times for both vectors and lists.\nWhen you have good data, return to your spreadsheet. Create a new worksheet, and label the first row Lab 7: Experiment 1. On the next row, place column headings for size, vector, and list. Then add a separate row for each size (10, 100, 1000, 10000, and 100000). Add your data to your worksheet; then create a chart similar to that of Experiment0.\nStudy your chart. Using it and the data in your spreadsheet, answer the following questions on your spreadsheet, below your chart:\n\nWhat does your data indicate about the time required to append an item to a vector as the vector grows larger? Is the timing behavior produced by timeAppendToVectorOfSize(n) consistent with that of timeRepeatedAppendToVectorOfSize(n)? Explain why or why not. What is the “Big Oh” notation for each? (Remember that our vector’s size is increasing exponentially.)\nWhat does your data indicate about the time required to append an item to a list as the list grows larger? Is the timing behavior produced by timeAppendToListOfSize(n) consistent with that of timeRepeatedAppendUntilListIsSize(n)? Explain why or why not. What is the “Big Oh” notation for each?\nWhat can you conclude about the time required to append an item to a vector compared to a list, as each gets large?"
   },
   {
-    "objectID": "labs/lab10-slides.html#lab-9",
-    "href": "labs/lab10-slides.html#lab-9",
-    "title": "Lab 09 — Recursion",
-    "section": "Lab 9",
-    "text": "Lab 9\n\ncreating recursive functions using ChatGPT\ndiscussing efficiency by calculating the number of times a function is called"
+    "objectID": "labs/lab08.html#experiment-2-vector-list-prepending",
+    "href": "labs/lab08.html#experiment-2-vector-list-prepending",
+    "title": "Lab 08: Timing List and Vector Operations",
+    "section": "Experiment 2: Vector & List Prepending",
+    "text": "Experiment 2: Vector & List Prepending\nOur final experiment is to compare how long it takes to prepend an item to a vector, compared to a list.\nIn main.cpp, comment out the lines referring to Experiment1 and uncomment the lines referring to Experiment2. In the makefile, change SOURCES to Experiment2.cpp.\nRecompile your project and run Experiment2 as it is written. As you can see, Experiment2 contains code to time how long it takes to prepend a value to a vector. It does this two ways:\n\nIt first invokes timePrependToVectorOfSize(n) for varying values of n.\nIt then uses timeRepeatedPrependUntilVectorIsSize(n) to measure the average time a prepend operation takes as a vector grows very large.\n\nOur timePrependToVectorOfSize(n) method uses an approach similar to that of Experiment1, but the STL vector template does not provide a push_front() method by which we can prepend a value. However, STL does provide a generic insert() algorithm that we can use for this task. More precisely, the statement:\ninsert(iterator, value);\nwill insert value at the position indicated by iterator.\nAn iterator is an abstract pointer. Every STL container provides at least two methods that return iterators:\n\nbegin(), that returns an iterator to the first item in the container; and\nend(), that returns an iterator to the first location beyond the last item in the container.\n\nThus, we can use the statement:\ninsert(v.begin(), i);\nto prepend the value of our loop-control variable i to our vector.\nOur timeRepeatedPrependUntilVectorIsSize(n) method also uses the STL insert() method.\nYour task is to write two methods that do the same things for lists:\n\ntimePrependToListOfSize(n) that can be used to measure the average time to prepend an item to a list of size n; and\n\n\ntimeRepeatedPrependUntilListIsSize(n) that measures the average time a prepend operation takes as a list grows very large.\n\nUsing the existing Experiment 2 vector methods as a model, write these two methods; then invoke them so that Experiment2 displays the append times for both vectors and lists.\nWhen you have good data, return to your spreadsheet. Create a new worksheet, and label the first row Lab 7: Experiment 2. On the next row, place column headings for size, vector, and list. Then add a separate row for each size (10, 100, 1000, 10000, and 100000). Add your data to your worksheet; then create a chart similar to that of Experiment1.\nStudy your chart. Using it and the data in your spreadsheet, answer the following questions on your spreadsheet, below your chart:\n\nWhat does your data indicate about the time required to prepend an item to a vector as the vector grows larger? Is the timing behavior produced by timePrependToVectorOfSize(n) consistent with that of timeRepeatedPrependToVectorOfSize(n)? Explain why or why not. What is the “Big Oh” notation for each?\nWhat does your data indicate about the time required to prepend an item to a list as the list grows larger? Is the timing behavior produced by timePrependToListOfSize(n) consistent with that of timeRepeatedPrependUntilListIsSize(n)? What is the “Big Oh” notation for each?\nWhat can you say about the time required to prepend an item to a vector, compared to a list, as each gets large?"
   },
   {
-    "objectID": "labs/lab03-slides.html#lab-3",
-    "href": "labs/lab03-slides.html#lab-3",
-    "title": "Lab 03 — Classes",
-    "section": "Lab 3",
-    "text": "Lab 3\n\ncreating a Student class\npair programming (change your pairs!)"
+    "objectID": "labs/lab08.html#finally",
+    "href": "labs/lab08.html#finally",
+    "title": "Lab 08: Timing List and Vector Operations",
+    "section": "Finally",
+    "text": "Finally\nUnlike vector, the STL list does provide a push_front() method that works just like push_back() only on the other end of the list. In your timePrependToListOfSize(n) method, comment out your call to insert() and replace it with a call to push_front(). Then rerun your experiment. Add a new column named list (push_front) to your Experiment2 spreadsheet. Under it, add the timing results for this revised version to your spreadsheet and its chart. Then answer the following question below your other answers on your Experiment2 spreadsheet:\n\nHow does the timing for prepending using push_front() compare to the timing of prepending using insert()? Is the “Big Oh” the same or different for these two different ways of prepending?\n\nWhew! Congratulations, you’re done (after doing the submission below)."
   },
   {
-    "objectID": "labs/lab03-slides.html#dad-joke-of-the-week",
-    "href": "labs/lab03-slides.html#dad-joke-of-the-week",
-    "title": "Lab 03 — Classes",
-    "section": "Dad joke of the week",
-    "text": "Dad joke of the week\n\n\nQ: Why did the functions stop calling each other?\nA: Because they had constant arguments."
+    "objectID": "labs/lab08.html#submission",
+    "href": "labs/lab08.html#submission",
+    "title": "Lab 08: Timing List and Vector Operations",
+    "section": "Submission",
+    "text": "Submission\n👉 Download a PDF version of your spreadsheet and put it in your directory, named Lab7Results.pdf. Make sure your PDF contains all 3 worksheets!\nMake sure you commit all your files and changes to github for grading."
   },
   {
-    "objectID": "labs/lab00-slides.html#dad-joke-of-the-week",
-    "href": "labs/lab00-slides.html#dad-joke-of-the-week",
-    "title": "Lab 00 — Intro do C++",
-    "section": "Dad joke of the week",
-    "text": "Dad joke of the week\n\n\n\n\n\n\n\n\n\n\nPete and Repete are on a boat. Pete falls off. Who’s left on the boat?"
-  },
-  {
-    "objectID": "labs/lab00-slides.html#bible-reflection-for-a-data-structures-lab-session",
-    "href": "labs/lab00-slides.html#bible-reflection-for-a-data-structures-lab-session",
-    "title": "Lab 00 — Intro do C++",
-    "section": "Bible Reflection for a Data Structures Lab Session",
-    "text": "Bible Reflection for a Data Structures Lab Session\nVerse: “Let all things be done decently and in order.” — 1 Corinthians 14:40\nAs we dive into the intricacies of data structures, this verse reminds us of the importance of organization and structure, not just in our code but also in life. Data structures like arrays, trees, and graphs teach us that even the most complex systems can be understood and managed when approached with order and clarity.\nGod’s creation reflects His intentional design—everything has a purpose and place, from the smallest atom to the vastness of the universe. Similarly, in our programming, we use data structures to bring order to chaos, enabling efficiency and clarity in solving problems.\nAs we work on today’s lab, let us remember that the discipline and creativity we apply to our work reflect the order and purpose God calls us to embody. Let’s strive to build systems that not only function well but also mirror the excellence and intentionality of our Creator.\nPrayer:\nLord, thank You for the gift of logic and creativity. Help us to approach our work with diligence and clarity, bringing order to our ideas just as You bring order to all creation. May our efforts in this lab glorify You and serve as a reflection of Your wisdom. Amen."
-  },
-  {
-    "objectID": "labs/lab00-slides.html#lab-9",
-    "href": "labs/lab00-slides.html#lab-9",
-    "title": "Lab 00 — Intro do C++",
-    "section": "Lab 9",
-    "text": "Lab 9\n\ncreating recursive functions using ChatGPT\ndiscussing efficiency by calculating the number of times a function is called"
-  },
-  {
-    "objectID": "labs/lab05-slides.html#lab-5",
-    "href": "labs/lab05-slides.html#lab-5",
-    "title": "Lab 05 — Generic Containers",
-    "section": "Lab 5",
-    "text": "Lab 5\n\ncreating class template\npair programming"
-  },
-  {
-    "objectID": "labs/lab05-slides.html#dad-joke-of-the-week",
-    "href": "labs/lab05-slides.html#dad-joke-of-the-week",
-    "title": "Lab 05 — Generic Containers",
-    "section": "Dad joke of the week",
-    "text": "Dad joke of the week"
-  },
-  {
-    "objectID": "labs/lab13.html",
-    "href": "labs/lab13.html",
-    "title": "Lab 12: The STL set and map Containers",
-    "section": "",
-    "text": "Home Alone (1990)."
-  },
-  {
-    "objectID": "labs/lab13.html#objectives",
-    "href": "labs/lab13.html#objectives",
-    "title": "Lab 12: The STL set and map Containers",
-    "section": "Objectives",
-    "text": "Objectives\nIn this exercise, you will:\n\nUse the STL set container to store a set of values.\nUse the STL map container to create an associative array whose keys are string values, and whose values are sets of strings.\nUse iterators to access the items in these containers."
-  },
-  {
-    "objectID": "labs/lab13.html#introduction",
-    "href": "labs/lab13.html#introduction",
-    "title": "Lab 12: The STL set and map Containers",
-    "section": "Introduction",
-    "text": "Introduction\nThis lab/project has you creating a simple database of movies and the actors in the movies. Then the user of the program can choose to:\n\nShow all movies\nShow all actors in a movie\nShow all movies an actor was in.\nThe main data structure you’ll create is an STL map that maps:\n\nmovie name → set of actors in the movie.\nThis is a complex data structure: each entry in the map contains a set (Thus, we’ll have a binary search tree of binary search trees).\nWe’ll use the Bridges database of movie information. When you get the information from the Bridges API, you get a vector of objects of type MovieActorWikidata. Each object contains a movie and an actor in the movie (among other things). If you printed out those two things from MovieActorWikidata objects, you might see these values.\nMovie: Young at Heart         Actor: Alan Hale, Jr.\nMovie: Wichita                Actor: Carl Benton Reid\nMovie: We're No Angels        Actor: Aldo Ray\nMovie: Young at Heart         Actor: Doris Day\nMovie: Wichita                Actor: Joel McCrea\netc...\nThus, you see that the objects are not in any order, and do not have all the actors in a movie in each object. To get all actors for a movie, you’ll have to iterate over all the elements of the vector and learn 1) all the movies, and 2) all the actors in the movies.\nNote that sometimes an actor is listed multiple times for a movie. But, because we are using an STL set, it automatically handles attempts to insert an element multiple times."
-  },
-  {
-    "objectID": "labs/lab13.html#menu",
-    "href": "labs/lab13.html#menu",
-    "title": "Lab 12: The STL set and map Containers",
-    "section": "Menu",
-    "text": "Menu\nThe application presents a menu from which the user can select the operation s/he wishes to perform. To validate a user’s menu-choice, our project uses a tree-based data structure – the STL set. For example, if the valid menu choices are a, b, c, d, e, f, and q, and we store these choices in a set named myValidChoices, then we might (simplistically) visualize this set as follows:\n\nTo determine whether or not a character is present in this set, the STL find(value) method does a binary search down through this tree until it either locates value, or reaches the bottom of the tree. It should be evident that the maximum time to search is O(lg(n)), where n is the number of items in the set.\nThe exercise will provide you with a “skeleton” application, which you will then complete by adding additional functionality."
-  },
-  {
-    "objectID": "labs/lab13.html#getting-started",
-    "href": "labs/lab13.html#getting-started",
-    "title": "Lab 12: The STL set and map Containers",
-    "section": "Getting Started",
-    "text": "Getting Started\nAccept the invitation from github classroom and use git clone, as usual.\nEdit the README.md file to add both your names and your partner’s, and share the git repo, as usual."
-  },
-  {
-    "objectID": "labs/lab13.html#part-i.-the-menu-class",
-    "href": "labs/lab13.html#part-i.-the-menu-class",
-    "title": "Lab 12: The STL set and map Containers",
-    "section": "Part I. The Menu Class",
-    "text": "Part I. The Menu Class\nWhen dealing with menu-driven systems, one thing that can go wrong is if the user enters an invalid choice – something that is not on the menu. When this happens, the program must detect it and take remedial action.\nOne way to detect such a problem is to build a Menu class that, besides “remembering” its menu, “remembers” its set of valid menu choices. Then when the user enters a choice, we can validate their choice by checking whether or not their choice is an element of that set.\nAs you can see, our Menu class contains two instance variables: a string storing the menu, and a set to store those menu choices that are valid:\nstring myValue;             // the menu that is displayed\nset&lt;char&gt; myValidChoices;   // the valid menu choices\nSave/compile your project, and verify that everything compiles without errors.\n\nThe Menu Constructor\nThe Menu constructor currently initializes our myValue member; it must also initialize myValidChoices so that it stores the valid menu choices. To do so, we can use the insert() method:\nsetVariable.insert(value);\nthat inserts a single value into a set.\nIn Menu.cpp, add insert() calls to make myValidChoices represent the set {‘a’, ‘b’, ‘c’, ‘q’}.\n\n\nThe Menu::containsChoice() Method\nTo let a program conveniently check whether or not a given character is a valid menu choice, the Menu class provides a boolean method containsChoice(choice) that returns true if and only if choice is a valid menu choice. Currently, this method is a stub-definition that returns false. Your next task is to revise this stub so that it returns true if and only if choice is in the set myValidChoices.\nWe can accomplish this using the find() method.\nSave/compile your project, and when it is free of compilation errors, run the program. When it is free of errors, go on.\nWhen you run your program, you will need to provide your Bridges UserName and Id on the command line: e.g.,\n./movies CS112StudentUsingBridges 123555666"
-  },
-  {
-    "objectID": "labs/lab13.html#part-ii.-the-app-class",
-    "href": "labs/lab13.html#part-ii.-the-app-class",
-    "title": "Lab 12: The STL set and map Containers",
-    "section": "Part II. The App Class",
-    "text": "Part II. The App Class\nThe file App.h contains the declaration of class App. This class uses an STL map to store (movieName, set of actors) pairs:\nmap&lt;string, set&lt;string&gt;&gt; movies_by_name;   // key is movie name; value is set of actors' names.\nNote that the code actually reads like this:\ndb_type movies_by_name;\nIn order to not have to type map&lt;string, set&lt;string&gt;&gt; too often, I created two typedefs at the top of App.h:\ntypedef map&lt;string, set&lt;string&gt;&gt; db_type;\ntypedef map&lt;string, set&lt;string&gt;&gt;::iterator db_iter;\nNow, the code can use db_type and db_iter instead of map&lt;string, set&lt;string&gt;&gt; and map&lt;string, set&lt;string&gt;&gt;::iterator, respectively. So much easier to type!\n\nConstructor\nThe App constructor has been defined for you. It takes a vector of MovieActorWikidata entries as a parameter.\nThe constructor code contains the algorithm you should implement to process these entries, building up entries in the movies_by_name map.\nIf you use the hint I gave in class about how accessing a map with [ ] will either create a new entry or update it if it already exists, then the body of the for loop is one line. Otherwise, the body is about 9 lines, and is very tricky code.\nWrite the code now. This code will be difficult to test until you implement the next step.\n\n\nShow All Movies Option\nImplement code for showAllMovies(), to iterate through all entries in movies_by_name, and print out the movie name and then iterate through all actors for that movie, printing them out. I’ve indented the actor’s name, so the output is more readable.\nYou might find it very useful to make the inner loop a separate function. I called that function showActorsInAMovie(). It takes an iterator “pointing” to an object from the movies_by_name collection, and iterates over the “second” field (a set), printing each actor in the set. If you implement this function, you’ll find you can use it again below.\nWhen you think your code is correct (for this and the previous step), try loading all movies from 1955 and printing them all out. The first movie should be:\nMovie: 5 Against the House\n        Alvy Moore\n        Brian Keith\n        George Cisar\n        Guy Madison\n        Hugh Sanders\n        Jean Willes\n        John Larch\n        John Zaremba\n        Kathryn Crosby\n        Kerwin Mathews\n        Kim Novak\n        Mark Hanna\n        Robert Sampson\n        William Conrad\nThe last movie you should see should look like this:\nMovie: Young at Heart\n        Alan Hale, Jr.\n        Doris Day\n        Dorothy Malone\n        Elisabeth Fraser\n        Ethel Barrymore\n        Frank Ferguson\n        Frank Sinatra\n        Gig Young\n        Lonny Chapman\n        Robert Keith\n\n\nShow All Actors For a Single Movie Option\nComplete the code in the getMovienameAndShowActors() method. If you created a function to show all actors for a given movie, then you are half done already.\n\n\nShow All Movies For an Actor Option\nFinally, implement this option. Create a set of strings (I called my variable movies_by_actor.) And then go through all movies, looking for that actor. When you find him/her, add the movie to the movies_by_actor. Then, when you are done, print out the set.\nHere is a sample output:\nEnter an actor name to show all movies for that actor: Alfred Hitchcock\nRear Window\nThe Trouble with Harry\nTo Catch a Thief"
-  },
-  {
-    "objectID": "labs/lab13.html#turn-in",
-    "href": "labs/lab13.html#turn-in",
-    "title": "Lab 12: The STL set and map Containers",
-    "section": "Turn In",
-    "text": "Turn In\nSubmit your project to github as usual. If you worked with your lab partner on the project, make sure you update README.md to include both of your names/login-ids."
-  },
-  {
-    "objectID": "labs/lab13.html#grading-rubric",
-    "href": "labs/lab13.html#grading-rubric",
-    "title": "Lab 12: The STL set and map Containers",
+    "objectID": "labs/lab08.html#grading-rubric",
+    "href": "labs/lab08.html#grading-rubric",
+    "title": "Lab 08: Timing List and Vector Operations",
     "section": "Grading Rubric",
-    "text": "Grading Rubric\n21 points total:\n\nMenu class works: 2 pts.\nApp constructor: 5 pts.\nEach App menu item: 4 pts each: 12 pts.\nHospitable code: code is clean and neat, perfectly indented, with good variable names, etc.: 2 pts.\n\nWays students have lost points in the past:\n\n-2: showAllMovies needs to show the names of each movie’s actors\n-2: getMovieNameAndShowActors implementation is incorrect, the result of movies_by_name.find will return the iterator value you want to pass to showActorsInAMovie, the for loop is unnecessary\n-2: code is very poorly indented\n-2: parameter names are very poorly chosen"
+    "text": "Grading Rubric\nTotal score: 20 pts\n\n9 pts: 3 pts each for proper implementation of Experiment 0, 1, and 2.\n5 pts for correct graphs.\n6 pts for answering the questions.\n\nWays students have lost points in the past:\n\n-2: Can’t make project, There are persisting errors.\n-5: No PDF analyzing the results\n-2: late submission"
+  },
+  {
+    "objectID": "labs/lab06-slides.html#some-reflection-13",
+    "href": "labs/lab06-slides.html#some-reflection-13",
+    "title": "Lab 06 — Linked Lists",
+    "section": "Some reflection (1/3)",
+    "text": "Some reflection (1/3)\n\n\n\n\n\n\n\n\n\n\n\n“In a Christian community everything depends upon whether each individual is an indispensable link in a chain. Only when even the smallest link is securely interlocked is the chain unbreakable. (…)"
+  },
+  {
+    "objectID": "labs/lab06-slides.html#some-reflection-23",
+    "href": "labs/lab06-slides.html#some-reflection-23",
+    "title": "Lab 06 — Linked Lists",
+    "section": "Some reflection (2/3)",
+    "text": "Some reflection (2/3)\n\n\n\n\n\n\n\n\n\n\n\n“(…) A community which allows unemployed members to exist within it will perish because of them. It may be well, therefore, if every member receives a definite task to perform for the community, that he may know in hours of doubt that he, too, is not useless and unusable. (…)"
+  },
+  {
+    "objectID": "labs/lab06-slides.html#some-reflection-33",
+    "href": "labs/lab06-slides.html#some-reflection-33",
+    "title": "Lab 06 — Linked Lists",
+    "section": "Some reflection (3/3)",
+    "text": "Some reflection (3/3)\n\n\n\n\n\n\n\n\n\n\n\n(…) Every Christian community must realize that not only do the weak need the strong, but also that the strong cannot exist without the weak. The elimination of the weak is the death of fellowship.” -Bonhoeffer, Life Together, 94."
+  },
+  {
+    "objectID": "labs/lab06-slides.html#lab-6",
+    "href": "labs/lab06-slides.html#lab-6",
+    "title": "Lab 06 — Linked Lists",
+    "section": "Lab 6",
+    "text": "Lab 6\n\ncreating methods for class list\npair programming"
+  },
+  {
+    "objectID": "labs/lab06-slides.html#dad-joke-of-the-week",
+    "href": "labs/lab06-slides.html#dad-joke-of-the-week",
+    "title": "Lab 06 — Linked Lists",
+    "section": "Dad joke of the week",
+    "text": "Dad joke of the week\n\n\n\nQ: Why did the man fall down the deep hole?\nA: ’Cause he couldn’t see that well."
+  },
+  {
+    "objectID": "labs/lab09-hint-push2.html",
+    "href": "labs/lab09-hint-push2.html",
+    "title": "Lab 09: Hint push() 2",
+    "section": "",
+    "text": "To throw an exception when the stack is full, the push(const Item& it) method should behave as follows:\nIf I am full {\n    throw a StackException whose method is \"push()\" and whose message is \"stack is full\".\n}\na. Store it into the entry of myArray whose index is mySize.\nb. Add 1 to mySize."
+  },
+  {
+    "objectID": "labs/lab11-hint.html",
+    "href": "labs/lab11-hint.html",
+    "title": "Lab 10: Hint",
+    "section": "",
+    "text": "The stub of BST::insert() should look like this:\nvoid BST::insert(const Item& item) {\n\n }\n## Defining BST::insert()\nThe BST::insert(item) method needs to distinguish between the two cases (empty and non-empty):\n\nIf the BST is empty:\n\nCreate a new node containing item and store that node’s address in myRoot.\n\nOtherwise (there is at least one node):\n\n“Pass the buck” to the root node by invoking Node::insert(item) on the node whose address is in myRoot.\nAny exception it throws will be sent back to the calling insert() message.\n\nIn either case (when no exception was thrown), increment myNumItems."
+  },
+  {
+    "objectID": "labs/lab11-hint.html#declaring-bstinsert",
+    "href": "labs/lab11-hint.html#declaring-bstinsert",
+    "title": "Lab 10: Hint",
+    "section": "",
+    "text": "The stub of BST::insert() should look like this:\nvoid BST::insert(const Item& item) {\n\n }\n## Defining BST::insert()\nThe BST::insert(item) method needs to distinguish between the two cases (empty and non-empty):\n\nIf the BST is empty:\n\nCreate a new node containing item and store that node’s address in myRoot.\n\nOtherwise (there is at least one node):\n\n“Pass the buck” to the root node by invoking Node::insert(item) on the node whose address is in myRoot.\nAny exception it throws will be sent back to the calling insert() message.\n\nIn either case (when no exception was thrown), increment myNumItems."
+  },
+  {
+    "objectID": "labs/lab11-hint.html#designing-nodeinsert",
+    "href": "labs/lab11-hint.html#designing-nodeinsert",
+    "title": "Lab 10: Hint",
+    "section": "Designing Node::insert()",
+    "text": "Designing Node::insert()\nSince a Node is recursively defined, we might define Node::insert(item) as a recursive method. One way to design a recursive algorithm for this method is as follows:\nBasis. There are three trivial cases:\n\nIf item belongs in my left subtree and my left subtree is empty:\n\nMake my left subtree a new node containing item.\n\nIf item belongs in my right subtree and my right subtree is empty:\n\nMake my right subtree a new node containing item.\n\nIf item does not belong in our left or right subtrees (i.e., its value is the same as myItem):\n\nWe will treat our BST like a mathematical set (which has no redundant elements) and throw an exception to alert the user that they have inserted the same Item more than once.\n\n\nInduction Step. Again, there are two cases:\n\nIf item belongs in my left subtree and my left subtree is not empty:\n\n“Pass the buck” to the node in my left subtree by asking it to insert item.\n\nIf item belongs in my right subtree and my right subtree is not empty:\n\n“Pass the buck” to the node in my right subtree by asking it to insert item."
+  },
+  {
+    "objectID": "labs/lab11-hint.html#defining-nodeinsert",
+    "href": "labs/lab11-hint.html#defining-nodeinsert",
+    "title": "Lab 10: Hint",
+    "section": "Defining Node::insert()",
+    "text": "Defining Node::insert()\nThese observations can then be reorganized into the following algorithm for our Node::insert() method:\n\nIf item is less than myItem:\n\nIf myLeft is nullptr:\n\nSet myLeft to the address of a new node containing item.\n\nOtherwise:\n\n“Pass the buck” by recursively calling myLeft-&gt;insert(item).\n\n\nOtherwise, if item is greater than myItem:\n\nIf myRight is nullptr:\n\nSet myRight to the address of a new node containing item.\n\nOtherwise:\n\n“Pass the buck” by recursively calling myRight-&gt;insert(item).\n\n\nOtherwise (item must be equal to myItem):\n\nthrow an Exception indicating that item is already in the BST."
+  },
+  {
+    "objectID": "labs/lab09-hint.html",
+    "href": "labs/lab09-hint.html",
+    "title": "Lab 09: Hint",
+    "section": "",
+    "text": "The stub of isEmpty() should look like this:\nbool Stack::isEmpty() const {\n}\nThe isEmpty() method should return true when mySize equals zero, and should return false otherwise."
+  },
+  {
+    "objectID": "labs/lab08-slides.html#dad-joke-of-the-week",
+    "href": "labs/lab08-slides.html#dad-joke-of-the-week",
+    "title": "Lab 08 — Stacks, Queues and Exceptions",
+    "section": "Dad joke of the week",
+    "text": "Dad joke of the week\n\n\n\n\n\n\n\n\n\n\nDogs can’t operate MRI machines. But catscan."
+  },
+  {
+    "objectID": "labs/lab08-slides.html#lab-6",
+    "href": "labs/lab08-slides.html#lab-6",
+    "title": "Lab 08 — Stacks, Queues and Exceptions",
+    "section": "Lab 6",
+    "text": "Lab 6\n\ncreating methods for class list\npair programming"
+  },
+  {
+    "objectID": "labs/lab06.html",
+    "href": "labs/lab06.html",
+    "title": "Lab 06: More List Operations",
+    "section": "",
+    "text": "Equality."
+  },
+  {
+    "objectID": "labs/lab06.html#objectives",
+    "href": "labs/lab06.html#objectives",
+    "title": "Lab 06: More List Operations",
+    "section": "Objectives:",
+    "text": "Objectives:\nIn this exercise, you will:\n\nBuild more List operations.\nPractice using pointers."
+  },
+  {
+    "objectID": "labs/lab06.html#introduction",
+    "href": "labs/lab06.html#introduction",
+    "title": "Lab 06: More List Operations",
+    "section": "Introduction",
+    "text": "Introduction\nIn this week’s lab you will add more functionality to the List class we built in class.\nHere is the invite.\nUse git clone to get your copy of the assignment, as we have been doing. You should have these files: List.cpp, List.h, tests.cpp, plus a makefile, etc.\nIf you are working with a partner, so make sure you join the same Team when creating your repos. Also, put both your names in the README.md file now."
+  },
+  {
+    "objectID": "labs/lab06.html#step-1.-append",
+    "href": "labs/lab06.html#step-1.-append",
+    "title": "Lab 06: More List Operations",
+    "section": "Step 1. Append",
+    "text": "Step 1. Append\nThe append() method is easy to understand: given a new Item, add it to the end of the linked list. The tests.cpp file contains tests already for append().\nNow, implement the code for append(). You might find looking at the implementation of prepend() to be helpful – although append() is a bit more complicated. DRAW PICTURES! (Or, don’t draw pictures, if you want to make this step of the lab take much longer…)"
+  },
+  {
+    "objectID": "labs/lab06.html#step-2.-searching",
+    "href": "labs/lab06.html#step-2.-searching",
+    "title": "Lab 06: More List Operations",
+    "section": "Step 2. Searching",
+    "text": "Step 2. Searching\nLet’s implement a method that searches the linked list for a given Item, and returns the index of where the item is found, or -1 if it is not found. Name the method getIndexOf(). Here is the prototype:\nint getIndexOf(const Item &it) const;\nFirst implement tests of getIndexOf() in tests.cpp, and then implement the method. You must call the TEST_CASE “lookfor”. I.e., put this in the tests.cpp file:\nTEST_CASE(\"lookfor\") {\n     // add your tests here -- either inside SECTION()s or not.\n}"
+  },
+  {
+    "objectID": "labs/lab06.html#step-3.-copy-constructor",
+    "href": "labs/lab06.html#step-3.-copy-constructor",
+    "title": "Lab 06: More List Operations",
+    "section": "Step 3. Copy constructor",
+    "text": "Step 3. Copy constructor\nYou knew it was coming…\ntests.cpp does not contain any test cases for this, so you’ll have to implement them yourself. My solution has 1 TEST_CASE with 3 SECTIONS: copying a 0-element List, copying a 1-element List, and copying a \\(&gt;1\\)-element list. The name of the TEST_CASE must be copy constructor:\nTEST_CASE(\"copy\") {\n     // add your tests here -- either inside SECTION()s or not.\n}\nThe prototype of the copy constructor will be:\nList(const List & original);\nHere is the algorithm to implement the copy constructor:\n\nSet all the instance variables (myFirst, myLast, mySize) to default values.\nWalk the list of nodes in original, calling append() on the value in each node. (You are calling append() on “this” node, thus adding a new node each time to the List being constructed.)"
+  },
+  {
+    "objectID": "labs/lab06.html#step-4.-equality",
+    "href": "labs/lab06.html#step-4.-equality",
+    "title": "Lab 06: More List Operations",
+    "section": "Step 4. Equality",
+    "text": "Step 4. Equality\nImplement the equality method, so that you can test if two List objects have the same number of nodes and the items in the nodes are the same. The equality operator returns true or false.\nE.g.,\nif list1 contains 3 values: 11, 22, 33 and list2 contains four values: 11, 22, 33, 44, then list1 == list2 should return false.\nTo test this you have to use == (not !=), so your test might look like this:\nREQUIRE(! (list1 == list2) );\nCreate your tests first in a test case called “equality”:\nTEST_CASE(\"equality\") {\n     // add your tests here -- either inside SECTION()s or not.\n}\n\n\n\n\n\n\nTip\n\n\n\nUse a “curr” pointer to each list’s myFirst node, then in a loop, check if the items are the same for the two nodes, then move each curr pointer to its next node."
+  },
+  {
+    "objectID": "labs/lab06.html#step-5.-templatize",
+    "href": "labs/lab06.html#step-5.-templatize",
+    "title": "Lab 06: More List Operations",
+    "section": "Step 5. Templatize",
+    "text": "Step 5. Templatize\nNow, convert your List class to a List&lt;Item&gt; template and modify the tests in tests.cpp to test your new template. Remember to edit the makefile to remove List.cpp from the SOURCES line near the top of the file. You should also delete the List.cpp file completely from your tree."
+  },
+  {
+    "objectID": "labs/lab06.html#submit",
+    "href": "labs/lab06.html#submit",
+    "title": "Lab 06: More List Operations",
+    "section": "Submit",
+    "text": "Submit\nA part of your grade will be based on the thoroughness of your tests; you may want to model your tests after those provided for you in previous projects.\nDon’t forget to Commit and Push your changes to your repo.\nVerify you have synced your code to github by going to your online repo webpage and looking to see that the files are correct.\nVerify that the autograding tests have passed in github.com."
+  },
+  {
+    "objectID": "labs/lab06.html#grading-rubric",
+    "href": "labs/lab06.html#grading-rubric",
+    "title": "Lab 06: More List Operations",
+    "section": "Grading Rubric:",
+    "text": "Grading Rubric:\nYou will be graded this way: 19 pts total\n\n4 pts each for append(), getIndexOf(), copy constructor, and equality operator (16 pts)\n3 pts for correctness,\n1 pt for thorough tests (you get this point free for append() for which I’ve provided tests).\n3 pts for correctly converting to a class template.\n\nWays students lost points in the past:\n\n-3: Incorrect class template conversion, code does not compile;\n-3: Missing tests for getIndexOf(), copy constructor, and equality operator\n-1: Incomplete equality tests, no tests for when equality is true\n-1: Append implementation needs to adjust the myNext of the current last element\n-1: Copy constructor: myFirst is not initialized to nullptr, causing tests to fail;\n-1: Missing test for equality operator;\n-1: Incomplete test for copy constructor;"
+  },
+  {
+    "objectID": "labs/lab09-hint-push.html",
+    "href": "labs/lab09-hint-push.html",
+    "title": "Lab 09: Hint push()",
+    "section": "",
+    "text": "The stub of push() should look like this:\nvoid Stack::push(const Item& it) {\n}\nNote that when the stack is empty, mySize is 0: when the stack contains 1 item, mySize is 1; when the stack contains 2 items, mySize is 2; and so on. Put differently, mySize always contains the index of myArray where we want push() to store its item!\nThe push(it) method should thus behave as follows:\n\nStore it in the entry of myArray whose index is mySize.\nAdd 1 to mySize."
   },
   {
     "objectID": "labs/lab11.html",
@@ -912,6 +996,272 @@
     "text": "Grading Rubric: 24 pts total\n\n16 pts for correct code that passes all the tests\n2 pts for clean, neat code, well-indented, and readable\n6 pts for correctness (see common mistakes below).\n\nWays students lost points in the past:\n\n-1: Be careful about brace indentation  \n-1: Memory leak in setSize() when mySize &lt; newSize. You need to delete[] myArray in both cases; move it outside the else statement.\n-2: Make sure you are using delete[] and not delete, which leaks memory\n-24: No submission, or partner forgot to include you in README."
   },
   {
+    "objectID": "labs/lab09-hint-peektop.html",
+    "href": "labs/lab09-hint-peektop.html",
+    "title": "Lab 09: Hint peekTop()",
+    "section": "",
+    "text": "The stub of peekTop() should look like this:\nItem Stack::peekTop() const {\n}\nThe variable mySize always contains the number of items in the Stack:\n\nwhen the stack is empty, mySize == 0;\nwhen the stack contains 1 item, mySize == 1 and the top item is at index 0;\nwhen the stack contains two items, mySize == 2 and the top item is at index 1;\nwhen the stack contains three items, mySize == 3 and the top item is at index 2;\netc.\n\nMore generally, when the stack is not empty, the top item is 1 position “down” from the value of mySize.\nSo when the stack is not empty, peekTop() should return the item from myArray that is 1 less than the current value of mySize."
+  },
+  {
+    "objectID": "labs/lab14.html",
+    "href": "labs/lab14.html",
+    "title": "Lab 13: Hash Tables Project",
+    "section": "",
+    "text": "Definition of Grinch."
+  },
+  {
+    "objectID": "labs/lab14.html#learning-objectives",
+    "href": "labs/lab14.html#learning-objectives",
+    "title": "Lab 13: Hash Tables Project",
+    "section": "Learning Objectives",
+    "text": "Learning Objectives\nIn this exercise, you will:\n\nbuild a hash table data structure\nexperiment with hashing algorithms to distribute data across all buckets, as much as possible."
+  },
+  {
+    "objectID": "labs/lab14.html#step-0",
+    "href": "labs/lab14.html#step-0",
+    "title": "Lab 13: Hash Tables Project",
+    "section": "Step 0",
+    "text": "Step 0\nAccept the Assignment.\nOur hash table will be a STL vector of STL sets (in class we used a vector of linked lists). Your code will read a file, dictionary.txt, that contains “all” the words in the English language, and insert each word into the hash table. There are about ~127,000 words in the file, but we will use a fairly small number of buckets, so there will be many collisions.\nThe goal of this exercise is to experiment with hashing algorithms to see if you can find one that distributes items well."
+  },
+  {
+    "objectID": "labs/lab14.html#step-1-build-the-hashtable-data-structure-and-constructor",
+    "href": "labs/lab14.html#step-1-build-the-hashtable-data-structure-and-constructor",
+    "title": "Lab 13: Hash Tables Project",
+    "section": "Step 1: Build the HashTable data structure and constructor",
+    "text": "Step 1: Build the HashTable data structure and constructor\nInspect the code in HashTable.h and HashTable.cpp. There is not much there, but it is a start. Do notice that there is a static constant integer called TABLE_SIZE, initialized to the value 200.\nCreate the hash table data structure in the private: section, calling it myTable. For this project, the table must be a vector of sets of strings (in class we used a vector of lists).\nIn the constructor, initialize myTable to have TABLE_SIZE buckets by calling\nmyTable.resize(TABLE_SIZE);\nAlso, in the constructor initialize mySize to 0.\nCompile your code to make sure what you have written compiles."
+  },
+  {
+    "objectID": "labs/lab14.html#step-2-insert-and-hash",
+    "href": "labs/lab14.html#step-2-insert-and-hash",
+    "title": "Lab 13: Hash Tables Project",
+    "section": "Step 2: insert() and hash()",
+    "text": "Step 2: insert() and hash()\nThe prototypes for insert() and hash() are defined in the .h file. Now, you must implement them in the .cpp file. Use the code we saw in the slides in class for the hash function. The function should add up the first and last characters of the string, modding the result by TABLE_SIZE.\nTry to compile the code using make. It should compile. Fix any issues if your compilation fails."
+  },
+  {
+    "objectID": "labs/lab14.html#step-3-main",
+    "href": "labs/lab14.html#step-3-main",
+    "title": "Lab 13: Hash Tables Project",
+    "section": "Step 3: main()",
+    "text": "Step 3: main()\nNow, create code in main(). Your code should define a HashTable object first.\nThen, open the file dictionary.txt for reading, and read each word from the file, one at a time, inserting each word into the hash table.\nNext, have the code close the file.\nCompile your code."
+  },
+  {
+    "objectID": "labs/lab14.html#step-4-testing",
+    "href": "labs/lab14.html#step-4-testing",
+    "title": "Lab 13: Hash Tables Project",
+    "section": "Step 4: Testing",
+    "text": "Step 4: Testing\nOf course, at this point, we have no idea if the items have been distributed well in the hash table, because we have no way to inspect the hash table contents.\nNotice that there is a method called dumpInfo() defined, but currently the code does nothing. Fill in the code to do the following:\n\nFor each bucket, print how many items are in it.\nCount and print the number of empty buckets.\nCalculate and print the average number of items in non-empty buckets.\n\nHere is a snippet of my output. Make your output look similar:\nnumber of items in bucket 0: 415\nnumber of items in bucket 1: 351\nnumber of items in bucket 2: 307\nnumber of items in bucket 3: 414\nnumber of items in bucket 4: 293\n...\nnumber of items in bucket 197: 560\nnumber of items in bucket 198: 484\nnumber of items in bucket 199: 341\n--------------------------\nTotal number of elements in the hash table: 127141\nNumber of empty buckets: 0\nAverage number of items in non-empty buckets: 635\n\n\n\n\n\n\nNote\n\n\n\nNote: the output above is from after I changed the number of buckets in my data structure, and tweaked the hash algorithm, which you’ll do below.\n\n\nAfter you implement your dumpInfo() method, call it from your main() code."
+  },
+  {
+    "objectID": "labs/lab14.html#step-5-tweak-your-hashing-algorithm-and-table-size",
+    "href": "labs/lab14.html#step-5-tweak-your-hashing-algorithm-and-table-size",
+    "title": "Lab 13: Hash Tables Project",
+    "section": "Step 5: Tweak Your Hashing Algorithm and Table Size",
+    "text": "Step 5: Tweak Your Hashing Algorithm and Table Size\nYou will notice that the basic hashing algorithm (adding up the first and last characters of each string) does a very poor job of distributing strings across all buckets in the hash table. Your goal now is to improve the hashing algorithm to improve the distribution.\nExperiment with different algorithms, but make sure they follow the criteria laid out in class:\n\nO(1)\ndistribute values across all buckets.\ndeterministic.\n\nYou MAY increase the number of buckets, but it must remain at or below 250 total. Do not change how buckets are implemented – they should remain sets.\nDo not spend more than 1 hour tweaking your algorithm. Make sure your final code implements your best algorithm.\n\n\n\n\n\n\nImportant\n\n\n\nWrite a comment in your hash() function that describes your algorithm, explaining why you think it works as well as it does."
+  },
+  {
+    "objectID": "labs/lab14.html#step-6-submit",
+    "href": "labs/lab14.html#step-6-submit",
+    "title": "Lab 13: Hash Tables Project",
+    "section": "Step 6: Submit",
+    "text": "Step 6: Submit\nSubmit your code via github, as normal.\n\n\n\n\n\n\nWarning\n\n\n\nIF YOU WORKED WITH A PARTNER, ONLY ONE OF YOU HAS TO SUBMIT, but UPDATE THE README.md to INCLUDE BOTH NAMES."
+  },
+  {
+    "objectID": "labs/lab14.html#grading-rubric",
+    "href": "labs/lab14.html#grading-rubric",
+    "title": "Lab 13: Hash Tables Project",
+    "section": "Grading Rubric",
+    "text": "Grading Rubric\n20 points total:\n\n10 pts: hash table code (not including the hash function) is correct\n5 pts: hash function obeys the criteria laid out in class.\n3 pts: hash function works well (not obviously leaving many buckets empty and have some be very full).\n2 pts: code is clean and hospitable.\n\nWays students lost points in the past:\n\n-2: Hash function does not appear to be evenly distributed but fills lower-numbered buckets way more (~2000 vs ~50)\n-4: Main function does not load words from file or call dumpInfo\n-1: Missing call to dumpInfo in main\n-3: Buckets are not evenly distributed (with many below 50 or above 2000) and some are empty. The smallest buckets are odd-numbered, which indicates a quirk in the algorithm which disfavors that half of the buckets\n-4: Most of the buckets are empty; a hashing algorithm should seek to evenly distribute words into buckets\n-1: Please output all bucket counts per instructions so the distribution can be seen."
+  },
+  {
+    "objectID": "labs/lab03.html",
+    "href": "labs/lab03.html",
+    "title": "Lab 03: Classes",
+    "section": "",
+    "text": "A student created by AI."
+  },
+  {
+    "objectID": "labs/lab03.html#step-0.-prepare",
+    "href": "labs/lab03.html#step-0.-prepare",
+    "title": "Lab 03: Classes",
+    "section": "Step 0. Prepare",
+    "text": "Step 0. Prepare\n\nClick this link and then “Accept this assignment”. Make sure you and your partner are in the same Team.\nWait a few seconds and refresh the page. Refresh until the page says “You’re ready to go!”. The page has a link to a github repo.\nClick the link to see your new repo on github.com.\nClick the green Code button and copy the SSH link it shows.\nIn a terminal,\n\ncd to the directory where you are putting all your CS112 assignments.\ntype git clone &lt;paste-the-contents-of-the-link-you-copied&gt;\n\ncd to the new directory containing your repo.\ntype code . to start up Visual Studio Code in that directory.\nInspect the code you got in the assignment."
+  },
+  {
+    "objectID": "labs/lab03.html#part-1-a-student-class",
+    "href": "labs/lab03.html#part-1-a-student-class",
+    "title": "Lab 03: Classes",
+    "section": "Part 1: A Student Class",
+    "text": "Part 1: A Student Class\n\nStep 1. Create the class\nWe will create a class to represent a Student. You probably have not created a class in C++ before, so here are the Pair.h and Pair.cpp classes I created as an example in class. Use this code as an example/template.\nThe instance variables for a Student will be:\n\n\n\n\n\n\nInstance Variable Name\n\n\nType\n\n\nDefault value\n\n\nNotes\n\n\n\n\n\n\nmyName\n\n\nstring\n\n\n“”\n\n\nImmutable (NOTE: this is not a const in our class, but we will not be making setter functions for these immutable values.)\n\n\n\n\nmyId\n\n\nunsigned int\n\n\n0\n\n\nImmutable (NOTE: this is not a const in our class, but we will not be making setter functions for these immutable values.)\n\n\n\n\nmyGpa\n\n\nfloat\n\n\n0.0\n\n\n\n\n\n\nmyMajor\n\n\nstring\n\n\n“Undecided”\n\n\n\n\n\n\n\nIn Student.h, you should see the definition of the Student class. In that class, create the private: section, and in there define the 4 instance variables, shown in the table above. You’ll have to #include &lt;string&gt; and do the using namespace business…\nCompile (type: make tester) and fix any errors. (You may see warnings – you can ignore those for now.)\nIn Student.h define the default constructor (in the public: section). In Student.cpp, create the default constructor implementation, initializing the instance variables to their default values, as shown in the table above.\n\n\n\n\n\n\nCompile and fix any errors.\n\n\n\n\n\n\n\n\nStep 2. Create getters\nIn your tests.cpp, you’ll find the first SECTION of unit tests called “student getters”, within the TEST_CASE “Student class”. Uncomment the first SECTION, so that the code to construct a Student object and then test getMajor() runs.\n\n\n\n\n\n\nCompile\n\n\n\nThe compilation should fail because we haven’t defined getMajor() yet. There should be no other problems.\n\n\nSo, create a getter function (in both the Student.h and Student.cpp files) called getMajor().\nCompile and run (in a terminal, run ./tester \"Student class\") – this should work now.\nNow, repeat the above steps for the other tests and instance variables (maybe make this part more clear in the future). Start with a test in tests.cpp first, then implement the prototype and code.\n\n\n\n\n\n\nNOTE\n\n\n\nDon’t delete any old tests – just keep adding more. Put each test in its own SECTION within the “Student class” TEST_CASE.\n\n\n\n\nStep 3. Create setters\nFor the instance variables that are mutable (see the table above), create setter methods. But first, for each, create a test. Put all of these tests in a new SECTION within the “Student class” TEST_CASE.\n\n\n\n\n\n\nTip\n\n\n\nExample: for the setGpa test, set the student’s gpa to 3.25, then in a REQUIRE statement, call getGpa() and make sure the value is 3.25.\n\n\n\n\nStep 4. Create an explicit-value constructor\nNow, create a second constructor – the explicit-value constructor. This constructor should take the two immutable fields as parameters, and store their values in the instance variables. Initialize all the other variables to their default values. BUT FIRST, create tests. I called my SECTION “student explicit-value constructor”, and in it I create a Student with the explicit-value constructor and then use the getters on all instance variables to make sure the object has the correct values in it.\n\n\n\n\n\n\nCompile and test the result. Fix any errors.\n\n\n\n\n\n\nYou are now done with this simple class. We could add tons of other functionality to it, but not now…\nBefore you go on, Commit and Sync your changes to your github repo. You can easily do this from VSCode. After you do this, you should be able to see that the automated tests fail – but the one test that tests the “Student class” passes. If it does not pass, fix your code (or your tests), and resubmit until it does pass."
+  },
+  {
+    "objectID": "labs/lab03.html#part-2-fraction-class",
+    "href": "labs/lab03.html#part-2-fraction-class",
+    "title": "Lab 03: Classes",
+    "section": "Part 2: Fraction class",
+    "text": "Part 2: Fraction class\nA Fraction class is a useful class to create. It stores a numerator and denominator and can do things like represent itself nicely (e.g., “3/4”), simplify itself, multiply itself with another fraction, etc.\n\nStep 1. Test the Fraction class\nWe’ll continue to use tests.cpp – don’t remove any code from there. But, now we’ll also use it to create and test Fraction class instances. However, our makefile does not compile the Fraction stuff yet.\nEdit the makefile, adding Fraction.cpp to the SOURCES line.\n\n\n\n\n\n\nTip\n\n\n\nSpace separated! Do not remove Students.cpp.\n\n\nIn tests.cpp, below all your tests for the Student class, add the tests shown below:\nTEST_CASE(\"Fraction class\") {\n    SECTION(\"fraction constructors\") {\n        SECTION(\"default\") {\n            Fraction fr;\n            REQUIRE(fr.getNumerator() == 0);\n            REQUIRE(fr.getDenominator() == 1);\n        }\n        SECTION(\"explicit value\") {\n            Fraction fr(2, 4);\n            REQUIRE(fr.getNumerator() == 2);\n            REQUIRE(fr.getDenominator() == 4);\n        }\n    }\n}\n\n\n\n\n\n\nImportant\n\n\n\nYou’ll have to #include \"Fraction.h\" at the top of the file.\n\n\n\n\nStep 2. Add the instance variables and constructors\nAdd the two instance variables – myNumerator and myDenominator (both integers) – to the class definition in the .h file.\nUpdate the default constructor, to initialize myNumerator to 0 and myDenominator to 1.\nNow, implement the explicit-value constructor, which takes both the numerator and denominator as parameters, and stores them in myNumerator and myDenominator. Don’t forget to put the declaration in the .h file and implementation in the .cpp file.\n\n\n\n\n\n\nNote\n\n\n\nWe will compile our tester after the next section.\n\n\n\n\nStep 3. getters\nAdd a new SECTION (within the “Fraction class” TEST_CASE) called “fraction getters” and SECTIONs to call the getter functions and test their results. Compilation should fail, as expected.\n\n\n\n\n\n\nWarning\n\n\n\nYes, this is repetitive as we already used them for the default constructors. Just to make sure we cover all our bases, and this can easily be seen in our tests, make another SECTION to quickly check the getter functions again.\n\n\nNow, create getter functions for each.\nNow the compilation and execution should succeed with all tests passing.\n\n\n\n\n\n\nNote\n\n\n\nYou can run only some tests by putting the name of the test on the command line. E.g., you can run only the Fraction tests by running:\n./tester \"Fraction class\"\n\n\n\n\nStep 4. setters\nCreate tests to test setters.\nThen, create the methods and the code so it will compile and run successfully.\n\n\nStep 5. Fanciness\nNow, in setDenominator(), check if the parameter is 0 – an illegal value. If so, throw an invalid_argument exception (remember to #include &lt;stdexcept&gt; first). You can do this by using the line:\nthrow invalid_argument(\"Your error message here!\"); // (Change the error message please!)\nHere is a test for that, assuming you have a fraction called f1:\nSECTION(\"setDenominator\") {\n    REQUIRE_THROWS_AS(f1.setDenominator(0), invalid_argument);\n}\n\n\nStep 6. Display as a string\nCreate a test to call asString() on a Fraction object: If you create a new Fraction object newFrac and call newFrac.asString(), you can REQUIRE that the result should be “0/1”. Initially, this test will fail, so create the method, which returns a string.\n\n\n\n\n\n\nNote\n\n\n\nIn asString() you can use to_string(anInt) to convert an integer into a string. And, you can concatenate strings with +. to_string() is defined in &lt;string&gt; so you’ll have to #include that.\n\n\nWhen that works, use the setters to change the numerator and denominator for a fraction, and then write a test to ensure that asString() still produces the correct results."
+  },
+  {
+    "objectID": "labs/lab03.html#submission",
+    "href": "labs/lab03.html#submission",
+    "title": "Lab 03: Classes",
+    "section": "Submission",
+    "text": "Submission\nCommit your changes to your github repo. After you do this, verify that the automated tests pass. The automated tests just run the tests.cpp file you have been editing.\nDon’t forget to look at the Grading Rubric at the top to make sure you get as many points as possible."
+  },
+  {
+    "objectID": "labs/lab03.html#grading-rubric",
+    "href": "labs/lab03.html#grading-rubric",
+    "title": "Lab 03: Classes",
+    "section": "Grading Rubric",
+    "text": "Grading Rubric\nThis lab is worth 20 pts:\n\n10 points for each of Part 1 and Part the Second: 20 pts\n\n6 pts for correctness\n1 pt for perfect indentation and good variable names, function names, and comments (i.e., hospitable code). You should write a comment in your code only when the following block of code is not obvious to the trained reader. You should not write a comment for each line of code.\n3 pts for sufficient test cases to prove that the code is correct.\n\n\nWays students have lost points in the past:\n\n-2: Test doesn’t pass.\n-1: Missing name and id.\n-3: Missing steps. Next time speak to professor."
+  },
+  {
+    "objectID": "labs/lab02.html",
+    "href": "labs/lab02.html",
+    "title": "Lab 02: File I/O, Control Structures, and the Debugger",
+    "section": "",
+    "text": "Beware of the bugs!"
+  },
+  {
+    "objectID": "labs/lab02.html#objectives",
+    "href": "labs/lab02.html#objectives",
+    "title": "Lab 02: File I/O, Control Structures, and the Debugger",
+    "section": "Objectives:",
+    "text": "Objectives:\nIn this exercise, you will:\n\nRead in a file and process its contents.\nPractice creating functions\nPractice writing for loops and if statements.\nUse the debugger to execute a program statement by statement."
+  },
+  {
+    "objectID": "labs/lab02.html#step-0.-prepare",
+    "href": "labs/lab02.html#step-0.-prepare",
+    "title": "Lab 02: File I/O, Control Structures, and the Debugger",
+    "section": "Step 0. Prepare",
+    "text": "Step 0. Prepare\n\nClick this link and then “Accept this assignment”.\nWait a few seconds and refresh the page. Refresh until the page says “You’re ready to go!”. The page has a link to a github repo.\nClick the link to see your new repo on github.com.\nClick the green Code button and copy the SSH link it shows.\nIn a terminal,\n\ncd to the directory where you are putting all your CS112 assignments.\ntype git clone &lt;paste-the-contents-of-the-link-you-copied&gt;\n\ncd to the new directory containing your repo.\ntype code . to start up Visual Studio Code in that directory.\nMake sure both you and your partner are in the same Team for this assignment.\nInspect the code you got in the assignment."
+  },
+  {
+    "objectID": "labs/lab02.html#finding-duplicates-in-an-array-of-integers",
+    "href": "labs/lab02.html#finding-duplicates-in-an-array-of-integers",
+    "title": "Lab 02: File I/O, Control Structures, and the Debugger",
+    "section": "Finding duplicates in an array of integers",
+    "text": "Finding duplicates in an array of integers\nIn this assignment, you will write a short function, findDuplicate(), that searches an array of integers to find the first pair of duplicate values. If a duplicate value is found, the function returns true, and “returns” the duplicate value through an Out parameter. If no duplicate value is found, the function returns false.\nThink about the algorithm to find a duplicate value in an array. Consider the following array:\n\n\n\n\n\n\n\n\n\n\n\n\n11\n7\n31\n4\n7\n\n\n\n\nHow would you write code to detect that 7 is in the array twice? Talk to your partner about your algorithm. I highly recommend you write pseudo-code for your algorithm. If you want to finish the lab in an efficient way, you’ll take time to write the algorithm and test it on some inputs, revising it until you get it right.\nWhen you have an algorithm, consider this array:\n\n\n\n\n\n\n\n\n\n\n\n11\n7\n7\n4\n71\n\n\n\nAnd this array:\n\n\n\n\n\n\n\n\n\n\n\n7\n43\n31\n12\n71\n\n\n\nDoes your algorithm seem to work on these arrays? Will your algorithm work for arrays with 10,000 values? How about an array with 0 elements or 1 element? Does it work?"
+  },
+  {
+    "objectID": "labs/lab02.html#step-1.-write-the-function",
+    "href": "labs/lab02.html#step-1.-write-the-function",
+    "title": "Lab 02: File I/O, Control Structures, and the Debugger",
+    "section": "Step 1. Write the function",
+    "text": "Step 1. Write the function\nIn functions.h, write the prototype for your function. The prototype is just the first line of the function, without the actual implementation. Study the table below to understand what parameters the function should take. Then try to write that first line of the function. If you can’t get it, I’ll give the answer just below the table.\nYour function is called findDuplicate(), has 3 parameters, and returns bool.\n\n\n\n\n\n\n\n\n\nParameter name\nParameter type\nDescription\n\n\n\n\narr\narray of int\narr of integers to search\n\n\nsize\nint\nsize of the array\n\n\ndup_value\nint &\nThe out parameter containing the first duplicate value, if one is found.\n\n\n\nThe function’s prototype should look like this:\nbool findDuplicate(int arr[], int size, int &dup_value);\nThat’s all that you should have in your .h file.\nIn functions.cpp, implement your function. To repeat from above: If a duplicate value is found, the function returns true, and “returns” the duplicate value through the out parameter, dup_value. If no duplicate value is found, the function returns false. Work from your algorithm. Do your best to implement the function correctly, but don’t take too much time on this, as the next steps will help you make sure your code is correct."
+  },
+  {
+    "objectID": "labs/lab02.html#step-2.-unit-test-your-function",
+    "href": "labs/lab02.html#step-2.-unit-test-your-function",
+    "title": "Lab 02: File I/O, Control Structures, and the Debugger",
+    "section": "Step 2. Unit test your function",
+    "text": "Step 2. Unit test your function\nTake a look at the file tests.cpp. This file uses a unit testing framework called catch, implemented in catch.hpp.\nNotice that the file #includes \"functions.h\" and calls findDuplicate() one or more times in each test. The results of the call to findDuplicate() are tested by REQUIRE statements, which are basically identical to the assert() statements we’ve been using.\nWhen you compile your code using make tester, a tester executable is created. That executable runs the code in tests.cpp, but also allows you to do much more: you can just list the tests, run only some of the tests, configure how the output should look, etc.\nTry compiling your code by typing make tester. If it builds, try running ./tester -s to see output from all the tests that are executed.\nTo run only the first test, you can do:\n./tester \"findDuplicate size 0\"\nIf your code does not pass this test, try fixing it. Take 5 minutes maximum to try to fix your code. Whether you succeed or not, go on."
+  },
+  {
+    "objectID": "labs/lab02.html#step-3.-using-the-debugger",
+    "href": "labs/lab02.html#step-3.-using-the-debugger",
+    "title": "Lab 02: File I/O, Control Structures, and the Debugger",
+    "section": "Step 3. Using the Debugger",
+    "text": "Step 3. Using the Debugger\nA debugger is a program that allows you to set breakpoints in your code, and then run your code. When a breakpoint is encountered, the debugger stops, and allows you to view variables’ values, the call stack, etc.\nThis video shows you how to use the debugger with VS Code. You probably won’t be able to watch this video on a lab machine, but if you have a laptop and/or phone and have earbuds or headphones, you should watch the video. Then, go down to Step 3.5 below.\nIf you cannot watch the video, I’ll describe how to use the debugger here:\nOpen your file that you want to debug. E.g., your functions.cpp file. Here is mine:\n\nYou can see that I have a good start on the function, but it isn’t complete. But, I want to make sure I’m passing in my parameters correctly, and a good way to do that is to use the debugger.\nThe first thing I have to do is build the project:\nmake tester\nIf you look at tests.cpp, you can see a bunch of calls to findDuplicate(), from line 10, line 21, etc.\nTo check if our parameters are being passed in correctly, let’s set a breakpoint on line 2. To do that, put your pointer to the left of the 2 on line 2, and click. You should see a red dot.\n\nYou can set multiple breakpoints at the same time. You could, for example, set a breakpoint on line 3 and line 5, so that you can see in what circumstances your code returns true or false.\nNow, we can start the debugger. The easiest way is to hit F5. Or you can go to Run -&gt; Start Debugging.\n(If you get a weird error, just go on here. You might be trying to debug the wrong executable.)\nWhen you start debugging (successfully), your screen changes quite a bit.\nYou’ll see a menu bar appear at the top of the screen. You’ll also see the debugging icon on the left side become bright:\n\nYou’ll see a debugging window on the left side. And, you’ll see your code run and the debugger will stop at the first breakpoint:\n\n\n\n\n\n\n\nCaution\n\n\n\nIf you saw an error when you started debugging, you might be trying to debug the wrong executable. Look at the image just above. Notice that next to the green arrow is a small menu, with a dropdown arrow. You might be trying to debug the “lab2” program instead of the tester program. If you don’t see “tester”, click on the dropdown arrow and choose “Launch tester”, then click the green right-arrow and try again.\n\n\nYou know where your code has stopped because you see the yellow “arrow” overlaying the red dot. This means your code has run to this point and is stopped.\nOn the lower-left corner you see the call stack. The top frame in the call stack is findDuplicate(). Below that you see that findDuplicate() was called from C_A_T_C_H_T_E_S_T_0() in tests.cpp at line 10. Click on that to see tests.cpp and where it called findDuplicate().\n\nNow, to continue from the breakpoint, we can use the menu bar at the top. If you hover your mouse over the items in the menu bar, you’ll see: Continue (F5), Step Over (F10), Step Into (F11), Step Out (Shift F11), and Stop (Shift-F5). Step Over really means “go to the next line”.\n\nClick on Step Over now. You should see your pointer go to line 3, which returns false. Step Over a few more times, and you’ll get back to tests.cpp, line 11. Now, click Continue. That will make the debugger run the code again until it encounters the next breakpoint – which is back at line 2 of functions.cpp. You can again inspect the parameter values.\nClick Continue again. Notice that you are still at line 2, but look closely to see where findDuplicates() was called from. Which line of tests.cpp called findDuplicates()?\nClick on C_A_T_C_H_T_E_S_T_6() on the lower-left corner of the screen, and look at the values of the Local variables in the upper-right corner. What values are in the numbers array?\nThis really concludes our introduction to using the debugger."
+  },
+  {
+    "objectID": "labs/lab02.html#step-3.5-caveats",
+    "href": "labs/lab02.html#step-3.5-caveats",
+    "title": "Lab 02: File I/O, Control Structures, and the Debugger",
+    "section": " Step 3.5 Caveats",
+    "text": "Step 3.5 Caveats\n📌 Please note these caveats:\n\nIf you make changes to your code, you have to recompile before using the debugger again. Starting or restarting the debugger will not first recompile your code! (To recompile, use make tester .)\nRunning the debugger on MacOS (gdb) has problems. I’ve never gotten it to work on my Mac. Prof. Araújo has been working on that and is comming up with a solution “soon”.\nI haven’t tested running the debugger on Windows. If you want to try that, you will probably have to change the .vscode/launch.json file. When you open that file in VSCode, you get a menu that allows you to insert new configurations – so it might be super easy to get this working – or not easy at all. 🙂"
+  },
+  {
+    "objectID": "labs/lab02.html#step-4.-get-your-code-working-against-all-tests",
+    "href": "labs/lab02.html#step-4.-get-your-code-working-against-all-tests",
+    "title": "Lab 02: File I/O, Control Structures, and the Debugger",
+    "section": "Step 4. Get your code working against all tests",
+    "text": "Step 4. Get your code working against all tests\nUsing the debugger and your brain 🧠, fix your code such that it passes all the tests when you run\n./tester"
+  },
+  {
+    "objectID": "labs/lab02.html#step-5.-implement-your-application",
+    "href": "labs/lab02.html#step-5.-implement-your-application",
+    "title": "Lab 02: File I/O, Control Structures, and the Debugger",
+    "section": "Step 5. Implement your application",
+    "text": "Step 5. Implement your application\nNow that you have a good function that finds duplicates, use it to implement a simple application.\nLook in main.cpp, where you will find the steps to implement, as comments.\nCompile your code with\nmake lab2\nImplement steps 1 - 6 of the algorithm. Step 4 is implemented for you already (assuming you read in the number of lines in the file into a variable named size).\nI HIGHLY RECOMMEND YOU IMPLEMENT your code in small iterations: just write the code for Step 1., compile it and make sure it is correct. Then go on to Step 2. Repeat…\nStep 7. says to “print appropriate output”. This means your application should either print out that there are no duplicates, or should print out that a duplicate was found, and should print what that duplicate value is. E.g., here are a few runs of my solution:\n% ./lab2\nEnter a filename: input_files/in3.txt\nEnter the number of lines in the file: 0\nNo duplicate number was found.\nand another run:\n% ./lab2\nEnter a filename: input_files/in5.txt\nEnter the number of lines in the file: 5\nA duplicate number, 91, has been found.\n\n\n\n\n\n\nNote\n\n\n\nYour output must match the output above EXACTLY. You should try your solution against all the files in the input_files/ directory. These files will be used in the autograding tests run when you submit."
+  },
+  {
+    "objectID": "labs/lab01.html",
+    "href": "labs/lab01.html",
+    "title": "Lab 01: Control Structures",
+    "section": "",
+    "text": "May the force be with you."
+  },
+  {
+    "objectID": "labs/lab01.html#objectives",
+    "href": "labs/lab01.html#objectives",
+    "title": "Lab 01: Control Structures",
+    "section": "Objectives:",
+    "text": "Objectives:\n\nPractice using for loops, while loops, and if statements.\nPractice creating functions and passing parameters.\nPractice Committing and Syncing often to GitHub to run autograding tests."
+  },
+  {
+    "objectID": "labs/lab01.html#step-0.-prepare",
+    "href": "labs/lab01.html#step-0.-prepare",
+    "title": "Lab 01: Control Structures",
+    "section": "Step 0. Prepare",
+    "text": "Step 0. Prepare\n\nClick this link and then “Accept this assignment”. \nWait a few seconds and refresh the page. Refresh until the page says “You’re ready to go!”. The page has a link to a github repo.\nClick the link to see your new repo on github.com.\nClick the green Code button and copy the SSH link it shows.\nIn a terminal,\n\ncd to the directory where you are putting all your CS112 assignments.\ntype git clone &lt;paste-the-contents-of-the-link-you-copied&gt;\n\ncd to the new directory containing your repo.\ntype code . to start up Visual Studio Code in that directory.\nMake sure yo and your partner are in the same Team when creating the repo.\nInspect the code you got in the assignment.\nIn the terminal, type make\nThe code should compile and give you an executable called tester.\nRun the program: type ./tester\nYou should get some basic output – or at least it should not crash."
+  },
+  {
+    "objectID": "labs/lab01.html#step-1.-if-statement-practice-1",
+    "href": "labs/lab01.html#step-1.-if-statement-practice-1",
+    "title": "Lab 01: Control Structures",
+    "section": "Step 1. if statement practice, 1",
+    "text": "Step 1. if statement practice, 1\nIn functions.cpp in the grade() function, add code that 1. prints “Enter your grade:” 2. reads in an unsigned value from the user 3. computes whether the letter grade (a char) is an A, B, C, D, or F. An A is 90 or above, a B is 80 - 89, etc. 4. prints out the grade saying “Your grade is grade.”.\nCompile your program by typing make in a terminal. Run it by typing ./tester step1. Verify that your output looks exactly like this:\nYour grade is B.\nNow, Commit and Sync your code to github. Use “step 1 complete” as your Message. When you Commit and Sync, the automated tests will run on github. Only the “step1” test should pass at this time. If it doesn’t, fix your code, and then resubmit (use any Message you want). Repeat until the “step1” test passes.\n\n\n\nCommiting and Syncing"
+  },
+  {
+    "objectID": "labs/lab01.html#step-2.-if-statement-practice-2",
+    "href": "labs/lab01.html#step-2.-if-statement-practice-2",
+    "title": "Lab 01: Control Structures",
+    "section": "Step 2. if statement practice, 2",
+    "text": "Step 2. if statement practice, 2\nAdd code in functions.cpp in insurance() to implement the insurance plan shown in the table below, computing the result in as few lines as possible – but still using readable/hospitable code. To review the syntax of if statements in C++, you might find this useful: https://www.w3schools.com/cpp/cpp_conditions_elseif.asp\n\n\n\n\n\nPlan Name\nMonths\n\n\n\n\n1\n2-6\n\n\nsilver\n\\$90\n\n\ngold\n\\$90\n\n\n\n\n\nThe program first asks the user for the Plan Name – a string. Then, the program asks for the number of months – an unsigned. Then, the code uses a series of if statements to compute the cost – an unsigned – printing it out at the end. My implementation uses 2 if statements, 1 else if, and 2 else statements, not in that order. Part of my solution has an if-else pair embedded in another if/else body.\nFinally, of course, your code prints out the results in nice English. Your output should match this output exactly. (Note the period at the end of the number at the end.)\nThe cost for your plan is $60.\nCompile your code and run:\n./tester step2and3 -c step2\nThe output should match the output above.\nNow, Commit and Sync your code to github. Use “step 2 complete” as your “message”. When you submit the automated tests will run. Only the “step1” and “step2” tests should pass at this time. If they don’t, fix your code, and then resubmit. Repeat until the “step1” and “step2” tests pass."
+  },
+  {
+    "objectID": "labs/lab01.html#step-3.-while-loop-practice",
+    "href": "labs/lab01.html#step-3.-while-loop-practice",
+    "title": "Lab 01: Control Structures",
+    "section": "Step 3. while loop practice",
+    "text": "Step 3. while loop practice\nImprove your code from Step 2 by adding a while loop that checks if the user entered a legal plan name (“silver” or “gold”), and if not tells the user to try again. E.g.,\n    Enter a plan name: maroon\n    I'm sorry, \"maroon\" is not a known plan.\n    Enter a plan name: sliver\n    I'm sorry, \"sliver\" is not a known plan.\n    Enter a plan name: gold\n  ... code goes on now ...\nThe while loop repeats until the user enters either silver or gold.\nCompile your code and run:\n./tester step2and3 -c step3\nThe output should match the output above.\nNow, Commit and Sync your code to github. Make sure the first 3 tests pass."
+  },
+  {
+    "objectID": "labs/lab01.html#step-4.-switch-statement",
+    "href": "labs/lab01.html#step-4.-switch-statement",
+    "title": "Lab 01: Control Structures",
+    "section": "Step 4. switch statement",
+    "text": "Step 4. switch statement\nNow, write in code in vowel() that asks the user to enter a single lowercase letter. Your code must use a switch statement to test if the letter is a vowel or consonant. Vowels are ‘a’, ‘e’, ‘i’, ‘o’, and ‘u’. We’ll call ‘y’ a consonant for this exercise.\nUse default in your switch statement for the “consonant” case.\nHave your code produce output like this:\nThe letter is a vowel.\nor\nThe letter is a consonant.\nCompile your code and run:\n./tester step4\nThe output should match the output above.\nNow, Commit and Sync your code to github. Make sure the first 4 tests pass."
+  },
+  {
+    "objectID": "labs/lab01.html#step-5.-for-loop-1",
+    "href": "labs/lab01.html#step-5.-for-loop-1",
+    "title": "Lab 01: Control Structures",
+    "section": "Step 5. for loop, 1",
+    "text": "Step 5. for loop, 1\nNow, write code in sevens():\n\ncreate an array of unsigned of size 8 called values\na for loop to initialize the values array to 0, 7, 14, 21, …\na series of assert statements to check that the 0th value is 0, 3rd value is 21, and 7th value is 49.\nA line to print out “All tests passed!”\nYou may have to #include &lt;cassert&gt;\n\nTest with:\n./tester step5\nNow, Commit and Sync your code to github. Make sure the appropriate tests pass."
+  },
+  {
+    "objectID": "labs/lab01.html#step-6.-for-loop-2",
+    "href": "labs/lab01.html#step-6.-for-loop-2",
+    "title": "Lab 01: Control Structures",
+    "section": "Step 6. for loop, 2",
+    "text": "Step 6. for loop, 2\nNow, write code in sum():\n\ncreate an array of doubles, of size 100.\nwrite a for loop to fill in the array with the values 0.0, 0.1, 0.2, 0.3, etc.\nwrite a for loop to sum up all the values in the array – but this loop has to iterate from the last item down to the first.\n\n\n\n\n\n\n\nNote\n\n\n\nMake the loop variable be of type int, not unsigned, as this variable will be decremented down to -1, which cannot be represented by an unsigned.\n\n\n\nprint out the resulting sum\n\nTest with:\n./tester step6\nNow, Commit and Sync your code to github. Make sure the appropriate tests pass."
+  },
+  {
+    "objectID": "labs/lab01.html#step-7.-defining-a-function",
+    "href": "labs/lab01.html#step-7.-defining-a-function",
+    "title": "Lab 01: Control Structures",
+    "section": "Step 7. defining a function",
+    "text": "Step 7. defining a function\nNow, write code to:\n\nimplement a function called getPlan() and move your code from Step 3 above into it. The function returns the string (“silver” or “gold”) that the user enters. This function (and the ones in the next steps) is again in functions.cpp and functions.h.\nmove the code that gets the number of months from the user into a function called getMonths(). This function returns the number of months a user enters. Note that the prompt asking the user to enter the number of months should read something nice, like this:\n\nEnter the number of months: \n\nmove the code that computes the cost into a function called computeCost(). This function takes the plan name and the months as arguments and returns the cost.\nUncomment and study step7 of tests.cpp. The code just does 4 things: call getPlan(), call getMonths(), call computeCost(), and print out the cost. Anyone who looks at that code will understand it because the code is short and uses good function names.\n\nTest with:\n./tester step7\nRun the test multiple times with various inputs to make sure the computation is correct.\nNow, Commit and Sync your code to github. Make sure all tests pass."
+  },
+  {
+    "objectID": "labs/lab01.html#grading-rubric",
+    "href": "labs/lab01.html#grading-rubric",
+    "title": "Lab 01: Control Structures",
+    "section": "Grading Rubric",
+    "text": "Grading Rubric\nThis lab is worth 16 pts:\n\n2 points for each of the 7 steps\n\n1 pt: output is correct and\n1 pt: you followed the directions\n\n2 pt for perfect indentation and good variable names, function names, and comments (i.e., hospitable code). You should write a comment in your code only when the following block of code is not obvious to the trained reader. You should not write a comment for each line of code.\n\nWays students have lost points in the past:\n\n-1: no output for step7\n-1: you didn’t init step 5 with a for loop\n-1: step6 should be 495\n-0.5: step1 you should use elseif not nested elses\n-0.5: part4 the inside of each case should be indented"
+  },
+  {
     "objectID": "labs/lab00.html",
     "href": "labs/lab00.html",
     "title": "Lab 00: Getting Started",
@@ -1015,265 +1365,6 @@
     "title": "Lab 00: Getting Started",
     "section": "Grading Rubric",
     "text": "Grading Rubric\n10 points total\n\ncode compiles and passes autograder tests: 5 pts.\ncode is clean and neat: 2 pts.\nmiscellaneous (see below for examples): 3 pts.\n\nWays students have lost points in the past:\n\n-1: No implementation for courseNumber()\n-1: No call to courseNumber() in main()\n-2: No variable to display your name\n-1: Implementation for courseNumber() should be in utils.cpp, not the header file utils.h.\n-1: Good, but please format your code!\n\n\n\n\n\n\n\nTip\n\n\n\nIf you have time and you have your laptop with you, this would be a good time to follow the instructions on the CS112 Moodle page to set up your laptop to access the CS lab machines remotely using VS Code Tunnels."
-  },
-  {
-    "objectID": "labs/lab01.html",
-    "href": "labs/lab01.html",
-    "title": "Lab 01: Control Structures",
-    "section": "",
-    "text": "May the force be with you."
-  },
-  {
-    "objectID": "labs/lab01.html#objectives",
-    "href": "labs/lab01.html#objectives",
-    "title": "Lab 01: Control Structures",
-    "section": "Objectives:",
-    "text": "Objectives:\n\nPractice using for loops, while loops, and if statements.\nPractice creating functions and passing parameters.\nPractice Committing and Syncing often to GitHub to run autograding tests."
-  },
-  {
-    "objectID": "labs/lab01.html#step-0.-prepare",
-    "href": "labs/lab01.html#step-0.-prepare",
-    "title": "Lab 01: Control Structures",
-    "section": "Step 0. Prepare",
-    "text": "Step 0. Prepare\n\nClick this link and then “Accept this assignment”. \nWait a few seconds and refresh the page. Refresh until the page says “You’re ready to go!”. The page has a link to a github repo.\nClick the link to see your new repo on github.com.\nClick the green Code button and copy the SSH link it shows.\nIn a terminal,\n\ncd to the directory where you are putting all your CS112 assignments.\ntype git clone &lt;paste-the-contents-of-the-link-you-copied&gt;\n\ncd to the new directory containing your repo.\ntype code . to start up Visual Studio Code in that directory.\nMake sure yo and your partner are in the same Team when creating the repo.\nInspect the code you got in the assignment.\nIn the terminal, type make\nThe code should compile and give you an executable called tester.\nRun the program: type ./tester\nYou should get some basic output – or at least it should not crash."
-  },
-  {
-    "objectID": "labs/lab01.html#step-1.-if-statement-practice-1",
-    "href": "labs/lab01.html#step-1.-if-statement-practice-1",
-    "title": "Lab 01: Control Structures",
-    "section": "Step 1. if statement practice, 1",
-    "text": "Step 1. if statement practice, 1\nIn functions.cpp in the grade() function, add code that 1. prints “Enter your grade:” 2. reads in an unsigned value from the user 3. computes whether the letter grade (a char) is an A, B, C, D, or F. An A is 90 or above, a B is 80 - 89, etc. 4. prints out the grade saying “Your grade is grade.”.\nCompile your program by typing make in a terminal. Run it by typing ./tester step1. Verify that your output looks exactly like this:\nYour grade is B.\nNow, Commit and Sync your code to github. Use “step 1 complete” as your Message. When you Commit and Sync, the automated tests will run on github. Only the “step1” test should pass at this time. If it doesn’t, fix your code, and then resubmit (use any Message you want). Repeat until the “step1” test passes.\n\n\n\nCommiting and Syncing"
-  },
-  {
-    "objectID": "labs/lab01.html#step-2.-if-statement-practice-2",
-    "href": "labs/lab01.html#step-2.-if-statement-practice-2",
-    "title": "Lab 01: Control Structures",
-    "section": "Step 2. if statement practice, 2",
-    "text": "Step 2. if statement practice, 2\nAdd code in functions.cpp in insurance() to implement the insurance plan shown in the table below, computing the result in as few lines as possible – but still using readable/hospitable code. To review the syntax of if statements in C++, you might find this useful: https://www.w3schools.com/cpp/cpp_conditions_elseif.asp\n\n\n\n\n\nPlan Name\nMonths\n\n\n\n\n1\n2-6\n\n\nsilver\n\\$90\n\n\ngold\n\\$90\n\n\n\n\n\nThe program first asks the user for the Plan Name – a string. Then, the program asks for the number of months – an unsigned. Then, the code uses a series of if statements to compute the cost – an unsigned – printing it out at the end. My implementation uses 2 if statements, 1 else if, and 2 else statements, not in that order. Part of my solution has an if-else pair embedded in another if/else body.\nFinally, of course, your code prints out the results in nice English. Your output should match this output exactly. (Note the period at the end of the number at the end.)\nThe cost for your plan is $60.\nCompile your code and run:\n./tester step2and3 -c step2\nThe output should match the output above.\nNow, Commit and Sync your code to github. Use “step 2 complete” as your “message”. When you submit the automated tests will run. Only the “step1” and “step2” tests should pass at this time. If they don’t, fix your code, and then resubmit. Repeat until the “step1” and “step2” tests pass."
-  },
-  {
-    "objectID": "labs/lab01.html#step-3.-while-loop-practice",
-    "href": "labs/lab01.html#step-3.-while-loop-practice",
-    "title": "Lab 01: Control Structures",
-    "section": "Step 3. while loop practice",
-    "text": "Step 3. while loop practice\nImprove your code from Step 2 by adding a while loop that checks if the user entered a legal plan name (“silver” or “gold”), and if not tells the user to try again. E.g.,\n    Enter a plan name: maroon\n    I'm sorry, \"maroon\" is not a known plan.\n    Enter a plan name: sliver\n    I'm sorry, \"sliver\" is not a known plan.\n    Enter a plan name: gold\n  ... code goes on now ...\nThe while loop repeats until the user enters either silver or gold.\nCompile your code and run:\n./tester step2and3 -c step3\nThe output should match the output above.\nNow, Commit and Sync your code to github. Make sure the first 3 tests pass."
-  },
-  {
-    "objectID": "labs/lab01.html#step-4.-switch-statement",
-    "href": "labs/lab01.html#step-4.-switch-statement",
-    "title": "Lab 01: Control Structures",
-    "section": "Step 4. switch statement",
-    "text": "Step 4. switch statement\nNow, write in code in vowel() that asks the user to enter a single lowercase letter. Your code must use a switch statement to test if the letter is a vowel or consonant. Vowels are ‘a’, ‘e’, ‘i’, ‘o’, and ‘u’. We’ll call ‘y’ a consonant for this exercise.\nUse default in your switch statement for the “consonant” case.\nHave your code produce output like this:\nThe letter is a vowel.\nor\nThe letter is a consonant.\nCompile your code and run:\n./tester step4\nThe output should match the output above.\nNow, Commit and Sync your code to github. Make sure the first 4 tests pass."
-  },
-  {
-    "objectID": "labs/lab01.html#step-5.-for-loop-1",
-    "href": "labs/lab01.html#step-5.-for-loop-1",
-    "title": "Lab 01: Control Structures",
-    "section": "Step 5. for loop, 1",
-    "text": "Step 5. for loop, 1\nNow, write code in sevens():\n\ncreate an array of unsigned of size 8 called values\na for loop to initialize the values array to 0, 7, 14, 21, …\na series of assert statements to check that the 0th value is 0, 3rd value is 21, and 7th value is 49.\nA line to print out “All tests passed!”\nYou may have to #include &lt;cassert&gt;\n\nTest with:\n./tester step5\nNow, Commit and Sync your code to github. Make sure the appropriate tests pass."
-  },
-  {
-    "objectID": "labs/lab01.html#step-6.-for-loop-2",
-    "href": "labs/lab01.html#step-6.-for-loop-2",
-    "title": "Lab 01: Control Structures",
-    "section": "Step 6. for loop, 2",
-    "text": "Step 6. for loop, 2\nNow, write code in sum():\n\ncreate an array of doubles, of size 100.\nwrite a for loop to fill in the array with the values 0.0, 0.1, 0.2, 0.3, etc.\nwrite a for loop to sum up all the values in the array – but this loop has to iterate from the last item down to the first.\n\n\n\n\n\n\n\nNote\n\n\n\nMake the loop variable be of type int, not unsigned, as this variable will be decremented down to -1, which cannot be represented by an unsigned.\n\n\n\nprint out the resulting sum\n\nTest with:\n./tester step6\nNow, Commit and Sync your code to github. Make sure the appropriate tests pass."
-  },
-  {
-    "objectID": "labs/lab01.html#step-7.-defining-a-function",
-    "href": "labs/lab01.html#step-7.-defining-a-function",
-    "title": "Lab 01: Control Structures",
-    "section": "Step 7. defining a function",
-    "text": "Step 7. defining a function\nNow, write code to:\n\nimplement a function called getPlan() and move your code from Step 3 above into it. The function returns the string (“silver” or “gold”) that the user enters. This function (and the ones in the next steps) is again in functions.cpp and functions.h.\nmove the code that gets the number of months from the user into a function called getMonths(). This function returns the number of months a user enters. Note that the prompt asking the user to enter the number of months should read something nice, like this:\n\nEnter the number of months: \n\nmove the code that computes the cost into a function called computeCost(). This function takes the plan name and the months as arguments and returns the cost.\nUncomment and study step7 of tests.cpp. The code just does 4 things: call getPlan(), call getMonths(), call computeCost(), and print out the cost. Anyone who looks at that code will understand it because the code is short and uses good function names.\n\nTest with:\n./tester step7\nRun the test multiple times with various inputs to make sure the computation is correct.\nNow, Commit and Sync your code to github. Make sure all tests pass."
-  },
-  {
-    "objectID": "labs/lab01.html#grading-rubric",
-    "href": "labs/lab01.html#grading-rubric",
-    "title": "Lab 01: Control Structures",
-    "section": "Grading Rubric",
-    "text": "Grading Rubric\nThis lab is worth 16 pts:\n\n2 points for each of the 7 steps\n\n1 pt: output is correct and\n1 pt: you followed the directions\n\n2 pt for perfect indentation and good variable names, function names, and comments (i.e., hospitable code). You should write a comment in your code only when the following block of code is not obvious to the trained reader. You should not write a comment for each line of code.\n\nWays students have lost points in the past:\n\n-1: no output for step7\n-1: you didn’t init step 5 with a for loop\n-1: step6 should be 495\n-0.5: step1 you should use elseif not nested elses\n-0.5: part4 the inside of each case should be indented"
-  },
-  {
-    "objectID": "labs/lab02.html",
-    "href": "labs/lab02.html",
-    "title": "Lab 02: File I/O, Control Structures, and the Debugger",
-    "section": "",
-    "text": "Beware of the bugs!"
-  },
-  {
-    "objectID": "labs/lab02.html#objectives",
-    "href": "labs/lab02.html#objectives",
-    "title": "Lab 02: File I/O, Control Structures, and the Debugger",
-    "section": "Objectives:",
-    "text": "Objectives:\nIn this exercise, you will:\n\nRead in a file and process its contents.\nPractice creating functions\nPractice writing for loops and if statements.\nUse the debugger to execute a program statement by statement."
-  },
-  {
-    "objectID": "labs/lab02.html#step-0.-prepare",
-    "href": "labs/lab02.html#step-0.-prepare",
-    "title": "Lab 02: File I/O, Control Structures, and the Debugger",
-    "section": "Step 0. Prepare",
-    "text": "Step 0. Prepare\n\nClick this link and then “Accept this assignment”.\nWait a few seconds and refresh the page. Refresh until the page says “You’re ready to go!”. The page has a link to a github repo.\nClick the link to see your new repo on github.com.\nClick the green Code button and copy the SSH link it shows.\nIn a terminal,\n\ncd to the directory where you are putting all your CS112 assignments.\ntype git clone &lt;paste-the-contents-of-the-link-you-copied&gt;\n\ncd to the new directory containing your repo.\ntype code . to start up Visual Studio Code in that directory.\nMake sure both you and your partner are in the same Team for this assignment.\nInspect the code you got in the assignment."
-  },
-  {
-    "objectID": "labs/lab02.html#finding-duplicates-in-an-array-of-integers",
-    "href": "labs/lab02.html#finding-duplicates-in-an-array-of-integers",
-    "title": "Lab 02: File I/O, Control Structures, and the Debugger",
-    "section": "Finding duplicates in an array of integers",
-    "text": "Finding duplicates in an array of integers\nIn this assignment, you will write a short function, findDuplicate(), that searches an array of integers to find the first pair of duplicate values. If a duplicate value is found, the function returns true, and “returns” the duplicate value through an Out parameter. If no duplicate value is found, the function returns false.\nThink about the algorithm to find a duplicate value in an array. Consider the following array:\n\n\n\n\n\n\n\n\n\n\n\n\n11\n7\n31\n4\n7\n\n\n\n\nHow would you write code to detect that 7 is in the array twice? Talk to your partner about your algorithm. I highly recommend you write pseudo-code for your algorithm. If you want to finish the lab in an efficient way, you’ll take time to write the algorithm and test it on some inputs, revising it until you get it right.\nWhen you have an algorithm, consider this array:\n\n\n\n\n\n\n\n\n\n\n\n11\n7\n7\n4\n71\n\n\n\nAnd this array:\n\n\n\n\n\n\n\n\n\n\n\n7\n43\n31\n12\n71\n\n\n\nDoes your algorithm seem to work on these arrays? Will your algorithm work for arrays with 10,000 values? How about an array with 0 elements or 1 element? Does it work?"
-  },
-  {
-    "objectID": "labs/lab02.html#step-1.-write-the-function",
-    "href": "labs/lab02.html#step-1.-write-the-function",
-    "title": "Lab 02: File I/O, Control Structures, and the Debugger",
-    "section": "Step 1. Write the function",
-    "text": "Step 1. Write the function\nIn functions.h, write the prototype for your function. The prototype is just the first line of the function, without the actual implementation. Study the table below to understand what parameters the function should take. Then try to write that first line of the function. If you can’t get it, I’ll give the answer just below the table.\nYour function is called findDuplicate(), has 3 parameters, and returns bool.\n\n\n\n\n\n\n\n\n\nParameter name\nParameter type\nDescription\n\n\n\n\narr\narray of int\narr of integers to search\n\n\nsize\nint\nsize of the array\n\n\ndup_value\nint &\nThe out parameter containing the first duplicate value, if one is found.\n\n\n\nThe function’s prototype should look like this:\nbool findDuplicate(int arr[], int size, int &dup_value);\nThat’s all that you should have in your .h file.\nIn functions.cpp, implement your function. To repeat from above: If a duplicate value is found, the function returns true, and “returns” the duplicate value through the out parameter, dup_value. If no duplicate value is found, the function returns false. Work from your algorithm. Do your best to implement the function correctly, but don’t take too much time on this, as the next steps will help you make sure your code is correct."
-  },
-  {
-    "objectID": "labs/lab02.html#step-2.-unit-test-your-function",
-    "href": "labs/lab02.html#step-2.-unit-test-your-function",
-    "title": "Lab 02: File I/O, Control Structures, and the Debugger",
-    "section": "Step 2. Unit test your function",
-    "text": "Step 2. Unit test your function\nTake a look at the file tests.cpp. This file uses a unit testing framework called catch, implemented in catch.hpp.\nNotice that the file #includes \"functions.h\" and calls findDuplicate() one or more times in each test. The results of the call to findDuplicate() are tested by REQUIRE statements, which are basically identical to the assert() statements we’ve been using.\nWhen you compile your code using make tester, a tester executable is created. That executable runs the code in tests.cpp, but also allows you to do much more: you can just list the tests, run only some of the tests, configure how the output should look, etc.\nTry compiling your code by typing make tester. If it builds, try running ./tester -s to see output from all the tests that are executed.\nTo run only the first test, you can do:\n./tester \"findDuplicate size 0\"\nIf your code does not pass this test, try fixing it. Take 5 minutes maximum to try to fix your code. Whether you succeed or not, go on."
-  },
-  {
-    "objectID": "labs/lab02.html#step-3.-using-the-debugger",
-    "href": "labs/lab02.html#step-3.-using-the-debugger",
-    "title": "Lab 02: File I/O, Control Structures, and the Debugger",
-    "section": "Step 3. Using the Debugger",
-    "text": "Step 3. Using the Debugger\nA debugger is a program that allows you to set breakpoints in your code, and then run your code. When a breakpoint is encountered, the debugger stops, and allows you to view variables’ values, the call stack, etc.\nThis video shows you how to use the debugger with VS Code. You probably won’t be able to watch this video on a lab machine, but if you have a laptop and/or phone and have earbuds or headphones, you should watch the video. Then, go down to Step 3.5 below.\nIf you cannot watch the video, I’ll describe how to use the debugger here:\nOpen your file that you want to debug. E.g., your functions.cpp file. Here is mine:\n\nYou can see that I have a good start on the function, but it isn’t complete. But, I want to make sure I’m passing in my parameters correctly, and a good way to do that is to use the debugger.\nThe first thing I have to do is build the project:\nmake tester\nIf you look at tests.cpp, you can see a bunch of calls to findDuplicate(), from line 10, line 21, etc.\nTo check if our parameters are being passed in correctly, let’s set a breakpoint on line 2. To do that, put your pointer to the left of the 2 on line 2, and click. You should see a red dot.\n\nYou can set multiple breakpoints at the same time. You could, for example, set a breakpoint on line 3 and line 5, so that you can see in what circumstances your code returns true or false.\nNow, we can start the debugger. The easiest way is to hit F5. Or you can go to Run -&gt; Start Debugging.\n(If you get a weird error, just go on here. You might be trying to debug the wrong executable.)\nWhen you start debugging (successfully), your screen changes quite a bit.\nYou’ll see a menu bar appear at the top of the screen. You’ll also see the debugging icon on the left side become bright:\n\nYou’ll see a debugging window on the left side. And, you’ll see your code run and the debugger will stop at the first breakpoint:\n\n\n\n\n\n\n\nCaution\n\n\n\nIf you saw an error when you started debugging, you might be trying to debug the wrong executable. Look at the image just above. Notice that next to the green arrow is a small menu, with a dropdown arrow. You might be trying to debug the “lab2” program instead of the tester program. If you don’t see “tester”, click on the dropdown arrow and choose “Launch tester”, then click the green right-arrow and try again.\n\n\nYou know where your code has stopped because you see the yellow “arrow” overlaying the red dot. This means your code has run to this point and is stopped.\nOn the lower-left corner you see the call stack. The top frame in the call stack is findDuplicate(). Below that you see that findDuplicate() was called from C_A_T_C_H_T_E_S_T_0() in tests.cpp at line 10. Click on that to see tests.cpp and where it called findDuplicate().\n\nNow, to continue from the breakpoint, we can use the menu bar at the top. If you hover your mouse over the items in the menu bar, you’ll see: Continue (F5), Step Over (F10), Step Into (F11), Step Out (Shift F11), and Stop (Shift-F5). Step Over really means “go to the next line”.\n\nClick on Step Over now. You should see your pointer go to line 3, which returns false. Step Over a few more times, and you’ll get back to tests.cpp, line 11. Now, click Continue. That will make the debugger run the code again until it encounters the next breakpoint – which is back at line 2 of functions.cpp. You can again inspect the parameter values.\nClick Continue again. Notice that you are still at line 2, but look closely to see where findDuplicates() was called from. Which line of tests.cpp called findDuplicates()?\nClick on C_A_T_C_H_T_E_S_T_6() on the lower-left corner of the screen, and look at the values of the Local variables in the upper-right corner. What values are in the numbers array?\nThis really concludes our introduction to using the debugger."
-  },
-  {
-    "objectID": "labs/lab02.html#step-3.5-caveats",
-    "href": "labs/lab02.html#step-3.5-caveats",
-    "title": "Lab 02: File I/O, Control Structures, and the Debugger",
-    "section": " Step 3.5 Caveats",
-    "text": "Step 3.5 Caveats\n📌 Please note these caveats:\n\nIf you make changes to your code, you have to recompile before using the debugger again. Starting or restarting the debugger will not first recompile your code! (To recompile, use make tester .)\nRunning the debugger on MacOS (gdb) has problems. I’ve never gotten it to work on my Mac. Prof. Araújo has been working on that and is comming up with a solution “soon”.\nI haven’t tested running the debugger on Windows. If you want to try that, you will probably have to change the .vscode/launch.json file. When you open that file in VSCode, you get a menu that allows you to insert new configurations – so it might be super easy to get this working – or not easy at all. 🙂"
-  },
-  {
-    "objectID": "labs/lab02.html#step-4.-get-your-code-working-against-all-tests",
-    "href": "labs/lab02.html#step-4.-get-your-code-working-against-all-tests",
-    "title": "Lab 02: File I/O, Control Structures, and the Debugger",
-    "section": "Step 4. Get your code working against all tests",
-    "text": "Step 4. Get your code working against all tests\nUsing the debugger and your brain 🧠, fix your code such that it passes all the tests when you run\n./tester"
-  },
-  {
-    "objectID": "labs/lab02.html#step-5.-implement-your-application",
-    "href": "labs/lab02.html#step-5.-implement-your-application",
-    "title": "Lab 02: File I/O, Control Structures, and the Debugger",
-    "section": "Step 5. Implement your application",
-    "text": "Step 5. Implement your application\nNow that you have a good function that finds duplicates, use it to implement a simple application.\nLook in main.cpp, where you will find the steps to implement, as comments.\nCompile your code with\nmake lab2\nImplement steps 1 - 6 of the algorithm. Step 4 is implemented for you already (assuming you read in the number of lines in the file into a variable named size).\nI HIGHLY RECOMMEND YOU IMPLEMENT your code in small iterations: just write the code for Step 1., compile it and make sure it is correct. Then go on to Step 2. Repeat…\nStep 7. says to “print appropriate output”. This means your application should either print out that there are no duplicates, or should print out that a duplicate was found, and should print what that duplicate value is. E.g., here are a few runs of my solution:\n% ./lab2\nEnter a filename: input_files/in3.txt\nEnter the number of lines in the file: 0\nNo duplicate number was found.\nand another run:\n% ./lab2\nEnter a filename: input_files/in5.txt\nEnter the number of lines in the file: 5\nA duplicate number, 91, has been found.\n\n\n\n\n\n\nNote\n\n\n\nYour output must match the output above EXACTLY. You should try your solution against all the files in the input_files/ directory. These files will be used in the autograding tests run when you submit."
-  },
-  {
-    "objectID": "labs/lab03.html",
-    "href": "labs/lab03.html",
-    "title": "Lab 03: Classes",
-    "section": "",
-    "text": "A student created by AI."
-  },
-  {
-    "objectID": "labs/lab03.html#step-0.-prepare",
-    "href": "labs/lab03.html#step-0.-prepare",
-    "title": "Lab 03: Classes",
-    "section": "Step 0. Prepare",
-    "text": "Step 0. Prepare\n\nClick this link and then “Accept this assignment”. Make sure you and your partner are in the same Team.\nWait a few seconds and refresh the page. Refresh until the page says “You’re ready to go!”. The page has a link to a github repo.\nClick the link to see your new repo on github.com.\nClick the green Code button and copy the SSH link it shows.\nIn a terminal,\n\ncd to the directory where you are putting all your CS112 assignments.\ntype git clone &lt;paste-the-contents-of-the-link-you-copied&gt;\n\ncd to the new directory containing your repo.\ntype code . to start up Visual Studio Code in that directory.\nInspect the code you got in the assignment."
-  },
-  {
-    "objectID": "labs/lab03.html#part-1-a-student-class",
-    "href": "labs/lab03.html#part-1-a-student-class",
-    "title": "Lab 03: Classes",
-    "section": "Part 1: A Student Class",
-    "text": "Part 1: A Student Class\n\nStep 1. Create the class\nWe will create a class to represent a Student. You probably have not created a class in C++ before, so here are the Pair.h and Pair.cpp classes I created as an example in class. Use this code as an example/template.\nThe instance variables for a Student will be:\n\n\n\n\n\n\nInstance Variable Name\n\n\nType\n\n\nDefault value\n\n\nNotes\n\n\n\n\n\n\nmyName\n\n\nstring\n\n\n“”\n\n\nImmutable (NOTE: this is not a const in our class, but we will not be making setter functions for these immutable values.)\n\n\n\n\nmyId\n\n\nunsigned int\n\n\n0\n\n\nImmutable (NOTE: this is not a const in our class, but we will not be making setter functions for these immutable values.)\n\n\n\n\nmyGpa\n\n\nfloat\n\n\n0.0\n\n\n\n\n\n\nmyMajor\n\n\nstring\n\n\n“Undecided”\n\n\n\n\n\n\n\nIn Student.h, you should see the definition of the Student class. In that class, create the private: section, and in there define the 4 instance variables, shown in the table above. You’ll have to #include &lt;string&gt; and do the using namespace business…\nCompile (type: make tester) and fix any errors. (You may see warnings – you can ignore those for now.)\nIn Student.h define the default constructor (in the public: section). In Student.cpp, create the default constructor implementation, initializing the instance variables to their default values, as shown in the table above.\n\n\n\n\n\n\nCompile and fix any errors.\n\n\n\n\n\n\n\n\nStep 2. Create getters\nIn your tests.cpp, you’ll find the first SECTION of unit tests called “student getters”, within the TEST_CASE “Student class”. Uncomment the first SECTION, so that the code to construct a Student object and then test getMajor() runs.\n\n\n\n\n\n\nCompile\n\n\n\nThe compilation should fail because we haven’t defined getMajor() yet. There should be no other problems.\n\n\nSo, create a getter function (in both the Student.h and Student.cpp files) called getMajor().\nCompile and run (in a terminal, run ./tester \"Student class\") – this should work now.\nNow, repeat the above steps for the other tests and instance variables (maybe make this part more clear in the future). Start with a test in tests.cpp first, then implement the prototype and code.\n\n\n\n\n\n\nNOTE\n\n\n\nDon’t delete any old tests – just keep adding more. Put each test in its own SECTION within the “Student class” TEST_CASE.\n\n\n\n\nStep 3. Create setters\nFor the instance variables that are mutable (see the table above), create setter methods. But first, for each, create a test. Put all of these tests in a new SECTION within the “Student class” TEST_CASE.\n\n\n\n\n\n\nTip\n\n\n\nExample: for the setGpa test, set the student’s gpa to 3.25, then in a REQUIRE statement, call getGpa() and make sure the value is 3.25.\n\n\n\n\nStep 4. Create an explicit-value constructor\nNow, create a second constructor – the explicit-value constructor. This constructor should take the two immutable fields as parameters, and store their values in the instance variables. Initialize all the other variables to their default values. BUT FIRST, create tests. I called my SECTION “student explicit-value constructor”, and in it I create a Student with the explicit-value constructor and then use the getters on all instance variables to make sure the object has the correct values in it.\n\n\n\n\n\n\nCompile and test the result. Fix any errors.\n\n\n\n\n\n\nYou are now done with this simple class. We could add tons of other functionality to it, but not now…\nBefore you go on, Commit and Sync your changes to your github repo. You can easily do this from VSCode. After you do this, you should be able to see that the automated tests fail – but the one test that tests the “Student class” passes. If it does not pass, fix your code (or your tests), and resubmit until it does pass."
-  },
-  {
-    "objectID": "labs/lab03.html#part-2-fraction-class",
-    "href": "labs/lab03.html#part-2-fraction-class",
-    "title": "Lab 03: Classes",
-    "section": "Part 2: Fraction class",
-    "text": "Part 2: Fraction class\nA Fraction class is a useful class to create. It stores a numerator and denominator and can do things like represent itself nicely (e.g., “3/4”), simplify itself, multiply itself with another fraction, etc.\n\nStep 1. Test the Fraction class\nWe’ll continue to use tests.cpp – don’t remove any code from there. But, now we’ll also use it to create and test Fraction class instances. However, our makefile does not compile the Fraction stuff yet.\nEdit the makefile, adding Fraction.cpp to the SOURCES line.\n\n\n\n\n\n\nTip\n\n\n\nSpace separated! Do not remove Students.cpp.\n\n\nIn tests.cpp, below all your tests for the Student class, add the tests shown below:\nTEST_CASE(\"Fraction class\") {\n    SECTION(\"fraction constructors\") {\n        SECTION(\"default\") {\n            Fraction fr;\n            REQUIRE(fr.getNumerator() == 0);\n            REQUIRE(fr.getDenominator() == 1);\n        }\n        SECTION(\"explicit value\") {\n            Fraction fr(2, 4);\n            REQUIRE(fr.getNumerator() == 2);\n            REQUIRE(fr.getDenominator() == 4);\n        }\n    }\n}\n\n\n\n\n\n\nImportant\n\n\n\nYou’ll have to #include \"Fraction.h\" at the top of the file.\n\n\n\n\nStep 2. Add the instance variables and constructors\nAdd the two instance variables – myNumerator and myDenominator (both integers) – to the class definition in the .h file.\nUpdate the default constructor, to initialize myNumerator to 0 and myDenominator to 1.\nNow, implement the explicit-value constructor, which takes both the numerator and denominator as parameters, and stores them in myNumerator and myDenominator. Don’t forget to put the declaration in the .h file and implementation in the .cpp file.\n\n\n\n\n\n\nNote\n\n\n\nWe will compile our tester after the next section.\n\n\n\n\nStep 3. getters\nAdd a new SECTION (within the “Fraction class” TEST_CASE) called “fraction getters” and SECTIONs to call the getter functions and test their results. Compilation should fail, as expected.\n\n\n\n\n\n\nWarning\n\n\n\nYes, this is repetitive as we already used them for the default constructors. Just to make sure we cover all our bases, and this can easily be seen in our tests, make another SECTION to quickly check the getter functions again.\n\n\nNow, create getter functions for each.\nNow the compilation and execution should succeed with all tests passing.\n\n\n\n\n\n\nNote\n\n\n\nYou can run only some tests by putting the name of the test on the command line. E.g., you can run only the Fraction tests by running:\n./tester \"Fraction class\"\n\n\n\n\nStep 4. setters\nCreate tests to test setters.\nThen, create the methods and the code so it will compile and run successfully.\n\n\nStep 5. Fanciness\nNow, in setDenominator(), check if the parameter is 0 – an illegal value. If so, throw an invalid_argument exception (remember to #include &lt;stdexcept&gt; first). You can do this by using the line:\nthrow invalid_argument(\"Your error message here!\"); // (Change the error message please!)\nHere is a test for that, assuming you have a fraction called f1:\nSECTION(\"setDenominator\") {\n    REQUIRE_THROWS_AS(f1.setDenominator(0), invalid_argument);\n}\n\n\nStep 6. Display as a string\nCreate a test to call asString() on a Fraction object: If you create a new Fraction object newFrac and call newFrac.asString(), you can REQUIRE that the result should be “0/1”. Initially, this test will fail, so create the method, which returns a string.\n\n\n\n\n\n\nNote\n\n\n\nIn asString() you can use to_string(anInt) to convert an integer into a string. And, you can concatenate strings with +. to_string() is defined in &lt;string&gt; so you’ll have to #include that.\n\n\nWhen that works, use the setters to change the numerator and denominator for a fraction, and then write a test to ensure that asString() still produces the correct results."
-  },
-  {
-    "objectID": "labs/lab03.html#submission",
-    "href": "labs/lab03.html#submission",
-    "title": "Lab 03: Classes",
-    "section": "Submission",
-    "text": "Submission\nCommit your changes to your github repo. After you do this, verify that the automated tests pass. The automated tests just run the tests.cpp file you have been editing.\nDon’t forget to look at the Grading Rubric at the top to make sure you get as many points as possible."
-  },
-  {
-    "objectID": "labs/lab03.html#grading-rubric",
-    "href": "labs/lab03.html#grading-rubric",
-    "title": "Lab 03: Classes",
-    "section": "Grading Rubric",
-    "text": "Grading Rubric\nThis lab is worth 20 pts:\n\n10 points for each of Part 1 and Part the Second: 20 pts\n\n6 pts for correctness\n1 pt for perfect indentation and good variable names, function names, and comments (i.e., hospitable code). You should write a comment in your code only when the following block of code is not obvious to the trained reader. You should not write a comment for each line of code.\n3 pts for sufficient test cases to prove that the code is correct.\n\n\nWays students have lost points in the past:\n\n-2: Test doesn’t pass.\n-1: Missing name and id.\n-3: Missing steps. Next time speak to professor."
-  },
-  {
-    "objectID": "labs/lab14.html",
-    "href": "labs/lab14.html",
-    "title": "Lab 13: Hash Tables Project",
-    "section": "",
-    "text": "Definition of Grinch."
-  },
-  {
-    "objectID": "labs/lab14.html#learning-objectives",
-    "href": "labs/lab14.html#learning-objectives",
-    "title": "Lab 13: Hash Tables Project",
-    "section": "Learning Objectives",
-    "text": "Learning Objectives\nIn this exercise, you will:\n\nbuild a hash table data structure\nexperiment with hashing algorithms to distribute data across all buckets, as much as possible."
-  },
-  {
-    "objectID": "labs/lab14.html#step-0",
-    "href": "labs/lab14.html#step-0",
-    "title": "Lab 13: Hash Tables Project",
-    "section": "Step 0",
-    "text": "Step 0\nAccept the Assignment.\nOur hash table will be a STL vector of STL sets (in class we used a vector of linked lists). Your code will read a file, dictionary.txt, that contains “all” the words in the English language, and insert each word into the hash table. There are about ~127,000 words in the file, but we will use a fairly small number of buckets, so there will be many collisions.\nThe goal of this exercise is to experiment with hashing algorithms to see if you can find one that distributes items well."
-  },
-  {
-    "objectID": "labs/lab14.html#step-1-build-the-hashtable-data-structure-and-constructor",
-    "href": "labs/lab14.html#step-1-build-the-hashtable-data-structure-and-constructor",
-    "title": "Lab 13: Hash Tables Project",
-    "section": "Step 1: Build the HashTable data structure and constructor",
-    "text": "Step 1: Build the HashTable data structure and constructor\nInspect the code in HashTable.h and HashTable.cpp. There is not much there, but it is a start. Do notice that there is a static constant integer called TABLE_SIZE, initialized to the value 200.\nCreate the hash table data structure in the private: section, calling it myTable. For this project, the table must be a vector of sets of strings (in class we used a vector of lists).\nIn the constructor, initialize myTable to have TABLE_SIZE buckets by calling\nmyTable.resize(TABLE_SIZE);\nAlso, in the constructor initialize mySize to 0.\nCompile your code to make sure what you have written compiles."
-  },
-  {
-    "objectID": "labs/lab14.html#step-2-insert-and-hash",
-    "href": "labs/lab14.html#step-2-insert-and-hash",
-    "title": "Lab 13: Hash Tables Project",
-    "section": "Step 2: insert() and hash()",
-    "text": "Step 2: insert() and hash()\nThe prototypes for insert() and hash() are defined in the .h file. Now, you must implement them in the .cpp file. Use the code we saw in the slides in class for the hash function. The function should add up the first and last characters of the string, modding the result by TABLE_SIZE.\nTry to compile the code using make. It should compile. Fix any issues if your compilation fails."
-  },
-  {
-    "objectID": "labs/lab14.html#step-3-main",
-    "href": "labs/lab14.html#step-3-main",
-    "title": "Lab 13: Hash Tables Project",
-    "section": "Step 3: main()",
-    "text": "Step 3: main()\nNow, create code in main(). Your code should define a HashTable object first.\nThen, open the file dictionary.txt for reading, and read each word from the file, one at a time, inserting each word into the hash table.\nNext, have the code close the file.\nCompile your code."
-  },
-  {
-    "objectID": "labs/lab14.html#step-4-testing",
-    "href": "labs/lab14.html#step-4-testing",
-    "title": "Lab 13: Hash Tables Project",
-    "section": "Step 4: Testing",
-    "text": "Step 4: Testing\nOf course, at this point, we have no idea if the items have been distributed well in the hash table, because we have no way to inspect the hash table contents.\nNotice that there is a method called dumpInfo() defined, but currently the code does nothing. Fill in the code to do the following:\n\nFor each bucket, print how many items are in it.\nCount and print the number of empty buckets.\nCalculate and print the average number of items in non-empty buckets.\n\nHere is a snippet of my output. Make your output look similar:\nnumber of items in bucket 0: 415\nnumber of items in bucket 1: 351\nnumber of items in bucket 2: 307\nnumber of items in bucket 3: 414\nnumber of items in bucket 4: 293\n...\nnumber of items in bucket 197: 560\nnumber of items in bucket 198: 484\nnumber of items in bucket 199: 341\n--------------------------\nTotal number of elements in the hash table: 127141\nNumber of empty buckets: 0\nAverage number of items in non-empty buckets: 635\n\n\n\n\n\n\nNote\n\n\n\nNote: the output above is from after I changed the number of buckets in my data structure, and tweaked the hash algorithm, which you’ll do below.\n\n\nAfter you implement your dumpInfo() method, call it from your main() code."
-  },
-  {
-    "objectID": "labs/lab14.html#step-5-tweak-your-hashing-algorithm-and-table-size",
-    "href": "labs/lab14.html#step-5-tweak-your-hashing-algorithm-and-table-size",
-    "title": "Lab 13: Hash Tables Project",
-    "section": "Step 5: Tweak Your Hashing Algorithm and Table Size",
-    "text": "Step 5: Tweak Your Hashing Algorithm and Table Size\nYou will notice that the basic hashing algorithm (adding up the first and last characters of each string) does a very poor job of distributing strings across all buckets in the hash table. Your goal now is to improve the hashing algorithm to improve the distribution.\nExperiment with different algorithms, but make sure they follow the criteria laid out in class:\n\nO(1)\ndistribute values across all buckets.\ndeterministic.\n\nYou MAY increase the number of buckets, but it must remain at or below 250 total. Do not change how buckets are implemented – they should remain sets.\nDo not spend more than 1 hour tweaking your algorithm. Make sure your final code implements your best algorithm.\n\n\n\n\n\n\nImportant\n\n\n\nWrite a comment in your hash() function that describes your algorithm, explaining why you think it works as well as it does."
-  },
-  {
-    "objectID": "labs/lab14.html#step-6-submit",
-    "href": "labs/lab14.html#step-6-submit",
-    "title": "Lab 13: Hash Tables Project",
-    "section": "Step 6: Submit",
-    "text": "Step 6: Submit\nSubmit your code via github, as normal.\n\n\n\n\n\n\nWarning\n\n\n\nIF YOU WORKED WITH A PARTNER, ONLY ONE OF YOU HAS TO SUBMIT, but UPDATE THE README.md to INCLUDE BOTH NAMES."
-  },
-  {
-    "objectID": "labs/lab14.html#grading-rubric",
-    "href": "labs/lab14.html#grading-rubric",
-    "title": "Lab 13: Hash Tables Project",
-    "section": "Grading Rubric",
-    "text": "Grading Rubric\n20 points total:\n\n10 pts: hash table code (not including the hash function) is correct\n5 pts: hash function obeys the criteria laid out in class.\n3 pts: hash function works well (not obviously leaving many buckets empty and have some be very full).\n2 pts: code is clean and hospitable.\n\nWays students lost points in the past:\n\n-2: Hash function does not appear to be evenly distributed but fills lower-numbered buckets way more (~2000 vs ~50)\n-4: Main function does not load words from file or call dumpInfo\n-1: Missing call to dumpInfo in main\n-3: Buckets are not evenly distributed (with many below 50 or above 2000) and some are empty. The smallest buckets are odd-numbered, which indicates a quirk in the algorithm which disfavors that half of the buckets\n-4: Most of the buckets are empty; a hashing algorithm should seek to evenly distribute words into buckets\n-1: Please output all bucket counts per instructions so the distribution can be seen."
   },
   {
     "objectID": "labs/lab11-hint2.html",
@@ -1409,221 +1500,207 @@
     "text": "Grading Rubric: 24 pts total\nThis lab will be graded the following way: 24 pts total\n\nPart I: 10 pts\n\nAll code has been converted to a class template correctly: 5 pts\nAll tests pass: 5 pts.\n\nPart II: 10 pts.\n\nNegative indexing works correctly, as indicated by thorough tests: 5pt\nfind() works correctly: 5 pts.\n\nCode is clean, perfectly indented, hospitable: 2pts\nCode builds correctly: 2 pts\n\nWays students lost points in the past:\n\n-2: Can’t make tester. Error occurs.\n-2: Late submission\n-4: Grader had to edit the makefile to build.\n-2: Tests fail"
   },
   {
-    "objectID": "labs/lab06.html",
-    "href": "labs/lab06.html",
-    "title": "Lab 06: More List Operations",
+    "objectID": "labs/lab13.html",
+    "href": "labs/lab13.html",
+    "title": "Lab 12: The STL set and map Containers",
     "section": "",
-    "text": "Equality."
+    "text": "Home Alone (1990)."
   },
   {
-    "objectID": "labs/lab06.html#objectives",
-    "href": "labs/lab06.html#objectives",
-    "title": "Lab 06: More List Operations",
-    "section": "Objectives:",
-    "text": "Objectives:\nIn this exercise, you will:\n\nBuild more List operations.\nPractice using pointers."
+    "objectID": "labs/lab13.html#objectives",
+    "href": "labs/lab13.html#objectives",
+    "title": "Lab 12: The STL set and map Containers",
+    "section": "Objectives",
+    "text": "Objectives\nIn this exercise, you will:\n\nUse the STL set container to store a set of values.\nUse the STL map container to create an associative array whose keys are string values, and whose values are sets of strings.\nUse iterators to access the items in these containers."
   },
   {
-    "objectID": "labs/lab06.html#introduction",
-    "href": "labs/lab06.html#introduction",
-    "title": "Lab 06: More List Operations",
+    "objectID": "labs/lab13.html#introduction",
+    "href": "labs/lab13.html#introduction",
+    "title": "Lab 12: The STL set and map Containers",
     "section": "Introduction",
-    "text": "Introduction\nIn this week’s lab you will add more functionality to the List class we built in class.\nHere is the invite.\nUse git clone to get your copy of the assignment, as we have been doing. You should have these files: List.cpp, List.h, tests.cpp, plus a makefile, etc.\nIf you are working with a partner, so make sure you join the same Team when creating your repos. Also, put both your names in the README.md file now."
+    "text": "Introduction\nThis lab/project has you creating a simple database of movies and the actors in the movies. Then the user of the program can choose to:\n\nShow all movies\nShow all actors in a movie\nShow all movies an actor was in.\nThe main data structure you’ll create is an STL map that maps:\n\nmovie name → set of actors in the movie.\nThis is a complex data structure: each entry in the map contains a set (Thus, we’ll have a binary search tree of binary search trees).\nWe’ll use the Bridges database of movie information. When you get the information from the Bridges API, you get a vector of objects of type MovieActorWikidata. Each object contains a movie and an actor in the movie (among other things). If you printed out those two things from MovieActorWikidata objects, you might see these values.\nMovie: Young at Heart         Actor: Alan Hale, Jr.\nMovie: Wichita                Actor: Carl Benton Reid\nMovie: We're No Angels        Actor: Aldo Ray\nMovie: Young at Heart         Actor: Doris Day\nMovie: Wichita                Actor: Joel McCrea\netc...\nThus, you see that the objects are not in any order, and do not have all the actors in a movie in each object. To get all actors for a movie, you’ll have to iterate over all the elements of the vector and learn 1) all the movies, and 2) all the actors in the movies.\nNote that sometimes an actor is listed multiple times for a movie. But, because we are using an STL set, it automatically handles attempts to insert an element multiple times."
   },
   {
-    "objectID": "labs/lab06.html#step-1.-append",
-    "href": "labs/lab06.html#step-1.-append",
-    "title": "Lab 06: More List Operations",
-    "section": "Step 1. Append",
-    "text": "Step 1. Append\nThe append() method is easy to understand: given a new Item, add it to the end of the linked list. The tests.cpp file contains tests already for append().\nNow, implement the code for append(). You might find looking at the implementation of prepend() to be helpful – although append() is a bit more complicated. DRAW PICTURES! (Or, don’t draw pictures, if you want to make this step of the lab take much longer…)"
+    "objectID": "labs/lab13.html#menu",
+    "href": "labs/lab13.html#menu",
+    "title": "Lab 12: The STL set and map Containers",
+    "section": "Menu",
+    "text": "Menu\nThe application presents a menu from which the user can select the operation s/he wishes to perform. To validate a user’s menu-choice, our project uses a tree-based data structure – the STL set. For example, if the valid menu choices are a, b, c, d, e, f, and q, and we store these choices in a set named myValidChoices, then we might (simplistically) visualize this set as follows:\n\nTo determine whether or not a character is present in this set, the STL find(value) method does a binary search down through this tree until it either locates value, or reaches the bottom of the tree. It should be evident that the maximum time to search is O(lg(n)), where n is the number of items in the set.\nThe exercise will provide you with a “skeleton” application, which you will then complete by adding additional functionality."
   },
   {
-    "objectID": "labs/lab06.html#step-2.-searching",
-    "href": "labs/lab06.html#step-2.-searching",
-    "title": "Lab 06: More List Operations",
-    "section": "Step 2. Searching",
-    "text": "Step 2. Searching\nLet’s implement a method that searches the linked list for a given Item, and returns the index of where the item is found, or -1 if it is not found. Name the method getIndexOf(). Here is the prototype:\nint getIndexOf(const Item &it) const;\nFirst implement tests of getIndexOf() in tests.cpp, and then implement the method. You must call the TEST_CASE “lookfor”. I.e., put this in the tests.cpp file:\nTEST_CASE(\"lookfor\") {\n     // add your tests here -- either inside SECTION()s or not.\n}"
+    "objectID": "labs/lab13.html#getting-started",
+    "href": "labs/lab13.html#getting-started",
+    "title": "Lab 12: The STL set and map Containers",
+    "section": "Getting Started",
+    "text": "Getting Started\nAccept the invitation from github classroom and use git clone, as usual.\nEdit the README.md file to add both your names and your partner’s, and share the git repo, as usual."
   },
   {
-    "objectID": "labs/lab06.html#step-3.-copy-constructor",
-    "href": "labs/lab06.html#step-3.-copy-constructor",
-    "title": "Lab 06: More List Operations",
-    "section": "Step 3. Copy constructor",
-    "text": "Step 3. Copy constructor\nYou knew it was coming…\ntests.cpp does not contain any test cases for this, so you’ll have to implement them yourself. My solution has 1 TEST_CASE with 3 SECTIONS: copying a 0-element List, copying a 1-element List, and copying a \\(&gt;1\\)-element list. The name of the TEST_CASE must be copy constructor:\nTEST_CASE(\"copy\") {\n     // add your tests here -- either inside SECTION()s or not.\n}\nThe prototype of the copy constructor will be:\nList(const List & original);\nHere is the algorithm to implement the copy constructor:\n\nSet all the instance variables (myFirst, myLast, mySize) to default values.\nWalk the list of nodes in original, calling append() on the value in each node. (You are calling append() on “this” node, thus adding a new node each time to the List being constructed.)"
+    "objectID": "labs/lab13.html#part-i.-the-menu-class",
+    "href": "labs/lab13.html#part-i.-the-menu-class",
+    "title": "Lab 12: The STL set and map Containers",
+    "section": "Part I. The Menu Class",
+    "text": "Part I. The Menu Class\nWhen dealing with menu-driven systems, one thing that can go wrong is if the user enters an invalid choice – something that is not on the menu. When this happens, the program must detect it and take remedial action.\nOne way to detect such a problem is to build a Menu class that, besides “remembering” its menu, “remembers” its set of valid menu choices. Then when the user enters a choice, we can validate their choice by checking whether or not their choice is an element of that set.\nAs you can see, our Menu class contains two instance variables: a string storing the menu, and a set to store those menu choices that are valid:\nstring myValue;             // the menu that is displayed\nset&lt;char&gt; myValidChoices;   // the valid menu choices\nSave/compile your project, and verify that everything compiles without errors.\n\nThe Menu Constructor\nThe Menu constructor currently initializes our myValue member; it must also initialize myValidChoices so that it stores the valid menu choices. To do so, we can use the insert() method:\nsetVariable.insert(value);\nthat inserts a single value into a set.\nIn Menu.cpp, add insert() calls to make myValidChoices represent the set {‘a’, ‘b’, ‘c’, ‘q’}.\n\n\nThe Menu::containsChoice() Method\nTo let a program conveniently check whether or not a given character is a valid menu choice, the Menu class provides a boolean method containsChoice(choice) that returns true if and only if choice is a valid menu choice. Currently, this method is a stub-definition that returns false. Your next task is to revise this stub so that it returns true if and only if choice is in the set myValidChoices.\nWe can accomplish this using the find() method.\nSave/compile your project, and when it is free of compilation errors, run the program. When it is free of errors, go on.\nWhen you run your program, you will need to provide your Bridges UserName and Id on the command line: e.g.,\n./movies CS112StudentUsingBridges 123555666"
   },
   {
-    "objectID": "labs/lab06.html#step-4.-equality",
-    "href": "labs/lab06.html#step-4.-equality",
-    "title": "Lab 06: More List Operations",
-    "section": "Step 4. Equality",
-    "text": "Step 4. Equality\nImplement the equality method, so that you can test if two List objects have the same number of nodes and the items in the nodes are the same. The equality operator returns true or false.\nE.g.,\nif list1 contains 3 values: 11, 22, 33 and list2 contains four values: 11, 22, 33, 44, then list1 == list2 should return false.\nTo test this you have to use == (not !=), so your test might look like this:\nREQUIRE(! (list1 == list2) );\nCreate your tests first in a test case called “equality”:\nTEST_CASE(\"equality\") {\n     // add your tests here -- either inside SECTION()s or not.\n}\n\n\n\n\n\n\nTip\n\n\n\nUse a “curr” pointer to each list’s myFirst node, then in a loop, check if the items are the same for the two nodes, then move each curr pointer to its next node."
+    "objectID": "labs/lab13.html#part-ii.-the-app-class",
+    "href": "labs/lab13.html#part-ii.-the-app-class",
+    "title": "Lab 12: The STL set and map Containers",
+    "section": "Part II. The App Class",
+    "text": "Part II. The App Class\nThe file App.h contains the declaration of class App. This class uses an STL map to store (movieName, set of actors) pairs:\nmap&lt;string, set&lt;string&gt;&gt; movies_by_name;   // key is movie name; value is set of actors' names.\nNote that the code actually reads like this:\ndb_type movies_by_name;\nIn order to not have to type map&lt;string, set&lt;string&gt;&gt; too often, I created two typedefs at the top of App.h:\ntypedef map&lt;string, set&lt;string&gt;&gt; db_type;\ntypedef map&lt;string, set&lt;string&gt;&gt;::iterator db_iter;\nNow, the code can use db_type and db_iter instead of map&lt;string, set&lt;string&gt;&gt; and map&lt;string, set&lt;string&gt;&gt;::iterator, respectively. So much easier to type!\n\nConstructor\nThe App constructor has been defined for you. It takes a vector of MovieActorWikidata entries as a parameter.\nThe constructor code contains the algorithm you should implement to process these entries, building up entries in the movies_by_name map.\nIf you use the hint I gave in class about how accessing a map with [ ] will either create a new entry or update it if it already exists, then the body of the for loop is one line. Otherwise, the body is about 9 lines, and is very tricky code.\nWrite the code now. This code will be difficult to test until you implement the next step.\n\n\nShow All Movies Option\nImplement code for showAllMovies(), to iterate through all entries in movies_by_name, and print out the movie name and then iterate through all actors for that movie, printing them out. I’ve indented the actor’s name, so the output is more readable.\nYou might find it very useful to make the inner loop a separate function. I called that function showActorsInAMovie(). It takes an iterator “pointing” to an object from the movies_by_name collection, and iterates over the “second” field (a set), printing each actor in the set. If you implement this function, you’ll find you can use it again below.\nWhen you think your code is correct (for this and the previous step), try loading all movies from 1955 and printing them all out. The first movie should be:\nMovie: 5 Against the House\n        Alvy Moore\n        Brian Keith\n        George Cisar\n        Guy Madison\n        Hugh Sanders\n        Jean Willes\n        John Larch\n        John Zaremba\n        Kathryn Crosby\n        Kerwin Mathews\n        Kim Novak\n        Mark Hanna\n        Robert Sampson\n        William Conrad\nThe last movie you should see should look like this:\nMovie: Young at Heart\n        Alan Hale, Jr.\n        Doris Day\n        Dorothy Malone\n        Elisabeth Fraser\n        Ethel Barrymore\n        Frank Ferguson\n        Frank Sinatra\n        Gig Young\n        Lonny Chapman\n        Robert Keith\n\n\nShow All Actors For a Single Movie Option\nComplete the code in the getMovienameAndShowActors() method. If you created a function to show all actors for a given movie, then you are half done already.\n\n\nShow All Movies For an Actor Option\nFinally, implement this option. Create a set of strings (I called my variable movies_by_actor.) And then go through all movies, looking for that actor. When you find him/her, add the movie to the movies_by_actor. Then, when you are done, print out the set.\nHere is a sample output:\nEnter an actor name to show all movies for that actor: Alfred Hitchcock\nRear Window\nThe Trouble with Harry\nTo Catch a Thief"
   },
   {
-    "objectID": "labs/lab06.html#step-5.-templatize",
-    "href": "labs/lab06.html#step-5.-templatize",
-    "title": "Lab 06: More List Operations",
-    "section": "Step 5. Templatize",
-    "text": "Step 5. Templatize\nNow, convert your List class to a List&lt;Item&gt; template and modify the tests in tests.cpp to test your new template. Remember to edit the makefile to remove List.cpp from the SOURCES line near the top of the file. You should also delete the List.cpp file completely from your tree."
+    "objectID": "labs/lab13.html#turn-in",
+    "href": "labs/lab13.html#turn-in",
+    "title": "Lab 12: The STL set and map Containers",
+    "section": "Turn In",
+    "text": "Turn In\nSubmit your project to github as usual. If you worked with your lab partner on the project, make sure you update README.md to include both of your names/login-ids."
   },
   {
-    "objectID": "labs/lab06.html#submit",
-    "href": "labs/lab06.html#submit",
-    "title": "Lab 06: More List Operations",
-    "section": "Submit",
-    "text": "Submit\nA part of your grade will be based on the thoroughness of your tests; you may want to model your tests after those provided for you in previous projects.\nDon’t forget to Commit and Push your changes to your repo.\nVerify you have synced your code to github by going to your online repo webpage and looking to see that the files are correct.\nVerify that the autograding tests have passed in github.com."
+    "objectID": "labs/lab13.html#grading-rubric",
+    "href": "labs/lab13.html#grading-rubric",
+    "title": "Lab 12: The STL set and map Containers",
+    "section": "Grading Rubric",
+    "text": "Grading Rubric\n21 points total:\n\nMenu class works: 2 pts.\nApp constructor: 5 pts.\nEach App menu item: 4 pts each: 12 pts.\nHospitable code: code is clean and neat, perfectly indented, with good variable names, etc.: 2 pts.\n\nWays students have lost points in the past:\n\n-2: showAllMovies needs to show the names of each movie’s actors\n-2: getMovieNameAndShowActors implementation is incorrect, the result of movies_by_name.find will return the iterator value you want to pass to showActorsInAMovie, the for loop is unnecessary\n-2: code is very poorly indented\n-2: parameter names are very poorly chosen"
   },
   {
-    "objectID": "labs/lab06.html#grading-rubric",
-    "href": "labs/lab06.html#grading-rubric",
-    "title": "Lab 06: More List Operations",
-    "section": "Grading Rubric:",
-    "text": "Grading Rubric:\nYou will be graded this way: 19 pts total\n\n4 pts each for append(), getIndexOf(), copy constructor, and equality operator (16 pts)\n3 pts for correctness,\n1 pt for thorough tests (you get this point free for append() for which I’ve provided tests).\n3 pts for correctly converting to a class template.\n\nWays students lost points in the past:\n\n-3: Incorrect class template conversion, code does not compile;\n-3: Missing tests for getIndexOf(), copy constructor, and equality operator\n-1: Incomplete equality tests, no tests for when equality is true\n-1: Append implementation needs to adjust the myNext of the current last element\n-1: Copy constructor: myFirst is not initialized to nullptr, causing tests to fail;\n-1: Missing test for equality operator;\n-1: Incomplete test for copy constructor;"
+    "objectID": "labs/lab05-slides.html#lab-5",
+    "href": "labs/lab05-slides.html#lab-5",
+    "title": "Lab 05 — Generic Containers",
+    "section": "Lab 5",
+    "text": "Lab 5\n\ncreating class template\npair programming"
   },
   {
-    "objectID": "labs/lab08-slides.html#dad-joke-of-the-week",
-    "href": "labs/lab08-slides.html#dad-joke-of-the-week",
-    "title": "Lab 08 — Stacks, Queues and Exceptions",
+    "objectID": "labs/lab05-slides.html#dad-joke-of-the-week",
+    "href": "labs/lab05-slides.html#dad-joke-of-the-week",
+    "title": "Lab 05 — Generic Containers",
     "section": "Dad joke of the week",
-    "text": "Dad joke of the week\n\n\n\n\n\n\n\n\n\n\nDogs can’t operate MRI machines. But catscan."
+    "text": "Dad joke of the week"
   },
   {
-    "objectID": "labs/lab08-slides.html#lab-6",
-    "href": "labs/lab08-slides.html#lab-6",
-    "title": "Lab 08 — Stacks, Queues and Exceptions",
-    "section": "Lab 6",
-    "text": "Lab 6\n\ncreating methods for class list\npair programming"
-  },
-  {
-    "objectID": "labs/lab11-hint.html",
-    "href": "labs/lab11-hint.html",
-    "title": "Lab 10: Hint",
+    "objectID": "labs/lab09-hint-pop2.html",
+    "href": "labs/lab09-hint-pop2.html",
+    "title": "Lab 09: Hint pop() 2",
     "section": "",
-    "text": "The stub of BST::insert() should look like this:\nvoid BST::insert(const Item& item) {\n\n }\n## Defining BST::insert()\nThe BST::insert(item) method needs to distinguish between the two cases (empty and non-empty):\n\nIf the BST is empty:\n\nCreate a new node containing item and store that node’s address in myRoot.\n\nOtherwise (there is at least one node):\n\n“Pass the buck” to the root node by invoking Node::insert(item) on the node whose address is in myRoot.\nAny exception it throws will be sent back to the calling insert() message.\n\nIn either case (when no exception was thrown), increment myNumItems."
+    "text": "To throw an exception when the stack is empty, the pop() method should behave as follows:\nIf I am empty {\n    throw a StackException whose method is \"pop()\" and whose message is \"stack is empty\".\n} \na. Subtract 1 from mySize.\nb. Return the entry of myArray whose index is mySize."
   },
   {
-    "objectID": "labs/lab11-hint.html#declaring-bstinsert",
-    "href": "labs/lab11-hint.html#declaring-bstinsert",
-    "title": "Lab 10: Hint",
-    "section": "",
-    "text": "The stub of BST::insert() should look like this:\nvoid BST::insert(const Item& item) {\n\n }\n## Defining BST::insert()\nThe BST::insert(item) method needs to distinguish between the two cases (empty and non-empty):\n\nIf the BST is empty:\n\nCreate a new node containing item and store that node’s address in myRoot.\n\nOtherwise (there is at least one node):\n\n“Pass the buck” to the root node by invoking Node::insert(item) on the node whose address is in myRoot.\nAny exception it throws will be sent back to the calling insert() message.\n\nIn either case (when no exception was thrown), increment myNumItems."
-  },
-  {
-    "objectID": "labs/lab11-hint.html#designing-nodeinsert",
-    "href": "labs/lab11-hint.html#designing-nodeinsert",
-    "title": "Lab 10: Hint",
-    "section": "Designing Node::insert()",
-    "text": "Designing Node::insert()\nSince a Node is recursively defined, we might define Node::insert(item) as a recursive method. One way to design a recursive algorithm for this method is as follows:\nBasis. There are three trivial cases:\n\nIf item belongs in my left subtree and my left subtree is empty:\n\nMake my left subtree a new node containing item.\n\nIf item belongs in my right subtree and my right subtree is empty:\n\nMake my right subtree a new node containing item.\n\nIf item does not belong in our left or right subtrees (i.e., its value is the same as myItem):\n\nWe will treat our BST like a mathematical set (which has no redundant elements) and throw an exception to alert the user that they have inserted the same Item more than once.\n\n\nInduction Step. Again, there are two cases:\n\nIf item belongs in my left subtree and my left subtree is not empty:\n\n“Pass the buck” to the node in my left subtree by asking it to insert item.\n\nIf item belongs in my right subtree and my right subtree is not empty:\n\n“Pass the buck” to the node in my right subtree by asking it to insert item."
-  },
-  {
-    "objectID": "labs/lab11-hint.html#defining-nodeinsert",
-    "href": "labs/lab11-hint.html#defining-nodeinsert",
-    "title": "Lab 10: Hint",
-    "section": "Defining Node::insert()",
-    "text": "Defining Node::insert()\nThese observations can then be reorganized into the following algorithm for our Node::insert() method:\n\nIf item is less than myItem:\n\nIf myLeft is nullptr:\n\nSet myLeft to the address of a new node containing item.\n\nOtherwise:\n\n“Pass the buck” by recursively calling myLeft-&gt;insert(item).\n\n\nOtherwise, if item is greater than myItem:\n\nIf myRight is nullptr:\n\nSet myRight to the address of a new node containing item.\n\nOtherwise:\n\n“Pass the buck” by recursively calling myRight-&gt;insert(item).\n\n\nOtherwise (item must be equal to myItem):\n\nthrow an Exception indicating that item is already in the BST."
-  },
-  {
-    "objectID": "labs/lab06-slides.html#some-reflection-13",
-    "href": "labs/lab06-slides.html#some-reflection-13",
-    "title": "Lab 06 — Linked Lists",
-    "section": "Some reflection (1/3)",
-    "text": "Some reflection (1/3)\n\n\n\n\n\n\n\n\n\n\n\n“In a Christian community everything depends upon whether each individual is an indispensable link in a chain. Only when even the smallest link is securely interlocked is the chain unbreakable. (…)"
-  },
-  {
-    "objectID": "labs/lab06-slides.html#some-reflection-23",
-    "href": "labs/lab06-slides.html#some-reflection-23",
-    "title": "Lab 06 — Linked Lists",
-    "section": "Some reflection (2/3)",
-    "text": "Some reflection (2/3)\n\n\n\n\n\n\n\n\n\n\n\n“(…) A community which allows unemployed members to exist within it will perish because of them. It may be well, therefore, if every member receives a definite task to perform for the community, that he may know in hours of doubt that he, too, is not useless and unusable. (…)"
-  },
-  {
-    "objectID": "labs/lab06-slides.html#some-reflection-33",
-    "href": "labs/lab06-slides.html#some-reflection-33",
-    "title": "Lab 06 — Linked Lists",
-    "section": "Some reflection (3/3)",
-    "text": "Some reflection (3/3)\n\n\n\n\n\n\n\n\n\n\n\n(…) Every Christian community must realize that not only do the weak need the strong, but also that the strong cannot exist without the weak. The elimination of the weak is the death of fellowship.” -Bonhoeffer, Life Together, 94."
-  },
-  {
-    "objectID": "labs/lab06-slides.html#lab-6",
-    "href": "labs/lab06-slides.html#lab-6",
-    "title": "Lab 06 — Linked Lists",
-    "section": "Lab 6",
-    "text": "Lab 6\n\ncreating methods for class list\npair programming"
-  },
-  {
-    "objectID": "labs/lab06-slides.html#dad-joke-of-the-week",
-    "href": "labs/lab06-slides.html#dad-joke-of-the-week",
-    "title": "Lab 06 — Linked Lists",
+    "objectID": "labs/lab00-slides.html#dad-joke-of-the-week",
+    "href": "labs/lab00-slides.html#dad-joke-of-the-week",
+    "title": "Lab 00 — Intro do C++",
     "section": "Dad joke of the week",
-    "text": "Dad joke of the week\n\n\n\nQ: Why did the man fall down the deep hole?\nA: ’Cause he couldn’t see that well."
+    "text": "Dad joke of the week\n\n\n\n\n\n\n\n\n\n\nPete and Repete are on a boat. Pete falls off. Who’s left on the boat?"
   },
   {
-    "objectID": "labs/lab08.html",
-    "href": "labs/lab08.html",
-    "title": "Lab 08: Timing List and Vector Operations",
+    "objectID": "labs/lab00-slides.html#bible-reflection-for-a-data-structures-lab-session",
+    "href": "labs/lab00-slides.html#bible-reflection-for-a-data-structures-lab-session",
+    "title": "Lab 00 — Intro do C++",
+    "section": "Bible Reflection for a Data Structures Lab Session",
+    "text": "Bible Reflection for a Data Structures Lab Session\nVerse: “Let all things be done decently and in order.” — 1 Corinthians 14:40\nAs we dive into the intricacies of data structures, this verse reminds us of the importance of organization and structure, not just in our code but also in life. Data structures like arrays, trees, and graphs teach us that even the most complex systems can be understood and managed when approached with order and clarity.\nGod’s creation reflects His intentional design—everything has a purpose and place, from the smallest atom to the vastness of the universe. Similarly, in our programming, we use data structures to bring order to chaos, enabling efficiency and clarity in solving problems.\nAs we work on today’s lab, let us remember that the discipline and creativity we apply to our work reflect the order and purpose God calls us to embody. Let’s strive to build systems that not only function well but also mirror the excellence and intentionality of our Creator.\nPrayer:\nLord, thank You for the gift of logic and creativity. Help us to approach our work with diligence and clarity, bringing order to our ideas just as You bring order to all creation. May our efforts in this lab glorify You and serve as a reflection of Your wisdom. Amen."
+  },
+  {
+    "objectID": "labs/lab00-slides.html#lab-9",
+    "href": "labs/lab00-slides.html#lab-9",
+    "title": "Lab 00 — Intro do C++",
+    "section": "Lab 9",
+    "text": "Lab 9\n\ncreating recursive functions using ChatGPT\ndiscussing efficiency by calculating the number of times a function is called"
+  },
+  {
+    "objectID": "labs/lab03-slides.html#lab-3",
+    "href": "labs/lab03-slides.html#lab-3",
+    "title": "Lab 03 — Classes",
+    "section": "Lab 3",
+    "text": "Lab 3\n\ncreating a Student class\npair programming (change your pairs!)"
+  },
+  {
+    "objectID": "labs/lab03-slides.html#dad-joke-of-the-week",
+    "href": "labs/lab03-slides.html#dad-joke-of-the-week",
+    "title": "Lab 03 — Classes",
+    "section": "Dad joke of the week",
+    "text": "Dad joke of the week\n\n\nQ: Why did the functions stop calling each other?\nA: Because they had constant arguments."
+  },
+  {
+    "objectID": "labs/lab09-hint-pop.html",
+    "href": "labs/lab09-hint-pop.html",
+    "title": "Lab 09: Hint pop()",
+    "section": "",
+    "text": "The stub of pop() should look like this:\nItem Stack::pop() {\n}\nBecause pop() is basically the complement of push(), and the index of the top item is 1 position “down” from mySize, the pop() method should behave as follows:\n\nSubtract 1 from mySize.\nReturn the entry of myArray whose index is mySize."
+  },
+  {
+    "objectID": "labs/lab10-slides.html#dad-joke-of-the-week",
+    "href": "labs/lab10-slides.html#dad-joke-of-the-week",
+    "title": "Lab 09 — Recursion",
+    "section": "Dad joke of the week",
+    "text": "Dad joke of the week\n\n\n\n\n\n\n\n\n\n\nPete and Repete are on a boat. Pete falls off. Who’s left on the boat?"
+  },
+  {
+    "objectID": "labs/lab10-slides.html#lab-9",
+    "href": "labs/lab10-slides.html#lab-9",
+    "title": "Lab 09 — Recursion",
+    "section": "Lab 9",
+    "text": "Lab 9\n\ncreating recursive functions using ChatGPT\ndiscussing efficiency by calculating the number of times a function is called"
+  },
+  {
+    "objectID": "labs/lab09.html",
+    "href": "labs/lab09.html",
+    "title": "Lab 09: Stacks and Exceptions and Queues",
     "section": "",
     "text": "Road Runner."
   },
   {
-    "objectID": "labs/lab08.html#objectives",
-    "href": "labs/lab08.html#objectives",
-    "title": "Lab 08: Timing List and Vector Operations",
+    "objectID": "labs/lab09.html#objectives",
+    "href": "labs/lab09.html#objectives",
+    "title": "Lab 09: Stacks and Exceptions and Queues",
     "section": "Objectives:",
-    "text": "Objectives:\nIn this exercise, you will:\n\nCompare performance of list&lt;T&gt; and vector&lt;T&gt; operations.\nIntroduce iterators.\nIntroduce empirical analysis."
+    "text": "Objectives:\nIn this exercise, you will:\n\nBuild a dynamically-allocated-array-based Stack class.\nBuild a simple Exception class hierarchy.\nThrow and catch exceptions.\nBuild a Queue class that uses a linked list."
   },
   {
-    "objectID": "labs/lab08.html#introduction",
-    "href": "labs/lab08.html#introduction",
-    "title": "Lab 08: Timing List and Vector Operations",
+    "objectID": "labs/lab09.html#introduction",
+    "href": "labs/lab09.html#introduction",
+    "title": "Lab 09: Stacks and Exceptions and Queues",
     "section": "Introduction",
-    "text": "Introduction\nToday, we want to time a few list and vector operations, using the STL list and vector templates. While we have talked in class about “Big Oh” notation, today’s lab should give you some hands-on experience with the difference between an \\(O(1)\\) operation and an \\(O(n)\\) operation.\nFor a given operation and several values of \\(n\\), our basic methodology will be to build a vector of length \\(n\\), measure how long that operation takes for the vector, build a list of length \\(n\\), and measure how long that operation takes for the list. By choosing five different values for n (10, 100, 1000, 10000, and 100000), we can then plot our measurements and see empirically how fast or slow a given operation is."
+    "text": "Introduction\nToday’s exercise has two parts:\n\nIn Part I, we will build a simple Stack class that stores its items in a fixed-size, dynamically-allocated array.\nIn Part II, we will see how to define, throw, catch, and handle exceptions.\nIn Part III, we will build a simple Queue class that stores its items in a linked list."
   },
   {
-    "objectID": "labs/lab08.html#getting-started",
-    "href": "labs/lab08.html#getting-started",
-    "title": "Lab 08: Timing List and Vector Operations",
+    "objectID": "labs/lab09.html#getting-started",
+    "href": "labs/lab09.html#getting-started",
+    "title": "Lab 09: Stacks and Exceptions and Queues",
     "section": "Getting Started",
     "text": "Getting Started\nAccept the invitation to the lab and do git clone to get the files, as usual. Make sure your partner is part of the same Team and edit the README.md file and share your repo on github.com"
   },
   {
-    "objectID": "labs/lab08.html#experiment-0-vector-subscript",
-    "href": "labs/lab08.html#experiment-0-vector-subscript",
-    "title": "Lab 08: Timing List and Vector Operations",
-    "section": "Experiment 0: Vector Subscript",
-    "text": "Experiment 0: Vector Subscript\nThe purpose of this experiment is to get a feel for how to use the Timer class to time the vector subscript operation. This experiment contains a method named timeAccessAtIndex() that uses Timer to measure how long it takes to access the item at a given index in a vector. The run() method calls timeAccessesForVectorOfSize() for various vector sizes. This method calls the timeAccessesAtIndex() method three times, to see how long it takes to access the first, middle and last value in the vector.\nCompile (make all) and run ./lab7.\nTo report your results, create an online spreadsheet – either Google Sheets or online Excel. On the worksheet, write Lab 7: Experiment 0 in the first row; on the next row create column-headings labeled size, first, middle, and last. Then add rows for each vector size (i.e., 10, 100, 1000, 10000, 100000). For each row size, enter the times your program displayed for accessing the first, middle, and last value in the vector of size size.\nWhen you have entered all of your data, create a well-labeled line chart from your timing results. Your chart should look something like this:\n\nNote these properties of the graph:\n\nThe horizontal scale is logarithmic.\nThe vertical lab gives the units.\nI have chosen to show the values with little circles – you can choose any shape (circle, square, etc.)\n\nAnalysis. On the chart shown above, the data are “noisy” (thanks to our imprecise clock), ranging from a low of 30.7667 nsec to a high of 33.6957 nsec. However the lines are basically flat – there is no significant change to the access time as the vector size increases by orders of magnitudes. If I use the spreadsheet to compute the averages for the first, middle, and last columns, they are all approximately the same. Your chart should be similar. (Note that I ran my tests on my MacBookPro. The values you get on the lab machines may be quite different.)\nThe relative flatness of these lines and their close proximity to one another indicate that the time to perform this operation remains constant as the size of the vector increases. These results thus indicate empirically that the vector subscript operation is an \\(O(1)\\) (i.e., constant time) operation."
+    "objectID": "labs/lab09.html#part-i-the-stack-class",
+    "href": "labs/lab09.html#part-i-the-stack-class",
+    "title": "Lab 09: Stacks and Exceptions and Queues",
+    "section": "Part I: The Stack Class",
+    "text": "Part I: The Stack Class\nAs you can see, this Stack class contains three instance variables:\n   unsigned myCapacity;\n   unsigned mySize;\n   Item*    myArray;\nWe will be storing the address of a dynamically allocated array in myArray. We will be storing the length of that array in myCapacity, and in mySize, we will be storing the number of items in the array. As we shall see, this value will correspond to the index of the spot in that array where the next Item that we push() will be stored.\nAs we have seen in class, the primary Stack operations are:\n\nbool isEmpty(), that returns true if and only if the Stack contains no items;\nbool isFull(), that returns true if and only if the Stack has no room for more items;\nvoid push(Item it), that places it on top of the Stack;\nItem peekTop(), that returns the top item from the Stack (without modifying the Stack); and\nItem pop(), that removes and returns the top item from the Stack.\n\nTo let you focus on these Stack operations, the Stack class already contains prototypes and definitions for:\n\nan explicit-value constructor;\na copy constructor;\na destructor; and\nan assignment operator.\n\nTake a few minutes to look these over. Look carefully at the explicit-value constructor, and note the initial values each member is given. We might visualize the Stack objects it constructs as follows:\n\nTake a minute to look over tests.cpp to see the tests it contains. Note that part of the test is commented out. Leave this part commented out for now; we will be uncommenting it in Part II.\nBuild the project (make all) and run tester (./tester). Verify that everything works correctly at the outset.\n\nThe isEmpty() Method\nOur explicit constructor gives us the ability to define Stack objects with a given capacity. Since these Stack objects are initially empty (i.e., they contain no items), the first operation we will build is the isEmpty() method.\nIn tests.cpp, uncomment the TEST_CASE that tests isEmpty(). Compile and run the test. You should see an error message indicating that isEmpty() does not exist.\nIn Stack.h, add a prototype for isEmpty() to the class. Recompile and rerun. You should now see a linking error, since isEmpty() has been prototyped but not defined.\nIn Stack.cpp, add a definition for isEmpty() that will pass the tests. This definition should be as simple as possible (e.g., a single line). If you get stuck, here is a hint, but don’t use it unless you have to.\nRecompile and rerun your test. Continue when you pass the test.\n\n\nThe push(), peekTop(), and isFull() Methods\nThe other operations only work correctly on a non-empty Stack, so before we can test them, we need to be able to add items to a Stack. Since the push() method allows us to add items to a Stack, we will build that method; and since pushing items onto a stack can fill it, we will also build the isFull() and peekTop() methods.\nIn tests.cpp, uncomment the TEST_CASE that tests testPushPeekTopAndIsFull(). Take a moment to look over the tests it contains. The first test constructs a stack with capacity 1 and pushes an item onto it. We might visualize this stack as follows:\n\nThe second test constructs a stack with capacity 3 and pushes an item onto it. We might visualize this stack as follows:\n\nThe test then pushes a second item onto the stack:\n\nThe test then pushes a third item onto the stack, filling it:\n\nCompile and run the test. You should see error messages indicating that push(), peekTop(), and isFull() do not exist.\nIn Stack.h, add a prototype for isFull() to the class. Recompile. Next, add a prototype for peekTop() to the class. Recompile. You should now see just the error for push(). Add a prototype for push(); then recompile. You should now get only linking errors, since isFull(), peekTop(), and push() have been declared in Stack.h but not defined.\nIn Stack.cpp, add a definition for isFull(). This definition should be as simple as possible (e.g., a single line).\nSave/compile, and verify that the linking error for isFull() goes away. (The errors for peekTop() and push() should still be there.)\nDefine the peekTop() method. Save/recompile, and verify that what you have written compiles without errors. (You should still see a linking error for push().) Note that you do not have to handle the case (now) when you try to peekTop() on an empty Stack.\nDefine the push() method. Save/recompile, and verify that what you have written compiles and links without errors. (Again, do not worry about exceptional cases, yet.)\nRun the tests. If you pass the tests, congratulations! If not, use the diagrams above to go back and fix your push(), peekTop(), and/or isFull() methods. If you get stuck, here are hints for push(), peekTop(), and isFull(), but only use them if you have to.\nContinue when your methods pass all the tests.\n\n\nThe pop() Method\nOur sole remaining operation is the pop() method, that removes and returns the top value from the Stack.\nIn tests.cpp, uncomment the TEST_CASE for testPop(). Compile and run the test. You should see an error message indicating that pop() does not exist.\nIn Stack.h, add a prototype for pop() to the class. Recompile and rerun. You should now see a linking error, since pop() has a prototype but no definition.\nIn Stack.cpp, add a definition for pop() that will pass testPop(). For now, this definition should be as simple as possible (e.g., it can be as short as a single line). If you get stuck, here is a hint, but don’t use it unless you have to.\nRecompile and rerun your test. Continue when you pass the test."
   },
   {
-    "objectID": "labs/lab08.html#experiment-1-vector-list-appending",
-    "href": "labs/lab08.html#experiment-1-vector-list-appending",
-    "title": "Lab 08: Timing List and Vector Operations",
-    "section": "Experiment 1: Vector & List Appending",
-    "text": "Experiment 1: Vector & List Appending\nIn our next experiment, we will use a similar procedure to measure how long it takes to append an item to a vector and compare that with how long it takes to append an item to a list.\nIn main.cpp, comment out the lines referring to Experiment0 and uncomment the lines referring to Experiment1.\nIn your makefile, replace Experiment0.cpp with Experiment1.cpp on the 4th line.\nRecompile your project (make all) and run ./lab7. As you can see, Experiment1 contains code to time how long it takes to append a value to a vector. It does this two ways:\n\nIt first invokes timeAppendToVectorOfSize(n) for varying values of n.\nIt then uses timeRepeatedAppendUntilVectorIsSize(n) to measure the average time an append operation takes as a vector grows very large.\n\nOur timeAppendToVectorOfSize(n) method uses an approach similar to that of Experiment0, but timing how long it takes the vector push_back(item) method to append a single value. By contrast, our timeRepeatedAppendUntilVectorIsSize(n) starts with an empty vector and then times the average length of time to append a value, as push_back() is called repeatedly.\nYour task is to write two methods that do the same things for lists:\n\ntimeAppendToListOfSize(n) that can be used to measure the average time to append an item to a list of size n; and\ntimeRepeatedAppendUntilListIsSize(n) that measures the average time an append operation takes as a list grows very large.\n\nUsing the existing vector methods in Experiment 1 as a model, write these two methods; then compile and run the executable to display the append times for both vectors and lists.\nWhen you have good data, return to your spreadsheet. Create a new worksheet, and label the first row Lab 7: Experiment 1. On the next row, place column headings for size, vector, and list. Then add a separate row for each size (10, 100, 1000, 10000, and 100000). Add your data to your worksheet; then create a chart similar to that of Experiment0.\nStudy your chart. Using it and the data in your spreadsheet, answer the following questions on your spreadsheet, below your chart:\n\nWhat does your data indicate about the time required to append an item to a vector as the vector grows larger? Is the timing behavior produced by timeAppendToVectorOfSize(n) consistent with that of timeRepeatedAppendToVectorOfSize(n)? Explain why or why not. What is the “Big Oh” notation for each? (Remember that our vector’s size is increasing exponentially.)\nWhat does your data indicate about the time required to append an item to a list as the list grows larger? Is the timing behavior produced by timeAppendToListOfSize(n) consistent with that of timeRepeatedAppendUntilListIsSize(n)? Explain why or why not. What is the “Big Oh” notation for each?\nWhat can you conclude about the time required to append an item to a vector compared to a list, as each gets large?"
+    "objectID": "labs/lab09.html#part-ii-exceptions",
+    "href": "labs/lab09.html#part-ii-exceptions",
+    "title": "Lab 09: Stacks and Exceptions and Queues",
+    "section": "Part II: Exceptions",
+    "text": "Part II: Exceptions\nWe now have a working Stack class, but it is lacking any error-handling capability. For example, what happens if a person pops an empty stack, or pushes an item onto a full stack? In Part II of today’s exercise, we introduce C++’s programmer-defined exception mechanism, which provides a graceful way of handling such problems.\nAs we have seen with the C++ standard exceptions, an exception is an out-of-the-ordinary occurrence. The C++ standard exception classes in &lt;stdexcept&gt; are necessarily very general, describing broad categories of things that might go wrong. When you want to more precisely indicate what is going wrong, C++ lets us create our own exception classes.\nIn C++, a method that wants to indicate that something exceptional has occurred can throw an exception object back to the caller of the method. The pattern for the throw statement is:\nthrow ExceptionType(arguments);\nThis constructs an exception object of type ExceptionType and throws it to the caller – the subprogram that invoked the currently running method, terminating that method.\nBack in the caller, the call to that method can be “wrapped” in a try-catch block, whose form is as follows:\ntry {\n  // risky code -- might throw an exception\n} catch (const ExceptionType & exceptionParameter) {\n  // handler code -- to be executed if the exception occurs\n}\nThe try block tries to perform the “risky code”. If that code works without throwing the exception, control skips past the catch block to whatever follows it. But if the “risky code” throws the exception named in the catch, then control is transferred to the “handler” code in the catch block, which does whatever is appropriate.\nNote that since ExceptionType is pretty much always a class, it is preferable to define the catch block’s parameter as a const-reference parameter. This has two advantages over using a value parameter: (i) it avoids the copying associated with a value parameter, and (ii) it lets this catch block catch exceptions of this exception-class or any subclasses derived from that class. We make it a const reference (i.e., read-only reference) parameter because the catch block should not make any changes to that parameter.\n\nCatching Exceptions\nIn tests.cpp, uncomment the following line in TEST_CASE \"testPop()\":\n        REQUIRE_THROWS_AS(s1.peekTop(), StackException);\nThis block tries to send the peekTop() message to an empty stack, and then catches the exception that should be thrown.\nSave/recompile your project. You should get several errors, because StackException has not been defined. Verify that that is the cause of your errors, then continue.\n\n\nThe StackException Class\nOne way to provide exceptions for our Stack class is to define a separate StackException class that our Stack class can use when something goes wrong. Inspect the file StackException.h which contains such a class.\nThe class has two instance variables:\n\nmyLocation, to which a method can pass its name (to indicate the exact method in which something went wrong); and\nmyMessage, to which a method can pass a description of what is wrong.\n\nThe StackException constructor initializes these members using values it receives through its parameters. For example, if at the beginning of the pop() method, we find that the stack is empty, we can build an exception like this:\n   StackException(\"pop()\", \"stack is empty\")\n(don’t do this yet in your code)\nIf at the beginning of the the push() method, we find that the stack is full, we can build an exception like this:\n   StackException(\"push()\", \"stack is full\")\nThe asString() method generates a string representation of these values, accompanied by some descriptive labels.\nAt the bottom of StackException.h, there is a definition of operator&lt;&lt; that lets us output a StackException using the usual C++ stream-insertion operator.\nAt the beginning of Stack.h, uncomment the #include directive that includes StackException.h.\nAfter making these changes, save/recompile your project. If all is well, your project should compile correctly (but not run correctly yet). If not, find and correct the syntax error(s).\nWhen your project compiles correctly, run it. You should see an execution halt in the \"testPop()\" test case. The problem is that our testPop() method now expects a StackException to be thrown when we send the peekTop() message to an empty Stack. Continue, and we will see how to accomplish this.\n\n\nThrowing Exceptions\nNow that we have created a StackException class by which we can precisely describe unusual circumstances, we can use that class in our Stack methods. As mentioned previously, a method that detects a problematic circumstance can throw an exception. For example, if the stack is empty, there is no top item for the peekTop() method to return, in which case we might make it throw a StackException, as follows:\nItem Stack::peekTop() const {\n    if (isEmpty()) {\n        throw StackException(\"peekTop()\", \"stack is empty\");\n    } \n    return myArray[mySize - 1];\n  }\nMake the changes seen above. Recompile and rerun your project. With these changes, what you have written should pass all the tests. Continue when it does so.\n\n\nThe Explicit-Value Constructor\nUncomment the REQUIRES_THROWS_AS code in the “constructors” test case. Then save/compile your project. Run it, and verify that it fails.\nUsing what we did with peekTop() as a model, modify the Stack constructor so that if capacity is not a positive number, the constructor throws a StackException with the message Stack(capacity): capacity must be positive!.\nContinue when your project passes all tests.\n\n\nThe pop() Method\nUncomment all the rest of the REQUIRES_THROWS_AS tests in the “testPop()” test case. Then save/compile your project. Run it, and verify that it fails.\nUsing what we did with peekTop() as a model, modify pop() so that it throws a StackException with the message pop(): stack is empty!. In case you get stuck, here is a hint, but don’t use it unless you need to. Continue when your project passes all tests.\n\n\nThe push() Method\nOur final operation is the push() operation. Uncomment the REQUIRE_THROWS_AS tests “testPushPeekTopAndIsFull()”. Then save/recompile, and verify that your project no longer passes the test.\nUsing what we did previously as a model, modify push() so that it throws a StackException with the message push(): stack is full!. In case you get stuck, here is a hint, but don’t use it unless you need to.\nContinue when your project passes all tests.\n\n\nThe Other Operations\nNow that you have tested the stack operations, uncomment the remaining test cases and verify that the other Stack operations pass their tests. (I see 57 assertions in 6 test cases that pass.)\nCongratulations! You now have a full-featured (array-based) Stack class at your disposal!"
   },
   {
-    "objectID": "labs/lab08.html#experiment-2-vector-list-prepending",
-    "href": "labs/lab08.html#experiment-2-vector-list-prepending",
-    "title": "Lab 08: Timing List and Vector Operations",
-    "section": "Experiment 2: Vector & List Prepending",
-    "text": "Experiment 2: Vector & List Prepending\nOur final experiment is to compare how long it takes to prepend an item to a vector, compared to a list.\nIn main.cpp, comment out the lines referring to Experiment1 and uncomment the lines referring to Experiment2. In the makefile, change SOURCES to Experiment2.cpp.\nRecompile your project and run Experiment2 as it is written. As you can see, Experiment2 contains code to time how long it takes to prepend a value to a vector. It does this two ways:\n\nIt first invokes timePrependToVectorOfSize(n) for varying values of n.\nIt then uses timeRepeatedPrependUntilVectorIsSize(n) to measure the average time a prepend operation takes as a vector grows very large.\n\nOur timePrependToVectorOfSize(n) method uses an approach similar to that of Experiment1, but the STL vector template does not provide a push_front() method by which we can prepend a value. However, STL does provide a generic insert() algorithm that we can use for this task. More precisely, the statement:\ninsert(iterator, value);\nwill insert value at the position indicated by iterator.\nAn iterator is an abstract pointer. Every STL container provides at least two methods that return iterators:\n\nbegin(), that returns an iterator to the first item in the container; and\nend(), that returns an iterator to the first location beyond the last item in the container.\n\nThus, we can use the statement:\ninsert(v.begin(), i);\nto prepend the value of our loop-control variable i to our vector.\nOur timeRepeatedPrependUntilVectorIsSize(n) method also uses the STL insert() method.\nYour task is to write two methods that do the same things for lists:\n\ntimePrependToListOfSize(n) that can be used to measure the average time to prepend an item to a list of size n; and\n\n\ntimeRepeatedPrependUntilListIsSize(n) that measures the average time a prepend operation takes as a list grows very large.\n\nUsing the existing Experiment 2 vector methods as a model, write these two methods; then invoke them so that Experiment2 displays the append times for both vectors and lists.\nWhen you have good data, return to your spreadsheet. Create a new worksheet, and label the first row Lab 7: Experiment 2. On the next row, place column headings for size, vector, and list. Then add a separate row for each size (10, 100, 1000, 10000, and 100000). Add your data to your worksheet; then create a chart similar to that of Experiment1.\nStudy your chart. Using it and the data in your spreadsheet, answer the following questions on your spreadsheet, below your chart:\n\nWhat does your data indicate about the time required to prepend an item to a vector as the vector grows larger? Is the timing behavior produced by timePrependToVectorOfSize(n) consistent with that of timeRepeatedPrependToVectorOfSize(n)? Explain why or why not. What is the “Big Oh” notation for each?\nWhat does your data indicate about the time required to prepend an item to a list as the list grows larger? Is the timing behavior produced by timePrependToListOfSize(n) consistent with that of timeRepeatedPrependUntilListIsSize(n)? What is the “Big Oh” notation for each?\nWhat can you say about the time required to prepend an item to a vector, compared to a list, as each gets large?"
+    "objectID": "labs/lab09.html#part-iii-queue-using-a-linked-list",
+    "href": "labs/lab09.html#part-iii-queue-using-a-linked-list",
+    "title": "Lab 09: Stacks and Exceptions and Queues",
+    "section": "Part III: Queue, using a Linked List",
+    "text": "Part III: Queue, using a Linked List\nWe have talked about the best way to implement a Queue using a linked list – insert at the tail of the queue and remove from the front of the queue. And, you have code from Lab 6 in which you implemented and tested a linked list – so you shouldn’t have to do too much to adapt that code to represent the Queue ADT.\nLook at the Queue.h and Queue.cpp files in the repository. The methods are there, but they are all empty. Now, go find your code from Lab 6, and fill in the methods, copying (and adapting) code from there. This shouldn’t take long. The only code you may have to implement is the remove() code – which removes the item from the front of the linked list.\nYou may wonder why we have a isFull() method that will always return false when we implement the queue using a linked list. Why even have it? The answer is that the user of the Queue does not know how the Queue is implemented, so they don’t know that the Queue can never be full.\nYou do NOT have to add any more methods (the linked list implementation has many more methods available, but the Queue has fewer, as it should).\n\n\n\n\n\n\nCaution\n\n\n\nTo compile the Queue .h and .cpp files, you have to edit the makefile: Change one line – line 4 – by adding Queue.cpp to the end so that the line now reads:\nSOURCES = Stack.cpp Queue.cpp\n\n\nNow try compiling. You will see many warnings because the methods have not been implemented yet.\nNOTE that you do NOT have to templatize the Queue code – unless you want to.\nThe biggest part of this assignment is to write a full set of TEST_CASES in tests.cpp. You should consult Lab 6’s tests and the tests already in tests.cpp for the Stack implementation.\n\n\n\n\n\n\nNote\n\n\n\nDo not create a test case for the destructor – it can fail randomly (as it did for me).\n\n\nWhen you have implemented and thoroughly tested your Queue implementation, you are done."
   },
   {
-    "objectID": "labs/lab08.html#finally",
-    "href": "labs/lab08.html#finally",
-    "title": "Lab 08: Timing List and Vector Operations",
-    "section": "Finally",
-    "text": "Finally\nUnlike vector, the STL list does provide a push_front() method that works just like push_back() only on the other end of the list. In your timePrependToListOfSize(n) method, comment out your call to insert() and replace it with a call to push_front(). Then rerun your experiment. Add a new column named list (push_front) to your Experiment2 spreadsheet. Under it, add the timing results for this revised version to your spreadsheet and its chart. Then answer the following question below your other answers on your Experiment2 spreadsheet:\n\nHow does the timing for prepending using push_front() compare to the timing of prepending using insert()? Is the “Big Oh” the same or different for these two different ways of prepending?\n\nWhew! Congratulations, you’re done (after doing the submission below)."
+    "objectID": "labs/lab09.html#turn-in",
+    "href": "labs/lab09.html#turn-in",
+    "title": "Lab 09: Stacks and Exceptions and Queues",
+    "section": "Turn In",
+    "text": "Turn In\nDon’t forget to commit and push your changes."
   },
   {
-    "objectID": "labs/lab08.html#submission",
-    "href": "labs/lab08.html#submission",
-    "title": "Lab 08: Timing List and Vector Operations",
-    "section": "Submission",
-    "text": "Submission\n👉 Download a PDF version of your spreadsheet and put it in your directory, named Lab7Results.pdf. Make sure your PDF contains all 3 worksheets!\nMake sure you commit all your files and changes to github for grading."
-  },
-  {
-    "objectID": "labs/lab08.html#grading-rubric",
-    "href": "labs/lab08.html#grading-rubric",
-    "title": "Lab 08: Timing List and Vector Operations",
+    "objectID": "labs/lab09.html#grading-rubric",
+    "href": "labs/lab09.html#grading-rubric",
+    "title": "Lab 09: Stacks and Exceptions and Queues",
     "section": "Grading Rubric",
-    "text": "Grading Rubric\nTotal score: 20 pts\n\n9 pts: 3 pts each for proper implementation of Experiment 0, 1, and 2.\n5 pts for correct graphs.\n6 pts for answering the questions.\n\nWays students have lost points in the past:\n\n-2: Can’t make project, There are persisting errors.\n-5: No PDF analyzing the results\n-2: late submission"
+    "text": "Grading Rubric\n20 pts total:\n\n1: isEmpty() is correct\n1: isFull() is correct\n2: peekTop()\n2: push()\n2: pop()\n2: peekTop(), explicit-value constructor, pop(), and push() all throw an exception correctly.\n8: thorough tests for Queue class.\n2: code is hospitable (perfectly indented, etc.)\n\nWays students lost points in the past:\n\n-4: missing tests for Queue\n-4: missing implementation for Queue\n-2: Your Queue::remove deletes the whole Queue, and the test did not catch this\n-7: Queue does not compile and no tests for it.\n-3: Queue::peekBack, ::peekFront, ::add, ::remove, ::isEmpty, and ::Queue to a “myList” field, which does not exist. Missing implementation for destructor\n-1: Missing test for Queue::remove\n-1: Need to decrease size in Queue::remove\n-2: Queue::add does not properly keep list linked, and tests do not catch this (try an add followed by a remove followed by a check–it won’t work)"
   },
   {
     "objectID": "LICENSE.html",

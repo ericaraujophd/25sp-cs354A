@@ -1,0 +1,16 @@
+---
+title: "Lab 09: Hint push() 2"
+format: 
+  html:
+    css: /labs/lab-styles.css
+---
+
+To throw an exception when the stack is full, the `push(const Item& it)` method should behave as follows:
+
+```         
+If I am full {
+    throw a StackException whose method is "push()" and whose message is "stack is full".
+}
+a. Store it into the entry of myArray whose index is mySize.
+b. Add 1 to mySize.
+```
