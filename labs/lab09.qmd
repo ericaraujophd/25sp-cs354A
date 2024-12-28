@@ -1,0 +1,69 @@
+---
+title: "Lab 09: Stacks and Exceptions and Queues"
+format: 
+  html:
+    css: /labs/lab-styles.css
+---
+
+<center><figure>
+
+<img src="/images/labs/lab08/lab08-header.gif" alt="Road Runner." width="400"/>
+
+<figcaption>Road Runner.</figcaption>
+
+</figure></center>
+
+## Objectives:
+
+In this exercise, you will:
+
+1. Build a dynamically-allocated-array-based Stack class.
+2. Build a simple Exception class hierarchy.
+3. Throw and catch exceptions.
+4. Build a Queue class that uses a linked list.
+
+## Introduction
+
+Today's exercise has two parts:
+
+1. In Part I, we will build a simple Stack class that stores its items in a fixed-size, dynamically-allocated array.
+2. In Part II, we will see how to define, throw, catch, and handle exceptions.
+3. In Part III, we will build a simple Queue class that stores its items in a linked list.
+
+
+## Getting Started
+
+[Accept the invitation](){target="_blank"} to the lab and do git clone to get the files, as usual. Make sure your partner is part of the same Team and edit the **README.md** file and share your repo on github.com
+
+## Part I: The Stack Class
+
+As you can see, this Stack class contains three instance variables:
+
+```cpp
+   unsigned myCapacity;
+   unsigned mySize;
+   Item*    myArray;
+```
+
+We will be storing the address of a dynamically allocated array in `myArray`. We will be storing the length of that array in `myCapacity`, and in `mySize`, we will be storing the number of items in the array. As we shall see, this value will correspond to the index of the spot in that array where the next `Item` that we `push()` will be stored.
+
+As we have seen in class, the primary Stack operations are:
+
+- `bool isEmpty()`, that returns true if and only if the Stack contains no items;
+- `bool isFull()`, that returns true if and only if the Stack has no room for more items;
+- `void push(Item it)`, that places it on top of the Stack;
+- `Item peekTop()`, that returns the top item from the Stack (without modifying the Stack); and
+- `Item pop()`, that removes and returns the top item from the Stack.
+
+To let you focus on these Stack operations, the Stack class already contains prototypes and definitions for:
+
+- an explicit-value constructor;
+- a copy constructor;
+- a destructor; and
+- an assignment operator.
+
+Take a few minutes to look these over. Look carefully at the explicit-value constructor, and note the initial values each member is given. We might visualize the Stack objects it constructs as follows:
+
+
+
+<!-- [^1]: how to add footnotes. -->

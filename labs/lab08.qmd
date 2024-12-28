@@ -5,14 +5,17 @@ format:
     css: /labs/lab-styles.css
 ---
 
-<center><figure>
+<center>
+
+<figure>
 
 <img src="/images/labs/lab08/lab08-header.gif" alt="Road Runner." width="400"/>
 
 <figcaption>Road Runner.</figcaption>
 
-</figure></center>
+</figure>
 
+</center>
 
 ## Objectives:
 
@@ -21,7 +24,6 @@ In this exercise, you will:
 1.  Compare performance of `list<T>` and `vector<T>` operations.
 2.  Introduce iterators.
 3.  Introduce empirical analysis.
-
 
 ## Introduction
 
@@ -68,38 +70,37 @@ Recompile your project (`make all`) and run `./lab7`. As you can see, `Experimen
 1.  It first invokes `timeAppendToVectorOfSize(n)` for varying values of n.
 2.  It then uses `timeRepeatedAppendUntilVectorIsSize(n)` to measure the average time an append operation takes as a vector grows very large.
 
-Our `timeAppendToVectorOfSize(n)` method uses an approach similar to that of `Experiment0`, but timing how long it takes the vector `push_back(item)` method to append a single value. By contrast, our `timeRepeatedAppendUntilVectorIsSize(n)` starts with an empty vector and then times the average length of time to append a value, as `push_back()` is called repeatedly. 
+Our `timeAppendToVectorOfSize(n)` method uses an approach similar to that of `Experiment0`, but timing how long it takes the vector `push_back(item)` method to append a single value. By contrast, our `timeRepeatedAppendUntilVectorIsSize(n)` starts with an empty vector and then times the average length of time to append a value, as `push_back()` is called repeatedly.
 
-Your task is to write two methods that do the same things for lists: 
+Your task is to write two methods that do the same things for lists:
 
-1. `timeAppendToListOfSize(n)` that can be used to measure the average time to append an item to a `list` of size n; and 
-2. `timeRepeatedAppendUntilListIsSize(n)` that measures the average time an append operation takes as a `list` grows very large. 
+1.  `timeAppendToListOfSize(n)` that can be used to measure the average time to append an item to a `list` of size n; and
+2.  `timeRepeatedAppendUntilListIsSize(n)` that measures the average time an append operation takes as a `list` grows very large.
 
-Using the existing vector methods in `Experiment 1` as a model, **write these two methods**; then compile and run the executable to display the append times for both vectors and lists. 
+Using the existing vector methods in `Experiment 1` as a model, **write these two methods**; then compile and run the executable to display the append times for both vectors and lists.
 
-When you have good data, return to your spreadsheet. Create a new worksheet, and label the first row `Lab 7: Experiment 1`. On the next row, place column headings for **size**, **vector**, and **list**. Then add a separate row for each size (10, 100, 1000, 10000, and 100000). Add your data to your worksheet; then create a chart similar to that of `Experiment0`. 
+When you have good data, return to your spreadsheet. Create a new worksheet, and label the first row `Lab 7: Experiment 1`. On the next row, place column headings for **size**, **vector**, and **list**. Then add a separate row for each size (10, 100, 1000, 10000, and 100000). Add your data to your worksheet; then create a chart similar to that of `Experiment0`.
 
-Study your chart. Using it and the data in your spreadsheet, answer the following questions on your spreadsheet, below your chart: 
+Study your chart. Using it and the data in your spreadsheet, answer the following questions on your spreadsheet, below your chart:
 
-1. What does your data indicate about the time required to append an item to a vector as the vector grows larger? Is the timing behavior produced by `timeAppendToVectorOfSize(n)` consistent with that of `timeRepeatedAppendToVectorOfSize(n)`? Explain why or why not. What is the "Big Oh" notation for each? (Remember that our vector's size is increasing exponentially.) 
-2. What does your data indicate about the time required to append an item to a list as the list grows larger? Is the timing behavior produced by `timeAppendToListOfSize(n)` consistent with that of `timeRepeatedAppendUntilListIsSize(n)`? Explain why or why not. What is the "Big Oh" notation for each? 
-3. What can you conclude about the time required to append an item to a vector compared to a list, as each gets large?
-
+1.  What does your data indicate about the time required to append an item to a vector as the vector grows larger? Is the timing behavior produced by `timeAppendToVectorOfSize(n)` consistent with that of `timeRepeatedAppendToVectorOfSize(n)`? Explain why or why not. What is the "Big Oh" notation for each? (Remember that our vector's size is increasing exponentially.)
+2.  What does your data indicate about the time required to append an item to a list as the list grows larger? Is the timing behavior produced by `timeAppendToListOfSize(n)` consistent with that of `timeRepeatedAppendUntilListIsSize(n)`? Explain why or why not. What is the "Big Oh" notation for each?
+3.  What can you conclude about the time required to append an item to a vector compared to a list, as each gets large?
 
 ## Experiment 2: Vector & List Prepending
 
-Our final experiment is to compare how long it takes to prepend an item to a *vector*, compared to a *list*. 
+Our final experiment is to compare how long it takes to prepend an item to a *vector*, compared to a *list*.
 
 In **main.cpp**, comment out the lines referring to `Experiment1` and uncomment the lines referring to `Experiment2`. In the **makefile**, change `SOURCES` to `Experiment2.cpp`.
 
 Recompile your project and run `Experiment2` as it is written. As you can see, `Experiment2` contains code to time how long it takes to prepend a value to a vector. It does this two ways:
 
-1. It first invokes `timePrependToVectorOfSize(n)` for varying values of n.
-2. It then uses `timeRepeatedPrependUntilVectorIsSize(n)` to measure the average time a prepend operation takes as a vector grows very large.
+1.  It first invokes `timePrependToVectorOfSize(n)` for varying values of n.
+2.  It then uses `timeRepeatedPrependUntilVectorIsSize(n)` to measure the average time a prepend operation takes as a vector grows very large.
 
 Our `timePrependToVectorOfSize(n)` method uses an approach similar to that of `Experiment1`, but the STL vector template does not provide a `push_front()` method by which we can prepend a value. However, STL does provide a generic `insert()` algorithm that we can use for this task. More precisely, the statement:
 
-```cpp
+``` cpp
 insert(iterator, value);
 ```
 
@@ -107,12 +108,12 @@ will insert value at the position indicated by iterator.
 
 An **iterator** is an abstract pointer. Every STL container provides at least two methods that return iterators:
 
-- `begin()`, that returns an iterator to the first item in the container; and
-- `end()`, that returns an iterator to the first location beyond the last item in the container.
+-   `begin()`, that returns an iterator to the first item in the container; and
+-   `end()`, that returns an iterator to the first location beyond the last item in the container.
 
 Thus, we can use the statement:
 
-```cpp
+``` cpp
 insert(v.begin(), i);
 ```
 
@@ -122,8 +123,9 @@ Our `timeRepeatedPrependUntilVectorIsSize(n)` method also uses the STL `insert()
 
 Your task is to write two methods that do the same things for `lists`:
 
-- `timePrependToListOfSize(n)` that can be used to measure the average time to prepend an item to a list of size n; and
-2. `timeRepeatedPrependUntilListIsSize(n)` that measures the average time a prepend operation takes as a list grows very large.
+-   `timePrependToListOfSize(n)` that can be used to measure the average time to prepend an item to a list of size n; and
+
+2.  `timeRepeatedPrependUntilListIsSize(n)` that measures the average time a prepend operation takes as a list grows very large.
 
 Using the existing `Experiment 2` vector methods as a model, **write these two methods**; then invoke them so that `Experiment2` displays the append times for both vectors and lists.
 
@@ -131,15 +133,15 @@ When you have good data, return to your spreadsheet. Create a new worksheet, and
 
 Study your chart. Using it and the data in your spreadsheet, answer the following questions on your spreadsheet, below your chart:
 
-1. What does your data indicate about the time required to prepend an item to a vector as the vector grows larger? Is the timing behavior produced by `timePrependToVectorOfSize(n)` consistent with that of `timeRepeatedPrependToVectorOfSize(n)`? Explain why or why not. What is the "Big Oh" notation for each?
-2. What does your data indicate about the time required to prepend an item to a list as the list grows larger? Is the timing behavior produced by `timePrependToListOfSize(n)` consistent with that of `timeRepeatedPrependUntilListIsSize(n)`? What is the "Big Oh" notation for each?
-3. What can you say about the time required to prepend an item to a vector, compared to a list, as each gets large?
+1.  What does your data indicate about the time required to prepend an item to a vector as the vector grows larger? Is the timing behavior produced by `timePrependToVectorOfSize(n)` consistent with that of `timeRepeatedPrependToVectorOfSize(n)`? Explain why or why not. What is the "Big Oh" notation for each?
+2.  What does your data indicate about the time required to prepend an item to a list as the list grows larger? Is the timing behavior produced by `timePrependToListOfSize(n)` consistent with that of `timeRepeatedPrependUntilListIsSize(n)`? What is the "Big Oh" notation for each?
+3.  What can you say about the time required to prepend an item to a vector, compared to a list, as each gets large?
 
 ## Finally
 
 Unlike vector, the STL list does provide a `push_front()` method that works just like `push_back()` only on the other end of the list. In your `timePrependToListOfSize(n)` method, comment out your call to `insert()` and replace it with a call to `push_front()`. Then rerun your experiment. Add a new column named list (`push_front`) to your `Experiment2` spreadsheet. Under it, add the timing results for this revised version to your spreadsheet and its chart. **Then answer the following question below your other answers on your Experiment2 spreadsheet:**
 
-4. How does the timing for prepending using `push_front()` compare to the timing of prepending using `insert()`? Is the "Big Oh" the same or different for these two different ways of prepending?
+4.  How does the timing for prepending using `push_front()` compare to the timing of prepending using `insert()`? Is the "Big Oh" the same or different for these two different ways of prepending?
 
 Whew! Congratulations, you're done (after doing the submission below).
 
@@ -153,15 +155,14 @@ Make sure you commit **all your files** and changes to github for grading.
 
 Total score: 20 pts
 
-- 9 pts: 3 pts each for proper implementation of Experiment 0, 1, and 2.
-- 5 pts for correct graphs.
-- 6 pts for answering the questions.
+-   9 pts: 3 pts each for proper implementation of Experiment 0, 1, and 2.
+-   5 pts for correct graphs.
+-   6 pts for answering the questions.
 
-Ways students have lost points in the past:
-- -2: Can't make project, There are persisting errors.
-- -5: No PDF analyzing the results
+Ways students have lost points in the past: 
+
+- -2: Can't make project, There are persisting errors. 
+- -5: No PDF analyzing the results 
 - -2: late submission
-
-
 
 <!-- [^1]: how to add footnotes. -->
