@@ -7,9 +7,9 @@ format:
 
 <center><figure>
 
-<img src="/images/labs/lab08/lab08-header.gif" alt="Road Runner." width="400"/>
+<img src="/images/labs/lab09/lab09-header.jpg" alt="It compiles!." width="400"/>
 
-<figcaption>Road Runner.</figcaption>
+<figcaption>It compiles!</figcaption>
 
 </figure></center>
 
@@ -259,7 +259,8 @@ You do NOT have to add any more methods (the linked list implementation has many
 
 :::{.callout-caution}
 **To compile the Queue .h and .cpp files, you have to edit the makefile:**
-	Change one line -- line 4 -- by adding **Queue.cpp** to the end so that the line now reads:
+
+Change one line -- line 4 -- by adding **Queue.cpp** to the end so that the line now reads:
 
 ```
 SOURCES = Stack.cpp Queue.cpp

@@ -48,7 +48,7 @@ No readings for Week 09.
 :::
 
 ::: starter
-[Source]()
+[Source](){target="_blank"}
 :::
 
 ::: slides
@@ -61,13 +61,13 @@ No readings for Week 09.
 ::::: homework
 **Project 09:**
 
-Conga!
+Navigate a Maze Using a Stack
 
 ::: instructions
 [Instructions](/projects/proj09.qmd)
 :::
 
 ::: starter
-[Starter]()
+[Starter](){target="_blank"}
 :::
 :::::

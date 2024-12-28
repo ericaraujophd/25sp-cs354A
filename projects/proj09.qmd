@@ -1,13 +1,12 @@
 ---
-title: "Project 8: Navigate a Maze Using a Stack"
+title: "Project 09: Navigate a Maze Using a Stack"
 format: 
   html:
     css: /projects/proj-styles.css
 # engine: knitr
-eval: false
+# eval: false
 ---
 
-<!-- ## Project 8: Navigate a Maze Using a Stack -->
 
 <center>
 
