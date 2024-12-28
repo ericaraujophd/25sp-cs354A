@@ -5,31 +5,34 @@ format:
     css: /labs/lab-styles.css
 ---
 
-<center><figure>
+<center>
+
+<figure>
 
 <img src="/images/labs/lab09/lab09-header.jpg" alt="It compiles!." width="400"/>
 
 <figcaption>It compiles!</figcaption>
 
-</figure></center>
+</figure>
+
+</center>
 
 ## Objectives:
 
 In this exercise, you will:
 
-1. Build a dynamically-allocated-array-based Stack class.
-2. Build a simple Exception class hierarchy.
-3. Throw and catch exceptions.
-4. Build a Queue class that uses a linked list.
+1.  Build a dynamically-allocated-array-based Stack class.
+2.  Build a simple Exception class hierarchy.
+3.  Throw and catch exceptions.
+4.  Build a Queue class that uses a linked list.
 
 ## Introduction
 
 Today's exercise has two parts:
 
-1. In Part I, we will build a simple Stack class that stores its items in a fixed-size, dynamically-allocated array.
-2. In Part II, we will see how to define, throw, catch, and handle exceptions.
-3. In Part III, we will build a simple Queue class that stores its items in a linked list.
-
+1.  In Part I, we will build a simple Stack class that stores its items in a fixed-size, dynamically-allocated array.
+2.  In Part II, we will see how to define, throw, catch, and handle exceptions.
+3.  In Part III, we will build a simple Queue class that stores its items in a linked list.
 
 ## Getting Started
 
@@ -39,7 +42,7 @@ Today's exercise has two parts:
 
 As you can see, this Stack class contains three instance variables:
 
-```cpp
+``` cpp
    unsigned myCapacity;
    unsigned mySize;
    Item*    myArray;
@@ -49,18 +52,18 @@ We will be storing the address of a dynamically allocated array in `myArray`. We
 
 As we have seen in class, the primary Stack operations are:
 
-- `bool isEmpty()`, that returns true if and only if the Stack contains no items;
-- `bool isFull()`, that returns true if and only if the Stack has no room for more items;
-- `void push(Item it)`, that places it on top of the Stack;
-- `Item peekTop()`, that returns the top item from the Stack (without modifying the Stack); and
-- `Item pop()`, that removes and returns the top item from the Stack.
+-   `bool isEmpty()`, that returns true if and only if the Stack contains no items;
+-   `bool isFull()`, that returns true if and only if the Stack has no room for more items;
+-   `void push(Item it)`, that places it on top of the Stack;
+-   `Item peekTop()`, that returns the top item from the Stack (without modifying the Stack); and
+-   `Item pop()`, that removes and returns the top item from the Stack.
 
 To let you focus on these Stack operations, the Stack class already contains prototypes and definitions for:
 
-- an explicit-value constructor;
-- a copy constructor;
-- a destructor; and
-- an assignment operator.
+-   an explicit-value constructor;
+-   a copy constructor;
+-   a destructor; and
+-   an assignment operator.
 
 Take a few minutes to look these over. Look carefully at the explicit-value constructor, and note the initial values each member is given. We might visualize the Stack objects it constructs as follows:
 
@@ -69,7 +72,6 @@ Take a few minutes to look these over. Look carefully at the explicit-value cons
 Take a minute to look over **tests.cpp** to see the tests it contains. Note that part of the test is commented out. Leave this part commented out for now; we will be uncommenting it in Part II.
 
 Build the project (`make all`) and run tester (`./tester`). Verify that everything works correctly at the outset.
-
 
 ### The isEmpty() Method
 
@@ -113,7 +115,7 @@ Save/compile, and verify that the linking error for `isFull()` goes away. (The e
 
 Define the `peekTop()` method. Save/recompile, and verify that what you have written compiles without errors. (You should still see a linking error for `push()`.) Note that you do not have to handle the case (now) when you try to `peekTop()` on an empty Stack.
 
-Define the `push()` method. Save/recompile, and verify that what you have written compiles and links without errors.  (Again, do not worry about exceptional cases, yet.)
+Define the `push()` method. Save/recompile, and verify that what you have written compiles and links without errors. (Again, do not worry about exceptional cases, yet.)
 
 Run the tests. If you pass the tests, congratulations! If not, use the diagrams above to go back and fix your `push()`, `peekTop()`, and/or `isFull()` methods. If you get stuck, here are hints for [push()](/labs/lab09-hint-push.qmd), [peekTop()](), and [isFull()](/labs/lab09-hint-isfull.qmd), but only use them if you have to.
 
@@ -139,7 +141,7 @@ As we have seen with the C++ standard exceptions, an **exception** is an out-of-
 
 In C++, a method that wants to indicate that something exceptional has occurred can **throw** an exception object back to the caller of the method. The pattern for the throw statement is:
 
-```cpp
+``` cpp
 throw ExceptionType(arguments);
 ```
 
@@ -147,7 +149,7 @@ This constructs an exception object of type `ExceptionType` and throws it to the
 
 Back in the caller, the call to that method can be "wrapped" in a **try-catch block**, whose form is as follows:
 
-```cpp
+``` cpp
 try {
   // risky code -- might throw an exception
 } catch (const ExceptionType & exceptionParameter) {
@@ -163,11 +165,11 @@ Note that since `ExceptionType` is pretty much always a class, it is preferable 
 
 In **tests.cpp**, uncomment the following line in `TEST_CASE "testPop()"`:
 
-```cpp
-    	REQUIRE_THROWS_AS(s1.peekTop(), StackException);
+``` cpp
+        REQUIRE_THROWS_AS(s1.peekTop(), StackException);
 ```
 
-This block tries to send the `peekTop()` message to an empty stack, and then catches the exception that should be thrown. 
+This block tries to send the `peekTop()` message to an empty stack, and then catches the exception that should be thrown.
 
 Save/recompile your project. You should get several errors, because `StackException` has not been defined. Verify that that is the cause of your errors, then continue.
 
@@ -177,12 +179,12 @@ One way to provide exceptions for our Stack class is to define a separate `Stack
 
 The class has two instance variables:
 
-- `myLocation`, to which a method can pass its name (to indicate the exact method in which something went wrong); and
-- `myMessage`, to which a method can pass a description of what is wrong.
+-   `myLocation`, to which a method can pass its name (to indicate the exact method in which something went wrong); and
+-   `myMessage`, to which a method can pass a description of what is wrong.
 
 The `StackException` constructor initializes these members using values it receives through its parameters. For example, if at the beginning of the `pop()` method, we find that the stack is empty, we can build an exception like this:
- 
-```cpp
+
+``` cpp
    StackException("pop()", "stack is empty")
 ```
 
@@ -190,7 +192,7 @@ The `StackException` constructor initializes these members using values it recei
 
 If at the beginning of the the `push()` method, we find that the stack is full, we can build an exception like this:
 
-```cpp
+``` cpp
    StackException("push()", "stack is full")
 ```
 
@@ -208,7 +210,7 @@ When your project compiles correctly, run it. You should see an execution halt i
 
 Now that we have created a `StackException` class by which we can precisely describe unusual circumstances, we can use that class in our Stack methods. As mentioned previously, a method that detects a problematic circumstance can **throw** an exception. For example, if the stack is empty, there is no top item for the `peekTop()` method to return, in which case we might make it throw a `StackException`, as follows:
 
-```cpp
+``` cpp
 Item Stack::peekTop() const {
     if (isEmpty()) {
         throw StackException("peekTop()", "stack is empty");
@@ -237,13 +239,13 @@ Using what we did with `peekTop()` as a model, modify `pop()` so that it throws 
 
 Our final operation is the `push()` operation. Uncomment the `REQUIRE_THROWS_AS` tests "testPushPeekTopAndIsFull()". Then save/recompile, and verify that your project no longer passes the test.
 
-Using what we did previously as a model, modify `push()` so that it throws a StackException with the message `push(): stack is full!`. In case you get stuck, here is a [hint](/labs/lab09-hint-push2.qmd), but don't use it unless you need to. 
+Using what we did previously as a model, modify `push()` so that it throws a StackException with the message `push(): stack is full!`. In case you get stuck, here is a [hint](/labs/lab09-hint-push2.qmd), but don't use it unless you need to.
 
 Continue when your project passes all tests.
 
 ### The Other Operations
 
-Now that you have tested the stack operations, uncomment the remaining test cases and verify that the other Stack operations pass their tests.  (I see 57 assertions in 6 test cases that pass.)
+Now that you have tested the stack operations, uncomment the remaining test cases and verify that the other Stack operations pass their tests. (I see 57 assertions in 6 test cases that pass.)
 
 Congratulations! You now have a full-featured (array-based) Stack class at your disposal!
 
@@ -253,16 +255,16 @@ We have talked about the best way to implement a Queue using a linked list -- in
 
 Look at the **Queue.h** and **Queue.cpp** files in the repository. The methods are there, but they are all empty. Now, go find your code from Lab 6, and fill in the methods, copying (and adapting) code from there. This shouldn't take long. The only code you may have to implement is the `remove()` code -- which removes the item from the front of the linked list.
 
-You may wonder why we have a `isFull()` method that will always return **false** when we implement the queue using a linked list. Why even have it? The answer is that the user of the Queue does not know how the Queue is implemented, so they don't know that the Queue can never be full. 
+You may wonder why we have a `isFull()` method that will always return **false** when we implement the queue using a linked list. Why even have it? The answer is that the user of the Queue does not know how the Queue is implemented, so they don't know that the Queue can never be full.
 
 You do NOT have to add any more methods (the linked list implementation has many more methods available, but the Queue has fewer, as it should).
 
-:::{.callout-caution}
+::: callout-caution
 **To compile the Queue .h and .cpp files, you have to edit the makefile:**
 
 Change one line -- line 4 -- by adding **Queue.cpp** to the end so that the line now reads:
 
-```
+```         
 SOURCES = Stack.cpp Queue.cpp
 ```
 :::
@@ -271,14 +273,13 @@ Now try compiling. You will see many warnings because the methods have not been 
 
 NOTE that you do NOT have to templatize the Queue code -- unless you want to.
 
-The biggest part of this assignment is to **write a full set of TEST_CASES in tests.cpp**. You should consult Lab 6's tests and the tests already in **tests.cpp** for the Stack implementation. 
+The biggest part of this assignment is to **write a full set of TEST_CASES in tests.cpp**. You should consult Lab 6's tests and the tests already in **tests.cpp** for the Stack implementation.
 
-:::{.callout-note}
+::: callout-note
 Do not create a test case for the destructor -- it can fail randomly (as it did for me).
 :::
 
 When you have implemented and **thoroughly** tested your Queue implementation, you are done.
-
 
 ## Turn In
 
@@ -288,28 +289,24 @@ Don't forget to commit and push your changes.
 
 20 pts total:
 
-- 1: isEmpty() is correct
-- 1: isFull() is correct
-- 2: peekTop()
-- 2: push()
-- 2: pop()
-- 2: peekTop(), explicit-value constructor, pop(), and push() all throw an exception correctly.
-- 8: thorough tests for Queue class.
-- 2: code is hospitable (perfectly indented, etc.)
-
+-   1: isEmpty() is correct
+-   1: isFull() is correct
+-   2: peekTop()
+-   2: push()
+-   2: pop()
+-   2: peekTop(), explicit-value constructor, pop(), and push() all throw an exception correctly.
+-   8: thorough tests for Queue class.
+-   2: code is hospitable (perfectly indented, etc.)
 
 Ways students lost points in the past:
 
-- -4: missing tests for Queue
-- -4: missing implementation for Queue
-- -2: Your Queue::remove deletes the whole Queue, and the test did not catch this
-- -7: Queue does not compile and no tests for it.
-- -3: Queue::peekBack, ::peekFront, ::add, ::remove, ::isEmpty, and ::Queue to a "myList" field, which does not exist. Missing implementation for destructor
-- -1: Missing test for Queue::remove
-- -1: Need to decrease size in Queue::remove
-- -2: Queue::add does not properly keep list linked, and tests do not catch this (try an add followed by a remove followed by a check--it won't work)
-
-
-
+-   -4: missing tests for Queue
+-   -4: missing implementation for Queue
+-   -2: Your Queue::remove deletes the whole Queue, and the test did not catch this
+-   -7: Queue does not compile and no tests for it.
+-   -3: Queue::peekBack, ::peekFront, ::add, ::remove, ::isEmpty, and ::Queue to a "myList" field, which does not exist. Missing implementation for destructor
+-   -1: Missing test for Queue::remove
+-   -1: Need to decrease size in Queue::remove
+-   -2: Queue::add does not properly keep list linked, and tests do not catch this (try an add followed by a remove followed by a check--it won't work)
 
 <!-- [^1]: how to add footnotes. -->

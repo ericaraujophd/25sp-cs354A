@@ -1,5 +1,5 @@
 ---
-title: "Lab 09 --- Recursion"
+title: "Lab 10 --- Recursion"
 subtitle: "<br><br> CS112 - Data Structures"
 author: "Eric Araújo"
 # output:
@@ -32,7 +32,7 @@ format:
 
 :::::: columns
 ::: {.column width="50%"}
-![](/labs/imgs/lab09-repete.png){fig-alt="." fig-align="left" width="100%"}
+![](/images/labs/lab10/lab10-repete.png){fig-alt="." fig-align="left" width="100%"}
 :::
 
 ::: {.column width="5%"}
@@ -44,7 +44,7 @@ Pete and Repete are on a boat. Pete falls off. Who's left on the boat?
 :::
 ::::::
 
-## Lab 9
+## Lab 10
 
 -   creating recursive functions using ChatGPT
 -   discussing efficiency by calculating the number of times a function is called

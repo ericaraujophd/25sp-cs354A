@@ -5,13 +5,17 @@ format:
     css: /projects/proj-styles.css
 ---
 
-<center><figure>
+<center>
+
+<figure>
 
 <img src="/images/projects/proj04-header.jpeg" alt="Created by AI Prompt: a C++ array fading away" width="350"/>
 
 <figcaption>Created by AI Prompt: *a C++ array fading away*</figcaption>
 
-</figure></center>
+</figure>
+
+</center>
 
 ## Project 4: More Vec Operations
 
@@ -31,8 +35,8 @@ format:
 -   Click the link to see your new repo on github.com.
 -   Click the green [**Code**]{style="color:green"} button and copy the link it shows.
 -   In a terminal,
-    + `cd` to the directory where you are putting all your CS112 assignments. 
-    +  type `git clone <paste-the-contents-of-the-link-you-copied>`
+    -   `cd` to the directory where you are putting all your CS112 assignments.
+    -   type `git clone <paste-the-contents-of-the-link-you-copied>`
 -   `cd` to the new directory containing your repo.
 
 ::: callout-important
@@ -43,7 +47,7 @@ format:
 -   `cd` to your project directory
 :::
 
-:::{.callout-warning}
+::: callout-warning
 If, at this moment in the course, you are still not able to handle directories and files using the terminal, spend some time searching more about it and learning. This is an essential skill for anyone who handles computational systems nowadays. [This might be a good place to start](https://www.youtube.com/watch?v=42iQKuQodW4){target="_blank"}.
 :::
 
@@ -94,10 +98,10 @@ v3 == {1, 2, 3}
 
 ### 1 - Subscript
 
-The subscript operator (`[i]`) can be implemented such that using subscripting on the left-hand-side of an assignment (i.e., setting a value in the array) and using subscripting on the right-hand-side (i.e., getting a value in the array) both work. Thus, the method will be similar to both `setItem(i)` and `getItem(i)`. 
+The subscript operator (`[i]`) can be implemented such that using subscripting on the left-hand-side of an assignment (i.e., setting a value in the array) and using subscripting on the right-hand-side (i.e., getting a value in the array) both work. Thus, the method will be similar to both `setItem(i)` and `getItem(i)`.
 
-+ Normally, the subscript operation on an array **does not** perform bounds checking on the index value i, but yours should perform bounds checking. More precisely, your subscript operator should throw a `range_error` if it is passed a "bad" index value. 
-+ The method should return a **reference** to the item in the array.
+-   Normally, the subscript operation on an array **does not** perform bounds checking on the index value i, but yours should perform bounds checking. More precisely, your subscript operator should throw a `range_error` if it is passed a "bad" index value.
+-   The method should return a **reference** to the item in the array.
 
 Here is the algorithm:
 
@@ -155,8 +159,7 @@ Vectors can be used to store positions (and/or directional forces) in a coordina
 
 For example, if the user is in a 3-dimensional system, enters the starting point {0, 0, 0}, and then enters the following four 3-dimensional relative-positions:
 
-```
-{1, 0, 0}
+```{1, 0, 0}
 {0, 1, 0}
 {0, 0, 1}
 {1, 2, 3}
@@ -166,8 +169,7 @@ the program should then display the starting position (`{0,0,0}`) and the sum fr
 
 As another example, if the user is navigating through a 5-dimensional space, enters `{1, 0, 1, 0, 1}` as the starting point, and enters three 5-dimensional relative-positions:
 
-```
-{0, 1, 0, 1, 0}
+```{0, 1, 0, 1, 0}
 {2, 2, 2, 2, 2}
 {-3, -3, -3, -3, -3}
 ```

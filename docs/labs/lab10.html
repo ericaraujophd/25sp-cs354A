@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Lab 9: Recursion – CS112 - Data Structures</title>
+<title>Lab 10: Recursion – CS112 - Data Structures</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -136,10 +136,10 @@ window.Quarto = {
 </script>
 
 <link rel="stylesheet" href="../labs/lab-styles.css">
-<meta property="og:title" content="Lab 9: Recursion – CS112 - Data Structures">
+<meta property="og:title" content="Lab 10: Recursion – CS112 - Data Structures">
 <meta property="og:description" content="CS112 will teach students to use C++ for creating data structures.">
 <meta property="og:site_name" content="CS112 - Data Structures">
-<meta name="twitter:title" content="Lab 9: Recursion – CS112 - Data Structures">
+<meta name="twitter:title" content="Lab 10: Recursion – CS112 - Data Structures">
 <meta name="twitter:description" content="CS112 will teach students to use C++ for creating data structures.">
 <meta name="twitter:image" content="https://ericaraujo.com/24fa-cs112/images/twitter-card.png">
 <meta name="twitter:creator" content="@ericfaraujo">
@@ -220,7 +220,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Lab 9: Recursion</h1>
+<h1 class="title">Lab 10: Recursion</h1>
 </div>
 
 
@@ -248,12 +248,12 @@ window.Quarto = {
 <section id="introduction" class="level2">
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
 <p>In this lab, for most steps, you will use ChatGPT or another AI model to generate recursive solutions to some simple problems. You will then analyze the code to verify it is correct and/or improve it.</p>
-<p>To log in to ChatGPT (as if you didn’t already know :-), go to <a href="https://chatgpt.com" class="uri">https://chatgpt.com</a>.</p>
+<p>To log in to ChatGPT (as if you didn’t already know :-), go to <a href="https://chatgpt.com" target="{&quot;_blank&quot;">https://chatgpt.com</a>}.</p>
 <p>After the AI generates C++ code, copy and paste it into a file, and compile and run it. You will be submitting multiple files each containing a <code>main()</code> in it.</p>
-<p><a href="https://classroom.github.com/a/cVv5pP0o" target="_blank">Accept the assignment</a>.</p>
+<p><a href="" target="_blank">Accept the assignment</a>.</p>
 <center>
 <figure class="figure">
-<p><img src="../labs/imgs/lab9-this-is-going-to-take-forever.png" alt="This is going to take forever..." width="400" class="figure-img"></p>
+<p><img src="../images/labs/lab10/lab10-this-is-going-to-take-forever.png" alt="This is going to take forever..." width="400" class="figure-img"></p>
 <figcaption>
 This is going to take forever…
 </figcaption>
@@ -262,27 +262,27 @@ This is going to take forever…
 </section>
 <section id="part-1-reverse-an-array-recursively" class="level2">
 <h2 class="anchored" data-anchor-id="part-1-reverse-an-array-recursively">Part 1: Reverse an array, recursively</h2>
-<p>Ask ChatGPT for C++ code to reverse an array of integers recursively. When you are happy with the code that has been generated for you, copy and paste it into file <code>rev_array.cpp</code>. Compile and run the file by doing <code>make rev_array</code> and <code>./rev_array</code>.</p>
+<p>Ask ChatGPT for C++ code to reverse an array of integers recursively. When you are happy with the code that has been generated for you, copy and paste it into file <strong>rev_array.cpp</strong>. Compile and run the file by doing <code>make rev_array</code> and <code>./rev_array</code>.</p>
 <p>Describe in a few complete English sentences how the solution works. Put your answers in comments in the file. (Do not use the AI to generate this answer.)</p>
 <p>What if the array has an odd number of values? How does the algorithm handle this? (Do not use the AI to generate this answer.)</p>
 </section>
 <section id="part-2-binary-search-recursively" class="level2">
 <h2 class="anchored" data-anchor-id="part-2-binary-search-recursively">Part 2: Binary search, recursively</h2>
 <p>Ask ChatGPT for C++ code to implement a recursive version of binary search over an array of integers. (doubles?)</p>
-<p>When you are happy with the resulting code, place it in <code>bin_search.cpp</code>, compile it, and run it (if you can’t figure out how to do these steps, inspect the <code>makefile</code>). Make sure the code works for arrays of different sizes, including size 0, size 1, size 10, etc.</p>
+<p>When you are happy with the resulting code, place it in <strong>bin_search.cpp</strong>, compile it, and run it (if you can’t figure out how to do these steps, inspect the <code>makefile</code>). Make sure the code works for arrays of different sizes, including size 0, size 1, size 10, etc.</p>
 <p>Your code probably contains this line:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> mid <span class="op">=</span> low <span class="op">+</span> <span class="op">(</span>high <span class="op">-</span> low<span class="op">)</span> <span class="op">/</span> <span class="dv">2</span><span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Describe in a comment above this line what this line does and why it works when the size of the array is odd (which means you cannot divide the array into two even parts). (Do not use the AI to generate this answer.)</p>
 </section>
 <section id="part-3-sum-of-values-in-an-array-recursively" class="level2">
 <h2 class="anchored" data-anchor-id="part-3-sum-of-values-in-an-array-recursively">Part 3: Sum of values in an array, recursively</h2>
-<p>Place the code from slide 5 of the lecture slides into file <code>sum_array.cpp</code>. Add other code to initialize an array with 6 values. Compile and run the value and verify that the result is correct.</p>
+<p>Place the code from slide 5 of the lecture slides into file <strong>sum_array.cpp</strong>. Add other code to initialize an array with 6 values. Compile and run the value and verify that the result is correct.</p>
 <p>Now, modify the code so that the base case is not when <code>size == 0</code> but when <code>size == 1</code>.</p>
 <p>Describe in a comment in the file why this solution is slightly more efficient.</p>
 </section>
 <section id="part-4-fibonacci-sequence-recursively" class="level2">
 <h2 class="anchored" data-anchor-id="part-4-fibonacci-sequence-recursively">Part 4: Fibonacci sequence, recursively</h2>
-<p>Ask the AI to generate C++ code to compute recursively the <em>nth</em> fibonacci number, where the user provides the value for <span class="math inline">\(n\)</span>. Copy and paste the code into file <code>fib.cpp</code>. Then, compile and run the code. Verify that the results are correct (you can ask the AI for the correct answer when <span class="math inline">\(n\)</span> is 20).</p>
+<p>Ask the AI to generate C++ code to compute recursively the <em>nth</em> fibonacci number, where the user provides the value for <span class="math inline">\(n\)</span>. Copy and paste the code into file <strong>fib.cpp</strong>. Then, compile and run the code. Verify that the results are correct (you can ask the AI for the correct answer when <span class="math inline">\(n\)</span> is 20).</p>
 <p>Ask the AI to modify the C++ code so that it counts how many times the recursive function is called and prints out the results at the end.</p>
 <p>Put the code into your file and compile and run it. Add the results for when <span class="math inline">\(n\)</span> is 20 in a comment in the code at the bottom of the file.</p>
 <p>Now, ask the AI to modify the code to use memoization. The code should still count and display the number of times the function <code>fibonacci()</code> is called.</p>

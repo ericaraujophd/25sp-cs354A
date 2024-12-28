@@ -12,7 +12,7 @@ format:
 
 <figure>
 
-<img src="/projects/imgs/proj8-stack.png" alt="Created by AI Prompt: Here’s an illustration of a maze represented as a stack data structure, with pathways organized into stacked layers to convey the concept of sequential traversal. This design emphasizes the stack’s step-by-step process in navigating the maze." width="400"/>
+<img src="/images/projects/proj09-stack.png" alt="Created by AI Prompt: Here’s an illustration of a maze represented as a stack data structure, with pathways organized into stacked layers to convey the concept of sequential traversal. This design emphasizes the stack’s step-by-step process in navigating the maze." width="400"/>
 
 <figcaption>Created by AI Prompt: an illustration of a maze represented as a stack data structure, with pathways organized into stacked layers to convey the concept of sequential traversal. This design emphasizes the stack’s step-by-step process in navigating the maze.</figcaption>
 
@@ -22,7 +22,7 @@ format:
 
 ## Prepare
 
-[Accept the assignment](https://classroom.github.com/a/3j-1oMeu) and use git clone to create your copy of the code.
+[Accept the assignment](){target="_blank"} and use git clone to create your copy of the code. Remember to join the same Team as your pair.
 
 ## Introduction
 

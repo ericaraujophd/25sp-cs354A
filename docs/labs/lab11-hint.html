@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Lab 10: Hint – CS112 - Data Structures</title>
+<title>Lab 11: Hint – CS112 - Data Structures</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -107,10 +107,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <link rel="stylesheet" href="../labs/lab-styles.css">
-<meta property="og:title" content="Lab 10: Hint – CS112 - Data Structures">
+<meta property="og:title" content="Lab 11: Hint – CS112 - Data Structures">
 <meta property="og:description" content="CS112 will teach students to use C++ for creating data structures.">
 <meta property="og:site_name" content="CS112 - Data Structures">
-<meta name="twitter:title" content="Lab 10: Hint – CS112 - Data Structures">
+<meta name="twitter:title" content="Lab 11: Hint – CS112 - Data Structures">
 <meta name="twitter:description" content="CS112 will teach students to use C++ for creating data structures.">
 <meta name="twitter:image" content="https://ericaraujo.com/24fa-cs112/images/twitter-card.png">
 <meta name="twitter:creator" content="@ericfaraujo">
@@ -177,6 +177,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#declaring-bstinsert" id="toc-declaring-bstinsert" class="nav-link active" data-scroll-target="#declaring-bstinsert">Declaring BST::insert()</a></li>
+  <li><a href="#defining-bstinsert" id="toc-defining-bstinsert" class="nav-link" data-scroll-target="#defining-bstinsert">Defining BST::insert()</a></li>
   <li><a href="#designing-nodeinsert" id="toc-designing-nodeinsert" class="nav-link" data-scroll-target="#designing-nodeinsert">Designing Node::insert()</a></li>
   <li><a href="#defining-nodeinsert" id="toc-defining-nodeinsert" class="nav-link" data-scroll-target="#defining-nodeinsert">Defining Node::insert()</a></li>
   </ul>
@@ -187,7 +188,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Lab 10: Hint</h1>
+<h1 class="title">Lab 11: Hint</h1>
 </div>
 
 
@@ -210,7 +211,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode" id="cb1"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> BST<span class="op">::</span>insert<span class="op">(</span><span class="at">const</span> Item<span class="op">&amp;</span> item<span class="op">)</span> <span class="op">{</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a> <span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>## Defining BST::insert()</p>
+</section>
+<section id="defining-bstinsert" class="level2">
+<h2 class="anchored" data-anchor-id="defining-bstinsert">Defining BST::insert()</h2>
 <p>The <code>BST::insert(item)</code> method needs to distinguish between the two cases (empty and non-empty):</p>
 <ol type="1">
 <li>If the BST is empty:

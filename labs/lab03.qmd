@@ -5,20 +5,24 @@ format:
     css: /labs/lab-styles.css
 ---
 
-<center><figure>
+<center>
+
+<figure>
 
 <img src="/images/labs/lab03/student-cover.jpeg" alt="A cartoon style image of a computer science student wearing a T-shirt with a binary code pattern" width="400"/>
 
 <figcaption>A student created by AI.</figcaption>
 
-</figure></center>
+</figure>
+
+</center>
 
 ## Step 0. Prepare
 
-- Click this [link](){target="_blank"} and then "Accept this assignment". Make sure you and your partner are in the same Team.
-- Wait a few seconds and refresh the page. Refresh until the page says "You're ready to go!". The page has a link to a github repo.
-- Click the link to see your new repo on github.com.
-- Click the green [**Code**]{style="color:green"} button and copy the SSH link it shows.
+-   Click this [link](){target="_blank"} and then "Accept this assignment". Make sure you and your partner are in the same Team.
+-   Wait a few seconds and refresh the page. Refresh until the page says "You're ready to go!". The page has a link to a github repo.
+-   Click the link to see your new repo on github.com.
+-   Click the green [**Code**]{style="color:green"} button and copy the SSH link it shows.
 -   In a terminal,
     -   `cd` to the directory where you are putting all your CS112 assignments.
     -   type `git clone <paste-the-contents-of-the-link-you-copied>`
@@ -34,6 +38,7 @@ We will create a class to represent a Student. You probably have not created a c
 
 The instance variables for a Student will be:
 
+```{=html}
 <style type="text/css">
 .tg  {border-collapse:collapse;border-color:#ccc;border-spacing:0;margin:0px auto;}
 .tg td{background-color:#fff;border-color:#ccc;border-style:solid;border-width:1px;color:#333;
@@ -43,40 +48,157 @@ The instance variables for a Student will be:
 .tg .tg-1wig{font-weight:bold;text-align:left;vertical-align:top}
 .tg .tg-0lax{text-align:left;vertical-align:top}
 @media screen and (max-width: 767px) {.tg {width: auto !important;}.tg col {width: auto !important;}.tg-wrap {overflow-x: auto;-webkit-overflow-scrolling: touch;margin: auto 0px;}}</style>
-<div class="tg-wrap"><table class="tg"><thead>
-  <tr>
-    <th class="tg-1wig"><span style="color:unset;background-color:unset">Instance Variable Name</span></th>
-    <th class="tg-1wig"><span style="color:unset;background-color:unset">Type</span></th>
-    <th class="tg-1wig"><span style="color:unset;background-color:unset">Default value</span></th>
-    <th class="tg-1wig"><span style="color:unset;background-color:unset">Notes</span></th>
-  </tr></thead>
-<tbody>
-  <tr>
-    <td class="tg-0lax"><span style="color:unset;background-color:unset">myName</span></td>
-    <td class="tg-0lax"><span style="color:unset;background-color:unset">string</span></td>
-    <td class="tg-0lax"><span style="color:unset;background-color:unset">“”</span></td>
-    <td class="tg-0lax"><span style="color:unset;background-color:unset">Immutable (NOTE: this</span> <span style="font-weight:bolder">is not</span> <span style="color:unset;background-color:unset">a const in our class, but we will</span> <span style="font-weight:bolder">not</span> <span style="color:unset;background-color:unset">be making setter functions for these immutable values.)</span></td>
-  </tr>
-  <tr>
-    <td class="tg-0lax"><span style="color:unset;background-color:unset">myId</span></td>
-    <td class="tg-0lax"><span style="color:unset;background-color:unset">unsigned int</span></td>
-    <td class="tg-0lax"><span style="color:unset;background-color:unset">0</span></td>
-    <td class="tg-0lax"><span style="color:unset;background-color:unset">Immutable (NOTE: this</span> <span style="font-weight:bolder">is not</span> <span style="color:unset;background-color:unset">a const in our class, but we will</span> <span style="font-weight:bolder">not</span> <span style="color:unset;background-color:unset">be making setter functions for these immutable values.)</span></td>
-  </tr>
-  <tr>
-    <td class="tg-0lax"><span style="color:unset;background-color:unset">myGpa</span></td>
-    <td class="tg-0lax"><span style="color:unset;background-color:unset">float</span></td>
-    <td class="tg-0lax"><span style="color:unset;background-color:unset">0.0</span></td>
-    <td class="tg-0lax"></td>
-  </tr>
-  <tr>
-    <td class="tg-0lax"><span style="color:unset;background-color:unset">myMajor</span></td>
-    <td class="tg-0lax"><span style="color:unset;background-color:unset">string</span></td>
-    <td class="tg-0lax"><span style="color:unset;background-color:unset">“Undecided”</span></td>
-    <td class="tg-0lax"></td>
-  </tr>
-</tbody></table></div>
+```
 
+::: tg-wrap
+<table class="tg">
+
+<thead>
+
+<tr>
+
+<th class="tg-1wig">
+
+[Instance Variable Name]{style="color:unset;background-color:unset"}
+
+</th>
+
+<th class="tg-1wig">
+
+[Type]{style="color:unset;background-color:unset"}
+
+</th>
+
+<th class="tg-1wig">
+
+[Default value]{style="color:unset;background-color:unset"}
+
+</th>
+
+<th class="tg-1wig">
+
+[Notes]{style="color:unset;background-color:unset"}
+
+</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td class="tg-0lax">
+
+[myName]{style="color:unset;background-color:unset"}
+
+</td>
+
+<td class="tg-0lax">
+
+[string]{style="color:unset;background-color:unset"}
+
+</td>
+
+<td class="tg-0lax">
+
+[“”]{style="color:unset;background-color:unset"}
+
+</td>
+
+<td class="tg-0lax">
+
+[Immutable (NOTE: this]{style="color:unset;background-color:unset"} [is not]{style="font-weight:bolder"} [a const in our class, but we will]{style="color:unset;background-color:unset"} [not]{style="font-weight:bolder"} [be making setter functions for these immutable values.)]{style="color:unset;background-color:unset"}
+
+</td>
+
+</tr>
+
+<tr>
+
+<td class="tg-0lax">
+
+[myId]{style="color:unset;background-color:unset"}
+
+</td>
+
+<td class="tg-0lax">
+
+[unsigned int]{style="color:unset;background-color:unset"}
+
+</td>
+
+<td class="tg-0lax">
+
+[0]{style="color:unset;background-color:unset"}
+
+</td>
+
+<td class="tg-0lax">
+
+[Immutable (NOTE: this]{style="color:unset;background-color:unset"} [is not]{style="font-weight:bolder"} [a const in our class, but we will]{style="color:unset;background-color:unset"} [not]{style="font-weight:bolder"} [be making setter functions for these immutable values.)]{style="color:unset;background-color:unset"}
+
+</td>
+
+</tr>
+
+<tr>
+
+<td class="tg-0lax">
+
+[myGpa]{style="color:unset;background-color:unset"}
+
+</td>
+
+<td class="tg-0lax">
+
+[float]{style="color:unset;background-color:unset"}
+
+</td>
+
+<td class="tg-0lax">
+
+[0.0]{style="color:unset;background-color:unset"}
+
+</td>
+
+<td class="tg-0lax">
+
+</td>
+
+</tr>
+
+<tr>
+
+<td class="tg-0lax">
+
+[myMajor]{style="color:unset;background-color:unset"}
+
+</td>
+
+<td class="tg-0lax">
+
+[string]{style="color:unset;background-color:unset"}
+
+</td>
+
+<td class="tg-0lax">
+
+[“Undecided”]{style="color:unset;background-color:unset"}
+
+</td>
+
+<td class="tg-0lax">
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+:::
 
 In **Student.h**, you should see the definition of the `Student` class. In that class, create the **private:** section, and in there define the 4 instance variables, shown in the table above. You'll have to `#include <string>` and do the using `namespace` business...
 
@@ -94,6 +216,7 @@ In your **tests.cpp**, you'll find the first `SECTION` of unit tests called "stu
 
 ::: callout-caution
 ## Compile
+
 The compilation should fail because we haven't defined `getMajor()` yet. There should be no other problems.
 :::
 
@@ -105,6 +228,7 @@ Now, repeat the above steps for the other tests and instance variables **(maybe 
 
 ::: callout-note
 ## NOTE
+
 Don't delete any old tests -- just keep adding more. Put each test in its own `SECTION` within the "Student class" TEST_CASE.
 :::
 
@@ -112,7 +236,7 @@ Don't delete any old tests -- just keep adding more. Put each test in its own `S
 
 For the instance variables that are mutable (see the table above), create setter methods. But first, for each, create a test. Put all of these tests in a new `SECTION` within the "Student class" `TEST_CASE`.
 
-:::{.callout-tip}
+::: callout-tip
 **Example:** for the setGpa test, set the student's gpa to 3.25, then in a REQUIRE statement, call `getGpa()` and make sure the value is 3.25.
 :::
 
@@ -144,8 +268,7 @@ Space separated! **Do not** remove Students.cpp.
 
 In **tests.cpp**, below all your tests for the Student class, add the tests shown below:
 
-
-```cpp
+``` cpp
 TEST_CASE("Fraction class") {
     SECTION("fraction constructors") {
         SECTION("default") {
@@ -165,7 +288,6 @@ TEST_CASE("Fraction class") {
 ::: callout-important
 You'll have to `#include "Fraction.h"` at the top of the file.
 :::
-
 
 ### Step 2. Add the instance variables and constructors
 
@@ -194,7 +316,7 @@ Now the compilation and execution should succeed with all tests passing.
 ::: callout-note
 You can run only some tests by putting the name of the test on the command line. E.g., you can run only the Fraction tests by running:
 
-```bash
+``` bash
 ./tester "Fraction class"
 ```
 :::
@@ -209,13 +331,13 @@ Then, create the methods and the code so it will compile and run successfully.
 
 Now, in `setDenominator()`, check if the parameter is 0 -- an illegal value. If so, throw an **invalid_argument exception** (remember to `#include <stdexcept>` first). You can do this by using the line:
 
-```cpp
+``` cpp
 throw invalid_argument("Your error message here!"); // (Change the error message please!)
 ```
 
 Here is a test for that, assuming you have a fraction called f1:
 
-```cpp
+``` cpp
 SECTION("setDenominator") {
     REQUIRE_THROWS_AS(f1.setDenominator(0), invalid_argument);
 }

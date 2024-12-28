@@ -443,49 +443,49 @@
   {
     "objectID": "projects/proj10.html",
     "href": "projects/proj10.html",
-    "title": "Project 9: Using Queues to Implement the Snake Game",
+    "title": "Project 10: Using Queues to Implement the Snake Game",
     "section": "",
     "text": "Created by AI Prompt: Here’s an illustration of a stylized depiction of the Snake game in a retro pixel-art aesthetic."
   },
   {
     "objectID": "projects/proj10.html#objectives",
     "href": "projects/proj10.html#objectives",
-    "title": "Project 9: Using Queues to Implement the Snake Game",
+    "title": "Project 10: Using Queues to Implement the Snake Game",
     "section": "Objectives",
     "text": "Objectives\n\nUse a Queue to implement the snake game.\nGain experience using more complex data structures."
   },
   {
     "objectID": "projects/proj10.html#set-up",
     "href": "projects/proj10.html#set-up",
-    "title": "Project 9: Using Queues to Implement the Snake Game",
+    "title": "Project 10: Using Queues to Implement the Snake Game",
     "section": "Set Up",
-    "text": "Set Up\nAccept the assignment and use git clone to create your copy of the code."
+    "text": "Set Up\nAccept the assignment and use git clone to create your copy of the code. Make sure you and your partner are in the same Team."
   },
   {
     "objectID": "projects/proj10.html#step-1.-try-it-out",
     "href": "projects/proj10.html#step-1.-try-it-out",
-    "title": "Project 9: Using Queues to Implement the Snake Game",
+    "title": "Project 10: Using Queues to Implement the Snake Game",
     "section": "Step 1. Try it out",
     "text": "Step 1. Try it out\nIf you are not familiar with “the snake game”, then you can try it out on google. Just type “snake game” into google and it will give you a pop-up game you can try. Use the arrow keys to move the head of the snake and go after the apple in order to make the snake longer and gain points. Don’t run into the edges or the snake itself!\nIn our version of the game, we will allow the snake to wrap round from top to bottom (and vice versa) and left to right (and vice versa). The only way to die is to run into yourself.\nWe will use the Bridges library to visualize the game online. We’ll use the “Game mode” which requires you to start your program then open the browser and connect to your game. You’ll see a button on the web page that looks like this:\n\n\n\nButton to connect to game\n\n\n\n\n\n\n\n\nWarning\n\n\n\nBecause we are using the BRIDGES library, you will have to work on machines in the lab!\n\n\nFor our implementation, we’ll use a queue to represent the body of the snake. As the snake moves a new block is added to the end of the queue – which is the front of the snake – and the last block of the body is removed from the tail – which is the head of the queue. Each item in the queue will be a Pair of integers, representing the \\((x, y)\\) location of the block (\\(x\\) is vertical and \\(y\\) is horizontal). So, the snake’s queue will be defined as\nQueue&lt;Pair&lt;int&gt;&gt; snake; // (see line 58 of Snake.h)\nThe only other kinda tricky part of the code is how we grow the snake. The screen is redrawn each frame. A variable, skipDeletingTailNodesCount, exists which keeps track of how many subsequent frames should not delete the tail of the snake. So, if the variable has the value 2, the snake will grow by two new segments, because for the next 2 frames the snake’s tail will not be deleted.\n\nStep 2. Your task\nThere are TODOs littered throughout Snake.cpp. Your task is to replace the TODOs with code. Each TODO contains a description of what your code should do.\n\n\n\n\n\n\nA Note about Iterators\n\n\n\nYou will have to write some code to use the iterator class defined inside the Queue class. An iterator is an abstract pointer – meaning that it can be used like a pointer, but isn’t actually a pointer. So, you can get an iterator, it, that “points” to an item in the queue and then get the item itself by doing *it.\nYou can use iterators to walk through the snake object, like this:\nfor (Queue&lt;Pair&lt;int&gt;&gt;::iterator it = snake.begin(); it != snake.end(); it++) {\n      // use it here -- remember it points to an item in the queue, and those items are Pair objects.\n}\n\n\nTo run your program you have to provide two command-line arguments: your Bridges UserName and your Bridges Id. E.g., I run the program this way:\n./snake VictorNorman 1313148564\nRecall that you can get your username and id from the bridges website: http://bridges-cs.herokuapp.com/"
   },
   {
     "objectID": "projects/proj10.html#plan-of-attack",
     "href": "projects/proj10.html#plan-of-attack",
-    "title": "Project 9: Using Queues to Implement the Snake Game",
+    "title": "Project 10: Using Queues to Implement the Snake Game",
     "section": "Plan of Attack",
     "text": "Plan of Attack\nI recommend you replace the TODOs in this order:\n\ndo drawSnake()\nFix updateSnake(). After this, you should be able to run your program and see the snake move around.\ndo plantTarget()\ndo detectTarget()\ndo detectDeath()\n\nNote: for some of these there are easy ways and hard ways to implement them. Study the Queue class to see what methods exist on a Queue object. I’ve created some of those methods to help you implement the functions above more easily."
   },
   {
     "objectID": "projects/proj10.html#submission",
     "href": "projects/proj10.html#submission",
-    "title": "Project 9: Using Queues to Implement the Snake Game",
+    "title": "Project 10: Using Queues to Implement the Snake Game",
     "section": "Submission",
     "text": "Submission\nDon’t forget to commit your code to your online repo on github.com so that the grader can grade it.\nIf, after you submit your code, you want to enhance the game, you could:\n\nmake the game run faster as the snake gets longer.\nmake the target be a number between 1 and 9 inclusive, and the snake grows that much longer each time the target is eaten.\n\n(If you make these enhancements, don’t submit them. The grader will just grade the basic implementation.)"
   },
   {
     "objectID": "projects/proj10.html#grading-rubric",
     "href": "projects/proj10.html#grading-rubric",
-    "title": "Project 9: Using Queues to Implement the Snake Game",
+    "title": "Project 10: Using Queues to Implement the Snake Game",
     "section": "Grading Rubric",
     "text": "Grading Rubric\nThe assignment will be graded as follows:\nTotal points: 25 pts total:\n\n4 pts: drawSnake() correct\n5 pts: updateSnake() correct\n3 pts: plantTarget() correct\n4 pts: detectTarget() correct\n7 pts: detectDeath() correct\n2 pts: code is clean and neat.\n\nWays students lost points in the past:\n\n-2: Can’t make file. Error occurs\n-2: Does not allow me to play the game.\n-4: program does not detect collisions correctly.\n-3: program does not “eat” the target correctly.\n-12.5: code is identical with one other person.\n-18: code is identical with 2 other people."
   },
@@ -501,7 +501,7 @@
     "href": "projects/proj09.html#prepare",
     "title": "Project 09: Navigate a Maze Using a Stack",
     "section": "Prepare",
-    "text": "Prepare\nAccept the assignment and use git clone to create your copy of the code."
+    "text": "Prepare\nAccept the assignment and use git clone to create your copy of the code. Remember to join the same Team as your pair."
   },
   {
     "objectID": "projects/proj09.html#introduction",
@@ -690,28 +690,35 @@
   {
     "objectID": "labs/lab11-hint.html",
     "href": "labs/lab11-hint.html",
-    "title": "Lab 10: Hint",
+    "title": "Lab 11: Hint",
     "section": "",
-    "text": "The stub of BST::insert() should look like this:\nvoid BST::insert(const Item& item) {\n\n }\n## Defining BST::insert()\nThe BST::insert(item) method needs to distinguish between the two cases (empty and non-empty):\n\nIf the BST is empty:\n\nCreate a new node containing item and store that node’s address in myRoot.\n\nOtherwise (there is at least one node):\n\n“Pass the buck” to the root node by invoking Node::insert(item) on the node whose address is in myRoot.\nAny exception it throws will be sent back to the calling insert() message.\n\nIn either case (when no exception was thrown), increment myNumItems."
+    "text": "The stub of BST::insert() should look like this:\nvoid BST::insert(const Item& item) {\n\n }"
   },
   {
     "objectID": "labs/lab11-hint.html#declaring-bstinsert",
     "href": "labs/lab11-hint.html#declaring-bstinsert",
-    "title": "Lab 10: Hint",
+    "title": "Lab 11: Hint",
     "section": "",
-    "text": "The stub of BST::insert() should look like this:\nvoid BST::insert(const Item& item) {\n\n }\n## Defining BST::insert()\nThe BST::insert(item) method needs to distinguish between the two cases (empty and non-empty):\n\nIf the BST is empty:\n\nCreate a new node containing item and store that node’s address in myRoot.\n\nOtherwise (there is at least one node):\n\n“Pass the buck” to the root node by invoking Node::insert(item) on the node whose address is in myRoot.\nAny exception it throws will be sent back to the calling insert() message.\n\nIn either case (when no exception was thrown), increment myNumItems."
+    "text": "The stub of BST::insert() should look like this:\nvoid BST::insert(const Item& item) {\n\n }"
+  },
+  {
+    "objectID": "labs/lab11-hint.html#defining-bstinsert",
+    "href": "labs/lab11-hint.html#defining-bstinsert",
+    "title": "Lab 11: Hint",
+    "section": "Defining BST::insert()",
+    "text": "Defining BST::insert()\nThe BST::insert(item) method needs to distinguish between the two cases (empty and non-empty):\n\nIf the BST is empty:\n\nCreate a new node containing item and store that node’s address in myRoot.\n\nOtherwise (there is at least one node):\n\n“Pass the buck” to the root node by invoking Node::insert(item) on the node whose address is in myRoot.\nAny exception it throws will be sent back to the calling insert() message.\n\nIn either case (when no exception was thrown), increment myNumItems."
   },
   {
     "objectID": "labs/lab11-hint.html#designing-nodeinsert",
     "href": "labs/lab11-hint.html#designing-nodeinsert",
-    "title": "Lab 10: Hint",
+    "title": "Lab 11: Hint",
     "section": "Designing Node::insert()",
     "text": "Designing Node::insert()\nSince a Node is recursively defined, we might define Node::insert(item) as a recursive method. One way to design a recursive algorithm for this method is as follows:\nBasis. There are three trivial cases:\n\nIf item belongs in my left subtree and my left subtree is empty:\n\nMake my left subtree a new node containing item.\n\nIf item belongs in my right subtree and my right subtree is empty:\n\nMake my right subtree a new node containing item.\n\nIf item does not belong in our left or right subtrees (i.e., its value is the same as myItem):\n\nWe will treat our BST like a mathematical set (which has no redundant elements) and throw an exception to alert the user that they have inserted the same Item more than once.\n\n\nInduction Step. Again, there are two cases:\n\nIf item belongs in my left subtree and my left subtree is not empty:\n\n“Pass the buck” to the node in my left subtree by asking it to insert item.\n\nIf item belongs in my right subtree and my right subtree is not empty:\n\n“Pass the buck” to the node in my right subtree by asking it to insert item."
   },
   {
     "objectID": "labs/lab11-hint.html#defining-nodeinsert",
     "href": "labs/lab11-hint.html#defining-nodeinsert",
-    "title": "Lab 10: Hint",
+    "title": "Lab 11: Hint",
     "section": "Defining Node::insert()",
     "text": "Defining Node::insert()\nThese observations can then be reorganized into the following algorithm for our Node::insert() method:\n\nIf item is less than myItem:\n\nIf myLeft is nullptr:\n\nSet myLeft to the address of a new node containing item.\n\nOtherwise:\n\n“Pass the buck” by recursively calling myLeft-&gt;insert(item).\n\n\nOtherwise, if item is greater than myItem:\n\nIf myRight is nullptr:\n\nSet myRight to the address of a new node containing item.\n\nOtherwise:\n\n“Pass the buck” by recursively calling myRight-&gt;insert(item).\n\n\nOtherwise (item must be equal to myItem):\n\nthrow an Exception indicating that item is already in the BST."
   },
@@ -816,63 +823,63 @@
   {
     "objectID": "labs/lab11.html",
     "href": "labs/lab11.html",
-    "title": "Lab 10: Binary Search Trees",
+    "title": "Lab 11: Binary Search Trees",
     "section": "",
     "text": "In this exercise, you will:\n\nComplete a linked-node-based binary search tree class.\nPractice building recursive operations.\nPractice thinking recursively."
   },
   {
     "objectID": "labs/lab11.html#objectives",
     "href": "labs/lab11.html#objectives",
-    "title": "Lab 10: Binary Search Trees",
+    "title": "Lab 11: Binary Search Trees",
     "section": "",
     "text": "In this exercise, you will:\n\nComplete a linked-node-based binary search tree class.\nPractice building recursive operations.\nPractice thinking recursively."
   },
   {
     "objectID": "labs/lab11.html#introduction",
     "href": "labs/lab11.html#introduction",
-    "title": "Lab 10: Binary Search Trees",
+    "title": "Lab 11: Binary Search Trees",
     "section": "Introduction",
-    "text": "Introduction\nToday’s exercise is to complete a class template named BST from which binary search tree classes and objects can be created. The exercise provides you with a test-class and a partially-built BST class template; your task is to complete the BST class template.\n\n\n\n\nAI Prompt: Here is a creative illustration of a Christmas tree designed as a binary search tree (BST). The tree’s structure represents nodes with festive decorations like ornaments and lights, arranged according to BST properties."
+    "text": "Introduction\nToday’s exercise is to complete a class template named BST from which binary search tree classes and objects can be created. The exercise provides you with a test-class and a partially-built BST class template; your task is to complete the BST class template.\n\n\n\n\nSource: https://www.youtube.com/watch?v=WLvU5EQVZqY"
   },
   {
     "objectID": "labs/lab11.html#getting-started",
     "href": "labs/lab11.html#getting-started",
-    "title": "Lab 10: Binary Search Trees",
+    "title": "Lab 11: Binary Search Trees",
     "section": "Getting Started",
-    "text": "Getting Started\nAccept the invitation from github classroom and use git clone, as usual.\nEdit the README.md file to add both your names and your partner’s, and share the git repo, as usual."
+    "text": "Getting Started\nAccept the invitation from github classroom and use git clone, as usual.\nEdit the README.md file to add both your names and your partner’s, and make sure you are in the same Team."
   },
   {
     "objectID": "labs/lab11.html#the-bst-constructor",
     "href": "labs/lab11.html#the-bst-constructor",
-    "title": "Lab 10: Binary Search Trees",
+    "title": "Lab 11: Binary Search Trees",
     "section": "The BST Constructor",
     "text": "The BST Constructor\nAs you can see, our BST class contains just two instance variables:\nNode*    myRoot;       // pointer to the first item we insert\nunsigned myNumItems;   // number of items I contain\nIn the default constructor, our BST is empty, so myRoot should have the value nullptr and myNumItems should equal zero.\nCompile the project and run the tester. The tests should pass."
   },
   {
     "objectID": "labs/lab11.html#the-insert-method",
     "href": "labs/lab11.html#the-insert-method",
-    "title": "Lab 10: Binary Search Trees",
+    "title": "Lab 11: Binary Search Trees",
     "section": "The insert() Method",
     "text": "The insert() Method\nLooking at the code, your BST class provides methods to:\n\nCreate an empty BST;\nDetermine whether a BST is empty or not;\nDetermine the number of items in a BST;\nReclaim the dynamic memory of a BST; and\nTraverse the tree using preorder.\n\nOur next task is to be able to insert items into a BST. The insert(it) method adds an item it to the tree by storing it in a node such that:\n\nall nodes to the “left” of the node containing it contain items that are less than it; and\nall nodes to the “right” of the node containing it contain items that are greater than it.\n\nNote that if we use a simple approach to insert() in which the first item is stored in the root node, the second item is stored in a child node of the root node, and so on, then the order in which we add items can make a big difference in the shape of the tree. For example, if we insert items in a “carefully chosen random” order: 44, 66, 22, 55, 11, 77, 33, then our tree will be balanced:\n\nA tree’s shape can be characterized in different ways. One way is by comparing its height, diameter, and maximum width:\n\nA tree’s height is the number of nodes on the longest path from the root node to any of the leaf nodes.\nA tree’s diameter is the number of nodes on the longest path between any two leaves in the tree. This path often includes the root node, but not necessarily.\nA tree’s maximum width is the largest number of nodes on any given level of the tree.\n\nThe preceding tree’s height is 3, its diameter is 5, and its maximum width is 4. If a binary search tree is balanced, then its height should be about \\(log_2(n)\\), where \\(n\\) is the number of items in the tree.\nBy contrast, if we insert items in ascending order: 11, 22, 33, 44, 55, 66, 77, then our tree will be imbalanced one way:\n\nThis tree’s height is 7, its diameter is 7, and its maximum width is 1.\nLikewise, if we insert the items in descending order : 77, 66, 55, 44, 33, 22, 11, then our tree will be imbalanced the other way:\n\nAs before, this tree’s height is 7, its diameter is 7, and its maximum width is 1.\nIn tests.cpp, uncomment the TEST_CASE for “insert()”. Save/compile, and verify that you get a compilation error indicating that insert() is undeclared.\nAdd a prototype of insert() to our BST class; then recompile and verify that only a linking error remains.\nIn BST.h, below the class declaration, create a stub for BST::insert() (a “stub” is code that does nothing – it just returns). Recompile, and when all errors have been eliminated, run the test. Then define BST::insert() so that it passes the test. Here is a hint, in case you get stuck, but do your best to build this method without looking at the hint. Run the project, and verify that everything works correctly at the outset."
   },
   {
     "objectID": "labs/lab11.html#the-contains-method",
     "href": "labs/lab11.html#the-contains-method",
-    "title": "Lab 10: Binary Search Trees",
+    "title": "Lab 11: Binary Search Trees",
     "section": "The contains() Method",
     "text": "The contains() Method\nIn tests.cpp, uncomment the TEST_CASE for contains(). Take a few minutes to look over the tests it contains, specifically how contains() is used. As can be seen, the contains(it) method returns true if it is in its BST; otherwise it returns false. Save/compile your project. You should see an error indicating that there is no method matching the calls in our test-method.\nModify BST.h as necessary to fix any compilation/linking errors, using an approach similar to the approach used in insert(). Recompile and run the tests. If you get stuck, here is a hint, but don’t use it unless you have to.\nContinue when your method passes the test."
   },
   {
     "objectID": "labs/lab11.html#three-traversal-methods",
     "href": "labs/lab11.html#three-traversal-methods",
-    "title": "Lab 10: Binary Search Trees",
+    "title": "Lab 11: Binary Search Trees",
     "section": "Three Traversal Methods",
     "text": "Three Traversal Methods\nTo traverse a data structure is to pass through each of its items, processing each item in turn. For example, outputting the values in an array, vector, or list usually involves traversing the structure and outputting each item in turn.\nWhen it comes to binary search trees, there are a variety of ways to traverse a BST:\n\nA preorder traversal “processes” the item in a node before the items in the left and right subtrees are (recursively) processed.\nA postorder traversal “processes” the item in a node after the items in the left and right subtrees are (recursively) processed.\nAn inorder traversal “processes” the item in a node after the items in the left subtree have been processed, but before the items in the right subtree have been (recursively) processed.\n\nTo illustrate, the BST class template contains a traversePreorder() method, defined as follows:\nvoid BST::traversePreorder(ostream &out) const {\n    if (!isEmpty()) {\n    myRoot-&gt;traversePreorder(ostream &out);\n    }\n  }\nIf the BST is not empty, this method “passes the buck” by sending the traversePreorder() message to the node whose address is in myRoot. The Node struct defines that (recursive) method as follows:\nvoid BST::Node::traversePreorder(ostream &out) const {\n    // 1. process myItem first (preorder)\n    processItem(out);\n    // 2. then recursively process the items in the left subtree\n    if (myLeft != nullptr) {\n        myLeft-&gt;traversePreorder(out);\n    }\n    // 3. then recursively process the items in the right subtree\n    if (myRight != nullptr) {\n        myRight-&gt;traversePreorder(out);\n    }\n  }\nThe processItem() method can be defined to do any kind of processing of a node’s item. To illustrate, our Node struct defines processItem() to insert a space and then myItem into cout:\nvoid BST::Node::processItem(ostream &out) {\n    out &lt;&lt; myItem &lt;&lt; ' ';\n  }\nNote that all of these functions take an ostream as a parameter and pass it on in their method calls. The processItem() method writes its output to the ostream. By passing in an output stream this way, the caller can have processItem write to standard out (cout) or a file (fout) or even a string, which is what test.cpp does.\nUncomment the TEST_CASE for traversal, and take a moment to look over its tests. Your final task is to define traversePostorder() and traverseInorder() methods that will produce the output expected by the test-method. Use the provided traversePreorder() methods as a model; the other two sets of traversal methods are quite similar.\nWhen your code passes all the tests, congratulations! You now have a basic binary search tree class!"
   },
   {
     "objectID": "labs/lab11.html#submit",
     "href": "labs/lab11.html#submit",
-    "title": "Lab 10: Binary Search Trees",
+    "title": "Lab 11: Binary Search Trees",
     "section": "Submit",
     "text": "Submit\nDon’t forget to commit your changes.\nGrading Rubric: 25 points total\n\n5 pts: insert() correct\n5 pts: contains() correct\n4 pts x 3 = 12 pts: traversals are correct\n3 pts: code is neat and clean (hospitable)\n\nWays students lost points in the past:\n\n-1: Node::contains has to RETURN the value gotten from recursive calls of contains\n-2: insert() should be recursive;\n-1: insert() should throw an exception when item is already in tree\n-2: very poor indentation\n-2: traversePostorder and traverseInorder should call themselves, not traversePreorder\n-2: Node::traverseInOrder needs to process item in the middle (and use processItem method) insert"
   },
@@ -1005,70 +1012,70 @@
   {
     "objectID": "labs/lab14.html",
     "href": "labs/lab14.html",
-    "title": "Lab 13: Hash Tables Project",
+    "title": "Lab 14: Hash Tables Project",
     "section": "",
     "text": "Definition of Grinch."
   },
   {
     "objectID": "labs/lab14.html#learning-objectives",
     "href": "labs/lab14.html#learning-objectives",
-    "title": "Lab 13: Hash Tables Project",
+    "title": "Lab 14: Hash Tables Project",
     "section": "Learning Objectives",
     "text": "Learning Objectives\nIn this exercise, you will:\n\nbuild a hash table data structure\nexperiment with hashing algorithms to distribute data across all buckets, as much as possible."
   },
   {
     "objectID": "labs/lab14.html#step-0",
     "href": "labs/lab14.html#step-0",
-    "title": "Lab 13: Hash Tables Project",
+    "title": "Lab 14: Hash Tables Project",
     "section": "Step 0",
     "text": "Step 0\nAccept the Assignment.\nOur hash table will be a STL vector of STL sets (in class we used a vector of linked lists). Your code will read a file, dictionary.txt, that contains “all” the words in the English language, and insert each word into the hash table. There are about ~127,000 words in the file, but we will use a fairly small number of buckets, so there will be many collisions.\nThe goal of this exercise is to experiment with hashing algorithms to see if you can find one that distributes items well."
   },
   {
     "objectID": "labs/lab14.html#step-1-build-the-hashtable-data-structure-and-constructor",
     "href": "labs/lab14.html#step-1-build-the-hashtable-data-structure-and-constructor",
-    "title": "Lab 13: Hash Tables Project",
+    "title": "Lab 14: Hash Tables Project",
     "section": "Step 1: Build the HashTable data structure and constructor",
     "text": "Step 1: Build the HashTable data structure and constructor\nInspect the code in HashTable.h and HashTable.cpp. There is not much there, but it is a start. Do notice that there is a static constant integer called TABLE_SIZE, initialized to the value 200.\nCreate the hash table data structure in the private: section, calling it myTable. For this project, the table must be a vector of sets of strings (in class we used a vector of lists).\nIn the constructor, initialize myTable to have TABLE_SIZE buckets by calling\nmyTable.resize(TABLE_SIZE);\nAlso, in the constructor initialize mySize to 0.\nCompile your code to make sure what you have written compiles."
   },
   {
     "objectID": "labs/lab14.html#step-2-insert-and-hash",
     "href": "labs/lab14.html#step-2-insert-and-hash",
-    "title": "Lab 13: Hash Tables Project",
+    "title": "Lab 14: Hash Tables Project",
     "section": "Step 2: insert() and hash()",
     "text": "Step 2: insert() and hash()\nThe prototypes for insert() and hash() are defined in the .h file. Now, you must implement them in the .cpp file. Use the code we saw in the slides in class for the hash function. The function should add up the first and last characters of the string, modding the result by TABLE_SIZE.\nTry to compile the code using make. It should compile. Fix any issues if your compilation fails."
   },
   {
     "objectID": "labs/lab14.html#step-3-main",
     "href": "labs/lab14.html#step-3-main",
-    "title": "Lab 13: Hash Tables Project",
+    "title": "Lab 14: Hash Tables Project",
     "section": "Step 3: main()",
     "text": "Step 3: main()\nNow, create code in main(). Your code should define a HashTable object first.\nThen, open the file dictionary.txt for reading, and read each word from the file, one at a time, inserting each word into the hash table.\nNext, have the code close the file.\nCompile your code."
   },
   {
     "objectID": "labs/lab14.html#step-4-testing",
     "href": "labs/lab14.html#step-4-testing",
-    "title": "Lab 13: Hash Tables Project",
+    "title": "Lab 14: Hash Tables Project",
     "section": "Step 4: Testing",
     "text": "Step 4: Testing\nOf course, at this point, we have no idea if the items have been distributed well in the hash table, because we have no way to inspect the hash table contents.\nNotice that there is a method called dumpInfo() defined, but currently the code does nothing. Fill in the code to do the following:\n\nFor each bucket, print how many items are in it.\nCount and print the number of empty buckets.\nCalculate and print the average number of items in non-empty buckets.\n\nHere is a snippet of my output. Make your output look similar:\nnumber of items in bucket 0: 415\nnumber of items in bucket 1: 351\nnumber of items in bucket 2: 307\nnumber of items in bucket 3: 414\nnumber of items in bucket 4: 293\n...\nnumber of items in bucket 197: 560\nnumber of items in bucket 198: 484\nnumber of items in bucket 199: 341\n--------------------------\nTotal number of elements in the hash table: 127141\nNumber of empty buckets: 0\nAverage number of items in non-empty buckets: 635\n\n\n\n\n\n\nNote\n\n\n\nNote: the output above is from after I changed the number of buckets in my data structure, and tweaked the hash algorithm, which you’ll do below.\n\n\nAfter you implement your dumpInfo() method, call it from your main() code."
   },
   {
     "objectID": "labs/lab14.html#step-5-tweak-your-hashing-algorithm-and-table-size",
     "href": "labs/lab14.html#step-5-tweak-your-hashing-algorithm-and-table-size",
-    "title": "Lab 13: Hash Tables Project",
+    "title": "Lab 14: Hash Tables Project",
     "section": "Step 5: Tweak Your Hashing Algorithm and Table Size",
     "text": "Step 5: Tweak Your Hashing Algorithm and Table Size\nYou will notice that the basic hashing algorithm (adding up the first and last characters of each string) does a very poor job of distributing strings across all buckets in the hash table. Your goal now is to improve the hashing algorithm to improve the distribution.\nExperiment with different algorithms, but make sure they follow the criteria laid out in class:\n\nO(1)\ndistribute values across all buckets.\ndeterministic.\n\nYou MAY increase the number of buckets, but it must remain at or below 250 total. Do not change how buckets are implemented – they should remain sets.\nDo not spend more than 1 hour tweaking your algorithm. Make sure your final code implements your best algorithm.\n\n\n\n\n\n\nImportant\n\n\n\nWrite a comment in your hash() function that describes your algorithm, explaining why you think it works as well as it does."
   },
   {
     "objectID": "labs/lab14.html#step-6-submit",
     "href": "labs/lab14.html#step-6-submit",
-    "title": "Lab 13: Hash Tables Project",
+    "title": "Lab 14: Hash Tables Project",
     "section": "Step 6: Submit",
     "text": "Step 6: Submit\nSubmit your code via github, as normal.\n\n\n\n\n\n\nWarning\n\n\n\nIF YOU WORKED WITH A PARTNER, ONLY ONE OF YOU HAS TO SUBMIT, but UPDATE THE README.md to INCLUDE BOTH NAMES."
   },
   {
     "objectID": "labs/lab14.html#grading-rubric",
     "href": "labs/lab14.html#grading-rubric",
-    "title": "Lab 13: Hash Tables Project",
+    "title": "Lab 14: Hash Tables Project",
     "section": "Grading Rubric",
     "text": "Grading Rubric\n20 points total:\n\n10 pts: hash table code (not including the hash function) is correct\n5 pts: hash function obeys the criteria laid out in class.\n3 pts: hash function works well (not obviously leaving many buckets empty and have some be very full).\n2 pts: code is clean and hospitable.\n\nWays students lost points in the past:\n\n-2: Hash function does not appear to be evenly distributed but fills lower-numbered buckets way more (~2000 vs ~50)\n-4: Main function does not load words from file or call dumpInfo\n-1: Missing call to dumpInfo in main\n-3: Buckets are not evenly distributed (with many below 50 or above 2000) and some are empty. The smallest buckets are odd-numbered, which indicates a quirk in the algorithm which disfavors that half of the buckets\n-4: Most of the buckets are empty; a hashing algorithm should seek to evenly distribute words into buckets\n-1: Please output all bucket counts per instructions so the distribution can be seen."
   },
@@ -1369,84 +1376,84 @@
   {
     "objectID": "labs/lab11-hint2.html",
     "href": "labs/lab11-hint2.html",
-    "title": "Lab 10: Hint 2",
+    "title": "Lab 11: Hint 2",
     "section": "",
     "text": "The stub of BST::contains() should look like this:\nbool BST::contains(const Item& item) const {\n}\nThe BST::contains() method should distinguish between the two cases:\n\nIf the BST is empty: return false.\nOtherwise: “pass the buck” by returning whatever myRoot-&gt;contains(item) returns."
   },
   {
     "objectID": "labs/lab11-hint2.html#defining-bstcontains",
     "href": "labs/lab11-hint2.html#defining-bstcontains",
-    "title": "Lab 10: Hint 2",
+    "title": "Lab 11: Hint 2",
     "section": "",
     "text": "The stub of BST::contains() should look like this:\nbool BST::contains(const Item& item) const {\n}\nThe BST::contains() method should distinguish between the two cases:\n\nIf the BST is empty: return false.\nOtherwise: “pass the buck” by returning whatever myRoot-&gt;contains(item) returns."
   },
   {
     "objectID": "labs/lab11-hint2.html#designing-nodecontains",
     "href": "labs/lab11-hint2.html#designing-nodecontains",
-    "title": "Lab 10: Hint 2",
+    "title": "Lab 11: Hint 2",
     "section": "Designing Node::contains()",
     "text": "Designing Node::contains()\nSince a Node is recursively defined, we might define Node::contains(item) recursively. One way to design a recursive algorithm for this method is as follows:\nBasis. There are three trivial cases:\n\nIf item is equal to myItem:\n\nReturn true.\n\nIf item belongs in my left subtree and my left subtree is empty:\n\nReturn false.\n\nIf item belongs in my right subtree and my right subtree is empty:\n\nReturn false.\n\n\nInduction Step. There are two cases:\n\nIf item belongs in my left subtree and my left subtree is not empty:\n\n“Pass the buck” to the node in my left subtree and return whatever it returns.\n\nIf item belongs in my right subtree and my right subtree is not empty:\n\n“Pass the buck” to the node in my right subtree and return whatever it returns."
   },
   {
     "objectID": "labs/lab11-hint2.html#defining-nodecontains",
     "href": "labs/lab11-hint2.html#defining-nodecontains",
-    "title": "Lab 10: Hint 2",
+    "title": "Lab 11: Hint 2",
     "section": "Defining Node::contains()",
     "text": "Defining Node::contains()\nThese observations can be reorganized into the following algorithm for our Node::contains(item) method:\n\nIf item is less than myItem:\n\nIf myLeft is nullptr:\n\nReturn false.\n\nOtherwise:\n\n“Pass the buck” by returning whatever myLeft-&gt;contains(item) returns.\n\n\nOtherwise, if item is greater than myItem:\n\nIf myRight is nullptr:\n\nReturn false.\n\nOtherwise:\n\n“Pass the buck” by returning whatever myRight-&gt;contains(item) returns.\n\n\nOtherwise (item is equal to myItem):\n\nReturn true."
   },
   {
     "objectID": "labs/lab10.html",
     "href": "labs/lab10.html",
-    "title": "Lab 9: Recursion",
+    "title": "Lab 10: Recursion",
     "section": "",
     "text": "Students will be able to…\n\nuse an AI model to write code to implement recursive algorithms.\nanalyze the code from an AI model"
   },
   {
     "objectID": "labs/lab10.html#learning-objectives",
     "href": "labs/lab10.html#learning-objectives",
-    "title": "Lab 9: Recursion",
+    "title": "Lab 10: Recursion",
     "section": "",
     "text": "Students will be able to…\n\nuse an AI model to write code to implement recursive algorithms.\nanalyze the code from an AI model"
   },
   {
     "objectID": "labs/lab10.html#introduction",
     "href": "labs/lab10.html#introduction",
-    "title": "Lab 9: Recursion",
+    "title": "Lab 10: Recursion",
     "section": "Introduction",
-    "text": "Introduction\nIn this lab, for most steps, you will use ChatGPT or another AI model to generate recursive solutions to some simple problems. You will then analyze the code to verify it is correct and/or improve it.\nTo log in to ChatGPT (as if you didn’t already know :-), go to https://chatgpt.com.\nAfter the AI generates C++ code, copy and paste it into a file, and compile and run it. You will be submitting multiple files each containing a main() in it.\nAccept the assignment.\n\n\n\n\nThis is going to take forever…"
+    "text": "Introduction\nIn this lab, for most steps, you will use ChatGPT or another AI model to generate recursive solutions to some simple problems. You will then analyze the code to verify it is correct and/or improve it.\nTo log in to ChatGPT (as if you didn’t already know :-), go to https://chatgpt.com}.\nAfter the AI generates C++ code, copy and paste it into a file, and compile and run it. You will be submitting multiple files each containing a main() in it.\nAccept the assignment.\n\n\n\n\nThis is going to take forever…"
   },
   {
     "objectID": "labs/lab10.html#part-1-reverse-an-array-recursively",
     "href": "labs/lab10.html#part-1-reverse-an-array-recursively",
-    "title": "Lab 9: Recursion",
+    "title": "Lab 10: Recursion",
     "section": "Part 1: Reverse an array, recursively",
     "text": "Part 1: Reverse an array, recursively\nAsk ChatGPT for C++ code to reverse an array of integers recursively. When you are happy with the code that has been generated for you, copy and paste it into file rev_array.cpp. Compile and run the file by doing make rev_array and ./rev_array.\nDescribe in a few complete English sentences how the solution works. Put your answers in comments in the file. (Do not use the AI to generate this answer.)\nWhat if the array has an odd number of values? How does the algorithm handle this? (Do not use the AI to generate this answer.)"
   },
   {
     "objectID": "labs/lab10.html#part-2-binary-search-recursively",
     "href": "labs/lab10.html#part-2-binary-search-recursively",
-    "title": "Lab 9: Recursion",
+    "title": "Lab 10: Recursion",
     "section": "Part 2: Binary search, recursively",
     "text": "Part 2: Binary search, recursively\nAsk ChatGPT for C++ code to implement a recursive version of binary search over an array of integers. (doubles?)\nWhen you are happy with the resulting code, place it in bin_search.cpp, compile it, and run it (if you can’t figure out how to do these steps, inspect the makefile). Make sure the code works for arrays of different sizes, including size 0, size 1, size 10, etc.\nYour code probably contains this line:\nint mid = low + (high - low) / 2;\nDescribe in a comment above this line what this line does and why it works when the size of the array is odd (which means you cannot divide the array into two even parts). (Do not use the AI to generate this answer.)"
   },
   {
     "objectID": "labs/lab10.html#part-3-sum-of-values-in-an-array-recursively",
     "href": "labs/lab10.html#part-3-sum-of-values-in-an-array-recursively",
-    "title": "Lab 9: Recursion",
+    "title": "Lab 10: Recursion",
     "section": "Part 3: Sum of values in an array, recursively",
     "text": "Part 3: Sum of values in an array, recursively\nPlace the code from slide 5 of the lecture slides into file sum_array.cpp. Add other code to initialize an array with 6 values. Compile and run the value and verify that the result is correct.\nNow, modify the code so that the base case is not when size == 0 but when size == 1.\nDescribe in a comment in the file why this solution is slightly more efficient."
   },
   {
     "objectID": "labs/lab10.html#part-4-fibonacci-sequence-recursively",
     "href": "labs/lab10.html#part-4-fibonacci-sequence-recursively",
-    "title": "Lab 9: Recursion",
+    "title": "Lab 10: Recursion",
     "section": "Part 4: Fibonacci sequence, recursively",
     "text": "Part 4: Fibonacci sequence, recursively\nAsk the AI to generate C++ code to compute recursively the nth fibonacci number, where the user provides the value for \\(n\\). Copy and paste the code into file fib.cpp. Then, compile and run the code. Verify that the results are correct (you can ask the AI for the correct answer when \\(n\\) is 20).\nAsk the AI to modify the C++ code so that it counts how many times the recursive function is called and prints out the results at the end.\nPut the code into your file and compile and run it. Add the results for when \\(n\\) is 20 in a comment in the code at the bottom of the file.\nNow, ask the AI to modify the code to use memoization. The code should still count and display the number of times the function fibonacci() is called.\nAdd to your comment at the bottom of the file the results for when memoization is used. Also, write a sentence or two (in the comment) to describe how memoization works and how it improves the run time of the algorithm. (Do not use the AI to generate this answer.)"
   },
   {
     "objectID": "labs/lab10.html#submit",
     "href": "labs/lab10.html#submit",
-    "title": "Lab 9: Recursion",
+    "title": "Lab 10: Recursion",
     "section": "Submit",
     "text": "Submit\nDon’t forget to submit all your code to github.\nGrading Rubric: 20 points total\n\n5 points for each of the 4 parts. Those 5 points consist of:\n\n2 points for code correctness\n3 points for your analysis of the code.\n\n\nWays students lost points in the past:\n\n-12: no analysis was given.\n-3: some of the questions were not answered properly."
   },
@@ -1502,63 +1509,63 @@
   {
     "objectID": "labs/lab13.html",
     "href": "labs/lab13.html",
-    "title": "Lab 12: The STL set and map Containers",
+    "title": "Lab 13: The STL set and map Containers",
     "section": "",
-    "text": "Home Alone (1990)."
+    "text": "Independence Day (1996)."
   },
   {
     "objectID": "labs/lab13.html#objectives",
     "href": "labs/lab13.html#objectives",
-    "title": "Lab 12: The STL set and map Containers",
+    "title": "Lab 13: The STL set and map Containers",
     "section": "Objectives",
     "text": "Objectives\nIn this exercise, you will:\n\nUse the STL set container to store a set of values.\nUse the STL map container to create an associative array whose keys are string values, and whose values are sets of strings.\nUse iterators to access the items in these containers."
   },
   {
     "objectID": "labs/lab13.html#introduction",
     "href": "labs/lab13.html#introduction",
-    "title": "Lab 12: The STL set and map Containers",
+    "title": "Lab 13: The STL set and map Containers",
     "section": "Introduction",
     "text": "Introduction\nThis lab/project has you creating a simple database of movies and the actors in the movies. Then the user of the program can choose to:\n\nShow all movies\nShow all actors in a movie\nShow all movies an actor was in.\nThe main data structure you’ll create is an STL map that maps:\n\nmovie name → set of actors in the movie.\nThis is a complex data structure: each entry in the map contains a set (Thus, we’ll have a binary search tree of binary search trees).\nWe’ll use the Bridges database of movie information. When you get the information from the Bridges API, you get a vector of objects of type MovieActorWikidata. Each object contains a movie and an actor in the movie (among other things). If you printed out those two things from MovieActorWikidata objects, you might see these values.\nMovie: Young at Heart         Actor: Alan Hale, Jr.\nMovie: Wichita                Actor: Carl Benton Reid\nMovie: We're No Angels        Actor: Aldo Ray\nMovie: Young at Heart         Actor: Doris Day\nMovie: Wichita                Actor: Joel McCrea\netc...\nThus, you see that the objects are not in any order, and do not have all the actors in a movie in each object. To get all actors for a movie, you’ll have to iterate over all the elements of the vector and learn 1) all the movies, and 2) all the actors in the movies.\nNote that sometimes an actor is listed multiple times for a movie. But, because we are using an STL set, it automatically handles attempts to insert an element multiple times."
   },
   {
     "objectID": "labs/lab13.html#menu",
     "href": "labs/lab13.html#menu",
-    "title": "Lab 12: The STL set and map Containers",
+    "title": "Lab 13: The STL set and map Containers",
     "section": "Menu",
     "text": "Menu\nThe application presents a menu from which the user can select the operation s/he wishes to perform. To validate a user’s menu-choice, our project uses a tree-based data structure – the STL set. For example, if the valid menu choices are a, b, c, d, e, f, and q, and we store these choices in a set named myValidChoices, then we might (simplistically) visualize this set as follows:\n\nTo determine whether or not a character is present in this set, the STL find(value) method does a binary search down through this tree until it either locates value, or reaches the bottom of the tree. It should be evident that the maximum time to search is O(lg(n)), where n is the number of items in the set.\nThe exercise will provide you with a “skeleton” application, which you will then complete by adding additional functionality."
   },
   {
     "objectID": "labs/lab13.html#getting-started",
     "href": "labs/lab13.html#getting-started",
-    "title": "Lab 12: The STL set and map Containers",
+    "title": "Lab 13: The STL set and map Containers",
     "section": "Getting Started",
-    "text": "Getting Started\nAccept the invitation from github classroom and use git clone, as usual.\nEdit the README.md file to add both your names and your partner’s, and share the git repo, as usual."
+    "text": "Getting Started\nAccept the invitation from github classroom and use git clone, as usual. Make sure you and your partner are in the same Team.\nEdit the README.md file to add both your names and your partner’s."
   },
   {
     "objectID": "labs/lab13.html#part-i.-the-menu-class",
     "href": "labs/lab13.html#part-i.-the-menu-class",
-    "title": "Lab 12: The STL set and map Containers",
+    "title": "Lab 13: The STL set and map Containers",
     "section": "Part I. The Menu Class",
     "text": "Part I. The Menu Class\nWhen dealing with menu-driven systems, one thing that can go wrong is if the user enters an invalid choice – something that is not on the menu. When this happens, the program must detect it and take remedial action.\nOne way to detect such a problem is to build a Menu class that, besides “remembering” its menu, “remembers” its set of valid menu choices. Then when the user enters a choice, we can validate their choice by checking whether or not their choice is an element of that set.\nAs you can see, our Menu class contains two instance variables: a string storing the menu, and a set to store those menu choices that are valid:\nstring myValue;             // the menu that is displayed\nset&lt;char&gt; myValidChoices;   // the valid menu choices\nSave/compile your project, and verify that everything compiles without errors.\n\nThe Menu Constructor\nThe Menu constructor currently initializes our myValue member; it must also initialize myValidChoices so that it stores the valid menu choices. To do so, we can use the insert() method:\nsetVariable.insert(value);\nthat inserts a single value into a set.\nIn Menu.cpp, add insert() calls to make myValidChoices represent the set {‘a’, ‘b’, ‘c’, ‘q’}.\n\n\nThe Menu::containsChoice() Method\nTo let a program conveniently check whether or not a given character is a valid menu choice, the Menu class provides a boolean method containsChoice(choice) that returns true if and only if choice is a valid menu choice. Currently, this method is a stub-definition that returns false. Your next task is to revise this stub so that it returns true if and only if choice is in the set myValidChoices.\nWe can accomplish this using the find() method.\nSave/compile your project, and when it is free of compilation errors, run the program. When it is free of errors, go on.\nWhen you run your program, you will need to provide your Bridges UserName and Id on the command line: e.g.,\n./movies CS112StudentUsingBridges 123555666"
   },
   {
     "objectID": "labs/lab13.html#part-ii.-the-app-class",
     "href": "labs/lab13.html#part-ii.-the-app-class",
-    "title": "Lab 12: The STL set and map Containers",
+    "title": "Lab 13: The STL set and map Containers",
     "section": "Part II. The App Class",
     "text": "Part II. The App Class\nThe file App.h contains the declaration of class App. This class uses an STL map to store (movieName, set of actors) pairs:\nmap&lt;string, set&lt;string&gt;&gt; movies_by_name;   // key is movie name; value is set of actors' names.\nNote that the code actually reads like this:\ndb_type movies_by_name;\nIn order to not have to type map&lt;string, set&lt;string&gt;&gt; too often, I created two typedefs at the top of App.h:\ntypedef map&lt;string, set&lt;string&gt;&gt; db_type;\ntypedef map&lt;string, set&lt;string&gt;&gt;::iterator db_iter;\nNow, the code can use db_type and db_iter instead of map&lt;string, set&lt;string&gt;&gt; and map&lt;string, set&lt;string&gt;&gt;::iterator, respectively. So much easier to type!\n\nConstructor\nThe App constructor has been defined for you. It takes a vector of MovieActorWikidata entries as a parameter.\nThe constructor code contains the algorithm you should implement to process these entries, building up entries in the movies_by_name map.\nIf you use the hint I gave in class about how accessing a map with [ ] will either create a new entry or update it if it already exists, then the body of the for loop is one line. Otherwise, the body is about 9 lines, and is very tricky code.\nWrite the code now. This code will be difficult to test until you implement the next step.\n\n\nShow All Movies Option\nImplement code for showAllMovies(), to iterate through all entries in movies_by_name, and print out the movie name and then iterate through all actors for that movie, printing them out. I’ve indented the actor’s name, so the output is more readable.\nYou might find it very useful to make the inner loop a separate function. I called that function showActorsInAMovie(). It takes an iterator “pointing” to an object from the movies_by_name collection, and iterates over the “second” field (a set), printing each actor in the set. If you implement this function, you’ll find you can use it again below.\nWhen you think your code is correct (for this and the previous step), try loading all movies from 1955 and printing them all out. The first movie should be:\nMovie: 5 Against the House\n        Alvy Moore\n        Brian Keith\n        George Cisar\n        Guy Madison\n        Hugh Sanders\n        Jean Willes\n        John Larch\n        John Zaremba\n        Kathryn Crosby\n        Kerwin Mathews\n        Kim Novak\n        Mark Hanna\n        Robert Sampson\n        William Conrad\nThe last movie you should see should look like this:\nMovie: Young at Heart\n        Alan Hale, Jr.\n        Doris Day\n        Dorothy Malone\n        Elisabeth Fraser\n        Ethel Barrymore\n        Frank Ferguson\n        Frank Sinatra\n        Gig Young\n        Lonny Chapman\n        Robert Keith\n\n\nShow All Actors For a Single Movie Option\nComplete the code in the getMovienameAndShowActors() method. If you created a function to show all actors for a given movie, then you are half done already.\n\n\nShow All Movies For an Actor Option\nFinally, implement this option. Create a set of strings (I called my variable movies_by_actor.) And then go through all movies, looking for that actor. When you find him/her, add the movie to the movies_by_actor. Then, when you are done, print out the set.\nHere is a sample output:\nEnter an actor name to show all movies for that actor: Alfred Hitchcock\nRear Window\nThe Trouble with Harry\nTo Catch a Thief"
   },
   {
     "objectID": "labs/lab13.html#turn-in",
     "href": "labs/lab13.html#turn-in",
-    "title": "Lab 12: The STL set and map Containers",
+    "title": "Lab 13: The STL set and map Containers",
     "section": "Turn In",
     "text": "Turn In\nSubmit your project to github as usual. If you worked with your lab partner on the project, make sure you update README.md to include both of your names/login-ids."
   },
   {
     "objectID": "labs/lab13.html#grading-rubric",
     "href": "labs/lab13.html#grading-rubric",
-    "title": "Lab 12: The STL set and map Containers",
+    "title": "Lab 13: The STL set and map Containers",
     "section": "Grading Rubric",
     "text": "Grading Rubric\n21 points total:\n\nMenu class works: 2 pts.\nApp constructor: 5 pts.\nEach App menu item: 4 pts each: 12 pts.\nHospitable code: code is clean and neat, perfectly indented, with good variable names, etc.: 2 pts.\n\nWays students have lost points in the past:\n\n-2: showAllMovies needs to show the names of each movie’s actors\n-2: getMovieNameAndShowActors implementation is incorrect, the result of movies_by_name.find will return the iterator value you want to pass to showActorsInAMovie, the for loop is unnecessary\n-2: code is very poorly indented\n-2: parameter names are very poorly chosen"
   },
@@ -1628,16 +1635,16 @@
   {
     "objectID": "labs/lab10-slides.html#dad-joke-of-the-week",
     "href": "labs/lab10-slides.html#dad-joke-of-the-week",
-    "title": "Lab 09 — Recursion",
+    "title": "Lab 10 — Recursion",
     "section": "Dad joke of the week",
     "text": "Dad joke of the week\n\n\n\n\n\n\n\n\n\n\nPete and Repete are on a boat. Pete falls off. Who’s left on the boat?"
   },
   {
-    "objectID": "labs/lab10-slides.html#lab-9",
-    "href": "labs/lab10-slides.html#lab-9",
-    "title": "Lab 09 — Recursion",
-    "section": "Lab 9",
-    "text": "Lab 9\n\ncreating recursive functions using ChatGPT\ndiscussing efficiency by calculating the number of times a function is called"
+    "objectID": "labs/lab10-slides.html#lab-10",
+    "href": "labs/lab10-slides.html#lab-10",
+    "title": "Lab 10 — Recursion",
+    "section": "Lab 10",
+    "text": "Lab 10\n\ncreating recursive functions using ChatGPT\ndiscussing efficiency by calculating the number of times a function is called"
   },
   {
     "objectID": "labs/lab09.html",
@@ -1852,7 +1859,7 @@
     "href": "projects/proj04.html#step-2.-application",
     "title": "Project 04: More Vec Operations",
     "section": "Step 2. Application",
-    "text": "Step 2. Application\nCongratulations! You have been named the navigation officer on the starship U.S.S. Boobyprize, whose hyper-spatial engines allow the ship and its crew to explore the universe. Current theories suggest that reality consists of 11 or more dimensions, so you need a program to help you navigate through an N-dimensional space.\nVectors can be used to store positions (and/or directional forces) in a coordinate system. Vectors of length 2 can be used to store 2-dimensional (x, y) information; vectors of length 3 can be used to store 3-dimensional (x, y, z) information; and so on. Your task is to write a program that:\n\nPrompts for and has the user enter the number of dimensions in their space, storing this number in a variable N, which it can then use to define vector objects.\nPrompts for and has the user enter a starting position in that space, and stores that position in a vector object sum.\nUses a loop that:\n\nprompts for and has the user enter a position (relative to their current position), and stores that position in a vector,\nadds that vector to the sum vector.\n\nThis loop should let the user enter an arbitrary number of positions.\nOutputs the starting position plus the final position (i.e., the sum of the positions from the accumulator-vector).\n\nFor example, if the user is in a 3-dimensional system, enters the starting point {0, 0, 0}, and then enters the following four 3-dimensional relative-positions:\n{1, 0, 0}\n{0, 1, 0}\n{0, 0, 1}\n{1, 2, 3}\nthe program should then display the starting position ({0,0,0}) and the sum from the accumulator ({2, 3, 4}), which is the user’s final position within the 3-dimensional system.\nAs another example, if the user is navigating through a 5-dimensional space, enters {1, 0, 1, 0, 1} as the starting point, and enters three 5-dimensional relative-positions:\n{0, 1, 0, 1, 0}\n{2, 2, 2, 2, 2}\n{-3, -3, -3, -3, -3}\nthe program should then display the starting position and the final position ({0, 0, 0, 0, 0}).\n\n\n\n\n\n\nNote\n\n\n\nYou may (if you wish) have your program display the starship’s new position each time it is updated, rather than just displaying the final position at the end.\n\n\nYour application should have the user enter the vectors in the format expected by your readFrom(istream&) method: numbers separated by whitespace. (It does not have to parse through curly-brace and comma characters.) Likewise, your application can display the starship’s position using the format provided by your writeTo(ostream&) method – numbers separated by spaces.\nTo get you well on your way, your repo contains App.cpp and App.h. These files provide most of what you have to implement to finish this project. Just implement the missing TODO parts.\nNow that you have addition implemented, you’ll need to uncomment the line in App.cpp that reads\nres = res + v;\nYou will have to edit main() in main.cpp` to:\n\ncall the App() constructor, and then\non the resulting object, call run().\n\nCompile the program with make proj4 and execute the program by doing ./proj4."
+    "text": "Step 2. Application\nCongratulations! You have been named the navigation officer on the starship U.S.S. Boobyprize, whose hyper-spatial engines allow the ship and its crew to explore the universe. Current theories suggest that reality consists of 11 or more dimensions, so you need a program to help you navigate through an N-dimensional space.\nVectors can be used to store positions (and/or directional forces) in a coordinate system. Vectors of length 2 can be used to store 2-dimensional (x, y) information; vectors of length 3 can be used to store 3-dimensional (x, y, z) information; and so on. Your task is to write a program that:\n\nPrompts for and has the user enter the number of dimensions in their space, storing this number in a variable N, which it can then use to define vector objects.\nPrompts for and has the user enter a starting position in that space, and stores that position in a vector object sum.\nUses a loop that:\n\nprompts for and has the user enter a position (relative to their current position), and stores that position in a vector,\nadds that vector to the sum vector.\n\nThis loop should let the user enter an arbitrary number of positions.\nOutputs the starting position plus the final position (i.e., the sum of the positions from the accumulator-vector).\n\nFor example, if the user is in a 3-dimensional system, enters the starting point {0, 0, 0}, and then enters the following four 3-dimensional relative-positions:\n{0, 1, 0}\n{0, 0, 1}\n{1, 2, 3}\nthe program should then display the starting position ({0,0,0}) and the sum from the accumulator ({2, 3, 4}), which is the user’s final position within the 3-dimensional system.\nAs another example, if the user is navigating through a 5-dimensional space, enters {1, 0, 1, 0, 1} as the starting point, and enters three 5-dimensional relative-positions:\n{2, 2, 2, 2, 2}\n{-3, -3, -3, -3, -3}\nthe program should then display the starting position and the final position ({0, 0, 0, 0, 0}).\n\n\n\n\n\n\nNote\n\n\n\nYou may (if you wish) have your program display the starship’s new position each time it is updated, rather than just displaying the final position at the end.\n\n\nYour application should have the user enter the vectors in the format expected by your readFrom(istream&) method: numbers separated by whitespace. (It does not have to parse through curly-brace and comma characters.) Likewise, your application can display the starship’s position using the format provided by your writeTo(ostream&) method – numbers separated by spaces.\nTo get you well on your way, your repo contains App.cpp and App.h. These files provide most of what you have to implement to finish this project. Just implement the missing TODO parts.\nNow that you have addition implemented, you’ll need to uncomment the line in App.cpp that reads\nres = res + v;\nYou will have to edit main() in main.cpp to:\n\ncall the App() constructor, and then\non the resulting object, call run().\n\nCompile the program with make proj4 and execute the program by doing ./proj4."
   },
   {
     "objectID": "projects/proj04.html#submit",
@@ -1871,42 +1878,42 @@
   {
     "objectID": "projects/proj11.html",
     "href": "projects/proj11.html",
-    "title": "Project 10: Binary Search Trees",
+    "title": "Project 11: Binary Search Trees",
     "section": "",
-    "text": "Here is the illustration of a scientist creating a binary search tree with random numbers in a futuristic lab setting."
+    "text": "Source: https://www.freecodecamp.org/news/data-structures-101-binary-search-tree-398267b6bff0/"
   },
   {
     "objectID": "projects/proj11.html#objectives",
     "href": "projects/proj11.html#objectives",
-    "title": "Project 10: Binary Search Trees",
+    "title": "Project 11: Binary Search Trees",
     "section": "Objectives",
     "text": "Objectives\n\nPractice building BST operations.\nPractice building recursive operations.\nLearn more about binary search trees."
   },
   {
     "objectID": "projects/proj11.html#introduction",
     "href": "projects/proj11.html#introduction",
-    "title": "Project 10: Binary Search Trees",
+    "title": "Project 11: Binary Search Trees",
     "section": "Introduction",
-    "text": "Introduction\nAccept the assignment and use git clone to create your copy of the code.\nThis project is:\n\nAdd a getHeight() to your BST class.\nUse your BST&lt;Item&gt; to conduct an experiment.\n\nAs usual, you should use test-driven development to accomplish these tasks. Note that part of your grade is based on the thoroughness of your new tests for getHeight().\n\n\n\n\n\n\nImportant\n\n\n\nCopy your Exception.h, catch.hpp, BST.h, makefile, and tests.cpp files from your previous lab, into your repo."
+    "text": "Introduction\nAccept the assignment and use git clone to create your copy of the code. Remember to join the same Team as your peer.\nThis project is:\n\nAdd a getHeight() to your BST class.\nUse your BST&lt;Item&gt; to conduct an experiment.\n\nAs usual, you should use test-driven development to accomplish these tasks. Note that part of your grade is based on the thoroughness of your new tests for getHeight().\n\n\n\n\n\n\nImportant\n\n\n\nCopy your Exception.h, catch.hpp, BST.h, makefile, and tests.cpp files from your previous lab, into your repo."
   },
   {
     "objectID": "projects/proj11.html#adding-getheight",
     "href": "projects/proj11.html#adding-getheight",
-    "title": "Project 10: Binary Search Trees",
+    "title": "Project 11: Binary Search Trees",
     "section": "Adding getHeight()",
     "text": "Adding getHeight()\nThe height of a tree with a root node is defined as the height of the node’s taller sub-tree, plus 1. As you can see, this is a recursive definition, which needs a base case. The base case is that if a node has no children, its height is 1.\nLet’s give some examples to clarify:\nIf a tree has no nodes, its height is 0. If a tree has 1 node – the root node – its height is 1.\nIf a tree has a root node and that node has either a left child or a right child, or both, its height is 2. Suppose the tree has a root node and that node has a single right child node. The right child node has height 1. The root node’s height is 1 + (the greater of the height of its left subtree – which is 0 – and the right subtree – which is 1). Thus, the root node’s height is 2.\nImplement getHeight() now. Its implementation is similar to insert() or a traversal algorithm in that it uses recursion. The difference here is that each function returns an integer – the node’s height.\n\nThe Experiment\nThe height of a BST determines the speed of operations like insert() and contains(). If we build a “large” BST of N items (e.g., \\(~2^20\\)), and that tree is balanced, then its height should be the minimal \\(O(lg(N))\\) (e.g., 20).\nThis week’s problem is to conduct a simple experiment to see how “tall” BSTs get, given random values. Our objective is to see how close we come to lg(N) height if we build large trees of N randomly ordered values.\nYour repo contains two directories that each contain ten data files (randomInts01.txt, randomInts02.txt, …, randomInts10.txt), each containing \\(2^20-1 = 1,048,575\\) randomly generated integer values. If these values were ordered in exactly the right way, we could build trees of height 20. (On the other hand, if they were ordered in exactly the wrong way, we could build trees of height 1,048,575!)\nYour task is to write a simple program that prompts the user for the name of an input file, reads each value from that file, and inserts it into a BST. Your program should then display the height of the resulting BST.\nThere are minor details to keep in mind:\n\nThere may be duplicate values within an input file, and inserting a duplicate value into our BST will throw an exception. Your program should count and output the number of duplicate values in a given file by catching and handling this exception.\nThere are two directories – one for Linux/MacOS, and one for Windows.\nThese files were generated in the Maroon lab (whose workstations are 64-bit machines), and so the integers in these files are 64-bit integers. However, the C++ int and unsigned types only store integers in 32 bits; the long type stores integers in 64 bits, so use it to store these 64-bit integers.\n\nSince there are ten input files, you will need to run your program ten times. (Or find a clever way to automate this.) For each file, record the corresponding tree-height in a spreadsheet, and the number of duplicate values that were found. Given all ten heights, use the spreadsheet to calculate the minimum height, the maximum height, the average height, the median height, and the standard deviation of the ten heights. (Your spreadsheet will make each of these computations easy.) Finally, use your spreadsheet to create a bar-chart showing each of the ten heights, as a visualization of your data. Finally\nAnswer the following questions in your spreadsheet, below the chart:\n\nIs \\(lg(N)\\) or \\(N\\) a better approximation for your measured heights? Why?\nHow much variance is there in the height of these trees? Is this surprising? Why or why not?\nHow many duplicate values were there (on average)? Is this surprising? Why or why not?\nThe “big Oh” notation \\(O(f(n))\\) implies that there are constants \\(a\\) and \\(b\\), such that \\(a \\times f(n) + b\\) describes the reality for which \\(O(f(n))\\) is an approximation. A balanced BST of \\(N\\) items has height \\(O(lg(N))\\). Theoretically, there should be values \\(a\\) and \\(b\\) such that \\(a \\times lg(N) + b\\) describes the actual height of a BST built using random data. Using your experimental results, what is a reasonable value for \\(a\\)?"
   },
   {
     "objectID": "projects/proj11.html#submission",
     "href": "projects/proj11.html#submission",
-    "title": "Project 10: Binary Search Trees",
+    "title": "Project 11: Binary Search Trees",
     "section": "Submission",
     "text": "Submission\n\n\n\n\n\n\nImportant\n\n\n\n👉👉👉 Download/export a PDF version of your chart and store it in your repo for submission. Call the file analysis.pdf.\n\n\nDon’t forget to commit your code to your online repo on github.com so that the grader can grade it."
   },
   {
     "objectID": "projects/proj11.html#grading-rubric",
     "href": "projects/proj11.html#grading-rubric",
-    "title": "Project 10: Binary Search Trees",
+    "title": "Project 11: Binary Search Trees",
     "section": "Grading Rubric",
     "text": "Grading Rubric\nTotal: 24 pts\n\ngetHeight(): 5 pts\nNew tests in tests.cpp for getHeight(): 3 pts\nprogram: 10 pts\nspreadsheet / analysis: 6 pts\n\nWays students have lost points in the past:\n\n-3: Missing chart, spreadsheet\n-6: Missing spreadsheet/analysis\n-3: Missing tests for getHeight()\n-1: Big-Oh of height was wrong.\n-1: Error in getHeight(): a tree with two items could either have a height of 1 or 2"
   },

@@ -1,5 +1,5 @@
 ---
-title: "Lab 10: Hint"
+title: "Lab 11: Hint"
 format: 
   html:
     css: /labs/lab-styles.css
@@ -15,7 +15,7 @@ void BST::insert(const Item& item) {
  }
 ```
 
-\## Defining BST::insert()
+## Defining BST::insert()
 
 The `BST::insert(item)` method needs to distinguish between the two cases (empty and non-empty):
 

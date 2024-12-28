@@ -3,6 +3,8 @@ title: "Lab 00: Getting Started"
 format: 
   html:
     css: /labs/lab-styles.css
+editor: 
+  mode: source
 ---
 
 <center>

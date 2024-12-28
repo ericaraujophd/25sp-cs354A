@@ -7,50 +7,54 @@ format:
 eval: false
 ---
 
-<center><figure>
+<center>
+
+<figure>
 
 <img src="/images/projects/proj01-header.jpg" alt="Prime Numbers." width="500"/>
 
 <figcaption>Prime Numbers.</figcaption>
 
-</figure></center>
+</figure>
+
+</center>
 
 ## Objectives:
 
-1. Practice using for loops, while loops, and if statements.
-2. Practice creating functions and passing parameters.
-3. Practice writing unit tests.
+1.  Practice using for loops, while loops, and if statements.
+2.  Practice creating functions and passing parameters.
+3.  Practice writing unit tests.
 
 ## Step 0. Prepare
 
-- Click [this link](https://classroom.github.com/a/_PwngVPD){target="_blank"} and then "Accept this assignment".
-- Wait a few seconds and refresh the page. Refresh until the page says "You're ready to go!". The page has a link to a github repo.
-- Click the link to see your new repo on github.com.
-- Click the green [**Code**]{style="color:green;"} button and copy the SSH link it shows.
-- In a terminal,
-  - `cd` to the directory where you are putting all your CS112 assignments.
-  - type `git clone <paste-the-contents-of-the-link-you-copied>`
-- `cd` to the new directory containing your repo.
-- type `code .` to start up Visual Studio Code in that directory.
-- Inspect the code you got in the assignment.
+-   Click [this link](https://classroom.github.com/a/_PwngVPD){target="_blank"} and then "Accept this assignment".
+-   Wait a few seconds and refresh the page. Refresh until the page says "You're ready to go!". The page has a link to a github repo.
+-   Click the link to see your new repo on github.com.
+-   Click the green [**Code**]{style="color:green;"} button and copy the SSH link it shows.
+-   In a terminal,
+    -   `cd` to the directory where you are putting all your CS112 assignments.
+    -   type `git clone <paste-the-contents-of-the-link-you-copied>`
+-   `cd` to the new directory containing your repo.
+-   type `code .` to start up Visual Studio Code in that directory.
+-   Inspect the code you got in the assignment.
 
 ## Step 1. function practice, 1
 
 In **utils.h**, create a function **prototype** called `constrain()` that has 3 parameters:
 
-- value, a double
-- low, a double
-- high, a double
+-   value, a double
+-   low, a double
+-   high, a double
 
 `constrain()` returns a **double**, which is the value constrained by low and high. I.e., if the value is greater than high then, return high. If it is less than low, return low. Else, return the value itself unchanged. Remember, in **utils.h** you are writing just the prototype.
 
-Now, in **utils.cpp**, implement the function. 
+Now, in **utils.cpp**, implement the function.
 
 In **tests.cpp**, in the `TEST_CASE("step1")`, add more `REQUIRES()` function calls to test that your function is correct in all cases. We have provided one test there already.
 
-Compile using `make`. Then, run like this: 
+Compile using `make`. Then, run like this:
 
-```bash
+``` bash
 ./tester step1
 ```
 
@@ -58,32 +62,31 @@ When you pass the test, **Commit and Sync** your code to github (use a Message l
 
 ## Step 2. function practice, 2
 
-Now, make a second function in **utils.h** and **utils.cpp**, `constrain2()`,  which is the same as `constrain()`, but has the default value of $0.0$ for the low parameter, and the default of $100.0$ for the high parameter.
-Uncomment the test case in step2 and then add more `REQUIRE` tests to make sure these default arguments work correctly.
+Now, make a second function in **utils.h** and **utils.cpp**, `constrain2()`, which is the same as `constrain()`, but has the default value of $0.0$ for the low parameter, and the default of $100.0$ for the high parameter. Uncomment the test case in step2 and then add more `REQUIRE` tests to make sure these default arguments work correctly.
 
 When you have your code completed (and perfectly indented!), compile and run:
 
-```bash
+``` bash
 ./tester step2
 ```
 
-**Commit and Sync** your code to github. 
+**Commit and Sync** your code to github.
 
-:::{.callout-note}
+::: callout-note
 The autograding tests should now pass "step1" and "step2". (Tests for the other steps will pass, because the test cases are currently empty.)
 :::
 
 ## Step 3. Compute prime numbers
 
-Write a function prototype `isPrime()` in the **primes.h** file. The function takes an **unsigned integer** and returns a **boolean**. 
+Write a function prototype `isPrime()` in the **primes.h** file. The function takes an **unsigned integer** and returns a **boolean**.
 
 For the implementation in the .cpp file, `isPrime()` returns **true** if the value is a prime number (and **false** otherwise). Here is the pseudo-code:
 
-```
+```         
 A prime number is a number that is evenly divisible by only itself and 1. That is,
   for each integer "divisor" value from 2 through n / 2,
     if you divide the number by that divisor, and the remainder is 0, 
-		  that number is not prime -- return false.
+          that number is not prime -- return false.
   if you get through all possible divisors, the number is prime: return true.
 ```
 
@@ -99,28 +102,29 @@ When you are satisfied that your code is complete, **Commit and Sync** it to git
 
 In your **primes.h** and **primes.cpp** files, create a function that:
 
-- is called `findNPrimes()` that returns **void**
-- takes as a parameter an array of **unsigned** called primes
-- takes as a parameter an **unsigned** called size that is the size of the array
-- computes the first size prime numbers, putting them into the array (of course, the code calls `isPrime()` to do the hard work)
+-   is called `findNPrimes()` that returns **void**
+-   takes as a parameter an array of **unsigned** called primes
+-   takes as a parameter an **unsigned** called size that is the size of the array
+-   computes the first size prime numbers, putting them into the array (of course, the code calls `isPrime()` to do the hard work)
 
-:::{.callout-note}
+::: callout-note
 Note that this is a little tricky -- if the size of the array is 100, do you loop up to 1000 to find the first 100 primes? Or 2000? You don't know... So, use a while loop that keeps looping as long as the array is not full.
 :::
 
-In **tests.cpp** in the "step4" TEST_CASE, write code to define an array of a certain size, call the function, and then `REQUIRE` that various correct values are in the array at the correct indices. You might find it useful to know that the 100th prime is 541. 
+In **tests.cpp** in the "step4" TEST_CASE, write code to define an array of a certain size, call the function, and then `REQUIRE` that various correct values are in the array at the correct indices. You might find it useful to know that the 100th prime is 541.
 
 When you are satisfied that your code is complete, **Commit and Sync** it to github and check that the "step4" test succeeds.
 
 At this point, all autograding tests should pass. You are done!
 
-:::{.callout-important}
-## OPTIONAL: 
+::: callout-important
+## OPTIONAL:
+
 For fun, create an array of 100000 and fill it with primes. See how long it takes to compute and print out the last prime.
 
-You can get the exact run time by running your project this way:  
+You can get the exact run time by running your project this way:
 
-```bash
+``` bash
 time ./tester "step4"
 ```
 :::
@@ -129,18 +133,18 @@ time ./tester "step4"
 
 This project is worth 20 pts:
 
-- 3 points for each of steps 1 and 2 (6 pts total)
-- 2 pts for correctness
-- 1 pt for thorough tests
-- 5 points for step 3
-- 6 points for step 4
-- 3 pts for code beauty and hospitality.
+-   3 points for each of steps 1 and 2 (6 pts total)
+-   2 pts for correctness
+-   1 pt for thorough tests
+-   5 points for step 3
+-   6 points for step 4
+-   3 pts for code beauty and hospitality.
 
 Here are some ways students lost points in the past:
 
-- -6: Missing step 4
-- -1: poor indentation
-- -1: low and high are supposed to be parameters
-- -3: Missing step 2
-- -1: tests in step1 are insufficient.
-- -1: tests in step2 do not test all cases.
+-   -6: Missing step 4
+-   -1: poor indentation
+-   -1: low and high are supposed to be parameters
+-   -3: Missing step 2
+-   -1: tests in step1 are insufficient.
+-   -1: tests in step2 do not test all cases.

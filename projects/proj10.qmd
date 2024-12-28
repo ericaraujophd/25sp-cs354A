@@ -1,19 +1,17 @@
 ---
-title: "Project 9: Using Queues to Implement the Snake Game"
+title: "Project 10: Using Queues to Implement the Snake Game"
 format: 
   html:
     css: /projects/proj-styles.css
 # engine: knitr
-eval: false
+# eval: false
 ---
-
-<!-- ## Project 8: Navigate a Maze Using a Stack -->
 
 <center>
 
 <figure>
 
-<img src="/projects/imgs/proj9-snake.png" alt="Created by AI Prompt: Here’s an illustration of a stylized depiction of the Snake game in a retro pixel-art aesthetic." width="400"/>
+<img src="/images/projects/proj10-snake.png" alt="Created by AI Prompt: Here’s an illustration of a stylized depiction of the Snake game in a retro pixel-art aesthetic." width="400"/>
 
 <figcaption>Created by AI Prompt: Here’s an illustration of a stylized depiction of the Snake game in a retro pixel-art aesthetic.</figcaption>
 
@@ -28,7 +26,7 @@ eval: false
 
 ## Set Up
 
-[Accept the assignment](https://classroom.github.com/a/y1MFWgHx) and use `git clone` to create your copy of the code.
+[Accept the assignment](){target="_blank"} and use `git clone` to create your copy of the code. Make sure you and your partner are in the same Team.
 
 ## Step 1. Try it out
 

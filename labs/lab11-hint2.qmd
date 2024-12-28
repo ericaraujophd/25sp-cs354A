@@ -1,5 +1,5 @@
 ---
-title: "Lab 10: Hint 2"
+title: "Lab 11: Hint 2"
 format: 
   html:
     css: /labs/lab-styles.css

@@ -377,14 +377,12 @@ Warning
 <li>Outputs the starting position plus the final position (i.e., the sum of the positions from the accumulator-vector).</li>
 </ol>
 <p>For example, if the user is in a 3-dimensional system, enters the starting point {0, 0, 0}, and then enters the following four 3-dimensional relative-positions:</p>
-<pre><code>{1, 0, 0}
-{0, 1, 0}
+<pre class="{1, 0, 0}"><code>{0, 1, 0}
 {0, 0, 1}
 {1, 2, 3}</code></pre>
 <p>the program should then display the starting position (<code>{0,0,0}</code>) and the sum from the accumulator (<code>{2, 3, 4}</code>), which is the user’s final position within the 3-dimensional system.</p>
 <p>As another example, if the user is navigating through a 5-dimensional space, enters <code>{1, 0, 1, 0, 1}</code> as the starting point, and enters three 5-dimensional relative-positions:</p>
-<pre><code>{0, 1, 0, 1, 0}
-{2, 2, 2, 2, 2}
+<pre class="{0, 1, 0, 1, 0}"><code>{2, 2, 2, 2, 2}
 {-3, -3, -3, -3, -3}</code></pre>
 <p>the program should then display the starting position and the final position (<code>{0, 0, 0, 0, 0}</code>).</p>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -404,7 +402,7 @@ Note
 <p>To get you well on your way, your repo contains <strong>App.cpp</strong> and <strong>App.h</strong>. These files provide most of what you have to implement to finish this project. Just implement the missing TODO parts.</p>
 <p>Now that you have addition implemented, you’ll need to uncomment the line in <strong>App.cpp</strong> that reads</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>res <span class="op">=</span> res <span class="op">+</span> v<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>You will have to edit <code>main()</code> in main.cpp` to:</p>
+<p>You will have to edit <code>main()</code> in <strong>main.cpp</strong> to:</p>
 <ol type="1">
 <li>call the <code>App()</code> constructor, and then</li>
 <li>on the resulting object, call <code>run()</code>.</li>

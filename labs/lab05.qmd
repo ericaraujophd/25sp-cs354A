@@ -12,13 +12,17 @@ In this exercise, you will:
 1.  Learn about generic containers.
 2.  Convert a container class into a class template.
 
-<center><figure>
+<center>
+
+<figure>
 
 <img src="/images/labs/lab05/lab05-header.jpeg" alt="A surreal scene of a data structure visually represented by the beach, specifically a vector. The vector is made of sand or driftwood, extending in a straight line across the beach, symbolizing a one-dimensional array. The nodes or elements of the vector are placed evenly along the shore, with the ocean waves gently lapping at the base of the structure. The sky is clear and bright, with sunlight reflecting off the water. The overall vibe is peaceful, blending the abstract logic of programming with the tranquility of a seaside environment. (created by AI)" width="400"/>
 
 <figcaption>Prompt: A surreal scene of a data structure visually represented by the beach, specifically a vector. The vector is made of sand or driftwood, extending in a straight line across the beach, symbolizing a one-dimensional array. The nodes or elements of the vector are placed evenly along the shore, with the ocean waves gently lapping at the base of the structure. The sky is clear and bright, with sunlight reflecting off the water. The overall vibe is peaceful, blending the abstract logic of programming with the tranquility of a seaside environment.</figcaption>
 
-</figure></center>
+</figure>
+
+</center>
 
 ## Set up
 
@@ -107,7 +111,7 @@ If there are `#include` directives in the **Vec.cpp** file that are **not** in *
 
 Now that the method definitions have been moved from **Vec.cpp** to **Vec.h**, you should delete **Vec.cpp** from your project.
 
-::: {.callout-note}
+::: callout-note
 Note that you will need to update your **Makefile**! Find the **Vec.cpp** reference in the SOURCES line and [**remove**]{style="color:red"} it.
 :::
 
@@ -115,18 +119,20 @@ Note that you will need to update your **Makefile**! Find the **Vec.cpp** refere
 
 We now have a class template, but our methods are still class methods. Our next step is to convert each class method into a template method. Test-driven development gives us a systematic, method-by-method means of doing this conversion, without getting overwhelmed by a zillion compiler errors.
 
-You should see the message indicating there are no tests if you **comment out all of the Vec prototypes**, and **all of the method definitions you just pasted into the header file**. If you want to, and compile (`make tester`) and run your project(`./tester`). Just remember that your code was drastically changed, and might not function anymore if you don't comment certain parts. 
-**You should see the message indicating there are no tests.**
-
+You should see the message indicating there are no tests if you **comment out all of the Vec prototypes**, and **all of the method definitions you just pasted into the header file**. If you want to, and compile (`make tester`) and run your project(`./tester`). Just remember that your code was drastically changed, and might not function anymore if you don't comment certain parts. **You should see the message indicating there are no tests.**
 
 Our test-driven procedure will be to: (don't do this yet -- just read the steps below)
 
 1.  In **tests.cpp**, uncomment the `TEST_CASE`. Convert all uses of Vec to be `Vec<sometype>`. You may choose what type to put in between the `<` and `>`, but the type should be an integer type -- int, unsigned, short, char, unsigned char, long, etc.
+
 2.  In **Vec.h**, uncomment the corresponding method (i.e., its prototype within the class and its definition outside the class.)
+
 3.  Convert the method's definition into a method-template.
+
 4.  Compile and run the tester.
+
 5.  If any errors are reported, find and fix them;
-    
+
     Otherwise, return to step 1.
 
 Converting a method definition (step 3) to a method-template is fairly simple:
@@ -162,8 +168,9 @@ Vec<Item>::Vec() {
 
 That's it! Save all changes, and compile and run your tests. If you find errors, find and fix them before continuing.
 
-::: {.callout-tip}
+::: callout-tip
 ## Hint
+
 You may need to make some additional changes before things build. More than likely, compilation of the tester will not succeed until you have converted several other methods that are used in the default constructor tests, including the destructor.
 :::
 
@@ -239,13 +246,13 @@ Because **any** type can be passed via the template's parameter, a container bui
 
 Before proceeding, comment out all code in the **tests.cpp** file that runs the tests for Part I -- including the `#include “Vec.h”` statement.
 
-::: {.callout-note}
+::: callout-note
 **Make sure that *catch.hpp* stays included!** And uncomment PyList testing code (i.e., toggle the comments that are there).
 :::
 
 The makefile is currently not compiling **PyList.cpp**, so you need to change it. Change the SOURCES line, adding **PyList.cpp**.
 
-::: {.callout-important}
+::: callout-important
 If **Vec.cpp** is still there, it should be removed at this time.
 :::
 
@@ -301,11 +308,11 @@ After you do this and have all your tests passing, then **Uncomment all the Vec 
 
 Don't forget to commit AND sync your code to your repo for grading.
 
-::: {.callout-important}
+::: callout-important
 Verify you have synced your code to github by going to your online repo webpage and looking to see that the files are correct.
 :::
 
-::: {.callout-warning}
+::: callout-warning
 Verify that the automated tests have passed in github.com.
 :::
 

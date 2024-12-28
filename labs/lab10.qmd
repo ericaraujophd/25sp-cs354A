@@ -1,5 +1,5 @@
 ---
-title: "Lab 9: Recursion"
+title: "Lab 10: Recursion"
 format: 
   html:
     css: /labs/lab-styles.css
@@ -16,17 +16,17 @@ Students will be able to...
 
 In this lab, for most steps, you will use ChatGPT or another AI model to generate recursive solutions to some simple problems. You will then analyze the code to verify it is correct and/or improve it.
 
-To log in to ChatGPT (as if you didn't already know :-), go to <https://chatgpt.com>.
+To log in to ChatGPT (as if you didn't already know :-), go to [https://chatgpt.com](https://chatgpt.com){target={"_blank"}}.
 
 After the AI generates C++ code, copy and paste it into a file, and compile and run it. You will be submitting multiple files each containing a `main()` in it.
 
-[Accept the assignment](https://classroom.github.com/a/cVv5pP0o){target="_blank"}.
+[Accept the assignment](){target="_blank"}.
 
 <center>
 
 <figure>
 
-<img src="/labs/imgs/lab9-this-is-going-to-take-forever.png" alt="This is going to take forever..." width="400"/>
+<img src="/images/labs/lab10/lab10-this-is-going-to-take-forever.png" alt="This is going to take forever..." width="400"/>
 
 <figcaption>This is going to take forever...</figcaption>
 
@@ -36,7 +36,7 @@ After the AI generates C++ code, copy and paste it into a file, and compile and 
 
 ## Part 1: Reverse an array, recursively
 
-Ask ChatGPT for C++ code to reverse an array of integers recursively. When you are happy with the code that has been generated for you, copy and paste it into file `rev_array.cpp`. Compile and run the file by doing `make rev_array` and `./rev_array`.
+Ask ChatGPT for C++ code to reverse an array of integers recursively. When you are happy with the code that has been generated for you, copy and paste it into file **rev_array.cpp**. Compile and run the file by doing `make rev_array` and `./rev_array`.
 
 Describe in a few complete English sentences how the solution works. Put your answers in comments in the file. (Do not use the AI to generate this answer.)
 
@@ -46,7 +46,7 @@ What if the array has an odd number of values? How does the algorithm handle thi
 
 Ask ChatGPT for C++ code to implement a recursive version of binary search over an array of integers. (doubles?)
 
-When you are happy with the resulting code, place it in `bin_search.cpp`, compile it, and run it (if you can't figure out how to do these steps, inspect the `makefile`). Make sure the code works for arrays of different sizes, including size 0, size 1, size 10, etc.
+When you are happy with the resulting code, place it in **bin_search.cpp**, compile it, and run it (if you can't figure out how to do these steps, inspect the `makefile`). Make sure the code works for arrays of different sizes, including size 0, size 1, size 10, etc.
 
 Your code probably contains this line:
 
@@ -58,7 +58,7 @@ Describe in a comment above this line what this line does and why it works when 
 
 ## Part 3: Sum of values in an array, recursively
 
-Place the code from slide 5 of the lecture slides into file `sum_array.cpp`. Add other code to initialize an array with 6 values. Compile and run the value and verify that the result is correct.
+Place the code from slide 5 of the lecture slides into file **sum_array.cpp**. Add other code to initialize an array with 6 values. Compile and run the value and verify that the result is correct.
 
 Now, modify the code so that the base case is not when `size == 0` but when `size == 1`.
 
@@ -66,7 +66,7 @@ Describe in a comment in the file why this solution is slightly more efficient.
 
 ## Part 4: Fibonacci sequence, recursively
 
-Ask the AI to generate C++ code to compute recursively the *nth* fibonacci number, where the user provides the value for $n$. Copy and paste the code into file `fib.cpp`. Then, compile and run the code. Verify that the results are correct (you can ask the AI for the correct answer when $n$ is 20).
+Ask the AI to generate C++ code to compute recursively the *nth* fibonacci number, where the user provides the value for $n$. Copy and paste the code into file **fib.cpp**. Then, compile and run the code. Verify that the results are correct (you can ask the AI for the correct answer when $n$ is 20).
 
 Ask the AI to modify the C++ code so that it counts how many times the recursive function is called and prints out the results at the end.
 

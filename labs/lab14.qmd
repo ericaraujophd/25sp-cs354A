@@ -1,5 +1,5 @@
 ---
-title: "Lab 13: Hash Tables Project"
+title: "Lab 14: Hash Tables Project"
 format: 
   html:
     css: /labs/lab-styles.css
@@ -9,7 +9,7 @@ format:
 
 <figure>
 
-<img src="/images/labs/lab13-grinch.png" alt="Definition of Grinch." width="700"/>
+<img src="/images/labs/lab14/lab14-grinch.png" alt="Definition of Grinch." width="700"/>
 
 <figcaption>Definition of Grinch.</figcaption>
 
@@ -26,7 +26,7 @@ In this exercise, you will:
 
 ## Step 0
 
-[Accept the Assignment.](https://classroom.github.com/a/7abeJcnj){target="_blank"}
+[Accept the Assignment.](){target="_blank"}
 
 Our hash table will be a STL vector of STL sets (in class we used a vector of linked lists). Your code will read a file, **dictionary.txt**, that contains "all" the words in the English language, and insert each word into the hash table. There are about \~127,000 words in the file, but we will use a fairly small number of buckets, so there will be many collisions.
 

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Lab 12: The STL set and map Containers – CS112 - Data Structures</title>
+<title>Lab 13: The STL set and map Containers – CS112 - Data Structures</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -107,10 +107,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <link rel="stylesheet" href="../labs/lab-styles.css">
-<meta property="og:title" content="Lab 12: The STL set and map Containers – CS112 - Data Structures">
+<meta property="og:title" content="Lab 13: The STL set and map Containers – CS112 - Data Structures">
 <meta property="og:description" content="CS112 will teach students to use C++ for creating data structures.">
 <meta property="og:site_name" content="CS112 - Data Structures">
-<meta name="twitter:title" content="Lab 12: The STL set and map Containers – CS112 - Data Structures">
+<meta name="twitter:title" content="Lab 13: The STL set and map Containers – CS112 - Data Structures">
 <meta name="twitter:description" content="CS112 will teach students to use C++ for creating data structures.">
 <meta name="twitter:image" content="https://ericaraujo.com/24fa-cs112/images/twitter-card.png">
 <meta name="twitter:creator" content="@ericfaraujo">
@@ -202,7 +202,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Lab 12: The STL set and map Containers</h1>
+<h1 class="title">Lab 13: The STL set and map Containers</h1>
 </div>
 
 
@@ -221,9 +221,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <center>
 <figure class="figure">
-<p><img src="../images/labs/lab11-homealone.jpg" alt="Home Alone (1990)." width="500" class="figure-img"></p>
+<p><img src="../images/labs/lab13/lab13-independenceday.png" alt="Independence Day (1996)." width="500" class="figure-img"></p>
 <figcaption>
-Home Alone (1990).
+Independence Day (1996).
 </figcaption>
 </figure>
 </center>
@@ -260,14 +260,14 @@ etc...</code></pre>
 <section id="menu" class="level2">
 <h2 class="anchored" data-anchor-id="menu">Menu</h2>
 <p>The application presents a menu from which the user can select the operation s/he wishes to perform. To validate a user’s menu-choice, our project uses a tree-based data structure – the <code>STL set</code>. For example, if the valid menu choices are <em>a</em>, <em>b</em>, <em>c</em>, <em>d</em>, <em>e</em>, <em>f</em>, and <em>q</em>, and we store these choices in a set named <code>myValidChoices</code>, then we might (simplistically) visualize this set as follows:</p>
-<p><img src="../images/labs/lab11-bst.png" class="img-fluid"></p>
+<p><img src="../images/labs/lab13/lab13-bst.png" class="img-fluid"></p>
 <p>To determine whether or not a character is present in this set, the STL <code>find(value)</code> method does a binary search down through this tree until it either locates value, or reaches the bottom of the tree. It should be evident that the maximum time to search is <em>O(lg(n))</em>, where <em>n</em> is the number of items in the set.</p>
 <p>The exercise will provide you with a “skeleton” application, which you will then complete by adding additional functionality.</p>
 </section>
 <section id="getting-started" class="level2">
 <h2 class="anchored" data-anchor-id="getting-started">Getting Started</h2>
-<p>Accept the <a href="https://classroom.github.com/a/ZtXfpjDl" target="_blank">invitation from github classroom</a> and use git clone, as usual.</p>
-<p>Edit the <strong>README.md</strong> file to add both your names and your partner’s, and share the git repo, as usual.</p>
+<p>Accept the <a href="" target="_blank">invitation from github classroom</a> and use git clone, as usual. Make sure you and your partner are in the same Team.</p>
+<p>Edit the <strong>README.md</strong> file to add both your names and your partner’s.</p>
 </section>
 <section id="part-i.-the-menu-class" class="level2">
 <h2 class="anchored" data-anchor-id="part-i.-the-menu-class">Part I. The Menu Class</h2>

@@ -7,13 +7,17 @@ format:
 eval: false
 ---
 
-<center><figure>
+<center>
+
+<figure>
 
 <img src="/images/projects/proj02-header.png" alt="Falling AI Sand." width="500"/>
 
 <figcaption>Falling AI Sand.</figcaption>
 
-</figure></center>
+</figure>
+
+</center>
 
 ## Step 0. Prepare
 
@@ -29,9 +33,9 @@ eval: false
 -   Inspect the code you got in the assignment.
 -   In the terminal, type `make`
 -   The code should compile and give you an executable called **FallingSand**.
--   Run the program: type 
+-   Run the program: type
 
-```bash
+``` bash
 ./FallingSand <YourBridgesName> <YourBridgesId> 
 ```
 
@@ -41,10 +45,9 @@ You will need to make yourself a [Bridges Account here](http://bridges-cs.heroku
 
 Please use your Calvin information, and do fill in the optional fields correctly. Use "CS 112" as the Course number.
 
-:::{.callout-warning}
+::: callout-warning
 [**NOTE NOTE NOTE:**]{style="color:red;"} you will not be able to build your program on your own machine unless you [download and install the Bridges libraries](https://bridgesuncc.github.io/bridges_setup.html){target="_blank"} and include (header) files correctly. **DO NOT** ask Prof. Norman or Prof. Araújo to help you do that. Instead, just use the machines in the lab!
 :::
-
 
 To get your username and id, login to the bridges project, and go to the **Profile** page where you will see your "User Name" and "API Sha1 Key". That second thing is your unique id.
 
@@ -52,23 +55,23 @@ To get your username and id, login to the bridges project, and go to the **Profi
 
 In this simulation, you can move your cursor around a two-dimensional "board" and create or delete one of 3 different "elements" -- a square of sand, a drop of water, or a block of metal. Here is what happens when each element is created:
 
-- **Metal:** it sticks to the board where you place it.
-- **Sand:** it falls down the board, stacking up on Metal or other Sand, or on the bottom. If Sand encounters water below it, the two switch places, so that it seems the sand is falling through the water.
-- **Water:** it falls down the board and fills in any "cups" created by Metal or Sand, or resting on the bottom. If it encounters Metal, Sand, or Water below it, and there is nothing to the left or right of it, it moves sideways left or right, randomly. This makes the water flow around obstacles.
+-   **Metal:** it sticks to the board where you place it.
+-   **Sand:** it falls down the board, stacking up on Metal or other Sand, or on the bottom. If Sand encounters water below it, the two switch places, so that it seems the sand is falling through the water.
+-   **Water:** it falls down the board and fills in any "cups" created by Metal or Sand, or resting on the bottom. If it encounters Metal, Sand, or Water below it, and there is nothing to the left or right of it, it moves sideways left or right, randomly. This makes the water flow around obstacles.
 
 ![](/images/projects/proj02-falling-sand.png)
 
 In the image above you can see how **Sand** stacks on top of **Sand** and **Metal**. The **Water** will fill in any area that is a "cup". If one were to move the **Cursor** (the 6-point star) over above the **Water** that is in the cup in the middle and drop a **Sand**, it would slide down the board, falling through the **Water**, leaving a **Water** up above the level of the **Sand**. The **Water** would then randomly move back and forth until falling down to the bottom.
 
-The user interface for the "game" is a little strange, IMO. You use arrow keys to move the cursor around -- this should all work. Then, you choose W, A, S, or D to choose whether you are in Water mode, Metal mode, Sand mode, or Delete mode. When you hit the **space bar**, a Water, Metal, or Sand is created, or whatever the cursor on is deleted, if in Delete mode. 
+The user interface for the "game" is a little strange, IMO. You use arrow keys to move the cursor around -- this should all work. Then, you choose W, A, S, or D to choose whether you are in Water mode, Metal mode, Sand mode, or Delete mode. When you hit the **space bar**, a Water, Metal, or Sand is created, or whatever the cursor on is deleted, if in Delete mode.
 
 Note that if you move the **Cursor** on top of a **Metal** and go into **Sand** mode, you can replace a metal with a sand -- a little strange, but don't worry about that -- it isn't a bug.
 
 ## Step 1. What you need to do
 
-Look at the code in the file **FallingSand.cpp** and search for the word **TODO**. You need to follow the instructions and implement code below each **TODO** comment. There are **5 places** where you have to implement the code. 
+Look at the code in the file **FallingSand.cpp** and search for the word **TODO**. You need to follow the instructions and implement code below each **TODO** comment. There are **5 places** where you have to implement the code.
 
-:::{.callout-tip}
+::: callout-tip
 ## STRONG HINT
 
 Implement one TODO, and then see if you can compile, run, and connect to the online server. If you can and what you implemented seems correct, then repeat these steps. **Do NOT implement too much** before trying your code with the online server. If you do that and something is wrong, you don't know where the problem is.
@@ -76,19 +79,18 @@ Implement one TODO, and then see if you can compile, run, and connect to the onl
 
 In each place, you'll get practice with looping over a 2-dimensional grid, using the switch statement, using many if statements, and calling functions from the Bridges API. For those API calls, there are other examples in the code already which you should refer to.
 
-## Submit 
+## Submit
 
 In VS Code, click on the Source Control icon on the upper left and type in a commit message, then click the checkmark icon to submit your code. Go through the various pop-up boxes to commit and sync your changes to your repo.
 
-:::{.callout-warning}
+::: callout-warning
 Verify you have synced your code to github by going to your online repo webpage and looking to see that the files are correct.
 :::
-
 
 ## Grading Rubric
 
 This project is worth 20 pts:
 
-- 15 points for generating a correct Falling Sand Simulator.
-- 5 points for clean, neat, well-indented code, with good variable names, etc.
-- The project is due at midnight next Monday. You will receive a 10% per day penalty for lateness.
+-   15 points for generating a correct Falling Sand Simulator.
+-   5 points for clean, neat, well-indented code, with good variable names, etc.
+-   The project is due at midnight next Monday. You will receive a 10% per day penalty for lateness.

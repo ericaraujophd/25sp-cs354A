@@ -159,10 +159,10 @@ Total score: 20 pts
 -   5 pts for correct graphs.
 -   6 pts for answering the questions.
 
-Ways students have lost points in the past: 
+Ways students have lost points in the past:
 
-- -2: Can't make project, There are persisting errors. 
-- -5: No PDF analyzing the results 
-- -2: late submission
+-   -2: Can't make project, There are persisting errors.
+-   -5: No PDF analyzing the results
+-   -2: late submission
 
 <!-- [^1]: how to add footnotes. -->

@@ -1,5 +1,5 @@
 ---
-title: "Lab 12: The STL set and map Containers"
+title: "Lab 13: The STL set and map Containers"
 format: 
   html:
     css: /labs/lab-styles.css
@@ -9,9 +9,9 @@ format:
 
 <figure>
 
-<img src="/images/labs/lab11-homealone.jpg" alt="Home Alone (1990)." width="500"/>
+<img src="/images/labs/lab13/lab13-independenceday.png" alt="Independence Day (1996)." width="500"/>
 
-<figcaption>Home Alone (1990).</figcaption>
+<figcaption>Independence Day (1996).</figcaption>
 
 </figure>
 
@@ -59,7 +59,7 @@ Note that sometimes an actor is listed multiple times for a movie. But, because 
 
 The application presents a menu from which the user can select the operation s/he wishes to perform. To validate a user's menu-choice, our project uses a tree-based data structure -- the `STL set`. For example, if the valid menu choices are *a*, *b*, *c*, *d*, *e*, *f*, and *q*, and we store these choices in a set named `myValidChoices`, then we might (simplistically) visualize this set as follows:
 
-![](/images/labs/lab11-bst.png)
+![](/images/labs/lab13/lab13-bst.png)
 
 To determine whether or not a character is present in this set, the STL `find(value)` method does a binary search down through this tree until it either locates value, or reaches the bottom of the tree. It should be evident that the maximum time to search is *O(lg(n))*, where *n* is the number of items in the set.
 
@@ -67,9 +67,9 @@ The exercise will provide you with a "skeleton" application, which you will then
 
 ## Getting Started
 
-Accept the [invitation from github classroom](https://classroom.github.com/a/ZtXfpjDl){target="_blank"} and use git clone, as usual.
+Accept the [invitation from github classroom](){target="_blank"} and use git clone, as usual. Make sure you and your partner are in the same Team.
 
-Edit the **README.md** file to add both your names and your partner's, and share the git repo, as usual.
+Edit the **README.md** file to add both your names and your partner's.
 
 ## Part I. The Menu Class
 

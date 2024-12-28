@@ -1,5 +1,5 @@
 ---
-title: "Lab 10: Binary Search Trees"
+title: "Lab 11: Binary Search Trees"
 format: 
   html:
     css: /labs/lab-styles.css
@@ -21,9 +21,9 @@ Today's exercise is to complete a class template named BST from which binary sea
 
 <figure>
 
-<img src="/images/labs/lab10-xmas-bst.png" alt="Here is a creative illustration of a Christmas tree designed as a binary search tree (BST). The tree&apos;s structure represents nodes with festive decorations like ornaments and lights, arranged according to BST properties." width="500"/>
+<img src="/images/labs/lab11/lab11-header.png" alt="Source: https://www.youtube.com/watch?v=WLvU5EQVZqY" width="500"/>
 
-<figcaption>AI Prompt: Here is a creative illustration of a Christmas tree designed as a binary search tree (BST). The tree's structure represents nodes with festive decorations like ornaments and lights, arranged according to BST properties.</figcaption>
+<figcaption>Source: https://www.youtube.com/watch?v=WLvU5EQVZqY</figcaption>
 
 </figure>
 
@@ -31,9 +31,9 @@ Today's exercise is to complete a class template named BST from which binary sea
 
 ## Getting Started
 
-Accept the [invitation from github classroom](https://classroom.github.com/a/m5CoIaV3){target="_blank"} and use git clone, as usual.
+Accept the [invitation from github classroom](){target="_blank"} and use git clone, as usual.
 
-Edit the **README.md** file to add both your names and your partner's, and share the git repo, as usual.
+Edit the **README.md** file to add both your names and your partner's, and make sure you are in the same Team.
 
 ## The BST Constructor
 
@@ -65,7 +65,7 @@ Our next task is to be able to *insert* items into a BST. The `insert(it)` metho
 
 Note that if we use a simple approach to `insert()` in which the first item is stored in the root node, the second item is stored in a child node of the root node, and so on, then the order in which we add items can make a big difference in the shape of the tree. For example, if we insert items in a "carefully chosen random" order: 44, 66, 22, 55, 11, 77, 33, then our tree will be *balanced*:
 
-![](/images/labs/lab10-tree01.png)
+![](/images/labs/lab11/lab11-tree01.png)
 
 A tree's shape can be characterized in different ways. One way is by comparing its height, diameter, and maximum width:
 
@@ -77,13 +77,13 @@ The preceding tree's height is 3, its diameter is 5, and its maximum width is 4.
 
 By contrast, if we insert items in *ascending* order: 11, 22, 33, 44, 55, 66, 77, then our tree will be imbalanced one way:
 
-![](/images/labs/lab10-tree02.png)
+![](/images/labs/lab11/lab11-tree02.png)
 
 This tree's height is 7, its diameter is 7, and its maximum width is 1.
 
 Likewise, if we insert the items in descending order : 77, 66, 55, 44, 33, 22, 11, then our tree will be imbalanced the other way:
 
-![](/images/labs/lab10-tree03.png)
+![](/images/labs/lab11/lab11-tree03.png)
 
 As before, this tree's height is 7, its diameter is 7, and its maximum width is 1.
 
@@ -91,13 +91,13 @@ In **tests.cpp**, uncomment the `TEST_CASE` for "insert()". Save/compile, and ve
 
 Add a prototype of `insert()` to our BST class; then recompile and verify that only a linking error remains.
 
-In **BST.h**, below the class declaration, create a stub for `BST::insert()` (a "stub" is code that does nothing -- it just returns). Recompile, and when all errors have been eliminated, run the test. Then define `BST::insert()` so that it passes the test. Here is a [hint](./lab11-hint.qmd){target="_blank"}, in case you get stuck, but do your best to build this method without looking at the hint. Run the project, and verify that everything works correctly at the outset.
+In **BST.h**, below the class declaration, create a stub for `BST::insert()` (a "stub" is code that does nothing -- it just returns). Recompile, and when all errors have been eliminated, run the test. Then define `BST::insert()` so that it passes the test. Here is a [hint](/labs/lab11-hint.qmd){target="_blank"}, in case you get stuck, but do your best to build this method without looking at the hint. Run the project, and verify that everything works correctly at the outset.
 
 ## The contains() Method
 
 In **tests.cpp**, uncomment the `TEST_CASE` for `contains()`. Take a few minutes to look over the tests it contains, specifically how `contains()` is used. As can be seen, the `contains(it)` method returns *true* if it is in its BST; otherwise it returns false. Save/compile your project. You should see an error indicating that there is no method matching the calls in our test-method.
 
-Modify **BST.h** as necessary to fix any compilation/linking errors, using an approach similar to the approach used in `insert()`. Recompile and run the tests. If you get stuck, here is a [hint](./lab11-hint2.qmd){target="_blank"}, but don't use it unless you have to.
+Modify **BST.h** as necessary to fix any compilation/linking errors, using an approach similar to the approach used in `insert()`. Recompile and run the tests. If you get stuck, here is a [hint](/labs/lab11-hint2.qmd){target="_blank"}, but don't use it unless you have to.
 
 Continue when your method passes the test.
 

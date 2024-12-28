@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Lab 10: Binary Search Trees – CS112 - Data Structures</title>
+<title>Lab 11: Binary Search Trees – CS112 - Data Structures</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -136,10 +136,10 @@ window.Quarto = {
 </script>
 
 <link rel="stylesheet" href="../labs/lab-styles.css">
-<meta property="og:title" content="Lab 10: Binary Search Trees – CS112 - Data Structures">
+<meta property="og:title" content="Lab 11: Binary Search Trees – CS112 - Data Structures">
 <meta property="og:description" content="CS112 will teach students to use C++ for creating data structures.">
 <meta property="og:site_name" content="CS112 - Data Structures">
-<meta name="twitter:title" content="Lab 10: Binary Search Trees – CS112 - Data Structures">
+<meta name="twitter:title" content="Lab 11: Binary Search Trees – CS112 - Data Structures">
 <meta name="twitter:description" content="CS112 will teach students to use C++ for creating data structures.">
 <meta name="twitter:image" content="https://ericaraujo.com/24fa-cs112/images/twitter-card.png">
 <meta name="twitter:creator" content="@ericfaraujo">
@@ -221,7 +221,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Lab 10: Binary Search Trees</h1>
+<h1 class="title">Lab 11: Binary Search Trees</h1>
 </div>
 
 
@@ -252,17 +252,17 @@ window.Quarto = {
 <p>Today’s exercise is to complete a class template named BST from which binary search tree classes and objects can be created. The exercise provides you with a test-class and a partially-built BST class template; your task is to complete the BST class template.</p>
 <center>
 <figure class="figure">
-<p><img src="../images/labs/lab10-xmas-bst.png" alt="Here is a creative illustration of a Christmas tree designed as a binary search tree (BST). The tree's structure represents nodes with festive decorations like ornaments and lights, arranged according to BST properties." width="500" class="figure-img"></p>
+<p><img src="../images/labs/lab11/lab11-header.png" alt="Source: https://www.youtube.com/watch?v=WLvU5EQVZqY" width="500" class="figure-img"></p>
 <figcaption>
-AI Prompt: Here is a creative illustration of a Christmas tree designed as a binary search tree (BST). The tree’s structure represents nodes with festive decorations like ornaments and lights, arranged according to BST properties.
+Source: https://www.youtube.com/watch?v=WLvU5EQVZqY
 </figcaption>
 </figure>
 </center>
 </section>
 <section id="getting-started" class="level2">
 <h2 class="anchored" data-anchor-id="getting-started">Getting Started</h2>
-<p>Accept the <a href="https://classroom.github.com/a/m5CoIaV3" target="_blank">invitation from github classroom</a> and use git clone, as usual.</p>
-<p>Edit the <strong>README.md</strong> file to add both your names and your partner’s, and share the git repo, as usual.</p>
+<p>Accept the <a href="" target="_blank">invitation from github classroom</a> and use git clone, as usual.</p>
+<p>Edit the <strong>README.md</strong> file to add both your names and your partner’s, and make sure you are in the same Team.</p>
 </section>
 <section id="the-bst-constructor" class="level2">
 <h2 class="anchored" data-anchor-id="the-bst-constructor">The BST Constructor</h2>
@@ -288,7 +288,7 @@ AI Prompt: Here is a creative illustration of a Christmas tree designed as a bin
 <li>all nodes to the “right” of the node containing it contain items that are greater than it.</li>
 </ul>
 <p>Note that if we use a simple approach to <code>insert()</code> in which the first item is stored in the root node, the second item is stored in a child node of the root node, and so on, then the order in which we add items can make a big difference in the shape of the tree. For example, if we insert items in a “carefully chosen random” order: 44, 66, 22, 55, 11, 77, 33, then our tree will be <em>balanced</em>:</p>
-<p><img src="../images/labs/lab10-tree01.png" class="img-fluid"></p>
+<p><img src="../images/labs/lab11/lab11-tree01.png" class="img-fluid"></p>
 <p>A tree’s shape can be characterized in different ways. One way is by comparing its height, diameter, and maximum width:</p>
 <ul>
 <li>A tree’s <em>height</em> is the number of nodes on the longest path from the root node to any of the leaf nodes.</li>
@@ -297,10 +297,10 @@ AI Prompt: Here is a creative illustration of a Christmas tree designed as a bin
 </ul>
 <p>The preceding tree’s height is 3, its diameter is 5, and its maximum width is 4. If a binary search tree is <em>balanced</em>, then its height should be about <span class="math inline">\(log_2(n)\)</span>, where <span class="math inline">\(n\)</span> is the number of items in the tree.</p>
 <p>By contrast, if we insert items in <em>ascending</em> order: 11, 22, 33, 44, 55, 66, 77, then our tree will be imbalanced one way:</p>
-<p><img src="../images/labs/lab10-tree02.png" class="img-fluid"></p>
+<p><img src="../images/labs/lab11/lab11-tree02.png" class="img-fluid"></p>
 <p>This tree’s height is 7, its diameter is 7, and its maximum width is 1.</p>
 <p>Likewise, if we insert the items in descending order : 77, 66, 55, 44, 33, 22, 11, then our tree will be imbalanced the other way:</p>
-<p><img src="../images/labs/lab10-tree03.png" class="img-fluid"></p>
+<p><img src="../images/labs/lab11/lab11-tree03.png" class="img-fluid"></p>
 <p>As before, this tree’s height is 7, its diameter is 7, and its maximum width is 1.</p>
 <p>In <strong>tests.cpp</strong>, uncomment the <code>TEST_CASE</code> for “insert()”. Save/compile, and verify that you get a compilation error indicating that <code>insert()</code> is undeclared.</p>
 <p>Add a prototype of <code>insert()</code> to our BST class; then recompile and verify that only a linking error remains.</p>

@@ -1,19 +1,19 @@
 ---
-title: "Project 10: Binary Search Trees"
+title: "Project 11: Binary Search Trees"
 format: 
   html:
     css: /projects/proj-styles.css
 # engine: knitr
-eval: false
+# eval: false
 ---
 
 <center>
 
 <figure>
 
-<img src="/images/projects/proj10-header.png" alt="Created by AI Prompt: Here is the illustration of a scientist creating a binary search tree with random numbers in a futuristic lab setting." width="400"/>
+<img src="/images/projects/proj11-header.jpeg" alt="Source: https://www.freecodecamp.org/news/data-structures-101-binary-search-tree-398267b6bff0/" width="400"/>
 
-<figcaption>Here is the illustration of a scientist creating a binary search tree with random numbers in a futuristic lab setting.</figcaption>
+<figcaption>Source: https://www.freecodecamp.org/news/data-structures-101-binary-search-tree-398267b6bff0/</figcaption>
 
 </figure>
 
@@ -27,7 +27,7 @@ eval: false
 
 ## Introduction
 
-[Accept the assignment](https://classroom.github.com/a/Pud8TSjT) and use `git clone` to create your copy of the code.
+[Accept the assignment](){target="_blank"} and use `git clone` to create your copy of the code. Remember to join the same Team as your peer.
 
 This project is:
 
