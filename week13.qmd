@@ -15,7 +15,7 @@ At the end of this unit, students will be able to...
 -   describe the unique characteristics of the STL map container -- e.g., that a map stores key, value pairs, with unique keys stored in sorted order.
 -   describe the time complexity of map container operations, like find, insert, remove, and indexing/subscripting.
 -   reason about the unique behavior of indexing in a map object.
--   write code using iterators to traverse all items in a map. 
+-   write code using iterators to traverse all items in a map.
 
 ## Slides, videos, and application exercises
 
@@ -26,10 +26,8 @@ At the end of this unit, students will be able to...
 [Slides](https://docs.google.com/presentation/d/1AtO1BnVb8WHNWg6ZYGCGav6y5zPqSPF8G5r-9VQbgLo/edit?usp=sharing){target="_blank"}
 :::
 
-
 ::: reading
 No readings for Week 13.
-
 :::
 :::::
 
@@ -46,11 +44,9 @@ No readings for Week 13.
 [Source](){target="_blank"}
 :::
 
-```{=html}
-<!-- ::: slides
+::: slides
 [Slides]()
-::: -->
-```
+:::
 :::::
 
 <!-- ## Homework assignments -->

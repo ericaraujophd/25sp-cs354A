@@ -41,16 +41,14 @@ No readings for Week 11.
 [Instructions](/labs/lab11.qmd)
 :::
 
-
 ::: starter
 [Source](){target="_blank"}
 :::
 
-```{=html}
-<!-- ::: slides
+::: slides
 [Slides]()
-::: -->
-```
+:::
+
 :::::
 
 <!-- ## Homework assignments -->

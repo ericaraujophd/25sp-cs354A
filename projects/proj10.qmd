@@ -36,7 +36,7 @@ In our version of the game, we will allow the snake to wrap round from top to bo
 
 We will use the [Bridges library](http://bridges-cs.herokuapp.com/signup) to visualize the game online. We'll use the "Game mode" which requires you to start your program then open the browser and connect to your game. You'll see a button on the web page that looks like this:
 
-![Button to connect to game](/projects/imgs/proj9-button.png)
+![Button to connect to game](/images/projects/proj10-button.png)
 
 ::: callout-warning
 Because we are using the BRIDGES library, you will have to work on machines in the lab!

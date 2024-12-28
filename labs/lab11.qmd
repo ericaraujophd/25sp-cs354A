@@ -21,7 +21,7 @@ Today's exercise is to complete a class template named BST from which binary sea
 
 <figure>
 
-<img src="/images/labs/lab11/lab11-header.png" alt="Source: https://www.youtube.com/watch?v=WLvU5EQVZqY" width="500"/>
+<img src="/images/labs/lab11/lab11-header.jpg" alt="Source: https://www.youtube.com/watch?v=WLvU5EQVZqY" width="500"/>
 
 <figcaption>Source: https://www.youtube.com/watch?v=WLvU5EQVZqY</figcaption>
 

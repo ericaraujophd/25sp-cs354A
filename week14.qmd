@@ -49,11 +49,10 @@ No readings for Week 14.
 [Source](){target="_blank"}
 :::
 
-```{=html}
-<!-- ::: slides
+::: slides
 [Slides]()
-::: -->
-```
+:::
+
 :::::
 
 <!-- ## Homework assignments -->

@@ -50,7 +50,7 @@ No readings for Week 6.
 :::
 
 ::: slides
-[Slides](./slides/lab06-slides.qmd)
+[Slides](/slides/lab06-slides.qmd)
 :::
 ::::::
 
@@ -59,9 +59,4 @@ No readings for Week 6.
 ::: homework
 **Project 06: No project on Week 06**
 
-```{=html}
-<!-- ::: starter
-[Starter](https://classroom.github.com/a/BR1S81yc)
-::: -->
-```
 :::

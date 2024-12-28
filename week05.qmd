@@ -32,8 +32,7 @@ By the end of this unit, students will be able to...
 :::
 
 ::: reading
-No readings for Week 5.
-
+No readings for Week 05.
 :::
 ::::::
 
@@ -53,14 +52,14 @@ Generic Containers (Templates)
 :::
 
 ::: slides
-[Slides](./slides/lab05-slides.qmd)
+[Slides](/slides/lab05-slides.qmd)
 :::
 ::::::
 
 <!-- ## Homework assignments -->
 
-:::: homework
-**Project 05: **
+::::: homework
+**Project 05:**
 
 Name of Proj 05
 
@@ -71,5 +70,4 @@ Name of Proj 05
 ::: starter
 [Starter](){target="_blank"}
 :::
-::::
-
+:::::

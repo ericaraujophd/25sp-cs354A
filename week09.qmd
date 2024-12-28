@@ -8,12 +8,11 @@ title: "Week 09: Stacks and Queues"
 
 By the end of this unit, students will be able to...
 
-- enumerate the typical API for a Stack and a Queue.
-- define an Abstract Data Type.
-- reason about how to best implement Stacks and Queues so that all operations are O(1), using either fixed-sized arrays or linked lists.
-- describe to their grandmother how a circular array works.
-- define the functionality of a deque and how best to implement it.
-
+-   enumerate the typical API for a Stack and a Queue.
+-   define an Abstract Data Type.
+-   reason about how to best implement Stacks and Queues so that all operations are O(1), using either fixed-sized arrays or linked lists.
+-   describe to their grandmother how a circular array works.
+-   define the functionality of a deque and how best to implement it.
 
 ## Slides, videos, and application exercises
 
@@ -27,11 +26,6 @@ By the end of this unit, students will be able to...
 ::: slides
 [Slides - Queues](https://docs.google.com/presentation/d/1QAkeV61SSHYK26jwF_Ti4PvtJSoc0KLZKmGZS_DSCgM/edit?usp=sharing){target="_blank"}
 :::
-
-
-<!-- ::: video
-[Video](){target="_blank"}
-::: -->
 
 ::: reading
 No readings for Week 09.

@@ -29,11 +29,9 @@ Students will be able to...
 [Slides](https://docs.google.com/presentation/d/1drjTrJ0TrHNiqr7g0B_HxnN6MwswAR7SRWENpsPyLJw/edit?usp=sharing)
 :::
 
-
 ::: reading
 No readings for Week 4.
 :::
-
 :::::
 
 <!-- ## Lab -->
@@ -52,13 +50,13 @@ Vec -- A First Dynamic Data Structure
 :::
 
 ::: slides
-[Slides](./slides/lab04-slides.qmd)
+[Slides](/slides/lab04-slides.qmd)
 :::
 ::::::
 
 <!-- ## Homework assignments -->
 
-:::: homework
+::::: homework
 **Project 04: Vec -- A First Dynamic Data Structure**
 
 Vec -- A First Dynamic Data Structure
@@ -67,8 +65,7 @@ Vec -- A First Dynamic Data Structure
 [Instructions](/projects/proj04.qmd)
 :::
 
-
 ::: starter
 [Starter](){target="_blank"}
 :::
-::::
+:::::

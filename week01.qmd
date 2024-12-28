@@ -25,17 +25,6 @@ At the end of this unit, students will be able to...
 [Slides](https://docs.google.com/presentation/d/1uux2sZHfW1BRzdjNmUDpt5TDD7hOEgbLBW-G7KJNNUc/edit?usp=sharing){target="_blank"}
 :::
 
-```{=html}
-<!-- ::: source
-[Binary Exposed](https://integer.exposed/#0x0008){target="_blank"}
-::: -->
-```
-
-```{=html}
-<!-- ::: source
-[Code from Class](https://calvincollege-my.sharepoint.com/:f:/g/personal/vtn2_calvin_edu/Eredz2bHiShCtI0CVssiaggB8tUES6QbacEf2cc4PBhTgQ?e=uoV7Uu)
-::: -->
-```
 
 ::: reading
 -   [Chapters 3 and 4](https://runestone.academy/runestone/books/published/cpp4python/index.html){target="_blank"}
@@ -76,12 +65,6 @@ At the end of this unit, students will be able to...
 [Instructions](/projects/proj01.qmd)
 :::
 
-```{=html}
-<!-- ::: source
-[Source](){target="_blank"}
-::: -->
-```
-
 ::: starter
 [Starter](https://classroom.github.com/a/_PwngVPD){target="_blank"}
 :::
@@ -90,40 +73,6 @@ At the end of this unit, students will be able to...
 ::: exam
 **POGIL**
 
--   [Array Addressing](https://docs.google.com/document/d/1myVaJT3i1hECM4BHs9LpbLz3a3heVPp6SJiEjoEvG_M/edit?tab=t.0#heading=h.im9274hm9wa0){target="_blank"} 
-    <!-- -   ([Answers](https://drive.google.com/file/d/1mn5yCzIJuURMiP3MOtO9amEQzUVAQCQZ/view?usp=sharing){target="_blank"}) -->
--   [Parameter Passing](https://docs.google.com/document/d/125hbFPo5PVcuGQ9pq4io23jns2kOEkfjo71S9WOkfjQ/edit){target="_blank"} 
-    <!-- -   ([Answers](https://drive.google.com/file/d/1rPum6ihNwUKRJpZBSTQF8v7QKfOdog11/view?usp=drive_link){target="_blank"}) -->
+-   [Array Addressing](https://docs.google.com/document/d/1myVaJT3i1hECM4BHs9LpbLz3a3heVPp6SJiEjoEvG_M/edit?tab=t.0#heading=h.im9274hm9wa0){target="_blank"} <!-- -   ([Answers](https://drive.google.com/file/d/1mn5yCzIJuURMiP3MOtO9amEQzUVAQCQZ/view?usp=sharing){target="_blank"}) -->
+-   [Parameter Passing](https://docs.google.com/document/d/125hbFPo5PVcuGQ9pq4io23jns2kOEkfjo71S9WOkfjQ/edit){target="_blank"} <!-- -   ([Answers](https://drive.google.com/file/d/1rPum6ihNwUKRJpZBSTQF8v7QKfOdog11/view?usp=drive_link){target="_blank"}) -->
 :::
-
-```{=html}
-<!-- ::: application-exercise
-**First dataviz**
-
-> **Option 1 - UN Votes**
->
-> ::: source
-> [Source](https://github.com/rstudio-education/datascience-box/tree/master/course-materials/application-exercises/ae-01a-un-votes/unvotes.qmd)
-> :::
->
-> ::: video
-> [Video](https://youtu.be/r-uTBEclM1E)
-> :::
-
-> **Option 2 - COVID-19**
->
-> ::: source
-> [Source](https://github.com/rstudio-education/datascience-box/blob/master/course-materials/application-exercises/ae-01b-covid/covid.qmd)
-> :::
-::: -->
-```
-
-```{=html}
-<!-- ::: guest-lecture
-**Alberto Cairo - How charts lie**
-
-::: video
-[Video](https://youtu.be/Low28hx4wyk)
-:::
-::: -->
-```

@@ -26,7 +26,7 @@
     "href": "week02.html#slides-videos-and-application-exercises",
     "title": "Week 02: File Input/Output, Exception Handling, Two-dimensional Arrays",
     "section": "Slides, videos, and application exercises",
-    "text": "Slides, videos, and application exercises\n\nWeek 02: Slides\n\nSlides\n\n\n\nCode from Class\n\n\n\nChapters 6 and 7\n\n\n\n\n\n\nLab 02: File I/O, Control Structures, and the Debugger\n\nInstructions\n\n\nSource\n\n\nDad Joke + Reflection\n\n\n\n\nProject 02: Falling Sand Simulator\n\nInstructions\n\n\n\nStarter",
+    "text": "Slides, videos, and application exercises\n\nWeek 02: Slides\n\nSlides\n\n\nCode from Class\n\n\n\nChapters 6 and 7\n\n\n\n\n\n\nLab 02: File I/O, Control Structures, and the Debugger\n\nInstructions\n\n\nSource\n\n\nDad Joke + Reflection\n\n\n\n\nProject 02: Falling Sand Simulator\n\nInstructions\n\n\nStarter",
     "crumbs": [
       "Content",
       "Week 02: File Input/Output, Exception Handling, Two-dimensional Arrays"
@@ -59,7 +59,7 @@
     "href": "week01.html#slides-videos-and-application-exercises",
     "title": "Week 01: Control Structures, Functions, Parameter Passing modes",
     "section": "Slides, videos, and application exercises",
-    "text": "Slides, videos, and application exercises\n\nWeek 01: Slides\n\nSlides\n\n\n\n\n\nChapters 3 and 4\n\n\n\n\n\n\nLab 01: Control Structures\n\nInstructions\n\n\nStarter\n\n\nDad Joke + Reflection\n\n\n\n\nProject 01: More Control Structures\n\nInstructions\n\n\n\nStarter\n\n\n\nPOGIL\n\nArray Addressing \nParameter Passing",
+    "text": "Slides, videos, and application exercises\n\nWeek 01: Slides\n\nSlides\n\n\n\nChapters 3 and 4\n\n\n\n\n\n\nLab 01: Control Structures\n\nInstructions\n\n\nStarter\n\n\nDad Joke + Reflection\n\n\n\n\nProject 01: More Control Structures\n\nInstructions\n\n\nStarter\n\n\n\nPOGIL\n\nArray Addressing \nParameter Passing",
     "crumbs": [
       "Content",
       "Week 01: Control Structures, Functions, Parameter Passing modes"
@@ -92,7 +92,7 @@
     "href": "week14.html#slides-videos-and-application-exercises",
     "title": "Week 14: Hash Tables and Sorting Algorithms",
     "section": "Slides, videos, and application exercises",
-    "text": "Slides, videos, and application exercises\n\nWeek 14: Slides\n\nHash Tables\n\n\nSorting Algorithms\n\n\nNo readings for Week 14.\n\n\n\n\nLab 14: Hash Tables\n\nInstructions\n\n\nSource\n\n\n\n\n\nProject 14: No Project\n\n\nFinal Exam Search calvin.edu for “Exam Schedule” to find the time of the exam (and all exams you have, this semester, and all future semesters).",
+    "text": "Slides, videos, and application exercises\n\nWeek 14: Slides\n\nHash Tables\n\n\nSorting Algorithms\n\n\nNo readings for Week 14.\n\n\n\n\nLab 14: Hash Tables\n\nInstructions\n\n\nSource\n\n\nSlides\n\n\n\n\nProject 14: No Project\n\n\nFinal Exam Search calvin.edu for “Exam Schedule” to find the time of the exam (and all exams you have, this semester, and all future semesters).",
     "crumbs": [
       "Content",
       "Week 14: Hash Tables and Sorting Algorithms"
@@ -158,7 +158,7 @@
     "href": "week11.html#slides-videos-and-application-exercises",
     "title": "Week 11: BSTs",
     "section": "Slides, videos, and application exercises",
-    "text": "Slides, videos, and application exercises\n\nWeek 11: Slides\n\nSlides\n\n\nNo readings for Week 11.\n\n\n\n\nLab 11: Binary Seach Trees\n\nInstructions\n\n\nSource\n\n\n\n\n\nProject 11: Binary Search Trees\n\nInstructions\n\n\nStarter",
+    "text": "Slides, videos, and application exercises\n\nWeek 11: Slides\n\nSlides\n\n\nNo readings for Week 11.\n\n\n\n\nLab 11: Binary Seach Trees\n\nInstructions\n\n\nSource\n\n\nSlides\n\n\n\n\nProject 11: Binary Search Trees\n\nInstructions\n\n\nStarter",
     "crumbs": [
       "Content",
       "Week 11: BSTs"
@@ -191,7 +191,7 @@
     "href": "week13.html#slides-videos-and-application-exercises",
     "title": "Week 13: STL set and map containers",
     "section": "Slides, videos, and application exercises",
-    "text": "Slides, videos, and application exercises\n\nWeek 13: Slides\n\nSlides\n\n\nNo readings for Week 13.\n\n\n\n\nLab 13: The STL set and map Containers\n\nInstructions\n\n\nSource\n\n\n\n\n\nProject 13: No Project\n\n\nExam 4 Exam on Wednesday during class. Bring your laptop. Content: Weeks 0 - 11.",
+    "text": "Slides, videos, and application exercises\n\nWeek 13: Slides\n\nSlides\n\n\nNo readings for Week 13.\n\n\n\n\nLab 13: The STL set and map Containers\n\nInstructions\n\n\nSource\n\n\nSlides\n\n\n\n\nProject 13: No Project\n\n\nExam 4 Exam on Wednesday during class. Bring your laptop. Content: Weeks 0 - 11.",
     "crumbs": [
       "Content",
       "Week 13: STL set and map containers"
@@ -229,6 +229,76 @@
       "Content",
       "Week 06: Linked Lists, Dynamic Array or Linked List"
     ]
+  },
+  {
+    "objectID": "slides/lab06-slides.html#some-reflection-13",
+    "href": "slides/lab06-slides.html#some-reflection-13",
+    "title": "Lab 06 — Linked Lists",
+    "section": "Some reflection (1/3)",
+    "text": "Some reflection (1/3)\n\n\n\n\n\n\n\n\n\n\n\n“In a Christian community everything depends upon whether each individual is an indispensable link in a chain. Only when even the smallest link is securely interlocked is the chain unbreakable. (…)"
+  },
+  {
+    "objectID": "slides/lab06-slides.html#some-reflection-23",
+    "href": "slides/lab06-slides.html#some-reflection-23",
+    "title": "Lab 06 — Linked Lists",
+    "section": "Some reflection (2/3)",
+    "text": "Some reflection (2/3)\n\n\n\n\n\n\n\n\n\n\n\n“(…) A community which allows unemployed members to exist within it will perish because of them. It may be well, therefore, if every member receives a definite task to perform for the community, that he may know in hours of doubt that he, too, is not useless and unusable. (…)"
+  },
+  {
+    "objectID": "slides/lab06-slides.html#some-reflection-33",
+    "href": "slides/lab06-slides.html#some-reflection-33",
+    "title": "Lab 06 — Linked Lists",
+    "section": "Some reflection (3/3)",
+    "text": "Some reflection (3/3)\n\n\n\n\n\n\n\n\n\n\n\n(…) Every Christian community must realize that not only do the weak need the strong, but also that the strong cannot exist without the weak. The elimination of the weak is the death of fellowship.” -Bonhoeffer, Life Together, 94."
+  },
+  {
+    "objectID": "slides/lab06-slides.html#lab-6",
+    "href": "slides/lab06-slides.html#lab-6",
+    "title": "Lab 06 — Linked Lists",
+    "section": "Lab 6",
+    "text": "Lab 6\n\ncreating methods for class list\npair programming"
+  },
+  {
+    "objectID": "slides/lab06-slides.html#dad-joke-of-the-week",
+    "href": "slides/lab06-slides.html#dad-joke-of-the-week",
+    "title": "Lab 06 — Linked Lists",
+    "section": "Dad joke of the week",
+    "text": "Dad joke of the week\n\n\n\nQ: Why did the man fall down the deep hole?\nA: ’Cause he couldn’t see that well."
+  },
+  {
+    "objectID": "slides/lab00-slides.html#dad-joke-of-the-week",
+    "href": "slides/lab00-slides.html#dad-joke-of-the-week",
+    "title": "Lab 00 — Intro do C++",
+    "section": "Dad joke of the week",
+    "text": "Dad joke of the week\n\n\n\n\n\n\n\n\n\n\nPete and Repete are on a boat. Pete falls off. Who’s left on the boat?"
+  },
+  {
+    "objectID": "slides/lab00-slides.html#bible-reflection-for-a-data-structures-lab-session",
+    "href": "slides/lab00-slides.html#bible-reflection-for-a-data-structures-lab-session",
+    "title": "Lab 00 — Intro do C++",
+    "section": "Bible Reflection for a Data Structures Lab Session",
+    "text": "Bible Reflection for a Data Structures Lab Session\nVerse: “Let all things be done decently and in order.” — 1 Corinthians 14:40\nAs we dive into the intricacies of data structures, this verse reminds us of the importance of organization and structure, not just in our code but also in life. Data structures like arrays, trees, and graphs teach us that even the most complex systems can be understood and managed when approached with order and clarity.\nGod’s creation reflects His intentional design—everything has a purpose and place, from the smallest atom to the vastness of the universe. Similarly, in our programming, we use data structures to bring order to chaos, enabling efficiency and clarity in solving problems.\nAs we work on today’s lab, let us remember that the discipline and creativity we apply to our work reflect the order and purpose God calls us to embody. Let’s strive to build systems that not only function well but also mirror the excellence and intentionality of our Creator.\nPrayer:\nLord, thank You for the gift of logic and creativity. Help us to approach our work with diligence and clarity, bringing order to our ideas just as You bring order to all creation. May our efforts in this lab glorify You and serve as a reflection of Your wisdom. Amen."
+  },
+  {
+    "objectID": "slides/lab00-slides.html#lab-9",
+    "href": "slides/lab00-slides.html#lab-9",
+    "title": "Lab 00 — Intro do C++",
+    "section": "Lab 9",
+    "text": "Lab 9\n\ncreating recursive functions using ChatGPT\ndiscussing efficiency by calculating the number of times a function is called"
+  },
+  {
+    "objectID": "slides/lab05-slides.html#lab-5",
+    "href": "slides/lab05-slides.html#lab-5",
+    "title": "Lab 05 — Generic Containers",
+    "section": "Lab 5",
+    "text": "Lab 5\n\ncreating class template\npair programming"
+  },
+  {
+    "objectID": "slides/lab05-slides.html#dad-joke-of-the-week",
+    "href": "slides/lab05-slides.html#dad-joke-of-the-week",
+    "title": "Lab 05 — Generic Containers",
+    "section": "Dad joke of the week",
+    "text": "Dad joke of the week"
   },
   {
     "objectID": "index.html",
@@ -562,7 +632,7 @@
     "href": "week09.html#slides-videos-and-application-exercises",
     "title": "Week 09: Stacks and Queues",
     "section": "Slides, videos, and application exercises",
-    "text": "Slides, videos, and application exercises\n\nWeek 09: Slides\n\nSlides - Stacks\n\n\nSlides - Queues\n\n\n\nNo readings for Week 09.\n\n\n\n\nLab 09: Stacks and Exceptions and Queues\n\nInstructions\n\n\nSource\n\n\nSlides\n\n\n\n\nProject 09:\nNavigate a Maze Using a Stack\n\nInstructions\n\n\nStarter",
+    "text": "Slides, videos, and application exercises\n\nWeek 09: Slides\n\nSlides - Stacks\n\n\nSlides - Queues\n\n\nNo readings for Week 09.\n\n\n\n\nLab 09: Stacks and Exceptions and Queues\n\nInstructions\n\n\nSource\n\n\nSlides\n\n\n\n\nProject 09:\nNavigate a Maze Using a Stack\n\nInstructions\n\n\nStarter",
     "crumbs": [
       "Content",
       "Week 09: Stacks and Queues"
@@ -646,41 +716,6 @@
     "text": "Grading Rubric\nTotal score: 20 pts\n\n9 pts: 3 pts each for proper implementation of Experiment 0, 1, and 2.\n5 pts for correct graphs.\n6 pts for answering the questions.\n\nWays students have lost points in the past:\n\n-2: Can’t make project, There are persisting errors.\n-5: No PDF analyzing the results\n-2: late submission"
   },
   {
-    "objectID": "labs/lab06-slides.html#some-reflection-13",
-    "href": "labs/lab06-slides.html#some-reflection-13",
-    "title": "Lab 06 — Linked Lists",
-    "section": "Some reflection (1/3)",
-    "text": "Some reflection (1/3)\n\n\n\n\n\n\n\n\n\n\n\n“In a Christian community everything depends upon whether each individual is an indispensable link in a chain. Only when even the smallest link is securely interlocked is the chain unbreakable. (…)"
-  },
-  {
-    "objectID": "labs/lab06-slides.html#some-reflection-23",
-    "href": "labs/lab06-slides.html#some-reflection-23",
-    "title": "Lab 06 — Linked Lists",
-    "section": "Some reflection (2/3)",
-    "text": "Some reflection (2/3)\n\n\n\n\n\n\n\n\n\n\n\n“(…) A community which allows unemployed members to exist within it will perish because of them. It may be well, therefore, if every member receives a definite task to perform for the community, that he may know in hours of doubt that he, too, is not useless and unusable. (…)"
-  },
-  {
-    "objectID": "labs/lab06-slides.html#some-reflection-33",
-    "href": "labs/lab06-slides.html#some-reflection-33",
-    "title": "Lab 06 — Linked Lists",
-    "section": "Some reflection (3/3)",
-    "text": "Some reflection (3/3)\n\n\n\n\n\n\n\n\n\n\n\n(…) Every Christian community must realize that not only do the weak need the strong, but also that the strong cannot exist without the weak. The elimination of the weak is the death of fellowship.” -Bonhoeffer, Life Together, 94."
-  },
-  {
-    "objectID": "labs/lab06-slides.html#lab-6",
-    "href": "labs/lab06-slides.html#lab-6",
-    "title": "Lab 06 — Linked Lists",
-    "section": "Lab 6",
-    "text": "Lab 6\n\ncreating methods for class list\npair programming"
-  },
-  {
-    "objectID": "labs/lab06-slides.html#dad-joke-of-the-week",
-    "href": "labs/lab06-slides.html#dad-joke-of-the-week",
-    "title": "Lab 06 — Linked Lists",
-    "section": "Dad joke of the week",
-    "text": "Dad joke of the week\n\n\n\nQ: Why did the man fall down the deep hole?\nA: ’Cause he couldn’t see that well."
-  },
-  {
     "objectID": "labs/lab09-hint-push2.html",
     "href": "labs/lab09-hint-push2.html",
     "title": "Lab 09: Hint push() 2",
@@ -688,60 +723,11 @@
     "text": "To throw an exception when the stack is full, the push(const Item& it) method should behave as follows:\nIf I am full {\n    throw a StackException whose method is \"push()\" and whose message is \"stack is full\".\n}\na. Store it into the entry of myArray whose index is mySize.\nb. Add 1 to mySize."
   },
   {
-    "objectID": "labs/lab11-hint.html",
-    "href": "labs/lab11-hint.html",
-    "title": "Lab 11: Hint",
-    "section": "",
-    "text": "The stub of BST::insert() should look like this:\nvoid BST::insert(const Item& item) {\n\n }"
-  },
-  {
-    "objectID": "labs/lab11-hint.html#declaring-bstinsert",
-    "href": "labs/lab11-hint.html#declaring-bstinsert",
-    "title": "Lab 11: Hint",
-    "section": "",
-    "text": "The stub of BST::insert() should look like this:\nvoid BST::insert(const Item& item) {\n\n }"
-  },
-  {
-    "objectID": "labs/lab11-hint.html#defining-bstinsert",
-    "href": "labs/lab11-hint.html#defining-bstinsert",
-    "title": "Lab 11: Hint",
-    "section": "Defining BST::insert()",
-    "text": "Defining BST::insert()\nThe BST::insert(item) method needs to distinguish between the two cases (empty and non-empty):\n\nIf the BST is empty:\n\nCreate a new node containing item and store that node’s address in myRoot.\n\nOtherwise (there is at least one node):\n\n“Pass the buck” to the root node by invoking Node::insert(item) on the node whose address is in myRoot.\nAny exception it throws will be sent back to the calling insert() message.\n\nIn either case (when no exception was thrown), increment myNumItems."
-  },
-  {
-    "objectID": "labs/lab11-hint.html#designing-nodeinsert",
-    "href": "labs/lab11-hint.html#designing-nodeinsert",
-    "title": "Lab 11: Hint",
-    "section": "Designing Node::insert()",
-    "text": "Designing Node::insert()\nSince a Node is recursively defined, we might define Node::insert(item) as a recursive method. One way to design a recursive algorithm for this method is as follows:\nBasis. There are three trivial cases:\n\nIf item belongs in my left subtree and my left subtree is empty:\n\nMake my left subtree a new node containing item.\n\nIf item belongs in my right subtree and my right subtree is empty:\n\nMake my right subtree a new node containing item.\n\nIf item does not belong in our left or right subtrees (i.e., its value is the same as myItem):\n\nWe will treat our BST like a mathematical set (which has no redundant elements) and throw an exception to alert the user that they have inserted the same Item more than once.\n\n\nInduction Step. Again, there are two cases:\n\nIf item belongs in my left subtree and my left subtree is not empty:\n\n“Pass the buck” to the node in my left subtree by asking it to insert item.\n\nIf item belongs in my right subtree and my right subtree is not empty:\n\n“Pass the buck” to the node in my right subtree by asking it to insert item."
-  },
-  {
-    "objectID": "labs/lab11-hint.html#defining-nodeinsert",
-    "href": "labs/lab11-hint.html#defining-nodeinsert",
-    "title": "Lab 11: Hint",
-    "section": "Defining Node::insert()",
-    "text": "Defining Node::insert()\nThese observations can then be reorganized into the following algorithm for our Node::insert() method:\n\nIf item is less than myItem:\n\nIf myLeft is nullptr:\n\nSet myLeft to the address of a new node containing item.\n\nOtherwise:\n\n“Pass the buck” by recursively calling myLeft-&gt;insert(item).\n\n\nOtherwise, if item is greater than myItem:\n\nIf myRight is nullptr:\n\nSet myRight to the address of a new node containing item.\n\nOtherwise:\n\n“Pass the buck” by recursively calling myRight-&gt;insert(item).\n\n\nOtherwise (item must be equal to myItem):\n\nthrow an Exception indicating that item is already in the BST."
-  },
-  {
     "objectID": "labs/lab09-hint.html",
     "href": "labs/lab09-hint.html",
     "title": "Lab 09: Hint",
     "section": "",
     "text": "The stub of isEmpty() should look like this:\nbool Stack::isEmpty() const {\n}\nThe isEmpty() method should return true when mySize equals zero, and should return false otherwise."
-  },
-  {
-    "objectID": "labs/lab08-slides.html#dad-joke-of-the-week",
-    "href": "labs/lab08-slides.html#dad-joke-of-the-week",
-    "title": "Lab 08 — Stacks, Queues and Exceptions",
-    "section": "Dad joke of the week",
-    "text": "Dad joke of the week\n\n\n\n\n\n\n\n\n\n\nDogs can’t operate MRI machines. But catscan."
-  },
-  {
-    "objectID": "labs/lab08-slides.html#lab-6",
-    "href": "labs/lab08-slides.html#lab-6",
-    "title": "Lab 08 — Stacks, Queues and Exceptions",
-    "section": "Lab 6",
-    "text": "Lab 6\n\ncreating methods for class list\npair programming"
   },
   {
     "objectID": "labs/lab06.html",
@@ -1570,20 +1556,6 @@
     "text": "Grading Rubric\n21 points total:\n\nMenu class works: 2 pts.\nApp constructor: 5 pts.\nEach App menu item: 4 pts each: 12 pts.\nHospitable code: code is clean and neat, perfectly indented, with good variable names, etc.: 2 pts.\n\nWays students have lost points in the past:\n\n-2: showAllMovies needs to show the names of each movie’s actors\n-2: getMovieNameAndShowActors implementation is incorrect, the result of movies_by_name.find will return the iterator value you want to pass to showActorsInAMovie, the for loop is unnecessary\n-2: code is very poorly indented\n-2: parameter names are very poorly chosen"
   },
   {
-    "objectID": "labs/lab05-slides.html#lab-5",
-    "href": "labs/lab05-slides.html#lab-5",
-    "title": "Lab 05 — Generic Containers",
-    "section": "Lab 5",
-    "text": "Lab 5\n\ncreating class template\npair programming"
-  },
-  {
-    "objectID": "labs/lab05-slides.html#dad-joke-of-the-week",
-    "href": "labs/lab05-slides.html#dad-joke-of-the-week",
-    "title": "Lab 05 — Generic Containers",
-    "section": "Dad joke of the week",
-    "text": "Dad joke of the week"
-  },
-  {
     "objectID": "labs/lab09-hint-pop2.html",
     "href": "labs/lab09-hint-pop2.html",
     "title": "Lab 09: Hint pop() 2",
@@ -1591,39 +1563,39 @@
     "text": "To throw an exception when the stack is empty, the pop() method should behave as follows:\nIf I am empty {\n    throw a StackException whose method is \"pop()\" and whose message is \"stack is empty\".\n} \na. Subtract 1 from mySize.\nb. Return the entry of myArray whose index is mySize."
   },
   {
-    "objectID": "labs/lab00-slides.html#dad-joke-of-the-week",
-    "href": "labs/lab00-slides.html#dad-joke-of-the-week",
-    "title": "Lab 00 — Intro do C++",
-    "section": "Dad joke of the week",
-    "text": "Dad joke of the week\n\n\n\n\n\n\n\n\n\n\nPete and Repete are on a boat. Pete falls off. Who’s left on the boat?"
+    "objectID": "labs/lab11-hint.html",
+    "href": "labs/lab11-hint.html",
+    "title": "Lab 11: Hint",
+    "section": "",
+    "text": "The stub of BST::insert() should look like this:\nvoid BST::insert(const Item& item) {\n\n }"
   },
   {
-    "objectID": "labs/lab00-slides.html#bible-reflection-for-a-data-structures-lab-session",
-    "href": "labs/lab00-slides.html#bible-reflection-for-a-data-structures-lab-session",
-    "title": "Lab 00 — Intro do C++",
-    "section": "Bible Reflection for a Data Structures Lab Session",
-    "text": "Bible Reflection for a Data Structures Lab Session\nVerse: “Let all things be done decently and in order.” — 1 Corinthians 14:40\nAs we dive into the intricacies of data structures, this verse reminds us of the importance of organization and structure, not just in our code but also in life. Data structures like arrays, trees, and graphs teach us that even the most complex systems can be understood and managed when approached with order and clarity.\nGod’s creation reflects His intentional design—everything has a purpose and place, from the smallest atom to the vastness of the universe. Similarly, in our programming, we use data structures to bring order to chaos, enabling efficiency and clarity in solving problems.\nAs we work on today’s lab, let us remember that the discipline and creativity we apply to our work reflect the order and purpose God calls us to embody. Let’s strive to build systems that not only function well but also mirror the excellence and intentionality of our Creator.\nPrayer:\nLord, thank You for the gift of logic and creativity. Help us to approach our work with diligence and clarity, bringing order to our ideas just as You bring order to all creation. May our efforts in this lab glorify You and serve as a reflection of Your wisdom. Amen."
+    "objectID": "labs/lab11-hint.html#declaring-bstinsert",
+    "href": "labs/lab11-hint.html#declaring-bstinsert",
+    "title": "Lab 11: Hint",
+    "section": "",
+    "text": "The stub of BST::insert() should look like this:\nvoid BST::insert(const Item& item) {\n\n }"
   },
   {
-    "objectID": "labs/lab00-slides.html#lab-9",
-    "href": "labs/lab00-slides.html#lab-9",
-    "title": "Lab 00 — Intro do C++",
-    "section": "Lab 9",
-    "text": "Lab 9\n\ncreating recursive functions using ChatGPT\ndiscussing efficiency by calculating the number of times a function is called"
+    "objectID": "labs/lab11-hint.html#defining-bstinsert",
+    "href": "labs/lab11-hint.html#defining-bstinsert",
+    "title": "Lab 11: Hint",
+    "section": "Defining BST::insert()",
+    "text": "Defining BST::insert()\nThe BST::insert(item) method needs to distinguish between the two cases (empty and non-empty):\n\nIf the BST is empty:\n\nCreate a new node containing item and store that node’s address in myRoot.\n\nOtherwise (there is at least one node):\n\n“Pass the buck” to the root node by invoking Node::insert(item) on the node whose address is in myRoot.\nAny exception it throws will be sent back to the calling insert() message.\n\nIn either case (when no exception was thrown), increment myNumItems."
   },
   {
-    "objectID": "labs/lab03-slides.html#lab-3",
-    "href": "labs/lab03-slides.html#lab-3",
-    "title": "Lab 03 — Classes",
-    "section": "Lab 3",
-    "text": "Lab 3\n\ncreating a Student class\npair programming (change your pairs!)"
+    "objectID": "labs/lab11-hint.html#designing-nodeinsert",
+    "href": "labs/lab11-hint.html#designing-nodeinsert",
+    "title": "Lab 11: Hint",
+    "section": "Designing Node::insert()",
+    "text": "Designing Node::insert()\nSince a Node is recursively defined, we might define Node::insert(item) as a recursive method. One way to design a recursive algorithm for this method is as follows:\nBasis. There are three trivial cases:\n\nIf item belongs in my left subtree and my left subtree is empty:\n\nMake my left subtree a new node containing item.\n\nIf item belongs in my right subtree and my right subtree is empty:\n\nMake my right subtree a new node containing item.\n\nIf item does not belong in our left or right subtrees (i.e., its value is the same as myItem):\n\nWe will treat our BST like a mathematical set (which has no redundant elements) and throw an exception to alert the user that they have inserted the same Item more than once.\n\n\nInduction Step. Again, there are two cases:\n\nIf item belongs in my left subtree and my left subtree is not empty:\n\n“Pass the buck” to the node in my left subtree by asking it to insert item.\n\nIf item belongs in my right subtree and my right subtree is not empty:\n\n“Pass the buck” to the node in my right subtree by asking it to insert item."
   },
   {
-    "objectID": "labs/lab03-slides.html#dad-joke-of-the-week",
-    "href": "labs/lab03-slides.html#dad-joke-of-the-week",
-    "title": "Lab 03 — Classes",
-    "section": "Dad joke of the week",
-    "text": "Dad joke of the week\n\n\nQ: Why did the functions stop calling each other?\nA: Because they had constant arguments."
+    "objectID": "labs/lab11-hint.html#defining-nodeinsert",
+    "href": "labs/lab11-hint.html#defining-nodeinsert",
+    "title": "Lab 11: Hint",
+    "section": "Defining Node::insert()",
+    "text": "Defining Node::insert()\nThese observations can then be reorganized into the following algorithm for our Node::insert() method:\n\nIf item is less than myItem:\n\nIf myLeft is nullptr:\n\nSet myLeft to the address of a new node containing item.\n\nOtherwise:\n\n“Pass the buck” by recursively calling myLeft-&gt;insert(item).\n\n\nOtherwise, if item is greater than myItem:\n\nIf myRight is nullptr:\n\nSet myRight to the address of a new node containing item.\n\nOtherwise:\n\n“Pass the buck” by recursively calling myRight-&gt;insert(item).\n\n\nOtherwise (item must be equal to myItem):\n\nthrow an Exception indicating that item is already in the BST."
   },
   {
     "objectID": "labs/lab09-hint-pop.html",
@@ -1631,20 +1603,6 @@
     "title": "Lab 09: Hint pop()",
     "section": "",
     "text": "The stub of pop() should look like this:\nItem Stack::pop() {\n}\nBecause pop() is basically the complement of push(), and the index of the top item is 1 position “down” from mySize, the pop() method should behave as follows:\n\nSubtract 1 from mySize.\nReturn the entry of myArray whose index is mySize."
-  },
-  {
-    "objectID": "labs/lab10-slides.html#dad-joke-of-the-week",
-    "href": "labs/lab10-slides.html#dad-joke-of-the-week",
-    "title": "Lab 10 — Recursion",
-    "section": "Dad joke of the week",
-    "text": "Dad joke of the week\n\n\n\n\n\n\n\n\n\n\nPete and Repete are on a boat. Pete falls off. Who’s left on the boat?"
-  },
-  {
-    "objectID": "labs/lab10-slides.html#lab-10",
-    "href": "labs/lab10-slides.html#lab-10",
-    "title": "Lab 10 — Recursion",
-    "section": "Lab 10",
-    "text": "Lab 10\n\ncreating recursive functions using ChatGPT\ndiscussing efficiency by calculating the number of times a function is called"
   },
   {
     "objectID": "labs/lab09.html",
@@ -2100,6 +2058,48 @@
     "text": "Statement of Diversity and Inclusion\nInside and outside of the classroom, I work to treat every person with equal respect, regardless of racial identity, gender identity, physicality, brain chemistry, nationality, political leanings, and religious background. Whoever you are, you are fearfully and wonderfully made. God delights in diversity and I do, too. We humans need diverse viewpoints because every viewpoint, on its own, has blind spots. That has been proven to be true in technology-related fields, where under-represented minorities are significantly under-represented in the working world. When companies work hard to rectify this, they find their products and services improve. We have found this to be true in Computer Science classrooms as well.\n\n\n\n\n\n\nIMPORTANT!\n\n\n\nIf you or someone else in this class is hurt by something I say or do in class, I would like to know about it so that we can work toward a remedy. This has happened in the past in my classroom – usually when I’m trying to be “cool” or be funny. If this happens this semester, please know that it was unintentional. Because this kind of feedback can be uncomfortable for all involved, I’ll take it however it comes: in public or in private, on the spot or days later, directly from you or indirectly through another student, another professor, or through my department chair Keith VanderLinden (kvlinden@calvin.edu).\n\n\n\n\n\n\n\n\nCallout by Prof. Norman!\n\n\n\nAlso, please note that I am half deaf (at least). I am completely deaf on my left side. This results in my not being able to hear students that speak quietly, and not being able to tell which direction sounds are coming from. Please speak loudly! Thanks."
   },
   {
+    "objectID": "slides/lab08-slides.html#dad-joke-of-the-week",
+    "href": "slides/lab08-slides.html#dad-joke-of-the-week",
+    "title": "Lab 08 — Stacks, Queues and Exceptions",
+    "section": "Dad joke of the week",
+    "text": "Dad joke of the week\n\n\n\n\n\n\n\n\n\n\nDogs can’t operate MRI machines. But catscan."
+  },
+  {
+    "objectID": "slides/lab08-slides.html#lab-6",
+    "href": "slides/lab08-slides.html#lab-6",
+    "title": "Lab 08 — Stacks, Queues and Exceptions",
+    "section": "Lab 6",
+    "text": "Lab 6\n\ncreating methods for class list\npair programming"
+  },
+  {
+    "objectID": "slides/lab03-slides.html#lab-3",
+    "href": "slides/lab03-slides.html#lab-3",
+    "title": "Lab 03 — Classes",
+    "section": "Lab 3",
+    "text": "Lab 3\n\ncreating a Student class\npair programming (change your pairs!)"
+  },
+  {
+    "objectID": "slides/lab03-slides.html#dad-joke-of-the-week",
+    "href": "slides/lab03-slides.html#dad-joke-of-the-week",
+    "title": "Lab 03 — Classes",
+    "section": "Dad joke of the week",
+    "text": "Dad joke of the week\n\n\nQ: Why did the functions stop calling each other?\nA: Because they had constant arguments."
+  },
+  {
+    "objectID": "slides/lab10-slides.html#dad-joke-of-the-week",
+    "href": "slides/lab10-slides.html#dad-joke-of-the-week",
+    "title": "Lab 10 — Recursion",
+    "section": "Dad joke of the week",
+    "text": "Dad joke of the week\n\n\n\n\n\n\n\n\n\n\nPete and Repete are on a boat. Pete falls off. Who’s left on the boat?"
+  },
+  {
+    "objectID": "slides/lab10-slides.html#lab-10",
+    "href": "slides/lab10-slides.html#lab-10",
+    "title": "Lab 10 — Recursion",
+    "section": "Lab 10",
+    "text": "Lab 10\n\ncreating recursive functions using ChatGPT\ndiscussing efficiency by calculating the number of times a function is called"
+  },
+  {
     "objectID": "week12.html",
     "href": "week12.html",
     "title": "Week 12: AVL Trees",
@@ -2181,7 +2181,7 @@
     "href": "week05.html#slides-videos-and-application-exercises",
     "title": "Week 05: Generic Containers",
     "section": "Slides, videos, and application exercises",
-    "text": "Slides, videos, and application exercises\n\nWeek 05: Slides\n\nSlides\n\n\nCode from Class\n\n\nNo readings for Week 5.\n\n\n\n\nLab 05: Generic Containers (Templates)\nGeneric Containers (Templates)\n\nInstructions\n\n\nStarter\n\n\nSlides\n\n\n\n\nProject 05: \nName of Proj 05\n\nInstructions\n\n\nStarter",
+    "text": "Slides, videos, and application exercises\n\nWeek 05: Slides\n\nSlides\n\n\nCode from Class\n\n\nNo readings for Week 05.\n\n\n\n\nLab 05: Generic Containers (Templates)\nGeneric Containers (Templates)\n\nInstructions\n\n\nStarter\n\n\nSlides\n\n\n\n\nProject 05:\nName of Proj 05\n\nInstructions\n\n\nStarter",
     "crumbs": [
       "Content",
       "Week 05: Generic Containers"
@@ -2280,7 +2280,7 @@
     "href": "week03.html#slides-videos-and-application-exercises",
     "title": "Week 03: Classes, Operator Overloading, etc.",
     "section": "Slides, videos, and application exercises",
-    "text": "Slides, videos, and application exercises\n\nWeek 3: Slides\n\nSlides\n\n\nPair class code\n\n\nNo readings for Week 3.\n\n\n\n\nLab 03: Classes\n\nInstructions\n\n\nStarter\n\n\nSlides\n\n\n\n\nProject 03: Classes\n\nInstructions\n\n\nStarter\n\n\n\nExam 1\nExam on Friday during class. Bring your laptop. Content: Weeks 0 - 2.",
+    "text": "Slides, videos, and application exercises\n\nWeek 03: Slides\n\nSlides\n\n\nPair class code\n\n\nNo readings for Week 03.\n\n\n\n\nLab 03: Classes\n\nInstructions\n\n\nStarter\n\n\nSlides\n\n\n\n\nProject 03: Classes\n\nInstructions\n\n\nStarter\n\n\n\nExam 1\nExam on Friday during class. Bring your laptop. Content: Weeks 0 - 2.",
     "crumbs": [
       "Content",
       "Week 03: Classes, Operator Overloading, etc."

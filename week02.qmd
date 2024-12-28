@@ -22,12 +22,6 @@ At the end of this unit, students will be able to...
 [Slides](https://docs.google.com/presentation/d/139fGoEzMcGycckESU3UlmyPdpwa0e93m95YBBCK-IWw/edit?usp=sharing){target="_blank"}
 :::
 
-```{=html}
-<!-- ::: source
-[Binary Exposed](https://integer.exposed/#0x0008){target="_blank"}
-::: -->
-```
-
 ::: source
 [Code from Class](https://calvincollege-my.sharepoint.com/:f:/g/personal/vtn2_calvin_edu/Eo1D4OQEyclJux96KZoZlVIBY4ktPhJFxY8nFxSsuSJw9g?e=k2OPt9)
 :::
@@ -70,12 +64,6 @@ At the end of this unit, students will be able to...
 ::: instructions
 [Instructions](/projects/proj02.qmd)
 :::
-
-```{=html}
-<!-- ::: source
-[Source](){target="_blank"}
-::: -->
-```
 
 ::: starter
 [Starter](){target="_blank"}

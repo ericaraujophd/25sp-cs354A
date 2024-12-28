@@ -46,11 +46,11 @@ No readings for Week 10.
 :::
 
 ::: starter
-[Source](https://classroom.github.com/a/cVv5pP0o)
+[Source](){target="_blank"}
 :::
 
 ::: slides
-[Slides](/labs/lab10-slides.qmd)
+[Slides](/slides/lab10-slides.qmd)
 :::
 ::::::
 

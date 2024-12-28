@@ -19,7 +19,7 @@ This week's project is to complete a program that simulates a Conga Line dance:
 
 <figure>
 
-<img src="/images/projects/proj08-header.gif" alt="Conga!" width="350"/>
+<img src="/images/projects/proj08-header.gif" alt="Conga!" width="450"/>
 
 <figcaption>Conga!</figcaption>
 
