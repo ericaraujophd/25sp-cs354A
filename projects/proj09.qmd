@@ -1,5 +1,5 @@
 ---
-title: "Project 9: Using Queues to Implement the Snake Game"
+title: "Project 8: Navigate a Maze Using a Stack"
 format: 
   html:
     css: /projects/proj-styles.css
@@ -9,113 +9,160 @@ eval: false
 
 <!-- ## Project 8: Navigate a Maze Using a Stack -->
 
-<center><figure>
+<center>
 
-<img src="/projects/imgs/proj9-snake.png" alt="Created by AI Prompt: Here’s an illustration of a stylized depiction of the Snake game in a retro pixel-art aesthetic." width="400"/>
-<figcaption>Created by AI Prompt: Here’s an illustration of a stylized depiction of the Snake game in a retro pixel-art aesthetic.</figcaption>
+<figure>
 
-</figure></center>
+<img src="/projects/imgs/proj8-stack.png" alt="Created by AI Prompt: Here’s an illustration of a maze represented as a stack data structure, with pathways organized into stacked layers to convey the concept of sequential traversal. This design emphasizes the stack’s step-by-step process in navigating the maze." width="400"/>
 
-## Objectives
+<figcaption>Created by AI Prompt: an illustration of a maze represented as a stack data structure, with pathways organized into stacked layers to convey the concept of sequential traversal. This design emphasizes the stack’s step-by-step process in navigating the maze.</figcaption>
 
-1. Use a Queue to implement the snake game.
-2. Gain experience using more complex data structures.
+</figure>
 
-## Set Up
+</center>
 
-[Accept the assignment](https://classroom.github.com/a/y1MFWgHx) and use `git clone` to create your copy of the code.
+## Prepare
 
-## Step 1. Try it out
+[Accept the assignment](https://classroom.github.com/a/3j-1oMeu) and use git clone to create your copy of the code.
 
-If you are not familiar with "the snake game", then you can try it out on google. Just type "snake game" into google and it will give you a pop-up game you can try. Use the arrow keys to move the head of the snake and go after the apple in order to make the snake longer and gain points. Don't run into the edges or the snake itself!
+## Introduction
 
-In our version of the game, we will allow the snake to wrap round from top to bottom (and vice versa) and left to right (and vice versa). The only way to die is to run into yourself.
+A stack can be used to find a path through a maze from a starting point to a finish point (the "goal"). The idea is that at each location (starting from the starting point), you record in the stack where you are in the maze and which direction you are facing. If there is a hallway in front of you, you move to that new point and push a new "record" on the stack. Each time you go to a new location, you always look north first, then west, then south, then east. If you get to a location that is a dead end, you pop the stack, thus moving back to a previous location. A dead-end is when you've looked all 4 directions and found no opportunity to move forward. Also, as you work your way through the maze, you record which locations you have already visited -- and you never visit a location twice.
 
-We will use the [Bridges library](http://bridges-cs.herokuapp.com/signup) to visualize the game online. We'll use the "Game mode" which requires you to start your program then open the browser and connect to your game. You'll see a button on the web page that looks like this:
+When you reach the goal, the stack will contain the path from the goal back to the starting point. Each location on the path will also record which direction you moved to get to the next location on the path.
 
-![Button to connect to game](/projects/imgs/proj9-button.png)
+### Example
 
-:::{.callout-warning}
-Because we are using the BRIDGES library, you will have to work on machines in the lab!
+Consider this example:
+
+Pictorially the maze looks like this, with S being the starting point (at 0, 0) and G being the goal (at 2, 3).
+
+```         
+-------
+|SX  X|
+|   X |
+|X XG |
+|   |
+-------
+```
+
+After the code solves the maze, the stack and pictorial representation look like this:
+
+```         
+FINAL PATH: (2, 3, X) (3, 3, N) (3, 2, E) (3, 1, E) (2, 1, S) (1, 1, S) (1, 0, E) (0, 0, S)
+-------
+|SX  X|
+|pp X |
+|XpXG |
+| ppp |
+-------
+```
+
+This maze was read from a file that looks like this:
+
+```         
+4 5
+SX__X
+___X_
+X_XG_
+_____
+```
+
+The first row contains the number of rows and columns. The subsequent rows use \_ for an empty space, X for a barrier, S for the start, and G for the goal.
+
+Your task is to implement the code to
+
+1.  Read in a maze from a file.
+2.  Implement the algorithm given below to solve the maze.
+3.  Print out the stack as you solve the maze.
+
+::: callout-important
+### Extra credit
+
+**For extra credit**, you may implement code to print out the maze pictorially, as seen above.
 :::
 
-For our implementation, we'll use a queue to represent the body of the snake. As the snake moves a new block is added to the end of the queue -- which is the front of the snake -- and the last block of the body is removed from the tail -- which is the head of the queue. Each item in the queue will be a Pair of integers, representing the $(x, y)$ location of the block ($x$ is vertical and $y$ is horizontal). So, the snake's queue will be defined as 
+The code you have includes the file `maze.cpp`, and two sample mazes, `maze1.txt` and `maze2.txt`.
 
-```cpp
-Queue<Pair<int>> snake; // (see line 58 of Snake.h)
+### Details
+
+Your implementation should use the STL stack.
+
+The `main.cpp` code contains a definition of a `Location` class, which stores an `x` and `y` location, and a `dir`, which is the direction you are facing.
+
+Your main task is to implement the `readMazeFromFile()` and `isReachable()` function. The algorithm for the latter is below.
+
+**Algorithm:**
+
+1.  Define a stack of Location objects this way: `stack<Location> st;`
+2.  Push a location object with values (0, 0, -1) on stack (-1 = haven't tried any direction yet)
+3.  while the stack is not empty:
+    1.  current_loc = top of stack
+    2.  pop the stack;
+    3.  if current_loc is the goal,
+        1.  push the current_loc back on the stack
+        2.  return!
+    4.  mark the current location as true in the "visited" array.
+    5.  increment current_loc's direction
+    6.  if direction is north:
+        1.  if there is not a wall to the north and we haven't visited the location to the north:
+            1.  push the current_location on the stack
+            2.  push this new hallway on the stack
+            3.  continue (to the top while loop)
+        2.  else: increment current_loc's direction
+    7.  Repeat step f. for west, then for south, then for east.
+    8.  // We must be at a dead end: nothing to do -- we already popped this dead-end node off the stack.
+
+### Sample output
+
+Here is sample output from running against file `maze1.txt`.
+
+``` bash
+$ ./main
+Enter the name of the file containing the maze: maze1.txt
+push on stack. stack is now (0, 0, S)
+push on stack. stack is now (1, 0, E) (0, 0, S)
+push on stack. stack is now (1, 1, S) (1, 0, E) (0, 0, S)
+push on stack. stack is now (2, 1, S) (1, 1, S) (1, 0, E) (0, 0, S)
+push on stack. stack is now (3, 1, W) (2, 1, S) (1, 1, S) (1, 0, E) (0, 0, S)
+dead end: going back to (3, 1, W) (2, 1, S) (1, 1, S) (1, 0, E) (0, 0, S)
+push on stack. stack is now (3, 1, E) (2, 1, S) (1, 1, S) (1, 0, E) (0, 0, S)
+push on stack. stack is now (3, 2, E) (3, 1, E) (2, 1, S) (1, 1, S) (1, 0, E) (0, 0, S)
+push on stack. stack is now (3, 3, N) (3, 2, E) (3, 1, E) (2, 1, S) (1, 1, S) (1, 0, E) (0, 0, S)
+FINAL PATH: (2, 3, X) (3, 3, N) (3, 2, E) (3, 1, E) (2, 1, S) (1, 1, S) (1, 0, E) (0, 0, S)
+Path Found!
 ```
 
-The only other kinda tricky part of the code is how we grow the snake. The screen is redrawn each frame. A variable, `skipDeletingTailNodesCount`, exists which keeps track of how many subsequent frames should *not* delete the tail of the snake. So, if the variable has the value 2, the snake will grow by two new segments, because for the next 2 frames the snake's tail will not be deleted.
+::: callout-important
+### Extra credit
 
-### Step 2. Your task
-
-There are TODOs littered throughout **Snake.cpp**. Your task is to replace the TODOs with code. Each TODO contains a description of what your code should do.
-
-:::{.callout-note}
-## A Note about Iterators
-
-You will have to write some code to use the *iterator* class defined inside the Queue class. An *iterator* is an abstract *pointer* -- meaning that it can be used like a pointer, but isn't actually a pointer. So, you can get an iterator, `it`, that "points" to an item in the queue and then get the item itself by doing `*it`.
-
-You can use iterators to walk through the snake object, like this:
-
-```cpp
-for (Queue<Pair<int>>::iterator it = snake.begin(); it != snake.end(); it++) {
-      // use it here -- remember it points to an item in the queue, and those items are Pair objects.
-}
-```
-
+**For extra credit**, you may implement code to print out the maze pictorially, as shown above in the Example section.
 :::
-
-To run your program you have to provide two *command-line arguments*: your Bridges UserName and your Bridges Id. E.g., I run the program this way:
-
-```bash
-./snake VictorNorman 1313148564
-```
-
-Recall that you can get your username and id from the bridges website: [http://bridges-cs.herokuapp.com/](http://bridges-cs.herokuapp.com/)
-
-## Plan of Attack
-
-I recommend you replace the TODOs in this order:
-
-1. do `drawSnake()`
-2. Fix `updateSnake()`. After this, you should be able to run your program and see the snake move around.
-3. do `plantTarget()`
-4. do `detectTarget()`
-5. do `detectDeath()`
-
-**Note:** for some of these there are easy ways and hard ways to implement them. Study the Queue class to see what methods exist on a Queue object. I've created some of those methods to help you implement the functions above more easily.
-
 
 ## Submission
 
-Don't forget to commit your code to your online repo on [github.com](https://github.com/) so that the grader can grade it.
-
-If, after you submit your code, you want to enhance the game, you could:
-
-* make the game run faster as the snake gets longer.
-* make the target be a number between 1 and 9 inclusive, and the snake grows that much longer each time the target is eaten.
-
-(If you make these enhancements, don't submit them. The grader will just grade the basic implementation.)
+Don't forget to check in your code to github.
 
 ## Grading Rubric
 
 The assignment will be graded as follows:
 
-Total points: 25 pts total:
+Total points: 20 (23 with extra credit)
 
-+ 4 pts: `drawSnake()` correct
-+ 5 pts: `updateSnake()` correct
-+ 3 pts: `plantTarget()` correct
-+ 4 pts: `detectTarget()` correct
-+ 7 pts: `detectDeath()` correct
-+ 2 pts: code is clean and neat.
+-   4 pts for `readMazeFromFile()`
+-   10 pts for `isReachable()`
+-   3 pts for correct output
+-   3 pts for style / documentation
+-   +3 pts for pictorial displays as the maze is solved.
 
 Ways students lost points in the past:
 
-+ -2: Can't make file. Error occurs
-+ -2: Does not allow me to play the game.
-+ -4: program does not detect collisions correctly.
-+ -3: program does not "eat" the target correctly.
-+ -12.5: code is identical with one other person.
-+ -18: code is identical with 2 other people.
+-   -8: `isReachable` does not follow algorithm in instructions and does not compile or work
+-   -1: `readMazeFromFile` creates a new local "maze" variable instead of reading into the global one
+-   -3: Missing text output for path tracing
+-   -2: Text output for path tracing is not detailed enough, see assignment
+-   -2: Missing continue step
+-   -2: Need to push the current location back onto the stack before pushing the next one
+-   -1: Missing dead end output
+-   -1: Mistake in north check
+-   -4: The entire `readFromFile()` function does not work. Please test run your code!

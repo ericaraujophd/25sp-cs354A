@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Project 8: Navigate a Maze Using a Stack – CS112 - Data Structures</title>
+<title>Lab 10: Binary Search Trees – CS112 - Data Structures</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -105,12 +105,41 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 <script src="https://kit.fontawesome.com/78ddb093ea.js" crossorigin="anonymous"></script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<link rel="stylesheet" href="../projects/proj-styles.css">
-<meta property="og:title" content="Project 8: Navigate a Maze Using a Stack – CS112 - Data Structures">
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../labs/lab-styles.css">
+<meta property="og:title" content="Lab 10: Binary Search Trees – CS112 - Data Structures">
 <meta property="og:description" content="CS112 will teach students to use C++ for creating data structures.">
 <meta property="og:site_name" content="CS112 - Data Structures">
-<meta name="twitter:title" content="Project 8: Navigate a Maze Using a Stack – CS112 - Data Structures">
+<meta name="twitter:title" content="Lab 10: Binary Search Trees – CS112 - Data Structures">
 <meta name="twitter:description" content="CS112 will teach students to use C++ for creating data structures.">
 <meta name="twitter:image" content="https://ericaraujo.com/24fa-cs112/images/twitter-card.png">
 <meta name="twitter:creator" content="@ericfaraujo">
@@ -176,24 +205,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#prepare" id="toc-prepare" class="nav-link active" data-scroll-target="#prepare">Prepare</a></li>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a>
-  <ul class="collapse">
-  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example">Example</a></li>
-  <li><a href="#details" id="toc-details" class="nav-link" data-scroll-target="#details">Details</a></li>
-  <li><a href="#sample-output" id="toc-sample-output" class="nav-link" data-scroll-target="#sample-output">Sample output</a></li>
-  </ul></li>
-  <li><a href="#submission" id="toc-submission" class="nav-link" data-scroll-target="#submission">Submission</a></li>
-  <li><a href="#grading-rubric" id="toc-grading-rubric" class="nav-link" data-scroll-target="#grading-rubric">Grading Rubric</a></li>
+  <li><a href="#objectives" id="toc-objectives" class="nav-link active" data-scroll-target="#objectives">Objectives</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started">Getting Started</a></li>
+  <li><a href="#the-bst-constructor" id="toc-the-bst-constructor" class="nav-link" data-scroll-target="#the-bst-constructor">The BST Constructor</a></li>
+  <li><a href="#the-insert-method" id="toc-the-insert-method" class="nav-link" data-scroll-target="#the-insert-method">The insert() Method</a></li>
+  <li><a href="#the-contains-method" id="toc-the-contains-method" class="nav-link" data-scroll-target="#the-contains-method">The contains() Method</a></li>
+  <li><a href="#three-traversal-methods" id="toc-three-traversal-methods" class="nav-link" data-scroll-target="#three-traversal-methods">Three Traversal Methods</a></li>
+  <li><a href="#submit" id="toc-submit" class="nav-link" data-scroll-target="#submit">Submit</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/ericaraujophd/24fa-cs112/edit/main/projects/proj08.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/24fa-cs112/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/ericaraujophd/24fa-cs112/edit/main/labs/lab11.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/24fa-cs112/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Project 8: Navigate a Maze Using a Stack</h1>
+<h1 class="title">Lab 10: Binary Search Trees</h1>
 </div>
 
 
@@ -210,162 +238,136 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<!-- ## Project 8: Navigate a Maze Using a Stack -->
-<center>
-<figure class="figure">
-<p><img src="../projects/imgs/proj8-stack.png" alt="Created by AI Prompt: Here’s an illustration of a maze represented as a stack data structure, with pathways organized into stacked layers to convey the concept of sequential traversal. This design emphasizes the stack’s step-by-step process in navigating the maze." width="400" class="figure-img"></p>
-<figcaption>
-Created by AI Prompt: an illustration of a maze represented as a stack data structure, with pathways organized into stacked layers to convey the concept of sequential traversal. This design emphasizes the stack’s step-by-step process in navigating the maze.
-</figcaption>
-</figure>
-</center>
-<section id="prepare" class="level2">
-<h2 class="anchored" data-anchor-id="prepare">Prepare</h2>
-<p><a href="https://classroom.github.com/a/3j-1oMeu">Accept the assignment</a> and use git clone to create your copy of the code.</p>
+<section id="objectives" class="level2">
+<h2 class="anchored" data-anchor-id="objectives">Objectives</h2>
+<p>In this exercise, you will:</p>
+<ul>
+<li>Complete a linked-node-based binary search tree class.</li>
+<li>Practice building recursive operations.</li>
+<li>Practice thinking recursively.</li>
+</ul>
 </section>
 <section id="introduction" class="level2">
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<p>A stack can be used to find a path through a maze from a starting point to a finish point (the “goal”). The idea is that at each location (starting from the starting point), you record in the stack where you are in the maze and which direction you are facing. If there is a hallway in front of you, you move to that new point and push a new “record” on the stack. Each time you go to a new location, you always look north first, then west, then south, then east. If you get to a location that is a dead end, you pop the stack, thus moving back to a previous location. A dead-end is when you’ve looked all 4 directions and found no opportunity to move forward. Also, as you work your way through the maze, you record which locations you have already visited – and you never visit a location twice.</p>
-<p>When you reach the goal, the stack will contain the path from the goal back to the starting point. Each location on the path will also record which direction you moved to get to the next location on the path.</p>
-<section id="example" class="level3">
-<h3 class="anchored" data-anchor-id="example">Example</h3>
-<p>Consider this example:</p>
-<p>Pictorially the maze looks like this, with S being the starting point (at 0, 0) and G being the goal (at 2, 3).</p>
-<pre><code>-------
-|SX  X|
-|   X |
-|X XG |
-|   |
--------</code></pre>
-<p>After the code solves the maze, the stack and pictorial representation look like this:</p>
-<pre><code>FINAL PATH: (2, 3, X) (3, 3, N) (3, 2, E) (3, 1, E) (2, 1, S) (1, 1, S) (1, 0, E) (0, 0, S)
--------
-|SX  X|
-|pp X |
-|XpXG |
-| ppp |
--------</code></pre>
-<p>This maze was read from a file that looks like this:</p>
-<pre><code>4 5
-SX__X
-___X_
-X_XG_
-_____</code></pre>
-<p>The first row contains the number of rows and columns. The subsequent rows use _ for an empty space, X for a barrier, S for the start, and G for the goal.</p>
-<p>Your task is to implement the code to</p>
-<ol type="1">
-<li>Read in a maze from a file.</li>
-<li>Implement the algorithm given below to solve the maze.</li>
-<li>Print out the stack as you solve the maze.</li>
-</ol>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Extra credit
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><strong>For extra credit</strong>, you may implement code to print out the maze pictorially, as seen above.</p>
-</div>
-</div>
-<p>The code you have includes the file <code>maze.cpp</code>, and two sample mazes, <code>maze1.txt</code> and <code>maze2.txt</code>.</p>
+<p>Today’s exercise is to complete a class template named BST from which binary search tree classes and objects can be created. The exercise provides you with a test-class and a partially-built BST class template; your task is to complete the BST class template.</p>
+<center>
+<figure class="figure">
+<p><img src="../images/labs/lab10-xmas-bst.png" alt="Here is a creative illustration of a Christmas tree designed as a binary search tree (BST). The tree's structure represents nodes with festive decorations like ornaments and lights, arranged according to BST properties." width="500" class="figure-img"></p>
+<figcaption>
+AI Prompt: Here is a creative illustration of a Christmas tree designed as a binary search tree (BST). The tree’s structure represents nodes with festive decorations like ornaments and lights, arranged according to BST properties.
+</figcaption>
+</figure>
+</center>
 </section>
-<section id="details" class="level3">
-<h3 class="anchored" data-anchor-id="details">Details</h3>
-<p>Your implementation should use the STL stack.</p>
-<p>The <code>main.cpp</code> code contains a definition of a <code>Location</code> class, which stores an <code>x</code> and <code>y</code> location, and a <code>dir</code>, which is the direction you are facing.</p>
-<p>Your main task is to implement the <code>readMazeFromFile()</code> and <code>isReachable()</code> function. The algorithm for the latter is below.</p>
-<p><strong>Algorithm:</strong></p>
-<ol type="1">
-<li>Define a stack of Location objects this way: <code>stack&lt;Location&gt; st;</code></li>
-<li>Push a location object with values (0, 0, -1) on stack (-1 = haven’t tried any direction yet)</li>
-<li>while the stack is not empty:
-<ol type="1">
-<li>current_loc = top of stack</li>
-<li>pop the stack;</li>
-<li>if current_loc is the goal,
-<ol type="1">
-<li>push the current_loc back on the stack</li>
-<li>return!</li>
-</ol></li>
-<li>mark the current location as true in the “visited” array.</li>
-<li>increment current_loc’s direction</li>
-<li>if direction is north:
-<ol type="1">
-<li>if there is not a wall to the north and we haven’t visited the location to the north:
-<ol type="1">
-<li>push the current_location on the stack</li>
-<li>push this new hallway on the stack</li>
-<li>continue (to the top while loop)</li>
-</ol></li>
-<li>else: increment current_loc’s direction</li>
-</ol></li>
-<li>Repeat step f.&nbsp;for west, then for south, then for east.</li>
-<li>// We must be at a dead end: nothing to do – we already popped this dead-end node off the stack.</li>
-</ol></li>
-</ol>
+<section id="getting-started" class="level2">
+<h2 class="anchored" data-anchor-id="getting-started">Getting Started</h2>
+<p>Accept the <a href="https://classroom.github.com/a/m5CoIaV3" target="_blank">invitation from github classroom</a> and use git clone, as usual.</p>
+<p>Edit the <strong>README.md</strong> file to add both your names and your partner’s, and share the git repo, as usual.</p>
 </section>
-<section id="sample-output" class="level3">
-<h3 class="anchored" data-anchor-id="sample-output">Sample output</h3>
-<p>Here is sample output from running against file <code>maze1.txt</code>.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> ./main</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">Enter</span> the name of the file containing the maze: maze1.txt</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="ex">push</span> on stack. stack is now <span class="er">(</span><span class="ex">0,</span> 0, S<span class="kw">)</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="ex">push</span> on stack. stack is now <span class="er">(</span><span class="ex">1,</span> 0, E<span class="kw">)</span> <span class="kw">(</span><span class="ex">0,</span> 0, S<span class="kw">)</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="ex">push</span> on stack. stack is now <span class="er">(</span><span class="ex">1,</span> 1, S<span class="kw">)</span> <span class="kw">(</span><span class="ex">1,</span> 0, E<span class="kw">)</span> <span class="kw">(</span><span class="ex">0,</span> 0, S<span class="kw">)</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="ex">push</span> on stack. stack is now <span class="er">(</span><span class="ex">2,</span> 1, S<span class="kw">)</span> <span class="kw">(</span><span class="ex">1,</span> 1, S<span class="kw">)</span> <span class="kw">(</span><span class="ex">1,</span> 0, E<span class="kw">)</span> <span class="kw">(</span><span class="ex">0,</span> 0, S<span class="kw">)</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="ex">push</span> on stack. stack is now <span class="er">(</span><span class="ex">3,</span> 1, W<span class="kw">)</span> <span class="kw">(</span><span class="ex">2,</span> 1, S<span class="kw">)</span> <span class="kw">(</span><span class="ex">1,</span> 1, S<span class="kw">)</span> <span class="kw">(</span><span class="ex">1,</span> 0, E<span class="kw">)</span> <span class="kw">(</span><span class="ex">0,</span> 0, S<span class="kw">)</span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="ex">dead</span> end: going back to <span class="er">(</span><span class="ex">3,</span> 1, W<span class="kw">)</span> <span class="kw">(</span><span class="ex">2,</span> 1, S<span class="kw">)</span> <span class="kw">(</span><span class="ex">1,</span> 1, S<span class="kw">)</span> <span class="kw">(</span><span class="ex">1,</span> 0, E<span class="kw">)</span> <span class="kw">(</span><span class="ex">0,</span> 0, S<span class="kw">)</span></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="ex">push</span> on stack. stack is now <span class="er">(</span><span class="ex">3,</span> 1, E<span class="kw">)</span> <span class="kw">(</span><span class="ex">2,</span> 1, S<span class="kw">)</span> <span class="kw">(</span><span class="ex">1,</span> 1, S<span class="kw">)</span> <span class="kw">(</span><span class="ex">1,</span> 0, E<span class="kw">)</span> <span class="kw">(</span><span class="ex">0,</span> 0, S<span class="kw">)</span></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="ex">push</span> on stack. stack is now <span class="er">(</span><span class="ex">3,</span> 2, E<span class="kw">)</span> <span class="kw">(</span><span class="ex">3,</span> 1, E<span class="kw">)</span> <span class="kw">(</span><span class="ex">2,</span> 1, S<span class="kw">)</span> <span class="kw">(</span><span class="ex">1,</span> 1, S<span class="kw">)</span> <span class="kw">(</span><span class="ex">1,</span> 0, E<span class="kw">)</span> <span class="kw">(</span><span class="ex">0,</span> 0, S<span class="kw">)</span></span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="ex">push</span> on stack. stack is now <span class="er">(</span><span class="ex">3,</span> 3, N<span class="kw">)</span> <span class="kw">(</span><span class="ex">3,</span> 2, E<span class="kw">)</span> <span class="kw">(</span><span class="ex">3,</span> 1, E<span class="kw">)</span> <span class="kw">(</span><span class="ex">2,</span> 1, S<span class="kw">)</span> <span class="kw">(</span><span class="ex">1,</span> 1, S<span class="kw">)</span> <span class="kw">(</span><span class="ex">1,</span> 0, E<span class="kw">)</span> <span class="kw">(</span><span class="ex">0,</span> 0, S<span class="kw">)</span></span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="ex">FINAL</span> PATH: <span class="er">(</span><span class="ex">2,</span> 3, X<span class="kw">)</span> <span class="kw">(</span><span class="ex">3,</span> 3, N<span class="kw">)</span> <span class="kw">(</span><span class="ex">3,</span> 2, E<span class="kw">)</span> <span class="kw">(</span><span class="ex">3,</span> 1, E<span class="kw">)</span> <span class="kw">(</span><span class="ex">2,</span> 1, S<span class="kw">)</span> <span class="kw">(</span><span class="ex">1,</span> 1, S<span class="kw">)</span> <span class="kw">(</span><span class="ex">1,</span> 0, E<span class="kw">)</span> <span class="kw">(</span><span class="ex">0,</span> 0, S<span class="kw">)</span></span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="ex">Path</span> Found!</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Extra credit
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><strong>For extra credit</strong>, you may implement code to print out the maze pictorially, as shown above in the Example section.</p>
-</div>
-</div>
+<section id="the-bst-constructor" class="level2">
+<h2 class="anchored" data-anchor-id="the-bst-constructor">The BST Constructor</h2>
+<p>As you can see, our BST class contains just two instance variables:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>Node<span class="op">*</span>    myRoot<span class="op">;</span>       <span class="co">// pointer to the first item we insert</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="dt">unsigned</span> myNumItems<span class="op">;</span>   <span class="co">// number of items I contain</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>In the default constructor, our BST is empty, so myRoot should have the value <code>nullptr</code> and <code>myNumItems</code> should equal zero.</p>
+<p>Compile the project and run the tester. The tests should pass.</p>
 </section>
-</section>
-<section id="submission" class="level2">
-<h2 class="anchored" data-anchor-id="submission">Submission</h2>
-<p>Don’t forget to check in your code to github.</p>
-</section>
-<section id="grading-rubric" class="level2">
-<h2 class="anchored" data-anchor-id="grading-rubric">Grading Rubric</h2>
-<p>The assignment will be graded as follows:</p>
-<p>Total points: 20 (23 with extra credit)</p>
+<section id="the-insert-method" class="level2">
+<h2 class="anchored" data-anchor-id="the-insert-method">The insert() Method</h2>
+<p>Looking at the code, your BST class provides methods to:</p>
 <ul>
-<li>4 pts for <code>readMazeFromFile()</code></li>
-<li>10 pts for <code>isReachable()</code></li>
-<li>3 pts for correct output</li>
-<li>3 pts for style / documentation</li>
-<li>+3 pts for pictorial displays as the maze is solved.</li>
+<li>Create an empty BST;</li>
+<li>Determine whether a BST is empty or not;</li>
+<li>Determine the number of items in a BST;</li>
+<li>Reclaim the dynamic memory of a BST; and</li>
+<li>Traverse the tree using preorder.</li>
+</ul>
+<p>Our next task is to be able to <em>insert</em> items into a BST. The <code>insert(it)</code> method adds an item it to the tree by storing it in a node such that:</p>
+<ul>
+<li>all nodes to the “left” of the node containing it contain items that are less than it; and</li>
+<li>all nodes to the “right” of the node containing it contain items that are greater than it.</li>
+</ul>
+<p>Note that if we use a simple approach to <code>insert()</code> in which the first item is stored in the root node, the second item is stored in a child node of the root node, and so on, then the order in which we add items can make a big difference in the shape of the tree. For example, if we insert items in a “carefully chosen random” order: 44, 66, 22, 55, 11, 77, 33, then our tree will be <em>balanced</em>:</p>
+<p><img src="../images/labs/lab10-tree01.png" class="img-fluid"></p>
+<p>A tree’s shape can be characterized in different ways. One way is by comparing its height, diameter, and maximum width:</p>
+<ul>
+<li>A tree’s <em>height</em> is the number of nodes on the longest path from the root node to any of the leaf nodes.</li>
+<li>A tree’s <em>diameter</em> is the number of nodes on the longest path between any two leaves in the tree. This path often includes the root node, but not necessarily.</li>
+<li>A tree’s <em>maximum width</em> is the largest number of nodes on any given level of the tree.</li>
+</ul>
+<p>The preceding tree’s height is 3, its diameter is 5, and its maximum width is 4. If a binary search tree is <em>balanced</em>, then its height should be about <span class="math inline">\(log_2(n)\)</span>, where <span class="math inline">\(n\)</span> is the number of items in the tree.</p>
+<p>By contrast, if we insert items in <em>ascending</em> order: 11, 22, 33, 44, 55, 66, 77, then our tree will be imbalanced one way:</p>
+<p><img src="../images/labs/lab10-tree02.png" class="img-fluid"></p>
+<p>This tree’s height is 7, its diameter is 7, and its maximum width is 1.</p>
+<p>Likewise, if we insert the items in descending order : 77, 66, 55, 44, 33, 22, 11, then our tree will be imbalanced the other way:</p>
+<p><img src="../images/labs/lab10-tree03.png" class="img-fluid"></p>
+<p>As before, this tree’s height is 7, its diameter is 7, and its maximum width is 1.</p>
+<p>In <strong>tests.cpp</strong>, uncomment the <code>TEST_CASE</code> for “insert()”. Save/compile, and verify that you get a compilation error indicating that <code>insert()</code> is undeclared.</p>
+<p>Add a prototype of <code>insert()</code> to our BST class; then recompile and verify that only a linking error remains.</p>
+<p>In <strong>BST.h</strong>, below the class declaration, create a stub for <code>BST::insert()</code> (a “stub” is code that does nothing – it just returns). Recompile, and when all errors have been eliminated, run the test. Then define <code>BST::insert()</code> so that it passes the test. Here is a <a href="../labs/lab11-hint.html" target="_blank">hint</a>, in case you get stuck, but do your best to build this method without looking at the hint. Run the project, and verify that everything works correctly at the outset.</p>
+</section>
+<section id="the-contains-method" class="level2">
+<h2 class="anchored" data-anchor-id="the-contains-method">The contains() Method</h2>
+<p>In <strong>tests.cpp</strong>, uncomment the <code>TEST_CASE</code> for <code>contains()</code>. Take a few minutes to look over the tests it contains, specifically how <code>contains()</code> is used. As can be seen, the <code>contains(it)</code> method returns <em>true</em> if it is in its BST; otherwise it returns false. Save/compile your project. You should see an error indicating that there is no method matching the calls in our test-method.</p>
+<p>Modify <strong>BST.h</strong> as necessary to fix any compilation/linking errors, using an approach similar to the approach used in <code>insert()</code>. Recompile and run the tests. If you get stuck, here is a <a href="../labs/lab11-hint2.html" target="_blank">hint</a>, but don’t use it unless you have to.</p>
+<p>Continue when your method passes the test.</p>
+</section>
+<section id="three-traversal-methods" class="level2">
+<h2 class="anchored" data-anchor-id="three-traversal-methods">Three Traversal Methods</h2>
+<p>To <strong>traverse</strong> a data structure is to pass through each of its items, processing each item in turn. For example, outputting the values in an array, vector, or list usually involves traversing the structure and outputting each item in turn.</p>
+<p>When it comes to binary search trees, there are a variety of ways to traverse a BST:</p>
+<ul>
+<li>A <strong>preorder traversal</strong> “processes” the item in a node before the items in the left and right subtrees are (recursively) processed.</li>
+<li>A <strong>postorder traversal</strong> “processes” the item in a node after the items in the left and right subtrees are (recursively) processed.</li>
+<li>An <strong>inorder traversal</strong> “processes” the item in a node after the items in the left subtree have been processed, but before the items in the right subtree have been (recursively) processed.</li>
+</ul>
+<p>To illustrate, the BST class template contains a <code>traversePreorder()</code> method, defined as follows:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> BST<span class="op">::</span>traversePreorder<span class="op">(</span>ostream <span class="op">&amp;</span>out<span class="op">)</span> <span class="at">const</span> <span class="op">{</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="op">(!</span>isEmpty<span class="op">())</span> <span class="op">{</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    myRoot<span class="op">-&gt;</span>traversePreorder<span class="op">(</span>ostream <span class="op">&amp;</span>out<span class="op">);</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>If the BST is not empty, this method “passes the buck” by sending the <code>traversePreorder()</code> message to the node whose address is in <code>myRoot</code>. The Node struct defines that (recursive) method as follows:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> BST<span class="op">::</span>Node<span class="op">::</span>traversePreorder<span class="op">(</span>ostream <span class="op">&amp;</span>out<span class="op">)</span> <span class="at">const</span> <span class="op">{</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">// 1. process myItem first (preorder)</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    processItem<span class="op">(</span>out<span class="op">);</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="co">// 2. then recursively process the items in the left subtree</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="op">(</span>myLeft <span class="op">!=</span> <span class="kw">nullptr</span><span class="op">)</span> <span class="op">{</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>        myLeft<span class="op">-&gt;</span>traversePreorder<span class="op">(</span>out<span class="op">);</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    <span class="co">// 3. then recursively process the items in the right subtree</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="op">(</span>myRight <span class="op">!=</span> <span class="kw">nullptr</span><span class="op">)</span> <span class="op">{</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>        myRight<span class="op">-&gt;</span>traversePreorder<span class="op">(</span>out<span class="op">);</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The <code>processItem()</code> method can be defined to do any kind of processing of a node’s item. To illustrate, our Node struct defines <code>processItem()</code> to insert a space and then <code>myItem</code> into <code>cout</code>:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> BST<span class="op">::</span>Node<span class="op">::</span>processItem<span class="op">(</span>ostream <span class="op">&amp;</span>out<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    out <span class="op">&lt;&lt;</span> myItem <span class="op">&lt;&lt;</span> <span class="ch">' '</span><span class="op">;</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Note that all of these functions take an <code>ostream</code> as a parameter and pass it on in their method calls. The <code>processItem()</code> method writes its output to the <code>ostream</code>. By passing in an output stream this way, the caller can have <code>processItem</code> write to standard out (<code>cout</code>) or a file (<code>fout</code>) or even a string, which is what <strong>test.cpp</strong> does.</p>
+<p>Uncomment the <code>TEST_CASE</code> for <code>traversal</code>, and take a moment to look over its tests. Your final task is to define <code>traversePostorder()</code> and <code>traverseInorder()</code> methods that will produce the output expected by the test-method. Use the provided <code>traversePreorder()</code> methods as a model; the other two sets of traversal methods are quite similar.</p>
+<p>When your code passes all the tests, congratulations! You now have a basic binary search tree class!</p>
+</section>
+<section id="submit" class="level2">
+<h2 class="anchored" data-anchor-id="submit">Submit</h2>
+<p>Don’t forget to commit your changes.</p>
+<p>Grading Rubric: 25 points total</p>
+<ul>
+<li>5 pts: <code>insert()</code> correct</li>
+<li>5 pts: <code>contains()</code> correct</li>
+<li>4 pts x 3 = 12 pts: traversals are correct</li>
+<li>3 pts: code is neat and clean (hospitable)</li>
 </ul>
 <p>Ways students lost points in the past:</p>
 <ul>
-<li>-8: <code>isReachable</code> does not follow algorithm in instructions and does not compile or work</li>
-<li>-1: <code>readMazeFromFile</code> creates a new local “maze” variable instead of reading into the global one</li>
-<li>-3: Missing text output for path tracing</li>
-<li>-2: Text output for path tracing is not detailed enough, see assignment</li>
-<li>-2: Missing continue step</li>
-<li>-2: Need to push the current location back onto the stack before pushing the next one</li>
-<li>-1: Missing dead end output</li>
-<li>-1: Mistake in north check</li>
-<li>-4: The entire <code>readFromFile()</code> function does not work. Please test run your code!</li>
+<li>-1: <code>Node::contains</code> has to RETURN the value gotten from recursive calls of contains</li>
+<li>-2: <code>insert()</code> should be recursive;</li>
+<li>-1: <code>insert()</code> should throw an exception when item is already in tree</li>
+<li>-2: very poor indentation</li>
+<li>-2: <code>traversePostorder</code> and <code>traverseInorder</code> should call themselves, not traversePreorder</li>
+<li>-2: <code>Node::traverseInOrder</code> needs to process item in the <em>middle</em> (and use <code>processItem</code> method) insert</li>
 </ul>
+<!-- [^1]: how to add footnotes. -->
 
 
 </section>
@@ -943,7 +945,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ericaraujophd/24fa-cs112/edit/main/projects/proj08.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/24fa-cs112/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ericaraujophd/24fa-cs112/edit/main/labs/lab11.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/24fa-cs112/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">

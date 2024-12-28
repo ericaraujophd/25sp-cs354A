@@ -1,5 +1,5 @@
 ---
-title: "Lab 13: Hash Tables Project"
+title: "Lab 12: The STL set and map Containers"
 format: 
   html:
     css: /labs/lab-styles.css
@@ -9,137 +9,219 @@ format:
 
 <figure>
 
-<img src="/images/labs/lab13-grinch.png" alt="Definition of Grinch." width="700"/>
+<img src="/images/labs/lab11-homealone.jpg" alt="Home Alone (1990)." width="500"/>
 
-<figcaption>Definition of Grinch.</figcaption>
+<figcaption>Home Alone (1990).</figcaption>
 
 </figure>
 
 </center>
 
-## Learning Objectives
+## Objectives
 
 In this exercise, you will:
 
--   build a hash table data structure
--   experiment with hashing algorithms to distribute data across all buckets, as much as possible.
+-   Use the STL set container to store a set of values.
+-   Use the STL map container to create an associative array whose keys are string values, and whose values are sets of strings.
+-   Use iterators to access the items in these containers.
 
-## Step 0
+## Introduction
 
-[Accept the Assignment.](https://classroom.github.com/a/7abeJcnj){target="_blank"}
+This lab/project has you creating a simple database of movies and the actors in the movies. Then the user of the program can choose to:
 
-Our hash table will be a STL vector of STL sets (in class we used a vector of linked lists). Your code will read a file, **dictionary.txt**, that contains "all" the words in the English language, and insert each word into the hash table. There are about \~127,000 words in the file, but we will use a fairly small number of buckets, so there will be many collisions.
+-   Show all movies
+-   Show all actors in a movie
+-   Show all movies an actor was in.
+-   The main data structure you'll create is an STL map that maps:
 
-The goal of this exercise is to experiment with hashing algorithms to see if you can find one that distributes items well.
+```         
+movie name → set of actors in the movie.
+```
 
-## Step 1: Build the HashTable data structure and constructor
+This is a complex data structure: each entry in the map contains a set (Thus, we'll have a binary search tree of binary search trees).
 
-Inspect the code in **HashTable.h** and **HashTable.cpp**. There is not much there, but it is a start. Do notice that there is a static constant integer called `TABLE_SIZE`, initialized to the value 200.
+We'll use the Bridges database of movie information. When you get the information from the [Bridges API](https://bridgesuncc.github.io/doc/cxx-api/current/html/classbridges_1_1dataset_1_1_movie_actor_wikidata.html), you get a vector of objects of type `MovieActorWikidata`. Each object contains a movie and an actor in the movie (among other things). If you printed out those two things from `MovieActorWikidata` objects, you might see these values.
 
-Create the hash table data structure in the **private:** section, calling it `myTable`. For this project, the table must be a vector of sets of strings (in class we used a vector of lists).
+```         
+Movie: Young at Heart         Actor: Alan Hale, Jr.
+Movie: Wichita                Actor: Carl Benton Reid
+Movie: We're No Angels        Actor: Aldo Ray
+Movie: Young at Heart         Actor: Doris Day
+Movie: Wichita                Actor: Joel McCrea
+etc...
+```
 
-In the constructor, initialize `myTable` to have `TABLE_SIZE` buckets by calling
+Thus, you see that the objects are not in any order, and do not have all the actors in a movie in each object. To get all actors for a movie, you'll have to iterate over all the elements of the vector and learn 1) all the movies, and 2) all the actors in the movies.
+
+Note that sometimes an actor is listed multiple times for a movie. But, because we are using an `STL set`, it automatically handles attempts to insert an element multiple times.
+
+## Menu
+
+The application presents a menu from which the user can select the operation s/he wishes to perform. To validate a user's menu-choice, our project uses a tree-based data structure -- the `STL set`. For example, if the valid menu choices are *a*, *b*, *c*, *d*, *e*, *f*, and *q*, and we store these choices in a set named `myValidChoices`, then we might (simplistically) visualize this set as follows:
+
+![](/images/labs/lab11-bst.png)
+
+To determine whether or not a character is present in this set, the STL `find(value)` method does a binary search down through this tree until it either locates value, or reaches the bottom of the tree. It should be evident that the maximum time to search is *O(lg(n))*, where *n* is the number of items in the set.
+
+The exercise will provide you with a "skeleton" application, which you will then complete by adding additional functionality.
+
+## Getting Started
+
+Accept the [invitation from github classroom](https://classroom.github.com/a/ZtXfpjDl){target="_blank"} and use git clone, as usual.
+
+Edit the **README.md** file to add both your names and your partner's, and share the git repo, as usual.
+
+## Part I. The Menu Class
+
+When dealing with menu-driven systems, one thing that can go wrong is if the user enters an invalid choice -- something that is not on the menu. When this happens, the program must detect it and take remedial action.
+
+One way to detect such a problem is to build a **Menu class** that, besides "remembering" its menu, "remembers" its set of valid menu choices. Then when the user enters a choice, we can validate their choice by checking whether or not their choice is an element of that set.
+
+As you can see, our Menu class contains two instance variables: a string storing the menu, and a set to store those menu choices that are valid:
 
 ``` cpp
-myTable.resize(TABLE_SIZE);
+string myValue;             // the menu that is displayed
+set<char> myValidChoices;   // the valid menu choices
 ```
 
-Also, in the constructor initialize `mySize` to `0`.
+Save/compile your project, and verify that everything compiles without errors.
 
-Compile your code to make sure what you have written compiles.
+### The Menu Constructor
 
-## Step 2: insert() and hash()
+The Menu constructor currently initializes our `myValue` member; it must also initialize `myValidChoices` so that it stores the valid menu choices. To do so, we can use the `insert()` method:
 
-The prototypes for `insert()` and `hash()` are defined in the .h file. Now, you must implement them in the .cpp file. Use the code we saw in the slides in class for the hash function. The function should add up the first and last characters of the string, modding the result by `TABLE_SIZE`.
+``` cpp
+setVariable.insert(value);
+```
 
-Try to compile the code using `make`. It should compile. Fix any issues if your compilation fails.
+that inserts a single value into a set.
 
-## Step 3: main()
+In **Menu.cpp**, add `insert()` calls to make `myValidChoices` represent the set {'a', 'b', 'c', 'q'}.
 
-Now, create code in `main()`. Your code should define a `HashTable` object first.
+### The `Menu::containsChoice()` Method
 
-Then, open the file **dictionary.txt** for reading, and read each word from the file, one at a time, inserting each word into the hash table.
+To let a program conveniently check whether or not a given character is a valid menu choice, the Menu class provides a boolean method `containsChoice(choice)` that returns **true** if and only if choice is a valid menu choice. Currently, this method is a stub-definition that returns **false**. Your next task is to revise this stub so that it returns **true** if and only if choice is in the set `myValidChoices`.
 
-Next, have the code close the file.
+We can accomplish this using the `find()` method.
 
-Compile your code.
+Save/compile your project, and when it is free of compilation errors, run the program. When it is free of errors, go on.
 
-## Step 4: Testing
-
-Of course, at this point, we have no idea if the items have been distributed well in the hash table, because we have no way to inspect the hash table contents.
-
-Notice that there is a method called `dumpInfo()` defined, but currently the code does nothing. Fill in the code to do the following:
-
--   For each bucket, print how many items are in it.
--   Count and print the number of empty buckets.
--   Calculate and print the average number of items in non-empty buckets.
-
-Here is a snippet of my output. Make your output look similar:
+When you run your program, you will need to provide your Bridges UserName and Id on the command line: e.g.,
 
 ``` bash
-number of items in bucket 0: 415
-number of items in bucket 1: 351
-number of items in bucket 2: 307
-number of items in bucket 3: 414
-number of items in bucket 4: 293
-...
-number of items in bucket 197: 560
-number of items in bucket 198: 484
-number of items in bucket 199: 341
---------------------------
-Total number of elements in the hash table: 127141
-Number of empty buckets: 0
-Average number of items in non-empty buckets: 635
+./movies CS112StudentUsingBridges 123555666
 ```
 
-::: callout-note
-Note: the output above is from after I changed the number of buckets in my data structure, and tweaked the hash algorithm, which you'll do below.
-:::
+## Part II. The App Class
 
-After you implement your `dumpInfo()` method, call it from your `main()` code.
+The file **App.h** contains the declaration of class App. This class uses an STL map to store (movieName, set of actors) pairs:
 
-## Step 5: Tweak Your Hashing Algorithm and Table Size
+``` cpp
+map<string, set<string>> movies_by_name;   // key is movie name; value is set of actors' names.
+```
 
-You will notice that the basic hashing algorithm (adding up the first and last characters of each string) does a very poor job of distributing strings across all buckets in the hash table. Your goal now is to improve the hashing algorithm to improve the distribution.
+Note that the code actually reads like this:
 
-Experiment with different algorithms, but make sure they follow the criteria laid out in class:
+``` cpp
+db_type movies_by_name;
+```
 
--   O(1)
--   distribute values across all buckets.
--   deterministic.
+In order to not have to type `map<string, set<string>>` too often, I created two **typedefs** at the top of **App.h**:
 
-You **MAY** increase the number of buckets, but it must remain at or below 250 total. **Do not** change how buckets are implemented -- they should remain sets.
+``` cpp
+typedef map<string, set<string>> db_type;
+typedef map<string, set<string>>::iterator db_iter;
+```
 
-Do not spend more than 1 hour tweaking your algorithm. Make sure your final code implements your best algorithm.
+Now, the code can use `db_type` and `db_iter` instead of `map<string, set<string>>` and `map<string, set<string>>::iterator`, respectively. So much easier to type!
 
-::: callout-important
-Write a comment in your `hash()` function that describes your algorithm, explaining why you think it works as well as it does.
-:::
+### Constructor
 
-## Step 6: Submit
+The App constructor has been defined for you. It takes a vector of `MovieActorWikidata` entries as a parameter.
 
-Submit your code via github, as normal.
+The constructor code contains the algorithm you should implement to process these entries, building up entries in the `movies_by_name` map.
 
-::: callout-warning
-IF YOU WORKED WITH A PARTNER, ONLY ONE OF YOU HAS TO SUBMIT, but UPDATE THE README.md to INCLUDE BOTH NAMES.
-:::
+If you use the hint I gave in class about how accessing a map with `[ ]` will either create a new entry or update it if it already exists, then the body of the for loop is one line. Otherwise, the body is about 9 lines, and is very tricky code.
+
+Write the code now. This code will be difficult to test until you implement the next step.
+
+### Show All Movies Option
+
+Implement code for `showAllMovies()`, to iterate through all entries in `movies_by_name`, and print out the movie name and then iterate through all actors for that movie, printing them out. I've indented the actor's name, so the output is more readable.
+
+You might find it very useful to make the inner loop a separate function. I called that function `showActorsInAMovie()`. It takes an iterator "pointing" to an object from the `movies_by_name` collection, and iterates over the "second" field (a set), printing each actor in the set. If you implement this function, you'll find you can use it again below.
+
+When you think your code is correct (for this and the previous step), try loading all movies from 1955 and printing them all out. The first movie should be:
+
+```         
+Movie: 5 Against the House
+        Alvy Moore
+        Brian Keith
+        George Cisar
+        Guy Madison
+        Hugh Sanders
+        Jean Willes
+        John Larch
+        John Zaremba
+        Kathryn Crosby
+        Kerwin Mathews
+        Kim Novak
+        Mark Hanna
+        Robert Sampson
+        William Conrad
+```
+
+The last movie you should see should look like this:
+
+```         
+Movie: Young at Heart
+        Alan Hale, Jr.
+        Doris Day
+        Dorothy Malone
+        Elisabeth Fraser
+        Ethel Barrymore
+        Frank Ferguson
+        Frank Sinatra
+        Gig Young
+        Lonny Chapman
+        Robert Keith
+```
+
+### Show All Actors For a Single Movie Option
+
+Complete the code in the `getMovienameAndShowActors()` method. If you created a function to show all actors for a given movie, then you are half done already.
+
+### Show All Movies For an Actor Option
+
+Finally, implement this option. Create a set of strings (I called my variable `movies_by_actor`.) And then go through all movies, looking for that actor. When you find him/her, add the movie to the `movies_by_actor`. Then, when you are done, print out the set.
+
+Here is a sample output:
+
+```         
+Enter an actor name to show all movies for that actor: Alfred Hitchcock
+Rear Window
+The Trouble with Harry
+To Catch a Thief
+```
+
+## Turn In
+
+Submit your project to github as usual. If you worked with your lab partner on the project, make sure you update **README.md** to include both of your names/login-ids.
 
 ## Grading Rubric
 
-20 points total:
+21 points total:
 
--   10 pts: hash table code (not including the hash function) is correct
--   5 pts: hash function obeys the criteria laid out in class.
--   3 pts: hash function works well (not obviously leaving many buckets empty and have some be very full).
--   2 pts: code is clean and hospitable.
+-   Menu class works: 2 pts.
+-   App constructor: 5 pts.
+-   Each App menu item: 4 pts each: 12 pts.
+-   Hospitable code: code is clean and neat, perfectly indented, with good variable names, etc.: 2 pts.
 
-Ways students lost points in the past:
+Ways students have lost points in the past:
 
--   -2: Hash function does not appear to be evenly distributed but fills lower-numbered buckets way more (\~2000 vs \~50)
--   -4: Main function does not load words from file or call dumpInfo
--   -1: Missing call to dumpInfo in main
--   -3: Buckets are not evenly distributed (with many below 50 or above 2000) and some are empty. The smallest buckets are odd-numbered, which indicates a quirk in the algorithm which disfavors that half of the buckets
--   -4: Most of the buckets are empty; a hashing algorithm should seek to evenly distribute words into buckets
--   -1: Please output all bucket counts per instructions so the distribution can be seen.
+-   -2: showAllMovies needs to show the names of each movie's actors
+-   -2: getMovieNameAndShowActors implementation is incorrect, the result of movies_by_name.find will return the iterator value you want to pass to showActorsInAMovie, the for loop is unnecessary
+-   -2: code is very poorly indented
+-   -2: parameter names are very poorly chosen
 
 <!-- [^1]: how to add footnotes. -->

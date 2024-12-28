@@ -1,0 +1,67 @@
+---
+title: "Week 14: Hash Tables and Sorting Algorithms"
+# draft: true
+# draft-mode: visible
+---
+
+## SLOs for Week 14
+
+At the end of this unit, students will be able to...
+
+-   Hash Tables:
+    -   write the basic data structure for storing items in a hash table.
+    -   reason about important properties of a good hash algorithm.
+    -   identify the time complexity of each operation on a hash table.
+    -   reason about the time-space tradeoff manifested in a hash table.
+-   Sorting Algorithms
+    -   describe the crucial ideas behind Insertion Sort and Selection Sort.
+    -   identify the crucial differences between Insertion and Selection Sort.
+    -   identify the time complexity of Insertion and Selection sort in best and worst cases.
+
+## Slides, videos, and application exercises
+
+:::::: slide-deck
+**Week 14: Slides**
+
+::: slides
+[Hash Tables](https://calvincollege-my.sharepoint.com/:p:/g/personal/vtn2_calvin_edu/EaCjYGAo6VBBrf55UKfcutAB4UsUT03-Ik7egbfJOB0_PQ?e=U7yIYO){target="_blank"}
+:::
+
+::: slides
+[Sorting Algorithms](https://docs.google.com/presentation/d/1H8e0eAfmzyISfkwiURrIYJkz-hvlqen8r4tZder2KnE/edit?usp=sharing){target="_blank"}
+:::
+
+::: reading
+No readings for Week 14.
+:::
+::::::
+
+<!-- ## Lab -->
+
+::::: lab
+**Lab 14: Hash Tables**
+
+::: instructions
+[Instructions](/labs/lab14.qmd)
+:::
+
+::: starter
+[Source](){target="_blank"}
+:::
+
+```{=html}
+<!-- ::: slides
+[Slides]()
+::: -->
+```
+:::::
+
+<!-- ## Homework assignments -->
+
+::: homework
+**Project 14: No Project**
+:::
+
+::: exam
+**Final Exam** Search calvin.edu for “Exam Schedule” to find the time of the exam (and all exams you have, this semester, and all future semesters).
+:::

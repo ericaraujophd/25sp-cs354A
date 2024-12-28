@@ -1,5 +1,5 @@
 ---
-title: "Project 10: Binary Search Trees"
+title: "Project 9: Using Queues to Implement the Snake Game"
 format: 
   html:
     css: /projects/proj-styles.css
@@ -7,13 +7,15 @@ format:
 eval: false
 ---
 
+<!-- ## Project 8: Navigate a Maze Using a Stack -->
+
 <center>
 
 <figure>
 
-<img src="/images/projects/proj10-header.png" alt="Created by AI Prompt: Here is the illustration of a scientist creating a binary search tree with random numbers in a futuristic lab setting." width="400"/>
+<img src="/projects/imgs/proj9-snake.png" alt="Created by AI Prompt: Here’s an illustration of a stylized depiction of the Snake game in a retro pixel-art aesthetic." width="400"/>
 
-<figcaption>Here is the illustration of a scientist creating a binary search tree with random numbers in a futuristic lab setting.</figcaption>
+<figcaption>Created by AI Prompt: Here’s an illustration of a stylized depiction of the Snake game in a retro pixel-art aesthetic.</figcaption>
 
 </figure>
 
@@ -21,83 +23,102 @@ eval: false
 
 ## Objectives
 
-1.  Practice building BST operations.
-2.  Practice building recursive operations.
-3.  Learn more about binary search trees.
+1.  Use a Queue to implement the snake game.
+2.  Gain experience using more complex data structures.
 
-## Introduction
+## Set Up
 
-[Accept the assignment](https://classroom.github.com/a/Pud8TSjT) and use `git clone` to create your copy of the code.
+[Accept the assignment](https://classroom.github.com/a/y1MFWgHx) and use `git clone` to create your copy of the code.
 
-This project is:
+## Step 1. Try it out
 
--   Add a `getHeight()` to your BST class.
--   Use your `BST<Item>` to conduct an experiment.
+If you are not familiar with "the snake game", then you can try it out on google. Just type "snake game" into google and it will give you a pop-up game you can try. Use the arrow keys to move the head of the snake and go after the apple in order to make the snake longer and gain points. Don't run into the edges or the snake itself!
 
-As usual, you should use test-driven development to accomplish these tasks. Note that part of your grade is based on the thoroughness of your new tests for `getHeight()`.
+In our version of the game, we will allow the snake to wrap round from top to bottom (and vice versa) and left to right (and vice versa). The only way to die is to run into yourself.
 
-::: callout-important
-Copy your **Exception.h**, **catch.hpp**, **BST.h**, **makefile**, and **tests.cpp** files from your previous lab, into your repo.
+We will use the [Bridges library](http://bridges-cs.herokuapp.com/signup) to visualize the game online. We'll use the "Game mode" which requires you to start your program then open the browser and connect to your game. You'll see a button on the web page that looks like this:
+
+![Button to connect to game](/projects/imgs/proj9-button.png)
+
+::: callout-warning
+Because we are using the BRIDGES library, you will have to work on machines in the lab!
 :::
 
-## Adding getHeight()
+For our implementation, we'll use a queue to represent the body of the snake. As the snake moves a new block is added to the end of the queue -- which is the front of the snake -- and the last block of the body is removed from the tail -- which is the head of the queue. Each item in the queue will be a Pair of integers, representing the $(x, y)$ location of the block ($x$ is vertical and $y$ is horizontal). So, the snake's queue will be defined as
 
-The height of a tree with a root node is defined as the height of the node's taller sub-tree, plus 1. As you can see, this is a **recursive** definition, which needs a **base case**. The base case is that if a node has no children, its height is 1.
+``` cpp
+Queue<Pair<int>> snake; // (see line 58 of Snake.h)
+```
 
-Let's give some examples to clarify:
+The only other kinda tricky part of the code is how we grow the snake. The screen is redrawn each frame. A variable, `skipDeletingTailNodesCount`, exists which keeps track of how many subsequent frames should *not* delete the tail of the snake. So, if the variable has the value 2, the snake will grow by two new segments, because for the next 2 frames the snake's tail will not be deleted.
 
-If a tree has no nodes, its height is 0. If a tree has 1 node -- the root node -- its height is 1.
+### Step 2. Your task
 
-If a tree has a root node and that node has either a left child or a right child, or both, its height is 2. Suppose the tree has a root node and that node has a single right child node. The right child node has height 1. The root node's height is 1 + (the greater of the height of its left subtree -- which is 0 -- and the right subtree -- which is 1). Thus, the root node's height is 2.
+There are TODOs littered throughout **Snake.cpp**. Your task is to replace the TODOs with code. Each TODO contains a description of what your code should do.
 
-Implement `getHeight()` now. Its implementation is similar to `insert()` or a traversal algorithm in that it uses recursion. The difference here is that each function returns an integer -- the node's height.
+::: callout-note
+## A Note about Iterators
 
-### The Experiment
+You will have to write some code to use the *iterator* class defined inside the Queue class. An *iterator* is an abstract *pointer* -- meaning that it can be used like a pointer, but isn't actually a pointer. So, you can get an iterator, `it`, that "points" to an item in the queue and then get the item itself by doing `*it`.
 
-The height of a BST determines the speed of operations like `insert()` and `contains()`. If we build a "large" BST of N items (e.g., $~2^20$), and that tree is balanced, then its height should be the minimal $O(lg(N))$ (e.g., 20).
+You can use iterators to walk through the snake object, like this:
 
-This week's problem is to conduct a simple experiment to see how "tall" BSTs get, given random values. Our objective is to see how close we come to lg(N) height if we build large trees of N randomly ordered values.
+``` cpp
+for (Queue<Pair<int>>::iterator it = snake.begin(); it != snake.end(); it++) {
+      // use it here -- remember it points to an item in the queue, and those items are Pair objects.
+}
+```
+:::
 
-Your repo contains two directories that each contain ten data files (**randomInts01.txt**, **randomInts02.txt**, ..., **randomInts10.txt**), each containing $2^20-1 = 1,048,575$ randomly generated integer values. If these values were ordered in exactly the right way, we could build trees of height 20. (On the other hand, if they were ordered in exactly the wrong way, we could build trees of height 1,048,575!)
+To run your program you have to provide two *command-line arguments*: your Bridges UserName and your Bridges Id. E.g., I run the program this way:
 
-Your task is to write a simple program that prompts the user for the name of an input file, reads each value from that file, and inserts it into a BST. Your program should then display the height of the resulting BST.
+``` bash
+./snake VictorNorman 1313148564
+```
 
-There are minor details to keep in mind:
+Recall that you can get your username and id from the bridges website: <http://bridges-cs.herokuapp.com/>
 
--   There may be duplicate values within an input file, and inserting a duplicate value into our BST will throw an exception. Your program should count and output the number of duplicate values in a given file by catching and handling this exception.
--   There are two directories -- one for Linux/MacOS, and one for Windows.
--   These files were generated in the Maroon lab (whose workstations are 64-bit machines), and so the integers in these files are 64-bit integers. However, the C++ int and unsigned types only store integers in 32 bits; the long type stores integers in 64 bits, so use it to store these 64-bit integers.
+## Plan of Attack
 
-Since there are ten input files, you will need to run your program ten times. (Or find a clever way to automate this.) For each file, record the corresponding tree-height in a spreadsheet, and the number of duplicate values that were found. Given all ten heights, use the spreadsheet to calculate the minimum height, the maximum height, the average height, the median height, and the standard deviation of the ten heights. (Your spreadsheet will make each of these computations easy.) Finally, use your spreadsheet to create a bar-chart showing each of the ten heights, as a visualization of your data. Finally
+I recommend you replace the TODOs in this order:
 
-Answer the following questions in your spreadsheet, below the chart:
+1.  do `drawSnake()`
+2.  Fix `updateSnake()`. After this, you should be able to run your program and see the snake move around.
+3.  do `plantTarget()`
+4.  do `detectTarget()`
+5.  do `detectDeath()`
 
-1.  Is $lg(N)$ or $N$ a better approximation for your measured heights? Why?
-2.  How much variance is there in the height of these trees? Is this surprising? Why or why not?
-3.  How many duplicate values were there (on average)? Is this surprising? Why or why not?
-4.  The "big Oh" notation $O(f(n))$ implies that there are constants $a$ and $b$, such that $a \times f(n) + b$ describes the reality for which $O(f(n))$ is an approximation. A balanced BST of $N$ items has height $O(lg(N))$. Theoretically, there should be values $a$ and $b$ such that $a \times lg(N) + b$ describes the actual height of a BST built using random data. Using your experimental results, what is a reasonable value for $a$?
+**Note:** for some of these there are easy ways and hard ways to implement them. Study the Queue class to see what methods exist on a Queue object. I've created some of those methods to help you implement the functions above more easily.
 
 ## Submission
 
-::: callout-important
-👉👉👉 Download/export a PDF version of your chart and store it in your repo for submission. Call the file **analysis.pdf**.
-:::
-
 Don't forget to commit your code to your online repo on [github.com](https://github.com/) so that the grader can grade it.
+
+If, after you submit your code, you want to enhance the game, you could:
+
+-   make the game run faster as the snake gets longer.
+-   make the target be a number between 1 and 9 inclusive, and the snake grows that much longer each time the target is eaten.
+
+(If you make these enhancements, don't submit them. The grader will just grade the basic implementation.)
 
 ## Grading Rubric
 
-Total: 24 pts
+The assignment will be graded as follows:
 
--   `getHeight()`: 5 pts
--   New tests in **tests.cpp** for `getHeight()`: 3 pts
--   program: 10 pts
--   spreadsheet / analysis: 6 pts
+Total points: 25 pts total:
 
-Ways students have lost points in the past:
+-   4 pts: `drawSnake()` correct
+-   5 pts: `updateSnake()` correct
+-   3 pts: `plantTarget()` correct
+-   4 pts: `detectTarget()` correct
+-   7 pts: `detectDeath()` correct
+-   2 pts: code is clean and neat.
 
--   -3: Missing chart, spreadsheet
--   -6: Missing spreadsheet/analysis
--   -3: Missing tests for `getHeight()`
--   -1: Big-Oh of height was wrong.
--   -1: Error in `getHeight()`: a tree with two items could either have a height of 1 or 2
+Ways students lost points in the past:
+
+-   -2: Can't make file. Error occurs
+-   -2: Does not allow me to play the game.
+-   -4: program does not detect collisions correctly.
+-   -3: program does not "eat" the target correctly.
+-   -12.5: code is identical with one other person.
+-   -18: code is identical with 2 other people.

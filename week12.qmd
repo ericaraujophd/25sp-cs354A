@@ -1,5 +1,5 @@
 ---
-title: "Week 12: STL set and map containers"
+title: "Week 12: AVL Trees"
 # draft: true
 # draft-mode: visible
 ---
@@ -8,19 +8,11 @@ title: "Week 12: STL set and map containers"
 
 At the end of this unit, students will be able to...
 
--   describe the unique characteristics of the STL set container -- e.g., that a set stores unique values in sorted order.
--   describe the time complexity of set container operations, like find, insert, remove.
--   write code using iterators to traverse all items in a set.
--   explain the behavior of an iterator.
--   describe the unique characteristics of the STL map container -- e.g., that a map stores key, value pairs, with unique keys stored in sorted order.
--   describe the time complexity of map container operations, like find, insert, remove, and indexing/subscripting.
--   reason about the unique behavior of indexing in a map object.
--   write code using iterators to traverse all items in a map.
-<!-- -   describe the crucial ideas behind Insertion Sort and Selection Sort.
--   identify the crucial differences between Insertion and Selection Sort.
--   identify the time complexity of Insertion and Selection sort in best and worst cases. -->
-
-
+-   define what makes a BST **balanced**.
+-   AVL trees:
+    -   identify an AVL tree as a self-balancing tree.
+    -   articulate the importance of the balance factor in determining when the tree needs to be rebalanced.
+    -   compute the balance factor for a node.
 
 ## Slides, videos, and application exercises
 
@@ -28,112 +20,22 @@ At the end of this unit, students will be able to...
 **Week 12: Slides**
 
 ::: slides
-[Slides](https://docs.google.com/presentation/d/1AtO1BnVb8WHNWg6ZYGCGav6y5zPqSPF8G5r-9VQbgLo/edit?usp=sharing){target="_blank"}
+[Slides](https://docs.google.com/presentation/d/1SeV3cE7iJItPtG4V9eSg_0HgpqkHDeVSyMvwP2n5m8Y/edit?usp=sharing){target="_blank"}
 :::
-
-
-<!-- ::: source
-[Code from Class](https://calvincollege-my.sharepoint.com/:f:/g/personal/vtn2_calvin_edu/Eredz2bHiShCtI0CVssiaggB8tUES6QbacEf2cc4PBhTgQ?e=uoV7Uu)
-::: -->
-
 
 ::: reading
 No readings for Week 12.
-
-
-<!-- -   R4DS :: [Chp 2 - Introduction](https://r4ds.had.co.nz/explore-intro.html)
--   IMS :: [Sec 1.1 & 1.2 - Case study & Data basics](https://openintro-ims.netlify.app/data-hello.html) -->
-
 :::
-
-
-<!-- ::: video
-[Video](https://youtu.be/_YqEHZccujc)
-:::
--->
-
 :::::
 
 <!-- ## Lab -->
 
-::::: lab
-**Lab 12: The STL set and map Containers**
-
-::: instructions
-[Instructions](/labs/lab12.qmd)
+::: lab
+**Lab 12: No Lab**
 :::
-
-
-<!-- ::: instructions
-[Instructions](slides/lab06-slides.qmd)
-::: -->
-
-
-::: starter
-[Source](https://classroom.github.com/a/ZtXfpjDl){target="_blank"}
-:::
-
-
-<!-- ::: slides
-[Slides]()
-::: -->
-
-:::::
 
 <!-- ## Homework assignments -->
 
-::::: homework
+::: homework
 **Project 12: No Project**
-
-<!-- ::: instructions
-[Instructions](/projects/proj10.qmd)
-::: -->
-
-
-<!-- ::: source
-[Source](https://github.com/rstudio-education/datascience-box/tree/master/course-materials/hw-instructions/hw-10)
-::: -->
-
-
-<!-- ::: starter
-[Starter](https://classroom.github.com/a/f0Ju72P9){target="{\"_blank\""}}
-::: -->
-:::::
-
-
-::: exam
-**Exam 4**
-Exam on Wednesday during class. Bring your laptop. Content: Weeks 0 - 11.
 :::
-
-
-
-<!-- ::: application-exercise
-**First dataviz**
-
-> **Option 1 - UN Votes**
->
-> ::: source
-> [Source](https://github.com/rstudio-education/datascience-box/tree/master/course-materials/application-exercises/ae-01a-un-votes/unvotes.qmd)
-> :::
->
-> ::: video
-> [Video](https://youtu.be/r-uTBEclM1E)
-> :::
-
-> **Option 2 - COVID-19**
->
-> ::: source
-> [Source](https://github.com/rstudio-education/datascience-box/blob/master/course-materials/application-exercises/ae-01b-covid/covid.qmd)
-> :::
-::: -->
-
-
-
-<!-- ::: guest-lecture
-**Alberto Cairo - How charts lie**
-
-::: video
-[Video](https://youtu.be/Low28hx4wyk)
-:::
-::: -->

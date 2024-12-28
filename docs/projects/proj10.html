@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Project 10: Binary Search Trees – CS112 - Data Structures</title>
+<title>Project 9: Using Queues to Implement the Snake Game – CS112 - Data Structures</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -102,10 +136,10 @@ window.Quarto = {
 </script>
 
 <link rel="stylesheet" href="../projects/proj-styles.css">
-<meta property="og:title" content="Project 10: Binary Search Trees – CS112 - Data Structures">
+<meta property="og:title" content="Project 9: Using Queues to Implement the Snake Game – CS112 - Data Structures">
 <meta property="og:description" content="CS112 will teach students to use C++ for creating data structures.">
 <meta property="og:site_name" content="CS112 - Data Structures">
-<meta name="twitter:title" content="Project 10: Binary Search Trees – CS112 - Data Structures">
+<meta name="twitter:title" content="Project 9: Using Queues to Implement the Snake Game – CS112 - Data Structures">
 <meta name="twitter:description" content="CS112 will teach students to use C++ for creating data structures.">
 <meta name="twitter:image" content="https://ericaraujo.com/24fa-cs112/images/twitter-card.png">
 <meta name="twitter:creator" content="@ericfaraujo">
@@ -172,11 +206,12 @@ window.Quarto = {
    
   <ul>
   <li><a href="#objectives" id="toc-objectives" class="nav-link active" data-scroll-target="#objectives">Objectives</a></li>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#adding-getheight" id="toc-adding-getheight" class="nav-link" data-scroll-target="#adding-getheight">Adding getHeight()</a>
+  <li><a href="#set-up" id="toc-set-up" class="nav-link" data-scroll-target="#set-up">Set Up</a></li>
+  <li><a href="#step-1.-try-it-out" id="toc-step-1.-try-it-out" class="nav-link" data-scroll-target="#step-1.-try-it-out">Step 1. Try it out</a>
   <ul class="collapse">
-  <li><a href="#the-experiment" id="toc-the-experiment" class="nav-link" data-scroll-target="#the-experiment">The Experiment</a></li>
+  <li><a href="#step-2.-your-task" id="toc-step-2.-your-task" class="nav-link" data-scroll-target="#step-2.-your-task">Step 2. Your task</a></li>
   </ul></li>
+  <li><a href="#plan-of-attack" id="toc-plan-of-attack" class="nav-link" data-scroll-target="#plan-of-attack">Plan of Attack</a></li>
   <li><a href="#submission" id="toc-submission" class="nav-link" data-scroll-target="#submission">Submission</a></li>
   <li><a href="#grading-rubric" id="toc-grading-rubric" class="nav-link" data-scroll-target="#grading-rubric">Grading Rubric</a></li>
   </ul>
@@ -187,7 +222,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Project 10: Binary Search Trees</h1>
+<h1 class="title">Project 9: Using Queues to Implement the Snake Game</h1>
 </div>
 
 
@@ -204,107 +239,120 @@ window.Quarto = {
 </header>
 
 
+<!-- ## Project 8: Navigate a Maze Using a Stack -->
 <center>
 <figure class="figure">
-<p><img src="../images/projects/proj10-header.png" alt="Created by AI Prompt: Here is the illustration of a scientist creating a binary search tree with random numbers in a futuristic lab setting." width="400" class="figure-img"></p>
+<p><img src="../projects/imgs/proj9-snake.png" alt="Created by AI Prompt: Here’s an illustration of a stylized depiction of the Snake game in a retro pixel-art aesthetic." width="400" class="figure-img"></p>
 <figcaption>
-Here is the illustration of a scientist creating a binary search tree with random numbers in a futuristic lab setting.
+Created by AI Prompt: Here’s an illustration of a stylized depiction of the Snake game in a retro pixel-art aesthetic.
 </figcaption>
 </figure>
 </center>
 <section id="objectives" class="level2">
 <h2 class="anchored" data-anchor-id="objectives">Objectives</h2>
 <ol type="1">
-<li>Practice building BST operations.</li>
-<li>Practice building recursive operations.</li>
-<li>Learn more about binary search trees.</li>
+<li>Use a Queue to implement the snake game.</li>
+<li>Gain experience using more complex data structures.</li>
 </ol>
 </section>
-<section id="introduction" class="level2">
-<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<p><a href="https://classroom.github.com/a/Pud8TSjT">Accept the assignment</a> and use <code>git clone</code> to create your copy of the code.</p>
-<p>This project is:</p>
-<ul>
-<li>Add a <code>getHeight()</code> to your BST class.</li>
-<li>Use your <code>BST&lt;Item&gt;</code> to conduct an experiment.</li>
-</ul>
-<p>As usual, you should use test-driven development to accomplish these tasks. Note that part of your grade is based on the thoroughness of your new tests for <code>getHeight()</code>.</p>
-<div class="callout callout-style-default callout-important callout-titled">
+<section id="set-up" class="level2">
+<h2 class="anchored" data-anchor-id="set-up">Set Up</h2>
+<p><a href="https://classroom.github.com/a/y1MFWgHx">Accept the assignment</a> and use <code>git clone</code> to create your copy of the code.</p>
+</section>
+<section id="step-1.-try-it-out" class="level2">
+<h2 class="anchored" data-anchor-id="step-1.-try-it-out">Step 1. Try it out</h2>
+<p>If you are not familiar with “the snake game”, then you can try it out on google. Just type “snake game” into google and it will give you a pop-up game you can try. Use the arrow keys to move the head of the snake and go after the apple in order to make the snake longer and gain points. Don’t run into the edges or the snake itself!</p>
+<p>In our version of the game, we will allow the snake to wrap round from top to bottom (and vice versa) and left to right (and vice versa). The only way to die is to run into yourself.</p>
+<p>We will use the <a href="http://bridges-cs.herokuapp.com/signup">Bridges library</a> to visualize the game online. We’ll use the “Game mode” which requires you to start your program then open the browser and connect to your game. You’ll see a button on the web page that looks like this:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../projects/imgs/proj9-button.png" class="img-fluid figure-img"></p>
+<figcaption>Button to connect to game</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Important
+Warning
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Copy your <strong>Exception.h</strong>, <strong>catch.hpp</strong>, <strong>BST.h</strong>, <strong>makefile</strong>, and <strong>tests.cpp</strong> files from your previous lab, into your repo.</p>
+<p>Because we are using the BRIDGES library, you will have to work on machines in the lab!</p>
 </div>
 </div>
+<p>For our implementation, we’ll use a queue to represent the body of the snake. As the snake moves a new block is added to the end of the queue – which is the front of the snake – and the last block of the body is removed from the tail – which is the head of the queue. Each item in the queue will be a Pair of integers, representing the <span class="math inline">\((x, y)\)</span> location of the block (<span class="math inline">\(x\)</span> is vertical and <span class="math inline">\(y\)</span> is horizontal). So, the snake’s queue will be defined as</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>Queue<span class="op">&lt;</span>Pair<span class="op">&lt;</span><span class="dt">int</span><span class="op">&gt;&gt;</span> snake<span class="op">;</span> <span class="co">// (see line 58 of Snake.h)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The only other kinda tricky part of the code is how we grow the snake. The screen is redrawn each frame. A variable, <code>skipDeletingTailNodesCount</code>, exists which keeps track of how many subsequent frames should <em>not</em> delete the tail of the snake. So, if the variable has the value 2, the snake will grow by two new segments, because for the next 2 frames the snake’s tail will not be deleted.</p>
+<section id="step-2.-your-task" class="level3">
+<h3 class="anchored" data-anchor-id="step-2.-your-task">Step 2. Your task</h3>
+<p>There are TODOs littered throughout <strong>Snake.cpp</strong>. Your task is to replace the TODOs with code. Each TODO contains a description of what your code should do.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+A Note about Iterators
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You will have to write some code to use the <em>iterator</em> class defined inside the Queue class. An <em>iterator</em> is an abstract <em>pointer</em> – meaning that it can be used like a pointer, but isn’t actually a pointer. So, you can get an iterator, <code>it</code>, that “points” to an item in the queue and then get the item itself by doing <code>*it</code>.</p>
+<p>You can use iterators to walk through the snake object, like this:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> <span class="op">(</span>Queue<span class="op">&lt;</span>Pair<span class="op">&lt;</span><span class="dt">int</span><span class="op">&gt;&gt;::</span>iterator it <span class="op">=</span> snake<span class="op">.</span>begin<span class="op">();</span> it <span class="op">!=</span> snake<span class="op">.</span>end<span class="op">();</span> it<span class="op">++)</span> <span class="op">{</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>      <span class="co">// use it here -- remember it points to an item in the queue, and those items are Pair objects.</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<p>To run your program you have to provide two <em>command-line arguments</em>: your Bridges UserName and your Bridges Id. E.g., I run the program this way:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./snake</span> VictorNorman 1313148564</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Recall that you can get your username and id from the bridges website: <a href="http://bridges-cs.herokuapp.com/" class="uri">http://bridges-cs.herokuapp.com/</a></p>
 </section>
-<section id="adding-getheight" class="level2">
-<h2 class="anchored" data-anchor-id="adding-getheight">Adding getHeight()</h2>
-<p>The height of a tree with a root node is defined as the height of the node’s taller sub-tree, plus 1. As you can see, this is a <strong>recursive</strong> definition, which needs a <strong>base case</strong>. The base case is that if a node has no children, its height is 1.</p>
-<p>Let’s give some examples to clarify:</p>
-<p>If a tree has no nodes, its height is 0. If a tree has 1 node – the root node – its height is 1.</p>
-<p>If a tree has a root node and that node has either a left child or a right child, or both, its height is 2. Suppose the tree has a root node and that node has a single right child node. The right child node has height 1. The root node’s height is 1 + (the greater of the height of its left subtree – which is 0 – and the right subtree – which is 1). Thus, the root node’s height is 2.</p>
-<p>Implement <code>getHeight()</code> now. Its implementation is similar to <code>insert()</code> or a traversal algorithm in that it uses recursion. The difference here is that each function returns an integer – the node’s height.</p>
-<section id="the-experiment" class="level3">
-<h3 class="anchored" data-anchor-id="the-experiment">The Experiment</h3>
-<p>The height of a BST determines the speed of operations like <code>insert()</code> and <code>contains()</code>. If we build a “large” BST of N items (e.g., <span class="math inline">\(~2^20\)</span>), and that tree is balanced, then its height should be the minimal <span class="math inline">\(O(lg(N))\)</span> (e.g., 20).</p>
-<p>This week’s problem is to conduct a simple experiment to see how “tall” BSTs get, given random values. Our objective is to see how close we come to lg(N) height if we build large trees of N randomly ordered values.</p>
-<p>Your repo contains two directories that each contain ten data files (<strong>randomInts01.txt</strong>, <strong>randomInts02.txt</strong>, …, <strong>randomInts10.txt</strong>), each containing <span class="math inline">\(2^20-1 = 1,048,575\)</span> randomly generated integer values. If these values were ordered in exactly the right way, we could build trees of height 20. (On the other hand, if they were ordered in exactly the wrong way, we could build trees of height 1,048,575!)</p>
-<p>Your task is to write a simple program that prompts the user for the name of an input file, reads each value from that file, and inserts it into a BST. Your program should then display the height of the resulting BST.</p>
-<p>There are minor details to keep in mind:</p>
-<ul>
-<li>There may be duplicate values within an input file, and inserting a duplicate value into our BST will throw an exception. Your program should count and output the number of duplicate values in a given file by catching and handling this exception.</li>
-<li>There are two directories – one for Linux/MacOS, and one for Windows.</li>
-<li>These files were generated in the Maroon lab (whose workstations are 64-bit machines), and so the integers in these files are 64-bit integers. However, the C++ int and unsigned types only store integers in 32 bits; the long type stores integers in 64 bits, so use it to store these 64-bit integers.</li>
-</ul>
-<p>Since there are ten input files, you will need to run your program ten times. (Or find a clever way to automate this.) For each file, record the corresponding tree-height in a spreadsheet, and the number of duplicate values that were found. Given all ten heights, use the spreadsheet to calculate the minimum height, the maximum height, the average height, the median height, and the standard deviation of the ten heights. (Your spreadsheet will make each of these computations easy.) Finally, use your spreadsheet to create a bar-chart showing each of the ten heights, as a visualization of your data. Finally</p>
-<p>Answer the following questions in your spreadsheet, below the chart:</p>
+</section>
+<section id="plan-of-attack" class="level2">
+<h2 class="anchored" data-anchor-id="plan-of-attack">Plan of Attack</h2>
+<p>I recommend you replace the TODOs in this order:</p>
 <ol type="1">
-<li>Is <span class="math inline">\(lg(N)\)</span> or <span class="math inline">\(N\)</span> a better approximation for your measured heights? Why?</li>
-<li>How much variance is there in the height of these trees? Is this surprising? Why or why not?</li>
-<li>How many duplicate values were there (on average)? Is this surprising? Why or why not?</li>
-<li>The “big Oh” notation <span class="math inline">\(O(f(n))\)</span> implies that there are constants <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>, such that <span class="math inline">\(a \times f(n) + b\)</span> describes the reality for which <span class="math inline">\(O(f(n))\)</span> is an approximation. A balanced BST of <span class="math inline">\(N\)</span> items has height <span class="math inline">\(O(lg(N))\)</span>. Theoretically, there should be values <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> such that <span class="math inline">\(a \times lg(N) + b\)</span> describes the actual height of a BST built using random data. Using your experimental results, what is a reasonable value for <span class="math inline">\(a\)</span>?</li>
+<li>do <code>drawSnake()</code></li>
+<li>Fix <code>updateSnake()</code>. After this, you should be able to run your program and see the snake move around.</li>
+<li>do <code>plantTarget()</code></li>
+<li>do <code>detectTarget()</code></li>
+<li>do <code>detectDeath()</code></li>
 </ol>
-</section>
+<p><strong>Note:</strong> for some of these there are easy ways and hard ways to implement them. Study the Queue class to see what methods exist on a Queue object. I’ve created some of those methods to help you implement the functions above more easily.</p>
 </section>
 <section id="submission" class="level2">
 <h2 class="anchored" data-anchor-id="submission">Submission</h2>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Important
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>👉👉👉 Download/export a PDF version of your chart and store it in your repo for submission. Call the file <strong>analysis.pdf</strong>.</p>
-</div>
-</div>
 <p>Don’t forget to commit your code to your online repo on <a href="https://github.com/">github.com</a> so that the grader can grade it.</p>
+<p>If, after you submit your code, you want to enhance the game, you could:</p>
+<ul>
+<li>make the game run faster as the snake gets longer.</li>
+<li>make the target be a number between 1 and 9 inclusive, and the snake grows that much longer each time the target is eaten.</li>
+</ul>
+<p>(If you make these enhancements, don’t submit them. The grader will just grade the basic implementation.)</p>
 </section>
 <section id="grading-rubric" class="level2">
 <h2 class="anchored" data-anchor-id="grading-rubric">Grading Rubric</h2>
-<p>Total: 24 pts</p>
+<p>The assignment will be graded as follows:</p>
+<p>Total points: 25 pts total:</p>
 <ul>
-<li><code>getHeight()</code>: 5 pts</li>
-<li>New tests in <strong>tests.cpp</strong> for <code>getHeight()</code>: 3 pts</li>
-<li>program: 10 pts</li>
-<li>spreadsheet / analysis: 6 pts</li>
+<li>4 pts: <code>drawSnake()</code> correct</li>
+<li>5 pts: <code>updateSnake()</code> correct</li>
+<li>3 pts: <code>plantTarget()</code> correct</li>
+<li>4 pts: <code>detectTarget()</code> correct</li>
+<li>7 pts: <code>detectDeath()</code> correct</li>
+<li>2 pts: code is clean and neat.</li>
 </ul>
-<p>Ways students have lost points in the past:</p>
+<p>Ways students lost points in the past:</p>
 <ul>
-<li>-3: Missing chart, spreadsheet</li>
-<li>-6: Missing spreadsheet/analysis</li>
-<li>-3: Missing tests for <code>getHeight()</code></li>
-<li>-1: Big-Oh of height was wrong.</li>
-<li>-1: Error in <code>getHeight()</code>: a tree with two items could either have a height of 1 or 2</li>
+<li>-2: Can’t make file. Error occurs</li>
+<li>-2: Does not allow me to play the game.</li>
+<li>-4: program does not detect collisions correctly.</li>
+<li>-3: program does not “eat” the target correctly.</li>
+<li>-12.5: code is identical with one other person.</li>
+<li>-18: code is identical with 2 other people.</li>
 </ul>
 
 

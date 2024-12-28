@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Week 13: Hash Tables and Sorting Algorithms – CS112 - Data Structures</title>
+<title>Week 13: STL set and map containers – CS112 - Data Structures</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,6 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./week14.html" rel="next">
 <link href="./week12.html" rel="prev">
 <link href="././images/cs112-logo.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
@@ -73,10 +74,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="https://kit.fontawesome.com/78ddb093ea.js" crossorigin="anonymous"></script>
 
 
-<meta property="og:title" content="Week 13: Hash Tables and Sorting Algorithms – CS112 - Data Structures">
+<meta property="og:title" content="Week 13: STL set and map containers – CS112 - Data Structures">
 <meta property="og:description" content="CS112 will teach students to use C++ for creating data structures.">
 <meta property="og:site_name" content="CS112 - Data Structures">
-<meta name="twitter:title" content="Week 13: Hash Tables and Sorting Algorithms – CS112 - Data Structures">
+<meta name="twitter:title" content="Week 13: STL set and map containers – CS112 - Data Structures">
 <meta name="twitter:description" content="CS112 will teach students to use C++ for creating data structures.">
 <meta name="twitter:image" content="https://ericaraujo.com/24fa-cs112/images/twitter-card.png">
 <meta name="twitter:creator" content="@ericfaraujo">
@@ -137,7 +138,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./week13.html">Week 13: Hash Tables and Sorting Algorithms</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./week13.html">Week 13: STL set and map containers</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -212,31 +213,37 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./week09.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 9: Recursion</span></a>
+ <span class="menu-text">Week 09: Stacks and Queues</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./week10.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 10: BSTs</span></a>
+ <span class="menu-text">Week 10: Recursion</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./week11.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 11: AVL Trees</span></a>
+ <span class="menu-text">Week 11: BSTs</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./week12.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 12: STL set and map containers</span></a>
+ <span class="menu-text">Week 12: AVL Trees</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./week13.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Week 13: Hash Tables and Sorting Algorithms</span></a>
+ <span class="menu-text">Week 13: STL set and map containers</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./week14.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 14: Hash Tables and Sorting Algorithms</span></a>
   </div>
 </li>
     </ul>
@@ -259,7 +266,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Week 13: Hash Tables and Sorting Algorithms</h1>
+<h1 class="title">Week 13: STL set and map containers</h1>
 </div>
 
 
@@ -280,19 +287,14 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="slos-for-week-13">SLOs for Week 13</h2>
 <p>At the end of this unit, students will be able to…</p>
 <ul>
-<li>Hash Tables:
-<ul>
-<li>write the basic data structure for storing items in a hash table.</li>
-<li>reason about important properties of a good hash algorithm.</li>
-<li>identify the time complexity of each operation on a hash table.</li>
-<li>reason about the time-space tradeoff manifested in a hash table.</li>
-</ul></li>
-<li>Sorting Algorithms
-<ul>
-<li>describe the crucial ideas behind Insertion Sort and Selection Sort.</li>
-<li>identify the crucial differences between Insertion and Selection Sort.</li>
-<li>identify the time complexity of Insertion and Selection sort in best and worst cases.</li>
-</ul></li>
+<li>describe the unique characteristics of the STL set container – e.g., that a set stores unique values in sorted order.</li>
+<li>describe the time complexity of set container operations, like find, insert, remove.</li>
+<li>write code using iterators to traverse all items in a set.</li>
+<li>explain the behavior of an iterator.</li>
+<li>describe the unique characteristics of the STL map container – e.g., that a map stores key, value pairs, with unique keys stored in sorted order.</li>
+<li>describe the time complexity of map container operations, like find, insert, remove, and indexing/subscripting.</li>
+<li>reason about the unique behavior of indexing in a map object.</li>
+<li>write code using iterators to traverse all items in a map.</li>
 </ul>
 </section>
 <section id="slides-videos-and-application-exercises" class="level2">
@@ -300,35 +302,20 @@ ul.task-list li input[type="checkbox"] {
 <div class="slide-deck">
 <p><strong>Week 13: Slides</strong></p>
 <div class="slides">
-<p><a href="https://calvincollege-my.sharepoint.com/:p:/g/personal/vtn2_calvin_edu/EaCjYGAo6VBBrf55UKfcutAB4UsUT03-Ik7egbfJOB0_PQ?e=U7yIYO" target="_blank">Hash Tables</a></p>
+<p><a href="https://docs.google.com/presentation/d/1AtO1BnVb8WHNWg6ZYGCGav6y5zPqSPF8G5r-9VQbgLo/edit?usp=sharing" target="_blank">Slides</a></p>
 </div>
-<div class="slides">
-<p><a href="https://docs.google.com/presentation/d/1H8e0eAfmzyISfkwiURrIYJkz-hvlqen8r4tZder2KnE/edit?usp=sharing" target="_blank">Sorting Algorithms</a></p>
-</div>
-<!-- ::: source
-[Code from Class](https://calvincollege-my.sharepoint.com/:f:/g/personal/vtn2_calvin_edu/Eredz2bHiShCtI0CVssiaggB8tUES6QbacEf2cc4PBhTgQ?e=uoV7Uu)
-::: -->
 <div class="reading">
 <p>No readings for Week 13.</p>
-<!-- -   R4DS :: [Chp 2 - Introduction](https://r4ds.had.co.nz/explore-intro.html)
--   IMS :: [Sec 1.1 & 1.2 - Case study & Data basics](https://openintro-ims.netlify.app/data-hello.html) -->
 </div>
-<!-- ::: video
-[Video](https://youtu.be/_YqEHZccujc)
-:::
--->
 </div>
 <!-- ## Lab -->
 <div class="lab">
-<p><strong>Lab 13: Hash Tables</strong></p>
+<p><strong>Lab 13: The STL set and map Containers</strong></p>
 <div class="instructions">
 <p><a href="./labs/lab13.html">Instructions</a></p>
 </div>
-<!-- ::: instructions
-[Instructions](slides/lab06-slides.qmd)
-::: -->
 <div class="starter">
-<p><a href="https://classroom.github.com/a/7abeJcnj" target="_blank">Source</a></p>
+<p><a href="" target="_blank">Source</a></p>
 </div>
 <!-- ::: slides
 [Slides]()
@@ -337,45 +324,10 @@ ul.task-list li input[type="checkbox"] {
 <!-- ## Homework assignments -->
 <div class="homework">
 <p><strong>Project 13: No Project</strong></p>
-<!-- ::: instructions
-[Instructions](/projects/proj10.qmd)
-::: -->
-<!-- ::: source
-[Source](https://github.com/rstudio-education/datascience-box/tree/master/course-materials/hw-instructions/hw-10)
-::: -->
-<!-- ::: starter
-[Starter](https://classroom.github.com/a/f0Ju72P9){target="{\"_blank\""}}
-::: -->
 </div>
-<!-- ::: exam
-**Exam 4** Exam on Wednesday during class. Bring your laptop. Content: Weeks 0 - 11.
-::: -->
-<!-- ::: application-exercise
-**First dataviz**
-
-> **Option 1 - UN Votes**
->
-> ::: source
-> [Source](https://github.com/rstudio-education/datascience-box/tree/master/course-materials/application-exercises/ae-01a-un-votes/unvotes.qmd)
-> :::
->
-> ::: video
-> [Video](https://youtu.be/r-uTBEclM1E)
-> :::
-
-> **Option 2 - COVID-19**
->
-> ::: source
-> [Source](https://github.com/rstudio-education/datascience-box/blob/master/course-materials/application-exercises/ae-01b-covid/covid.qmd)
-> :::
-::: -->
-<!-- ::: guest-lecture
-**Alberto Cairo - How charts lie**
-
-::: video
-[Video](https://youtu.be/Low28hx4wyk)
-:::
-::: -->
+<div class="exam">
+<p><strong>Exam 4</strong> Exam on Wednesday during class. Bring your laptop. Content: Weeks 0 - 11.</p>
+</div>
 
 
 </section>
@@ -947,11 +899,14 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./week12.html" class="pagination-link" aria-label="Week 12: STL set and map containers">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Week 12: STL set and map containers</span>
+      <a href="./week12.html" class="pagination-link" aria-label="Week 12: AVL Trees">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Week 12: AVL Trees</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./week14.html" class="pagination-link" aria-label="Week 14: Hash Tables and Sorting Algorithms">
+        <span class="nav-page-text">Week 14: Hash Tables and Sorting Algorithms</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->
