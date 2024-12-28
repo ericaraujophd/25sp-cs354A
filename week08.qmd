@@ -40,14 +40,9 @@ No readings for Week 08.
 **Lab 08: Timing List and Vector Operations**
 
 ::: instructions
-[Instructions]()
+[Instructions](/labs/lab08.qmd)
 :::
 
-```{=html}
-<!-- ::: instructions
-[Instructions](slides/lab06-slides.qmd)
-::: -->
-```
 
 ::: starter
 [Source]()
@@ -61,60 +56,15 @@ No readings for Week 08.
 <!-- ## Homework assignments -->
 
 ::::: homework
-**Project 8: Navigate a Maze Using a Stack**
+**Project 8: Conga!**
 
-Navigate a Maze Using a Stack
+Conga!
 
 ::: instructions
-[Instructions](/projects/proj08.qmd)
+[Instructions](/projects/proj08-Conga.qmd)
 :::
-
-```{=html}
-<!-- ::: source
-[Source](https://github.com/rstudio-education/datascience-box/tree/master/course-materials/hw-instructions/hw-10)
-::: -->
-```
 
 ::: starter
-[Starter](https://classroom.github.com/a/3j-1oMeu)
+[Starter]()
 :::
 :::::
-
-```{=html}
-<!-- ::: exam
-**Exam 1**
-Exam on Friday during class. Bring your laptop. Content: Weeks 0 - 2.
-::: -->
-```
-
-```{=html}
-<!-- ::: application-exercise
-**First dataviz**
-
-> **Option 1 - UN Votes**
->
-> ::: source
-> [Source](https://github.com/rstudio-education/datascience-box/tree/master/course-materials/application-exercises/ae-01a-un-votes/unvotes.qmd)
-> :::
->
-> ::: video
-> [Video](https://youtu.be/r-uTBEclM1E)
-> :::
-
-> **Option 2 - COVID-19**
->
-> ::: source
-> [Source](https://github.com/rstudio-education/datascience-box/blob/master/course-materials/application-exercises/ae-01b-covid/covid.qmd)
-> :::
-::: -->
-```
-
-```{=html}
-<!-- ::: guest-lecture
-**Alberto Cairo - How charts lie**
-
-::: video
-[Video](https://youtu.be/Low28hx4wyk)
-:::
-::: -->
-```
