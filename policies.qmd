@@ -12,7 +12,7 @@ Your grade in this course will be based on:
 -   **Labs:** 20%
 -   **Homework projects:** 25%
 -   **Tests (5, including the final test during the Exam time):** 50%
-    -   The lowest test score will be dropped.
+    -   The lowest test score will be dropped. Final test has to be taken as it does not count for the lowest score.
 
 # Grading and Late Work Policies {.unnumbered}
 
@@ -22,7 +22,9 @@ Your grade in this course will be based on:
     a.  You will have 7 days from that announcement to check your grades and make appeals for changes. <!-- // Appeals are made through the GradeBoost Appeal app: https://gradeboost.cs.calvin.edu.  -->
     b.  You may also resubmit your assignment and appeal to have it regraded. <!-- Again, use the GradeBoost Appeal app.  -->
     c.  After the 7 days have expired, you cannot ask to have your assignment graded or regraded.
-4.  Assignments that are turned in very late (i.e., so late that at 10% per day, the assignment would receive a 0) will not be graded, but will be given a maximum score of 30%.
+4.  Assignments that are turned in very late (i.e., so late that at 10% per day, the assignment would receive a 0) will not be graded. 
+
+<!-- , but will be given a maximum score of 30%. -->
 
 ## Grace Days {.unnumbered}
 
@@ -37,13 +39,15 @@ Here are some circumstances in which you might use grace days:
 **Here is the procedure for using grace days:**
 
 -   **DO NOT** email me to tell me you are going to use grace days. I don't need to know this -- there is no action I need to take if you tell me this.
--   When your assignment grade comes back and you have lost points due to lateness, then use the Grade Appeal app to ask for the points to be restored and tell me how many grace days you want to use for that.
+-   When your assignment grade comes back and you have lost points due to lateness, then send an email to ask for the points to be restored and tell me how many grace days you want to use for that.
 
 ## Extenuating Circumstances {.unnumbered}
 
 If you fall ill (physically or mentally) for an extended period of time, AND you send me documentation from Student Life, Student Health Center, or the Center for Health and Wellness, then, and only then, I will consider allowing you to make up late assignments.
 
+:::{.callout-warning}
 If you begin to skip class repeatedly due to mental health problems, go to the Center for Health and Wellness! Don't delay!
+:::
 
 ## Incompletes
 
@@ -58,18 +62,13 @@ Laboratory exercises are to be done in pairs, using pair programming. One copy o
 Feel free to discuss ideas with us or with your classmates, but don’t copy code (i.e., plagiarize). Here are examples of what plagiarism looks like:
 
 -   You copy a program from an online source, change some small things (e.g., variable names, output messages), and submit the code without attribution.
-
 -   Your roommate writes some code, which you add to your program. You add documentation that shows you understand their code, but never indicate the source of the code.
-
 -   You find an online tutorial that walks you through the construction of a system that you then submit without attribution.
-
 -   You use a generative model (e.g., ChatGPT) to produce your code, review it, perhaps edit it a bit, and then submit it without attribution.
 
 -   Consider these rules of thumb:
-
--   If you found it efficient to use copy/paste or use a generative language model to create more than one or two lines of your application, you must document the original source of the code.
-
--   If the moment you figure out how to do something occurs while you are looking at a website or at the output of a generative language model, you should document that website.
+    -   If you found it efficient to use copy/paste or use a generative language model to create more than one or two lines of your application, you must document the original source of the code.
+    -   If the moment you figure out how to do something occurs while you are looking at a website or at the output of a generative language model, you should document that website.
 
 Note that these rules of thumb apply to the code supplied in this course’s materials as well.
 
@@ -95,7 +94,7 @@ Class attendance is optional.
 
 Also, lab attendance **is required**! Lab is not optional. Skipping lab may result in you doing poorly in class.
 
-**Missing class due to illness**: if you are going to miss class due to (physical or mental) illness, please send me an email before class.
+**Missing class due to illness**: if you are going to miss class due to (physical or mental) illness, please send me an email **before** class.
 
 ## Disabilities
 
