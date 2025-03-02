@@ -13,7 +13,7 @@ website:
 
   favicon: /images/data-management.png
   
-  repo-url: https://github.com/ericaraujophd/24sp-cs354A
+  repo-url: https://github.com/ericaraujophd/25sp-cs354A
   repo-actions: [edit, issue]
 
   open-graph: true
@@ -23,12 +23,12 @@ website:
 
   page-footer:
     left: "This page is built with ❤️ and [Quarto](https://quarto.org/)."
-    background: "#A7D5E8"
+    background: "#6ab740"
     right:
     - text: "License"
       # href: LICENSE.md
   navbar:
-    background: "#A7D5E8"
+    background: "#6ab740"
     logo: "/images/data-management.png"
     align: center
     title: false
