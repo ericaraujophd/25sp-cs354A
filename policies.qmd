@@ -16,7 +16,7 @@ Your grade in this course will be based on:
 
 # Grading and Late Work Policies {.unnumbered}
 
-1.  Each exercise and project will have a **Due date** associated with it. This is the date by which you should submit your work in order to avoid falling behind in the course.
+1.  Each homework and project will have a **Due date** associated with it. This is the date by which you should submit your work in order to avoid falling behind in the course.
 2.  Each day that your submission is late, you will be assessed a **penalty of 10%** (unless you use grace days -- see below).
 3.  Periodically during the course, I will announce (in class or through email) that assignments have been graded.
     a.  You will have 7 days from that announcement to check your grades and make appeals for changes. <!-- // Appeals are made through the GradeBoost Appeal app: https://gradeboost.cs.calvin.edu.  -->
@@ -28,7 +28,7 @@ Your grade in this course will be based on:
 
 ## Grace Days {.unnumbered}
 
-You have 8 Grace Days available to you during the semester. These grace days may be used to submit an assignment late without penalty. **Grace Days Remaining** will be seen in the GradeBook in Moodle.
+You have 4 Grace Days available to you during the semester. These grace days may be used to submit an assignment late without penalty. **Grace Days Remaining** will be seen in the GradeBook in Moodle.
 
 Here are some circumstances in which you might use grace days:
 
@@ -57,26 +57,21 @@ An Incomplete (I) grade will be granted only in unusual circumstances, and only 
 
 # Honesty {.unnumbered}
 
-Laboratory exercises are to be done in pairs, using pair programming. One copy of the assignment will be submitted for grading. Unless specified otherwise, exams, homework assignments, and projects are to be done individually, and must consist of your own original work. Submitting another student's work as your own (even with their knowledge) is **academic fraud**; and any detected duplication of work will be dealt with in accordance with Calvin's policies on Academic Honesty. Likewise, giving another person your work to submit as their own constitutes academic fraud and may result in a failing grade (F) for both parties.
+Unless specified otherwise, exams, homework assignments, and projects are to be done individually, and must consist of your own original work. Submitting another student's work as your own (even with their knowledge) is **academic fraud**; and any detected duplication of work will be dealt with in accordance with Calvin's policies on Academic Honesty. Likewise, giving another person your work to submit as their own constitutes academic fraud and may result in a failing grade (F) for both parties.
 
 Feel free to discuss ideas with us or with your classmates, but don’t copy code (i.e., plagiarize). Here are examples of what plagiarism looks like:
 
 -   You copy a program from an online source, change some small things (e.g., variable names, output messages), and submit the code without attribution.
-
 -   Your roommate writes some code, which you add to your program. You add documentation that shows you understand their code, but never indicate the source of the code.
-
 -   You find an online tutorial that walks you through the construction of a system that you then submit without attribution.
-
 -   You use a generative model (e.g., ChatGPT) to produce your code, review it, perhaps edit it a bit, and then submit it without attribution.
-
 -   Consider these rules of thumb:
-
     -   If you found it efficient to use copy/paste or use a generative language model to create more than one or two lines of your application, you must document the original source of the code.
     -   If the moment you figure out how to do something occurs while you are looking at a website or at the output of a generative language model, you should document that website.
 
 Note that these rules of thumb apply to the code supplied in this course’s materials as well.
 
-Our graders will be using a tool called the Measure of Software Similarity (MOSS) to check all submissions against all other submissions. If two submissions are found to be significantly similar, we will assume cheating has happened. Note that this software is pretty smart. It knows what computer language it is inspecting and can determine if two submissions are the same except for differences in variable names, e.g.
+I will be using a tool called the Measure of Software Similarity (MOSS) to check all submissions against all other submissions. If two submissions are found to be significantly similar, we will assume cheating has happened. Note that this software is pretty smart. It knows what computer language it is inspecting and can determine if two submissions are the same except for differences in variable names, e.g.
 
 Note that if you and someone else both independently ask ChatGPT or Copilot (or some other LLM) to write code for you, and you both submit it, MOSS will detect it as identical and we will have to assume you cheated.
 
@@ -90,13 +85,11 @@ Note that if you and someone else both independently ask ChatGPT or Copilot (or 
 
 This is a difficult class, and you don't need to be distracted by goofing around on your phone or laptop. And, I don't want you to distract others.
 
-Daily Quizzes will be administered in the first 5 minutes of class, on Moodle. Do not show up late to class.
+Weekly Quizzes will be administered in the first 5 minutes of class every Friday, on Moodle. Do not show up late to class.
 
 ## Attendance
 
-Class attendance is optional.
-
-Also, lab attendance **is required**! Lab is not optional. Skipping lab may result in you doing poorly in class.
+Class attendance is required.
 
 **Missing class due to illness**: if you are going to miss class due to (physical or mental) illness, please send me an email **before** class.
 
@@ -112,10 +105,4 @@ Inside and outside of the classroom, I work to treat every person with equal res
 ## IMPORTANT!
 
 If you or someone else in this class is hurt by something I say or do in class, I would like to know about it so that we can work toward a remedy. This has happened in the past in my classroom -- usually when I'm trying to be "cool" or be funny. If this happens this semester, please know that it was unintentional. Because this kind of feedback can be uncomfortable for all involved, I’ll take it however it comes: in public or in private, on the spot or days later, directly from you or indirectly through another student, another professor, or through my department chair Keith VanderLinden (kvlinden\@calvin.edu).
-:::
-
-::: callout-caution
-## Callout by Prof. Norman!
-
-Also, please note that I am half deaf (at least). I am completely deaf on my left side. This results in my not being able to hear students that speak quietly, and not being able to tell which direction sounds are coming from. Please speak loudly! Thanks.
 :::
