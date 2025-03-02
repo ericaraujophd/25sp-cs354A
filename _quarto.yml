@@ -45,12 +45,14 @@ website:
     left:
       - text: "Overview"
         href: index.qmd
+      - text: "Content"
+        href: content.qmd
       - text: "Instructors"
         href: instructors.qmd
       - text: "Course Policies"
         href: policies.qmd
-      - text: "Content"
-        href: content.qmd
+      - text: "Resources"
+        href: resources.qmd
 
   sidebar:
     - id: policies

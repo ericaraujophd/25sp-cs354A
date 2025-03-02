@@ -1,0 +1,23 @@
+---
+title: "Course Resources"
+editor: visual
+---
+
+# Links to SQL training websites
+
+:::{.callout-important}
+These links were last updated on 2/3/2025. Please let me know if any of them are broken.
+:::
+
+* [Real Python SQL](https://realpython.com/python-sql-libraries/){target="_blank"}
+* [SQLZoo](https://sqlzoo.net/wiki/SQL_Tutorial){target="_blank"}
+* [CodeAcademy](https://www.codecademy.com/learn/learn-sql){target="_blank"}
+* [HackerRank](https://www.hackerrank.com/challenges/15-days-of-learning-sql/problem){target="_blank"}
+* [LeetCode](https://leetcode.com/problemset/database/){target="_blank"}
+* [W3Schools](https://www.w3schools.com/sql/){target="_blank"}
+* [SQLBolt](https://sqlbolt.com/lesson/select_queries_introduction){target="_blank"}
+* [Mode](https://mode.com/sql-tutorial/introduction-to-sql){target="_blank"}
+* [SQLPad](https://sqlpad.io/playground/mysql/){target="_blank"}
+* [LearnSQL](https://learnsql.com/){target="_blank"}
+* [SQLGuroo](https://sqlguroo.com/{target="_blank"})
+
