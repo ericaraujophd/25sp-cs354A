@@ -458,14 +458,14 @@
     "href": "instructors.html",
     "title": "Instructors",
     "section": "",
-    "text": "This course has as instructors: Prof. Victor Norman and Prof. Eric Araújo."
+    "text": "This course has as instructor: Prof. Eric Araújo."
   },
   {
     "objectID": "instructors.html#office-hours",
     "href": "instructors.html#office-hours",
     "title": "Instructors",
     "section": "Office Hours",
-    "text": "Office Hours\n\n\nProf. Norman’s hours\nProf. Araújo’s hours"
+    "text": "Office Hours\n\nProf. Araújo’s hours\n\n\n\n\n\n\n\nWarning\n\n\n\nIf you can’t meet in during my office hours, use the link to find free times in my schedule and send me an email requesting to meet during the selected time."
   },
   {
     "objectID": "LICENSE.html",
@@ -651,7 +651,7 @@
     "href": "policies.html",
     "title": "Course Policies",
     "section": "",
-    "text": "Your grade in this course will be based on:\n\nDaily Quizzes: 5%\n\nThe lowest 3 quizzes will be dropped.\n\nLabs: 20%\nHomework projects: 25%\nTests (5, including the final test during the Exam time): 50%\n\nThe lowest test score will be dropped. Final test has to be taken as it does not count for the lowest score."
+    "text": "Your grade in this course will be based on:\n\nWeekly Quizzes: 5%\n\nQuizzes every Friday.\n\nProjects: 20%\nFinal Project: 25%\nHomework: 20%\nTests (2, including the final test during the Exam time): 30%"
   },
   {
     "objectID": "policies.html#grace-days",

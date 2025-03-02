@@ -2,7 +2,7 @@ project:
   type: website
   output-dir: docs
   resources:
-    - "images/twitter-card.png"
+    - "/images/data-management.png"
     - "course-materials/_slides/"
     
 website:
@@ -11,7 +11,7 @@ website:
   description: "CS354 provides a hands-on introduction to relational databases, SQL querying, and database design, focusing on real-world applications, optimization, and security."
   site-url: "https://ericaraujo.com/25sp-cs354A"
 
-  favicon: ./images/cs112-logo.png
+  favicon: /images/data-management.png
   
   repo-url: https://github.com/ericaraujophd/24sp-cs354A
   repo-actions: [edit, issue]
@@ -19,7 +19,7 @@ website:
   open-graph: true
   twitter-card:
     creator: "@ericfaraujo"
-    image: "/images/twitter-card.png"
+    image: "/images/data-management.png"
 
   page-footer:
     left: "This page is built with ❤️ and [Quarto](https://quarto.org/)."
@@ -29,7 +29,7 @@ website:
       # href: LICENSE.md
   navbar:
     background: "#A7D5E8"
-    logo: "images/cs112-logo.png"
+    logo: "/images/data-management.png"
     align: center
     title: false
     collapse-below: lg
