@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Week 05: Generic Containers – CS112 - Data Structures</title>
+<title>Week 05: Advanced SQL &amp; Integrity Constraints – CS 354 – Database Management Systems</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -75,12 +75,12 @@ ul.task-list li input[type="checkbox"] {
 
 
 <link rel="stylesheet" href="./styles.css">
-<meta property="og:title" content="Week 05: Generic Containers – CS112 - Data Structures">
-<meta property="og:description" content="CS112 will teach students to use C++ for creating data structures.">
-<meta property="og:site_name" content="CS112 - Data Structures">
-<meta name="twitter:title" content="Week 05: Generic Containers – CS112 - Data Structures">
-<meta name="twitter:description" content="CS112 will teach students to use C++ for creating data structures.">
-<meta name="twitter:image" content="https://ericaraujo.com/24fa-cs112/images/twitter-card.png">
+<meta property="og:title" content="Week 05: Advanced SQL &amp; Integrity Constraints – CS 354 – Database Management Systems">
+<meta property="og:description" content="CS354 provides a hands-on introduction to relational databases, SQL querying, and database design, focusing on real-world applications, optimization, and security.">
+<meta property="og:site_name" content="CS 354 – Database Management Systems">
+<meta name="twitter:title" content="Week 05: Advanced SQL &amp; Integrity Constraints – CS 354 – Database Management Systems">
+<meta name="twitter:description" content="CS354 provides a hands-on introduction to relational databases, SQL querying, and database design, focusing on real-world applications, optimization, and security.">
+<meta name="twitter:image" content="https://ericaraujo.com/25sp-cs354A/images/twitter-card.png">
 <meta name="twitter:creator" content="@ericfaraujo">
 <meta name="twitter:image-height" content="500">
 <meta name="twitter:image-width" content="500">
@@ -123,7 +123,7 @@ ul.task-list li input[type="checkbox"] {
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/ericaraujophd/24fa-cs112"> <i class="bi bi-github" role="img" aria-label="GitHub">
+    <a class="nav-link" href="https://github.com/ericaraujophd/25sp-cs354A"> <i class="bi bi-github" role="img" aria-label="GitHub">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -139,7 +139,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./week05.html">Week 05: Generic Containers</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./week05.html">Week 05: Advanced SQL &amp; Integrity Constraints</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -159,92 +159,44 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./week00.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 00: Intro do C++</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./week01.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 01: Control Structures, Functions, Parameter Passing modes</span></a>
+ <span class="menu-text">Week 01: Introduction to Databases &amp; SQL Basics</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./week02.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 02: File Input/Output, Exception Handling, Two-dimensional Arrays</span></a>
+ <span class="menu-text">Week 02: SQL – Intermediate Concepts</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./week03.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 03: Classes, Operator Overloading, etc.</span></a>
+ <span class="menu-text">Week 03: SQL – Data Modification &amp; Advanced Queries</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./week04.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 04: Vectors – Dynamic Arrays</span></a>
+ <span class="menu-text">Week 04: Database Design – ER Modeling &amp; Schema Refinement</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./week05.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Week 05: Generic Containers</span></a>
+ <span class="menu-text">Week 05: Advanced SQL &amp; Integrity Constraints</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./week06.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 06: Linked Lists, Dynamic Array or Linked List</span></a>
+ <span class="menu-text">Week 06: Database Management &amp; Optimization</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./week07.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 07: Spring Break</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week08.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 08: Algorithm Analysis and Big-Oh</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week09.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 09: Stacks and Queues</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week10.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 10: Recursion</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week11.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 11: BSTs</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week12.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 12: AVL Trees</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week13.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 13: STL set and map containers</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week14.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 14: Hash Tables and Sorting Algorithms</span></a>
+ <span class="menu-text">Week 07: Final Project and Course Wrap-Up</span></a>
   </div>
 </li>
     </ul>
@@ -260,14 +212,14 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#slos-for-week-05" id="toc-slos-for-week-05" class="nav-link active" data-scroll-target="#slos-for-week-05">SLOs for Week 05</a></li>
   <li><a href="#slides-videos-and-application-exercises" id="toc-slides-videos-and-application-exercises" class="nav-link" data-scroll-target="#slides-videos-and-application-exercises">Slides, videos, and application exercises</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/ericaraujophd/24fa-cs112/edit/main/week05.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/24fa-cs112/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/ericaraujophd/24sp-cs354A/edit/main/week05.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/24sp-cs354A/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Week 05: Generic Containers</h1>
+<h1 class="title">Week 05: Advanced SQL &amp; Integrity Constraints</h1>
 </div>
 
 
@@ -287,14 +239,14 @@ ul.task-list li input[type="checkbox"] {
 <section id="slos-for-week-05" class="level2">
 <h2 class="anchored" data-anchor-id="slos-for-week-05">SLOs for Week 05</h2>
 <p>By the end of this unit, students will be able to…</p>
-<ul>
-<li>describe when appending to a dynamic array is “inexpensive” and when it is “expensive”.</li>
-<li>reason about the difference between a dynamic array’s size and capacity.</li>
-<li>explain what a class template is to his or her grandma or grandpa.</li>
-<li>explain the reasons for creating class templates instead of classes.</li>
-<li>understand the Time Complexity terms linear time and constant time and amortized constant time.</li>
-<li>reason about the time complexity for operations on a dynamic array (append, insert, remove, copy constructor).</li>
-</ul>
+<ol type="1">
+<li>Implement integrity constraints (PRIMARY KEY, FOREIGN KEY, CHECK).</li>
+<li>Write and execute triggers for database automation.</li>
+<li>Optimize SQL queries for improved performance.</li>
+<li>Demonstrate SQL injection and discuss prevention strategies.</li>
+<li>Assign user roles and permissions for database security.</li>
+<li>Debug and troubleshoot complex SQL queries.</li>
+</ol>
 </section>
 <section id="slides-videos-and-application-exercises" class="level2">
 <h2 class="anchored" data-anchor-id="slides-videos-and-application-exercises">Slides, videos, and application exercises</h2>
@@ -329,7 +281,7 @@ ul.task-list li input[type="checkbox"] {
 <p><strong>Project 05:</strong></p>
 <p>Name of Proj 05</p>
 <div class="instructions">
-<p><a href="./projects/proj05.html">Instructions</a></p>
+<p><a href="./projects/proj05.qmd">Instructions</a></p>
 </div>
 <div class="starter">
 <p><a href="" target="_blank">Starter</a></p>
@@ -576,7 +528,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/ericaraujo\.com\/24fa-cs112");
+      var filterRegex = new RegExp("https:\/\/ericaraujo\.com\/25sp-cs354A");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
@@ -906,13 +858,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./week04.html" class="pagination-link" aria-label="Week 04: Vectors -- Dynamic Arrays">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Week 04: Vectors – Dynamic Arrays</span>
+      <a href="./week04.html" class="pagination-link" aria-label="Week 04: Database Design – ER Modeling &amp; Schema Refinement">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Week 04: Database Design – ER Modeling &amp; Schema Refinement</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./week06.html" class="pagination-link" aria-label="Week 06: Linked Lists, Dynamic Array or Linked List">
-        <span class="nav-page-text">Week 06: Linked Lists, Dynamic Array or Linked List</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./week06.html" class="pagination-link" aria-label="Week 06: Database Management &amp; Optimization">
+        <span class="nav-page-text">Week 06: Database Management &amp; Optimization</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -924,7 +876,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ericaraujophd/24fa-cs112/edit/main/week05.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/24fa-cs112/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ericaraujophd/24sp-cs354A/edit/main/week05.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/24sp-cs354A/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">

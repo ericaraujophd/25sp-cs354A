@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Week 10: Recursion – CS112 - Data Structures</title>
+<title>Project 11: Binary Search Trees – CS 354 – Database Management Systems</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,27 +23,25 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./week11.html" rel="next">
-<link href="./week09.html" rel="prev">
-<link href="././images/cs112-logo.png" rel="icon" type="image/png">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href=".././images/cs112-logo.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -73,28 +71,58 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 <script src="https://kit.fontawesome.com/78ddb093ea.js" crossorigin="anonymous"></script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<meta property="og:title" content="Week 10: Recursion – CS112 - Data Structures">
-<meta property="og:description" content="CS112 will teach students to use C++ for creating data structures.">
-<meta property="og:site_name" content="CS112 - Data Structures">
-<meta name="twitter:title" content="Week 10: Recursion – CS112 - Data Structures">
-<meta name="twitter:description" content="CS112 will teach students to use C++ for creating data structures.">
-<meta name="twitter:image" content="https://ericaraujo.com/24fa-cs112/images/twitter-card.png">
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../projects/proj-styles.css">
+<meta property="og:title" content="Project 11: Binary Search Trees – CS 354 – Database Management Systems">
+<meta property="og:description" content="CS354 provides a hands-on introduction to relational databases, SQL querying, and database design, focusing on real-world applications, optimization, and security.">
+<meta property="og:site_name" content="CS 354 – Database Management Systems">
+<meta name="twitter:title" content="Project 11: Binary Search Trees – CS 354 – Database Management Systems">
+<meta name="twitter:description" content="CS354 provides a hands-on introduction to relational databases, SQL querying, and database design, focusing on real-world applications, optimization, and security.">
+<meta name="twitter:image" content="https://ericaraujo.com/25sp-cs354A/images/twitter-card.png">
 <meta name="twitter:creator" content="@ericfaraujo">
 <meta name="twitter:image-height" content="500">
 <meta name="twitter:image-width" content="500">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
-<body class="nav-sidebar floating nav-fixed">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./images/cs112-logo.png" alt="" class="navbar-logo">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../images/cs112-logo.png" alt="" class="navbar-logo">
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -104,25 +132,25 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
+    <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Overview</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./instructors.html"> 
+    <a class="nav-link" href="../instructors.html"> 
 <span class="menu-text">Instructors</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./policies.html"> 
+    <a class="nav-link" href="../policies.html"> 
 <span class="menu-text">Course Policies</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./content.html" aria-current="page"> 
+    <a class="nav-link" href="../content.html"> 
 <span class="menu-text">Content</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/ericaraujophd/24fa-cs112"> <i class="bi bi-github" role="img" aria-label="GitHub">
+    <a class="nav-link" href="https://github.com/ericaraujophd/25sp-cs354A"> <i class="bi bi-github" role="img" aria-label="GitHub">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -133,140 +161,33 @@ ul.task-list li input[type="checkbox"] {
 </div>
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./week10.html">Week 10: Recursion</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-    </div>
-  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./content.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Course content</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week00.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 00: Intro do C++</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week01.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 01: Control Structures, Functions, Parameter Passing modes</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week02.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 02: File Input/Output, Exception Handling, Two-dimensional Arrays</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week03.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 03: Classes, Operator Overloading, etc.</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week04.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 04: Vectors – Dynamic Arrays</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week05.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 05: Generic Containers</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week06.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 06: Linked Lists, Dynamic Array or Linked List</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week07.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 07: Spring Break</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week08.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 08: Algorithm Analysis and Big-Oh</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week09.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 09: Stacks and Queues</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week10.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Week 10: Recursion</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week11.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 11: BSTs</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week12.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 12: AVL Trees</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week13.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 13: STL set and map containers</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week14.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 14: Hash Tables and Sorting Algorithms</span></a>
-  </div>
-</li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#slos-for-week-10" id="toc-slos-for-week-10" class="nav-link active" data-scroll-target="#slos-for-week-10">SLOs for Week 10</a></li>
-  <li><a href="#slides-videos-and-application-exercises" id="toc-slides-videos-and-application-exercises" class="nav-link" data-scroll-target="#slides-videos-and-application-exercises">Slides, videos, and application exercises</a></li>
+  <li><a href="#objectives" id="toc-objectives" class="nav-link active" data-scroll-target="#objectives">Objectives</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#adding-getheight" id="toc-adding-getheight" class="nav-link" data-scroll-target="#adding-getheight">Adding getHeight()</a>
+  <ul class="collapse">
+  <li><a href="#the-experiment" id="toc-the-experiment" class="nav-link" data-scroll-target="#the-experiment">The Experiment</a></li>
+  </ul></li>
+  <li><a href="#submission" id="toc-submission" class="nav-link" data-scroll-target="#submission">Submission</a></li>
+  <li><a href="#grading-rubric" id="toc-grading-rubric" class="nav-link" data-scroll-target="#grading-rubric">Grading Rubric</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/ericaraujophd/24fa-cs112/edit/main/week10.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/24fa-cs112/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/ericaraujophd/24sp-cs354A/edit/main/projects/proj99-final.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/24sp-cs354A/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Week 10: Recursion</h1>
+<h1 class="title">Project 11: Binary Search Trees</h1>
 </div>
 
 
@@ -283,59 +204,108 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="slos-for-week-10" class="level2">
-<h2 class="anchored" data-anchor-id="slos-for-week-10">SLOs for Week 10</h2>
-<p>By the end of this unit, the student will be able to:</p>
-<ul>
-<li>describe recursion correctly to an elderly ancestor.</li>
-<li>define the structure of a recursive solution – base case and recursive case.</li>
-<li>correctly use the words “winding phase” and “unwinding phase”.</li>
-<li>implement a basic recursive implementation – e.g., for the factorial function.</li>
-<li>argue why a recursive solution is generally less efficient than an equivalent iterative solution.</li>
-<li>describe the role the runtime stack plays in the execution of a recursive function.</li>
-<li>understand the time complexity of the Towers of Hanoi problem.</li>
-</ul>
+<center>
+<figure class="figure">
+<p><img src="../images/projects/proj11-header.jpeg" alt="Source: https://www.freecodecamp.org/news/data-structures-101-binary-search-tree-398267b6bff0/" width="400" class="figure-img"></p>
+<figcaption>
+Source: https://www.freecodecamp.org/news/data-structures-101-binary-search-tree-398267b6bff0/
+</figcaption>
+</figure>
+</center>
+<section id="objectives" class="level2">
+<h2 class="anchored" data-anchor-id="objectives">Objectives</h2>
+<ol type="1">
+<li>Practice building BST operations.</li>
+<li>Practice building recursive operations.</li>
+<li>Learn more about binary search trees.</li>
+</ol>
 </section>
-<section id="slides-videos-and-application-exercises" class="level2">
-<h2 class="anchored" data-anchor-id="slides-videos-and-application-exercises">Slides, videos, and application exercises</h2>
-<div class="slide-deck">
-<p><strong>Week 10: Slides</strong></p>
-<div class="slides">
-<p><a href="https://docs.google.com/presentation/d/1EIIaRDPBVApQs5nbDBY_qB0RRxzh4gJsNDz7pqoORxo/edit?usp=drive_link">Slides</a></p>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p><a href="" target="_blank">Accept the assignment</a> and use <code>git clone</code> to create your copy of the code. Remember to join the same Team as your peer.</p>
+<p>This project is:</p>
+<ul>
+<li>Add a <code>getHeight()</code> to your BST class.</li>
+<li>Use your <code>BST&lt;Item&gt;</code> to conduct an experiment.</li>
+</ul>
+<p>As usual, you should use test-driven development to accomplish these tasks. Note that part of your grade is based on the thoroughness of your new tests for <code>getHeight()</code>.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-<!-- ::: source
-[Code from Class](https://calvincollege-my.sharepoint.com/:f:/g/personal/vtn2_calvin_edu/Eredz2bHiShCtI0CVssiaggB8tUES6QbacEf2cc4PBhTgQ?e=uoV7Uu)
-::: -->
-<div class="reading">
-<p>No readings for Week 10.</p>
-</div>
-</div>
-<!-- ## Lab -->
-<div class="lab">
-<p><strong>Lab 10: Recursion</strong></p>
-<div class="instructions">
-<p><a href="./labs/lab10.html">Instructions</a></p>
-</div>
-<div class="starter">
-<p><a href="" target="_blank">Source</a></p>
-</div>
-<div class="slides">
-<p><a href="./slides/lab10-slides.html">Slides</a></p>
+<div class="callout-title-container flex-fill">
+Important
 </div>
 </div>
-<!-- ## Homework assignments -->
-<div class="homework">
-<p><strong>Project 10: Snake Game</strong></p>
-<div class="instructions">
-<p><a href="./projects/proj10.html">Instructions</a></p>
-</div>
-<div class="starter">
-<p><a href="" target="_blank">Starter</a></p>
+<div class="callout-body-container callout-body">
+<p>Copy your <strong>Exception.h</strong>, <strong>catch.hpp</strong>, <strong>BST.h</strong>, <strong>makefile</strong>, and <strong>tests.cpp</strong> files from your previous lab, into your repo.</p>
 </div>
 </div>
-<div class="exam">
-<p><strong>Exam 3</strong> Exam on Friday during class. Bring your laptop. Content: Weeks 0 - 8.</p>
+</section>
+<section id="adding-getheight" class="level2">
+<h2 class="anchored" data-anchor-id="adding-getheight">Adding getHeight()</h2>
+<p>The height of a tree with a root node is defined as the height of the node’s taller sub-tree, plus 1. As you can see, this is a <strong>recursive</strong> definition, which needs a <strong>base case</strong>. The base case is that if a node has no children, its height is 1.</p>
+<p>Let’s give some examples to clarify:</p>
+<p>If a tree has no nodes, its height is 0. If a tree has 1 node – the root node – its height is 1.</p>
+<p>If a tree has a root node and that node has either a left child or a right child, or both, its height is 2. Suppose the tree has a root node and that node has a single right child node. The right child node has height 1. The root node’s height is 1 + (the greater of the height of its left subtree – which is 0 – and the right subtree – which is 1). Thus, the root node’s height is 2.</p>
+<p>Implement <code>getHeight()</code> now. Its implementation is similar to <code>insert()</code> or a traversal algorithm in that it uses recursion. The difference here is that each function returns an integer – the node’s height.</p>
+<section id="the-experiment" class="level3">
+<h3 class="anchored" data-anchor-id="the-experiment">The Experiment</h3>
+<p>The height of a BST determines the speed of operations like <code>insert()</code> and <code>contains()</code>. If we build a “large” BST of N items (e.g., <span class="math inline">\(~2^20\)</span>), and that tree is balanced, then its height should be the minimal <span class="math inline">\(O(lg(N))\)</span> (e.g., 20).</p>
+<p>This week’s problem is to conduct a simple experiment to see how “tall” BSTs get, given random values. Our objective is to see how close we come to lg(N) height if we build large trees of N randomly ordered values.</p>
+<p>Your repo contains two directories that each contain ten data files (<strong>randomInts01.txt</strong>, <strong>randomInts02.txt</strong>, …, <strong>randomInts10.txt</strong>), each containing <span class="math inline">\(2^20-1 = 1,048,575\)</span> randomly generated integer values. If these values were ordered in exactly the right way, we could build trees of height 20. (On the other hand, if they were ordered in exactly the wrong way, we could build trees of height 1,048,575!)</p>
+<p>Your task is to write a simple program that prompts the user for the name of an input file, reads each value from that file, and inserts it into a BST. Your program should then display the height of the resulting BST.</p>
+<p>There are minor details to keep in mind:</p>
+<ul>
+<li>There may be duplicate values within an input file, and inserting a duplicate value into our BST will throw an exception. Your program should count and output the number of duplicate values in a given file by catching and handling this exception.</li>
+<li>There are two directories – one for Linux/MacOS, and one for Windows.</li>
+<li>These files were generated in the Maroon lab (whose workstations are 64-bit machines), and so the integers in these files are 64-bit integers. However, the C++ int and unsigned types only store integers in 32 bits; the long type stores integers in 64 bits, so use it to store these 64-bit integers.</li>
+</ul>
+<p>Since there are ten input files, you will need to run your program ten times. (Or find a clever way to automate this.) For each file, record the corresponding tree-height in a spreadsheet, and the number of duplicate values that were found. Given all ten heights, use the spreadsheet to calculate the minimum height, the maximum height, the average height, the median height, and the standard deviation of the ten heights. (Your spreadsheet will make each of these computations easy.) Finally, use your spreadsheet to create a bar-chart showing each of the ten heights, as a visualization of your data. Finally</p>
+<p>Answer the following questions in your spreadsheet, below the chart:</p>
+<ol type="1">
+<li>Is <span class="math inline">\(lg(N)\)</span> or <span class="math inline">\(N\)</span> a better approximation for your measured heights? Why?</li>
+<li>How much variance is there in the height of these trees? Is this surprising? Why or why not?</li>
+<li>How many duplicate values were there (on average)? Is this surprising? Why or why not?</li>
+<li>The “big Oh” notation <span class="math inline">\(O(f(n))\)</span> implies that there are constants <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>, such that <span class="math inline">\(a \times f(n) + b\)</span> describes the reality for which <span class="math inline">\(O(f(n))\)</span> is an approximation. A balanced BST of <span class="math inline">\(N\)</span> items has height <span class="math inline">\(O(lg(N))\)</span>. Theoretically, there should be values <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> such that <span class="math inline">\(a \times lg(N) + b\)</span> describes the actual height of a BST built using random data. Using your experimental results, what is a reasonable value for <span class="math inline">\(a\)</span>?</li>
+</ol>
+</section>
+</section>
+<section id="submission" class="level2">
+<h2 class="anchored" data-anchor-id="submission">Submission</h2>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>👉👉👉 Download/export a PDF version of your chart and store it in your repo for submission. Call the file <strong>analysis.pdf</strong>.</p>
+</div>
+</div>
+<p>Don’t forget to commit your code to your online repo on <a href="https://github.com/">github.com</a> so that the grader can grade it.</p>
+</section>
+<section id="grading-rubric" class="level2">
+<h2 class="anchored" data-anchor-id="grading-rubric">Grading Rubric</h2>
+<p>Total: 24 pts</p>
+<ul>
+<li><code>getHeight()</code>: 5 pts</li>
+<li>New tests in <strong>tests.cpp</strong> for <code>getHeight()</code>: 3 pts</li>
+<li>program: 10 pts</li>
+<li>spreadsheet / analysis: 6 pts</li>
+</ul>
+<p>Ways students have lost points in the past:</p>
+<ul>
+<li>-3: Missing chart, spreadsheet</li>
+<li>-6: Missing spreadsheet/analysis</li>
+<li>-3: Missing tests for <code>getHeight()</code></li>
+<li>-1: Big-Oh of height was wrong.</li>
+<li>-1: Error in <code>getHeight()</code>: a tree with two items could either have a height of 1 or 2</li>
+</ul>
 
 
 </section>
@@ -577,7 +547,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/ericaraujo\.com\/24fa-cs112");
+      var filterRegex = new RegExp("https:\/\/ericaraujo\.com\/25sp-cs354A");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
@@ -905,18 +875,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="./week09.html" class="pagination-link" aria-label="Week 09: Stacks and Queues">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Week 09: Stacks and Queues</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="./week11.html" class="pagination-link" aria-label="Week 11: BSTs">
-        <span class="nav-page-text">Week 11: BSTs</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -925,7 +883,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ericaraujophd/24fa-cs112/edit/main/week10.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/24fa-cs112/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ericaraujophd/24sp-cs354A/edit/main/projects/proj99-final.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/24sp-cs354A/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">

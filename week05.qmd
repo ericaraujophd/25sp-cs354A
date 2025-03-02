@@ -1,5 +1,5 @@
 ---
-title: "Week 05: Generic Containers"
+title: "Week 05: Advanced SQL & Integrity Constraints"
 format: 
   html:
     css: /styles.css
@@ -11,12 +11,12 @@ format:
 
 By the end of this unit, students will be able to...
 
--   describe when appending to a dynamic array is "inexpensive" and when it is "expensive".
--   reason about the difference between a dynamic array's size and capacity.
--   explain what a class template is to his or her grandma or grandpa.
--   explain the reasons for creating class templates instead of classes.
--   understand the Time Complexity terms linear time and constant time and amortized constant time.
--   reason about the time complexity for operations on a dynamic array (append, insert, remove, copy constructor).
+1.  Implement integrity constraints (PRIMARY KEY, FOREIGN KEY, CHECK).
+2.  Write and execute triggers for database automation.
+3.  Optimize SQL queries for improved performance.
+4.  Demonstrate SQL injection and discuss prevention strategies.
+5.  Assign user roles and permissions for database security.
+6.  Debug and troubleshoot complex SQL queries.
 
 ## Slides, videos, and application exercises
 

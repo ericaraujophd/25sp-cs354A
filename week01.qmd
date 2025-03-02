@@ -1,5 +1,5 @@
 ---
-title: "Week 01: Control Structures, Functions, Parameter Passing modes"
+title: "Week 01: Introduction to Databases & SQL Basics"
 # draft: true
 # draft-mode: visible
 ---
@@ -8,13 +8,19 @@ title: "Week 01: Control Structures, Functions, Parameter Passing modes"
 
 At the end of this unit, students will be able to...
 
--   write if, if-else, if-else-if, and switch statements correctly.
--   create correct while loops and for loops, including using break and continue statements.
--   define and call functions correctly.
--   use function overloading, define default arguments, and define const parameters.
--   pass arrays as parameters.
--   articulate the differences between in, out, and in/out parameters.
--   correctly choose between pass-by-value, pass-by-reference, and pass-by-const-ref parameters.
+1.  Explain the purpose and importance of relational databases.
+
+2.  Differentiate between relational databases and other types of data storage.
+
+3.  Write basic SQL queries to retrieve data.
+
+4.  Use WHERE clauses and ORDER BY to filter and sort results.
+
+5.  Understand SQL syntax and basic commands.
+
+6.  Analyze a dataset using simple queries.
+
+#### 
 
 ## Slides, videos, and application exercises
 
@@ -22,12 +28,11 @@ At the end of this unit, students will be able to...
 **Week 01: Slides**
 
 ::: slides
-[Slides](https://docs.google.com/presentation/d/1uux2sZHfW1BRzdjNmUDpt5TDD7hOEgbLBW-G7KJNNUc/edit?usp=sharing){target="_blank"}
+[Slides](){target="_blank"}
 :::
 
-
 ::: reading
--   [Chapters 3 and 4](https://runestone.academy/runestone/books/published/cpp4python/index.html){target="_blank"}
+-   [Chapters 1](https://runestone.academy/runestone/books/published/cpp4python/index.html){target="_blank"}
 :::
 
 ```{=html}
@@ -48,7 +53,7 @@ At the end of this unit, students will be able to...
 :::
 
 ::: starter
-[Starter](https://classroom.github.com/a/Aqowwp7J){target="_blank"}
+[Starter](){target="_blank"}
 :::
 
 ::: slides
@@ -66,13 +71,13 @@ At the end of this unit, students will be able to...
 :::
 
 ::: starter
-[Starter](https://classroom.github.com/a/_PwngVPD){target="_blank"}
+[Starter](){target="_blank"}
 :::
 :::::
 
-::: exam
+<!-- ::: exam
 **POGIL**
 
 -   [Array Addressing](https://docs.google.com/document/d/1myVaJT3i1hECM4BHs9LpbLz3a3heVPp6SJiEjoEvG_M/edit?tab=t.0#heading=h.im9274hm9wa0){target="_blank"} <!-- -   ([Answers](https://drive.google.com/file/d/1mn5yCzIJuURMiP3MOtO9amEQzUVAQCQZ/view?usp=sharing){target="_blank"}) -->
 -   [Parameter Passing](https://docs.google.com/document/d/125hbFPo5PVcuGQ9pq4io23jns2kOEkfjo71S9WOkfjQ/edit){target="_blank"} <!-- -   ([Answers](https://drive.google.com/file/d/1rPum6ihNwUKRJpZBSTQF8v7QKfOdog11/view?usp=drive_link){target="_blank"}) -->
-:::
+::: -->

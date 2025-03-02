@@ -1,5 +1,5 @@
 ---
-title: "Week 06: Linked Lists, Dynamic Array or Linked List"
+title: "Week 06: Database Management & Optimization"
 # draft: true
 # draft-mode: visible
 ---
@@ -8,11 +8,12 @@ title: "Week 06: Linked Lists, Dynamic Array or Linked List"
 
 At the end of this unit, the student will be able to...
 
--   describe the organization of a linked list -- how Nodes are chained together.
--   reason about the time complexity of the typical operations: prepend, append, remove, traverse, searching, indexing, etc.
--   explain how the Node destructor causes a chain reaction to delete all Nodes in the list.
--   write code to walk through the linked list.
--   compare and contrast the strengths and weaknesses of a linked list vs. a dynamic array.
+1.  Develop a backup and recovery plan for a database system.
+2.  Explain different techniques for performance tuning.
+3.  Understand database partitioning and indexing strategies.
+4.  Profile SQL queries to detect inefficiencies.
+5.  Discuss database integration with software applications.
+6.  Apply database optimization techniques in real-world scenarios.
 
 ## Slides, videos, and application exercises
 
@@ -58,5 +59,4 @@ No readings for Week 6.
 
 ::: homework
 **Project 06: No project on Week 06**
-
 :::

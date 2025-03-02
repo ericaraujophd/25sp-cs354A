@@ -1,5 +1,5 @@
 ---
-title: "Week 02: File Input/Output, Exception Handling, Two-dimensional Arrays"
+title: "Week 02: SQL – Intermediate Concepts"
 # draft: true
 # draft-mode: visible
 ---
@@ -8,10 +8,12 @@ title: "Week 02: File Input/Output, Exception Handling, Two-dimensional Arrays"
 
 At the end of this unit, students will be able to...
 
--   open, read from, write to, and close files.
--   detect end-of-file conditions.
--   properly use try, catch, and throw in C++ code.
--   define two-dimensional arrays, iterate over them, and manipulate them.
+1.  Perform data aggregation using GROUP BY and HAVING.
+2.  Write and execute INNER, LEFT-OUTER, RIGHT, and FULL JOINs.
+3.  Construct subqueries for complex queries.
+4.  Implement SQL functions and expressions.
+5.  Use SQL best practices for readable and efficient queries.
+6.  Optimize SQL queries for better performance.
 
 ## Slides, videos, and application exercises
 

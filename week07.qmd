@@ -1,9 +1,68 @@
 ---
-title: "Week 07: Spring Break"
+title: "Week 07: Final Project and Course Wrap-Up"
 # draft: true
 # draft-mode: visible
 ---
 
 ## SLOs for Week 07
 
-Rest!
+By the end of this unit, students will be able to...
+
+1.  Design and implement a database system from scratch.
+2.  Write SQL queries to solve real-world data retrieval problems.
+3.  Present a comprehensive database solution addressing a given scenario.
+4.  Compare different database designs and justify choices.
+5.  Demonstrate proficiency in SQL and database management concepts.
+6.  Reflect on the course content and their learning experience.
+
+## Slides, videos, and application exercises
+
+:::::: slide-deck
+**Week 08: Slides**
+
+::: slides
+[Slides](https://calvincollege-my.sharepoint.com/:p:/g/personal/vtn2_calvin_edu/EVUHPdmKVURIiLt6RGsWGUgBMWUBvWAUeP3IdaHpoNjQVg?e=BRbwiB){target="_blank"}
+:::
+
+::: video
+[Video](https://www.youtube.com/playlist?list=PLgbz05MfsB26udu5rHnVUVY3I3Nlmynmu){target="_blank"}
+:::
+
+::: reading
+No readings for Week 08.
+:::
+::::::
+
+<!-- ## Lab -->
+
+:::::: lab
+**Lab 08: Timing List and Vector Operations**
+
+::: instructions
+[Instructions](/labs/lab08.qmd)
+:::
+
+::: starter
+[Source]()
+:::
+
+::: slides
+[Slides]()
+:::
+::::::
+
+<!-- ## Homework assignments -->
+
+::::: homework
+**Project 8: Conga!**
+
+Conga!
+
+::: instructions
+[Instructions](/projects/proj08-Conga.qmd)
+:::
+
+::: starter
+[Starter]()
+:::
+:::::

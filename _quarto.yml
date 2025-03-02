@@ -7,13 +7,13 @@ project:
     
 website:
   page-navigation: true
-  title: "CS112 - Data Structures"
-  description: "CS112 will teach students to use C++ for creating data structures."
-  site-url: "https://ericaraujo.com/24fa-cs112"
+  title: "CS 354 – Database Management Systems"
+  description: "CS354 provides a hands-on introduction to relational databases, SQL querying, and database design, focusing on real-world applications, optimization, and security."
+  site-url: "https://ericaraujo.com/25sp-cs354A"
 
   favicon: ./images/cs112-logo.png
   
-  repo-url: https://github.com/ericaraujophd/24fa-cs112
+  repo-url: https://github.com/ericaraujophd/24sp-cs354A
   repo-actions: [edit, issue]
 
   open-graph: true
@@ -36,7 +36,7 @@ website:
  
     right:
       - icon: github
-        href: https://github.com/ericaraujophd/24fa-cs112
+        href: https://github.com/ericaraujophd/25sp-cs354A
         aria-label: GitHub
       # - icon: cloud-fill
       #   href: https://rstudio.cloud/spaces/1655/join?access_code=5rdjusfIYF5iI0Gum2vNsBDLdtdnIEELBkf2EivK
@@ -66,7 +66,6 @@ website:
       title: "Content"
       contents:
         - href: content.qmd
-        - href: week00.qmd
         - href: week01.qmd
         - href: week02.qmd
         - href: week03.qmd
@@ -74,13 +73,6 @@ website:
         - href: week05.qmd
         - href: week06.qmd
         - href: week07.qmd
-        - href: week08.qmd
-        - href: week09.qmd
-        - href: week10.qmd
-        - href: week11.qmd
-        - href: week12.qmd
-        - href: week13.qmd
-        - href: week14.qmd
         
 
     # - id: extras
