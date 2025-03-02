@@ -2,7 +2,8 @@
 title: "Welcome to CS 354 - Database Management Systems"
 ---
 
-![](images/cs112-logo.png){style="float: right;" fig-alt="A tree of bits" fig-align="right" width="250"}
+![](images/data-management.png){style="float: right;" fig-alt="Engineer icons created by smashingstocks - Flaticon" fig-align="right" width="250"}
+
 
 Welcome to Database Management, a hands-on course designed to equip you with the essential skills for designing, querying, and optimizing relational databases. Over the next seven weeks, you'll dive into SQL, explore database structures, and gain practical experience in managing data efficiently. Whether you're new to databases or looking to sharpen your skills, this course will provide a solid foundation for real-world applications.
 
@@ -20,26 +21,31 @@ This a permanently in construction website, so please let us know if you find an
 
 ## Student Learning Outcomes {.unnumered}
 
-Upon successful completion of this course students will be able to:
+### **General Student Learning Outcomes (SLOs) for the Course**  
 
--   Use indirection (pointers) and run-time memory allocation to implement dynamic, generic container classes (e.g., vectors, lists, stacks, queues, trees, etc.).\
--   Analyze, categorize, and compare the complexity of data structure operations using "big-oh" notation.\
--   Design and implement recursive data structure operations.\
--   Design, create, and use unit-tests to test the correctness of data structure operations.\
--   For select algorithms, use simple parallel computing techniques to improve algorithm performance and measure the improvement.
+By the end of this **Database Management** course, students will be able to:  
+
+1. **Understand the Role of Databases** – Explain the importance of database management systems and how they support real-world applications.  
+2. **Write and Optimize SQL Queries** – Construct and execute SQL queries to retrieve, manipulate, and analyze data efficiently.  
+3. **Design and Normalize Relational Databases** – Develop well-structured database schemas using **BCNF** to ensure data integrity and eliminate redundancy.  
+4. **Implement Relationships and Constraints** – Define and enforce primary keys, foreign keys, and other integrity constraints to maintain data consistency.  
+5. **Use Advanced SQL Features** – Apply concepts like joins, subqueries, indexing, views (**materialized vs. non-materialized**), and stored procedures to enhance database functionality.  
+6. **Manage Transactions and Security** – Demonstrate the ability to handle transactions, prevent SQL injection, and implement security best practices.  
+7. **Perform Database Maintenance and Optimization** – Explain and apply indexing, query optimization, and backup/recovery strategies for efficient database management.  
+8. **Develop a Complete Database System** – Design, implement, and present a database project that integrates SQL skills, schema design, and optimization techniques.  
+
+These outcomes ensure that students leave the course with both theoretical knowledge and **practical, real-world database management skills**.
 
 ## Course Organization {.unnumbered}
 
 The course is organized around these components:
 
-1.  The lectures that will introduce data structures topics at the conceptual level;
-2.  The labs in which students will (in pairs) practice using and building data structures; and
-3.  The projects in which students will (individually) practice using and building data structures.
+1.  The lectures that will introduce the topics at the practical and conceptual level through live coding and theory explanation;
+2.  The homeworks in which students will practice using and building databases; and
+3.  The projects in which students will develop databases systems for real-world problems.
 
-Each week's lectures, labs and projects will cover the same concepts, but will do so in different ways.
-
-The first 4 weeks will be dedicated to learning C++. After that, we will begin studying data structures.
+Each week's lectures, homeworks and projects will cover the same concepts, but will do so in different ways.
 
 ## Acknowledgements
 
-This website is built with [Quarto](https://quarto.org){target="_blank"}, the lovely icons by [icons8](http://icons8.com/){target="_blank"}. The original code used to build this website can be found at [DS Box](https://datasciencebox.org/){target="_blank"}. We are very grateful for their work!
+This website is built with [Quarto](https://quarto.org){target="_blank"}. The original code used to build this website can be found at [DS Box](https://datasciencebox.org/){target="_blank"}. We are very grateful for their work!

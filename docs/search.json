@@ -332,21 +332,21 @@
     "href": "index.html#student-learning-outcomes",
     "title": "Welcome to CS 354 - Database Management Systems",
     "section": "Student Learning Outcomes",
-    "text": "Student Learning Outcomes\nUpon successful completion of this course students will be able to:\n\nUse indirection (pointers) and run-time memory allocation to implement dynamic, generic container classes (e.g., vectors, lists, stacks, queues, trees, etc.).\n\nAnalyze, categorize, and compare the complexity of data structure operations using “big-oh” notation.\n\nDesign and implement recursive data structure operations.\n\nDesign, create, and use unit-tests to test the correctness of data structure operations.\n\nFor select algorithms, use simple parallel computing techniques to improve algorithm performance and measure the improvement."
+    "text": "Student Learning Outcomes\n\nGeneral Student Learning Outcomes (SLOs) for the Course\nBy the end of this Database Management course, students will be able to:\n\nUnderstand the Role of Databases – Explain the importance of database management systems and how they support real-world applications.\n\nWrite and Optimize SQL Queries – Construct and execute SQL queries to retrieve, manipulate, and analyze data efficiently.\n\nDesign and Normalize Relational Databases – Develop well-structured database schemas using BCNF to ensure data integrity and eliminate redundancy.\n\nImplement Relationships and Constraints – Define and enforce primary keys, foreign keys, and other integrity constraints to maintain data consistency.\n\nUse Advanced SQL Features – Apply concepts like joins, subqueries, indexing, views (materialized vs. non-materialized), and stored procedures to enhance database functionality.\n\nManage Transactions and Security – Demonstrate the ability to handle transactions, prevent SQL injection, and implement security best practices.\n\nPerform Database Maintenance and Optimization – Explain and apply indexing, query optimization, and backup/recovery strategies for efficient database management.\n\nDevelop a Complete Database System – Design, implement, and present a database project that integrates SQL skills, schema design, and optimization techniques.\n\nThese outcomes ensure that students leave the course with both theoretical knowledge and practical, real-world database management skills."
   },
   {
     "objectID": "index.html#course-organization",
     "href": "index.html#course-organization",
     "title": "Welcome to CS 354 - Database Management Systems",
     "section": "Course Organization",
-    "text": "Course Organization\nThe course is organized around these components:\n\nThe lectures that will introduce data structures topics at the conceptual level;\nThe labs in which students will (in pairs) practice using and building data structures; and\nThe projects in which students will (individually) practice using and building data structures.\n\nEach week’s lectures, labs and projects will cover the same concepts, but will do so in different ways.\nThe first 4 weeks will be dedicated to learning C++. After that, we will begin studying data structures."
+    "text": "Course Organization\nThe course is organized around these components:\n\nThe lectures that will introduce the topics at the practical and conceptual level through live coding and theory explanation;\nThe homeworks in which students will practice using and building databases; and\nThe projects in which students will develop databases systems for real-world problems.\n\nEach week’s lectures, homeworks and projects will cover the same concepts, but will do so in different ways."
   },
   {
     "objectID": "index.html#acknowledgements",
     "href": "index.html#acknowledgements",
     "title": "Welcome to CS 354 - Database Management Systems",
     "section": "Acknowledgements",
-    "text": "Acknowledgements\nThis website is built with Quarto, the lovely icons by icons8. The original code used to build this website can be found at DS Box. We are very grateful for their work!"
+    "text": "Acknowledgements\nThis website is built with Quarto. The original code used to build this website can be found at DS Box. We are very grateful for their work!"
   },
   {
     "objectID": "projects/proj02.html",

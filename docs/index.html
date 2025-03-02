@@ -141,7 +141,10 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#student-learning-outcomes" id="toc-student-learning-outcomes" class="nav-link active" data-scroll-target="#student-learning-outcomes">Student Learning Outcomes</a></li>
+  <li><a href="#student-learning-outcomes" id="toc-student-learning-outcomes" class="nav-link active" data-scroll-target="#student-learning-outcomes">Student Learning Outcomes</a>
+  <ul class="collapse">
+  <li><a href="#general-student-learning-outcomes-slos-for-the-course" id="toc-general-student-learning-outcomes-slos-for-the-course" class="nav-link" data-scroll-target="#general-student-learning-outcomes-slos-for-the-course"><strong>General Student Learning Outcomes (SLOs) for the Course</strong></a></li>
+  </ul></li>
   <li><a href="#course-organization" id="toc-course-organization" class="nav-link" data-scroll-target="#course-organization">Course Organization</a></li>
   <li><a href="#acknowledgements" id="toc-acknowledgements" class="nav-link" data-scroll-target="#acknowledgements">Acknowledgements</a></li>
   </ul>
@@ -171,7 +174,7 @@ ul.task-list li input[type="checkbox"] {
 
 <div class="quarto-figure quarto-figure-right">
 <figure class="figure">
-<p><img src="images/cs112-logo.png" class="img-fluid quarto-figure quarto-figure-right figure-img" style="float: right;" alt="A tree of bits" width="250"></p>
+<p><img src="images/data-management.png" class="img-fluid quarto-figure quarto-figure-right figure-img" style="float: right;" alt="Engineer icons created by smashingstocks - Flaticon" width="250"></p>
 </figure>
 </div>
 <p>Welcome to Database Management, a hands-on course designed to equip you with the essential skills for designing, querying, and optimizing relational databases. Over the next seven weeks, you’ll dive into SQL, explore database structures, and gain practical experience in managing data efficiently. Whether you’re new to databases or looking to sharpen your skills, this course will provide a solid foundation for real-world applications.</p>
@@ -193,33 +196,42 @@ Warning
 <!-- The source code for everything you see here can be found [on GitHub](https://github.com/rstudio-education/datascience-box). -->
 <section id="student-learning-outcomes" class="level2 unnumered">
 <h2 class="unnumered anchored" data-anchor-id="student-learning-outcomes">Student Learning Outcomes</h2>
-<p>Upon successful completion of this course students will be able to:</p>
-<ul>
-<li>Use indirection (pointers) and run-time memory allocation to implement dynamic, generic container classes (e.g., vectors, lists, stacks, queues, trees, etc.).<br>
+<section id="general-student-learning-outcomes-slos-for-the-course" class="level3">
+<h3 class="anchored" data-anchor-id="general-student-learning-outcomes-slos-for-the-course"><strong>General Student Learning Outcomes (SLOs) for the Course</strong></h3>
+<p>By the end of this <strong>Database Management</strong> course, students will be able to:</p>
+<ol type="1">
+<li><strong>Understand the Role of Databases</strong> – Explain the importance of database management systems and how they support real-world applications.<br>
 </li>
-<li>Analyze, categorize, and compare the complexity of data structure operations using “big-oh” notation.<br>
+<li><strong>Write and Optimize SQL Queries</strong> – Construct and execute SQL queries to retrieve, manipulate, and analyze data efficiently.<br>
 </li>
-<li>Design and implement recursive data structure operations.<br>
+<li><strong>Design and Normalize Relational Databases</strong> – Develop well-structured database schemas using <strong>BCNF</strong> to ensure data integrity and eliminate redundancy.<br>
 </li>
-<li>Design, create, and use unit-tests to test the correctness of data structure operations.<br>
+<li><strong>Implement Relationships and Constraints</strong> – Define and enforce primary keys, foreign keys, and other integrity constraints to maintain data consistency.<br>
 </li>
-<li>For select algorithms, use simple parallel computing techniques to improve algorithm performance and measure the improvement.</li>
-</ul>
+<li><strong>Use Advanced SQL Features</strong> – Apply concepts like joins, subqueries, indexing, views (<strong>materialized vs.&nbsp;non-materialized</strong>), and stored procedures to enhance database functionality.<br>
+</li>
+<li><strong>Manage Transactions and Security</strong> – Demonstrate the ability to handle transactions, prevent SQL injection, and implement security best practices.<br>
+</li>
+<li><strong>Perform Database Maintenance and Optimization</strong> – Explain and apply indexing, query optimization, and backup/recovery strategies for efficient database management.<br>
+</li>
+<li><strong>Develop a Complete Database System</strong> – Design, implement, and present a database project that integrates SQL skills, schema design, and optimization techniques.</li>
+</ol>
+<p>These outcomes ensure that students leave the course with both theoretical knowledge and <strong>practical, real-world database management skills</strong>.</p>
+</section>
 </section>
 <section id="course-organization" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="course-organization">Course Organization</h2>
 <p>The course is organized around these components:</p>
 <ol type="1">
-<li>The lectures that will introduce data structures topics at the conceptual level;</li>
-<li>The labs in which students will (in pairs) practice using and building data structures; and</li>
-<li>The projects in which students will (individually) practice using and building data structures.</li>
+<li>The lectures that will introduce the topics at the practical and conceptual level through live coding and theory explanation;</li>
+<li>The homeworks in which students will practice using and building databases; and</li>
+<li>The projects in which students will develop databases systems for real-world problems.</li>
 </ol>
-<p>Each week’s lectures, labs and projects will cover the same concepts, but will do so in different ways.</p>
-<p>The first 4 weeks will be dedicated to learning C++. After that, we will begin studying data structures.</p>
+<p>Each week’s lectures, homeworks and projects will cover the same concepts, but will do so in different ways.</p>
 </section>
 <section id="acknowledgements" class="level2">
 <h2 class="anchored" data-anchor-id="acknowledgements">Acknowledgements</h2>
-<p>This website is built with <a href="https://quarto.org" target="_blank">Quarto</a>, the lovely icons by <a href="http://icons8.com/" target="_blank">icons8</a>. The original code used to build this website can be found at <a href="https://datasciencebox.org/" target="_blank">DS Box</a>. We are very grateful for their work!</p>
+<p>This website is built with <a href="https://quarto.org" target="_blank">Quarto</a>. The original code used to build this website can be found at <a href="https://datasciencebox.org/" target="_blank">DS Box</a>. We are very grateful for their work!</p>
 
 
 </section>
