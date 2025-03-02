@@ -539,7 +539,7 @@
     "href": "projects/proj01.html#objectives",
     "title": "Week 1 Project: Student Course Registration System",
     "section": "Objectives:",
-    "text": "Objectives:\nBy the end of this project, you will:\n✅ Understand how to create and structure a relational database using SQLite3. ✅ Learn to define tables, primary keys, and foreign keys. ✅ Insert data into tables and retrieve information using SELECT queries. ✅ Use basic SQL commands such as CREATE TABLE, INSERT, SELECT, WHERE, and JOIN. ✅ Gain hands-on experience with SQLiteStudio as a database management tool."
+    "text": "Objectives:\nBy the end of this project, you will:\n✅ Understand how to create and structure a relational database using SQLite3.\n✅ Learn to define tables, primary keys, and foreign keys.\n✅ Insert data into tables and retrieve information using SELECT queries.\n✅ Use basic SQL commands such as CREATE TABLE, INSERT, SELECT, WHERE, and JOIN.\n✅ Gain hands-on experience with SQLiteStudio as a database management tool."
   },
   {
     "objectID": "projects/proj01.html#step-0-setting-up-sqlitestudio",
@@ -553,7 +553,14 @@
     "href": "projects/proj01.html#step-1.-creating-tables",
     "title": "Week 1 Project: Student Course Registration System",
     "section": "Step 1. Creating Tables",
-    "text": "Step 1. Creating Tables\nNow, you will define three tables: students, courses, and enrollments.\n\nTask: Create the students Table\nThis table stores information about students.\n\nOpen SQLiteStudio and select Tools → Open SQL Editor.\nType the following SQL code:\n\nCREATE TABLE students (\n    student_id INTEGER PRIMARY KEY AUTOINCREMENT,\n    first_name TEXT NOT NULL,\n    last_name TEXT NOT NULL,\n    birthdate DATE,\n    major TEXT\n);\nIn utils.h, create a function prototype called constrain() that has 3 parameters:\n\nvalue, a double\nlow, a double\nhigh, a double\n\nconstrain() returns a double, which is the value constrained by low and high. I.e., if the value is greater than high then, return high. If it is less than low, return low. Else, return the value itself unchanged. Remember, in utils.h you are writing just the prototype.\nNow, in utils.cpp, implement the function.\nIn tests.cpp, in the TEST_CASE(\"step1\"), add more REQUIRES() function calls to test that your function is correct in all cases. We have provided one test there already.\nCompile using make. Then, run like this:\n./tester step1\nWhen you pass the test, Commit and Sync your code to github (use a Message like “step 1 done”) and check that the autograding test for step1 passes. (It should, as all it does is run ./tester step1.) (Tests for the other steps will pass, because the test cases are currently empty.)"
+    "text": "Step 1. Creating Tables\nNow, you will define three tables: students, courses, and enrollments.\n\nTask: Create the students Table\nThis table stores information about students.\n\nOpen SQLiteStudio and select Tools -&gt; Open SQL Editor.\nType the following SQL code:\n\nCREATE TABLE students (\n    student_id INTEGER PRIMARY KEY AUTOINCREMENT,\n    first_name TEXT NOT NULL,\n    last_name TEXT NOT NULL,\n    birthdate DATE,\n    major TEXT\n);\n\nClick Execute (the green play button).\nVerify the table was created by clicking on Database → Refresh Structure.\n\n\n\nTask: Create the courses Table\nThis table stores information about courses offered by the university.\n\nIn the SQL Editor, enter the following code:\n\nCREATE TABLE courses (\n    course_id INTEGER PRIMARY KEY AUTOINCREMENT,\n    course_name TEXT NOT NULL,\n    department TEXT NOT NULL\n);\n\nClick Execute and refresh the database structure."
+  },
+  {
+    "objectID": "projects/proj01.html#task-create-the-enrollments-table",
+    "href": "projects/proj01.html#task-create-the-enrollments-table",
+    "title": "Week 1 Project: Student Course Registration System",
+    "section": "Task: Create the enrollments Table",
+    "text": "Task: Create the enrollments Table\nThis table tracks which students are enrolled in which courses. It includes foreign keys linking to both the students and courses tables.\n\nEnter the following SQL code:\n\nCREATE TABLE enrollments (\n    enrollment_id INTEGER PRIMARY KEY AUTOINCREMENT,\n    student_id INTEGER,\n    course_id INTEGER,\n    enrollment_date DATE DEFAULT CURRENT_DATE,\n    FOREIGN KEY (student_id) REFERENCES students(student_id),\n    FOREIGN KEY (course_id) REFERENCES courses(course_id)\n);\n\nClick Execute and refresh the database structure.\n\n\n\n\n\n\n\nImportant\n\n\n\n✅ Checkpoint: Your database now contains three tables: students, courses, and enrollments."
   },
   {
     "objectID": "projects/proj01.html#step-2.-function-practice-2",

@@ -11,7 +11,7 @@ eval: false
 
 <figure>
 
-<img src="/images/projects/proj01-studog.jpg" alt="Studog." width="500"/>
+<img src="/images/projects/proj01-studog.gif" alt="Studog." width="500"/>
 
 <figcaption>Studoggy.</figcaption>
 
@@ -27,9 +27,13 @@ This project will introduce you to database creation, table design, and basic SQ
 By the end of this project, you will:
 
 ✅ Understand how to create and structure a relational database using SQLite3.
+
 ✅ Learn to define tables, primary keys, and foreign keys.
+
 ✅ Insert data into tables and retrieve information using SELECT queries.
+
 ✅ Use basic SQL commands such as CREATE TABLE, INSERT, SELECT, WHERE, and JOIN.
+
 ✅ Gain hands-on experience with SQLiteStudio as a database management tool.
 
 ## Step 0: Setting Up SQLiteStudio
@@ -38,8 +42,8 @@ Before you start, ensure that you have SQLiteStudio installed. Follow these step
 
 - Download SQLiteStudio from [sqlitestudio.pl](https://sqlitestudio.pl/){target="_blank"}.
 - Install SQLiteStudio on your computer.
-- Open SQLiteStudio and click on Database -> Add a Database.
-- Choose "Create a new SQLite3 database", and name the database university.db after clicking in the yellow folder button.
+- Open SQLiteStudio and click on **Database -> Add a Database**.
+- Choose "Create a new SQLite3 database", and name the database **university.db** after clicking in the yellow folder button.
 - Click Save and ensure the database appears in the left panel.
 
 
@@ -52,7 +56,7 @@ Now, you will define three tables: `students`, `courses`, and `enrollments`.
 
 This table stores information about students.
 
-1. Open SQLiteStudio and select Tools → Open SQL Editor.
+1. Open SQLiteStudio and select **Tools -> Open SQL Editor**.
 2. Type the following SQL code:
 
 ```sql
@@ -65,27 +69,48 @@ CREATE TABLE students (
 );
 ```
 
+3. Click **Execute** (the green play button).
+4. Verify the table was created by clicking on **Database → Refresh Structure**.
 
 
-In **utils.h**, create a function **prototype** called `constrain()` that has 3 parameters:
+### Task: Create the courses Table
 
--   value, a double
--   low, a double
--   high, a double
+This table stores information about courses offered by the university.
 
-`constrain()` returns a **double**, which is the value constrained by low and high. I.e., if the value is greater than high then, return high. If it is less than low, return low. Else, return the value itself unchanged. Remember, in **utils.h** you are writing just the prototype.
+1. In the SQL Editor, enter the following code:
 
-Now, in **utils.cpp**, implement the function.
-
-In **tests.cpp**, in the `TEST_CASE("step1")`, add more `REQUIRES()` function calls to test that your function is correct in all cases. We have provided one test there already.
-
-Compile using `make`. Then, run like this:
-
-``` bash
-./tester step1
+```sql
+CREATE TABLE courses (
+    course_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    course_name TEXT NOT NULL,
+    department TEXT NOT NULL
+);
 ```
 
-When you pass the test, **Commit and Sync** your code to github (use a Message like "step 1 done") and check that the autograding test for step1 passes. (It should, as all it does is run `./tester step1`.) (Tests for the other steps will pass, because the test cases are currently empty.)
+2. Click Execute and refresh the database structure.
+
+## Task: Create the enrollments Table
+
+This table tracks which students are enrolled in which courses. It includes **foreign keys** linking to both the students and courses tables.
+
+1. Enter the following SQL code:
+
+```sql
+CREATE TABLE enrollments (
+    enrollment_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    student_id INTEGER,
+    course_id INTEGER,
+    enrollment_date DATE DEFAULT CURRENT_DATE,
+    FOREIGN KEY (student_id) REFERENCES students(student_id),
+    FOREIGN KEY (course_id) REFERENCES courses(course_id)
+);
+```
+
+2. Click Execute and refresh the database structure.
+
+:::{.callout-important}
+✅ Checkpoint: Your database now contains three tables: students, courses, and enrollments.
+:::
 
 ## Step 2. function practice, 2
 
