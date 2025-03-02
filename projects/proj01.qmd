@@ -1,5 +1,5 @@
 ---
-title: "Project 01: More Control Structures"
+title: "Week 1 Project: Student Course Registration System"
 format: 
   html:
     css: /projects/proj-styles.css
@@ -11,34 +11,61 @@ eval: false
 
 <figure>
 
-<img src="/images/projects/proj01-header.jpg" alt="Prime Numbers." width="500"/>
+<img src="/images/projects/proj01-studog.jpg" alt="Studog." width="500"/>
 
-<figcaption>Prime Numbers.</figcaption>
+<figcaption>Studoggy.</figcaption>
 
 </figure>
 
 </center>
 
+This project will introduce you to database creation, table design, and basic SQL queries using SQLite3 and SQLiteStudio. You will create a simple database to store student and course information, learning how to define tables, insert data, and retrieve information using SQL.
+
+
 ## Objectives:
 
-1.  Practice using for loops, while loops, and if statements.
-2.  Practice creating functions and passing parameters.
-3.  Practice writing unit tests.
+By the end of this project, you will:
 
-## Step 0. Prepare
+✅ Understand how to create and structure a relational database using SQLite3.
+✅ Learn to define tables, primary keys, and foreign keys.
+✅ Insert data into tables and retrieve information using SELECT queries.
+✅ Use basic SQL commands such as CREATE TABLE, INSERT, SELECT, WHERE, and JOIN.
+✅ Gain hands-on experience with SQLiteStudio as a database management tool.
 
--   Click [this link](https://classroom.github.com/a/_PwngVPD){target="_blank"} and then "Accept this assignment".
--   Wait a few seconds and refresh the page. Refresh until the page says "You're ready to go!". The page has a link to a github repo.
--   Click the link to see your new repo on github.com.
--   Click the green [**Code**]{style="color:green;"} button and copy the SSH link it shows.
--   In a terminal,
-    -   `cd` to the directory where you are putting all your CS112 assignments.
-    -   type `git clone <paste-the-contents-of-the-link-you-copied>`
--   `cd` to the new directory containing your repo.
--   type `code .` to start up Visual Studio Code in that directory.
--   Inspect the code you got in the assignment.
+## Step 0: Setting Up SQLiteStudio
 
-## Step 1. function practice, 1
+Before you start, ensure that you have SQLiteStudio installed. Follow these steps:
+
+- Download SQLiteStudio from [sqlitestudio.pl](https://sqlitestudio.pl/){target="_blank"}.
+- Install SQLiteStudio on your computer.
+- Open SQLiteStudio and click on Database -> Add a Database.
+- Choose "Create a new SQLite3 database", and name the database university.db after clicking in the yellow folder button.
+- Click Save and ensure the database appears in the left panel.
+
+
+
+## Step 1. Creating Tables
+
+Now, you will define three tables: `students`, `courses`, and `enrollments`.
+
+### Task: Create the students Table
+
+This table stores information about students.
+
+1. Open SQLiteStudio and select Tools → Open SQL Editor.
+2. Type the following SQL code:
+
+```sql
+CREATE TABLE students (
+    student_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    first_name TEXT NOT NULL,
+    last_name TEXT NOT NULL,
+    birthdate DATE,
+    major TEXT
+);
+```
+
+
 
 In **utils.h**, create a function **prototype** called `constrain()` that has 3 parameters:
 

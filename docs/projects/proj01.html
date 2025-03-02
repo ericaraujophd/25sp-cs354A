@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Project 01: More Control Structures – CS 354 – Database Management Systems</title>
+<title>Week 1 Project: Student Course Registration System – CS 354 – Database Management Systems</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -136,10 +136,10 @@ window.Quarto = {
 </script>
 
 <link rel="stylesheet" href="../projects/proj-styles.css">
-<meta property="og:title" content="Project 01: More Control Structures – CS 354 – Database Management Systems">
+<meta property="og:title" content="Week 1 Project: Student Course Registration System – CS 354 – Database Management Systems">
 <meta property="og:description" content="CS354 provides a hands-on introduction to relational databases, SQL querying, and database design, focusing on real-world applications, optimization, and security.">
 <meta property="og:site_name" content="CS 354 – Database Management Systems">
-<meta name="twitter:title" content="Project 01: More Control Structures – CS 354 – Database Management Systems">
+<meta name="twitter:title" content="Week 1 Project: Student Course Registration System – CS 354 – Database Management Systems">
 <meta name="twitter:description" content="CS354 provides a hands-on introduction to relational databases, SQL querying, and database design, focusing on real-world applications, optimization, and security.">
 <meta name="twitter:image" content="https://ericaraujo.com/25sp-cs354A/images/data-management.png">
 <meta name="twitter:creator" content="@ericfaraujo">
@@ -210,8 +210,11 @@ window.Quarto = {
    
   <ul>
   <li><a href="#objectives" id="toc-objectives" class="nav-link active" data-scroll-target="#objectives">Objectives:</a></li>
-  <li><a href="#step-0.-prepare" id="toc-step-0.-prepare" class="nav-link" data-scroll-target="#step-0.-prepare">Step 0. Prepare</a></li>
-  <li><a href="#step-1.-function-practice-1" id="toc-step-1.-function-practice-1" class="nav-link" data-scroll-target="#step-1.-function-practice-1">Step 1. function practice, 1</a></li>
+  <li><a href="#step-0-setting-up-sqlitestudio" id="toc-step-0-setting-up-sqlitestudio" class="nav-link" data-scroll-target="#step-0-setting-up-sqlitestudio">Step 0: Setting Up SQLiteStudio</a></li>
+  <li><a href="#step-1.-creating-tables" id="toc-step-1.-creating-tables" class="nav-link" data-scroll-target="#step-1.-creating-tables">Step 1. Creating Tables</a>
+  <ul class="collapse">
+  <li><a href="#task-create-the-students-table" id="toc-task-create-the-students-table" class="nav-link" data-scroll-target="#task-create-the-students-table">Task: Create the students Table</a></li>
+  </ul></li>
   <li><a href="#step-2.-function-practice-2" id="toc-step-2.-function-practice-2" class="nav-link" data-scroll-target="#step-2.-function-practice-2">Step 2. function practice, 2</a></li>
   <li><a href="#step-3.-compute-prime-numbers" id="toc-step-3.-compute-prime-numbers" class="nav-link" data-scroll-target="#step-3.-compute-prime-numbers">Step 3. Compute prime numbers</a></li>
   <li><a href="#step-4.-collecting-prime-numbers" id="toc-step-4.-collecting-prime-numbers" class="nav-link" data-scroll-target="#step-4.-collecting-prime-numbers">Step 4. Collecting prime numbers</a></li>
@@ -224,7 +227,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Project 01: More Control Structures</h1>
+<h1 class="title">Week 1 Project: Student Course Registration System</h1>
 </div>
 
 
@@ -243,39 +246,46 @@ window.Quarto = {
 
 <center>
 <figure class="figure">
-<p><img src="../images/projects/proj01-header.jpg" alt="Prime Numbers." width="500" class="figure-img"></p>
+<p><img src="../images/projects/proj01-studog.jpg" alt="Studog." width="500" class="figure-img"></p>
 <figcaption>
-Prime Numbers.
+Studoggy.
 </figcaption>
 </figure>
 </center>
+<p>This project will introduce you to database creation, table design, and basic SQL queries using SQLite3 and SQLiteStudio. You will create a simple database to store student and course information, learning how to define tables, insert data, and retrieve information using SQL.</p>
 <section id="objectives" class="level2">
 <h2 class="anchored" data-anchor-id="objectives">Objectives:</h2>
-<ol type="1">
-<li>Practice using for loops, while loops, and if statements.</li>
-<li>Practice creating functions and passing parameters.</li>
-<li>Practice writing unit tests.</li>
-</ol>
+<p>By the end of this project, you will:</p>
+<p>✅ Understand how to create and structure a relational database using SQLite3. ✅ Learn to define tables, primary keys, and foreign keys. ✅ Insert data into tables and retrieve information using SELECT queries. ✅ Use basic SQL commands such as CREATE TABLE, INSERT, SELECT, WHERE, and JOIN. ✅ Gain hands-on experience with SQLiteStudio as a database management tool.</p>
 </section>
-<section id="step-0.-prepare" class="level2">
-<h2 class="anchored" data-anchor-id="step-0.-prepare">Step 0. Prepare</h2>
+<section id="step-0-setting-up-sqlitestudio" class="level2">
+<h2 class="anchored" data-anchor-id="step-0-setting-up-sqlitestudio">Step 0: Setting Up SQLiteStudio</h2>
+<p>Before you start, ensure that you have SQLiteStudio installed. Follow these steps:</p>
 <ul>
-<li>Click <a href="https://classroom.github.com/a/_PwngVPD" target="_blank">this link</a> and then “Accept this assignment”.</li>
-<li>Wait a few seconds and refresh the page. Refresh until the page says “You’re ready to go!”. The page has a link to a github repo.</li>
-<li>Click the link to see your new repo on github.com.</li>
-<li>Click the green <span style="color:green;"><strong>Code</strong></span> button and copy the SSH link it shows.</li>
-<li>In a terminal,
-<ul>
-<li><code>cd</code> to the directory where you are putting all your CS112 assignments.</li>
-<li>type <code>git clone &lt;paste-the-contents-of-the-link-you-copied&gt;</code></li>
-</ul></li>
-<li><code>cd</code> to the new directory containing your repo.</li>
-<li>type <code>code .</code> to start up Visual Studio Code in that directory.</li>
-<li>Inspect the code you got in the assignment.</li>
+<li>Download SQLiteStudio from <a href="https://sqlitestudio.pl/" target="_blank">sqlitestudio.pl</a>.</li>
+<li>Install SQLiteStudio on your computer.</li>
+<li>Open SQLiteStudio and click on Database -&gt; Add a Database.</li>
+<li>Choose “Create a new SQLite3 database”, and name the database university.db after clicking in the yellow folder button.</li>
+<li>Click Save and ensure the database appears in the left panel.</li>
 </ul>
 </section>
-<section id="step-1.-function-practice-1" class="level2">
-<h2 class="anchored" data-anchor-id="step-1.-function-practice-1">Step 1. function practice, 1</h2>
+<section id="step-1.-creating-tables" class="level2">
+<h2 class="anchored" data-anchor-id="step-1.-creating-tables">Step 1. Creating Tables</h2>
+<p>Now, you will define three tables: <code>students</code>, <code>courses</code>, and <code>enrollments</code>.</p>
+<section id="task-create-the-students-table" class="level3">
+<h3 class="anchored" data-anchor-id="task-create-the-students-table">Task: Create the students Table</h3>
+<p>This table stores information about students.</p>
+<ol type="1">
+<li>Open SQLiteStudio and select Tools → Open SQL Editor.</li>
+<li>Type the following SQL code:</li>
+</ol>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> students (</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    student_id <span class="dt">INTEGER</span> <span class="kw">PRIMARY</span> <span class="kw">KEY</span> AUTOINCREMENT,</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    first_name TEXT <span class="kw">NOT</span> <span class="kw">NULL</span>,</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    last_name TEXT <span class="kw">NOT</span> <span class="kw">NULL</span>,</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    birthdate <span class="dt">DATE</span>,</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    major TEXT</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>In <strong>utils.h</strong>, create a function <strong>prototype</strong> called <code>constrain()</code> that has 3 parameters:</p>
 <ul>
 <li>value, a double</li>
@@ -286,14 +296,15 @@ Prime Numbers.
 <p>Now, in <strong>utils.cpp</strong>, implement the function.</p>
 <p>In <strong>tests.cpp</strong>, in the <code>TEST_CASE("step1")</code>, add more <code>REQUIRES()</code> function calls to test that your function is correct in all cases. We have provided one test there already.</p>
 <p>Compile using <code>make</code>. Then, run like this:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./tester</span> step1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./tester</span> step1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>When you pass the test, <strong>Commit and Sync</strong> your code to github (use a Message like “step 1 done”) and check that the autograding test for step1 passes. (It should, as all it does is run <code>./tester step1</code>.) (Tests for the other steps will pass, because the test cases are currently empty.)</p>
+</section>
 </section>
 <section id="step-2.-function-practice-2" class="level2">
 <h2 class="anchored" data-anchor-id="step-2.-function-practice-2">Step 2. function practice, 2</h2>
 <p>Now, make a second function in <strong>utils.h</strong> and <strong>utils.cpp</strong>, <code>constrain2()</code>, which is the same as <code>constrain()</code>, but has the default value of <span class="math inline">\(0.0\)</span> for the low parameter, and the default of <span class="math inline">\(100.0\)</span> for the high parameter. Uncomment the test case in step2 and then add more <code>REQUIRE</code> tests to make sure these default arguments work correctly.</p>
 <p>When you have your code completed (and perfectly indented!), compile and run:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./tester</span> step2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./tester</span> step2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><strong>Commit and Sync</strong> your code to github.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -360,7 +371,7 @@ OPTIONAL:
 <div class="callout-body-container callout-body">
 <p>For fun, create an array of 100000 and fill it with primes. See how long it takes to compute and print out the last prime.</p>
 <p>You can get the exact run time by running your project this way:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">time</span> ./tester <span class="st">"step4"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">time</span> ./tester <span class="st">"step4"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </section>

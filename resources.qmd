@@ -19,5 +19,6 @@ These links were last updated on 2/3/2025. Please let me know if any of them are
 * [Mode](https://mode.com/sql-tutorial/introduction-to-sql){target="_blank"}
 * [SQLPad](https://sqlpad.io/playground/mysql/){target="_blank"}
 * [LearnSQL](https://learnsql.com/){target="_blank"}
-* [SQLGuroo](https://sqlguroo.com/{target="_blank"})
+* [SQLGuroo](https://sqlguroo.com/){target="_blank"}
+* [DB Fiddle](https://www.db-fiddle.com/){target="_blank"}
 
