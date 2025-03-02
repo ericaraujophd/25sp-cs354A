@@ -20,40 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -183,23 +149,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#objectives" id="toc-objectives" class="nav-link active" data-scroll-target="#objectives">Objectives:</a></li>
   <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
   <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started">Getting Started</a></li>
-  <li><a href="#part-i-the-stack-class" id="toc-part-i-the-stack-class" class="nav-link" data-scroll-target="#part-i-the-stack-class">Part I: The Stack Class</a>
-  <ul class="collapse">
-  <li><a href="#the-isempty-method" id="toc-the-isempty-method" class="nav-link" data-scroll-target="#the-isempty-method">The isEmpty() Method</a></li>
-  <li><a href="#the-push-peektop-and-isfull-methods" id="toc-the-push-peektop-and-isfull-methods" class="nav-link" data-scroll-target="#the-push-peektop-and-isfull-methods">The push(), peekTop(), and isFull() Methods</a></li>
-  <li><a href="#the-pop-method" id="toc-the-pop-method" class="nav-link" data-scroll-target="#the-pop-method">The pop() Method</a></li>
-  </ul></li>
-  <li><a href="#part-ii-exceptions" id="toc-part-ii-exceptions" class="nav-link" data-scroll-target="#part-ii-exceptions">Part II: Exceptions</a>
-  <ul class="collapse">
-  <li><a href="#catching-exceptions" id="toc-catching-exceptions" class="nav-link" data-scroll-target="#catching-exceptions">Catching Exceptions</a></li>
-  <li><a href="#the-stackexception-class" id="toc-the-stackexception-class" class="nav-link" data-scroll-target="#the-stackexception-class">The StackException Class</a></li>
-  <li><a href="#throwing-exceptions" id="toc-throwing-exceptions" class="nav-link" data-scroll-target="#throwing-exceptions">Throwing Exceptions</a></li>
-  <li><a href="#the-explicit-value-constructor" id="toc-the-explicit-value-constructor" class="nav-link" data-scroll-target="#the-explicit-value-constructor">The Explicit-Value Constructor</a></li>
-  <li><a href="#the-pop-method-1" id="toc-the-pop-method-1" class="nav-link" data-scroll-target="#the-pop-method-1">The pop() Method</a></li>
-  <li><a href="#the-push-method" id="toc-the-push-method" class="nav-link" data-scroll-target="#the-push-method">The push() Method</a></li>
-  <li><a href="#the-other-operations" id="toc-the-other-operations" class="nav-link" data-scroll-target="#the-other-operations">The Other Operations</a></li>
-  </ul></li>
-  <li><a href="#part-iii-queue-using-a-linked-list" id="toc-part-iii-queue-using-a-linked-list" class="nav-link" data-scroll-target="#part-iii-queue-using-a-linked-list">Part III: Queue, using a Linked List</a></li>
   <li><a href="#turn-in" id="toc-turn-in" class="nav-link" data-scroll-target="#turn-in">Turn In</a></li>
   <li><a href="#grading-rubric" id="toc-grading-rubric" class="nav-link" data-scroll-target="#grading-rubric">Grading Rubric</a></li>
   </ul>
@@ -229,9 +178,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <center>
 <figure class="figure">
-<p><img src="../images/labs/lab09/lab09-header.jpg" alt="It compiles!." width="400" class="figure-img"></p>
+<p><img src="../images/hws/hw01/noidea.gif" alt="From zero to hero!" width="400" class="figure-img"></p>
 <figcaption>
-It compiles!
+From zero to hero!
 </figcaption>
 </figure>
 </center>
@@ -239,201 +188,20 @@ It compiles!
 <h2 class="anchored" data-anchor-id="objectives">Objectives:</h2>
 <p>In this exercise, you will:</p>
 <ol type="1">
-<li>Build a dynamically-allocated-array-based Stack class.</li>
-<li>Build a simple Exception class hierarchy.</li>
-<li>Throw and catch exceptions.</li>
-<li>Build a Queue class that uses a linked list.</li>
+<li>Blablabla</li>
 </ol>
 </section>
 <section id="introduction" class="level2">
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
 <p>Today’s exercise has two parts:</p>
 <ol type="1">
-<li>In Part I, we will build a simple Stack class that stores its items in a fixed-size, dynamically-allocated array.</li>
-<li>In Part II, we will see how to define, throw, catch, and handle exceptions.</li>
-<li>In Part III, we will build a simple Queue class that stores its items in a linked list.</li>
+<li>Blablabla</li>
+<li>Blebleble</li>
 </ol>
 </section>
 <section id="getting-started" class="level2">
 <h2 class="anchored" data-anchor-id="getting-started">Getting Started</h2>
 <p><a href="" target="_blank">Accept the invitation</a> to the lab and do git clone to get the files, as usual. Make sure your partner is part of the same Team and edit the <strong>README.md</strong> file and share your repo on github.com</p>
-</section>
-<section id="part-i-the-stack-class" class="level2">
-<h2 class="anchored" data-anchor-id="part-i-the-stack-class">Part I: The Stack Class</h2>
-<p>As you can see, this Stack class contains three instance variables:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>   <span class="dt">unsigned</span> myCapacity<span class="op">;</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>   <span class="dt">unsigned</span> mySize<span class="op">;</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>   Item<span class="op">*</span>    myArray<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>We will be storing the address of a dynamically allocated array in <code>myArray</code>. We will be storing the length of that array in <code>myCapacity</code>, and in <code>mySize</code>, we will be storing the number of items in the array. As we shall see, this value will correspond to the index of the spot in that array where the next <code>Item</code> that we <code>push()</code> will be stored.</p>
-<p>As we have seen in class, the primary Stack operations are:</p>
-<ul>
-<li><code>bool isEmpty()</code>, that returns true if and only if the Stack contains no items;</li>
-<li><code>bool isFull()</code>, that returns true if and only if the Stack has no room for more items;</li>
-<li><code>void push(Item it)</code>, that places it on top of the Stack;</li>
-<li><code>Item peekTop()</code>, that returns the top item from the Stack (without modifying the Stack); and</li>
-<li><code>Item pop()</code>, that removes and returns the top item from the Stack.</li>
-</ul>
-<p>To let you focus on these Stack operations, the Stack class already contains prototypes and definitions for:</p>
-<ul>
-<li>an explicit-value constructor;</li>
-<li>a copy constructor;</li>
-<li>a destructor; and</li>
-<li>an assignment operator.</li>
-</ul>
-<p>Take a few minutes to look these over. Look carefully at the explicit-value constructor, and note the initial values each member is given. We might visualize the Stack objects it constructs as follows:</p>
-<p><img src="../images/labs/lab09/lab09-diagram.png" class="img-fluid"></p>
-<p>Take a minute to look over <strong>tests.cpp</strong> to see the tests it contains. Note that part of the test is commented out. Leave this part commented out for now; we will be uncommenting it in Part II.</p>
-<p>Build the project (<code>make all</code>) and run tester (<code>./tester</code>). Verify that everything works correctly at the outset.</p>
-<section id="the-isempty-method" class="level3">
-<h3 class="anchored" data-anchor-id="the-isempty-method">The isEmpty() Method</h3>
-<p>Our explicit constructor gives us the ability to define Stack objects with a given capacity. Since these Stack objects are initially empty (i.e., they contain no items), the first operation we will build is the <code>isEmpty()</code> method.</p>
-<p>In <strong>tests.cpp</strong>, uncomment the <code>TEST_CASE</code> that tests <code>isEmpty()</code>. Compile and run the test. You should see an error message indicating that <code>isEmpty()</code> does not exist.</p>
-<p>In <strong>Stack.h</strong>, add a prototype for <code>isEmpty()</code> to the class. Recompile and rerun. You should now see a linking error, since <code>isEmpty()</code> has been prototyped but not defined.</p>
-<p>In <strong>Stack.cpp</strong>, add a definition for <code>isEmpty()</code> that will pass the tests. This definition should be as simple as possible (e.g., a single line). If you get stuck, here is a <a href="../labs/lab09-hint.qmd">hint</a>, but don’t use it unless you have to.</p>
-<p>Recompile and rerun your test. Continue when you pass the test.</p>
-</section>
-<section id="the-push-peektop-and-isfull-methods" class="level3">
-<h3 class="anchored" data-anchor-id="the-push-peektop-and-isfull-methods">The push(), peekTop(), and isFull() Methods</h3>
-<p>The other operations only work correctly on a non-empty Stack, so before we can test them, we need to be able to add items to a Stack. Since the <code>push()</code> method allows us to add items to a Stack, we will build that method; and since pushing items onto a stack can fill it, we will also build the <code>isFull()</code> and <code>peekTop()</code> methods.</p>
-<p>In <strong>tests.cpp</strong>, uncomment the <code>TEST_CASE</code> that tests <code>testPushPeekTopAndIsFull()</code>. Take a moment to look over the tests it contains. The first test constructs a stack with capacity 1 and pushes an item onto it. We might visualize this stack as follows:</p>
-<p><img src="../images/labs/lab09/lab09-diagram01.png" class="img-fluid"></p>
-<p>The second test constructs a stack with capacity 3 and pushes an item onto it. We might visualize this stack as follows:</p>
-<p><img src="../images/labs/lab09/lab09-diagram02.png" class="img-fluid"></p>
-<p>The test then pushes a second item onto the stack:</p>
-<p><img src="../images/labs/lab09/lab09-diagram03.png" class="img-fluid"></p>
-<p>The test then pushes a third item onto the stack, filling it:</p>
-<p><img src="../images/labs/lab09/lab09-diagram04.png" class="img-fluid"></p>
-<p>Compile and run the test. You should see error messages indicating that <code>push()</code>, <code>peekTop()</code>, and <code>isFull()</code> do not exist.</p>
-<p>In <strong>Stack.h</strong>, add a prototype for <code>isFull()</code> to the class. Recompile. Next, add a prototype for <code>peekTop()</code> to the class. Recompile. You should now see just the error for <code>push()</code>. Add a prototype for <code>push()</code>; then recompile. You should now get only linking errors, since <code>isFull()</code>, <code>peekTop()</code>, and <code>push()</code> have been declared in <strong>Stack.h</strong> but not defined.</p>
-<p>In <strong>Stack.cpp</strong>, add a definition for <code>isFull()</code>. This definition should be as simple as possible (e.g., a single line).</p>
-<p>Save/compile, and verify that the linking error for <code>isFull()</code> goes away. (The errors for <code>peekTop()</code> and <code>push()</code> should still be there.)</p>
-<p>Define the <code>peekTop()</code> method. Save/recompile, and verify that what you have written compiles without errors. (You should still see a linking error for <code>push()</code>.) Note that you do not have to handle the case (now) when you try to <code>peekTop()</code> on an empty Stack.</p>
-<p>Define the <code>push()</code> method. Save/recompile, and verify that what you have written compiles and links without errors. (Again, do not worry about exceptional cases, yet.)</p>
-<p>Run the tests. If you pass the tests, congratulations! If not, use the diagrams above to go back and fix your <code>push()</code>, <code>peekTop()</code>, and/or <code>isFull()</code> methods. If you get stuck, here are hints for <a href="../labs/lab09-hint-push.qmd">push()</a>, <a href="">peekTop()</a>, and <a href="../labs/lab09-hint-isfull.qmd">isFull()</a>, but only use them if you have to.</p>
-<p>Continue when your methods pass all the tests.</p>
-</section>
-<section id="the-pop-method" class="level3">
-<h3 class="anchored" data-anchor-id="the-pop-method">The pop() Method</h3>
-<p>Our sole remaining operation is the <code>pop()</code> method, that removes and returns the top value from the Stack.</p>
-<p>In <strong>tests.cpp</strong>, uncomment the <code>TEST_CASE</code> for <code>testPop()</code>. Compile and run the test. You should see an error message indicating that <code>pop()</code> does not exist.</p>
-<p>In <strong>Stack.h</strong>, add a prototype for <code>pop()</code> to the class. Recompile and rerun. You should now see a linking error, since <code>pop()</code> has a prototype but no definition.</p>
-<p>In <strong>Stack.cpp</strong>, add a definition for <code>pop()</code> that will pass <code>testPop()</code>. For now, this definition should be as simple as possible (e.g., it can be as short as a single line). If you get stuck, here is a <a href="../labs/lab09-hint-pop.qmd">hint</a>, but don’t use it unless you have to.</p>
-<p>Recompile and rerun your test. Continue when you pass the test.</p>
-</section>
-</section>
-<section id="part-ii-exceptions" class="level2">
-<h2 class="anchored" data-anchor-id="part-ii-exceptions">Part II: Exceptions</h2>
-<p>We now have a working Stack class, but it is lacking any error-handling capability. For example, what happens if a person pops an empty stack, or pushes an item onto a full stack? In Part II of today’s exercise, we introduce C++’s <strong>programmer-defined exception</strong> mechanism, which provides a graceful way of handling such problems.</p>
-<p>As we have seen with the C++ standard exceptions, an <strong>exception</strong> is an out-of-the-ordinary occurrence. The C++ standard exception classes in <code>&lt;stdexcept&gt;</code> are necessarily very general, describing broad categories of things that might go wrong. When you want to more precisely indicate what is going wrong, C++ lets us create our own exception classes.</p>
-<p>In C++, a method that wants to indicate that something exceptional has occurred can <strong>throw</strong> an exception object back to the caller of the method. The pattern for the throw statement is:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="cf">throw</span> ExceptionType<span class="op">(</span>arguments<span class="op">);</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>This constructs an exception object of type <code>ExceptionType</code> and throws it to the caller – the subprogram that invoked the currently running method, terminating that method.</p>
-<p>Back in the caller, the call to that method can be “wrapped” in a <strong>try-catch block</strong>, whose form is as follows:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span> <span class="op">{</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">// risky code -- might throw an exception</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="op">}</span> <span class="cf">catch</span> <span class="op">(</span><span class="at">const</span> ExceptionType <span class="op">&amp;</span> exceptionParameter<span class="op">)</span> <span class="op">{</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="co">// handler code -- to be executed if the exception occurs</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>The try block tries to perform the “risky code”. If that code works without throwing the exception, control skips past the catch block to whatever follows it. But if the “risky code” throws the exception named in the catch, then control is transferred to the “handler” code in the catch block, which does whatever is appropriate.</p>
-<p>Note that since <code>ExceptionType</code> is pretty much always a class, it is preferable to define the catch block’s parameter as a const-reference parameter. This has two advantages over using a value parameter: (i) it avoids the copying associated with a value parameter, and (ii) it lets this catch block catch exceptions of this exception-class or any subclasses derived from that class. We make it a const reference (i.e., read-only reference) parameter because the catch block should not make any changes to that parameter.</p>
-<section id="catching-exceptions" class="level3">
-<h3 class="anchored" data-anchor-id="catching-exceptions">Catching Exceptions</h3>
-<p>In <strong>tests.cpp</strong>, uncomment the following line in <code>TEST_CASE "testPop()"</code>:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>        REQUIRE_THROWS_AS<span class="op">(</span>s1<span class="op">.</span>peekTop<span class="op">(),</span> StackException<span class="op">);</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>This block tries to send the <code>peekTop()</code> message to an empty stack, and then catches the exception that should be thrown.</p>
-<p>Save/recompile your project. You should get several errors, because <code>StackException</code> has not been defined. Verify that that is the cause of your errors, then continue.</p>
-</section>
-<section id="the-stackexception-class" class="level3">
-<h3 class="anchored" data-anchor-id="the-stackexception-class">The StackException Class</h3>
-<p>One way to provide exceptions for our Stack class is to define a separate <code>StackException</code> class that our Stack class can use when something goes wrong. Inspect the file <strong>StackException.h</strong> which contains such a class.</p>
-<p>The class has two instance variables:</p>
-<ul>
-<li><code>myLocation</code>, to which a method can pass its name (to indicate the exact method in which something went wrong); and</li>
-<li><code>myMessage</code>, to which a method can pass a description of what is wrong.</li>
-</ul>
-<p>The <code>StackException</code> constructor initializes these members using values it receives through its parameters. For example, if at the beginning of the <code>pop()</code> method, we find that the stack is empty, we can build an exception like this:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>   StackException<span class="op">(</span><span class="st">"pop()"</span><span class="op">,</span> <span class="st">"stack is empty"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>(don’t do this yet in your code)</p>
-<p>If at the beginning of the the <code>push()</code> method, we find that the stack is full, we can build an exception like this:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>   StackException<span class="op">(</span><span class="st">"push()"</span><span class="op">,</span> <span class="st">"stack is full"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>The <code>asString()</code> method generates a string representation of these values, accompanied by some descriptive labels.</p>
-<p>At the bottom of <strong>StackException.h</strong>, there is a definition of <code>operator&lt;&lt;</code> that lets us output a <code>StackException</code> using the usual C++ stream-insertion operator.</p>
-<p>At the beginning of <strong>Stack.h</strong>, uncomment the <code>#include</code> directive that includes <code>StackException.h</code>.</p>
-<p>After making these changes, save/recompile your project. If all is well, your project should compile correctly (but not run correctly yet). If not, find and correct the syntax error(s).</p>
-<p>When your project compiles correctly, run it. You should see an execution halt in the <code>"testPop()"</code> test case. The problem is that our <code>testPop()</code> method now expects a <code>StackException</code> to be thrown when we send the <code>peekTop()</code> message to an empty Stack. Continue, and we will see how to accomplish this.</p>
-</section>
-<section id="throwing-exceptions" class="level3">
-<h3 class="anchored" data-anchor-id="throwing-exceptions">Throwing Exceptions</h3>
-<p>Now that we have created a <code>StackException</code> class by which we can precisely describe unusual circumstances, we can use that class in our Stack methods. As mentioned previously, a method that detects a problematic circumstance can <strong>throw</strong> an exception. For example, if the stack is empty, there is no top item for the <code>peekTop()</code> method to return, in which case we might make it throw a <code>StackException</code>, as follows:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>Item Stack<span class="op">::</span>peekTop<span class="op">()</span> <span class="at">const</span> <span class="op">{</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="op">(</span>isEmpty<span class="op">())</span> <span class="op">{</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">throw</span> StackException<span class="op">(</span><span class="st">"peekTop()"</span><span class="op">,</span> <span class="st">"stack is empty"</span><span class="op">);</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span> </span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> myArray<span class="op">[</span>mySize <span class="op">-</span> <span class="dv">1</span><span class="op">];</span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Make the changes seen above. Recompile and rerun your project. With these changes, what you have written should pass all the tests. Continue when it does so.</p>
-</section>
-<section id="the-explicit-value-constructor" class="level3">
-<h3 class="anchored" data-anchor-id="the-explicit-value-constructor">The Explicit-Value Constructor</h3>
-<p>Uncomment the <code>REQUIRES_THROWS_AS</code> code in the “constructors” test case. Then save/compile your project. Run it, and verify that it fails.</p>
-<p>Using what we did with <code>peekTop()</code> as a model, modify the Stack constructor so that if capacity is not a positive number, the constructor throws a <code>StackException</code> with the message <code>Stack(capacity): capacity must be positive!</code>.</p>
-<p>Continue when your project passes all tests.</p>
-</section>
-<section id="the-pop-method-1" class="level3">
-<h3 class="anchored" data-anchor-id="the-pop-method-1">The pop() Method</h3>
-<p>Uncomment all the rest of the <code>REQUIRES_THROWS_AS</code> tests in the “testPop()” test case. Then save/compile your project. Run it, and verify that it fails.</p>
-<p>Using what we did with <code>peekTop()</code> as a model, modify <code>pop()</code> so that it throws a <code>StackException</code> with the message <code>pop(): stack is empty!</code>. In case you get stuck, here is a <a href="../labs/lab09-hint-pop2.qmd">hint</a>, but don’t use it unless you need to. Continue when your project passes all tests.</p>
-</section>
-<section id="the-push-method" class="level3">
-<h3 class="anchored" data-anchor-id="the-push-method">The push() Method</h3>
-<p>Our final operation is the <code>push()</code> operation. Uncomment the <code>REQUIRE_THROWS_AS</code> tests “testPushPeekTopAndIsFull()”. Then save/recompile, and verify that your project no longer passes the test.</p>
-<p>Using what we did previously as a model, modify <code>push()</code> so that it throws a StackException with the message <code>push(): stack is full!</code>. In case you get stuck, here is a <a href="../labs/lab09-hint-push2.qmd">hint</a>, but don’t use it unless you need to.</p>
-<p>Continue when your project passes all tests.</p>
-</section>
-<section id="the-other-operations" class="level3">
-<h3 class="anchored" data-anchor-id="the-other-operations">The Other Operations</h3>
-<p>Now that you have tested the stack operations, uncomment the remaining test cases and verify that the other Stack operations pass their tests. (I see 57 assertions in 6 test cases that pass.)</p>
-<p>Congratulations! You now have a full-featured (array-based) Stack class at your disposal!</p>
-</section>
-</section>
-<section id="part-iii-queue-using-a-linked-list" class="level2">
-<h2 class="anchored" data-anchor-id="part-iii-queue-using-a-linked-list">Part III: Queue, using a Linked List</h2>
-<p>We have talked about the best way to implement a Queue using a linked list – insert at the tail of the queue and remove from the front of the queue. And, you have code from Lab 6 in which you implemented and tested a linked list – so you shouldn’t have to do too much to adapt that code to represent the Queue ADT.</p>
-<p>Look at the <strong>Queue.h</strong> and <strong>Queue.cpp</strong> files in the repository. The methods are there, but they are all empty. Now, go find your code from Lab 6, and fill in the methods, copying (and adapting) code from there. This shouldn’t take long. The only code you may have to implement is the <code>remove()</code> code – which removes the item from the front of the linked list.</p>
-<p>You may wonder why we have a <code>isFull()</code> method that will always return <strong>false</strong> when we implement the queue using a linked list. Why even have it? The answer is that the user of the Queue does not know how the Queue is implemented, so they don’t know that the Queue can never be full.</p>
-<p>You do NOT have to add any more methods (the linked list implementation has many more methods available, but the Queue has fewer, as it should).</p>
-<div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Caution
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><strong>To compile the Queue .h and .cpp files, you have to edit the makefile:</strong></p>
-<p>Change one line – line 4 – by adding <strong>Queue.cpp</strong> to the end so that the line now reads:</p>
-<pre><code>SOURCES = Stack.cpp Queue.cpp</code></pre>
-</div>
-</div>
-<p>Now try compiling. You will see many warnings because the methods have not been implemented yet.</p>
-<p>NOTE that you do NOT have to templatize the Queue code – unless you want to.</p>
-<p>The biggest part of this assignment is to <strong>write a full set of TEST_CASES in tests.cpp</strong>. You should consult Lab 6’s tests and the tests already in <strong>tests.cpp</strong> for the Stack implementation.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Do not create a test case for the destructor – it can fail randomly (as it did for me).</p>
-</div>
-</div>
-<p>When you have implemented and <strong>thoroughly</strong> tested your Queue implementation, you are done.</p>
 </section>
 <section id="turn-in" class="level2">
 <h2 class="anchored" data-anchor-id="turn-in">Turn In</h2>
