@@ -323,28 +323,28 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Welcome to CS112 - Data Structures",
+    "title": "Welcome to CS 354 - Database Management Systems",
     "section": "",
-    "text": "CS 112 uses the C++ programming language to introduce students to the elementary data structures (vectors, lists, stacks, queues, binary search trees, …), recursion, big-oh notation, and other intermediate-level programming topics.\nThis a permanently in construction website, so please let us know if you find any information missing or had some bad experience with the links and interface throughout the semester.\nHere you will find all information needed to do well during the course."
+    "text": "Welcome to Database Management, a hands-on course designed to equip you with the essential skills for designing, querying, and optimizing relational databases. Over the next seven weeks, you’ll dive into SQL, explore database structures, and gain practical experience in managing data efficiently. Whether you’re new to databases or looking to sharpen your skills, this course will provide a solid foundation for real-world applications.\nGet ready to write queries, design schemas, and discover how databases power modern applications! Looking forward to an exciting and engaging learning journey with you all.\nSee you in class!"
   },
   {
     "objectID": "index.html#student-learning-outcomes",
     "href": "index.html#student-learning-outcomes",
-    "title": "Welcome to CS112 - Data Structures",
+    "title": "Welcome to CS 354 - Database Management Systems",
     "section": "Student Learning Outcomes",
     "text": "Student Learning Outcomes\nUpon successful completion of this course students will be able to:\n\nUse indirection (pointers) and run-time memory allocation to implement dynamic, generic container classes (e.g., vectors, lists, stacks, queues, trees, etc.).\n\nAnalyze, categorize, and compare the complexity of data structure operations using “big-oh” notation.\n\nDesign and implement recursive data structure operations.\n\nDesign, create, and use unit-tests to test the correctness of data structure operations.\n\nFor select algorithms, use simple parallel computing techniques to improve algorithm performance and measure the improvement."
   },
   {
     "objectID": "index.html#course-organization",
     "href": "index.html#course-organization",
-    "title": "Welcome to CS112 - Data Structures",
+    "title": "Welcome to CS 354 - Database Management Systems",
     "section": "Course Organization",
     "text": "Course Organization\nThe course is organized around these components:\n\nThe lectures that will introduce data structures topics at the conceptual level;\nThe labs in which students will (in pairs) practice using and building data structures; and\nThe projects in which students will (individually) practice using and building data structures.\n\nEach week’s lectures, labs and projects will cover the same concepts, but will do so in different ways.\nThe first 4 weeks will be dedicated to learning C++. After that, we will begin studying data structures."
   },
   {
     "objectID": "index.html#acknowledgements",
     "href": "index.html#acknowledgements",
-    "title": "Welcome to CS112 - Data Structures",
+    "title": "Welcome to CS 354 - Database Management Systems",
     "section": "Acknowledgements",
     "text": "Acknowledgements\nThis website is built with Quarto, the lovely icons by icons8. The original code used to build this website can be found at DS Box. We are very grateful for their work!"
   },
