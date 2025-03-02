@@ -24,7 +24,7 @@ Students will be able to...
 **Week 04: Slides**
 
 ::: slides
-[Slides](https://docs.google.com/presentation/d/1drjTrJ0TrHNiqr7g0B_HxnN6MwswAR7SRWENpsPyLJw/edit?usp=sharing)
+[Slides]()
 :::
 
 ::: reading
@@ -32,15 +32,14 @@ No readings for Week 4.
 :::
 :::::
 
-<!-- ## Lab -->
+<!-- ## Homework assignments -->
 
-:::::: lab
-**Lab 04: Vectors**
+::::: homework
 
-Vec -- A First Dynamic Data Structure
+**Homework 04: **
 
 ::: instructions
-[Instructions](/labs/lab04.qmd)
+[Instructions](/hws/hw04.qmd)
 :::
 
 ::: starter
@@ -48,16 +47,14 @@ Vec -- A First Dynamic Data Structure
 :::
 
 ::: slides
-[Slides](/slides/lab04-slides.qmd)
+[Slides]()
 :::
-::::::
+:::::
 
-<!-- ## Homework assignments -->
+<!-- ## Lab -->
 
-::::: homework
-**Project 04: Vec -- A First Dynamic Data Structure**
-
-Vec -- A First Dynamic Data Structure
+:::::: lab
+**Project 04: **
 
 ::: instructions
 [Instructions](/projects/proj04.qmd)
@@ -66,4 +63,10 @@ Vec -- A First Dynamic Data Structure
 ::: starter
 [Starter](){target="_blank"}
 :::
-:::::
+::::::
+
+::: exam
+**Exam 1**
+
+Exam on Friday during class. Bring your laptop. Content: Weeks 1 - 3.
+:::

@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.57">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Homework 01: – CS 354 – Database Management Systems</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href=".././images/cs112-logo.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="https://kit.fontawesome.com/78ddb093ea.js" crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="../hws/hw-styles.css">
+<meta property="og:title" content="Homework 01: – CS 354 – Database Management Systems">
+<meta property="og:description" content="CS354 provides a hands-on introduction to relational databases, SQL querying, and database design, focusing on real-world applications, optimization, and security.">
+<meta property="og:site_name" content="CS 354 – Database Management Systems">
+<meta name="twitter:title" content="Homework 01: – CS 354 – Database Management Systems">
+<meta name="twitter:description" content="CS354 provides a hands-on introduction to relational databases, SQL querying, and database design, focusing on real-world applications, optimization, and security.">
+<meta name="twitter:image" content="https://ericaraujo.com/25sp-cs354A/images/twitter-card.png">
+<meta name="twitter:creator" content="@ericfaraujo">
+<meta name="twitter:image-height" content="500">
+<meta name="twitter:image-width" content="500">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../images/cs112-logo.png" alt="" class="navbar-logo">
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Overview</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../instructors.html"> 
+<span class="menu-text">Instructors</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../policies.html"> 
+<span class="menu-text">Course Policies</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../content.html"> 
+<span class="menu-text">Content</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/ericaraujophd/25sp-cs354A"> <i class="bi bi-github" role="img" aria-label="GitHub">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#objectives" id="toc-objectives" class="nav-link active" data-scroll-target="#objectives">Objectives:</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started">Getting Started</a></li>
+  <li><a href="#part-i-the-stack-class" id="toc-part-i-the-stack-class" class="nav-link" data-scroll-target="#part-i-the-stack-class">Part I: The Stack Class</a>
+  <ul class="collapse">
+  <li><a href="#the-isempty-method" id="toc-the-isempty-method" class="nav-link" data-scroll-target="#the-isempty-method">The isEmpty() Method</a></li>
+  <li><a href="#the-push-peektop-and-isfull-methods" id="toc-the-push-peektop-and-isfull-methods" class="nav-link" data-scroll-target="#the-push-peektop-and-isfull-methods">The push(), peekTop(), and isFull() Methods</a></li>
+  <li><a href="#the-pop-method" id="toc-the-pop-method" class="nav-link" data-scroll-target="#the-pop-method">The pop() Method</a></li>
+  </ul></li>
+  <li><a href="#part-ii-exceptions" id="toc-part-ii-exceptions" class="nav-link" data-scroll-target="#part-ii-exceptions">Part II: Exceptions</a>
+  <ul class="collapse">
+  <li><a href="#catching-exceptions" id="toc-catching-exceptions" class="nav-link" data-scroll-target="#catching-exceptions">Catching Exceptions</a></li>
+  <li><a href="#the-stackexception-class" id="toc-the-stackexception-class" class="nav-link" data-scroll-target="#the-stackexception-class">The StackException Class</a></li>
+  <li><a href="#throwing-exceptions" id="toc-throwing-exceptions" class="nav-link" data-scroll-target="#throwing-exceptions">Throwing Exceptions</a></li>
+  <li><a href="#the-explicit-value-constructor" id="toc-the-explicit-value-constructor" class="nav-link" data-scroll-target="#the-explicit-value-constructor">The Explicit-Value Constructor</a></li>
+  <li><a href="#the-pop-method-1" id="toc-the-pop-method-1" class="nav-link" data-scroll-target="#the-pop-method-1">The pop() Method</a></li>
+  <li><a href="#the-push-method" id="toc-the-push-method" class="nav-link" data-scroll-target="#the-push-method">The push() Method</a></li>
+  <li><a href="#the-other-operations" id="toc-the-other-operations" class="nav-link" data-scroll-target="#the-other-operations">The Other Operations</a></li>
+  </ul></li>
+  <li><a href="#part-iii-queue-using-a-linked-list" id="toc-part-iii-queue-using-a-linked-list" class="nav-link" data-scroll-target="#part-iii-queue-using-a-linked-list">Part III: Queue, using a Linked List</a></li>
+  <li><a href="#turn-in" id="toc-turn-in" class="nav-link" data-scroll-target="#turn-in">Turn In</a></li>
+  <li><a href="#grading-rubric" id="toc-grading-rubric" class="nav-link" data-scroll-target="#grading-rubric">Grading Rubric</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/ericaraujophd/24sp-cs354A/edit/main/hws/hw01.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/24sp-cs354A/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Homework 01:</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<center>
+<figure class="figure">
+<p><img src="../images/labs/lab09/lab09-header.jpg" alt="It compiles!." width="400" class="figure-img"></p>
+<figcaption>
+It compiles!
+</figcaption>
+</figure>
+</center>
+<section id="objectives" class="level2">
+<h2 class="anchored" data-anchor-id="objectives">Objectives:</h2>
+<p>In this exercise, you will:</p>
+<ol type="1">
+<li>Build a dynamically-allocated-array-based Stack class.</li>
+<li>Build a simple Exception class hierarchy.</li>
+<li>Throw and catch exceptions.</li>
+<li>Build a Queue class that uses a linked list.</li>
+</ol>
+</section>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>Today’s exercise has two parts:</p>
+<ol type="1">
+<li>In Part I, we will build a simple Stack class that stores its items in a fixed-size, dynamically-allocated array.</li>
+<li>In Part II, we will see how to define, throw, catch, and handle exceptions.</li>
+<li>In Part III, we will build a simple Queue class that stores its items in a linked list.</li>
+</ol>
+</section>
+<section id="getting-started" class="level2">
+<h2 class="anchored" data-anchor-id="getting-started">Getting Started</h2>
+<p><a href="" target="_blank">Accept the invitation</a> to the lab and do git clone to get the files, as usual. Make sure your partner is part of the same Team and edit the <strong>README.md</strong> file and share your repo on github.com</p>
+</section>
+<section id="part-i-the-stack-class" class="level2">
+<h2 class="anchored" data-anchor-id="part-i-the-stack-class">Part I: The Stack Class</h2>
+<p>As you can see, this Stack class contains three instance variables:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>   <span class="dt">unsigned</span> myCapacity<span class="op">;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>   <span class="dt">unsigned</span> mySize<span class="op">;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>   Item<span class="op">*</span>    myArray<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>We will be storing the address of a dynamically allocated array in <code>myArray</code>. We will be storing the length of that array in <code>myCapacity</code>, and in <code>mySize</code>, we will be storing the number of items in the array. As we shall see, this value will correspond to the index of the spot in that array where the next <code>Item</code> that we <code>push()</code> will be stored.</p>
+<p>As we have seen in class, the primary Stack operations are:</p>
+<ul>
+<li><code>bool isEmpty()</code>, that returns true if and only if the Stack contains no items;</li>
+<li><code>bool isFull()</code>, that returns true if and only if the Stack has no room for more items;</li>
+<li><code>void push(Item it)</code>, that places it on top of the Stack;</li>
+<li><code>Item peekTop()</code>, that returns the top item from the Stack (without modifying the Stack); and</li>
+<li><code>Item pop()</code>, that removes and returns the top item from the Stack.</li>
+</ul>
+<p>To let you focus on these Stack operations, the Stack class already contains prototypes and definitions for:</p>
+<ul>
+<li>an explicit-value constructor;</li>
+<li>a copy constructor;</li>
+<li>a destructor; and</li>
+<li>an assignment operator.</li>
+</ul>
+<p>Take a few minutes to look these over. Look carefully at the explicit-value constructor, and note the initial values each member is given. We might visualize the Stack objects it constructs as follows:</p>
+<p><img src="../images/labs/lab09/lab09-diagram.png" class="img-fluid"></p>
+<p>Take a minute to look over <strong>tests.cpp</strong> to see the tests it contains. Note that part of the test is commented out. Leave this part commented out for now; we will be uncommenting it in Part II.</p>
+<p>Build the project (<code>make all</code>) and run tester (<code>./tester</code>). Verify that everything works correctly at the outset.</p>
+<section id="the-isempty-method" class="level3">
+<h3 class="anchored" data-anchor-id="the-isempty-method">The isEmpty() Method</h3>
+<p>Our explicit constructor gives us the ability to define Stack objects with a given capacity. Since these Stack objects are initially empty (i.e., they contain no items), the first operation we will build is the <code>isEmpty()</code> method.</p>
+<p>In <strong>tests.cpp</strong>, uncomment the <code>TEST_CASE</code> that tests <code>isEmpty()</code>. Compile and run the test. You should see an error message indicating that <code>isEmpty()</code> does not exist.</p>
+<p>In <strong>Stack.h</strong>, add a prototype for <code>isEmpty()</code> to the class. Recompile and rerun. You should now see a linking error, since <code>isEmpty()</code> has been prototyped but not defined.</p>
+<p>In <strong>Stack.cpp</strong>, add a definition for <code>isEmpty()</code> that will pass the tests. This definition should be as simple as possible (e.g., a single line). If you get stuck, here is a <a href="../labs/lab09-hint.qmd">hint</a>, but don’t use it unless you have to.</p>
+<p>Recompile and rerun your test. Continue when you pass the test.</p>
+</section>
+<section id="the-push-peektop-and-isfull-methods" class="level3">
+<h3 class="anchored" data-anchor-id="the-push-peektop-and-isfull-methods">The push(), peekTop(), and isFull() Methods</h3>
+<p>The other operations only work correctly on a non-empty Stack, so before we can test them, we need to be able to add items to a Stack. Since the <code>push()</code> method allows us to add items to a Stack, we will build that method; and since pushing items onto a stack can fill it, we will also build the <code>isFull()</code> and <code>peekTop()</code> methods.</p>
+<p>In <strong>tests.cpp</strong>, uncomment the <code>TEST_CASE</code> that tests <code>testPushPeekTopAndIsFull()</code>. Take a moment to look over the tests it contains. The first test constructs a stack with capacity 1 and pushes an item onto it. We might visualize this stack as follows:</p>
+<p><img src="../images/labs/lab09/lab09-diagram01.png" class="img-fluid"></p>
+<p>The second test constructs a stack with capacity 3 and pushes an item onto it. We might visualize this stack as follows:</p>
+<p><img src="../images/labs/lab09/lab09-diagram02.png" class="img-fluid"></p>
+<p>The test then pushes a second item onto the stack:</p>
+<p><img src="../images/labs/lab09/lab09-diagram03.png" class="img-fluid"></p>
+<p>The test then pushes a third item onto the stack, filling it:</p>
+<p><img src="../images/labs/lab09/lab09-diagram04.png" class="img-fluid"></p>
+<p>Compile and run the test. You should see error messages indicating that <code>push()</code>, <code>peekTop()</code>, and <code>isFull()</code> do not exist.</p>
+<p>In <strong>Stack.h</strong>, add a prototype for <code>isFull()</code> to the class. Recompile. Next, add a prototype for <code>peekTop()</code> to the class. Recompile. You should now see just the error for <code>push()</code>. Add a prototype for <code>push()</code>; then recompile. You should now get only linking errors, since <code>isFull()</code>, <code>peekTop()</code>, and <code>push()</code> have been declared in <strong>Stack.h</strong> but not defined.</p>
+<p>In <strong>Stack.cpp</strong>, add a definition for <code>isFull()</code>. This definition should be as simple as possible (e.g., a single line).</p>
+<p>Save/compile, and verify that the linking error for <code>isFull()</code> goes away. (The errors for <code>peekTop()</code> and <code>push()</code> should still be there.)</p>
+<p>Define the <code>peekTop()</code> method. Save/recompile, and verify that what you have written compiles without errors. (You should still see a linking error for <code>push()</code>.) Note that you do not have to handle the case (now) when you try to <code>peekTop()</code> on an empty Stack.</p>
+<p>Define the <code>push()</code> method. Save/recompile, and verify that what you have written compiles and links without errors. (Again, do not worry about exceptional cases, yet.)</p>
+<p>Run the tests. If you pass the tests, congratulations! If not, use the diagrams above to go back and fix your <code>push()</code>, <code>peekTop()</code>, and/or <code>isFull()</code> methods. If you get stuck, here are hints for <a href="../labs/lab09-hint-push.qmd">push()</a>, <a href="">peekTop()</a>, and <a href="../labs/lab09-hint-isfull.qmd">isFull()</a>, but only use them if you have to.</p>
+<p>Continue when your methods pass all the tests.</p>
+</section>
+<section id="the-pop-method" class="level3">
+<h3 class="anchored" data-anchor-id="the-pop-method">The pop() Method</h3>
+<p>Our sole remaining operation is the <code>pop()</code> method, that removes and returns the top value from the Stack.</p>
+<p>In <strong>tests.cpp</strong>, uncomment the <code>TEST_CASE</code> for <code>testPop()</code>. Compile and run the test. You should see an error message indicating that <code>pop()</code> does not exist.</p>
+<p>In <strong>Stack.h</strong>, add a prototype for <code>pop()</code> to the class. Recompile and rerun. You should now see a linking error, since <code>pop()</code> has a prototype but no definition.</p>
+<p>In <strong>Stack.cpp</strong>, add a definition for <code>pop()</code> that will pass <code>testPop()</code>. For now, this definition should be as simple as possible (e.g., it can be as short as a single line). If you get stuck, here is a <a href="../labs/lab09-hint-pop.qmd">hint</a>, but don’t use it unless you have to.</p>
+<p>Recompile and rerun your test. Continue when you pass the test.</p>
+</section>
+</section>
+<section id="part-ii-exceptions" class="level2">
+<h2 class="anchored" data-anchor-id="part-ii-exceptions">Part II: Exceptions</h2>
+<p>We now have a working Stack class, but it is lacking any error-handling capability. For example, what happens if a person pops an empty stack, or pushes an item onto a full stack? In Part II of today’s exercise, we introduce C++’s <strong>programmer-defined exception</strong> mechanism, which provides a graceful way of handling such problems.</p>
+<p>As we have seen with the C++ standard exceptions, an <strong>exception</strong> is an out-of-the-ordinary occurrence. The C++ standard exception classes in <code>&lt;stdexcept&gt;</code> are necessarily very general, describing broad categories of things that might go wrong. When you want to more precisely indicate what is going wrong, C++ lets us create our own exception classes.</p>
+<p>In C++, a method that wants to indicate that something exceptional has occurred can <strong>throw</strong> an exception object back to the caller of the method. The pattern for the throw statement is:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="cf">throw</span> ExceptionType<span class="op">(</span>arguments<span class="op">);</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This constructs an exception object of type <code>ExceptionType</code> and throws it to the caller – the subprogram that invoked the currently running method, terminating that method.</p>
+<p>Back in the caller, the call to that method can be “wrapped” in a <strong>try-catch block</strong>, whose form is as follows:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span> <span class="op">{</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">// risky code -- might throw an exception</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="op">}</span> <span class="cf">catch</span> <span class="op">(</span><span class="at">const</span> ExceptionType <span class="op">&amp;</span> exceptionParameter<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="co">// handler code -- to be executed if the exception occurs</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The try block tries to perform the “risky code”. If that code works without throwing the exception, control skips past the catch block to whatever follows it. But if the “risky code” throws the exception named in the catch, then control is transferred to the “handler” code in the catch block, which does whatever is appropriate.</p>
+<p>Note that since <code>ExceptionType</code> is pretty much always a class, it is preferable to define the catch block’s parameter as a const-reference parameter. This has two advantages over using a value parameter: (i) it avoids the copying associated with a value parameter, and (ii) it lets this catch block catch exceptions of this exception-class or any subclasses derived from that class. We make it a const reference (i.e., read-only reference) parameter because the catch block should not make any changes to that parameter.</p>
+<section id="catching-exceptions" class="level3">
+<h3 class="anchored" data-anchor-id="catching-exceptions">Catching Exceptions</h3>
+<p>In <strong>tests.cpp</strong>, uncomment the following line in <code>TEST_CASE "testPop()"</code>:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>        REQUIRE_THROWS_AS<span class="op">(</span>s1<span class="op">.</span>peekTop<span class="op">(),</span> StackException<span class="op">);</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This block tries to send the <code>peekTop()</code> message to an empty stack, and then catches the exception that should be thrown.</p>
+<p>Save/recompile your project. You should get several errors, because <code>StackException</code> has not been defined. Verify that that is the cause of your errors, then continue.</p>
+</section>
+<section id="the-stackexception-class" class="level3">
+<h3 class="anchored" data-anchor-id="the-stackexception-class">The StackException Class</h3>
+<p>One way to provide exceptions for our Stack class is to define a separate <code>StackException</code> class that our Stack class can use when something goes wrong. Inspect the file <strong>StackException.h</strong> which contains such a class.</p>
+<p>The class has two instance variables:</p>
+<ul>
+<li><code>myLocation</code>, to which a method can pass its name (to indicate the exact method in which something went wrong); and</li>
+<li><code>myMessage</code>, to which a method can pass a description of what is wrong.</li>
+</ul>
+<p>The <code>StackException</code> constructor initializes these members using values it receives through its parameters. For example, if at the beginning of the <code>pop()</code> method, we find that the stack is empty, we can build an exception like this:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>   StackException<span class="op">(</span><span class="st">"pop()"</span><span class="op">,</span> <span class="st">"stack is empty"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>(don’t do this yet in your code)</p>
+<p>If at the beginning of the the <code>push()</code> method, we find that the stack is full, we can build an exception like this:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>   StackException<span class="op">(</span><span class="st">"push()"</span><span class="op">,</span> <span class="st">"stack is full"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The <code>asString()</code> method generates a string representation of these values, accompanied by some descriptive labels.</p>
+<p>At the bottom of <strong>StackException.h</strong>, there is a definition of <code>operator&lt;&lt;</code> that lets us output a <code>StackException</code> using the usual C++ stream-insertion operator.</p>
+<p>At the beginning of <strong>Stack.h</strong>, uncomment the <code>#include</code> directive that includes <code>StackException.h</code>.</p>
+<p>After making these changes, save/recompile your project. If all is well, your project should compile correctly (but not run correctly yet). If not, find and correct the syntax error(s).</p>
+<p>When your project compiles correctly, run it. You should see an execution halt in the <code>"testPop()"</code> test case. The problem is that our <code>testPop()</code> method now expects a <code>StackException</code> to be thrown when we send the <code>peekTop()</code> message to an empty Stack. Continue, and we will see how to accomplish this.</p>
+</section>
+<section id="throwing-exceptions" class="level3">
+<h3 class="anchored" data-anchor-id="throwing-exceptions">Throwing Exceptions</h3>
+<p>Now that we have created a <code>StackException</code> class by which we can precisely describe unusual circumstances, we can use that class in our Stack methods. As mentioned previously, a method that detects a problematic circumstance can <strong>throw</strong> an exception. For example, if the stack is empty, there is no top item for the <code>peekTop()</code> method to return, in which case we might make it throw a <code>StackException</code>, as follows:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>Item Stack<span class="op">::</span>peekTop<span class="op">()</span> <span class="at">const</span> <span class="op">{</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="op">(</span>isEmpty<span class="op">())</span> <span class="op">{</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">throw</span> StackException<span class="op">(</span><span class="st">"peekTop()"</span><span class="op">,</span> <span class="st">"stack is empty"</span><span class="op">);</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span> </span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> myArray<span class="op">[</span>mySize <span class="op">-</span> <span class="dv">1</span><span class="op">];</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Make the changes seen above. Recompile and rerun your project. With these changes, what you have written should pass all the tests. Continue when it does so.</p>
+</section>
+<section id="the-explicit-value-constructor" class="level3">
+<h3 class="anchored" data-anchor-id="the-explicit-value-constructor">The Explicit-Value Constructor</h3>
+<p>Uncomment the <code>REQUIRES_THROWS_AS</code> code in the “constructors” test case. Then save/compile your project. Run it, and verify that it fails.</p>
+<p>Using what we did with <code>peekTop()</code> as a model, modify the Stack constructor so that if capacity is not a positive number, the constructor throws a <code>StackException</code> with the message <code>Stack(capacity): capacity must be positive!</code>.</p>
+<p>Continue when your project passes all tests.</p>
+</section>
+<section id="the-pop-method-1" class="level3">
+<h3 class="anchored" data-anchor-id="the-pop-method-1">The pop() Method</h3>
+<p>Uncomment all the rest of the <code>REQUIRES_THROWS_AS</code> tests in the “testPop()” test case. Then save/compile your project. Run it, and verify that it fails.</p>
+<p>Using what we did with <code>peekTop()</code> as a model, modify <code>pop()</code> so that it throws a <code>StackException</code> with the message <code>pop(): stack is empty!</code>. In case you get stuck, here is a <a href="../labs/lab09-hint-pop2.qmd">hint</a>, but don’t use it unless you need to. Continue when your project passes all tests.</p>
+</section>
+<section id="the-push-method" class="level3">
+<h3 class="anchored" data-anchor-id="the-push-method">The push() Method</h3>
+<p>Our final operation is the <code>push()</code> operation. Uncomment the <code>REQUIRE_THROWS_AS</code> tests “testPushPeekTopAndIsFull()”. Then save/recompile, and verify that your project no longer passes the test.</p>
+<p>Using what we did previously as a model, modify <code>push()</code> so that it throws a StackException with the message <code>push(): stack is full!</code>. In case you get stuck, here is a <a href="../labs/lab09-hint-push2.qmd">hint</a>, but don’t use it unless you need to.</p>
+<p>Continue when your project passes all tests.</p>
+</section>
+<section id="the-other-operations" class="level3">
+<h3 class="anchored" data-anchor-id="the-other-operations">The Other Operations</h3>
+<p>Now that you have tested the stack operations, uncomment the remaining test cases and verify that the other Stack operations pass their tests. (I see 57 assertions in 6 test cases that pass.)</p>
+<p>Congratulations! You now have a full-featured (array-based) Stack class at your disposal!</p>
+</section>
+</section>
+<section id="part-iii-queue-using-a-linked-list" class="level2">
+<h2 class="anchored" data-anchor-id="part-iii-queue-using-a-linked-list">Part III: Queue, using a Linked List</h2>
+<p>We have talked about the best way to implement a Queue using a linked list – insert at the tail of the queue and remove from the front of the queue. And, you have code from Lab 6 in which you implemented and tested a linked list – so you shouldn’t have to do too much to adapt that code to represent the Queue ADT.</p>
+<p>Look at the <strong>Queue.h</strong> and <strong>Queue.cpp</strong> files in the repository. The methods are there, but they are all empty. Now, go find your code from Lab 6, and fill in the methods, copying (and adapting) code from there. This shouldn’t take long. The only code you may have to implement is the <code>remove()</code> code – which removes the item from the front of the linked list.</p>
+<p>You may wonder why we have a <code>isFull()</code> method that will always return <strong>false</strong> when we implement the queue using a linked list. Why even have it? The answer is that the user of the Queue does not know how the Queue is implemented, so they don’t know that the Queue can never be full.</p>
+<p>You do NOT have to add any more methods (the linked list implementation has many more methods available, but the Queue has fewer, as it should).</p>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Caution
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>To compile the Queue .h and .cpp files, you have to edit the makefile:</strong></p>
+<p>Change one line – line 4 – by adding <strong>Queue.cpp</strong> to the end so that the line now reads:</p>
+<pre><code>SOURCES = Stack.cpp Queue.cpp</code></pre>
+</div>
+</div>
+<p>Now try compiling. You will see many warnings because the methods have not been implemented yet.</p>
+<p>NOTE that you do NOT have to templatize the Queue code – unless you want to.</p>
+<p>The biggest part of this assignment is to <strong>write a full set of TEST_CASES in tests.cpp</strong>. You should consult Lab 6’s tests and the tests already in <strong>tests.cpp</strong> for the Stack implementation.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Do not create a test case for the destructor – it can fail randomly (as it did for me).</p>
+</div>
+</div>
+<p>When you have implemented and <strong>thoroughly</strong> tested your Queue implementation, you are done.</p>
+</section>
+<section id="turn-in" class="level2">
+<h2 class="anchored" data-anchor-id="turn-in">Turn In</h2>
+<p>Don’t forget to commit and push your changes.</p>
+</section>
+<section id="grading-rubric" class="level2">
+<h2 class="anchored" data-anchor-id="grading-rubric">Grading Rubric</h2>
+<p>20 pts total:</p>
+<ul>
+<li>1: isEmpty() is correct</li>
+<li>1: isFull() is correct</li>
+<li>2: peekTop()</li>
+<li>2: push()</li>
+<li>2: pop()</li>
+<li>2: peekTop(), explicit-value constructor, pop(), and push() all throw an exception correctly.</li>
+<li>8: thorough tests for Queue class.</li>
+<li>2: code is hospitable (perfectly indented, etc.)</li>
+</ul>
+<p>Ways students lost points in the past:</p>
+<ul>
+<li>-4: missing tests for Queue</li>
+<li>-4: missing implementation for Queue</li>
+<li>-2: Your Queue::remove deletes the whole Queue, and the test did not catch this</li>
+<li>-7: Queue does not compile and no tests for it.</li>
+<li>-3: Queue::peekBack, ::peekFront, ::add, ::remove, ::isEmpty, and ::Queue to a “myList” field, which does not exist. Missing implementation for destructor</li>
+<li>-1: Missing test for Queue::remove</li>
+<li>-1: Need to decrease size in Queue::remove</li>
+<li>-2: Queue::add does not properly keep list linked, and tests do not catch this (try an add followed by a remove followed by a check–it won’t work)</li>
+</ul>
+<!-- [^1]: how to add footnotes. -->
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/ericaraujo\.com\/25sp-cs354A");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>This page is built with ❤️ and <a href="https://quarto.org/">Quarto</a>.</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ericaraujophd/24sp-cs354A/edit/main/hws/hw01.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/24sp-cs354A/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+ License
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

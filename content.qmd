@@ -17,13 +17,13 @@ The SLOs (Student Learning Objectives), labs, and projects for each week are giv
 
 | Week | Topics | Laboratories | Projects | Tests, Video Links, etc. |
 |---------------|---------------|---------------|---------------|---------------|
-| 1 <br> --- <br> 3/17 | Introduction to Databases & SQL Basics <br> [Week's page](/week01.qmd) | [HW 1](/labs/lab01.qmd) | [Proj 1](/projects/proj01.qmd) |  |
-| 2 <br> --- <br> 3/24 | SQL – Intermediate Concepts <br> Advising days – no class 26-27 <br>[Week's page](/week02.qmd) | [HW 2](/labs/lab02.qmd) | [Proj 2](/projects/proj02.qmd) |  |
-| 3 <br> --- <br> 3/31 | SQL – Data Modification & Advanced Queries <br>[Week's page](/week03.qmd) | [HW 3](/labs/lab03.qmd) | [Proj 3](/projects/proj03.qmd) |  |
-| 4 <br> --- <br> 4/7 | Database Design – ER Modeling & Schema Refinement <br>[Week's page](/week04.qmd) | [HW 4](/labs/lab04.qmd) | [Proj 4](/projects/proj04.qmd) | **Test 1:** Weeks 1 - 3, Friday |
+| 1 <br> --- <br> 3/17 | Introduction to Databases & SQL Basics <br> [Week's page](/week01.qmd) | [Homework 1](/hws/hw01.qmd) | [Proj 1](/projects/proj01.qmd) |  |
+| 2 <br> --- <br> 3/24 | SQL – Intermediate Concepts <br> Advising days – no class 26-27 <br>[Week's page](/week02.qmd) | [Homework 2](/hws/hw02.qmd) | [Proj 2](/projects/proj02.qmd) |  |
+| 3 <br> --- <br> 3/31 | SQL – Data Modification & Advanced Queries <br>[Week's page](/week03.qmd) | [Homework 3](/hws/hw03.qmd) | [Proj 3](/projects/proj03.qmd) |  |
+| 4 <br> --- <br> 4/7 | Database Design – ER Modeling & Schema Refinement <br>[Week's page](/week04.qmd) | [Homework 4](/hws/hw04.qmd) | [Proj 4](/projects/proj04.qmd) | **Test 1:** Weeks 1 - 3, Friday |
 | 5 <br> --- <br> 4/14 | Advanced SQL & Integrity Constraints <br> Good Friday & Easter Monday – no class 18-21 <br> [Week's page](/week05.qmd) | No lab | No project |  |
-| 6 <br> --- <br> 4/22 | Database Management & Optimization <br>[Week's page](/week06.qmd) | [HW 6](/labs/lab06.qmd) | No project |  |
-| 7 <br> --- <br> 4/28 | Final Project and Course Wrap-Up <br>[Week's page](/week07.qmd) | [Lab 7](/labs/lab07.qmd) | [Final Project](/projects/proj99-final.qmd) |  |
+| 6 <br> --- <br> 4/22 | Database Management & Optimization <br>[Week's page](/week06.qmd) | [Homework 6](/hws/hw06.qmd) | No project |  |
+| 7 <br> --- <br> 4/28 | Final Project and Course Wrap-Up <br>[Week's page](/week07.qmd) | [Homework 7](/hws/hw07.qmd) | [Final Project](/projects/proj99-final.qmd) |  |
 | Final <br> --- <br> May 3-8 | Search calvin.edu for "Exam Schedule" to find the time of the exam (and all exams you have, this semester, and all future semesters). |  |  | Final Test Cumulative, during exam time (You may take it in either class's exam time. Classes met at 2.45pm MWF.) |
 
 <!-- | 11   |   | OpenMP, etc. [SLOs] [Slides]  | Lab 11    | Project 11    |   | -->

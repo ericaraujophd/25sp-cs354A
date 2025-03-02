@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Week 02: SQL – Intermediate Concepts – CS 354 – Database Management Systems</title>
+<title>Homework 07: – CS 354 – Database Management Systems</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,30 +20,62 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./week03.html" rel="next">
-<link href="./week01.html" rel="prev">
-<link href="././images/cs112-logo.png" rel="icon" type="image/png">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href=".././images/cs112-logo.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -74,10 +106,11 @@ ul.task-list li input[type="checkbox"] {
 <script src="https://kit.fontawesome.com/78ddb093ea.js" crossorigin="anonymous"></script>
 
 
-<meta property="og:title" content="Week 02: SQL – Intermediate Concepts – CS 354 – Database Management Systems">
+<link rel="stylesheet" href="../hws/hw-styles.css">
+<meta property="og:title" content="Homework 07: – CS 354 – Database Management Systems">
 <meta property="og:description" content="CS354 provides a hands-on introduction to relational databases, SQL querying, and database design, focusing on real-world applications, optimization, and security.">
 <meta property="og:site_name" content="CS 354 – Database Management Systems">
-<meta name="twitter:title" content="Week 02: SQL – Intermediate Concepts – CS 354 – Database Management Systems">
+<meta name="twitter:title" content="Homework 07: – CS 354 – Database Management Systems">
 <meta name="twitter:description" content="CS354 provides a hands-on introduction to relational databases, SQL querying, and database design, focusing on real-world applications, optimization, and security.">
 <meta name="twitter:image" content="https://ericaraujo.com/25sp-cs354A/images/twitter-card.png">
 <meta name="twitter:creator" content="@ericfaraujo">
@@ -86,15 +119,15 @@ ul.task-list li input[type="checkbox"] {
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
-<body class="nav-sidebar floating nav-fixed">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./images/cs112-logo.png" alt="" class="navbar-logo">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../images/cs112-logo.png" alt="" class="navbar-logo">
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -104,19 +137,19 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
+    <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Overview</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./instructors.html"> 
+    <a class="nav-link" href="../instructors.html"> 
 <span class="menu-text">Instructors</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./policies.html"> 
+    <a class="nav-link" href="../policies.html"> 
 <span class="menu-text">Course Policies</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./content.html" aria-current="page"> 
+    <a class="nav-link" href="../content.html"> 
 <span class="menu-text">Content</span></a>
   </li>  
 </ul>
@@ -133,92 +166,34 @@ ul.task-list li input[type="checkbox"] {
 </div>
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./week02.html">Week 02: SQL – Intermediate Concepts</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-    </div>
-  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./content.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Course content</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week01.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 01: Introduction to Databases &amp; SQL Basics</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week02.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Week 02: SQL – Intermediate Concepts</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week03.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 03: SQL – Data Modification &amp; Advanced Queries</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week04.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 04: Database Design – ER Modeling &amp; Schema Refinement</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week05.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 05: Advanced SQL &amp; Integrity Constraints</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week06.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 06: Database Management &amp; Optimization</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week07.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 07: Final Project and Course Wrap-Up</span></a>
-  </div>
-</li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#slos-for-week-02" id="toc-slos-for-week-02" class="nav-link active" data-scroll-target="#slos-for-week-02">SLOs for Week 02</a></li>
-  <li><a href="#slides-videos-and-application-exercises" id="toc-slides-videos-and-application-exercises" class="nav-link" data-scroll-target="#slides-videos-and-application-exercises">Slides, videos, and application exercises</a></li>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
+  <li><a href="#step-0" id="toc-step-0" class="nav-link" data-scroll-target="#step-0">Step 0</a></li>
+  <li><a href="#step-1-build-the-hashtable-data-structure-and-constructor" id="toc-step-1-build-the-hashtable-data-structure-and-constructor" class="nav-link" data-scroll-target="#step-1-build-the-hashtable-data-structure-and-constructor">Step 1: Build the HashTable data structure and constructor</a></li>
+  <li><a href="#step-2-insert-and-hash" id="toc-step-2-insert-and-hash" class="nav-link" data-scroll-target="#step-2-insert-and-hash">Step 2: insert() and hash()</a></li>
+  <li><a href="#step-3-main" id="toc-step-3-main" class="nav-link" data-scroll-target="#step-3-main">Step 3: main()</a></li>
+  <li><a href="#step-4-testing" id="toc-step-4-testing" class="nav-link" data-scroll-target="#step-4-testing">Step 4: Testing</a></li>
+  <li><a href="#step-5-tweak-your-hashing-algorithm-and-table-size" id="toc-step-5-tweak-your-hashing-algorithm-and-table-size" class="nav-link" data-scroll-target="#step-5-tweak-your-hashing-algorithm-and-table-size">Step 5: Tweak Your Hashing Algorithm and Table Size</a></li>
+  <li><a href="#step-6-submit" id="toc-step-6-submit" class="nav-link" data-scroll-target="#step-6-submit">Step 6: Submit</a></li>
+  <li><a href="#grading-rubric" id="toc-grading-rubric" class="nav-link" data-scroll-target="#grading-rubric">Grading Rubric</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/ericaraujophd/24sp-cs354A/edit/main/week02.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/24sp-cs354A/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/ericaraujophd/24sp-cs354A/edit/main/hws/hw07.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/24sp-cs354A/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Week 02: SQL – Intermediate Concepts</h1>
+<h1 class="title">Homework 07:</h1>
 </div>
 
 
@@ -235,67 +210,148 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="slos-for-week-02" class="level2">
-<h2 class="anchored" data-anchor-id="slos-for-week-02">SLOs for Week 02</h2>
-<p>At the end of this unit, students will be able to…</p>
-<ol type="1">
-<li>Perform data aggregation using GROUP BY and HAVING.</li>
-<li>Write and execute INNER, LEFT-OUTER, RIGHT, and FULL JOINs.</li>
-<li>Construct subqueries for complex queries.</li>
-<li>Implement SQL functions and expressions.</li>
-<li>Use SQL best practices for readable and efficient queries.</li>
-<li>Optimize SQL queries for better performance.</li>
-</ol>
-</section>
-<section id="slides-videos-and-application-exercises" class="level2">
-<h2 class="anchored" data-anchor-id="slides-videos-and-application-exercises">Slides, videos, and application exercises</h2>
-<div class="slide-deck">
-<p><strong>Week 02: Slides</strong></p>
-<div class="slides">
-<p><a href="" target="_blank">Slides</a></p>
-</div>
-<div class="source">
-<p><a href="" target="_blank">Code from Class</a></p>
-</div>
-<div class="reading">
+<center>
+<figure class="figure">
+<p><img src="../images/labs/lab14/lab14-grinch.png" alt="Definition of Grinch." width="700" class="figure-img"></p>
+<figcaption>
+Definition of Grinch.
+</figcaption>
+</figure>
+</center>
+<section id="learning-objectives" class="level2">
+<h2 class="anchored" data-anchor-id="learning-objectives">Learning Objectives</h2>
+<p>In this exercise, you will:</p>
 <ul>
-<li><a href="" target="_blank">Chapters 6 and 7</a></li>
+<li>build a hash table data structure</li>
+<li>experiment with hashing algorithms to distribute data across all buckets, as much as possible.</li>
 </ul>
+</section>
+<section id="step-0" class="level2">
+<h2 class="anchored" data-anchor-id="step-0">Step 0</h2>
+<p><a href="" target="_blank">Accept the Assignment.</a></p>
+<p>Our hash table will be a STL vector of STL sets (in class we used a vector of linked lists). Your code will read a file, <strong>dictionary.txt</strong>, that contains “all” the words in the English language, and insert each word into the hash table. There are about ~127,000 words in the file, but we will use a fairly small number of buckets, so there will be many collisions.</p>
+<p>The goal of this exercise is to experiment with hashing algorithms to see if you can find one that distributes items well.</p>
+</section>
+<section id="step-1-build-the-hashtable-data-structure-and-constructor" class="level2">
+<h2 class="anchored" data-anchor-id="step-1-build-the-hashtable-data-structure-and-constructor">Step 1: Build the HashTable data structure and constructor</h2>
+<p>Inspect the code in <strong>HashTable.h</strong> and <strong>HashTable.cpp</strong>. There is not much there, but it is a start. Do notice that there is a static constant integer called <code>TABLE_SIZE</code>, initialized to the value 200.</p>
+<p>Create the hash table data structure in the <strong>private:</strong> section, calling it <code>myTable</code>. For this project, the table must be a vector of sets of strings (in class we used a vector of lists).</p>
+<p>In the constructor, initialize <code>myTable</code> to have <code>TABLE_SIZE</code> buckets by calling</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>myTable<span class="op">.</span>resize<span class="op">(</span>TABLE_SIZE<span class="op">);</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Also, in the constructor initialize <code>mySize</code> to <code>0</code>.</p>
+<p>Compile your code to make sure what you have written compiles.</p>
+</section>
+<section id="step-2-insert-and-hash" class="level2">
+<h2 class="anchored" data-anchor-id="step-2-insert-and-hash">Step 2: insert() and hash()</h2>
+<p>The prototypes for <code>insert()</code> and <code>hash()</code> are defined in the .h file. Now, you must implement them in the .cpp file. Use the code we saw in the slides in class for the hash function. The function should add up the first and last characters of the string, modding the result by <code>TABLE_SIZE</code>.</p>
+<p>Try to compile the code using <code>make</code>. It should compile. Fix any issues if your compilation fails.</p>
+</section>
+<section id="step-3-main" class="level2">
+<h2 class="anchored" data-anchor-id="step-3-main">Step 3: main()</h2>
+<p>Now, create code in <code>main()</code>. Your code should define a <code>HashTable</code> object first.</p>
+<p>Then, open the file <strong>dictionary.txt</strong> for reading, and read each word from the file, one at a time, inserting each word into the hash table.</p>
+<p>Next, have the code close the file.</p>
+<p>Compile your code.</p>
+</section>
+<section id="step-4-testing" class="level2">
+<h2 class="anchored" data-anchor-id="step-4-testing">Step 4: Testing</h2>
+<p>Of course, at this point, we have no idea if the items have been distributed well in the hash table, because we have no way to inspect the hash table contents.</p>
+<p>Notice that there is a method called <code>dumpInfo()</code> defined, but currently the code does nothing. Fill in the code to do the following:</p>
+<ul>
+<li>For each bucket, print how many items are in it.</li>
+<li>Count and print the number of empty buckets.</li>
+<li>Calculate and print the average number of items in non-empty buckets.</li>
+</ul>
+<p>Here is a snippet of my output. Make your output look similar:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">number</span> of items in bucket 0: 415</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">number</span> of items in bucket 1: 351</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ex">number</span> of items in bucket 2: 307</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="ex">number</span> of items in bucket 3: 414</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="ex">number</span> of items in bucket 4: 293</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="ex">...</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="ex">number</span> of items in bucket 197: 560</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="ex">number</span> of items in bucket 198: 484</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="ex">number</span> of items in bucket 199: 341</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="ex">--------------------------</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="ex">Total</span> number of elements in the hash table: 127141</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="ex">Number</span> of empty buckets: 0</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="ex">Average</span> number of items in non-empty buckets: 635</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-<!-- ::: video
-[Video](https://youtu.be/_YqEHZccujc)
-:::
--->
-</div>
-<!-- ## Homework assignments -->
-<div class="homework">
-<p><strong>Homework 02: </strong></p>
-<div class="instructions">
-<p><a href="./hws/hw02.html">Instructions</a></p>
-</div>
-<div class="starter">
-<p><a href="" target="_blank">Source</a></p>
-</div>
-<div class="slides">
-<p><a href="" target="_blank">Dad Joke + Reflection</a></p>
+<div class="callout-title-container flex-fill">
+Note
 </div>
 </div>
-<!-- ## Lab -->
-<div class="lab">
-<p><strong>Project 02: </strong></p>
-<div class="instructions">
-<p><a href="./projects/proj02.html">Instructions</a></p>
-</div>
-<div class="starter">
-<p><a href="" target="_blank">Starter</a></p>
+<div class="callout-body-container callout-body">
+<p>Note: the output above is from after I changed the number of buckets in my data structure, and tweaked the hash algorithm, which you’ll do below.</p>
 </div>
 </div>
-<!-- ::: exam
-**POGIL**
-
--   [Array Addressing](https://docs.google.com/document/d/1myVaJT3i1hECM4BHs9LpbLz3a3heVPp6SJiEjoEvG_M/edit?tab=t.0#heading=h.im9274hm9wa0){target="_blank"} ([Answers](https://drive.google.com/file/d/1mn5yCzIJuURMiP3MOtO9amEQzUVAQCQZ/view?usp=sharing){target="_blank"})
--   [Parameter Passing](https://docs.google.com/document/d/125hbFPo5PVcuGQ9pq4io23jns2kOEkfjo71S9WOkfjQ/edit){target="_blank"} ([Answers](https://drive.google.com/file/d/1rPum6ihNwUKRJpZBSTQF8v7QKfOdog11/view?usp=drive_link){target="_blank"})
-::: -->
+<p>After you implement your <code>dumpInfo()</code> method, call it from your <code>main()</code> code.</p>
+</section>
+<section id="step-5-tweak-your-hashing-algorithm-and-table-size" class="level2">
+<h2 class="anchored" data-anchor-id="step-5-tweak-your-hashing-algorithm-and-table-size">Step 5: Tweak Your Hashing Algorithm and Table Size</h2>
+<p>You will notice that the basic hashing algorithm (adding up the first and last characters of each string) does a very poor job of distributing strings across all buckets in the hash table. Your goal now is to improve the hashing algorithm to improve the distribution.</p>
+<p>Experiment with different algorithms, but make sure they follow the criteria laid out in class:</p>
+<ul>
+<li>O(1)</li>
+<li>distribute values across all buckets.</li>
+<li>deterministic.</li>
+</ul>
+<p>You <strong>MAY</strong> increase the number of buckets, but it must remain at or below 250 total. <strong>Do not</strong> change how buckets are implemented – they should remain sets.</p>
+<p>Do not spend more than 1 hour tweaking your algorithm. Make sure your final code implements your best algorithm.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Write a comment in your <code>hash()</code> function that describes your algorithm, explaining why you think it works as well as it does.</p>
+</div>
+</div>
+</section>
+<section id="step-6-submit" class="level2">
+<h2 class="anchored" data-anchor-id="step-6-submit">Step 6: Submit</h2>
+<p>Submit your code via github, as normal.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>IF YOU WORKED WITH A PARTNER, ONLY ONE OF YOU HAS TO SUBMIT, but UPDATE THE README.md to INCLUDE BOTH NAMES.</p>
+</div>
+</div>
+</section>
+<section id="grading-rubric" class="level2">
+<h2 class="anchored" data-anchor-id="grading-rubric">Grading Rubric</h2>
+<p>20 points total:</p>
+<ul>
+<li>10 pts: hash table code (not including the hash function) is correct</li>
+<li>5 pts: hash function obeys the criteria laid out in class.</li>
+<li>3 pts: hash function works well (not obviously leaving many buckets empty and have some be very full).</li>
+<li>2 pts: code is clean and hospitable.</li>
+</ul>
+<p>Ways students lost points in the past:</p>
+<ul>
+<li>-2: Hash function does not appear to be evenly distributed but fills lower-numbered buckets way more (~2000 vs ~50)</li>
+<li>-4: Main function does not load words from file or call dumpInfo</li>
+<li>-1: Missing call to dumpInfo in main</li>
+<li>-3: Buckets are not evenly distributed (with many below 50 or above 2000) and some are empty. The smallest buckets are odd-numbered, which indicates a quirk in the algorithm which disfavors that half of the buckets</li>
+<li>-4: Most of the buckets are empty; a hashing algorithm should seek to evenly distribute words into buckets</li>
+<li>-1: Please output all bucket counts per instructions so the distribution can be seen.</li>
+</ul>
+<!-- [^1]: how to add footnotes. -->
 
 
 </section>
@@ -865,18 +921,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="./week01.html" class="pagination-link" aria-label="Week 01: Introduction to Databases &amp; SQL Basics">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Week 01: Introduction to Databases &amp; SQL Basics</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="./week03.html" class="pagination-link" aria-label="Week 03: SQL – Data Modification &amp; Advanced Queries">
-        <span class="nav-page-text">Week 03: SQL – Data Modification &amp; Advanced Queries</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -885,7 +929,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ericaraujophd/24sp-cs354A/edit/main/week02.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/24sp-cs354A/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ericaraujophd/24sp-cs354A/edit/main/hws/hw07.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/24sp-cs354A/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">

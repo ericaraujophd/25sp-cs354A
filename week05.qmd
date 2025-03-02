@@ -24,11 +24,11 @@ By the end of this unit, students will be able to...
 **Week 05: Slides**
 
 ::: slides
-[Slides](https://docs.google.com/presentation/d/19Dyq-ocaGfhTA623PzKYofXuDHr-gz8eRP19zv65Mu0/edit?usp=sharing)
+[Slides]()
 :::
 
 ::: source
-[Code from Class](https://calvincollege-my.sharepoint.com/:f:/g/personal/vtn2_calvin_edu/Eredz2bHiShCtI0CVssiaggB8tUES6QbacEf2cc4PBhTgQ?e=uoV7Uu)
+[Code from Class](){target="_blank"}
 :::
 
 ::: reading
@@ -36,38 +36,14 @@ No readings for Week 05.
 :::
 ::::::
 
-<!-- ## Lab -->
-
-:::::: lab
-**Lab 05: Generic Containers (Templates)**
-
-Generic Containers (Templates)
-
-::: instructions
-[Instructions](/labs/lab05.qmd)
-:::
-
-::: starter
-[Starter](){target="_blank"}
-:::
-
-::: slides
-[Slides](/slides/lab05-slides.qmd)
-:::
-::::::
-
 <!-- ## Homework assignments -->
 
 ::::: homework
-**Project 05:**
-
-Name of Proj 05
-
-::: instructions
-[Instructions](/projects/proj05.qmd)
-:::
-
-::: starter
-[Starter](){target="_blank"}
-:::
+**Homework 05: No homework for Week 05**
 :::::
+
+<!-- ## Lab -->
+
+:::::: lab
+**Project 05: No Project for Week 05**
+::::::

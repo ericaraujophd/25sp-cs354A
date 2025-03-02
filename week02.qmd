@@ -21,15 +21,15 @@ At the end of this unit, students will be able to...
 **Week 02: Slides**
 
 ::: slides
-[Slides](https://docs.google.com/presentation/d/139fGoEzMcGycckESU3UlmyPdpwa0e93m95YBBCK-IWw/edit?usp=sharing){target="_blank"}
+[Slides](){target="_blank"}
 :::
 
 ::: source
-[Code from Class](https://calvincollege-my.sharepoint.com/:f:/g/personal/vtn2_calvin_edu/Eo1D4OQEyclJux96KZoZlVIBY4ktPhJFxY8nFxSsuSJw9g?e=k2OPt9)
+[Code from Class](){target="_blank"}
 :::
 
 ::: reading
--   [Chapters 6 and 7](https://runestone.academy/runestone/books/published/cpp4python/index.html){target="_blank"}
+-   [Chapters 6 and 7](){target="_blank"}
 :::
 
 ```{=html}
@@ -40,13 +40,14 @@ At the end of this unit, students will be able to...
 ```
 ::::::
 
-<!-- ## Lab -->
 
-:::::: lab
-**Lab 02: File I/O, Control Structures, and the Debugger**
+<!-- ## Homework assignments -->
+
+:::::: homework
+**Homework 02: **
 
 ::: instructions
-[Instructions](/labs/lab02.qmd)
+[Instructions](/hws/hw02.qmd)
 :::
 
 ::: starter
@@ -58,10 +59,10 @@ At the end of this unit, students will be able to...
 :::
 ::::::
 
-<!-- ## Homework assignments -->
 
-::::: homework
-**Project 02: Falling Sand Simulator**
+<!-- ## Lab -->
+::::: lab
+**Project 02: **
 
 ::: instructions
 [Instructions](/projects/proj02.qmd)
@@ -81,34 +82,4 @@ At the end of this unit, students will be able to...
 ::: -->
 ```
 
-```{=html}
-<!-- ::: application-exercise
-**First dataviz**
 
-> **Option 1 - UN Votes**
->
-> ::: source
-> [Source](https://github.com/rstudio-education/datascience-box/tree/master/course-materials/application-exercises/ae-01a-un-votes/unvotes.qmd)
-> :::
->
-> ::: video
-> [Video](https://youtu.be/r-uTBEclM1E)
-> :::
-
-> **Option 2 - COVID-19**
->
-> ::: source
-> [Source](https://github.com/rstudio-education/datascience-box/blob/master/course-materials/application-exercises/ae-01b-covid/covid.qmd)
-> :::
-::: -->
-```
-
-```{=html}
-<!-- ::: guest-lecture
-**Alberto Cairo - How charts lie**
-
-::: video
-[Video](https://youtu.be/Low28hx4wyk)
-:::
-::: -->
-```

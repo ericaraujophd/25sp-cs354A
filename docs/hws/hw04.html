@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Week 02: SQL – Intermediate Concepts – CS 354 – Database Management Systems</title>
+<title>Homework 04: – CS 354 – Database Management Systems</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,30 +20,62 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./week03.html" rel="next">
-<link href="./week01.html" rel="prev">
-<link href="././images/cs112-logo.png" rel="icon" type="image/png">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href=".././images/cs112-logo.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -74,10 +106,11 @@ ul.task-list li input[type="checkbox"] {
 <script src="https://kit.fontawesome.com/78ddb093ea.js" crossorigin="anonymous"></script>
 
 
-<meta property="og:title" content="Week 02: SQL – Intermediate Concepts – CS 354 – Database Management Systems">
+<link rel="stylesheet" href="../hws/hw-styles.css">
+<meta property="og:title" content="Homework 04: – CS 354 – Database Management Systems">
 <meta property="og:description" content="CS354 provides a hands-on introduction to relational databases, SQL querying, and database design, focusing on real-world applications, optimization, and security.">
 <meta property="og:site_name" content="CS 354 – Database Management Systems">
-<meta name="twitter:title" content="Week 02: SQL – Intermediate Concepts – CS 354 – Database Management Systems">
+<meta name="twitter:title" content="Homework 04: – CS 354 – Database Management Systems">
 <meta name="twitter:description" content="CS354 provides a hands-on introduction to relational databases, SQL querying, and database design, focusing on real-world applications, optimization, and security.">
 <meta name="twitter:image" content="https://ericaraujo.com/25sp-cs354A/images/twitter-card.png">
 <meta name="twitter:creator" content="@ericfaraujo">
@@ -86,15 +119,15 @@ ul.task-list li input[type="checkbox"] {
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
-<body class="nav-sidebar floating nav-fixed">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./images/cs112-logo.png" alt="" class="navbar-logo">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../images/cs112-logo.png" alt="" class="navbar-logo">
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -104,19 +137,19 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
+    <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Overview</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./instructors.html"> 
+    <a class="nav-link" href="../instructors.html"> 
 <span class="menu-text">Instructors</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./policies.html"> 
+    <a class="nav-link" href="../policies.html"> 
 <span class="menu-text">Course Policies</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./content.html" aria-current="page"> 
+    <a class="nav-link" href="../content.html"> 
 <span class="menu-text">Content</span></a>
   </li>  
 </ul>
@@ -133,92 +166,43 @@ ul.task-list li input[type="checkbox"] {
 </div>
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./week02.html">Week 02: SQL – Intermediate Concepts</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-    </div>
-  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./content.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Course content</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week01.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 01: Introduction to Databases &amp; SQL Basics</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week02.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Week 02: SQL – Intermediate Concepts</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week03.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 03: SQL – Data Modification &amp; Advanced Queries</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week04.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 04: Database Design – ER Modeling &amp; Schema Refinement</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week05.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 05: Advanced SQL &amp; Integrity Constraints</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week06.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 06: Database Management &amp; Optimization</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week07.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 07: Final Project and Course Wrap-Up</span></a>
-  </div>
-</li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#slos-for-week-02" id="toc-slos-for-week-02" class="nav-link active" data-scroll-target="#slos-for-week-02">SLOs for Week 02</a></li>
-  <li><a href="#slides-videos-and-application-exercises" id="toc-slides-videos-and-application-exercises" class="nav-link" data-scroll-target="#slides-videos-and-application-exercises">Slides, videos, and application exercises</a></li>
+  <li><a href="#objectives" id="toc-objectives" class="nav-link active" data-scroll-target="#objectives">Objectives</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#menu" id="toc-menu" class="nav-link" data-scroll-target="#menu">Menu</a></li>
+  <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started">Getting Started</a></li>
+  <li><a href="#part-i.-the-menu-class" id="toc-part-i.-the-menu-class" class="nav-link" data-scroll-target="#part-i.-the-menu-class">Part I. The Menu Class</a>
+  <ul class="collapse">
+  <li><a href="#the-menu-constructor" id="toc-the-menu-constructor" class="nav-link" data-scroll-target="#the-menu-constructor">The Menu Constructor</a></li>
+  <li><a href="#the-menucontainschoice-method" id="toc-the-menucontainschoice-method" class="nav-link" data-scroll-target="#the-menucontainschoice-method">The <code>Menu::containsChoice()</code> Method</a></li>
+  </ul></li>
+  <li><a href="#part-ii.-the-app-class" id="toc-part-ii.-the-app-class" class="nav-link" data-scroll-target="#part-ii.-the-app-class">Part II. The App Class</a>
+  <ul class="collapse">
+  <li><a href="#constructor" id="toc-constructor" class="nav-link" data-scroll-target="#constructor">Constructor</a></li>
+  <li><a href="#show-all-movies-option" id="toc-show-all-movies-option" class="nav-link" data-scroll-target="#show-all-movies-option">Show All Movies Option</a></li>
+  <li><a href="#show-all-actors-for-a-single-movie-option" id="toc-show-all-actors-for-a-single-movie-option" class="nav-link" data-scroll-target="#show-all-actors-for-a-single-movie-option">Show All Actors For a Single Movie Option</a></li>
+  <li><a href="#show-all-movies-for-an-actor-option" id="toc-show-all-movies-for-an-actor-option" class="nav-link" data-scroll-target="#show-all-movies-for-an-actor-option">Show All Movies For an Actor Option</a></li>
+  </ul></li>
+  <li><a href="#turn-in" id="toc-turn-in" class="nav-link" data-scroll-target="#turn-in">Turn In</a></li>
+  <li><a href="#grading-rubric" id="toc-grading-rubric" class="nav-link" data-scroll-target="#grading-rubric">Grading Rubric</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/ericaraujophd/24sp-cs354A/edit/main/week02.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/24sp-cs354A/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/ericaraujophd/24sp-cs354A/edit/main/hws/hw04.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/24sp-cs354A/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Week 02: SQL – Intermediate Concepts</h1>
+<h1 class="title">Homework 04:</h1>
 </div>
 
 
@@ -235,67 +219,165 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="slos-for-week-02" class="level2">
-<h2 class="anchored" data-anchor-id="slos-for-week-02">SLOs for Week 02</h2>
-<p>At the end of this unit, students will be able to…</p>
-<ol type="1">
-<li>Perform data aggregation using GROUP BY and HAVING.</li>
-<li>Write and execute INNER, LEFT-OUTER, RIGHT, and FULL JOINs.</li>
-<li>Construct subqueries for complex queries.</li>
-<li>Implement SQL functions and expressions.</li>
-<li>Use SQL best practices for readable and efficient queries.</li>
-<li>Optimize SQL queries for better performance.</li>
-</ol>
-</section>
-<section id="slides-videos-and-application-exercises" class="level2">
-<h2 class="anchored" data-anchor-id="slides-videos-and-application-exercises">Slides, videos, and application exercises</h2>
-<div class="slide-deck">
-<p><strong>Week 02: Slides</strong></p>
-<div class="slides">
-<p><a href="" target="_blank">Slides</a></p>
-</div>
-<div class="source">
-<p><a href="" target="_blank">Code from Class</a></p>
-</div>
-<div class="reading">
+<center>
+<figure class="figure">
+<p><img src="../images/labs/lab13/lab13-independenceday.png" alt="Independence Day (1996)." width="500" class="figure-img"></p>
+<figcaption>
+Independence Day (1996).
+</figcaption>
+</figure>
+</center>
+<section id="objectives" class="level2">
+<h2 class="anchored" data-anchor-id="objectives">Objectives</h2>
+<p>In this exercise, you will:</p>
 <ul>
-<li><a href="" target="_blank">Chapters 6 and 7</a></li>
+<li>Use the STL set container to store a set of values.</li>
+<li>Use the STL map container to create an associative array whose keys are string values, and whose values are sets of strings.</li>
+<li>Use iterators to access the items in these containers.</li>
 </ul>
-</div>
-<!-- ::: video
-[Video](https://youtu.be/_YqEHZccujc)
-:::
--->
-</div>
-<!-- ## Homework assignments -->
-<div class="homework">
-<p><strong>Homework 02: </strong></p>
-<div class="instructions">
-<p><a href="./hws/hw02.html">Instructions</a></p>
-</div>
-<div class="starter">
-<p><a href="" target="_blank">Source</a></p>
-</div>
-<div class="slides">
-<p><a href="" target="_blank">Dad Joke + Reflection</a></p>
-</div>
-</div>
-<!-- ## Lab -->
-<div class="lab">
-<p><strong>Project 02: </strong></p>
-<div class="instructions">
-<p><a href="./projects/proj02.html">Instructions</a></p>
-</div>
-<div class="starter">
-<p><a href="" target="_blank">Starter</a></p>
-</div>
-</div>
-<!-- ::: exam
-**POGIL**
-
--   [Array Addressing](https://docs.google.com/document/d/1myVaJT3i1hECM4BHs9LpbLz3a3heVPp6SJiEjoEvG_M/edit?tab=t.0#heading=h.im9274hm9wa0){target="_blank"} ([Answers](https://drive.google.com/file/d/1mn5yCzIJuURMiP3MOtO9amEQzUVAQCQZ/view?usp=sharing){target="_blank"})
--   [Parameter Passing](https://docs.google.com/document/d/125hbFPo5PVcuGQ9pq4io23jns2kOEkfjo71S9WOkfjQ/edit){target="_blank"} ([Answers](https://drive.google.com/file/d/1rPum6ihNwUKRJpZBSTQF8v7QKfOdog11/view?usp=drive_link){target="_blank"})
-::: -->
+</section>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>This lab/project has you creating a simple database of movies and the actors in the movies. Then the user of the program can choose to:</p>
+<ul>
+<li>Show all movies</li>
+<li>Show all actors in a movie</li>
+<li>Show all movies an actor was in.</li>
+<li>The main data structure you’ll create is an STL map that maps:</li>
+</ul>
+<pre><code>movie name → set of actors in the movie.</code></pre>
+<p>This is a complex data structure: each entry in the map contains a set (Thus, we’ll have a binary search tree of binary search trees).</p>
+<p>We’ll use the Bridges database of movie information. When you get the information from the <a href="https://bridgesuncc.github.io/doc/cxx-api/current/html/classbridges_1_1dataset_1_1_movie_actor_wikidata.html">Bridges API</a>, you get a vector of objects of type <code>MovieActorWikidata</code>. Each object contains a movie and an actor in the movie (among other things). If you printed out those two things from <code>MovieActorWikidata</code> objects, you might see these values.</p>
+<pre><code>Movie: Young at Heart         Actor: Alan Hale, Jr.
+Movie: Wichita                Actor: Carl Benton Reid
+Movie: We're No Angels        Actor: Aldo Ray
+Movie: Young at Heart         Actor: Doris Day
+Movie: Wichita                Actor: Joel McCrea
+etc...</code></pre>
+<p>Thus, you see that the objects are not in any order, and do not have all the actors in a movie in each object. To get all actors for a movie, you’ll have to iterate over all the elements of the vector and learn 1) all the movies, and 2) all the actors in the movies.</p>
+<p>Note that sometimes an actor is listed multiple times for a movie. But, because we are using an <code>STL set</code>, it automatically handles attempts to insert an element multiple times.</p>
+</section>
+<section id="menu" class="level2">
+<h2 class="anchored" data-anchor-id="menu">Menu</h2>
+<p>The application presents a menu from which the user can select the operation s/he wishes to perform. To validate a user’s menu-choice, our project uses a tree-based data structure – the <code>STL set</code>. For example, if the valid menu choices are <em>a</em>, <em>b</em>, <em>c</em>, <em>d</em>, <em>e</em>, <em>f</em>, and <em>q</em>, and we store these choices in a set named <code>myValidChoices</code>, then we might (simplistically) visualize this set as follows:</p>
+<p><img src="../images/labs/lab13/lab13-bst.png" class="img-fluid"></p>
+<p>To determine whether or not a character is present in this set, the STL <code>find(value)</code> method does a binary search down through this tree until it either locates value, or reaches the bottom of the tree. It should be evident that the maximum time to search is <em>O(lg(n))</em>, where <em>n</em> is the number of items in the set.</p>
+<p>The exercise will provide you with a “skeleton” application, which you will then complete by adding additional functionality.</p>
+</section>
+<section id="getting-started" class="level2">
+<h2 class="anchored" data-anchor-id="getting-started">Getting Started</h2>
+<p>Accept the <a href="" target="_blank">invitation from github classroom</a> and use git clone, as usual. Make sure you and your partner are in the same Team.</p>
+<p>Edit the <strong>README.md</strong> file to add both your names and your partner’s.</p>
+</section>
+<section id="part-i.-the-menu-class" class="level2">
+<h2 class="anchored" data-anchor-id="part-i.-the-menu-class">Part I. The Menu Class</h2>
+<p>When dealing with menu-driven systems, one thing that can go wrong is if the user enters an invalid choice – something that is not on the menu. When this happens, the program must detect it and take remedial action.</p>
+<p>One way to detect such a problem is to build a <strong>Menu class</strong> that, besides “remembering” its menu, “remembers” its set of valid menu choices. Then when the user enters a choice, we can validate their choice by checking whether or not their choice is an element of that set.</p>
+<p>As you can see, our Menu class contains two instance variables: a string storing the menu, and a set to store those menu choices that are valid:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>string myValue<span class="op">;</span>             <span class="co">// the menu that is displayed</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>set<span class="op">&lt;</span><span class="dt">char</span><span class="op">&gt;</span> myValidChoices<span class="op">;</span>   <span class="co">// the valid menu choices</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Save/compile your project, and verify that everything compiles without errors.</p>
+<section id="the-menu-constructor" class="level3">
+<h3 class="anchored" data-anchor-id="the-menu-constructor">The Menu Constructor</h3>
+<p>The Menu constructor currently initializes our <code>myValue</code> member; it must also initialize <code>myValidChoices</code> so that it stores the valid menu choices. To do so, we can use the <code>insert()</code> method:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>setVariable<span class="op">.</span>insert<span class="op">(</span>value<span class="op">);</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>that inserts a single value into a set.</p>
+<p>In <strong>Menu.cpp</strong>, add <code>insert()</code> calls to make <code>myValidChoices</code> represent the set {‘a’, ‘b’, ‘c’, ‘q’}.</p>
+</section>
+<section id="the-menucontainschoice-method" class="level3">
+<h3 class="anchored" data-anchor-id="the-menucontainschoice-method">The <code>Menu::containsChoice()</code> Method</h3>
+<p>To let a program conveniently check whether or not a given character is a valid menu choice, the Menu class provides a boolean method <code>containsChoice(choice)</code> that returns <strong>true</strong> if and only if choice is a valid menu choice. Currently, this method is a stub-definition that returns <strong>false</strong>. Your next task is to revise this stub so that it returns <strong>true</strong> if and only if choice is in the set <code>myValidChoices</code>.</p>
+<p>We can accomplish this using the <code>find()</code> method.</p>
+<p>Save/compile your project, and when it is free of compilation errors, run the program. When it is free of errors, go on.</p>
+<p>When you run your program, you will need to provide your Bridges UserName and Id on the command line: e.g.,</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./movies</span> CS112StudentUsingBridges 123555666</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="part-ii.-the-app-class" class="level2">
+<h2 class="anchored" data-anchor-id="part-ii.-the-app-class">Part II. The App Class</h2>
+<p>The file <strong>App.h</strong> contains the declaration of class App. This class uses an STL map to store (movieName, set of actors) pairs:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>map<span class="op">&lt;</span>string<span class="op">,</span> set<span class="op">&lt;</span>string<span class="op">&gt;&gt;</span> movies_by_name<span class="op">;</span>   <span class="co">// key is movie name; value is set of actors' names.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Note that the code actually reads like this:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="dt">db_type</span> movies_by_name<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>In order to not have to type <code>map&lt;string, set&lt;string&gt;&gt;</code> too often, I created two <strong>typedefs</strong> at the top of <strong>App.h</strong>:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">typedef</span> map<span class="op">&lt;</span>string<span class="op">,</span> set<span class="op">&lt;</span>string<span class="op">&gt;&gt;</span> <span class="dt">db_type</span><span class="op">;</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="kw">typedef</span> map<span class="op">&lt;</span>string<span class="op">,</span> set<span class="op">&lt;</span>string<span class="op">&gt;&gt;::</span>iterator db_iter<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Now, the code can use <code>db_type</code> and <code>db_iter</code> instead of <code>map&lt;string, set&lt;string&gt;&gt;</code> and <code>map&lt;string, set&lt;string&gt;&gt;::iterator</code>, respectively. So much easier to type!</p>
+<section id="constructor" class="level3">
+<h3 class="anchored" data-anchor-id="constructor">Constructor</h3>
+<p>The App constructor has been defined for you. It takes a vector of <code>MovieActorWikidata</code> entries as a parameter.</p>
+<p>The constructor code contains the algorithm you should implement to process these entries, building up entries in the <code>movies_by_name</code> map.</p>
+<p>If you use the hint I gave in class about how accessing a map with <code>[ ]</code> will either create a new entry or update it if it already exists, then the body of the for loop is one line. Otherwise, the body is about 9 lines, and is very tricky code.</p>
+<p>Write the code now. This code will be difficult to test until you implement the next step.</p>
+</section>
+<section id="show-all-movies-option" class="level3">
+<h3 class="anchored" data-anchor-id="show-all-movies-option">Show All Movies Option</h3>
+<p>Implement code for <code>showAllMovies()</code>, to iterate through all entries in <code>movies_by_name</code>, and print out the movie name and then iterate through all actors for that movie, printing them out. I’ve indented the actor’s name, so the output is more readable.</p>
+<p>You might find it very useful to make the inner loop a separate function. I called that function <code>showActorsInAMovie()</code>. It takes an iterator “pointing” to an object from the <code>movies_by_name</code> collection, and iterates over the “second” field (a set), printing each actor in the set. If you implement this function, you’ll find you can use it again below.</p>
+<p>When you think your code is correct (for this and the previous step), try loading all movies from 1955 and printing them all out. The first movie should be:</p>
+<pre><code>Movie: 5 Against the House
+        Alvy Moore
+        Brian Keith
+        George Cisar
+        Guy Madison
+        Hugh Sanders
+        Jean Willes
+        John Larch
+        John Zaremba
+        Kathryn Crosby
+        Kerwin Mathews
+        Kim Novak
+        Mark Hanna
+        Robert Sampson
+        William Conrad</code></pre>
+<p>The last movie you should see should look like this:</p>
+<pre><code>Movie: Young at Heart
+        Alan Hale, Jr.
+        Doris Day
+        Dorothy Malone
+        Elisabeth Fraser
+        Ethel Barrymore
+        Frank Ferguson
+        Frank Sinatra
+        Gig Young
+        Lonny Chapman
+        Robert Keith</code></pre>
+</section>
+<section id="show-all-actors-for-a-single-movie-option" class="level3">
+<h3 class="anchored" data-anchor-id="show-all-actors-for-a-single-movie-option">Show All Actors For a Single Movie Option</h3>
+<p>Complete the code in the <code>getMovienameAndShowActors()</code> method. If you created a function to show all actors for a given movie, then you are half done already.</p>
+</section>
+<section id="show-all-movies-for-an-actor-option" class="level3">
+<h3 class="anchored" data-anchor-id="show-all-movies-for-an-actor-option">Show All Movies For an Actor Option</h3>
+<p>Finally, implement this option. Create a set of strings (I called my variable <code>movies_by_actor</code>.) And then go through all movies, looking for that actor. When you find him/her, add the movie to the <code>movies_by_actor</code>. Then, when you are done, print out the set.</p>
+<p>Here is a sample output:</p>
+<pre><code>Enter an actor name to show all movies for that actor: Alfred Hitchcock
+Rear Window
+The Trouble with Harry
+To Catch a Thief</code></pre>
+</section>
+</section>
+<section id="turn-in" class="level2">
+<h2 class="anchored" data-anchor-id="turn-in">Turn In</h2>
+<p>Submit your project to github as usual. If you worked with your lab partner on the project, make sure you update <strong>README.md</strong> to include both of your names/login-ids.</p>
+</section>
+<section id="grading-rubric" class="level2">
+<h2 class="anchored" data-anchor-id="grading-rubric">Grading Rubric</h2>
+<p>21 points total:</p>
+<ul>
+<li>Menu class works: 2 pts.</li>
+<li>App constructor: 5 pts.</li>
+<li>Each App menu item: 4 pts each: 12 pts.</li>
+<li>Hospitable code: code is clean and neat, perfectly indented, with good variable names, etc.: 2 pts.</li>
+</ul>
+<p>Ways students have lost points in the past:</p>
+<ul>
+<li>-2: showAllMovies needs to show the names of each movie’s actors</li>
+<li>-2: getMovieNameAndShowActors implementation is incorrect, the result of movies_by_name.find will return the iterator value you want to pass to showActorsInAMovie, the for loop is unnecessary</li>
+<li>-2: code is very poorly indented</li>
+<li>-2: parameter names are very poorly chosen</li>
+</ul>
+<!-- [^1]: how to add footnotes. -->
 
 
 </section>
@@ -865,18 +947,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="./week01.html" class="pagination-link" aria-label="Week 01: Introduction to Databases &amp; SQL Basics">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Week 01: Introduction to Databases &amp; SQL Basics</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="./week03.html" class="pagination-link" aria-label="Week 03: SQL – Data Modification &amp; Advanced Queries">
-        <span class="nav-page-text">Week 03: SQL – Data Modification &amp; Advanced Queries</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -885,7 +955,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ericaraujophd/24sp-cs354A/edit/main/week02.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/24sp-cs354A/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ericaraujophd/24sp-cs354A/edit/main/hws/hw04.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/24sp-cs354A/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">

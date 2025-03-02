@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Week 02: SQL – Intermediate Concepts – CS 354 – Database Management Systems</title>
+<title>Homework 06: – CS 354 – Database Management Systems</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,30 +20,62 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./week03.html" rel="next">
-<link href="./week01.html" rel="prev">
-<link href="././images/cs112-logo.png" rel="icon" type="image/png">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href=".././images/cs112-logo.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -73,11 +105,41 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 <script src="https://kit.fontawesome.com/78ddb093ea.js" crossorigin="anonymous"></script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<meta property="og:title" content="Week 02: SQL – Intermediate Concepts – CS 354 – Database Management Systems">
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../hws/hw-styles.css">
+<meta property="og:title" content="Homework 06: – CS 354 – Database Management Systems">
 <meta property="og:description" content="CS354 provides a hands-on introduction to relational databases, SQL querying, and database design, focusing on real-world applications, optimization, and security.">
 <meta property="og:site_name" content="CS 354 – Database Management Systems">
-<meta name="twitter:title" content="Week 02: SQL – Intermediate Concepts – CS 354 – Database Management Systems">
+<meta name="twitter:title" content="Homework 06: – CS 354 – Database Management Systems">
 <meta name="twitter:description" content="CS354 provides a hands-on introduction to relational databases, SQL querying, and database design, focusing on real-world applications, optimization, and security.">
 <meta name="twitter:image" content="https://ericaraujo.com/25sp-cs354A/images/twitter-card.png">
 <meta name="twitter:creator" content="@ericfaraujo">
@@ -86,15 +148,15 @@ ul.task-list li input[type="checkbox"] {
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
-<body class="nav-sidebar floating nav-fixed">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./images/cs112-logo.png" alt="" class="navbar-logo">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../images/cs112-logo.png" alt="" class="navbar-logo">
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -104,19 +166,19 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
+    <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Overview</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./instructors.html"> 
+    <a class="nav-link" href="../instructors.html"> 
 <span class="menu-text">Instructors</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./policies.html"> 
+    <a class="nav-link" href="../policies.html"> 
 <span class="menu-text">Course Policies</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./content.html" aria-current="page"> 
+    <a class="nav-link" href="../content.html"> 
 <span class="menu-text">Content</span></a>
   </li>  
 </ul>
@@ -133,92 +195,34 @@ ul.task-list li input[type="checkbox"] {
 </div>
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./week02.html">Week 02: SQL – Intermediate Concepts</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-    </div>
-  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./content.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Course content</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week01.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 01: Introduction to Databases &amp; SQL Basics</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week02.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Week 02: SQL – Intermediate Concepts</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week03.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 03: SQL – Data Modification &amp; Advanced Queries</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week04.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 04: Database Design – ER Modeling &amp; Schema Refinement</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week05.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 05: Advanced SQL &amp; Integrity Constraints</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week06.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 06: Database Management &amp; Optimization</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week07.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 07: Final Project and Course Wrap-Up</span></a>
-  </div>
-</li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#slos-for-week-02" id="toc-slos-for-week-02" class="nav-link active" data-scroll-target="#slos-for-week-02">SLOs for Week 02</a></li>
-  <li><a href="#slides-videos-and-application-exercises" id="toc-slides-videos-and-application-exercises" class="nav-link" data-scroll-target="#slides-videos-and-application-exercises">Slides, videos, and application exercises</a></li>
+  <li><a href="#objectives" id="toc-objectives" class="nav-link active" data-scroll-target="#objectives">Objectives:</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#step-1.-append" id="toc-step-1.-append" class="nav-link" data-scroll-target="#step-1.-append">Step 1. Append</a></li>
+  <li><a href="#step-2.-searching" id="toc-step-2.-searching" class="nav-link" data-scroll-target="#step-2.-searching">Step 2. Searching</a></li>
+  <li><a href="#step-3.-copy-constructor" id="toc-step-3.-copy-constructor" class="nav-link" data-scroll-target="#step-3.-copy-constructor">Step 3. Copy constructor</a></li>
+  <li><a href="#step-4.-equality" id="toc-step-4.-equality" class="nav-link" data-scroll-target="#step-4.-equality">Step 4. Equality</a></li>
+  <li><a href="#step-5.-templatize" id="toc-step-5.-templatize" class="nav-link" data-scroll-target="#step-5.-templatize">Step 5. Templatize</a></li>
+  <li><a href="#submit" id="toc-submit" class="nav-link" data-scroll-target="#submit">Submit</a></li>
+  <li><a href="#grading-rubric" id="toc-grading-rubric" class="nav-link" data-scroll-target="#grading-rubric">Grading Rubric:</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/ericaraujophd/24sp-cs354A/edit/main/week02.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/24sp-cs354A/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/ericaraujophd/24sp-cs354A/edit/main/hws/hw06.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/24sp-cs354A/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Week 02: SQL – Intermediate Concepts</h1>
+<h1 class="title">Homework 06:</h1>
 </div>
 
 
@@ -235,67 +239,114 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="slos-for-week-02" class="level2">
-<h2 class="anchored" data-anchor-id="slos-for-week-02">SLOs for Week 02</h2>
-<p>At the end of this unit, students will be able to…</p>
+<center>
+<figure class="figure">
+<p><img src="../images/labs/lab06/lab06-header.gif" alt="Equality" width="400" class="figure-img"></p>
+<figcaption>
+Equality.
+</figcaption>
+</figure>
+</center>
+<section id="objectives" class="level2">
+<h2 class="anchored" data-anchor-id="objectives">Objectives:</h2>
+<p>In this exercise, you will:</p>
 <ol type="1">
-<li>Perform data aggregation using GROUP BY and HAVING.</li>
-<li>Write and execute INNER, LEFT-OUTER, RIGHT, and FULL JOINs.</li>
-<li>Construct subqueries for complex queries.</li>
-<li>Implement SQL functions and expressions.</li>
-<li>Use SQL best practices for readable and efficient queries.</li>
-<li>Optimize SQL queries for better performance.</li>
+<li>Build more List operations.</li>
+<li>Practice using pointers.</li>
 </ol>
 </section>
-<section id="slides-videos-and-application-exercises" class="level2">
-<h2 class="anchored" data-anchor-id="slides-videos-and-application-exercises">Slides, videos, and application exercises</h2>
-<div class="slide-deck">
-<p><strong>Week 02: Slides</strong></p>
-<div class="slides">
-<p><a href="" target="_blank">Slides</a></p>
-</div>
-<div class="source">
-<p><a href="" target="_blank">Code from Class</a></p>
-</div>
-<div class="reading">
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>In this week’s lab you will add more functionality to the List class we built in class.</p>
+<p><a href="" target="_blank">Here is the invite</a>.</p>
+<p>Use git clone to get your copy of the assignment, as we have been doing. You should have these files: <strong>List.cpp</strong>, <strong>List.h</strong>, <strong>tests.cpp</strong>, plus a <strong>makefile</strong>, etc.</p>
+<p>If you are working with a partner, so make sure you join the same Team when creating your repos. Also, put both your names in the README.md file now.</p>
+</section>
+<section id="step-1.-append" class="level2">
+<h2 class="anchored" data-anchor-id="step-1.-append">Step 1. Append</h2>
+<p>The <code>append()</code> method is easy to understand: given a new <code>Item</code>, add it to the end of the linked list. The <strong>tests.cpp</strong> file contains tests already for <code>append()</code>.</p>
+<p>Now, implement the code for <code>append()</code>. You might find looking at the implementation of <code>prepend()</code> to be helpful – although <code>append()</code> is a bit more complicated. DRAW PICTURES! (Or, don’t draw pictures, if you want to make this step of the lab take much longer…)</p>
+</section>
+<section id="step-2.-searching" class="level2">
+<h2 class="anchored" data-anchor-id="step-2.-searching">Step 2. Searching</h2>
+<p>Let’s implement a method that searches the linked list for a given <code>Item</code>, and returns the index of where the item is found, or -1 if it is not found. Name the method <code>getIndexOf()</code>. Here is the prototype:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> getIndexOf<span class="op">(</span><span class="at">const</span> Item <span class="op">&amp;</span>it<span class="op">)</span> <span class="at">const</span><span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>First implement tests of <code>getIndexOf()</code> in <strong>tests.cpp</strong>, and then implement the method. You must call the <code>TEST_CASE</code> “lookfor”. I.e., put this in the <strong>tests.cpp</strong> file:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>TEST_CASE<span class="op">(</span><span class="st">"lookfor"</span><span class="op">)</span> <span class="op">{</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>     <span class="co">// add your tests here -- either inside SECTION()s or not.</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="step-3.-copy-constructor" class="level2">
+<h2 class="anchored" data-anchor-id="step-3.-copy-constructor">Step 3. Copy constructor</h2>
+<p>You knew it was coming…</p>
+<p><strong>tests.cpp</strong> does not contain any test cases for this, so you’ll have to implement them yourself. My solution has 1 <code>TEST_CASE</code> with 3 <code>SECTIONS</code>: copying a 0-element List, copying a 1-element List, and copying a <span class="math inline">\(&gt;1\)</span>-element list. The name of the TEST_CASE must be copy constructor:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>TEST_CASE<span class="op">(</span><span class="st">"copy"</span><span class="op">)</span> <span class="op">{</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>     <span class="co">// add your tests here -- either inside SECTION()s or not.</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The prototype of the copy constructor will be:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>List<span class="op">(</span><span class="at">const</span> List <span class="op">&amp;</span> original<span class="op">);</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Here is the algorithm to implement the copy constructor:</p>
 <ul>
-<li><a href="" target="_blank">Chapters 6 and 7</a></li>
+<li>Set all the instance variables (<code>myFirst</code>, <code>myLast</code>, <code>mySize</code>) to default values.</li>
+<li>Walk the list of nodes in original, calling <code>append()</code> on the value in each node. (You are calling <code>append()</code> on “this” node, thus adding a new node each time to the <code>List</code> being constructed.)</li>
 </ul>
+</section>
+<section id="step-4.-equality" class="level2">
+<h2 class="anchored" data-anchor-id="step-4.-equality">Step 4. Equality</h2>
+<p>Implement the equality method, so that you can test if two <code>List</code> objects have the same number of nodes and the items in the nodes are the same. The equality operator returns <strong>true</strong> or <strong>false</strong>.</p>
+<p>E.g.,</p>
+<p>if <code>list1</code> contains 3 values: 11, 22, 33 and <code>list2</code> contains four values: 11, 22, 33, 44, then <code>list1 == list2</code> should return <strong>false</strong>.</p>
+<p>To test this you have to use <code>==</code> (not <code>!=</code>), so your test might look like this:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>REQUIRE<span class="op">(!</span> <span class="op">(</span>list1 <span class="op">==</span> list2<span class="op">)</span> <span class="op">);</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Create your tests first in a test case called “equality”:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>TEST_CASE<span class="op">(</span><span class="st">"equality"</span><span class="op">)</span> <span class="op">{</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>     <span class="co">// add your tests here -- either inside SECTION()s or not.</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-<!-- ::: video
-[Video](https://youtu.be/_YqEHZccujc)
-:::
--->
-</div>
-<!-- ## Homework assignments -->
-<div class="homework">
-<p><strong>Homework 02: </strong></p>
-<div class="instructions">
-<p><a href="./hws/hw02.html">Instructions</a></p>
-</div>
-<div class="starter">
-<p><a href="" target="_blank">Source</a></p>
-</div>
-<div class="slides">
-<p><a href="" target="_blank">Dad Joke + Reflection</a></p>
-</div>
-</div>
-<!-- ## Lab -->
-<div class="lab">
-<p><strong>Project 02: </strong></p>
-<div class="instructions">
-<p><a href="./projects/proj02.html">Instructions</a></p>
-</div>
-<div class="starter">
-<p><a href="" target="_blank">Starter</a></p>
+<div class="callout-title-container flex-fill">
+Tip
 </div>
 </div>
-<!-- ::: exam
-**POGIL**
-
--   [Array Addressing](https://docs.google.com/document/d/1myVaJT3i1hECM4BHs9LpbLz3a3heVPp6SJiEjoEvG_M/edit?tab=t.0#heading=h.im9274hm9wa0){target="_blank"} ([Answers](https://drive.google.com/file/d/1mn5yCzIJuURMiP3MOtO9amEQzUVAQCQZ/view?usp=sharing){target="_blank"})
--   [Parameter Passing](https://docs.google.com/document/d/125hbFPo5PVcuGQ9pq4io23jns2kOEkfjo71S9WOkfjQ/edit){target="_blank"} ([Answers](https://drive.google.com/file/d/1rPum6ihNwUKRJpZBSTQF8v7QKfOdog11/view?usp=drive_link){target="_blank"})
-::: -->
+<div class="callout-body-container callout-body">
+<p>Use a “curr” pointer to each list’s <code>myFirst</code> node, then in a loop, check if the items are the same for the two nodes, then move each <code>curr</code> pointer to its next node.</p>
+</div>
+</div>
+</section>
+<section id="step-5.-templatize" class="level2">
+<h2 class="anchored" data-anchor-id="step-5.-templatize">Step 5. Templatize</h2>
+<p>Now, convert your <code>List</code> class to a <code>List&lt;Item&gt;</code> template and modify the tests in <strong>tests.cpp</strong> to test your new template. Remember to edit the <strong>makefile</strong> to remove <strong>List.cpp</strong> from the <code>SOURCES</code> line near the top of the file. You should also delete the <strong>List.cpp</strong> file completely from your tree.</p>
+</section>
+<section id="submit" class="level2">
+<h2 class="anchored" data-anchor-id="submit">Submit</h2>
+<p>A part of your grade will be based on the thoroughness of your tests; you may want to model your tests after those provided for you in previous projects.</p>
+<p>Don’t forget to <strong>Commit</strong> and <strong>Push</strong> your changes to your repo.</p>
+<p>Verify you have synced your code to github by going to your online repo webpage and looking to see that the files are correct.</p>
+<p>Verify that the autograding tests have passed in github.com.</p>
+</section>
+<section id="grading-rubric" class="level2">
+<h2 class="anchored" data-anchor-id="grading-rubric">Grading Rubric:</h2>
+<p>You will be graded this way: 19 pts total</p>
+<ul>
+<li>4 pts each for <code>append()</code>, <code>getIndexOf()</code>, copy constructor, and equality operator (16 pts)</li>
+<li>3 pts for correctness,</li>
+<li>1 pt for thorough tests (you get this point free for <code>append()</code> for which I’ve provided tests).</li>
+<li>3 pts for correctly converting to a class template.</li>
+</ul>
+<p>Ways students lost points in the past:</p>
+<ul>
+<li>-3: Incorrect class template conversion, code does not compile;</li>
+<li>-3: Missing tests for <code>getIndexOf()</code>, copy constructor, and equality operator</li>
+<li>-1: Incomplete equality tests, no tests for when equality is true</li>
+<li>-1: Append implementation needs to adjust the <code>myNext</code> of the current last element</li>
+<li>-1: Copy constructor: <code>myFirst</code> is not initialized to <strong>nullptr</strong>, causing tests to fail;</li>
+<li>-1: Missing test for equality operator;</li>
+<li>-1: Incomplete test for copy constructor;</li>
+</ul>
+<!-- [^1]: how to add footnotes. -->
 
 
 </section>
@@ -865,18 +916,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="./week01.html" class="pagination-link" aria-label="Week 01: Introduction to Databases &amp; SQL Basics">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Week 01: Introduction to Databases &amp; SQL Basics</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="./week03.html" class="pagination-link" aria-label="Week 03: SQL – Data Modification &amp; Advanced Queries">
-        <span class="nav-page-text">Week 03: SQL – Data Modification &amp; Advanced Queries</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -885,7 +924,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ericaraujophd/24sp-cs354A/edit/main/week02.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/24sp-cs354A/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ericaraujophd/24sp-cs354A/edit/main/hws/hw06.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/24sp-cs354A/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">

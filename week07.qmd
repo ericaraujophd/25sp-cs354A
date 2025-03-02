@@ -18,28 +18,42 @@ By the end of this unit, students will be able to...
 ## Slides, videos, and application exercises
 
 :::::: slide-deck
-**Week 08: Slides**
+**Week 07: Slides**
 
 ::: slides
-[Slides](https://calvincollege-my.sharepoint.com/:p:/g/personal/vtn2_calvin_edu/EVUHPdmKVURIiLt6RGsWGUgBMWUBvWAUeP3IdaHpoNjQVg?e=BRbwiB){target="_blank"}
+[Slides](){target="_blank"}
 :::
 
 ::: video
-[Video](https://www.youtube.com/playlist?list=PLgbz05MfsB26udu5rHnVUVY3I3Nlmynmu){target="_blank"}
+[Video](){target="_blank"}
 :::
 
 ::: reading
-No readings for Week 08.
+No readings for Week 07.
 :::
 ::::::
+
+<!-- ## Homework assignments -->
+
+::::: homework
+**Homework 7:**
+
+::: instructions
+[Instructions](/hws/hw07.qmd)
+:::
+
+::: starter
+[Starter]()
+:::
+:::::
 
 <!-- ## Lab -->
 
 :::::: lab
-**Lab 08: Timing List and Vector Operations**
+**Project 07: Final Project**
 
 ::: instructions
-[Instructions](/labs/lab08.qmd)
+[Instructions](/projects/proj99-final.qmd)
 :::
 
 ::: starter
@@ -51,18 +65,3 @@ No readings for Week 08.
 :::
 ::::::
 
-<!-- ## Homework assignments -->
-
-::::: homework
-**Project 8: Conga!**
-
-Conga!
-
-::: instructions
-[Instructions](/projects/proj08-Conga.qmd)
-:::
-
-::: starter
-[Starter]()
-:::
-:::::

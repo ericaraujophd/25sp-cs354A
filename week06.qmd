@@ -21,15 +21,11 @@ At the end of this unit, the student will be able to...
 **Week 06: Slides**
 
 ::: slides
-[Slides - Linked Lists](https://docs.google.com/presentation/d/1Wc-X7kgXs4ho3RbsK2GbkFJFsMbzrY-qg11fnaCbF2c/edit?usp=sharing)
-:::
-
-::: slides
-[Slides - Dynamic Array or Linked List](https://docs.google.com/presentation/d/1k-yhUpxgpk_N82EW9O794WU_JanF3AIEMAKhs_OCoCs/edit?usp=share_link)
+[Slides - Linked Lists]()
 :::
 
 ::: source
-[Code from Class](https://calvincollege-my.sharepoint.com/:f:/g/personal/vtn2_calvin_edu/EjYzT2SidtJFowsOkxH5AvMBLQGjzMvuZDLfwiiTosOLsw?e=zoDST7)
+[Code from Class]()
 :::
 
 ::: reading
@@ -37,13 +33,15 @@ No readings for Week 6.
 :::
 :::::::
 
-<!-- ## Lab -->
 
-:::::: lab
-**Lab 06: More List Operations**
+<!-- ## Homework assignments -->
+
+::: homework
+
+**Homework 06: **
 
 ::: instructions
-[Instructions](/labs/lab06.qmd)
+[Instructions](/hws/hw06.qmd)
 :::
 
 ::: starter
@@ -51,12 +49,15 @@ No readings for Week 6.
 :::
 
 ::: slides
-[Slides](/slides/lab06-slides.qmd)
+[Slides]()
 :::
-::::::
 
-<!-- ## Homework assignments -->
 
-::: homework
+:::
+
+<!-- ## Project -->
+
+:::::: lab
 **Project 06: No project on Week 06**
-:::
+
+::::::

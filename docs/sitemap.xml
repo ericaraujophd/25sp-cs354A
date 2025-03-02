@@ -2,31 +2,31 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://ericaraujo.com/25sp-cs354A/week02.html</loc>
-    <lastmod>2025-03-02T02:48:01.559Z</lastmod>
+    <lastmod>2025-03-02T03:36:02.747Z</lastmod>
   </url>
   <url>
     <loc>https://ericaraujo.com/25sp-cs354A/week01.html</loc>
-    <lastmod>2025-03-02T02:45:37.724Z</lastmod>
+    <lastmod>2025-03-02T03:36:24.416Z</lastmod>
   </url>
   <url>
     <loc>https://ericaraujo.com/25sp-cs354A/week05.html</loc>
-    <lastmod>2025-03-02T02:56:02.727Z</lastmod>
+    <lastmod>2025-03-02T03:33:54.245Z</lastmod>
   </url>
   <url>
     <loc>https://ericaraujo.com/25sp-cs354A/week06.html</loc>
-    <lastmod>2025-03-02T02:57:16.883Z</lastmod>
+    <lastmod>2025-03-02T03:30:15.017Z</lastmod>
   </url>
   <url>
-    <loc>https://ericaraujo.com/25sp-cs354A/slides/lab06-slides.html</loc>
-    <lastmod>2025-01-03T22:28:30.299Z</lastmod>
+    <loc>https://ericaraujo.com/25sp-cs354A/hws/hw02.html</loc>
+    <lastmod>2025-03-02T03:08:39.129Z</lastmod>
   </url>
   <url>
-    <loc>https://ericaraujo.com/25sp-cs354A/slides/lab00-slides.html</loc>
-    <lastmod>2025-01-03T22:28:30.298Z</lastmod>
+    <loc>https://ericaraujo.com/25sp-cs354A/hws/hw07.html</loc>
+    <lastmod>2025-03-02T03:12:45.152Z</lastmod>
   </url>
   <url>
-    <loc>https://ericaraujo.com/25sp-cs354A/slides/lab05-slides.html</loc>
-    <lastmod>2025-01-03T22:28:30.298Z</lastmod>
+    <loc>https://ericaraujo.com/25sp-cs354A/hws/hw04.html</loc>
+    <lastmod>2025-03-02T03:10:18.655Z</lastmod>
   </url>
   <url>
     <loc>https://ericaraujo.com/25sp-cs354A/index.html</loc>
@@ -49,96 +49,8 @@
     <lastmod>2025-01-03T22:28:28.236Z</lastmod>
   </url>
   <url>
-    <loc>https://ericaraujo.com/25sp-cs354A/labs/lab09.html</loc>
-    <lastmod>2025-01-03T22:28:30.291Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ericaraujo.com/25sp-cs354A/labs/lab09-hint-pop.html</loc>
-    <lastmod>2025-01-03T22:28:30.290Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ericaraujo.com/25sp-cs354A/labs/lab11-hint.html</loc>
-    <lastmod>2025-01-03T22:28:30.292Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ericaraujo.com/25sp-cs354A/labs/lab09-hint-pop2.html</loc>
-    <lastmod>2025-01-03T22:28:30.291Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ericaraujo.com/25sp-cs354A/labs/lab13.html</loc>
-    <lastmod>2025-01-03T22:28:30.292Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ericaraujo.com/25sp-cs354A/labs/lab05.html</loc>
-    <lastmod>2025-01-03T22:28:30.289Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ericaraujo.com/25sp-cs354A/labs/lab10.html</loc>
-    <lastmod>2025-01-03T22:28:30.292Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ericaraujo.com/25sp-cs354A/labs/lab11-hint2.html</loc>
-    <lastmod>2025-01-03T22:28:30.292Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ericaraujo.com/25sp-cs354A/labs/lab00.html</loc>
-    <lastmod>2025-01-03T22:28:30.288Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ericaraujo.com/25sp-cs354A/labs/lab01.html</loc>
-    <lastmod>2025-01-03T22:28:30.288Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ericaraujo.com/25sp-cs354A/labs/lab02.html</loc>
-    <lastmod>2025-01-03T22:28:30.289Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ericaraujo.com/25sp-cs354A/labs/lab03.html</loc>
-    <lastmod>2025-01-03T22:28:30.289Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ericaraujo.com/25sp-cs354A/labs/lab14.html</loc>
-    <lastmod>2025-01-03T22:28:30.293Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ericaraujo.com/25sp-cs354A/labs/lab09-hint-peektop.html</loc>
-    <lastmod>2025-01-03T22:28:30.290Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ericaraujo.com/25sp-cs354A/labs/lab04.html</loc>
-    <lastmod>2025-01-03T22:28:30.289Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ericaraujo.com/25sp-cs354A/labs/lab11.html</loc>
-    <lastmod>2025-01-03T22:28:30.292Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ericaraujo.com/25sp-cs354A/labs/lab09-hint-push.html</loc>
-    <lastmod>2025-01-03T22:28:30.291Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ericaraujo.com/25sp-cs354A/labs/lab06.html</loc>
-    <lastmod>2025-01-03T22:28:30.290Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ericaraujo.com/25sp-cs354A/labs/lab09-hint.html</loc>
-    <lastmod>2025-01-03T22:28:30.291Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ericaraujo.com/25sp-cs354A/labs/lab09-hint-push2.html</loc>
-    <lastmod>2025-01-03T22:28:30.291Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ericaraujo.com/25sp-cs354A/labs/lab08.html</loc>
-    <lastmod>2025-01-03T22:28:30.290Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ericaraujo.com/25sp-cs354A/labs/lab09-hint-isfull.html</loc>
-    <lastmod>2025-01-03T22:28:30.290Z</lastmod>
-  </url>
-  <url>
     <loc>https://ericaraujo.com/25sp-cs354A/content.html</loc>
-    <lastmod>2025-03-02T03:04:07.965Z</lastmod>
+    <lastmod>2025-03-02T03:14:37.047Z</lastmod>
   </url>
   <url>
     <loc>https://ericaraujo.com/25sp-cs354A/projects/proj04.html</loc>
@@ -157,27 +69,27 @@
     <lastmod>2025-01-03T22:28:30.294Z</lastmod>
   </url>
   <url>
-    <loc>https://ericaraujo.com/25sp-cs354A/slides/lab08-slides.html</loc>
-    <lastmod>2025-01-03T22:28:30.299Z</lastmod>
+    <loc>https://ericaraujo.com/25sp-cs354A/hws/hw06.html</loc>
+    <lastmod>2025-03-02T03:12:09.924Z</lastmod>
   </url>
   <url>
-    <loc>https://ericaraujo.com/25sp-cs354A/slides/lab03-slides.html</loc>
-    <lastmod>2025-01-03T22:28:30.298Z</lastmod>
+    <loc>https://ericaraujo.com/25sp-cs354A/hws/hw03.html</loc>
+    <lastmod>2025-03-02T03:09:39.463Z</lastmod>
   </url>
   <url>
-    <loc>https://ericaraujo.com/25sp-cs354A/slides/lab10-slides.html</loc>
-    <lastmod>2025-01-03T22:28:30.299Z</lastmod>
+    <loc>https://ericaraujo.com/25sp-cs354A/hws/hw01.html</loc>
+    <lastmod>2025-03-02T03:08:16.508Z</lastmod>
   </url>
   <url>
     <loc>https://ericaraujo.com/25sp-cs354A/week07.html</loc>
-    <lastmod>2025-03-02T02:58:01.047Z</lastmod>
+    <lastmod>2025-03-02T03:32:27.016Z</lastmod>
   </url>
   <url>
     <loc>https://ericaraujo.com/25sp-cs354A/week04.html</loc>
-    <lastmod>2025-03-02T02:56:14.955Z</lastmod>
+    <lastmod>2025-03-02T03:37:10.943Z</lastmod>
   </url>
   <url>
     <loc>https://ericaraujo.com/25sp-cs354A/week03.html</loc>
-    <lastmod>2025-03-02T02:56:25.313Z</lastmod>
+    <lastmod>2025-03-02T03:35:45.751Z</lastmod>
   </url>
 </urlset>
