@@ -105,35 +105,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 <script src="https://kit.fontawesome.com/78ddb093ea.js" crossorigin="anonymous"></script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="../projects/proj-styles.css">
 <meta property="og:title" content="Week 1 Project: Student Course Registration System – CS 354 – Database Management Systems">
@@ -210,6 +181,7 @@ window.Quarto = {
    
   <ul>
   <li><a href="#objectives" id="toc-objectives" class="nav-link active" data-scroll-target="#objectives">Objectives:</a></li>
+  <li><a href="#external-resources" id="toc-external-resources" class="nav-link" data-scroll-target="#external-resources">External resources</a></li>
   <li><a href="#step-0-setting-up-sqlitestudio" id="toc-step-0-setting-up-sqlitestudio" class="nav-link" data-scroll-target="#step-0-setting-up-sqlitestudio">Step 0: Setting Up SQLiteStudio</a></li>
   <li><a href="#step-1.-creating-tables" id="toc-step-1.-creating-tables" class="nav-link" data-scroll-target="#step-1.-creating-tables">Step 1. Creating Tables</a>
   <ul class="collapse">
@@ -217,9 +189,21 @@ window.Quarto = {
   <li><a href="#task-create-the-courses-table" id="toc-task-create-the-courses-table" class="nav-link" data-scroll-target="#task-create-the-courses-table">Task: Create the courses Table</a></li>
   </ul></li>
   <li><a href="#task-create-the-enrollments-table" id="toc-task-create-the-enrollments-table" class="nav-link" data-scroll-target="#task-create-the-enrollments-table">Task: Create the enrollments Table</a></li>
-  <li><a href="#step-2.-function-practice-2" id="toc-step-2.-function-practice-2" class="nav-link" data-scroll-target="#step-2.-function-practice-2">Step 2. function practice, 2</a></li>
-  <li><a href="#step-3.-compute-prime-numbers" id="toc-step-3.-compute-prime-numbers" class="nav-link" data-scroll-target="#step-3.-compute-prime-numbers">Step 3. Compute prime numbers</a></li>
-  <li><a href="#step-4.-collecting-prime-numbers" id="toc-step-4.-collecting-prime-numbers" class="nav-link" data-scroll-target="#step-4.-collecting-prime-numbers">Step 4. Collecting prime numbers</a></li>
+  <li><a href="#step-2.-inserting-data-into-tables" id="toc-step-2.-inserting-data-into-tables" class="nav-link" data-scroll-target="#step-2.-inserting-data-into-tables">Step 2. Inserting Data into Tables</a>
+  <ul class="collapse">
+  <li><a href="#task-insert-students" id="toc-task-insert-students" class="nav-link" data-scroll-target="#task-insert-students">Task: Insert Students</a></li>
+  <li><a href="#task-insert-courses" id="toc-task-insert-courses" class="nav-link" data-scroll-target="#task-insert-courses">Task: Insert Courses</a></li>
+  <li><a href="#task-enroll-students-in-courses" id="toc-task-enroll-students-in-courses" class="nav-link" data-scroll-target="#task-enroll-students-in-courses">Task: Enroll Students in Courses</a></li>
+  </ul></li>
+  <li><a href="#step-3.-writing-and-running-sql-queries" id="toc-step-3.-writing-and-running-sql-queries" class="nav-link" data-scroll-target="#step-3.-writing-and-running-sql-queries">Step 3. Writing and Running SQL Queries</a>
+  <ul class="collapse">
+  <li><a href="#task-1-list-all-courses-in-the-computer-science-department" id="toc-task-1-list-all-courses-in-the-computer-science-department" class="nav-link" data-scroll-target="#task-1-list-all-courses-in-the-computer-science-department">Task 1: List All Courses in the Computer Science Department</a></li>
+  <li><a href="#task-2-retrieve-all-students." id="toc-task-2-retrieve-all-students." class="nav-link" data-scroll-target="#task-2-retrieve-all-students.">Task 2: Retrieve All Students.</a></li>
+  <li><a href="#task-3-find-all-students-enrolled-in-database-management" id="toc-task-3-find-all-students-enrolled-in-database-management" class="nav-link" data-scroll-target="#task-3-find-all-students-enrolled-in-database-management">Task 3: Find All Students Enrolled in “Database Management”</a></li>
+  <li><a href="#task-4-count-the-number-of-students-in-each-course" id="toc-task-4-count-the-number-of-students-in-each-course" class="nav-link" data-scroll-target="#task-4-count-the-number-of-students-in-each-course">Task 4: Count the Number of Students in Each Course</a></li>
+  </ul></li>
+  <li><a href="#final-deliverables" id="toc-final-deliverables" class="nav-link" data-scroll-target="#final-deliverables">Final Deliverables</a></li>
+  <li><a href="#bonus-challenge-optional" id="toc-bonus-challenge-optional" class="nav-link" data-scroll-target="#bonus-challenge-optional">Bonus Challenge (Optional)</a></li>
   <li><a href="#grading-rubric" id="toc-grading-rubric" class="nav-link" data-scroll-target="#grading-rubric">Grading Rubric</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/ericaraujophd/25sp-cs354A/edit/main/projects/proj01.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/25sp-cs354A/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -263,6 +247,13 @@ Studoggy.
 <p>✅ Insert data into tables and retrieve information using SELECT queries.</p>
 <p>✅ Use basic SQL commands such as CREATE TABLE, INSERT, SELECT, WHERE, and JOIN.</p>
 <p>✅ Gain hands-on experience with SQLiteStudio as a database management tool.</p>
+</section>
+<section id="external-resources" class="level2">
+<h2 class="anchored" data-anchor-id="external-resources">External resources</h2>
+<ul>
+<li><a href="https://www.w3schools.com/sql/" target="_blank">SQL Tutorial</a></li>
+<li><a href="https://www.sqlite.org/docs.html" target="_blank">SQLite Documentation</a></li>
+</ul>
 </section>
 <section id="step-0-setting-up-sqlitestudio" class="level2">
 <h2 class="anchored" data-anchor-id="step-0-setting-up-sqlitestudio">Step 0: Setting Up SQLiteStudio</h2>
@@ -330,94 +321,141 @@ Studoggy.
 <ol start="2" type="1">
 <li>Click Execute and refresh the database structure.</li>
 </ol>
-<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Important
+Warning
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>✅ Checkpoint: Your database now contains three tables: students, courses, and enrollments.</p>
+<p>Checkpoint: Your database now contains three tables: <code>students</code>, <code>courses</code>, and <code>enrollments</code>.</p>
 </div>
 </div>
 </section>
-<section id="step-2.-function-practice-2" class="level2">
-<h2 class="anchored" data-anchor-id="step-2.-function-practice-2">Step 2. function practice, 2</h2>
-<p>Now, make a second function in <strong>utils.h</strong> and <strong>utils.cpp</strong>, <code>constrain2()</code>, which is the same as <code>constrain()</code>, but has the default value of <span class="math inline">\(0.0\)</span> for the low parameter, and the default of <span class="math inline">\(100.0\)</span> for the high parameter. Uncomment the test case in step2 and then add more <code>REQUIRE</code> tests to make sure these default arguments work correctly.</p>
-<p>When you have your code completed (and perfectly indented!), compile and run:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./tester</span> step2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><strong>Commit and Sync</strong> your code to github.</p>
-<div class="callout callout-style-default callout-note callout-titled">
+<section id="step-2.-inserting-data-into-tables" class="level2">
+<h2 class="anchored" data-anchor-id="step-2.-inserting-data-into-tables">Step 2. Inserting Data into Tables</h2>
+<p>Next, you will add sample data to test your database.</p>
+<section id="task-insert-students" class="level3">
+<h3 class="anchored" data-anchor-id="task-insert-students">Task: Insert Students</h3>
+<ol type="1">
+<li>Type and execute the following SQL commands to insert students:</li>
+</ol>
+<div class="sourceCode" id="cb4"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">INSERT</span> <span class="kw">INTO</span> students (first_name, last_name, birthdate, major) <span class="kw">VALUES</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>(<span class="st">'Alice'</span>, <span class="st">'Johnson'</span>, <span class="st">'2002-05-14'</span>, <span class="st">'Computer Science'</span>),</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>(<span class="st">'Bob'</span>, <span class="st">'Smith'</span>, <span class="st">'2001-09-20'</span>, <span class="st">'Data Science'</span>),</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>(<span class="st">'Charlie'</span>, <span class="st">'Davis'</span>, <span class="st">'2003-01-10'</span>, <span class="st">'Business'</span>);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note
+Warning
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The autograding tests should now pass “step1” and “step2”. (Tests for the other steps will pass, because the test cases are currently empty.)</p>
+<p>Checkpoint: Click on <strong>students table → View Data</strong> to confirm the data was inserted.</p>
 </div>
 </div>
 </section>
-<section id="step-3.-compute-prime-numbers" class="level2">
-<h2 class="anchored" data-anchor-id="step-3.-compute-prime-numbers">Step 3. Compute prime numbers</h2>
-<p>Write a function prototype <code>isPrime()</code> in the <strong>primes.h</strong> file. The function takes an <strong>unsigned integer</strong> and returns a <strong>boolean</strong>.</p>
-<p>For the implementation in the .cpp file, <code>isPrime()</code> returns <strong>true</strong> if the value is a prime number (and <strong>false</strong> otherwise). Here is the pseudo-code:</p>
-<pre><code>A prime number is a number that is evenly divisible by only itself and 1. That is,
-  for each integer "divisor" value from 2 through n / 2,
-    if you divide the number by that divisor, and the remainder is 0, 
-          that number is not prime -- return false.
-  if you get through all possible divisors, the number is prime: return true.</code></pre>
-<p>Note that 1 is not a prime (for some reason). 2 is the first prime. Your code may have to handle this case specially (my code does).</p>
-<p>Add code to the “step3” <code>TEST_CASE</code> in the <strong>tests.cpp</strong> file to test <code>isPrime()</code>.</p>
-<p>Make sure you test if 4 is a prime (it isn’t). Write other <code>REQUIRE()</code> calls to test other values.</p>
-<p>When you are satisfied that your code is complete, <strong>Commit and Sync</strong> it to github and check that the “step3” test succeeds.</p>
+<section id="task-insert-courses" class="level3">
+<h3 class="anchored" data-anchor-id="task-insert-courses">Task: Insert Courses</h3>
+<p>Now, insert some courses:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">INSERT</span> <span class="kw">INTO</span> courses (course_name, department) <span class="kw">VALUES</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>(<span class="st">'Database Management'</span>, <span class="st">'Computer Science'</span>),</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>(<span class="st">'Machine Learning'</span>, <span class="st">'Data Science'</span>),</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>(<span class="st">'Marketing Strategies'</span>, <span class="st">'Business'</span>);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Checkpoint: Verify the <code>courses</code> table contains the inserted records.</p>
+</div>
+</div>
 </section>
-<section id="step-4.-collecting-prime-numbers" class="level2">
-<h2 class="anchored" data-anchor-id="step-4.-collecting-prime-numbers">Step 4. Collecting prime numbers</h2>
-<p>In your <strong>primes.h</strong> and <strong>primes.cpp</strong> files, create a function that:</p>
+<section id="task-enroll-students-in-courses" class="level3">
+<h3 class="anchored" data-anchor-id="task-enroll-students-in-courses">Task: Enroll Students in Courses</h3>
+<p>Finally, insert sample enrollments:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">INSERT</span> <span class="kw">INTO</span> enrollments (student_id, course_id) <span class="kw">VALUES</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>(<span class="dv">1</span>, <span class="dv">1</span>),</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>(<span class="dv">2</span>, <span class="dv">1</span>),</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>(<span class="dv">2</span>, <span class="dv">2</span>),</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>(<span class="dv">3</span>, <span class="dv">3</span>);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Checkpoint: Verify the enrollments table now contains data linking students to courses.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="step-3.-writing-and-running-sql-queries" class="level2">
+<h2 class="anchored" data-anchor-id="step-3.-writing-and-running-sql-queries">Step 3. Writing and Running SQL Queries</h2>
+<p>Now that your database is set up, you will write SQL queries to retrieve information.</p>
+<section id="task-1-list-all-courses-in-the-computer-science-department" class="level3">
+<h3 class="anchored" data-anchor-id="task-1-list-all-courses-in-the-computer-science-department">Task 1: List All Courses in the Computer Science Department</h3>
+<p>Write a query to retrieve all courses offered in the Computer Science department.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">-- This is a query to retrieve all courses from the Business department</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">FROM</span> courses <span class="kw">WHERE</span> department <span class="op">=</span> <span class="st">'Business'</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>✅ Expected Output: Should return the “Database Management” course.</p>
+</section>
+<section id="task-2-retrieve-all-students." class="level3">
+<h3 class="anchored" data-anchor-id="task-2-retrieve-all-students.">Task 2: Retrieve All Students.</h3>
+<p>Write an SQL query to display all students in the database ordered by their last names.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">-- This a query that returns all the students.</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">FROM</span> students;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>✅ Expected Output: A list of all students with their student_id, first_name, last_name, birthdate, and major. They should be ordered in ascending order by ther last names.</p>
+</section>
+<section id="task-3-find-all-students-enrolled-in-database-management" class="level3">
+<h3 class="anchored" data-anchor-id="task-3-find-all-students-enrolled-in-database-management">Task 3: Find All Students Enrolled in “Database Management”</h3>
+<p>Retrieve the names of all students who are enrolled in the “Database Management” course.</p>
+<p>SELECT s.first_name, s.last_name FROM students s JOIN enrollments e ON s.student_id = e.student_id JOIN courses c ON e.course_id = c.course_id WHERE c.course_name = ‘Database Management’;</p>
+<p>✅ Expected Output:</p>
+<p>Alice Johnson Bob Smith</p>
+</section>
+<section id="task-4-count-the-number-of-students-in-each-course" class="level3">
+<h3 class="anchored" data-anchor-id="task-4-count-the-number-of-students-in-each-course">Task 4: Count the Number of Students in Each Course</h3>
+<p>Write a query to count how many students are enrolled in each course.</p>
+<p>SELECT c.course_name, COUNT(e.student_id) AS num_students FROM courses c LEFT JOIN enrollments e ON c.course_id = e.course_id GROUP BY c.course_name;</p>
+<p>✅ Expected Output: A table showing each course name and the number of enrolled students.</p>
+</section>
+</section>
+<section id="final-deliverables" class="level2">
+<h2 class="anchored" data-anchor-id="final-deliverables">Final Deliverables</h2>
+<p>By the end of this project, you should have:</p>
 <ul>
-<li>is called <code>findNPrimes()</code> that returns <strong>void</strong></li>
-<li>takes as a parameter an array of <strong>unsigned</strong> called primes</li>
-<li>takes as a parameter an <strong>unsigned</strong> called size that is the size of the array</li>
-<li>computes the first size prime numbers, putting them into the array (of course, the code calls <code>isPrime()</code> to do the hard work)</li>
+<li>A SQLite3 database (university.db) with three tables:
+<ul>
+<li>students, courses, and enrollments.</li>
+</ul></li>
+<li>Successfully inserted and retrieved data using SQL.</li>
+<li>Written four SQL queries to extract meaningful information from the database.</li>
+<li>Verified all queries return the expected results using SQLiteStudio.</li>
 </ul>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Note that this is a little tricky – if the size of the array is 100, do you loop up to 1000 to find the first 100 primes? Or 2000? You don’t know… So, use a while loop that keeps looping as long as the array is not full.</p>
-</div>
-</div>
-<p>In <strong>tests.cpp</strong> in the “step4” TEST_CASE, write code to define an array of a certain size, call the function, and then <code>REQUIRE</code> that various correct values are in the array at the correct indices. You might find it useful to know that the 100th prime is 541.</p>
-<p>When you are satisfied that your code is complete, <strong>Commit and Sync</strong> it to github and check that the “step4” test succeeds.</p>
-<p>At this point, all autograding tests should pass. You are done!</p>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-OPTIONAL:
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>For fun, create an array of 100000 and fill it with primes. See how long it takes to compute and print out the last prime.</p>
-<p>You can get the exact run time by running your project this way:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">time</span> ./tester <span class="st">"step4"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
+</section>
+<section id="bonus-challenge-optional" class="level2">
+<h2 class="anchored" data-anchor-id="bonus-challenge-optional">Bonus Challenge (Optional)</h2>
+<p>Modify the database by adding:</p>
+<ul>
+<li>A new professors table and linking it to courses.</li>
+<li>Additional constraints like UNIQUE or CHECK to enforce data integrity.</li>
+</ul>
 </section>
 <section id="grading-rubric" class="level2">
 <h2 class="anchored" data-anchor-id="grading-rubric">Grading Rubric</h2>
@@ -438,6 +476,7 @@ OPTIONAL:
 <li>-3: Missing step 2</li>
 <li>-1: tests in step1 are insufficient.</li>
 <li>-1: tests in step2 do not test all cases.</li>
+<li></li>
 </ul>
 
 

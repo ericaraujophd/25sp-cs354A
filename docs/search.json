@@ -542,6 +542,13 @@
     "text": "Objectives:\nBy the end of this project, you will:\n✅ Understand how to create and structure a relational database using SQLite3.\n✅ Learn to define tables, primary keys, and foreign keys.\n✅ Insert data into tables and retrieve information using SELECT queries.\n✅ Use basic SQL commands such as CREATE TABLE, INSERT, SELECT, WHERE, and JOIN.\n✅ Gain hands-on experience with SQLiteStudio as a database management tool."
   },
   {
+    "objectID": "projects/proj01.html#external-resources",
+    "href": "projects/proj01.html#external-resources",
+    "title": "Week 1 Project: Student Course Registration System",
+    "section": "External resources",
+    "text": "External resources\n\nSQL Tutorial\nSQLite Documentation"
+  },
+  {
     "objectID": "projects/proj01.html#step-0-setting-up-sqlitestudio",
     "href": "projects/proj01.html#step-0-setting-up-sqlitestudio",
     "title": "Week 1 Project: Student Course Registration System",
@@ -560,28 +567,35 @@
     "href": "projects/proj01.html#task-create-the-enrollments-table",
     "title": "Week 1 Project: Student Course Registration System",
     "section": "Task: Create the enrollments Table",
-    "text": "Task: Create the enrollments Table\nThis table tracks which students are enrolled in which courses. It includes foreign keys linking to both the students and courses tables.\n\nEnter the following SQL code:\n\nCREATE TABLE enrollments (\n    enrollment_id INTEGER PRIMARY KEY AUTOINCREMENT,\n    student_id INTEGER,\n    course_id INTEGER,\n    enrollment_date DATE DEFAULT CURRENT_DATE,\n    FOREIGN KEY (student_id) REFERENCES students(student_id),\n    FOREIGN KEY (course_id) REFERENCES courses(course_id)\n);\n\nClick Execute and refresh the database structure.\n\n\n\n\n\n\n\nImportant\n\n\n\n✅ Checkpoint: Your database now contains three tables: students, courses, and enrollments."
+    "text": "Task: Create the enrollments Table\nThis table tracks which students are enrolled in which courses. It includes foreign keys linking to both the students and courses tables.\n\nEnter the following SQL code:\n\nCREATE TABLE enrollments (\n    enrollment_id INTEGER PRIMARY KEY AUTOINCREMENT,\n    student_id INTEGER,\n    course_id INTEGER,\n    enrollment_date DATE DEFAULT CURRENT_DATE,\n    FOREIGN KEY (student_id) REFERENCES students(student_id),\n    FOREIGN KEY (course_id) REFERENCES courses(course_id)\n);\n\nClick Execute and refresh the database structure.\n\n\n\n\n\n\n\nWarning\n\n\n\nCheckpoint: Your database now contains three tables: students, courses, and enrollments."
   },
   {
-    "objectID": "projects/proj01.html#step-2.-function-practice-2",
-    "href": "projects/proj01.html#step-2.-function-practice-2",
+    "objectID": "projects/proj01.html#step-2.-inserting-data-into-tables",
+    "href": "projects/proj01.html#step-2.-inserting-data-into-tables",
     "title": "Week 1 Project: Student Course Registration System",
-    "section": "Step 2. function practice, 2",
-    "text": "Step 2. function practice, 2\nNow, make a second function in utils.h and utils.cpp, constrain2(), which is the same as constrain(), but has the default value of \\(0.0\\) for the low parameter, and the default of \\(100.0\\) for the high parameter. Uncomment the test case in step2 and then add more REQUIRE tests to make sure these default arguments work correctly.\nWhen you have your code completed (and perfectly indented!), compile and run:\n./tester step2\nCommit and Sync your code to github.\n\n\n\n\n\n\nNote\n\n\n\nThe autograding tests should now pass “step1” and “step2”. (Tests for the other steps will pass, because the test cases are currently empty.)"
+    "section": "Step 2. Inserting Data into Tables",
+    "text": "Step 2. Inserting Data into Tables\nNext, you will add sample data to test your database.\n\nTask: Insert Students\n\nType and execute the following SQL commands to insert students:\n\nINSERT INTO students (first_name, last_name, birthdate, major) VALUES\n('Alice', 'Johnson', '2002-05-14', 'Computer Science'),\n('Bob', 'Smith', '2001-09-20', 'Data Science'),\n('Charlie', 'Davis', '2003-01-10', 'Business');\n\n\n\n\n\n\nWarning\n\n\n\nCheckpoint: Click on students table → View Data to confirm the data was inserted.\n\n\n\n\nTask: Insert Courses\nNow, insert some courses:\nINSERT INTO courses (course_name, department) VALUES\n('Database Management', 'Computer Science'),\n('Machine Learning', 'Data Science'),\n('Marketing Strategies', 'Business');\n\n\n\n\n\n\nWarning\n\n\n\nCheckpoint: Verify the courses table contains the inserted records.\n\n\n\n\nTask: Enroll Students in Courses\nFinally, insert sample enrollments:\nINSERT INTO enrollments (student_id, course_id) VALUES\n(1, 1),\n(2, 1),\n(2, 2),\n(3, 3);\n\n\n\n\n\n\nWarning\n\n\n\nCheckpoint: Verify the enrollments table now contains data linking students to courses."
   },
   {
-    "objectID": "projects/proj01.html#step-3.-compute-prime-numbers",
-    "href": "projects/proj01.html#step-3.-compute-prime-numbers",
+    "objectID": "projects/proj01.html#step-3.-writing-and-running-sql-queries",
+    "href": "projects/proj01.html#step-3.-writing-and-running-sql-queries",
     "title": "Week 1 Project: Student Course Registration System",
-    "section": "Step 3. Compute prime numbers",
-    "text": "Step 3. Compute prime numbers\nWrite a function prototype isPrime() in the primes.h file. The function takes an unsigned integer and returns a boolean.\nFor the implementation in the .cpp file, isPrime() returns true if the value is a prime number (and false otherwise). Here is the pseudo-code:\nA prime number is a number that is evenly divisible by only itself and 1. That is,\n  for each integer \"divisor\" value from 2 through n / 2,\n    if you divide the number by that divisor, and the remainder is 0, \n          that number is not prime -- return false.\n  if you get through all possible divisors, the number is prime: return true.\nNote that 1 is not a prime (for some reason). 2 is the first prime. Your code may have to handle this case specially (my code does).\nAdd code to the “step3” TEST_CASE in the tests.cpp file to test isPrime().\nMake sure you test if 4 is a prime (it isn’t). Write other REQUIRE() calls to test other values.\nWhen you are satisfied that your code is complete, Commit and Sync it to github and check that the “step3” test succeeds."
+    "section": "Step 3. Writing and Running SQL Queries",
+    "text": "Step 3. Writing and Running SQL Queries\nNow that your database is set up, you will write SQL queries to retrieve information.\n\nTask 1: List All Courses in the Computer Science Department\nWrite a query to retrieve all courses offered in the Computer Science department.\n-- This is a query to retrieve all courses from the Business department\nSELECT * FROM courses WHERE department = 'Business';\n✅ Expected Output: Should return the “Database Management” course.\n\n\nTask 2: Retrieve All Students.\nWrite an SQL query to display all students in the database ordered by their last names.\n-- This a query that returns all the students.\nSELECT * FROM students;\n✅ Expected Output: A list of all students with their student_id, first_name, last_name, birthdate, and major. They should be ordered in ascending order by ther last names.\n\n\nTask 3: Find All Students Enrolled in “Database Management”\nRetrieve the names of all students who are enrolled in the “Database Management” course.\nSELECT s.first_name, s.last_name FROM students s JOIN enrollments e ON s.student_id = e.student_id JOIN courses c ON e.course_id = c.course_id WHERE c.course_name = ‘Database Management’;\n✅ Expected Output:\nAlice Johnson Bob Smith\n\n\nTask 4: Count the Number of Students in Each Course\nWrite a query to count how many students are enrolled in each course.\nSELECT c.course_name, COUNT(e.student_id) AS num_students FROM courses c LEFT JOIN enrollments e ON c.course_id = e.course_id GROUP BY c.course_name;\n✅ Expected Output: A table showing each course name and the number of enrolled students."
   },
   {
-    "objectID": "projects/proj01.html#step-4.-collecting-prime-numbers",
-    "href": "projects/proj01.html#step-4.-collecting-prime-numbers",
+    "objectID": "projects/proj01.html#final-deliverables",
+    "href": "projects/proj01.html#final-deliverables",
     "title": "Week 1 Project: Student Course Registration System",
-    "section": "Step 4. Collecting prime numbers",
-    "text": "Step 4. Collecting prime numbers\nIn your primes.h and primes.cpp files, create a function that:\n\nis called findNPrimes() that returns void\ntakes as a parameter an array of unsigned called primes\ntakes as a parameter an unsigned called size that is the size of the array\ncomputes the first size prime numbers, putting them into the array (of course, the code calls isPrime() to do the hard work)\n\n\n\n\n\n\n\nNote\n\n\n\nNote that this is a little tricky – if the size of the array is 100, do you loop up to 1000 to find the first 100 primes? Or 2000? You don’t know… So, use a while loop that keeps looping as long as the array is not full.\n\n\nIn tests.cpp in the “step4” TEST_CASE, write code to define an array of a certain size, call the function, and then REQUIRE that various correct values are in the array at the correct indices. You might find it useful to know that the 100th prime is 541.\nWhen you are satisfied that your code is complete, Commit and Sync it to github and check that the “step4” test succeeds.\nAt this point, all autograding tests should pass. You are done!\n\n\n\n\n\n\nOPTIONAL:\n\n\n\nFor fun, create an array of 100000 and fill it with primes. See how long it takes to compute and print out the last prime.\nYou can get the exact run time by running your project this way:\ntime ./tester \"step4\""
+    "section": "Final Deliverables",
+    "text": "Final Deliverables\nBy the end of this project, you should have:\n\nA SQLite3 database (university.db) with three tables:\n\nstudents, courses, and enrollments.\n\nSuccessfully inserted and retrieved data using SQL.\nWritten four SQL queries to extract meaningful information from the database.\nVerified all queries return the expected results using SQLiteStudio."
+  },
+  {
+    "objectID": "projects/proj01.html#bonus-challenge-optional",
+    "href": "projects/proj01.html#bonus-challenge-optional",
+    "title": "Week 1 Project: Student Course Registration System",
+    "section": "Bonus Challenge (Optional)",
+    "text": "Bonus Challenge (Optional)\nModify the database by adding:\n\nA new professors table and linking it to courses.\nAdditional constraints like UNIQUE or CHECK to enforce data integrity."
   },
   {
     "objectID": "projects/proj01.html#grading-rubric",
