@@ -136,42 +136,28 @@
     "href": "hws/hw01.html",
     "title": "Homework 01:",
     "section": "",
-    "text": "From zero to hero!"
+    "text": "From zero to hero!\nWelcome to CS354 - Database Management Systems! This is your first homework, and you will be guided through the steps you need to take to complete it."
   },
   {
     "objectID": "hws/hw01.html#objectives",
     "href": "hws/hw01.html#objectives",
     "title": "Homework 01:",
     "section": "Objectives:",
-    "text": "Objectives:\nIn this exercise, you will:\n\nBlablabla"
+    "text": "Objectives:\nIn this exercise, you will:\n\nShow you understand how SELECT queries work for different tables.\nShow you learned how to visualize data by filtering rows and columns according to what is required.\nShow you are able to follow instructions and navigate in a given database."
   },
   {
-    "objectID": "hws/hw01.html#introduction",
-    "href": "hws/hw01.html#introduction",
+    "objectID": "hws/hw01.html#to-moodle",
+    "href": "hws/hw01.html#to-moodle",
     "title": "Homework 01:",
-    "section": "Introduction",
-    "text": "Introduction\nToday’s exercise has two parts:\n\nBlablabla\nBlebleble"
-  },
-  {
-    "objectID": "hws/hw01.html#getting-started",
-    "href": "hws/hw01.html#getting-started",
-    "title": "Homework 01:",
-    "section": "Getting Started",
-    "text": "Getting Started\nAccept the invitation to the lab and do git clone to get the files, as usual. Make sure your partner is part of the same Team and edit the README.md file and share your repo on github.com"
-  },
-  {
-    "objectID": "hws/hw01.html#turn-in",
-    "href": "hws/hw01.html#turn-in",
-    "title": "Homework 01:",
-    "section": "Turn In",
-    "text": "Turn In\nDon’t forget to commit and push your changes."
+    "section": "To Moodle!",
+    "text": "To Moodle!\nYou will log in to Calvin’s Moodle, enter the course’s virtual classroom, and find a task named “Homework 1.” Follow the steps outlined there. Remember that we are using CodeRunner, a Moodle plugin that allows students to execute SQL queries and receive automatic feedback.\nYou may find this first assignment a bit challenging, but I will give you extra time to complete it so that you have enough time to get acquainted with the system."
   },
   {
     "objectID": "hws/hw01.html#grading-rubric",
     "href": "hws/hw01.html#grading-rubric",
     "title": "Homework 01:",
     "section": "Grading Rubric",
-    "text": "Grading Rubric\n20 pts total:\n\n1: isEmpty() is correct\n1: isFull() is correct\n2: peekTop()\n2: push()\n2: pop()\n2: peekTop(), explicit-value constructor, pop(), and push() all throw an exception correctly.\n8: thorough tests for Queue class.\n2: code is hospitable (perfectly indented, etc.)\n\nWays students lost points in the past:\n\n-4: missing tests for Queue\n-4: missing implementation for Queue\n-2: Your Queue::remove deletes the whole Queue, and the test did not catch this\n-7: Queue does not compile and no tests for it.\n-3: Queue::peekBack, ::peekFront, ::add, ::remove, ::isEmpty, and ::Queue to a “myList” field, which does not exist. Missing implementation for destructor\n-1: Missing test for Queue::remove\n-1: Need to decrease size in Queue::remove\n-2: Queue::add does not properly keep list linked, and tests do not catch this (try an add followed by a remove followed by a check–it won’t work)"
+    "text": "Grading Rubric\n100 pts total."
   },
   {
     "objectID": "hws/hw03.html",
@@ -602,7 +588,7 @@
     "href": "projects/proj01.html#grading-rubric",
     "title": "Week 1 Project: Student Course Registration System",
     "section": "Grading Rubric",
-    "text": "Grading Rubric\nThis project is worth 100 pts:\nGrade will be given by Quiz available on Moodle."
+    "text": "Grading Rubric\nThis project is worth 100 pts:\nGrade will be given by the Quiz available on Moodle from Wednesday (3/19) until the following Wednesday (3/26)."
   },
   {
     "objectID": "projects/proj02.html",

@@ -246,4 +246,4 @@ Modify the database by adding:
 
 This project is worth 100 pts:
 
-Grade will be given by Quiz available on Moodle.
+Grade will be given by the Quiz available on Moodle from Wednesday (3/19) until the following Wednesday (3/26).
