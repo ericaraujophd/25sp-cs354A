@@ -1,5 +1,5 @@
 ---
-title: "Homework 01: "
+title: "Homework 01: From zero to..."
 format: 
   html:
     css: /hws/hw-styles.css

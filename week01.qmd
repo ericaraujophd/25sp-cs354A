@@ -8,12 +8,12 @@ title: "Week 01: Introduction to Databases & SQL Basics"
 
 At the end of this unit, students will be able to...
 
-1. Explain the purpose and importance of relational databases.
-2. Differentiate between relational databases and other types of data storage.
-3. Write basic SQL queries to retrieve data.
-4. Use WHERE clauses and ORDER BY to filter and sort results.
-5. Understand SQL syntax and basic commands.
-6. Analyze a dataset using simple queries.
+1.  Explain the purpose and importance of relational databases.
+2.  Differentiate between relational databases and other types of data storage.
+3.  Write basic SQL queries to retrieve data.
+4.  Use WHERE clauses and ORDER BY to filter and sort results.
+5.  Understand SQL syntax and basic commands.
+6.  Analyze a dataset using simple queries.
 
 #### 
 
@@ -22,57 +22,49 @@ At the end of this unit, students will be able to...
 ::::: slide-deck
 **Week 01: Slides**
 
+Only people at Calvin can access the slides.
+
 ::: slides
-[Slides](){target="_blank"}
+[Slides](https://calvincollege-my.sharepoint.com/:p:/g/personal/ea47_calvin_edu/Ed4i8gUmZMdPlhcFrXyUilsBnIxoMmYw0g0K3M1ifQR6aw?e=Adrz4w){target="_blank"}
 :::
 
 ::: reading
 -   [Chapters 1](){target="_blank"}
 :::
 
-```{=html}
-<!-- ::: video
-[Video](https://youtu.be/_YqEHZccujc)
-:::
--->
-```
 :::::
 
 <!-- ## Homework assignments -->
 
 :::::: homework
-**Homework 01: **
+**Homework 01:**
 
 ::: instructions
 [Instructions](/hws/hw01.qmd)
 :::
 
-::: starter
+<!-- ::: starter
 [Starter](){target="_blank"}
-:::
+::: -->
 
-::: slides
-[Dad Joke + Reflection](){target="_blank"}
-:::
 ::::::
 
 <!-- ## Lab -->
-
 ::::: lab
-**Project 01: **
+**Project 01:**
 
 ::: instructions
 [Instructions](/projects/proj01.qmd)
 :::
 
-::: starter
-[Starter](){target="_blank"}
-:::
+
 :::::
 
+```{=html}
 <!-- ::: exam
 **POGIL**
 
 -   [Array Addressing](https://docs.google.com/document/d/1myVaJT3i1hECM4BHs9LpbLz3a3heVPp6SJiEjoEvG_M/edit?tab=t.0#heading=h.im9274hm9wa0){target="_blank"} <!-- -   ([Answers](https://drive.google.com/file/d/1mn5yCzIJuURMiP3MOtO9amEQzUVAQCQZ/view?usp=sharing){target="_blank"}) -->
--   [Parameter Passing](https://docs.google.com/document/d/125hbFPo5PVcuGQ9pq4io23jns2kOEkfjo71S9WOkfjQ/edit){target="_blank"} <!-- -   ([Answers](https://drive.google.com/file/d/1rPum6ihNwUKRJpZBSTQF8v7QKfOdog11/view?usp=drive_link){target="_blank"}) -->
-::: -->
+```
+
+-   [Parameter Passing](https://docs.google.com/document/d/125hbFPo5PVcuGQ9pq4io23jns2kOEkfjo71S9WOkfjQ/edit){target="_blank"} <!-- -   ([Answers](https://drive.google.com/file/d/1rPum6ihNwUKRJpZBSTQF8v7QKfOdog11/view?usp=drive_link){target="_blank"}) --> ::: --\>

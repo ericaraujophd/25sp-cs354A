@@ -59,7 +59,7 @@
     "href": "week01.html#slides-videos-and-application-exercises",
     "title": "Week 01: Introduction to Databases & SQL Basics",
     "section": "Slides, videos, and application exercises",
-    "text": "Slides, videos, and application exercises\n\nWeek 01: Slides\n\nSlides\n\n\n\nChapters 1\n\n\n\n\n\n\nHomework 01: \n\nInstructions\n\n\nStarter\n\n\nDad Joke + Reflection\n\n\n\n\nProject 01: \n\nInstructions\n\n\nStarter\n\n\n\n\nParameter Passing  ::: –&gt;",
+    "text": "Slides, videos, and application exercises\n\nWeek 01: Slides\nOnly people at Calvin can access the slides.\n\nSlides\n\n\n\nChapters 1\n\n\n\n\n\nHomework 01:\n\nInstructions\n\n\n\n\n\nProject 01:\n\nInstructions\n\n\n\n\nParameter Passing  ::: –&gt;",
     "crumbs": [
       "Content",
       "Week 01: Introduction to Databases & SQL Basics"
@@ -134,28 +134,28 @@
   {
     "objectID": "hws/hw01.html",
     "href": "hws/hw01.html",
-    "title": "Homework 01:",
+    "title": "Homework 01: From zero to…",
     "section": "",
     "text": "From zero to hero!\nWelcome to CS354 - Database Management Systems! This is your first homework, and you will be guided through the steps you need to take to complete it."
   },
   {
     "objectID": "hws/hw01.html#objectives",
     "href": "hws/hw01.html#objectives",
-    "title": "Homework 01:",
+    "title": "Homework 01: From zero to…",
     "section": "Objectives:",
     "text": "Objectives:\nIn this exercise, you will:\n\nShow you understand how SELECT queries work for different tables.\nShow you learned how to visualize data by filtering rows and columns according to what is required.\nShow you are able to follow instructions and navigate in a given database."
   },
   {
     "objectID": "hws/hw01.html#to-moodle",
     "href": "hws/hw01.html#to-moodle",
-    "title": "Homework 01:",
+    "title": "Homework 01: From zero to…",
     "section": "To Moodle!",
     "text": "To Moodle!\nYou will log in to Calvin’s Moodle, enter the course’s virtual classroom, and find a task named “Homework 1.” Follow the steps outlined there. Remember that we are using CodeRunner, a Moodle plugin that allows students to execute SQL queries and receive automatic feedback.\nYou may find this first assignment a bit challenging, but I will give you extra time to complete it so that you have enough time to get acquainted with the system."
   },
   {
     "objectID": "hws/hw01.html#grading-rubric",
     "href": "hws/hw01.html#grading-rubric",
-    "title": "Homework 01:",
+    "title": "Homework 01: From zero to…",
     "section": "Grading Rubric",
     "text": "Grading Rubric\n100 pts total."
   },
