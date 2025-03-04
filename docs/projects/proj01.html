@@ -425,14 +425,21 @@ Warning
 <section id="task-3-find-all-students-enrolled-in-database-management" class="level3">
 <h3 class="anchored" data-anchor-id="task-3-find-all-students-enrolled-in-database-management">Task 3: Find All Students Enrolled in “Database Management”</h3>
 <p>Retrieve the names of all students who are enrolled in the “Database Management” course.</p>
-<p>SELECT s.first_name, s.last_name FROM students s JOIN enrollments e ON s.student_id = e.student_id JOIN courses c ON e.course_id = c.course_id WHERE c.course_name = ‘Database Management’;</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> s.first_name, s.last_name</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> students s</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="kw">JOIN</span> enrollments e <span class="kw">ON</span> s.student_id <span class="op">=</span> e.student_id</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="kw">JOIN</span> courses c <span class="kw">ON</span> e.course_id <span class="op">=</span> c.course_id</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> c.course_name <span class="op">=</span> <span class="st">'Database Management'</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>✅ Expected Output:</p>
 <p>Alice Johnson Bob Smith</p>
 </section>
 <section id="task-4-count-the-number-of-students-in-each-course" class="level3">
 <h3 class="anchored" data-anchor-id="task-4-count-the-number-of-students-in-each-course">Task 4: Count the Number of Students in Each Course</h3>
 <p>Write a query to count how many students are enrolled in each course.</p>
-<p>SELECT c.course_name, COUNT(e.student_id) AS num_students FROM courses c LEFT JOIN enrollments e ON c.course_id = e.course_id GROUP BY c.course_name;</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> c.course_name, <span class="fu">COUNT</span>(e.student_id) <span class="kw">AS</span> num_students</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> courses c</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="kw">LEFT</span> <span class="kw">JOIN</span> enrollments e <span class="kw">ON</span> c.course_id <span class="op">=</span> e.course_id</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> c.course_name;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>✅ Expected Output: A table showing each course name and the number of enrolled students.</p>
 </section>
 </section>
@@ -446,7 +453,7 @@ Warning
 </ul></li>
 <li>Successfully inserted and retrieved data using SQL.</li>
 <li>Written four SQL queries to extract meaningful information from the database.</li>
-<li>Verified all queries return the expected results using SQLiteStudio.</li>
+<li>Verified all queries return the expected results on Moodle.</li>
 </ul>
 </section>
 <section id="bonus-challenge-optional" class="level2">
@@ -459,25 +466,8 @@ Warning
 </section>
 <section id="grading-rubric" class="level2">
 <h2 class="anchored" data-anchor-id="grading-rubric">Grading Rubric</h2>
-<p>This project is worth 20 pts:</p>
-<ul>
-<li>3 points for each of steps 1 and 2 (6 pts total)</li>
-<li>2 pts for correctness</li>
-<li>1 pt for thorough tests</li>
-<li>5 points for step 3</li>
-<li>6 points for step 4</li>
-<li>3 pts for code beauty and hospitality.</li>
-</ul>
-<p>Here are some ways students lost points in the past:</p>
-<ul>
-<li>-6: Missing step 4</li>
-<li>-1: poor indentation</li>
-<li>-1: low and high are supposed to be parameters</li>
-<li>-3: Missing step 2</li>
-<li>-1: tests in step1 are insufficient.</li>
-<li>-1: tests in step2 do not test all cases.</li>
-<li></li>
-</ul>
+<p>This project is worth 100 pts:</p>
+<p>Grade will be given by Quiz available on Moodle.</p>
 
 
 </section>
