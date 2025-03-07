@@ -14,6 +14,14 @@ Your grade in this course will be based on:
 -   **Homework:** 20%
 -   **Tests (2, including the final test during the Exam time):** 30%
 
+# Textbooks
+
+- Simon, Mark. Getting Started with SQL and Databases: Managing and Manipulating Data with SQL. 1st ed. Berkeley, CA: Apress, 2023. doi:10.1007/978-1-4842-9493-2.
+- Murach’s SQL Server 2019 for Developers : Training and Reference / Bryan Syverson, Joel Murach, n.d.
+- Elmasri, Ramez, and Shamkant B Navathe. Fundamentals of Database Systems. Seventh edition. Boston, Massachusetts: Pearson Education UK, 2016.
+
+
+
 # Grading and Late Work Policies {.unnumbered}
 
 1.  Each homework and project will have a **Due date** associated with it. This is the date by which you should submit your work in order to avoid falling behind in the course.

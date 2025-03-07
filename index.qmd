@@ -13,7 +13,7 @@ See you in class!
 
 
 :::{.callout-warning}
-This a permanently in construction website, so please let me know if you find any information missing or had some bad experience with the links and interface throughout the semester.
+This website is permanently under construction, so please let me know if you find any missing information or experience issues with the links and interface throughout the semester.
 :::
 
 <!-- The source code for everything you see here can be found [on GitHub](https://github.com/rstudio-education/datascience-box). -->
