@@ -29,7 +29,8 @@ At the end of this unit, students will be able to...
 :::
 
 ::: reading
--   [Chapters 6 and 7](){target="_blank"}
+Mark Simon. (2023). Getting Started with SQL and Databases : Managing and Manipulating Data with SQL. Apress. 
+-   [Chapters 4, 5 and 6](https://calvin.primo.exlibrisgroup.com/permalink/01CALVIN_INST/1p09kqq/cdi_skillsoft_books24x7_bks000165833){target="_blank"}
 :::
 
 ```{=html}

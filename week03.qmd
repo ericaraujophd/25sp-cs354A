@@ -30,7 +30,9 @@ Students will be able to:
 :::
 
 ::: reading
-No readings for Week 03.
+Mark Simon. (2023). Getting Started with SQL and Databases : Managing and Manipulating Data with SQL. Apress. 
+-   [Chapters 7, 8 and 9](https://calvin.primo.exlibrisgroup.com/permalink/01CALVIN_INST/1p09kqq/cdi_skillsoft_books24x7_bks000165833){target="_blank"}
+
 :::
 ::::::
 

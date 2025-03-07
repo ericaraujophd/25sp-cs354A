@@ -29,7 +29,8 @@ Only people at Calvin can access the slides.
 :::
 
 ::: reading
--   [Chapters 1](){target="_blank"}
+Mark Simon. (2023). Getting Started with SQL and Databases : Managing and Manipulating Data with SQL. Apress. 
+-   [Chapters 1, 2 and 3](https://calvin.primo.exlibrisgroup.com/permalink/01CALVIN_INST/1p09kqq/cdi_skillsoft_books24x7_bks000165833){target="_blank"}
 :::
 
 :::::
