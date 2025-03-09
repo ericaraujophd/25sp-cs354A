@@ -1,5 +1,5 @@
 ---
-title: "Week 06: Database Management & Optimization"
+title: "Week 06: Database Management & Optimization (under construction)"
 # draft: true
 # draft-mode: visible
 ---
@@ -17,47 +17,32 @@ At the end of this unit, the student will be able to...
 
 ## Slides, videos, and application exercises
 
-::::::: slide-deck
+:::::: slide-deck
 **Week 06: Slides**
-
-::: slides
-[Slides - Linked Lists]()
-:::
-
-::: source
-[Code from Class]()
-:::
-
-::: reading
-No readings for Week 6.
-:::
-:::::::
-
-
-<!-- ## Homework assignments -->
-
-::: homework
-
-**Homework 06: **
-
-::: instructions
-[Instructions](/hws/hw06.qmd)
-:::
-
-::: starter
-[Source](){target="_blank"}
-:::
 
 ::: slides
 [Slides]()
 :::
 
-
+::: reading
+No readings for Week 6.
 :::
+::::::
+
+<!-- ## Homework assignments -->
+
+:::::: homework
+**Homework 06:**
+
+::: instructions
+[Instructions](/hws/hw06.qmd)
+:::
+
+
+::::::
 
 <!-- ## Project -->
 
-:::::: lab
+::: lab
 **Project 06: No project on Week 06**
-
-::::::
+:::

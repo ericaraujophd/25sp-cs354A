@@ -2,34 +2,34 @@
   {
     "objectID": "week02.html",
     "href": "week02.html",
-    "title": "Week 02: SQL – Intermediate Concepts",
+    "title": "Week 02: SQL – Intermediate Concepts (under construction)",
     "section": "",
     "text": "At the end of this unit, students will be able to…\n\nPerform data aggregation using GROUP BY and HAVING.\nWrite and execute INNER, LEFT-OUTER, RIGHT, and FULL JOINs.\nConstruct subqueries for complex queries.\nImplement SQL functions and expressions.\nUse SQL best practices for readable and efficient queries.\nOptimize SQL queries for better performance.",
     "crumbs": [
       "Content",
-      "Week 02: SQL – Intermediate Concepts"
+      "Week 02: SQL – Intermediate Concepts (under construction)"
     ]
   },
   {
     "objectID": "week02.html#slos-for-week-02",
     "href": "week02.html#slos-for-week-02",
-    "title": "Week 02: SQL – Intermediate Concepts",
+    "title": "Week 02: SQL – Intermediate Concepts (under construction)",
     "section": "",
     "text": "At the end of this unit, students will be able to…\n\nPerform data aggregation using GROUP BY and HAVING.\nWrite and execute INNER, LEFT-OUTER, RIGHT, and FULL JOINs.\nConstruct subqueries for complex queries.\nImplement SQL functions and expressions.\nUse SQL best practices for readable and efficient queries.\nOptimize SQL queries for better performance.",
     "crumbs": [
       "Content",
-      "Week 02: SQL – Intermediate Concepts"
+      "Week 02: SQL – Intermediate Concepts (under construction)"
     ]
   },
   {
     "objectID": "week02.html#slides-videos-and-application-exercises",
     "href": "week02.html#slides-videos-and-application-exercises",
-    "title": "Week 02: SQL – Intermediate Concepts",
+    "title": "Week 02: SQL – Intermediate Concepts (under construction)",
     "section": "Slides, videos, and application exercises",
-    "text": "Slides, videos, and application exercises\n\nWeek 02: Slides\n\nSlides\n\n\nCode from Class\n\n\nMark Simon. (2023). Getting Started with SQL and Databases : Managing and Manipulating Data with SQL. Apress. - Chapters 4, 5 and 6\n\n\n\n\n\nHomework 02: \n\nInstructions\n\n\nSource\n\n\nDad Joke + Reflection\n\n\n\n\nProject 02: \n\nInstructions\n\n\nStarter",
+    "text": "Slides, videos, and application exercises\n\nWeek 02: Slides\n\nSlides\n\n\n\nMark Simon. (2023). Getting Started with SQL and Databases : Managing and Manipulating Data with SQL. Apress. - Chapters 4, 5 and 6\n\n\n\n\n\nHomework 02: \n\nInstructions\n\n\n\n\n\nProject 02: \n\nInstructions",
     "crumbs": [
       "Content",
-      "Week 02: SQL – Intermediate Concepts"
+      "Week 02: SQL – Intermediate Concepts (under construction)"
     ]
   },
   {
@@ -68,67 +68,67 @@
   {
     "objectID": "week04.html",
     "href": "week04.html",
-    "title": "Week 04: Database Design – ER Modeling & Schema Refinement",
+    "title": "Week 04: Database Design – ER Modeling & Schema Refinement (under construction)",
     "section": "",
     "text": "Students will be able to…\n\nDesign ER diagrams to model database structures.\nConvert ER models into relational schemas.\nNormalize database schemas using BCNF and 4NF (briefly).\nIdentify and resolve redundancy issues in schemas.\nDefine and enforce primary and foreign key constraints.\nCreate SQL schemas from conceptual designs.",
     "crumbs": [
       "Content",
-      "Week 04: Database Design – ER Modeling & Schema Refinement"
+      "Week 04: Database Design – ER Modeling & Schema Refinement (under construction)"
     ]
   },
   {
     "objectID": "week04.html#slos-for-week-04",
     "href": "week04.html#slos-for-week-04",
-    "title": "Week 04: Database Design – ER Modeling & Schema Refinement",
+    "title": "Week 04: Database Design – ER Modeling & Schema Refinement (under construction)",
     "section": "",
     "text": "Students will be able to…\n\nDesign ER diagrams to model database structures.\nConvert ER models into relational schemas.\nNormalize database schemas using BCNF and 4NF (briefly).\nIdentify and resolve redundancy issues in schemas.\nDefine and enforce primary and foreign key constraints.\nCreate SQL schemas from conceptual designs.",
     "crumbs": [
       "Content",
-      "Week 04: Database Design – ER Modeling & Schema Refinement"
+      "Week 04: Database Design – ER Modeling & Schema Refinement (under construction)"
     ]
   },
   {
     "objectID": "week04.html#slides-videos-and-application-exercises",
     "href": "week04.html#slides-videos-and-application-exercises",
-    "title": "Week 04: Database Design – ER Modeling & Schema Refinement",
+    "title": "Week 04: Database Design – ER Modeling & Schema Refinement (under construction)",
     "section": "Slides, videos, and application exercises",
-    "text": "Slides, videos, and application exercises\n\nWeek 04: Slides\n\nSlides\n\n\nNo readings for Week 4.\n\n\n\n\nHomework 04: \n\nInstructions\n\n\nStarter\n\n\nSlides\n\n\n\n\nProject 04: \n\nInstructions\n\n\nStarter\n\n\n\nExam 1\nExam on Friday during class. Bring your laptop. Content: Weeks 1 - 3.",
+    "text": "Slides, videos, and application exercises\n\nWeek 04: Slides\n\nSlides\n\n\nNo readings for Week 4.\n\n\n\n\nHomework 04:\n\nInstructions\n\n\n\n\nProject 04:\n\nInstructions\n\n\n\nExam 1\nExam on Friday during class. Bring your laptop. Content: Weeks 1 - 3.",
     "crumbs": [
       "Content",
-      "Week 04: Database Design – ER Modeling & Schema Refinement"
+      "Week 04: Database Design – ER Modeling & Schema Refinement (under construction)"
     ]
   },
   {
     "objectID": "week07.html",
     "href": "week07.html",
-    "title": "Week 07: Final Project and Course Wrap-Up",
+    "title": "Week 07: Final Project and Course Wrap-Up (under construction)",
     "section": "",
     "text": "By the end of this unit, students will be able to…\n\nDesign and implement a database system from scratch.\nWrite SQL queries to solve real-world data retrieval problems.\nPresent a comprehensive database solution addressing a given scenario.\nCompare different database designs and justify choices.\nDemonstrate proficiency in SQL and database management concepts.\nReflect on the course content and their learning experience.",
     "crumbs": [
       "Content",
-      "Week 07: Final Project and Course Wrap-Up"
+      "Week 07: Final Project and Course Wrap-Up (under construction)"
     ]
   },
   {
     "objectID": "week07.html#slos-for-week-07",
     "href": "week07.html#slos-for-week-07",
-    "title": "Week 07: Final Project and Course Wrap-Up",
+    "title": "Week 07: Final Project and Course Wrap-Up (under construction)",
     "section": "",
     "text": "By the end of this unit, students will be able to…\n\nDesign and implement a database system from scratch.\nWrite SQL queries to solve real-world data retrieval problems.\nPresent a comprehensive database solution addressing a given scenario.\nCompare different database designs and justify choices.\nDemonstrate proficiency in SQL and database management concepts.\nReflect on the course content and their learning experience.",
     "crumbs": [
       "Content",
-      "Week 07: Final Project and Course Wrap-Up"
+      "Week 07: Final Project and Course Wrap-Up (under construction)"
     ]
   },
   {
     "objectID": "week07.html#slides-videos-and-application-exercises",
     "href": "week07.html#slides-videos-and-application-exercises",
-    "title": "Week 07: Final Project and Course Wrap-Up",
+    "title": "Week 07: Final Project and Course Wrap-Up (under construction)",
     "section": "Slides, videos, and application exercises",
-    "text": "Slides, videos, and application exercises\n\nWeek 07: Slides\n\nSlides\n\n\nVideo\n\n\nNo readings for Week 07.\n\n\n\n\nHomework 7:\n\nInstructions\n\n\nStarter\n\n\n\n\nProject 07: Final Project\n\nInstructions\n\n\nSource\n\n\nSlides",
+    "text": "Slides, videos, and application exercises\n\nWeek 07: Slides\n\nSlides\n\n\nNo readings for Week 07.\n\n\n\n\nHomework 7:\n\nInstructions\n\n\n\n\nProject 07: Final Project\n\nInstructions",
     "crumbs": [
       "Content",
-      "Week 07: Final Project and Course Wrap-Up"
+      "Week 07: Final Project and Course Wrap-Up (under construction)"
     ]
   },
   {
@@ -859,67 +859,67 @@
   {
     "objectID": "week06.html",
     "href": "week06.html",
-    "title": "Week 06: Database Management & Optimization",
+    "title": "Week 06: Database Management & Optimization (under construction)",
     "section": "",
     "text": "At the end of this unit, the student will be able to…\n\nDevelop a backup and recovery plan for a database system.\nExplain different techniques for performance tuning.\nUnderstand database partitioning and indexing strategies.\nProfile SQL queries to detect inefficiencies.\nDiscuss database integration with software applications.\nApply database optimization techniques in real-world scenarios.",
     "crumbs": [
       "Content",
-      "Week 06: Database Management & Optimization"
+      "Week 06: Database Management & Optimization (under construction)"
     ]
   },
   {
     "objectID": "week06.html#slos-for-week-06",
     "href": "week06.html#slos-for-week-06",
-    "title": "Week 06: Database Management & Optimization",
+    "title": "Week 06: Database Management & Optimization (under construction)",
     "section": "",
     "text": "At the end of this unit, the student will be able to…\n\nDevelop a backup and recovery plan for a database system.\nExplain different techniques for performance tuning.\nUnderstand database partitioning and indexing strategies.\nProfile SQL queries to detect inefficiencies.\nDiscuss database integration with software applications.\nApply database optimization techniques in real-world scenarios.",
     "crumbs": [
       "Content",
-      "Week 06: Database Management & Optimization"
+      "Week 06: Database Management & Optimization (under construction)"
     ]
   },
   {
     "objectID": "week06.html#slides-videos-and-application-exercises",
     "href": "week06.html#slides-videos-and-application-exercises",
-    "title": "Week 06: Database Management & Optimization",
+    "title": "Week 06: Database Management & Optimization (under construction)",
     "section": "Slides, videos, and application exercises",
-    "text": "Slides, videos, and application exercises\n\nWeek 06: Slides\n\nSlides - Linked Lists\n\n\nCode from Class\n\n\nNo readings for Week 6.\n\n\n\n\nHomework 06: \n\nInstructions\n\n\nSource\n\n\nSlides\n\n\n\n\nProject 06: No project on Week 06",
+    "text": "Slides, videos, and application exercises\n\nWeek 06: Slides\n\nSlides\n\n\nNo readings for Week 6.\n\n\n\n\nHomework 06:\n\nInstructions\n\n\n\n\nProject 06: No project on Week 06",
     "crumbs": [
       "Content",
-      "Week 06: Database Management & Optimization"
+      "Week 06: Database Management & Optimization (under construction)"
     ]
   },
   {
     "objectID": "week05.html",
     "href": "week05.html",
-    "title": "Week 05: Advanced SQL & Integrity Constraints",
+    "title": "Week 05: Advanced SQL & Integrity Constraints (under construction)",
     "section": "",
     "text": "By the end of this unit, students will be able to…\n\nImplement integrity constraints (PRIMARY KEY, FOREIGN KEY, CHECK).\nWrite and execute triggers for database automation.\nOptimize SQL queries for improved performance.\nDemonstrate SQL injection and discuss prevention strategies.\nAssign user roles and permissions for database security.\nDebug and troubleshoot complex SQL queries.",
     "crumbs": [
       "Content",
-      "Week 05: Advanced SQL & Integrity Constraints"
+      "Week 05: Advanced SQL & Integrity Constraints (under construction)"
     ]
   },
   {
     "objectID": "week05.html#slos-for-week-05",
     "href": "week05.html#slos-for-week-05",
-    "title": "Week 05: Advanced SQL & Integrity Constraints",
+    "title": "Week 05: Advanced SQL & Integrity Constraints (under construction)",
     "section": "",
     "text": "By the end of this unit, students will be able to…\n\nImplement integrity constraints (PRIMARY KEY, FOREIGN KEY, CHECK).\nWrite and execute triggers for database automation.\nOptimize SQL queries for improved performance.\nDemonstrate SQL injection and discuss prevention strategies.\nAssign user roles and permissions for database security.\nDebug and troubleshoot complex SQL queries.",
     "crumbs": [
       "Content",
-      "Week 05: Advanced SQL & Integrity Constraints"
+      "Week 05: Advanced SQL & Integrity Constraints (under construction)"
     ]
   },
   {
     "objectID": "week05.html#slides-videos-and-application-exercises",
     "href": "week05.html#slides-videos-and-application-exercises",
-    "title": "Week 05: Advanced SQL & Integrity Constraints",
+    "title": "Week 05: Advanced SQL & Integrity Constraints (under construction)",
     "section": "Slides, videos, and application exercises",
-    "text": "Slides, videos, and application exercises\n\nWeek 05: Slides\n\nSlides\n\n\nCode from Class\n\n\nNo readings for Week 05.\n\n\n\n\nHomework 05: No homework for Week 05\n\n\n\nProject 05: No Project for Week 05",
+    "text": "Slides, videos, and application exercises\n\nWeek 05: Slides\n\nSlides\n\n\nNo readings for Week 05.\n\n\n\n\nHomework 05: No homework for Week 05\n\n\n\nProject 05: No Project for Week 05",
     "crumbs": [
       "Content",
-      "Week 05: Advanced SQL & Integrity Constraints"
+      "Week 05: Advanced SQL & Integrity Constraints (under construction)"
     ]
   },
   {
@@ -927,39 +927,39 @@
     "href": "resources.html",
     "title": "Course Resources",
     "section": "",
-    "text": "Links to SQL training websites\n\n\n\n\n\n\nImportant\n\n\n\nThese links were last updated on 2/3/2025. Please let me know if any of them are broken.\n\n\n\nReal Python SQL\nSQLZoo\nCodeAcademy\nHackerRank\nLeetCode\nW3Schools\nSQLBolt\nMode\nSQLPad\nLearnSQL\nSQLGuroo\nDB Fiddle"
+    "text": "Links to websites offering SQL training\n\n\n\n\n\n\nImportant\n\n\n\nThese links were last updated on 02/03/2025. Please let me know if you encounter any broken links.\n\n\n\nReal Python SQL\nSQLZoo\nCodeAcademy\nHackerRank\nLeetCode\nW3Schools\nSQLBolt\nMode\nSQLPad\nLearnSQL\nSQLGuroo\nDB Fiddle"
   },
   {
     "objectID": "week03.html",
     "href": "week03.html",
-    "title": "Week 03: SQL – Data Modification & Advanced Queries",
+    "title": "Week 03: SQL – Data Modification & Advanced Queries (under construction)",
     "section": "",
     "text": "Students will be able to:\n\nInsert new records using the INSERT statement.\nModify existing records using the UPDATE statement.\nDelete records using the DELETE statement.\nManage transactions using COMMIT and ROLLBACK.\nDifferentiate between materialized and non-materialized views.\nCreate and manage indexes to optimize query performance.",
     "crumbs": [
       "Content",
-      "Week 03: SQL – Data Modification & Advanced Queries"
+      "Week 03: SQL – Data Modification & Advanced Queries (under construction)"
     ]
   },
   {
     "objectID": "week03.html#slos-for-week-03",
     "href": "week03.html#slos-for-week-03",
-    "title": "Week 03: SQL – Data Modification & Advanced Queries",
+    "title": "Week 03: SQL – Data Modification & Advanced Queries (under construction)",
     "section": "",
     "text": "Students will be able to:\n\nInsert new records using the INSERT statement.\nModify existing records using the UPDATE statement.\nDelete records using the DELETE statement.\nManage transactions using COMMIT and ROLLBACK.\nDifferentiate between materialized and non-materialized views.\nCreate and manage indexes to optimize query performance.",
     "crumbs": [
       "Content",
-      "Week 03: SQL – Data Modification & Advanced Queries"
+      "Week 03: SQL – Data Modification & Advanced Queries (under construction)"
     ]
   },
   {
     "objectID": "week03.html#slides-videos-and-application-exercises",
     "href": "week03.html#slides-videos-and-application-exercises",
-    "title": "Week 03: SQL – Data Modification & Advanced Queries",
+    "title": "Week 03: SQL – Data Modification & Advanced Queries (under construction)",
     "section": "Slides, videos, and application exercises",
-    "text": "Slides, videos, and application exercises\n\nWeek 03: Slides\n\nSlides\n\n\nCode\n\n\nMark Simon. (2023). Getting Started with SQL and Databases : Managing and Manipulating Data with SQL. Apress. - Chapters 7, 8 and 9\n\n\n\n\nHomework 03: \n\nInstructions\n\n\nStarter\n\n\nSlides\n\n\n\n\nProject 03: Classes\n\nInstructions\n\n\nStarter",
+    "text": "Slides, videos, and application exercises\n\nWeek 03: Slides\n\nSlides\n\n\nCode\n\n\nMark Simon. (2023). Getting Started with SQL and Databases : Managing and Manipulating Data with SQL. Apress. - Chapters 7, 8 and 9\n\n\n\n\nHomework 03: \n\nInstructions\n\n\n\n\nProject 03: Classes\n\nInstructions",
     "crumbs": [
       "Content",
-      "Week 03: SQL – Data Modification & Advanced Queries"
+      "Week 03: SQL – Data Modification & Advanced Queries (under construction)"
     ]
   }
 ]

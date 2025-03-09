@@ -1,5 +1,5 @@
 ---
-title: "Week 07: Final Project and Course Wrap-Up"
+title: "Week 07: Final Project and Course Wrap-Up (under construction)"
 # draft: true
 # draft-mode: visible
 ---
@@ -24,10 +24,6 @@ By the end of this unit, students will be able to...
 [Slides](){target="_blank"}
 :::
 
-::: video
-[Video](){target="_blank"}
-:::
-
 ::: reading
 No readings for Week 07.
 :::
@@ -42,9 +38,6 @@ No readings for Week 07.
 [Instructions](/hws/hw07.qmd)
 :::
 
-::: starter
-[Starter]()
-:::
 :::::
 
 <!-- ## Lab -->
@@ -56,12 +49,4 @@ No readings for Week 07.
 [Instructions](/projects/proj99-final.qmd)
 :::
 
-::: starter
-[Source]()
-:::
-
-::: slides
-[Slides]()
-:::
 ::::::
-

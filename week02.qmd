@@ -1,5 +1,5 @@
 ---
-title: "Week 02: SQL – Intermediate Concepts"
+title: "Week 02: SQL – Intermediate Concepts (under construction)"
 # draft: true
 # draft-mode: visible
 ---
@@ -24,9 +24,9 @@ At the end of this unit, students will be able to...
 [Slides](){target="_blank"}
 :::
 
-::: source
+<!-- ::: source
 [Code from Class](){target="_blank"}
-:::
+::: -->
 
 ::: reading
 Mark Simon. (2023). Getting Started with SQL and Databases : Managing and Manipulating Data with SQL. Apress. 
@@ -51,13 +51,10 @@ Mark Simon. (2023). Getting Started with SQL and Databases : Managing and Mani
 [Instructions](/hws/hw02.qmd)
 :::
 
-::: starter
+<!-- ::: starter
 [Source](){target="_blank"}
-:::
+::: -->
 
-::: slides
-[Dad Joke + Reflection](){target="_blank"}
-:::
 ::::::
 
 
@@ -69,18 +66,7 @@ Mark Simon. (2023). Getting Started with SQL and Databases : Managing and Mani
 [Instructions](/projects/proj02.qmd)
 :::
 
-::: starter
+<!-- ::: starter
 [Starter](){target="_blank"}
-:::
-:::::
-
-```{=html}
-<!-- ::: exam
-**POGIL**
-
--   [Array Addressing](https://docs.google.com/document/d/1myVaJT3i1hECM4BHs9LpbLz3a3heVPp6SJiEjoEvG_M/edit?tab=t.0#heading=h.im9274hm9wa0){target="_blank"} ([Answers](https://drive.google.com/file/d/1mn5yCzIJuURMiP3MOtO9amEQzUVAQCQZ/view?usp=sharing){target="_blank"})
--   [Parameter Passing](https://docs.google.com/document/d/125hbFPo5PVcuGQ9pq4io23jns2kOEkfjo71S9WOkfjQ/edit){target="_blank"} ([Answers](https://drive.google.com/file/d/1rPum6ihNwUKRJpZBSTQF8v7QKfOdog11/view?usp=drive_link){target="_blank"})
 ::: -->
-```
-
-
+:::::

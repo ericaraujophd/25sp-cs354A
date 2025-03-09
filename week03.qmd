@@ -1,5 +1,5 @@
 ---
-title: "Week 03: SQL – Data Modification & Advanced Queries"
+title: "Week 03: SQL – Data Modification & Advanced Queries (under construction)"
 format: 
   html:
     css: /styles.css
@@ -44,14 +44,6 @@ Mark Simon. (2023). Getting Started with SQL and Databases : Managing and Mani
 ::: instructions
 [Instructions](/hws/hw03.qmd)
 :::
-
-::: starter
-[Starter](){target="_blank"}
-:::
-
-::: slides
-[Slides]()
-:::
 ::::::
 
 <!-- ## Lab -->
@@ -63,8 +55,5 @@ Mark Simon. (2023). Getting Started with SQL and Databases : Managing and Mani
 [Instructions](/projects/proj03.qmd)
 :::
 
-::: starter
-[Starter](){target="_blank"}
-:::
 :::::
 

@@ -1,5 +1,5 @@
 ---
-title: "Week 05: Advanced SQL & Integrity Constraints"
+title: "Week 05: Advanced SQL & Integrity Constraints (under construction)"
 format: 
   html:
     css: /styles.css
@@ -27,9 +27,6 @@ By the end of this unit, students will be able to...
 [Slides]()
 :::
 
-::: source
-[Code from Class](){target="_blank"}
-:::
 
 ::: reading
 No readings for Week 05.
@@ -38,12 +35,12 @@ No readings for Week 05.
 
 <!-- ## Homework assignments -->
 
-::::: homework
+::: homework
 **Homework 05: No homework for Week 05**
-:::::
+:::
 
 <!-- ## Lab -->
 
-:::::: lab
+::: lab
 **Project 05: No Project for Week 05**
-::::::
+:::
