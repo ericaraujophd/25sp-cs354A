@@ -25,9 +25,9 @@ Students will be able to:
 [Slides]()
 :::
 
-::: starter
+<!-- ::: starter
 [Code](){target="_blank"}
-:::
+::: -->
 
 ::: reading
 Mark Simon. (2023). Getting Started with SQL and Databases : Managing and Manipulating Data with SQL. Apress. 
