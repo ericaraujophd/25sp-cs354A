@@ -9,13 +9,13 @@ format:
 
 In this exercise, you will:
 
--   Blablabla
+-   
 
 ## Introduction
 
 Blablabla
 
-<center>
+<!-- <center>
 
 <figure>
 
@@ -25,34 +25,13 @@ Blablabla
 
 </figure>
 
-</center>
+</center> -->
 
 ## Getting Started
-
-Accept the [invitation from github classroom](){target="_blank"} and use git clone, as usual.
-
-Edit the **README.md** file to add both your names and your partner's, and make sure you are in the same Team.
-
 
 
 ## Submit
 
 Don't forget to commit your changes.
 
-Grading Rubric: 25 points total
-
--   5 pts: `insert()` correct
--   5 pts: `contains()` correct
--   4 pts x 3 = 12 pts: traversals are correct
--   3 pts: code is neat and clean (hospitable)
-
-Ways students lost points in the past:
-
--   -1: `Node::contains` has to RETURN the value gotten from recursive calls of contains
--   -2: `insert()` should be recursive;
--   -1: `insert()` should throw an exception when item is already in tree
--   -2: very poor indentation
--   -2: `traversePostorder` and `traverseInorder` should call themselves, not traversePreorder
--   -2: `Node::traverseInOrder` needs to process item in the *middle* (and use `processItem` method) insert
-
-<!-- [^1]: how to add footnotes. -->
+Grading Rubric: XX points total
