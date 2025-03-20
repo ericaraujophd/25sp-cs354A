@@ -2,7 +2,7 @@
 title: "Instructors"
 ---
 
-This course has as instructor: Prof. Eric Araújo. 
+The instructor for this course is [Prof. Eric Araújo](https://ericaraujo.com/){target="_blank"}. 
 
 ## Office Hours
 
@@ -10,6 +10,6 @@ This course has as instructor: Prof. Eric Araújo.
 
 :::{.callout-warning}
 If you can't meet in during my office hours, use the link below to find free times in my schedule and send me an email requesting to meet during the selected time.
-:::
 
--   [Prof. Araújo's hours](https://outlook.office365.com/calendar/published/c0bd07a3f1d64aaf9a74c91921ce7536@calvin.edu/79189cd730424803bceba861959c7e752179000899390454025/calendar.html){target="_blank"}
+[Prof. Araújo's hours](https://outlook.office365.com/calendar/published/c0bd07a3f1d64aaf9a74c91921ce7536@calvin.edu/79189cd730424803bceba861959c7e752179000899390454025/calendar.html){target="_blank"}
+:::
