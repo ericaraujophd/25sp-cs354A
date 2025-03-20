@@ -9,7 +9,7 @@ The instructor for this course is [Prof. Eric Araújo](https://ericaraujo.com/){
 - **Thursdays** from 2pm until 4pm.
 
 :::{.callout-warning}
-If you can't meet in during my office hours, use the link below to find free times in my schedule and send me an email requesting to meet during the selected time.
+If you can't meet in during my office hours, use the link below to find free times in my schedule and [send me an email](mailto:eric.araujo%40calvin.edu?subject=Appointment%20request%20for%20CS112) requesting to meet during the selected time.
 
 [Prof. Araújo's hours](https://outlook.office365.com/calendar/published/c0bd07a3f1d64aaf9a74c91921ce7536@calvin.edu/79189cd730424803bceba861959c7e752179000899390454025/calendar.html){target="_blank"}
 :::
