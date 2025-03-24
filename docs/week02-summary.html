@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Project 02: Student Performance &amp; Enrollment Analysis (Using DBeaver) – CS 354 – Database Management Systems</title>
+<title>Week 02: SQL – Intermediate Concepts Summary – CS 354 – Database Management Systems</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -57,25 +57,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<link href="..//images/data-management.png" rel="icon" type="image/png">
-<script src="../site_libs/quarto-html/quarto.js"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href=".//images/data-management.png" rel="icon" type="image/png">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -106,11 +106,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="https://kit.fontawesome.com/78ddb093ea.js" crossorigin="anonymous"></script>
 
 
-<link rel="stylesheet" href="../projects/proj-styles.css">
-<meta property="og:title" content="Project 02: Student Performance &amp; Enrollment Analysis (Using DBeaver) – CS 354 – Database Management Systems">
+<meta property="og:title" content="Week 02: SQL – Intermediate Concepts Summary – CS 354 – Database Management Systems">
 <meta property="og:description" content="CS354 provides a hands-on introduction to relational databases, SQL querying, and database design, focusing on real-world applications, optimization, and security.">
 <meta property="og:site_name" content="CS 354 – Database Management Systems">
-<meta name="twitter:title" content="Project 02: Student Performance &amp; Enrollment Analysis (Using DBeaver) – CS 354 – Database Management Systems">
+<meta name="twitter:title" content="Week 02: SQL – Intermediate Concepts Summary – CS 354 – Database Management Systems">
 <meta name="twitter:description" content="CS354 provides a hands-on introduction to relational databases, SQL querying, and database design, focusing on real-world applications, optimization, and security.">
 <meta name="twitter:image" content="https://ericaraujo.com/25sp-cs354A/images/data-management.png">
 <meta name="twitter:creator" content="@ericfaraujo">
@@ -126,8 +125,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../images/data-management.png" alt="" class="navbar-logo">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <img src="./images/data-management.png" alt="" class="navbar-logo">
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -137,23 +136,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html"> 
+    <a class="nav-link" href="./index.html"> 
 <span class="menu-text">Overview</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../content.html"> 
+    <a class="nav-link" href="./content.html"> 
 <span class="menu-text">Content</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../instructors.html"> 
+    <a class="nav-link" href="./instructors.html"> 
 <span class="menu-text">Instructors</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../policies.html"> 
+    <a class="nav-link" href="./policies.html"> 
 <span class="menu-text">Course Policies</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../resources.html"> 
+    <a class="nav-link" href="./resources.html"> 
 <span class="menu-text">Resources</span></a>
   </li>  
 </ul>
@@ -180,25 +179,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#objective" id="toc-objective" class="nav-link active" data-scroll-target="#objective">🎯 Objective</a></li>
-  <li><a href="#learning-outcomes" id="toc-learning-outcomes" class="nav-link" data-scroll-target="#learning-outcomes">🧠 Learning Outcomes</a></li>
-  <li><a href="#step-1-creating-the-database" id="toc-step-1-creating-the-database" class="nav-link" data-scroll-target="#step-1-creating-the-database">Step 1: Creating the Database</a>
-  <ul class="collapse">
-  <li><a href="#database-schema" id="toc-database-schema" class="nav-link" data-scroll-target="#database-schema">🗂️ Database Schema</a></li>
-  <li><a href="#sample-data-insert-statements" id="toc-sample-data-insert-statements" class="nav-link" data-scroll-target="#sample-data-insert-statements">📥 Sample Data (Insert Statements)</a></li>
-  </ul></li>
-  <li><a href="#step-3-student-tasks" id="toc-step-3-student-tasks" class="nav-link" data-scroll-target="#step-3-student-tasks">Step 3: Student Tasks</a></li>
-  <li><a href="#submit" id="toc-submit" class="nav-link" data-scroll-target="#submit">Submit</a></li>
-  <li><a href="#grading-rubric" id="toc-grading-rubric" class="nav-link" data-scroll-target="#grading-rubric">Grading Rubric</a></li>
+  <li><a href="#slos-for-week-02" id="toc-slos-for-week-02" class="nav-link active" data-scroll-target="#slos-for-week-02">SLOs for Week 02</a></li>
+  <li><a href="#aggregation-grouping" id="toc-aggregation-grouping" class="nav-link" data-scroll-target="#aggregation-grouping">📏 1. Aggregation &amp; Grouping</a></li>
+  <li><a href="#sql-joins" id="toc-sql-joins" class="nav-link" data-scroll-target="#sql-joins">🔗 2. SQL Joins</a></li>
+  <li><a href="#subqueries" id="toc-subqueries" class="nav-link" data-scroll-target="#subqueries">🔍 3. Subqueries</a></li>
+  <li><a href="#sql-functions-expressions" id="toc-sql-functions-expressions" class="nav-link" data-scroll-target="#sql-functions-expressions">🧲 4. SQL Functions &amp; Expressions</a></li>
+  <li><a href="#sql-best-practices" id="toc-sql-best-practices" class="nav-link" data-scroll-target="#sql-best-practices">🪜 5. SQL Best Practices</a></li>
+  <li><a href="#query-optimization-basics" id="toc-query-optimization-basics" class="nav-link" data-scroll-target="#query-optimization-basics">⚡ 6. Query Optimization Basics</a></li>
+  <li><a href="#pro-tip-practice-readability-matter" id="toc-pro-tip-practice-readability-matter" class="nav-link" data-scroll-target="#pro-tip-practice-readability-matter">✅ Pro Tip: Practice &amp; Readability Matter!</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/ericaraujophd/25sp-cs354A/edit/main/projects/proj02.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/25sp-cs354A/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/ericaraujophd/25sp-cs354A/edit/main/week02-summary.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/25sp-cs354A/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Project 02: Student Performance &amp; Enrollment Analysis (Using DBeaver)</h1>
+<h1 class="title">Week 02: SQL – Intermediate Concepts Summary</h1>
 </div>
 
 
@@ -215,128 +212,88 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<!-- <center>
-
-<figure>
-
-<img src="/images/projects/proj02-header.png" alt="Falling AI Sand." width="500"/>
-
-<figcaption>Falling AI Sand.</figcaption>
-
-</figure>
-
-</center> -->
-<section id="objective" class="level2">
-<h2 class="anchored" data-anchor-id="objective">🎯 Objective</h2>
-<p>This project gives students practical experience using <strong>aggregate functions</strong>, <strong>joins</strong>, <strong>subqueries</strong>, <strong>SQL expressions</strong>, and <strong>query optimization</strong> in a multi-table database built with SQLite3 and DBeaver.</p>
-<p>Students will analyze student records, enrollment patterns, and course performance using intermediate SQL features covered in Week 2.</p>
-</section>
-<section id="learning-outcomes" class="level2">
-<h2 class="anchored" data-anchor-id="learning-outcomes">🧠 Learning Outcomes</h2>
-<p>By completing this project, students will: * Gain confidence using JOINs, GROUP BY, and subqueries * Apply functions and expressions in real-world data * Think critically about query design and efficiency * Practice building clean, well-structured SQL statements in DBeaver</p>
-</section>
-<section id="step-1-creating-the-database" class="level2">
-<h2 class="anchored" data-anchor-id="step-1-creating-the-database">Step 1: Creating the Database</h2>
-<section id="database-schema" class="level3">
-<h3 class="anchored" data-anchor-id="database-schema">🗂️ Database Schema</h3>
-<p>Create a new database named university.db with the following tables:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> students (</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    student_id <span class="dt">INTEGER</span> <span class="kw">PRIMARY</span> <span class="kw">KEY</span>,</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    first_name TEXT <span class="kw">NOT</span> <span class="kw">NULL</span>,</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    last_name TEXT <span class="kw">NOT</span> <span class="kw">NULL</span>,</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    major TEXT,</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    gpa <span class="dt">REAL</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>);</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> courses (</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    course_id <span class="dt">INTEGER</span> <span class="kw">PRIMARY</span> <span class="kw">KEY</span>,</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    course_name TEXT <span class="kw">NOT</span> <span class="kw">NULL</span>,</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    department TEXT <span class="kw">NOT</span> <span class="kw">NULL</span>,</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    credits <span class="dt">INTEGER</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>);</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> enrollments (</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    enrollment_id <span class="dt">INTEGER</span> <span class="kw">PRIMARY</span> <span class="kw">KEY</span>,</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    student_id <span class="dt">INTEGER</span>,</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    course_id <span class="dt">INTEGER</span>,</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    grade TEXT,</span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    <span class="kw">FOREIGN</span> <span class="kw">KEY</span> (student_id) <span class="kw">REFERENCES</span> students(student_id),</span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>    <span class="kw">FOREIGN</span> <span class="kw">KEY</span> (course_id) <span class="kw">REFERENCES</span> courses(course_id)</span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="sample-data-insert-statements" class="level3">
-<h3 class="anchored" data-anchor-id="sample-data-insert-statements">📥 Sample Data (Insert Statements)</h3>
-<p>Provide the following sample data for testing queries:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">-- Students</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">INSERT</span> <span class="kw">INTO</span> students (first_name, last_name, major, gpa) <span class="kw">VALUES</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>(<span class="st">'Alice'</span>, <span class="st">'Johnson'</span>, <span class="st">'Computer Science'</span>, <span class="fl">3.8</span>),</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>(<span class="st">'Bob'</span>, <span class="st">'Smith'</span>, <span class="st">'Business'</span>, <span class="fl">3.1</span>),</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>(<span class="st">'Charlie'</span>, <span class="st">'Davis'</span>, <span class="st">'Data Science'</span>, <span class="fl">3.5</span>),</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>(<span class="st">'Diana'</span>, <span class="st">'Lee'</span>, <span class="st">'Computer Science'</span>, <span class="fl">2.9</span>),</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>(<span class="st">'Ethan'</span>, <span class="st">'Brown'</span>, <span class="st">'Data Science'</span>, <span class="fl">3.7</span>);</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co">-- Courses</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="kw">INSERT</span> <span class="kw">INTO</span> courses (course_name, department, credits) <span class="kw">VALUES</span></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>(<span class="st">'Database Management'</span>, <span class="st">'Computer Science'</span>, <span class="dv">3</span>),</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>(<span class="st">'Marketing 101'</span>, <span class="st">'Business'</span>, <span class="dv">2</span>),</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>(<span class="st">'Machine Learning'</span>, <span class="st">'Data Science'</span>, <span class="dv">4</span>),</span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>(<span class="st">'Algorithms'</span>, <span class="st">'Computer Science'</span>, <span class="dv">3</span>);</span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="co">-- Enrollments</span></span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="kw">INSERT</span> <span class="kw">INTO</span> enrollments (student_id, course_id, grade) <span class="kw">VALUES</span></span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="st">'A'</span>),</span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>(<span class="dv">1</span>, <span class="dv">4</span>, <span class="st">'B'</span>),</span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>(<span class="dv">2</span>, <span class="dv">2</span>, <span class="st">'B'</span>),</span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>(<span class="dv">3</span>, <span class="dv">1</span>, <span class="st">'A'</span>),</span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>(<span class="dv">3</span>, <span class="dv">3</span>, <span class="st">'A'</span>),</span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>(<span class="dv">4</span>, <span class="dv">1</span>, <span class="st">'C'</span>),</span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>(<span class="dv">4</span>, <span class="dv">4</span>, <span class="st">'B'</span>),</span>
-<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>(<span class="dv">5</span>, <span class="dv">3</span>, <span class="st">'A'</span>);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="callout callout-style-simple callout-none no-icon">
-<div class="callout-body d-flex">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-body-container">
-<p>You can also <a href="../materials/proj02/week2_project_setup.sql">download the sql file</a> containing the setup of the database and open it in your DBeaver.</p>
-</div>
-</div>
-</div>
-<p>🧰 Quick Setup Instructions for DBeaver</p>
+<section id="slos-for-week-02" class="level2">
+<h2 class="anchored" data-anchor-id="slos-for-week-02">SLOs for Week 02</h2>
+<p>At the end of this unit, students will be able to…</p>
 <ol type="1">
-<li>Install DBeaver (Community Edition) if not already installed.</li>
-<li>Launch DBeaver and go to File → DBeaver → New Database Connection.</li>
-<li>Select SQLite as the database type.</li>
-<li>Click Next, then Create a new database file, and name it university.db.</li>
-<li>After connection, right-click on the database and choose SQL Editor → New SQL Script to run the setup and queries.</li>
-</ol>
-<p>⏳ Load the SQL Script</p>
-<ol type="1">
-<li>Right-click the new university.db connection in the Database Navigator pane.</li>
-<li>Select SQL Editor → New SQL Script.</li>
-<li>In the new script tab that appears, click File → Open File.</li>
-<li>Select the provided file: 📄 week2_project_setup.sql</li>
-<li>Make sure the <strong>Active Datasource</strong> (on the top of the window) is connected to the database created.</li>
+<li>Perform data aggregation using GROUP BY and HAVING.</li>
+<li>Write and execute INNER, LEFT-OUTER, RIGHT, and FULL JOINs.</li>
+<li>Construct subqueries for complex queries.</li>
+<li>Implement SQL functions and expressions.</li>
+<li>Use SQL best practices for readable and efficient queries.</li>
+<li>Optimize SQL queries for better performance.</li>
 </ol>
 </section>
+<section id="aggregation-grouping" class="level2">
+<h2 class="anchored" data-anchor-id="aggregation-grouping">📏 1. Aggregation &amp; Grouping</h2>
+<ul>
+<li><code>COUNT()</code>, <code>SUM()</code>, <code>AVG()</code>, <code>MIN()</code>, <code>MAX()</code> – summarize column values</li>
+<li><code>GROUP BY</code> – group rows by one or more columns</li>
+<li><code>HAVING</code> – filter grouped results</li>
+</ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> department, <span class="fu">AVG</span>(gpa)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> students</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> department</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="kw">HAVING</span> <span class="fu">AVG</span>(gpa) <span class="op">&gt;</span> <span class="fl">3.5</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="step-3-student-tasks" class="level2">
-<h2 class="anchored" data-anchor-id="step-3-student-tasks">Step 3: Student Tasks</h2>
-<p>You must write SQL queries to answer the following questions:</p>
-<p>🔹 Aggregation &amp; Grouping 1. Find the average GPA per major. 2. Count the number of students enrolled in each course. 3. List courses where the number of students enrolled is at least 2. 4. Find the average number of credits students are enrolled in (per student).</p>
-<p>🔹 Joins 5. Show each student’s first and last name along with the names of the courses they are enrolled in. 6. List all students and the courses they are NOT enrolled in (use LEFT JOIN and NULL filtering). 7. Show courses that have not been taken by any students (use LEFT JOIN or NOT IN).</p>
-<p>🔹 Subqueries 8. Find the names of students who have received an ‘A’ in any course (use IN or EXISTS). 9. List students whose GPA is higher than the average GPA of all students. 10. Retrieve courses that have more students than the average number of enrollments per course.</p>
-<p>🔹 Functions &amp; Expressions 11. Display students’ names in uppercase. 12. Show the length of each course name using a string function. 13. Calculate and display a weighted GPA score based on credits * GPA for each student (hint: use a JOIN and a mathematical expression).</p>
-<p>🔹 Query Optimization (Conceptual) 14. Suggest which column(s) should be indexed and why. 15. Rewrite a query using only the columns you need, avoiding SELECT *.</p>
+<section id="sql-joins" class="level2">
+<h2 class="anchored" data-anchor-id="sql-joins">🔗 2. SQL Joins</h2>
+<ul>
+<li><code>INNER JOIN</code> – only matching rows from both tables</li>
+<li><code>LEFT OUTER JOIN</code> – all from left table + matching right</li>
+<li><code>RIGHT OUTER JOIN</code> – all from right table + matching left</li>
+<li><code>FULL OUTER JOIN</code> – all rows from both tables (if supported)</li>
+</ul>
+<div class="sourceCode" id="cb2"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> s.name, c.name</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> students s</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="kw">LEFT</span> <span class="kw">JOIN</span> enrollments e <span class="kw">ON</span> s.<span class="kw">id</span> <span class="op">=</span> e.student_id</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="kw">LEFT</span> <span class="kw">JOIN</span> courses c <span class="kw">ON</span> e.course_id <span class="op">=</span> c.<span class="kw">id</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="submit" class="level2">
-<h2 class="anchored" data-anchor-id="submit">Submit</h2>
-<p>You will submit your queries on Moodle.</p>
-<!-- In VS Code, click on the Source Control icon on the upper left and type in a commit message, then click the checkmark icon to submit your code. Go through the various pop-up boxes to commit and sync your changes to your repo. -->
+<section id="subqueries" class="level2">
+<h2 class="anchored" data-anchor-id="subqueries">🔍 3. Subqueries</h2>
+<ul>
+<li>Use queries inside other queries</li>
+<li>Use with <code>IN</code>, <code>EXISTS</code>, <code>=</code>, <code>&lt;</code>, etc.</li>
+</ul>
+<div class="sourceCode" id="cb3"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">FROM</span> students</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> <span class="kw">id</span> <span class="kw">IN</span> (<span class="kw">SELECT</span> student_id <span class="kw">FROM</span> enrollments);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><strong>Correlated Subqueries:</strong> Reference outer query</li>
+<li><strong>Non-Correlated Subqueries:</strong> Can run independently</li>
+</ul>
 </section>
-<section id="grading-rubric" class="level2">
-<h2 class="anchored" data-anchor-id="grading-rubric">Grading Rubric</h2>
-<p>This project is worth 100 pts:</p>
+<section id="sql-functions-expressions" class="level2">
+<h2 class="anchored" data-anchor-id="sql-functions-expressions">🧲 4. SQL Functions &amp; Expressions</h2>
+<ul>
+<li>Math: <code>ROUND(gpa, 2)</code>, <code>ABS()</code>, <code>CEIL()</code>, <code>FLOOR()</code></li>
+<li>String: <code>UPPER()</code>, <code>LOWER()</code>, <code>LENGTH()</code>, <code>SUBSTR()</code></li>
+<li>Date (SQLite): <code>DATE()</code>, <code>STRFTIME('%Y', birthdate)</code></li>
+</ul>
+<div class="sourceCode" id="cb4"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="fu">UPPER</span>(first_name) <span class="op">||</span> <span class="st">' '</span> <span class="op">||</span> <span class="fu">UPPER</span>(last_name) <span class="kw">FROM</span> students;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="sql-best-practices" class="level2">
+<h2 class="anchored" data-anchor-id="sql-best-practices">🪜 5. SQL Best Practices</h2>
+<ul>
+<li>Use clear formatting and indentation</li>
+<li>Avoid <code>SELECT *</code> – specify needed columns</li>
+<li>Use aliases (<code>AS</code>) to clarify column and table names</li>
+</ul>
+<div class="sourceCode" id="cb5"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> s.first_name <span class="kw">AS</span> student, c.name <span class="kw">AS</span> course</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> students s <span class="kw">JOIN</span> enrollments e <span class="kw">ON</span> s.<span class="kw">id</span> <span class="op">=</span> e.student_id;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="query-optimization-basics" class="level2">
+<h2 class="anchored" data-anchor-id="query-optimization-basics">⚡ 6. Query Optimization Basics</h2>
+<ul>
+<li>Indexes speed up filtering and joining</li>
+<li>Filter early with <code>WHERE</code></li>
+<li>Avoid nested subqueries unless needed</li>
+<li>Use <code>EXPLAIN</code> (in supported engines) to analyze performance</li>
+</ul>
+<div class="sourceCode" id="cb6"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">EXPLAIN</span> <span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">FROM</span> students <span class="kw">WHERE</span> gpa <span class="op">&gt;</span> <span class="fl">3.5</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="pro-tip-practice-readability-matter" class="level2">
+<h2 class="anchored" data-anchor-id="pro-tip-practice-readability-matter">✅ Pro Tip: Practice &amp; Readability Matter!</h2>
+<p>Good SQL is not just correct—it’s <strong>efficient</strong>, <strong>maintainable</strong>, and <strong>easy to understand</strong>.</p>
 
 
 </section>
@@ -914,7 +871,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ericaraujophd/25sp-cs354A/edit/main/projects/proj02.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/25sp-cs354A/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ericaraujophd/25sp-cs354A/edit/main/week02-summary.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/25sp-cs354A/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">

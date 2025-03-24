@@ -1,5 +1,5 @@
 ---
-title: "Project 02: Soon..."
+title: "Project 02: Student Performance & Enrollment Analysis (Using DBeaver)"
 format: 
   html:
     css: /projects/proj-styles.css
@@ -19,13 +19,141 @@ eval: false
 
 </center> -->
 
+## 🎯 Objective
 
+This project gives students practical experience using **aggregate functions**, **joins**, **subqueries**, **SQL expressions**, and **query optimization** in a multi-table database built with SQLite3 and DBeaver.
+
+Students will analyze student records, enrollment patterns, and course performance using intermediate SQL features covered in Week 2.
+
+## 🧠 Learning Outcomes
+
+By completing this project, students will:
+* Gain confidence using JOINs, GROUP BY, and subqueries
+* Apply functions and expressions in real-world data
+* Think critically about query design and efficiency
+* Practice building clean, well-structured SQL statements in DBeaver
+
+## Step 1: Creating the Database
+
+### 🗂️ Database Schema
+
+Create a new database named university.db with the following tables:
+
+```sql
+CREATE TABLE students (
+    student_id INTEGER PRIMARY KEY,
+    first_name TEXT NOT NULL,
+    last_name TEXT NOT NULL,
+    major TEXT,
+    gpa REAL
+);
+
+CREATE TABLE courses (
+    course_id INTEGER PRIMARY KEY,
+    course_name TEXT NOT NULL,
+    department TEXT NOT NULL,
+    credits INTEGER
+);
+
+CREATE TABLE enrollments (
+    enrollment_id INTEGER PRIMARY KEY,
+    student_id INTEGER,
+    course_id INTEGER,
+    grade TEXT,
+    FOREIGN KEY (student_id) REFERENCES students(student_id),
+    FOREIGN KEY (course_id) REFERENCES courses(course_id)
+);
+```
+
+### 📥 Sample Data (Insert Statements)
+
+Provide the following sample data for testing queries:
+
+```sql
+-- Students
+INSERT INTO students (first_name, last_name, major, gpa) VALUES
+('Alice', 'Johnson', 'Computer Science', 3.8),
+('Bob', 'Smith', 'Business', 3.1),
+('Charlie', 'Davis', 'Data Science', 3.5),
+('Diana', 'Lee', 'Computer Science', 2.9),
+('Ethan', 'Brown', 'Data Science', 3.7);
+
+-- Courses
+INSERT INTO courses (course_name, department, credits) VALUES
+('Database Management', 'Computer Science', 3),
+('Marketing 101', 'Business', 2),
+('Machine Learning', 'Data Science', 4),
+('Algorithms', 'Computer Science', 3);
+
+-- Enrollments
+INSERT INTO enrollments (student_id, course_id, grade) VALUES
+(1, 1, 'A'),
+(1, 4, 'B'),
+(2, 2, 'B'),
+(3, 1, 'A'),
+(3, 3, 'A'),
+(4, 1, 'C'),
+(4, 4, 'B'),
+(5, 3, 'A');
+```
+
+:::{.callout}
+You can also [download the sql file](/materials/proj02/week2_project_setup.sql) containing the setup of the database and open it in your DBeaver.
+:::
+
+🧰 Quick Setup Instructions for DBeaver
+
+1. Install DBeaver (Community Edition) if not already installed.
+2. Launch DBeaver and go to File → DBeaver → New Database Connection.
+3. Select SQLite as the database type.
+4. Click Next, then Create a new database file, and name it university.db.
+5. After connection, right-click on the database and choose SQL Editor → New SQL Script to run the setup and queries.
+
+⏳ Load the SQL Script
+
+1.	Right-click the new university.db connection in the Database Navigator pane.
+2.	Select SQL Editor → New SQL Script.
+3.	In the new script tab that appears, click File → Open File.
+4.	Select the provided file: 📄 week2_project_setup.sql
+5. Make sure the **Active Datasource** (on the top of the window) is connected to the database created.
+
+
+## Step 3: Student Tasks
+
+You must write SQL queries to answer the following questions:
+
+🔹 Aggregation & Grouping
+1. Find the average GPA per major.
+2. Count the number of students enrolled in each course.
+3. List courses where the number of students enrolled is at least 2.
+4. Find the average number of credits students are enrolled in (per student).
+
+🔹 Joins
+5. Show each student’s first and last name along with the names of the courses they are enrolled in.
+6. List all students and the courses they are NOT enrolled in (use LEFT JOIN and NULL filtering).
+7. Show courses that have not been taken by any students (use LEFT JOIN or NOT IN).
+
+🔹 Subqueries
+8. Find the names of students who have received an ‘A’ in any course (use IN or EXISTS).
+9. List students whose GPA is higher than the average GPA of all students.
+10. Retrieve courses that have more students than the average number of enrollments per course.
+
+🔹 Functions & Expressions
+11. Display students’ names in uppercase.
+12. Show the length of each course name using a string function.
+13. Calculate and display a weighted GPA score based on credits * GPA for each student (hint: use a JOIN and a mathematical expression).
+
+🔹 Query Optimization (Conceptual)
+14. Suggest which column(s) should be indexed and why.
+15. Rewrite a query using only the columns you need, avoiding SELECT *.
 
 ## Submit
+
+You will submit your queries on Moodle. 
 
 <!-- In VS Code, click on the Source Control icon on the upper left and type in a commit message, then click the checkmark icon to submit your code. Go through the various pop-up boxes to commit and sync your changes to your repo. -->
 
 
 ## Grading Rubric
 
-This project is worth XX pts:
+This project is worth 100 pts:

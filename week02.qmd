@@ -24,9 +24,9 @@ At the end of this unit, students will be able to...
 [Slides](){target="_blank"}
 :::
 
-<!-- ::: source
-[Code from Class](){target="_blank"}
-::: -->
+::: source
+[Summary of the Week](/week02-summary.qmd)
+:::
 
 ::: reading
 Mark Simon. (2023). Getting Started with SQL and Databases : Managing and Manipulating Data with SQL. Apress. 

@@ -1,0 +1,93 @@
+---
+title: "Week 02: SQL – Intermediate Concepts Summary"
+# draft: true
+# draft-mode: visible
+---
+
+## SLOs for Week 02
+
+At the end of this unit, students will be able to...
+
+1.  Perform data aggregation using GROUP BY and HAVING.
+2.  Write and execute INNER, LEFT-OUTER, RIGHT, and FULL JOINs.
+3.  Construct subqueries for complex queries.
+4.  Implement SQL functions and expressions.
+5.  Use SQL best practices for readable and efficient queries.
+6.  Optimize SQL queries for better performance.
+
+
+## 📏 1. Aggregation & Grouping
+
+* `COUNT()`, `SUM()`, `AVG()`, `MIN()`, `MAX()` – summarize column values
+* `GROUP BY` – group rows by one or more columns
+* `HAVING` – filter grouped results
+
+```sql
+SELECT department, AVG(gpa)
+FROM students
+GROUP BY department
+HAVING AVG(gpa) > 3.5;
+```
+
+## 🔗 2. SQL Joins
+
+* `INNER JOIN` – only matching rows from both tables
+* `LEFT OUTER JOIN` – all from left table + matching right
+* `RIGHT OUTER JOIN` – all from right table + matching left
+* `FULL OUTER JOIN` – all rows from both tables (if supported)
+
+```sql
+SELECT s.name, c.name
+FROM students s
+LEFT JOIN enrollments e ON s.id = e.student_id
+LEFT JOIN courses c ON e.course_id = c.id;
+```
+
+## 🔍 3. Subqueries
+
+* Use queries inside other queries
+* Use with `IN`, `EXISTS`, `=`, `<`, etc.
+
+```sql
+SELECT * FROM students
+WHERE id IN (SELECT student_id FROM enrollments);
+```
+
+* **Correlated Subqueries:** Reference outer query
+* **Non-Correlated Subqueries:** Can run independently
+
+## 🧲 4. SQL Functions & Expressions
+
+* Math: `ROUND(gpa, 2)`, `ABS()`, `CEIL()`, `FLOOR()`
+* String: `UPPER()`, `LOWER()`, `LENGTH()`, `SUBSTR()`
+* Date (SQLite): `DATE()`, `STRFTIME('%Y', birthdate)`
+
+```sql
+SELECT UPPER(first_name) || ' ' || UPPER(last_name) FROM students;
+```
+
+## 🪜 5. SQL Best Practices
+
+* Use clear formatting and indentation
+* Avoid `SELECT *` – specify needed columns
+* Use aliases (`AS`) to clarify column and table names
+
+```sql
+SELECT s.first_name AS student, c.name AS course
+FROM students s JOIN enrollments e ON s.id = e.student_id;
+```
+
+## ⚡ 6. Query Optimization Basics
+
+* Indexes speed up filtering and joining
+* Filter early with `WHERE`
+* Avoid nested subqueries unless needed
+* Use `EXPLAIN` (in supported engines) to analyze performance
+
+```sql
+EXPLAIN SELECT * FROM students WHERE gpa > 3.5;
+```
+
+## ✅ Pro Tip: Practice & Readability Matter!
+
+Good SQL is not just correct—it’s **efficient**, **maintainable**, and **easy to understand**.
