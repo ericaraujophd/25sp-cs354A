@@ -197,30 +197,30 @@
   {
     "objectID": "hws/hw02.html",
     "href": "hws/hw02.html",
-    "title": "Homework 02:",
+    "title": "Homework 02: Multiple tables",
     "section": "",
-    "text": "Students will be able to…"
+    "text": "It makes more sense now."
   },
   {
-    "objectID": "hws/hw02.html#learning-objectives",
-    "href": "hws/hw02.html#learning-objectives",
-    "title": "Homework 02:",
-    "section": "",
-    "text": "Students will be able to…"
+    "objectID": "hws/hw02.html#objectives",
+    "href": "hws/hw02.html#objectives",
+    "title": "Homework 02: Multiple tables",
+    "section": "Objectives:",
+    "text": "Objectives:\nIn this exercise, you will:\n\nShow you understand how SELECT queries work for different tables.\nShow you learned how to visualize data by filtering rows and columns according to what is required.\nShow you are able to follow instructions and navigate in a given database.\nUse Joins to handle multiple tables."
   },
   {
-    "objectID": "hws/hw02.html#introduction",
-    "href": "hws/hw02.html#introduction",
-    "title": "Homework 02:",
-    "section": "Introduction",
-    "text": "Introduction"
+    "objectID": "hws/hw02.html#to-moodle",
+    "href": "hws/hw02.html#to-moodle",
+    "title": "Homework 02: Multiple tables",
+    "section": "To Moodle!",
+    "text": "To Moodle!\nYou will log in to Calvin’s Moodle, enter the course’s virtual classroom, and find a task named “Homework 2.” Follow the steps outlined there. Remember that we are using CodeRunner, a Moodle plugin that allows students to execute SQL queries and receive automatic feedback."
   },
   {
-    "objectID": "hws/hw02.html#submit",
-    "href": "hws/hw02.html#submit",
-    "title": "Homework 02:",
-    "section": "Submit",
-    "text": "Submit\nGrading Rubric: xx points total"
+    "objectID": "hws/hw02.html#grading-rubric",
+    "href": "hws/hw02.html#grading-rubric",
+    "title": "Homework 02: Multiple tables",
+    "section": "Grading Rubric",
+    "text": "Grading Rubric\n100 pts total."
   },
   {
     "objectID": "hws/hw07.html",
@@ -374,7 +374,7 @@
     "href": "projects/proj02.html#step-3-student-tasks",
     "title": "Project 02: Student Performance & Enrollment Analysis (Using DBeaver)",
     "section": "Step 3: Student Tasks",
-    "text": "Step 3: Student Tasks\nYou must write SQL queries to answer the following questions:\n🔹 Aggregation & Grouping\n\nFind the average GPA per major.\nCount the number of students enrolled in each course.\nList courses where the number of students enrolled is at least 2.\nFind the average number of credits students are enrolled in (per student).\n\n🔹 Joins\n\nShow each student’s first and last name along with the names of the courses they are enrolled in.\nList all students and the courses they are NOT enrolled in (use LEFT JOIN and NULL filtering).\nShow courses that have not been taken by any students (use LEFT JOIN or NOT IN).\n\n🔹 Subqueries\n\nFind the names of students who have received an ‘A’ in any course (use IN or EXISTS).\nList students whose GPA is higher than the average GPA of all students.\nRetrieve courses that have more students than the average number of enrollments per course.\n\n🔹 Functions & Expressions\n\nDisplay students’ names in uppercase.\nShow the length of each course name using a string function.\nCalculate and display a weighted GPA score based on credits * GPA for each student (hint: use a JOIN and a mathematical expression).\n\n🔹 Query Optimization (Conceptual)\n\nSuggest which column(s) should be indexed and why.\nRewrite a query using only the columns you need, avoiding SELECT *."
+    "text": "Step 3: Student Tasks\nYou must write SQL queries to answer the following questions:\n🔹 Aggregation & Grouping\n\nFind the average GPA per major.\nCount the number of students enrolled in each course.\nList courses where the number of students enrolled is at least 2.\nFind the average number of credits students are enrolled in (per student).\n\n🔹 Joins\n\nShow each student’s first and last name along with the names of the courses they are enrolled in.\nList all students and the courses they are NOT enrolled in (use LEFT JOIN and NULL filtering).\nShow courses that have not been taken by any students (use LEFT JOIN or NOT IN).\n\n🔹 Subqueries\n\nFind the names of students who have received an ‘A’ in any course (use IN or EXISTS).\nList students whose GPA is higher than the average GPA of all students.\nRetrieve courses that have more students than the average number of enrollments per course.\n\n🔹 Functions & Expressions\n\nDisplay students’ names in uppercase.\nShow the length of each course name using a string function.\nCalculate and display a weighted GPA score based on credits * GPA for each student (hint: use a JOIN and a mathematical expression).\n\n🔹 Query Optimization (Conceptual)\n\nConceptual question about Joins."
   },
   {
     "objectID": "projects/proj02.html#submit",
@@ -388,7 +388,7 @@
     "href": "projects/proj02.html#grading-rubric",
     "title": "Project 02: Student Performance & Enrollment Analysis (Using DBeaver)",
     "section": "Grading Rubric",
-    "text": "Grading Rubric\nThis project is worth 100 pts:"
+    "text": "Grading Rubric\nThis project is worth 100 pts."
   },
   {
     "objectID": "projects/proj01.html",

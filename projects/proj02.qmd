@@ -149,8 +149,7 @@ You must write SQL queries to answer the following questions:
 
 🔹 Query Optimization (Conceptual)
 
-14. Suggest which column(s) should be indexed and why.
-15. Rewrite a query using only the columns you need, avoiding SELECT *.
+14.  Conceptual question about Joins.
 
 ## Submit
 
@@ -161,4 +160,4 @@ You will submit your queries on Moodle.
 
 ## Grading Rubric
 
-This project is worth 100 pts:
+This project is worth 100 pts.
