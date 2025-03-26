@@ -45,7 +45,7 @@ Mark Simon. (2023). Getting Started with SQL and Databases : Managing and Mani
 <!-- ## Homework assignments -->
 
 :::::: homework
-**Homework 02: **
+**Homework 02**
 
 ::: instructions
 [Instructions](/hws/hw02.qmd)
@@ -60,7 +60,7 @@ Mark Simon. (2023). Getting Started with SQL and Databases : Managing and Mani
 
 <!-- ## Lab -->
 ::::: lab
-**Project 02: **
+**Project 02**
 
 ::: instructions
 [Instructions](/projects/proj02.qmd)

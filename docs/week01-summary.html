@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Week 02: SQL – Intermediate Concepts (under construction) – CS 354 – Database Management Systems</title>
+<title>Week 01: Introduction to Databases &amp; SQL Basics – CS 354 – Database Management Systems</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -30,8 +64,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./week03.html" rel="next">
-<link href="./week01.html" rel="prev">
 <link href=".//images/data-management.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -74,10 +106,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="https://kit.fontawesome.com/78ddb093ea.js" crossorigin="anonymous"></script>
 
 
-<meta property="og:title" content="Week 02: SQL – Intermediate Concepts (under construction) – CS 354 – Database Management Systems">
+<meta property="og:title" content="Week 01: Introduction to Databases &amp; SQL Basics – CS 354 – Database Management Systems">
 <meta property="og:description" content="CS354 provides a hands-on introduction to relational databases, SQL querying, and database design, focusing on real-world applications, optimization, and security.">
 <meta property="og:site_name" content="CS 354 – Database Management Systems">
-<meta name="twitter:title" content="Week 02: SQL – Intermediate Concepts (under construction) – CS 354 – Database Management Systems">
+<meta name="twitter:title" content="Week 01: Introduction to Databases &amp; SQL Basics – CS 354 – Database Management Systems">
 <meta name="twitter:description" content="CS354 provides a hands-on introduction to relational databases, SQL querying, and database design, focusing on real-world applications, optimization, and security.">
 <meta name="twitter:image" content="https://ericaraujo.com/25sp-cs354A/images/data-management.png">
 <meta name="twitter:creator" content="@ericfaraujo">
@@ -86,7 +118,7 @@ ul.task-list li input[type="checkbox"] {
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
-<body class="nav-sidebar floating nav-fixed">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -108,7 +140,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Overview</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./content.html" aria-current="page"> 
+    <a class="nav-link" href="./content.html"> 
 <span class="menu-text">Content</span></a>
   </li>  
   <li class="nav-item">
@@ -137,92 +169,37 @@ ul.task-list li input[type="checkbox"] {
 </div>
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./week02.html">Week 02: SQL – Intermediate Concepts (under construction)</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-    </div>
-  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./content.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Course content</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week01.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 01: Introduction to Databases &amp; SQL Basics</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week02.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Week 02: SQL – Intermediate Concepts (under construction)</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week03.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 03: SQL – Data Modification &amp; Advanced Queries (under construction)</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week04.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 04: Database Design – ER Modeling &amp; Schema Refinement (under construction)</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week05.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 05: Advanced SQL &amp; Integrity Constraints (under construction)</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week06.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 06: Database Management &amp; Optimization (under construction)</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week07.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 07: Final Project and Course Wrap-Up (under construction)</span></a>
-  </div>
-</li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#slos-for-week-02" id="toc-slos-for-week-02" class="nav-link active" data-scroll-target="#slos-for-week-02">SLOs for Week 02</a></li>
-  <li><a href="#slides-videos-and-application-exercises" id="toc-slides-videos-and-application-exercises" class="nav-link" data-scroll-target="#slides-videos-and-application-exercises">Slides, videos, and application exercises</a></li>
+  <li><a href="#slos-for-week-01" id="toc-slos-for-week-01" class="nav-link active" data-scroll-target="#slos-for-week-01">SLOs for Week 01</a></li>
+  <li><a href="#what-is-a-database" id="toc-what-is-a-database" class="nav-link" data-scroll-target="#what-is-a-database">📖 1. What is a Database?</a></li>
+  <li><a href="#what-is-a-dbms" id="toc-what-is-a-dbms" class="nav-link" data-scroll-target="#what-is-a-dbms">📄 2. What is a DBMS?</a></li>
+  <li><a href="#relational-model" id="toc-relational-model" class="nav-link" data-scroll-target="#relational-model">💡 3. Relational Model</a></li>
+  <li><a href="#basic-sql-syntax" id="toc-basic-sql-syntax" class="nav-link" data-scroll-target="#basic-sql-syntax">📃 4. Basic SQL Syntax</a></li>
+  <li><a href="#filtering-data-with-where" id="toc-filtering-data-with-where" class="nav-link" data-scroll-target="#filtering-data-with-where">⚠️ 5. Filtering Data with WHERE</a></li>
+  <li><a href="#sorting-results-with-order-by" id="toc-sorting-results-with-order-by" class="nav-link" data-scroll-target="#sorting-results-with-order-by">▲ 6. Sorting Results with ORDER BY</a></li>
+  <li><a href="#combining-where-and-order-by" id="toc-combining-where-and-order-by" class="nav-link" data-scroll-target="#combining-where-and-order-by">🔄 7. Combining WHERE and ORDER BY</a></li>
+  <li><a href="#tools-and-environment" id="toc-tools-and-environment" class="nav-link" data-scroll-target="#tools-and-environment">🚀 8. Tools and Environment</a>
+  <ul class="collapse">
+  <li><a href="#pro-tip-practice-makes-progress" id="toc-pro-tip-practice-makes-progress" class="nav-link" data-scroll-target="#pro-tip-practice-makes-progress">🔹 Pro Tip: Practice Makes Progress!</a></li>
+  </ul></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/ericaraujophd/25sp-cs354A/edit/main/week02.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/25sp-cs354A/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/ericaraujophd/25sp-cs354A/edit/main/week01-summary.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/25sp-cs354A/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Week 02: SQL – Intermediate Concepts (under construction)</h1>
+<h1 class="title">Week 01: Introduction to Databases &amp; SQL Basics</h1>
 </div>
 
 
@@ -239,58 +216,96 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="slos-for-week-02" class="level2">
-<h2 class="anchored" data-anchor-id="slos-for-week-02">SLOs for Week 02</h2>
+<section id="slos-for-week-01" class="level2">
+<h2 class="anchored" data-anchor-id="slos-for-week-01">SLOs for Week 01</h2>
 <p>At the end of this unit, students will be able to…</p>
 <ol type="1">
-<li>Perform data aggregation using GROUP BY and HAVING.</li>
-<li>Write and execute INNER, LEFT-OUTER, RIGHT, and FULL JOINs.</li>
-<li>Construct subqueries for complex queries.</li>
-<li>Implement SQL functions and expressions.</li>
-<li>Use SQL best practices for readable and efficient queries.</li>
-<li>Optimize SQL queries for better performance.</li>
+<li>Explain the purpose and importance of relational databases.</li>
+<li>Differentiate between relational databases and other types of data storage.</li>
+<li>Write basic SQL queries to retrieve data.</li>
+<li>Use WHERE clauses and ORDER BY to filter and sort results.</li>
+<li>Understand SQL syntax and basic commands.</li>
+<li>Analyze a dataset using simple queries.</li>
 </ol>
 </section>
-<section id="slides-videos-and-application-exercises" class="level2">
-<h2 class="anchored" data-anchor-id="slides-videos-and-application-exercises">Slides, videos, and application exercises</h2>
-<div class="slide-deck">
-<p><strong>Week 02: Slides</strong></p>
-<div class="slides">
-<p><a href="" target="_blank">Slides</a></p>
-</div>
-<div class="source">
-<p><a href="./week02-summary.html">Summary of the Week</a></p>
-</div>
-<div class="reading">
-<p>Mark Simon. (2023). Getting Started with SQL and Databases : Managing and Manipulating Data with SQL. Apress. - <a href="https://calvin.primo.exlibrisgroup.com/permalink/01CALVIN_INST/1p09kqq/cdi_skillsoft_books24x7_bks000165833" target="_blank">Chapters 4, 5 and 6</a></p>
-</div>
-<!-- ::: video
-[Video](https://youtu.be/_YqEHZccujc)
-:::
--->
-</div>
-<!-- ## Homework assignments -->
-<div class="homework">
-<p><strong>Homework 02</strong></p>
-<div class="instructions">
-<p><a href="./hws/hw02.html">Instructions</a></p>
-</div>
-<!-- ::: starter
-[Source](){target="_blank"}
-::: -->
-</div>
-<!-- ## Lab -->
-<div class="lab">
-<p><strong>Project 02</strong></p>
-<div class="instructions">
-<p><a href="./projects/proj02.html">Instructions</a></p>
-</div>
-<!-- ::: starter
-[Starter](){target="_blank"}
-::: -->
-</div>
+<section id="what-is-a-database" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-a-database">📖 1. What is a Database?</h2>
+<ul>
+<li><p>A&nbsp;<strong>database</strong>&nbsp;is an organized collection of data that can be easily accessed, managed, and updated.</p></li>
+<li><p>Commonly used in web apps, finance systems, university systems, and more.</p></li>
+</ul>
+</section>
+<section id="what-is-a-dbms" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-a-dbms">📄 2. What is a DBMS?</h2>
+<ul>
+<li><p>A&nbsp;<strong>Database Management System (DBMS)</strong>&nbsp;is software that allows users to interact with databases.</p></li>
+<li><p>Examples:&nbsp;<strong>SQLite, MySQL, PostgreSQL, SQL Server</strong>.</p></li>
+<li><p>Functions: create, update, retrieve, and manage data.</p></li>
+</ul>
+</section>
+<section id="relational-model" class="level2">
+<h2 class="anchored" data-anchor-id="relational-model">💡 3. Relational Model</h2>
+<ul>
+<li><p>Data is stored in tables (called relations) made up of rows (records) and columns (attributes).</p></li>
+<li><p>Supports primary keys, foreign keys, and constraints.</p></li>
+<li><p>Enforces data integrity and relationships between data.</p></li>
+</ul>
+</section>
+<section id="basic-sql-syntax" class="level2">
+<h2 class="anchored" data-anchor-id="basic-sql-syntax">📃 4. Basic SQL Syntax</h2>
+<ul>
+<li><p>SQL =&nbsp;<strong>Structured Query Language</strong>&nbsp;used to communicate with databases.</p></li>
+<li><p>Core command to retrieve data:</p></li>
+</ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> column1, column2 <span class="kw">FROM</span> table_name;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>Use&nbsp;<code>*</code>&nbsp;to select all columns:</li>
+</ul>
+<div class="sourceCode" id="cb2"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">FROM</span> students;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="filtering-data-with-where" class="level2">
+<h2 class="anchored" data-anchor-id="filtering-data-with-where">⚠️ 5. Filtering Data with WHERE</h2>
+<ul>
+<li>Filter records using&nbsp;<code>WHERE</code>:</li>
+</ul>
+<div class="sourceCode" id="cb3"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">FROM</span> students <span class="kw">WHERE</span> major <span class="op">=</span> <span class="st">'Computer Science'</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><p>Comparison operators:&nbsp;<code>=</code>,&nbsp;<code>&lt;&gt;</code>,&nbsp;<code>&gt;</code>,&nbsp;<code>&lt;</code>,&nbsp;<code>&gt;=</code>,&nbsp;<code>&lt;=</code></p></li>
+<li><p>Logical operators:&nbsp;<code>AND</code>,&nbsp;<code>OR</code>,&nbsp;<code>NOT</code></p></li>
+</ul>
+</section>
+<section id="sorting-results-with-order-by" class="level2">
+<h2 class="anchored" data-anchor-id="sorting-results-with-order-by">▲ 6. Sorting Results with ORDER BY</h2>
+<ul>
+<li>Sort results alphabetically or numerically:</li>
+</ul>
+<div class="sourceCode" id="cb4"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">FROM</span> students <span class="kw">ORDER</span> <span class="kw">BY</span> last_name <span class="kw">ASC</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>Use&nbsp;<code>DESC</code>&nbsp;for descending order</li>
+</ul>
+</section>
+<section id="combining-where-and-order-by" class="level2">
+<h2 class="anchored" data-anchor-id="combining-where-and-order-by">🔄 7. Combining WHERE and ORDER BY</h2>
+<div class="sourceCode" id="cb5"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">FROM</span> students</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> gpa <span class="op">&gt;=</span> <span class="fl">3.5</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> last_name <span class="kw">ASC</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="tools-and-environment" class="level2">
+<h2 class="anchored" data-anchor-id="tools-and-environment">🚀 8. Tools and Environment</h2>
+<ul>
+<li><p>We use&nbsp;<strong>SQLite3 with DBeaver</strong>&nbsp;to write and run SQL queries.</p></li>
+<li><p>Create&nbsp;<code>.db</code>&nbsp;files to store your database.</p></li>
+<li><p>Use the&nbsp;<strong>SQL Editor</strong>&nbsp;to run commands and explore data.</p></li>
+</ul>
+<section id="pro-tip-practice-makes-progress" class="level3">
+<h3 class="anchored" data-anchor-id="pro-tip-practice-makes-progress">🔹 Pro Tip: Practice Makes Progress!</h3>
+<p>Write and test queries regularly to get comfortable with SQL syntax.</p>
+<blockquote class="blockquote">
+<p>Start with SELECT, WHERE, and ORDER BY—you’ll use them everywhere!</p>
+</blockquote>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -858,18 +873,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="./week01.html" class="pagination-link" aria-label="Week 01: Introduction to Databases &amp; SQL Basics">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Week 01: Introduction to Databases &amp; SQL Basics</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="./week03.html" class="pagination-link" aria-label="Week 03: SQL – Data Modification &amp; Advanced Queries (under construction)">
-        <span class="nav-page-text">Week 03: SQL – Data Modification &amp; Advanced Queries (under construction)</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -878,7 +881,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ericaraujophd/25sp-cs354A/edit/main/week02.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/25sp-cs354A/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ericaraujophd/25sp-cs354A/edit/main/week01-summary.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/25sp-cs354A/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">

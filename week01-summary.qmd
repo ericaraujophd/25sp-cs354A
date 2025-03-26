@@ -1,0 +1,98 @@
+---
+title: "Week 01: Introduction to Databases & SQL Basics"
+# draft: true
+# draft-mode: visible
+---
+
+## SLOs for Week 01
+
+At the end of this unit, students will be able to...
+
+1.  Explain the purpose and importance of relational databases.
+2.  Differentiate between relational databases and other types of data storage.
+3.  Write basic SQL queries to retrieve data.
+4.  Use WHERE clauses and ORDER BY to filter and sort results.
+5.  Understand SQL syntax and basic commands.
+6.  Analyze a dataset using simple queries.
+
+## 📖 1. What is a Database?
+
+-   A **database** is an organized collection of data that can be easily accessed, managed, and updated.
+
+-   Commonly used in web apps, finance systems, university systems, and more.
+
+## 📄 2. What is a DBMS?
+
+-   A **Database Management System (DBMS)** is software that allows users to interact with databases.
+
+-   Examples: **SQLite, MySQL, PostgreSQL, SQL Server**.
+
+-   Functions: create, update, retrieve, and manage data.
+
+## 💡 3. Relational Model
+
+-   Data is stored in tables (called relations) made up of rows (records) and columns (attributes).
+
+-   Supports primary keys, foreign keys, and constraints.
+
+-   Enforces data integrity and relationships between data.
+
+## 📃 4. Basic SQL Syntax
+
+-   SQL = **Structured Query Language** used to communicate with databases.
+
+-   Core command to retrieve data:
+
+``` sql
+SELECT column1, column2 FROM table_name;
+```
+
+-   Use `*` to select all columns:
+
+``` sql
+SELECT * FROM students;
+```
+
+## ⚠️ 5. Filtering Data with WHERE
+
+-   Filter records using `WHERE`:
+
+``` sql
+SELECT * FROM students WHERE major = 'Computer Science';
+```
+
+-   Comparison operators: `=`, `<>`, `>`, `<`, `>=`, `<=`
+
+-   Logical operators: `AND`, `OR`, `NOT`
+
+## ▲ 6. Sorting Results with ORDER BY
+
+-   Sort results alphabetically or numerically:
+
+``` sql
+SELECT * FROM students ORDER BY last_name ASC;
+```
+
+-   Use `DESC` for descending order
+
+## 🔄 7. Combining WHERE and ORDER BY
+
+``` sql
+SELECT * FROM students
+WHERE gpa >= 3.5
+ORDER BY last_name ASC;
+```
+
+## 🚀 8. Tools and Environment
+
+-   We use **SQLite3 with DBeaver** to write and run SQL queries.
+
+-   Create `.db` files to store your database.
+
+-   Use the **SQL Editor** to run commands and explore data.
+
+### 🔹 Pro Tip: Practice Makes Progress!
+
+Write and test queries regularly to get comfortable with SQL syntax.
+
+> Start with SELECT, WHERE, and ORDER BY—you’ll use them everywhere!
