@@ -97,7 +97,7 @@ This is an empty table. To fill the table, we need to convert our CSV entries to
 
 Here I came up with another trick. I created a shell script that opens SQLite3 and calls the command to convert a CSV file into a table inside the database. The code for the script is as follows:
 
-```{sh}
+```{bash}
 #| eval: false
 #!/bin/bash
 
