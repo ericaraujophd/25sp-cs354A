@@ -112,6 +112,13 @@ sqlite_command = f"""
 subprocess.run(["sqlite3", db], input=sqlite_command, text=True)
 ```
 
+Let's see if the data was loaded?
+
+```{python}
+%%sql
+SELECT * FROM libraries_2018
+LIMIT 50;
+```
 
 For a demonstration of a line plot on a polar axis, see @fig-polar.
 
