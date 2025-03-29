@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>libraries – CS 354 – Database Management Systems</title>
+<title>Week 02: SQL – Intermediate Concepts Summary – CS 354 – Database Management Systems</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -57,25 +57,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<link href="../..//images/data-management.png" rel="icon" type="image/png">
-<script src="../../site_libs/quarto-html/quarto.js"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href=".//images/data-management.png" rel="icon" type="image/png">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -104,15 +104,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 <script src="https://kit.fontawesome.com/78ddb093ea.js" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
-
-<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
-<meta property="og:title" content="CS 354 – Database Management Systems">
+<meta property="og:title" content="Week 02: SQL – Intermediate Concepts Summary – CS 354 – Database Management Systems">
 <meta property="og:description" content="CS354 provides a hands-on introduction to relational databases, SQL querying, and database design, focusing on real-world applications, optimization, and security.">
 <meta property="og:site_name" content="CS 354 – Database Management Systems">
-<meta name="twitter:title" content="CS 354 – Database Management Systems">
+<meta name="twitter:title" content="Week 02: SQL – Intermediate Concepts Summary – CS 354 – Database Management Systems">
 <meta name="twitter:description" content="CS354 provides a hands-on introduction to relational databases, SQL querying, and database design, focusing on real-world applications, optimization, and security.">
 <meta name="twitter:image" content="https://ericaraujo.com/25sp-cs354A/images/data-management.png">
 <meta name="twitter:creator" content="@ericfaraujo">
@@ -128,8 +125,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../../images/data-management.png" alt="" class="navbar-logo">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <img src="./images/data-management.png" alt="" class="navbar-logo">
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -139,23 +136,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../index.html"> 
+    <a class="nav-link" href="./index.html"> 
 <span class="menu-text">Overview</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../content.html"> 
+    <a class="nav-link" href="./content.html"> 
 <span class="menu-text">Content</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../instructors.html"> 
+    <a class="nav-link" href="./instructors.html"> 
 <span class="menu-text">Instructors</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../policies.html"> 
+    <a class="nav-link" href="./policies.html"> 
 <span class="menu-text">Course Policies</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../resources.html"> 
+    <a class="nav-link" href="./resources.html"> 
 <span class="menu-text">Resources</span></a>
   </li>  
 </ul>
@@ -177,30 +174,75 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#slos-for-week-02" id="toc-slos-for-week-02" class="nav-link active" data-scroll-target="#slos-for-week-02">SLOs for Week 02</a></li>
+  <li><a href="#our-dataset-for-this-tasks" id="toc-our-dataset-for-this-tasks" class="nav-link" data-scroll-target="#our-dataset-for-this-tasks">0. Our dataset for this tasks</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/ericaraujophd/25sp-cs354A/edit/main/week02-notebook.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/25sp-cs354A/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Week 02: SQL – Intermediate Concepts Summary</h1>
+</div>
 
 
 
-<p>!uv pip install sql !uv pip install ipython-sql</p>
-<div id="cell-1" class="cell" data-execution_count="1">
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="slos-for-week-02" class="level2">
+<h2 class="anchored" data-anchor-id="slos-for-week-02">SLOs for Week 02</h2>
+<p>At the end of this unit, students will be able to…</p>
+<ol type="1">
+<li>Perform data aggregation using GROUP BY and HAVING.</li>
+<li>Write and execute INNER, LEFT-OUTER, RIGHT, and FULL JOINs.</li>
+<li>Construct subqueries for complex queries.</li>
+<li>Implement SQL functions and expressions.</li>
+<li>Use SQL best practices for readable and efficient queries.</li>
+<li>Optimize SQL queries for better performance.</li>
+</ol>
+</section>
+<section id="our-dataset-for-this-tasks" class="level2">
+<h2 class="anchored" data-anchor-id="our-dataset-for-this-tasks">0. Our dataset for this tasks</h2>
+<p>In the US, the Institute of Museum and Library Services (IMLS) measures library activity as part of its annual Public Libraries Survey. The survey collects data from more than 9000 library administrative entities, defined by the survey as agencies that provide library services to a particular locality. Data includes the number of branches, staff, books, hours open per year, etc. To teach the concepts below, we will build three tables containing the data from the survey related to the years of 2016, 2017 and 2018. For doing so, we read from the CSV files downloaded from their website. More especifically, some columns will be selected in the process to reduce the amount of non used attributes.</p>
+<p>We are running SQL queries in a Jupyter environment.</p>
+<div id="d4fb470f" class="cell" data-execution_count="1">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>capture</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>load_ext sql</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>sql sqlite:<span class="op">///</span>library.db</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>sql sqlite:<span class="op">///</span>dbs<span class="op">/</span>w02<span class="op">/</span>library.db</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>config SqlMagic.style <span class="op">=</span> <span class="st">'_DEPRECATED_DEFAULT'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
-<div id="cell-2" class="cell" data-execution_count="2">
+<p>This will open our database <code>library.db</code> for us. Don’t bother yourself with the config details. That is a trick to run the SQL queries in this environment.</p>
+<p>Now we turn to our tables. We have to create 3 tables. Let’s start with the table for 2018.</p>
+<div id="cell-create-2018" class="cell" data-execution_count="2">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>sql</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="op">--</span> Listing <span class="dv">9</span><span class="op">-</span><span class="dv">1</span>: Creating <span class="kw">and</span> filling the <span class="dv">2018</span> Public Libraries Survey table</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="op">--</span> Creating the <span class="dv">2018</span> Public Libraries Survey table</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>DROP TABLE IF EXISTS pls_fy2018_libraries<span class="op">;</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="op">--</span> We drop an old copy of the table, <span class="cf">if</span> it exists.</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>DROP TABLE IF EXISTS libraries_2018<span class="op">;</span></span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>CREATE TABLE pls_fy2018_libraries (</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>CREATE TABLE libraries_2018 (</span>
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    stabr text NOT NULL,</span>
 <span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    fscskey text CONSTRAINT fscskey_2018_pkey PRIMARY KEY,</span>
 <span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    libid text NOT NULL,</span>
@@ -249,956 +291,80 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a>    longitude numeric(<span class="dv">10</span>,<span class="dv">7</span>) NOT NULL,</span>
 <span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a>    latitude numeric(<span class="dv">10</span>,<span class="dv">7</span>) NOT NULL</span>
 <span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
-<pre><code> * sqlite:///library.db
+<pre><code> * sqlite:///dbs/w02/library.db
 Done.
 Done.</code></pre>
 </div>
-<div class="cell-output cell-output-display" data-execution_count="2">
+<div id="create-2018" class="cell-output cell-output-display" data-execution_count="2">
 <pre><code>[]</code></pre>
 </div>
 </div>
-<div id="cell-3" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>sql</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>SELECT <span class="op">*</span> FROM pls_fy2018_libraries</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code> * sqlite:///library.db
-Done.</code></pre>
+<p>This is an empty table. To fill the table, we need to convert our CSV entries to entitites in our database.</p>
+<p>Here I came up with another trick. I created a shell script that opens SQLite3 and calls the command to convert a CSV file into a table inside the database. The code for the script is as follows:</p>
+<pre class="{sh}"><code>#| output: false
+
+#!/bin/bash
+
+# Usage: ./import_csv_to_sqlite.sh path/to/file.csv database.db table_name
+
+CSV_FILE="$1"
+DB_FILE="$2"
+TABLE_NAME="$3"
+
+# Check arguments
+if [ "$#" -ne 3 ]; then
+  echo "Usage: $0 path/to/file.csv database.db table_name"
+  exit 1
+fi
+
+# Check if the CSV file exists
+if [ ! -f "$CSV_FILE" ]; then
+  echo "Error: CSV file '$CSV_FILE' not found."
+  exit 1
+fi
+
+# Import the CSV into the SQLite database. Skip the first row (header)
+sqlite3 "$DB_FILE" &lt;&lt;EOF
+.mode csv
+.import --skip 1 '$CSV_FILE' $TABLE_NAME
+EOF
+
+echo "✅ Imported '$CSV_FILE' into table '$TABLE_NAME' in '$DB_FILE'"</code></pre>
+<p>For a demonstration of a line plot on a polar axis, see <a href="#fig-polar" class="quarto-xref">Figure&nbsp;1</a>.</p>
+<div id="cell-fig-polar" class="cell" data-execution_count="3">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>r <span class="op">=</span> np.arange(<span class="dv">0</span>, <span class="dv">2</span>, <span class="fl">0.01</span>)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>theta <span class="op">=</span> <span class="dv">2</span> <span class="op">*</span> np.pi <span class="op">*</span> r</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  subplot_kw <span class="op">=</span> {<span class="st">'projection'</span>: <span class="st">'polar'</span>} </span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>ax.plot(theta, r)</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>ax.set_rticks([<span class="fl">0.5</span>, <span class="dv">1</span>, <span class="fl">1.5</span>, <span class="dv">2</span>])</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>ax.grid(<span class="va">True</span>)</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div id="fig-polar" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-polar-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="week02-notebook_files/figure-html/fig-polar-output-1.png" class="img-fluid figure-img">
 </div>
-<div class="cell-output cell-output-display" data-execution_count="3">
-<table class="caption-top" data-quarto-postprocess="true">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th">stabr</th>
-<th data-quarto-table-cell-role="th">fscskey</th>
-<th data-quarto-table-cell-role="th">libid</th>
-<th data-quarto-table-cell-role="th">libname</th>
-<th data-quarto-table-cell-role="th">address</th>
-<th data-quarto-table-cell-role="th">city</th>
-<th data-quarto-table-cell-role="th">zip</th>
-<th data-quarto-table-cell-role="th">county</th>
-<th data-quarto-table-cell-role="th">phone</th>
-<th data-quarto-table-cell-role="th">c_relatn</th>
-<th data-quarto-table-cell-role="th">c_legbas</th>
-<th data-quarto-table-cell-role="th">c_admin</th>
-<th data-quarto-table-cell-role="th">c_fscs</th>
-<th data-quarto-table-cell-role="th">geocode</th>
-<th data-quarto-table-cell-role="th">lsabound</th>
-<th data-quarto-table-cell-role="th">startdate</th>
-<th data-quarto-table-cell-role="th">enddate</th>
-<th data-quarto-table-cell-role="th">popu_lsa</th>
-<th data-quarto-table-cell-role="th">popu_und</th>
-<th data-quarto-table-cell-role="th">centlib</th>
-<th data-quarto-table-cell-role="th">branlib</th>
-<th data-quarto-table-cell-role="th">bkmob</th>
-<th data-quarto-table-cell-role="th">totstaff</th>
-<th data-quarto-table-cell-role="th">bkvol</th>
-<th data-quarto-table-cell-role="th">ebook</th>
-<th data-quarto-table-cell-role="th">audio_ph</th>
-<th data-quarto-table-cell-role="th">audio_dl</th>
-<th data-quarto-table-cell-role="th">video_ph</th>
-<th data-quarto-table-cell-role="th">video_dl</th>
-<th data-quarto-table-cell-role="th">ec_lo_ot</th>
-<th data-quarto-table-cell-role="th">subscrip</th>
-<th data-quarto-table-cell-role="th">hrs_open</th>
-<th data-quarto-table-cell-role="th">visits</th>
-<th data-quarto-table-cell-role="th">reference</th>
-<th data-quarto-table-cell-role="th">regbor</th>
-<th data-quarto-table-cell-role="th">totcir</th>
-<th data-quarto-table-cell-role="th">kidcircl</th>
-<th data-quarto-table-cell-role="th">totpro</th>
-<th data-quarto-table-cell-role="th">gpterms</th>
-<th data-quarto-table-cell-role="th">pitusr</th>
-<th data-quarto-table-cell-role="th">wifisess</th>
-<th data-quarto-table-cell-role="th">obereg</th>
-<th data-quarto-table-cell-role="th">statstru</th>
-<th data-quarto-table-cell-role="th">statname</th>
-<th data-quarto-table-cell-role="th">stataddr</th>
-<th data-quarto-table-cell-role="th">longitude</th>
-<th data-quarto-table-cell-role="th">latitude</th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-polar-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: A line plot on a polar axis
+</figcaption>
+</figure>
 </div>
-</div>
-<div id="cell-4" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>sh</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>.<span class="op">/</span>importCSV.sh pls_fy2018_libraries.csv library.db pls_fy2018_libraries</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>✅ Imported 'pls_fy2018_libraries.csv' into table 'pls_fy2018_libraries' in 'library.db'</code></pre>
-</div>
-</div>
-<div id="cell-5" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>sql</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>SELECT <span class="op">*</span> FROM pls_fy2018_libraries</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>LIMIT <span class="dv">5</span><span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code> * sqlite:///library.db
-Done.</code></pre>
-</div>
-<div class="cell-output cell-output-display" data-execution_count="5">
-<table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th">stabr</th>
-<th data-quarto-table-cell-role="th">fscskey</th>
-<th data-quarto-table-cell-role="th">libid</th>
-<th data-quarto-table-cell-role="th">libname</th>
-<th data-quarto-table-cell-role="th">address</th>
-<th data-quarto-table-cell-role="th">city</th>
-<th data-quarto-table-cell-role="th">zip</th>
-<th data-quarto-table-cell-role="th">county</th>
-<th data-quarto-table-cell-role="th">phone</th>
-<th data-quarto-table-cell-role="th">c_relatn</th>
-<th data-quarto-table-cell-role="th">c_legbas</th>
-<th data-quarto-table-cell-role="th">c_admin</th>
-<th data-quarto-table-cell-role="th">c_fscs</th>
-<th data-quarto-table-cell-role="th">geocode</th>
-<th data-quarto-table-cell-role="th">lsabound</th>
-<th data-quarto-table-cell-role="th">startdate</th>
-<th data-quarto-table-cell-role="th">enddate</th>
-<th data-quarto-table-cell-role="th">popu_lsa</th>
-<th data-quarto-table-cell-role="th">popu_und</th>
-<th data-quarto-table-cell-role="th">centlib</th>
-<th data-quarto-table-cell-role="th">branlib</th>
-<th data-quarto-table-cell-role="th">bkmob</th>
-<th data-quarto-table-cell-role="th">totstaff</th>
-<th data-quarto-table-cell-role="th">bkvol</th>
-<th data-quarto-table-cell-role="th">ebook</th>
-<th data-quarto-table-cell-role="th">audio_ph</th>
-<th data-quarto-table-cell-role="th">audio_dl</th>
-<th data-quarto-table-cell-role="th">video_ph</th>
-<th data-quarto-table-cell-role="th">video_dl</th>
-<th data-quarto-table-cell-role="th">ec_lo_ot</th>
-<th data-quarto-table-cell-role="th">subscrip</th>
-<th data-quarto-table-cell-role="th">hrs_open</th>
-<th data-quarto-table-cell-role="th">visits</th>
-<th data-quarto-table-cell-role="th">reference</th>
-<th data-quarto-table-cell-role="th">regbor</th>
-<th data-quarto-table-cell-role="th">totcir</th>
-<th data-quarto-table-cell-role="th">kidcircl</th>
-<th data-quarto-table-cell-role="th">totpro</th>
-<th data-quarto-table-cell-role="th">gpterms</th>
-<th data-quarto-table-cell-role="th">pitusr</th>
-<th data-quarto-table-cell-role="th">wifisess</th>
-<th data-quarto-table-cell-role="th">obereg</th>
-<th data-quarto-table-cell-role="th">statstru</th>
-<th data-quarto-table-cell-role="th">statname</th>
-<th data-quarto-table-cell-role="th">stataddr</th>
-<th data-quarto-table-cell-role="th">longitude</th>
-<th data-quarto-table-cell-role="th">latitude</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>AK</td>
-<td>AK0001</td>
-<td>AK0001-002</td>
-<td>ANCHOR POINT PUBLIC LIBRARY</td>
-<td>34020 NORTH FORK ROAD</td>
-<td>ANCHOR POINT</td>
-<td>99556</td>
-<td>KENAI PENINSULA</td>
-<td>9072355692</td>
-<td>NO</td>
-<td>NP</td>
-<td>SO</td>
-<td>Y</td>
-<td>CI1</td>
-<td>N</td>
-<td>7/1/17</td>
-<td>6/30/18</td>
-<td>2057</td>
-<td>2040</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>0.67</td>
-<td>18201</td>
-<td>0</td>
-<td>179</td>
-<td>0</td>
-<td>3320</td>
-<td>0</td>
-<td>0</td>
-<td>9</td>
-<td>1245</td>
-<td>6032</td>
-<td>4</td>
-<td>1726</td>
-<td>11316</td>
-<td>2294</td>
-<td>60</td>
-<td>8</td>
-<td>1495</td>
-<td>1182</td>
-<td>08</td>
-<td>00</td>
-<td>00</td>
-<td>00</td>
-<td>-151.825</td>
-<td>59.77965</td>
-</tr>
-<tr class="even">
-<td>AK</td>
-<td>AK0002</td>
-<td>AK0002-011</td>
-<td>ANCHORAGE PUBLIC LIBRARY</td>
-<td>3600 DENALI STREET</td>
-<td>ANCHORAGE</td>
-<td>99503</td>
-<td>ANCHORAGE</td>
-<td>9073432892</td>
-<td>NO</td>
-<td>CO</td>
-<td>MO</td>
-<td>Y</td>
-<td>MA1</td>
-<td>N</td>
-<td>1/1/17</td>
-<td>12/31/17</td>
-<td>295365</td>
-<td>292940</td>
-<td>1</td>
-<td>4</td>
-<td>0</td>
-<td>76.65</td>
-<td>370812</td>
-<td>21587</td>
-<td>30963</td>
-<td>12992</td>
-<td>76404</td>
-<td>0</td>
-<td>14</td>
-<td>7311</td>
-<td>11400</td>
-<td>723272</td>
-<td>54306</td>
-<td>135828</td>
-<td>1574942</td>
-<td>553651</td>
-<td>1924</td>
-<td>165</td>
-<td>126846</td>
-<td>90135</td>
-<td>08</td>
-<td>00</td>
-<td>00</td>
-<td>00</td>
-<td>-149.876</td>
-<td>61.18744</td>
-</tr>
-<tr class="odd">
-<td>AK</td>
-<td>AK0003</td>
-<td>AK0003-002</td>
-<td>ANDERSON COMMUNITY LIBRARY</td>
-<td>101 FIRST STREET</td>
-<td>ANDERSON</td>
-<td>99744</td>
-<td>DENALI</td>
-<td>9075822628</td>
-<td>NO</td>
-<td>CI</td>
-<td>SO</td>
-<td>Y</td>
-<td>CI1</td>
-<td>N</td>
-<td>7/1/17</td>
-<td>6/30/18</td>
-<td>269</td>
-<td>267</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>0.75</td>
-<td>15314</td>
-<td>0</td>
-<td>201</td>
-<td>0</td>
-<td>1403</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>480</td>
-<td>592</td>
-<td>300</td>
-<td>113</td>
-<td>1137</td>
-<td>264</td>
-<td>4</td>
-<td>5</td>
-<td>225</td>
-<td>0</td>
-<td>08</td>
-<td>00</td>
-<td>00</td>
-<td>00</td>
-<td>-149.187</td>
-<td>64.34363</td>
-</tr>
-<tr class="even">
-<td>AK</td>
-<td>AK0006</td>
-<td>AK0006-002</td>
-<td>KUSKOKWIM CONSORTIUM LIBRARY</td>
-<td>420 CHIEF EDDIE HOFFMAN HIGHWAY</td>
-<td>BETHEL</td>
-<td>99559</td>
-<td>BETHEL</td>
-<td>9075434516</td>
-<td>NO</td>
-<td>MJ</td>
-<td>SO</td>
-<td>Y</td>
-<td>CI1</td>
-<td>N</td>
-<td>7/1/17</td>
-<td>6/30/18</td>
-<td>6135</td>
-<td>6085</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>3</td>
-<td>34860</td>
-<td>21587</td>
-<td>425</td>
-<td>12992</td>
-<td>3782</td>
-<td>0</td>
-<td>0</td>
-<td>5</td>
-<td>2040</td>
-<td>51000</td>
-<td>1530</td>
-<td>1912</td>
-<td>14067</td>
-<td>3746</td>
-<td>406</td>
-<td>8</td>
-<td>6600</td>
-<td>5716</td>
-<td>08</td>
-<td>00</td>
-<td>00</td>
-<td>00</td>
-<td>-161.771</td>
-<td>60.79114</td>
-</tr>
-<tr class="odd">
-<td>AK</td>
-<td>AK0007</td>
-<td>AK0007-002</td>
-<td>BIG LAKE PUBLIC LIBRARY</td>
-<td>3140 SOUTH BIG LAKE ROAD</td>
-<td>BIG LAKE</td>
-<td>99652</td>
-<td>MATANUSKA-SUSITNA</td>
-<td>9078617635</td>
-<td>NO</td>
-<td>CO</td>
-<td>SO</td>
-<td>Y</td>
-<td>CO1</td>
-<td>N</td>
-<td>7/1/17</td>
-<td>6/30/18</td>
-<td>12847</td>
-<td>12742</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>3</td>
-<td>28698</td>
-<td>21587</td>
-<td>2140</td>
-<td>12992</td>
-<td>3805</td>
-<td>0</td>
-<td>0</td>
-<td>47</td>
-<td>2551</td>
-<td>62249</td>
-<td>887</td>
-<td>2890</td>
-<td>36670</td>
-<td>15691</td>
-<td>363</td>
-<td>18</td>
-<td>15022</td>
-<td>8125</td>
-<td>08</td>
-<td>00</td>
-<td>00</td>
-<td>00</td>
-<td>-149.819</td>
-<td>61.5475</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div id="cell-6" class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>sql</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>CREATE INDEX libname_2018_idx ON pls_fy2018_libraries (libname)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code> * sqlite:///library.db
-Done.</code></pre>
-</div>
-<div class="cell-output cell-output-display" data-execution_count="6">
-<pre><code>[]</code></pre>
-</div>
-</div>
-<div id="cell-7" class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>sql</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>SELECT <span class="op">*</span> FROM pls_fy2018_libraries LIMIT <span class="dv">5</span><span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code> * sqlite:///library.db
-Done.</code></pre>
-</div>
-<div class="cell-output cell-output-display" data-execution_count="7">
-<table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th">stabr</th>
-<th data-quarto-table-cell-role="th">fscskey</th>
-<th data-quarto-table-cell-role="th">libid</th>
-<th data-quarto-table-cell-role="th">libname</th>
-<th data-quarto-table-cell-role="th">address</th>
-<th data-quarto-table-cell-role="th">city</th>
-<th data-quarto-table-cell-role="th">zip</th>
-<th data-quarto-table-cell-role="th">county</th>
-<th data-quarto-table-cell-role="th">phone</th>
-<th data-quarto-table-cell-role="th">c_relatn</th>
-<th data-quarto-table-cell-role="th">c_legbas</th>
-<th data-quarto-table-cell-role="th">c_admin</th>
-<th data-quarto-table-cell-role="th">c_fscs</th>
-<th data-quarto-table-cell-role="th">geocode</th>
-<th data-quarto-table-cell-role="th">lsabound</th>
-<th data-quarto-table-cell-role="th">startdate</th>
-<th data-quarto-table-cell-role="th">enddate</th>
-<th data-quarto-table-cell-role="th">popu_lsa</th>
-<th data-quarto-table-cell-role="th">popu_und</th>
-<th data-quarto-table-cell-role="th">centlib</th>
-<th data-quarto-table-cell-role="th">branlib</th>
-<th data-quarto-table-cell-role="th">bkmob</th>
-<th data-quarto-table-cell-role="th">totstaff</th>
-<th data-quarto-table-cell-role="th">bkvol</th>
-<th data-quarto-table-cell-role="th">ebook</th>
-<th data-quarto-table-cell-role="th">audio_ph</th>
-<th data-quarto-table-cell-role="th">audio_dl</th>
-<th data-quarto-table-cell-role="th">video_ph</th>
-<th data-quarto-table-cell-role="th">video_dl</th>
-<th data-quarto-table-cell-role="th">ec_lo_ot</th>
-<th data-quarto-table-cell-role="th">subscrip</th>
-<th data-quarto-table-cell-role="th">hrs_open</th>
-<th data-quarto-table-cell-role="th">visits</th>
-<th data-quarto-table-cell-role="th">reference</th>
-<th data-quarto-table-cell-role="th">regbor</th>
-<th data-quarto-table-cell-role="th">totcir</th>
-<th data-quarto-table-cell-role="th">kidcircl</th>
-<th data-quarto-table-cell-role="th">totpro</th>
-<th data-quarto-table-cell-role="th">gpterms</th>
-<th data-quarto-table-cell-role="th">pitusr</th>
-<th data-quarto-table-cell-role="th">wifisess</th>
-<th data-quarto-table-cell-role="th">obereg</th>
-<th data-quarto-table-cell-role="th">statstru</th>
-<th data-quarto-table-cell-role="th">statname</th>
-<th data-quarto-table-cell-role="th">stataddr</th>
-<th data-quarto-table-cell-role="th">longitude</th>
-<th data-quarto-table-cell-role="th">latitude</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>AK</td>
-<td>AK0001</td>
-<td>AK0001-002</td>
-<td>ANCHOR POINT PUBLIC LIBRARY</td>
-<td>34020 NORTH FORK ROAD</td>
-<td>ANCHOR POINT</td>
-<td>99556</td>
-<td>KENAI PENINSULA</td>
-<td>9072355692</td>
-<td>NO</td>
-<td>NP</td>
-<td>SO</td>
-<td>Y</td>
-<td>CI1</td>
-<td>N</td>
-<td>7/1/17</td>
-<td>6/30/18</td>
-<td>2057</td>
-<td>2040</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>0.67</td>
-<td>18201</td>
-<td>0</td>
-<td>179</td>
-<td>0</td>
-<td>3320</td>
-<td>0</td>
-<td>0</td>
-<td>9</td>
-<td>1245</td>
-<td>6032</td>
-<td>4</td>
-<td>1726</td>
-<td>11316</td>
-<td>2294</td>
-<td>60</td>
-<td>8</td>
-<td>1495</td>
-<td>1182</td>
-<td>08</td>
-<td>00</td>
-<td>00</td>
-<td>00</td>
-<td>-151.825</td>
-<td>59.77965</td>
-</tr>
-<tr class="even">
-<td>AK</td>
-<td>AK0002</td>
-<td>AK0002-011</td>
-<td>ANCHORAGE PUBLIC LIBRARY</td>
-<td>3600 DENALI STREET</td>
-<td>ANCHORAGE</td>
-<td>99503</td>
-<td>ANCHORAGE</td>
-<td>9073432892</td>
-<td>NO</td>
-<td>CO</td>
-<td>MO</td>
-<td>Y</td>
-<td>MA1</td>
-<td>N</td>
-<td>1/1/17</td>
-<td>12/31/17</td>
-<td>295365</td>
-<td>292940</td>
-<td>1</td>
-<td>4</td>
-<td>0</td>
-<td>76.65</td>
-<td>370812</td>
-<td>21587</td>
-<td>30963</td>
-<td>12992</td>
-<td>76404</td>
-<td>0</td>
-<td>14</td>
-<td>7311</td>
-<td>11400</td>
-<td>723272</td>
-<td>54306</td>
-<td>135828</td>
-<td>1574942</td>
-<td>553651</td>
-<td>1924</td>
-<td>165</td>
-<td>126846</td>
-<td>90135</td>
-<td>08</td>
-<td>00</td>
-<td>00</td>
-<td>00</td>
-<td>-149.876</td>
-<td>61.18744</td>
-</tr>
-<tr class="odd">
-<td>AK</td>
-<td>AK0003</td>
-<td>AK0003-002</td>
-<td>ANDERSON COMMUNITY LIBRARY</td>
-<td>101 FIRST STREET</td>
-<td>ANDERSON</td>
-<td>99744</td>
-<td>DENALI</td>
-<td>9075822628</td>
-<td>NO</td>
-<td>CI</td>
-<td>SO</td>
-<td>Y</td>
-<td>CI1</td>
-<td>N</td>
-<td>7/1/17</td>
-<td>6/30/18</td>
-<td>269</td>
-<td>267</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>0.75</td>
-<td>15314</td>
-<td>0</td>
-<td>201</td>
-<td>0</td>
-<td>1403</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>480</td>
-<td>592</td>
-<td>300</td>
-<td>113</td>
-<td>1137</td>
-<td>264</td>
-<td>4</td>
-<td>5</td>
-<td>225</td>
-<td>0</td>
-<td>08</td>
-<td>00</td>
-<td>00</td>
-<td>00</td>
-<td>-149.187</td>
-<td>64.34363</td>
-</tr>
-<tr class="even">
-<td>AK</td>
-<td>AK0006</td>
-<td>AK0006-002</td>
-<td>KUSKOKWIM CONSORTIUM LIBRARY</td>
-<td>420 CHIEF EDDIE HOFFMAN HIGHWAY</td>
-<td>BETHEL</td>
-<td>99559</td>
-<td>BETHEL</td>
-<td>9075434516</td>
-<td>NO</td>
-<td>MJ</td>
-<td>SO</td>
-<td>Y</td>
-<td>CI1</td>
-<td>N</td>
-<td>7/1/17</td>
-<td>6/30/18</td>
-<td>6135</td>
-<td>6085</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>3</td>
-<td>34860</td>
-<td>21587</td>
-<td>425</td>
-<td>12992</td>
-<td>3782</td>
-<td>0</td>
-<td>0</td>
-<td>5</td>
-<td>2040</td>
-<td>51000</td>
-<td>1530</td>
-<td>1912</td>
-<td>14067</td>
-<td>3746</td>
-<td>406</td>
-<td>8</td>
-<td>6600</td>
-<td>5716</td>
-<td>08</td>
-<td>00</td>
-<td>00</td>
-<td>00</td>
-<td>-161.771</td>
-<td>60.79114</td>
-</tr>
-<tr class="odd">
-<td>AK</td>
-<td>AK0007</td>
-<td>AK0007-002</td>
-<td>BIG LAKE PUBLIC LIBRARY</td>
-<td>3140 SOUTH BIG LAKE ROAD</td>
-<td>BIG LAKE</td>
-<td>99652</td>
-<td>MATANUSKA-SUSITNA</td>
-<td>9078617635</td>
-<td>NO</td>
-<td>CO</td>
-<td>SO</td>
-<td>Y</td>
-<td>CO1</td>
-<td>N</td>
-<td>7/1/17</td>
-<td>6/30/18</td>
-<td>12847</td>
-<td>12742</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>3</td>
-<td>28698</td>
-<td>21587</td>
-<td>2140</td>
-<td>12992</td>
-<td>3805</td>
-<td>0</td>
-<td>0</td>
-<td>47</td>
-<td>2551</td>
-<td>62249</td>
-<td>887</td>
-<td>2890</td>
-<td>36670</td>
-<td>15691</td>
-<td>363</td>
-<td>18</td>
-<td>15022</td>
-<td>8125</td>
-<td>08</td>
-<td>00</td>
-<td>00</td>
-<td>00</td>
-<td>-149.819</td>
-<td>61.5475</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div id="cell-8" class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>sql</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>PRAGMA index_list(<span class="st">'pls_fy2018_libraries'</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code> * sqlite:///library.db
-Done.</code></pre>
-</div>
-<div class="cell-output cell-output-display" data-execution_count="8">
-<table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th">seq</th>
-<th data-quarto-table-cell-role="th">name</th>
-<th data-quarto-table-cell-role="th">unique</th>
-<th data-quarto-table-cell-role="th">origin</th>
-<th data-quarto-table-cell-role="th">partial</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>0</td>
-<td>libname_2018_idx</td>
-<td>0</td>
-<td>c</td>
-<td>0</td>
-</tr>
-<tr class="even">
-<td>1</td>
-<td>sqlite_autoindex_pls_fy2018_libraries_1</td>
-<td>1</td>
-<td>pk</td>
-<td>0</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div id="cell-9" class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>sql</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>SELECT sql FROM sqlite_master WHERE <span class="bu">type</span> <span class="op">=</span> <span class="st">'index'</span> AND name <span class="op">=</span> <span class="st">'libname_2018_idx'</span><span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code> * sqlite:///library.db
-Done.</code></pre>
-</div>
-<div class="cell-output cell-output-display" data-execution_count="9">
-<table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th">sql</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>CREATE INDEX libname_2018_idx ON pls_fy2018_libraries (libname)</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div id="cell-10" class="cell" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>sql</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>SELECT count(<span class="op">*</span>)</span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>FROM pls_fy2018_libraries<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code> * sqlite:///library.db
-Done.</code></pre>
-</div>
-<div class="cell-output cell-output-display" data-execution_count="10">
-<table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th">count(*)</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>9261</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div id="cell-11" class="cell" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>sql</span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>SELECT count(phone)</span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>FROM pls_fy2018_libraries<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code> * sqlite:///library.db
-Done.</code></pre>
-</div>
-<div class="cell-output cell-output-display" data-execution_count="11">
-<table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th">count(phone)</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>9261</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div id="cell-12" class="cell" data-execution_count="12">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>sql </span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>SELECT libname, count(libname)</span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>    FROM pls_fy2018_libraries</span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>    GROUP BY libname</span>
-<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>    ORDER BY count(libname) DESC</span>
-<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>    LIMIT <span class="dv">20</span><span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code> * sqlite:///library.db
-Done.</code></pre>
-</div>
-<div class="cell-output cell-output-display" data-execution_count="12">
-<table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th">libname</th>
-<th data-quarto-table-cell-role="th">count(libname)</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>OXFORD PUBLIC LIBRARY</td>
-<td>10</td>
-</tr>
-<tr class="even">
-<td>MADISON PUBLIC LIBRARY</td>
-<td>8</td>
-</tr>
-<tr class="odd">
-<td>BLOOMFIELD PUBLIC LIBRARY</td>
-<td>7</td>
-</tr>
-<tr class="even">
-<td>CARNEGIE PUBLIC LIBRARY</td>
-<td>7</td>
-</tr>
-<tr class="odd">
-<td>PRINCETON PUBLIC LIBRARY</td>
-<td>7</td>
-</tr>
-<tr class="even">
-<td>BURLINGTON PUBLIC LIBRARY</td>
-<td>6</td>
-</tr>
-<tr class="odd">
-<td>FRANKLIN PUBLIC LIBRARY</td>
-<td>6</td>
-</tr>
-<tr class="even">
-<td>MILFORD PUBLIC LIBRARY</td>
-<td>6</td>
-</tr>
-<tr class="odd">
-<td>WAYNE COUNTY PUBLIC LIBRARY</td>
-<td>6</td>
-</tr>
-<tr class="even">
-<td>ANDOVER PUBLIC LIBRARY</td>
-<td>5</td>
-</tr>
-<tr class="odd">
-<td>BRIDGEPORT PUBLIC LIBRARY</td>
-<td>5</td>
-</tr>
-<tr class="even">
-<td>CANTON PUBLIC LIBRARY</td>
-<td>5</td>
-</tr>
-<tr class="odd">
-<td>ELGIN PUBLIC LIBRARY</td>
-<td>5</td>
-</tr>
-<tr class="even">
-<td>HILLSBORO PUBLIC LIBRARY</td>
-<td>5</td>
-</tr>
-<tr class="odd">
-<td>JEFFERSON PUBLIC LIBRARY</td>
-<td>5</td>
-</tr>
-<tr class="even">
-<td>LEBANON PUBLIC LIBRARY</td>
-<td>5</td>
-</tr>
-<tr class="odd">
-<td>LINCOLN PUBLIC LIBRARY</td>
-<td>5</td>
-</tr>
-<tr class="even">
-<td>LYONS PUBLIC LIBRARY</td>
-<td>5</td>
-</tr>
-<tr class="odd">
-<td>MARION PUBLIC LIBRARY</td>
-<td>5</td>
-</tr>
-<tr class="even">
-<td>MONROE PUBLIC LIBRARY</td>
-<td>5</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div id="cell-13" class="cell" data-execution_count="13">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>sql</span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>SELECT <span class="bu">max</span>(visits), <span class="bu">min</span>(visits)</span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>FROM pls_fy2018_libraries</span>
-<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>WHERE visits <span class="op">&gt;</span> <span class="dv">0</span><span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code> * sqlite:///library.db
-Done.</code></pre>
-</div>
-<div class="cell-output cell-output-display" data-execution_count="13">
-<table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th">max(visits)</th>
-<th data-quarto-table-cell-role="th">min(visits)</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>16686945</td>
-<td>21</td>
-</tr>
-</tbody>
-</table>
 </div>
 </div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1773,7 +939,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.dev/ericaraujophd/25sp-cs354A/blob/main/jupyter/libraries/libraries.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/25sp-cs354A/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ericaraujophd/25sp-cs354A/edit/main/week02-notebook.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/25sp-cs354A/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">

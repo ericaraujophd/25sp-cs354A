@@ -1,0 +1,151 @@
+---
+title: "Week 02: SQL – Intermediate Concepts Summary"
+format:
+  html:
+    code-fold: true
+jupyter: python3
+---
+
+## SLOs for Week 02
+
+At the end of this unit, students will be able to...
+
+1.  Perform data aggregation using GROUP BY and HAVING.
+2.  Write and execute INNER, LEFT-OUTER, RIGHT, and FULL JOINs.
+3.  Construct subqueries for complex queries.
+4.  Implement SQL functions and expressions.
+5.  Use SQL best practices for readable and efficient queries.
+6.  Optimize SQL queries for better performance.
+
+## 0. Our dataset for this tasks
+
+In the US, the Institute of Museum and Library Services (IMLS) measures library activity as part of its annual Public Libraries Survey. The survey collects data from more than 9000 library administrative entities, defined by the survey as agencies that provide library services to a particular locality. Data includes the number of branches, staff, books, hours open per year, etc. To teach the concepts below, we will build three tables containing the data from the survey related to the years of 2016, 2017 and 2018. For doing so, we read from the CSV files downloaded from their website. More especifically, some columns will be selected in the process to reduce the amount of non used attributes.
+
+We are running SQL queries in a Jupyter environment. 
+
+```{python}
+%%capture
+%load_ext sql
+%sql sqlite:///dbs/w02/library.db
+%config SqlMagic.style = '_DEPRECATED_DEFAULT'
+```
+
+This will open our database `library.db` for us. Don't bother yourself with the config details. That is a trick to run the SQL queries in this environment.
+
+Now we turn to our tables. We have to create 3 tables. Let's start with the table for 2018.
+
+```{python}
+#| label: create-2018
+%%sql
+-- Creating the 2018 Public Libraries Survey table
+
+-- We drop an old copy of the table, if it exists.
+DROP TABLE IF EXISTS libraries_2018;
+
+CREATE TABLE libraries_2018 (
+    stabr text NOT NULL,
+    fscskey text CONSTRAINT fscskey_2018_pkey PRIMARY KEY,
+    libid text NOT NULL,
+    libname text NOT NULL,
+    address text NOT NULL,
+    city text NOT NULL,
+    zip text NOT NULL,
+    county text NOT NULL,
+    phone text NOT NULL,
+    c_relatn text NOT NULL,
+    c_legbas text NOT NULL,
+    c_admin text NOT NULL,
+    c_fscs text NOT NULL,
+    geocode text NOT NULL,
+    lsabound text NOT NULL,
+    startdate text NOT NULL,
+    enddate text NOT NULL,
+    popu_lsa integer NOT NULL,
+    popu_und integer NOT NULL,
+    centlib integer NOT NULL,
+    branlib integer NOT NULL,
+    bkmob integer NOT NULL,
+    totstaff numeric(8,2) NOT NULL,
+    bkvol integer NOT NULL,
+    ebook integer NOT NULL,
+    audio_ph integer NOT NULL,
+    audio_dl integer NOT NULL,
+    video_ph integer NOT NULL,
+    video_dl integer NOT NULL,
+    ec_lo_ot integer NOT NULL,
+    subscrip integer NOT NULL,
+    hrs_open integer NOT NULL,
+    visits integer NOT NULL,
+    reference integer NOT NULL,
+    regbor integer NOT NULL,
+    totcir integer NOT NULL,
+    kidcircl integer NOT NULL,
+    totpro integer NOT NULL,
+    gpterms integer NOT NULL,
+    pitusr integer NOT NULL,
+    wifisess integer NOT NULL,
+    obereg text NOT NULL,
+    statstru text NOT NULL,
+    statname text NOT NULL,
+    stataddr text NOT NULL,
+    longitude numeric(10,7) NOT NULL,
+    latitude numeric(10,7) NOT NULL
+);
+```
+
+This is an empty table. To fill the table, we need to convert our CSV entries to entitites in our database.
+
+Here I came up with another trick. I created a shell script that opens SQLite3 and calls the command to convert a CSV file into a table inside the database. The code for the script is as follows:
+
+```{sh}
+#| output: false
+
+#!/bin/bash
+
+# Usage: ./import_csv_to_sqlite.sh path/to/file.csv database.db table_name
+
+CSV_FILE="$1"
+DB_FILE="$2"
+TABLE_NAME="$3"
+
+# Check arguments
+if [ "$#" -ne 3 ]; then
+  echo "Usage: $0 path/to/file.csv database.db table_name"
+  exit 1
+fi
+
+# Check if the CSV file exists
+if [ ! -f "$CSV_FILE" ]; then
+  echo "Error: CSV file '$CSV_FILE' not found."
+  exit 1
+fi
+
+# Import the CSV into the SQLite database. Skip the first row (header)
+sqlite3 "$DB_FILE" <<EOF
+.mode csv
+.import --skip 1 '$CSV_FILE' $TABLE_NAME
+EOF
+
+echo "✅ Imported '$CSV_FILE' into table '$TABLE_NAME' in '$DB_FILE'"
+```
+
+
+For a demonstration of a line plot on a polar axis, see @fig-polar.
+
+```{python}
+#| label: fig-polar
+#| fig-cap: "A line plot on a polar axis"
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+r = np.arange(0, 2, 0.01)
+theta = 2 * np.pi * r
+fig, ax = plt.subplots(
+  subplot_kw = {'projection': 'polar'} 
+)
+ax.plot(theta, r)
+ax.set_rticks([0.5, 1, 1.5, 2])
+ax.grid(True)
+plt.show()
+```
