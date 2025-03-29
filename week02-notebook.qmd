@@ -131,7 +131,7 @@ The same should be done for the years 2016 and 2017.
 
 ```{python}
 #| label: create-2016
-#| code-fold: false
+#| code-fold: true
 %%sql
 -- Creating the 2016 Public Libraries Survey table
 
