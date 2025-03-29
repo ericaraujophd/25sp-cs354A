@@ -187,6 +187,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#sql-aggregation-grouping-with-sqlite-notes" id="toc-sql-aggregation-grouping-with-sqlite-notes" class="nav-link" data-scroll-target="#sql-aggregation-grouping-with-sqlite-notes">🧮 1. SQL Aggregation &amp; Grouping (with SQLite Notes)</a>
   <ul class="collapse">
   <li><a href="#basic-grouping-example" id="toc-basic-grouping-example" class="nav-link" data-scroll-target="#basic-grouping-example">🧩 Basic Grouping Example</a></li>
+  <li><a href="#filtering-groups-with-having" id="toc-filtering-groups-with-having" class="nav-link" data-scroll-target="#filtering-groups-with-having">🔍 Filtering Groups with HAVING</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/ericaraujophd/25sp-cs354A/edit/main/week02-notebook.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/25sp-cs354A/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -229,7 +230,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="creating-the-library-survey-tables">0. Creating the Library Survey Tables</h2>
 <p>In the US, the Institute of Museum and Library Services (IMLS) measures library activity as part of its annual Public Libraries Survey. The survey collects data from more than 9000 library administrative entities, defined by the survey as agencies that provide library services to a particular locality. Data includes the number of branches, staff, books, hours open per year, etc. To teach the concepts below, we will build three tables containing the data from the survey related to the years of 2016, 2017 and 2018. For doing so, we read from the CSV files downloaded from their website. More especifically, some columns will be selected in the process to reduce the amount of non used attributes.</p>
 <p>We are running SQL queries in a Jupyter environment.</p>
-<div id="c3e64088" class="cell" data-execution_count="1">
+<div id="2491dfbb" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>capture</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>load_ext sql</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>sql sqlite:<span class="op">///</span>dbs<span class="op">/</span>w02<span class="op">/</span>library.db</span>
@@ -306,7 +307,7 @@ Done.</code></pre>
 <hr>
 <p><strong>This is</strong> an empty table. To fill the table, we need to convert our CSV entries to entitites in our database.</p>
 <p>Here I came up with another trick. I created a subprocess that opens SQLite3 and calls the command to convert a CSV file into a table inside the database. The code is as follows:</p>
-<div id="68dc2ff5" class="cell" data-execution_count="3">
+<div id="88b3eedf" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> subprocess</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>db <span class="op">=</span> <span class="st">"dbs/w02/library.db"</span></span>
@@ -325,7 +326,7 @@ Done.</code></pre>
 </div>
 <hr>
 <p><strong>Let’s see</strong> if the data was loaded? Let’s peak on the 10 first rows.</p>
-<div id="09e9e833" class="cell" data-execution_count="4">
+<div id="eb09c051" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>sql</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>SELECT <span class="op">*</span> FROM libraries_2018</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>LIMIT <span class="dv">10</span><span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -883,7 +884,7 @@ Done.</code></pre>
 </div>
 <hr>
 <p><strong>Now, lets</strong> count how many rows are in this table.</p>
-<div id="f1e2c43d" class="cell" data-execution_count="5">
+<div id="21a67ccd" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>sql</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>SELECT count(<span class="op">*</span>) FROM libraries_2018<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -1030,7 +1031,7 @@ Done.</code></pre>
 </div>
 <hr>
 <p><strong>And now</strong>, let’s fill the tables with data from our CSV files.</p>
-<div id="c491ba67" class="cell" data-execution_count="7">
+<div id="7908b625" class="cell" data-execution_count="7">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 2016</span></span>
@@ -1063,7 +1064,7 @@ Done.</code></pre>
 </div>
 <hr>
 <p><strong>Let’s check</strong> the rows count for each of the tables now.</p>
-<div id="ba1130bd" class="cell" data-execution_count="8">
+<div id="ad208a00" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>sql</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    SELECT <span class="dv">2016</span> AS <span class="st">'Year'</span>, count(<span class="op">*</span>) AS NumRows FROM libraries_2016</span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>UNION ALL</span>
@@ -1148,6 +1149,72 @@ Done.</code></pre>
 <div class="sourceCode" id="cb18"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> major, <span class="fu">COUNT</span>(<span class="op">*</span>) <span class="kw">AS</span> student_count</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> students</span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> major;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>✅ SQLite allows this even if you’re selecting columns not in the GROUP BY clause or not inside an aggregate function. It will return one arbitrary value from each group for such columns.</p>
+<p><strong>Example (SQLite accepts this):</strong></p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> major, name</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> students</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> major;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This works in SQLite — it will return one name for each major, but which name is returned is undefined. ❌ PostgreSQL (and other standards-compliant SQL engines) will <strong>reject</strong> this query with an error unless name is also in the GROUP BY or wrapped in an aggregate like MIN(name).</p>
+</div>
+</div>
+</section>
+<section id="filtering-groups-with-having" class="level3">
+<h3 class="anchored" data-anchor-id="filtering-groups-with-having">🔍 Filtering Groups with HAVING</h3>
+<p>Use HAVING to filter after grouping.</p>
+<p><strong>Q:</strong> Show only majors with more than 10 students:</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> major, <span class="fu">COUNT</span>(<span class="op">*</span>) <span class="kw">AS</span> student_count</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> students</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> major</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="kw">HAVING</span> <span class="fu">COUNT</span>(<span class="op">*</span>) <span class="op">&gt;</span> <span class="dv">10</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>ℹ️ In SQLite, you can refer to the alias (student_count) in HAVING. In PostgreSQL, you’d need to repeat the expression: HAVING COUNT(*) &gt; 10.</p>
+</div>
+</div>
+<p>📊 <strong>Combining Aggregates</strong></p>
+<p><strong>Q:</strong> Show average GPA per department — only if it’s above 3.5:</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> department, <span class="fu">AVG</span>(gpa) <span class="kw">AS</span> avg_gpa</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> students</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> department</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="kw">HAVING</span> <span class="fu">AVG</span>(gpa) <span class="op">&gt;</span> <span class="fl">3.5</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>🔗 <strong>Grouping by Expressions</strong></p>
+<p>You can group by computed values like substrings or date parts.</p>
+<p><strong>Q:</strong> Count students by <strong>admission year</strong> (from text-based dates):</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="fu">SUBSTR</span>(admission_date, <span class="dv">1</span>, <span class="dv">4</span>) <span class="kw">AS</span> <span class="dt">year</span>, <span class="fu">COUNT</span>(<span class="op">*</span>) <span class="kw">AS</span> num_students</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> students</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> <span class="dt">year</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>✅ Works well in SQLite (which stores dates as text: YYYY-MM-DD). ❗ In PostgreSQL, use: EXTRACT(YEAR FROM admission_date).</p>
+</div>
+</div>
+<p>🧠 <strong>Tips for Grouping Queries</strong> * Use GROUP BY with aggregate functions. * Use HAVING to filter groups (not rows). * Use WHERE for filtering before grouping. * Prefer column names or expressions in GROUP BY, not just positions (e.g., avoid GROUP BY 1). * Be cautious using non-aggregated, non-grouped columns in SQLite — it’s allowed, but not portable or predictable.</p>
 
 
 </section>

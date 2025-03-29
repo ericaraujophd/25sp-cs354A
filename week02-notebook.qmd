@@ -323,3 +323,71 @@ SELECT major, COUNT(*) AS student_count
 FROM students
 GROUP BY major;
 ```
+
+✅ SQLite allows this even if you’re selecting columns not in the GROUP BY clause or not inside an aggregate function. It will return one arbitrary value from each group for such columns.
+
+**Example (SQLite accepts this):**
+
+```sql
+SELECT major, name
+FROM students
+GROUP BY major;
+```
+
+:::{.callout-note}
+This works in SQLite — it will return one name for each major, but which name is returned is undefined.
+❌ PostgreSQL (and other standards-compliant SQL engines) will **reject** this query with an error unless name is also in the GROUP BY or wrapped in an aggregate like MIN(name).
+:::
+
+### 🔍 Filtering Groups with HAVING
+
+Use HAVING to filter after grouping.
+
+**Q:** Show only majors with more than 10 students:
+
+```sql
+SELECT major, COUNT(*) AS student_count
+FROM students
+GROUP BY major
+HAVING COUNT(*) > 10;
+```
+
+:::{.callout-note}
+ℹ️ In SQLite, you can refer to the alias (student_count) in HAVING.
+In PostgreSQL, you’d need to repeat the expression: HAVING COUNT(*) > 10.
+:::
+
+📊 **Combining Aggregates**
+
+**Q:** Show average GPA per department — only if it’s above 3.5:
+
+```sql
+SELECT department, AVG(gpa) AS avg_gpa
+FROM students
+GROUP BY department
+HAVING AVG(gpa) > 3.5;
+```
+
+🔗 **Grouping by Expressions**
+
+You can group by computed values like substrings or date parts.
+
+**Q:** Count students by **admission year** (from text-based dates):
+
+```sql
+SELECT SUBSTR(admission_date, 1, 4) AS year, COUNT(*) AS num_students
+FROM students
+GROUP BY year;
+```
+
+:::{.callout-note}
+✅ Works well in SQLite (which stores dates as text: YYYY-MM-DD).
+❗ In PostgreSQL, use: EXTRACT(YEAR FROM admission_date).
+:::
+
+🧠 **Tips for Grouping Queries**
+* Use GROUP BY with aggregate functions.
+* Use HAVING to filter groups (not rows).
+* Use WHERE for filtering before grouping.
+* Prefer column names or expressions in GROUP BY, not just positions (e.g., avoid GROUP BY 1).
+* Be cautious using non-aggregated, non-grouped columns in SQLite — it’s allowed, but not portable or predictable.
