@@ -101,7 +101,7 @@ Here I came up with another trick. I created a subprocess that opens SQLite3 and
 import subprocess
 
 db = "dbs/w02/library.db"
-csv = "/dbs/w02/pls_fy2018_libraries.csv"
+csv = "dbs/w02/pls_fy2018_libraries.csv"
 table = "libraries_2018"
 
 sqlite_command = f"""
