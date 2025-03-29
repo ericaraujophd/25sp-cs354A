@@ -302,7 +302,7 @@ UNION ALL
 
 SQL lets you **summarize** data using **aggregate functions**, and **group** it with GROUP BY. This is especially helpful for statistics, reports, and dashboards.
 
-🎯 Common Aggregate Functions
+### 🎯 **Common Aggregate Functions**
 
 | Function    | Description          | Example              |
 |-------------|----------------------|----------------------|
@@ -312,7 +312,9 @@ SQL lets you **summarize** data using **aggregate functions**, and **group** it 
 | `MIN()`     | Smallest value       | `MIN(age)`           |
 | `MAX()`     | Largest value        | `MAX(salary)`        |
 
+:::{.callout-note}
 ✅ **SQLite supports all these functions.**
+:::
 
 ### 🧩 Basic Grouping Example
 
@@ -324,7 +326,9 @@ FROM students
 GROUP BY major;
 ```
 
+:::{.callout-note}
 ✅ SQLite allows this even if you’re selecting columns not in the GROUP BY clause or not inside an aggregate function. It will return one arbitrary value from each group for such columns.
+:::
 
 **Example (SQLite accepts this):**
 
@@ -357,7 +361,7 @@ HAVING COUNT(*) > 10;
 In PostgreSQL, you’d need to repeat the expression: HAVING COUNT(*) > 10.
 :::
 
-📊 **Combining Aggregates**
+### 📊 Combining Aggregates
 
 **Q:** Show average GPA per department — only if it’s above 3.5:
 
@@ -368,7 +372,7 @@ GROUP BY department
 HAVING AVG(gpa) > 3.5;
 ```
 
-🔗 **Grouping by Expressions**
+### 🔗 Grouping by Expressions
 
 You can group by computed values like substrings or date parts.
 
@@ -385,9 +389,11 @@ GROUP BY year;
 ❗ In PostgreSQL, use: EXTRACT(YEAR FROM admission_date).
 :::
 
-🧠 **Tips for Grouping Queries**
+### 🧠 Tips for Grouping Queries
+
 * Use GROUP BY with aggregate functions.
 * Use HAVING to filter groups (not rows).
 * Use WHERE for filtering before grouping.
 * Prefer column names or expressions in GROUP BY, not just positions (e.g., avoid GROUP BY 1).
 * Be cautious using non-aggregated, non-grouped columns in SQLite — it’s allowed, but not portable or predictable.
+
