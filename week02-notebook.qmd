@@ -112,13 +112,24 @@ sqlite_command = f"""
 subprocess.run(["sqlite3", db], input=sqlite_command, text=True)
 ```
 
-Let's see if the data was loaded?
+Let's see if the data was loaded? Let's peak on the 10 first rows.
 
 ```{python}
 %%sql
 SELECT * FROM libraries_2018
-LIMIT 50;
+LIMIT 10;
 ```
+
+Now, lets count how many rows are in this table.
+
+```{python}
+%%sql
+SELECT count(*) FROM libraries_2018;
+```
+
+The same should
+
+
 
 For a demonstration of a line plot on a polar axis, see @fig-polar.
 
