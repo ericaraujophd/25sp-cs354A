@@ -95,36 +95,21 @@ CREATE TABLE libraries_2018 (
 
 This is an empty table. To fill the table, we need to convert our CSV entries to entitites in our database.
 
-Here I came up with another trick. I created a shell script that opens SQLite3 and calls the command to convert a CSV file into a table inside the database. The code for the script is as follows:
+Here I came up with another trick. I created a subprocess that opens SQLite3 and calls the command to convert a CSV file into a table inside the database. The code is as follows:
 
-```{bash}
-#!/bin/bash
+```{python}
+import subprocess
 
-# Usage: ./import_csv_to_sqlite.sh path/to/file.csv database.db table_name
+db = "/dbs/w02/library.db"
+csv = "/dbs/w02/pls_fy2018_libraries.csv"
+table = "libraries_2018"
 
-CSV_FILE="$1"
-DB_FILE="$2"
-TABLE_NAME="$3"
-
-# Check arguments
-if [ "$#" -ne 3 ]; then
-  echo "Usage: $0 path/to/file.csv database.db table_name"
-  exit 1
-fi
-
-# Check if the CSV file exists
-if [ ! -f "$CSV_FILE" ]; then
-  echo "Error: CSV file '$CSV_FILE' not found."
-  exit 1
-fi
-
-# Import the CSV into the SQLite database. Skip the first row (header)
-sqlite3 "$DB_FILE" <<EOF
+sqlite_command = f"""
 .mode csv
-.import --skip 1 '$CSV_FILE' $TABLE_NAME
-EOF
+.import '{csv}' {table}
+"""
 
-echo "✅ Imported '$CSV_FILE' into table '$TABLE_NAME' in '$DB_FILE'"
+subprocess.run(["sqlite3", db], input=sqlite_command, text=True)
 ```
 
 
