@@ -57,7 +57,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -104,9 +104,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 <script src="https://kit.fontawesome.com/78ddb093ea.js" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
-
-<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
 <meta property="og:title" content="Week 02: SQL – Intermediate Concepts Summary – CS 354 – Database Management Systems">
@@ -235,7 +232,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="creating-the-library-survey-tables">0. Creating the Library Survey Tables</h2>
 <p>In the US, the Institute of Museum and Library Services (IMLS) measures library activity as part of its annual Public Libraries Survey. The survey collects data from more than 9000 library administrative entities, defined by the survey as agencies that provide library services to a particular locality. Data includes the number of branches, staff, books, hours open per year, etc. To teach the concepts below, we will build three tables containing the data from the survey related to the years of 2016, 2017 and 2018. For doing so, we read from the CSV files downloaded from their website. More especifically, some columns will be selected in the process to reduce the amount of non used attributes.</p>
 <p>We are running SQL queries in a Jupyter environment.</p>
-<div id="cell-3" class="cell" data-execution_count="13">
+<div id="cell-3" class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>capture</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>load_ext sql</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>sql sqlite:<span class="op">///</span>dbs<span class="op">/</span>w02<span class="op">/</span>library.db</span>
@@ -243,7 +240,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>This will open our database <code>library.db</code> for us. Don’t bother yourself with the config details. That is a trick to run the SQL queries in this environment.</p>
 <p>Now we turn to our tables. We have to create 3 tables. Let’s start with the table for 2018.</p>
-<div id="cell-5" class="cell" data-execution_count="14">
+<div id="cell-5" class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>sql</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="op">--</span> Creating the <span class="dv">2018</span> Public Libraries Survey table</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -299,798 +296,179 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a>    longitude numeric(<span class="dv">10</span>,<span class="dv">7</span>) NOT NULL,</span>
 <span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a>    latitude numeric(<span class="dv">10</span>,<span class="dv">7</span>) NOT NULL</span>
 <span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code> * sqlite:///dbs/w02/library.db
-Done.
-Done.</code></pre>
-</div>
-<div class="cell-output cell-output-display" data-execution_count="14">
-<pre><code>[]</code></pre>
-</div>
 </div>
 <p><strong>This is</strong> an empty table. To fill the table, we need to convert our CSV entries to entitites in our database.</p>
 <p>Here I came up with another trick. I created a subprocess that opens SQLite3 and calls the command to convert a CSV file into a table inside the database. The code is as follows:</p>
-<div id="cell-7" class="cell" data-execution_count="15">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> subprocess</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>db <span class="op">=</span> <span class="st">"dbs/w02/library.db"</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>csv <span class="op">=</span> <span class="st">"dbs/w02/pls_fy2018_libraries.csv"</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>table <span class="op">=</span> <span class="st">"libraries_2018"</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>sqlite_command <span class="op">=</span> <span class="ss">f"""</span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="ss">.mode csv</span></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="ss">.import '</span><span class="sc">{</span>csv<span class="sc">}</span><span class="ss">' </span><span class="sc">{</span>table<span class="sc">}</span></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="ss">"""</span></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>subprocess.run([<span class="st">"sqlite3"</span>, db], <span class="bu">input</span><span class="op">=</span>sqlite_command, text<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="15">
-<pre><code>CompletedProcess(args=['sqlite3', 'dbs/w02/library.db'], returncode=0)</code></pre>
-</div>
+<div id="cell-7" class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> subprocess</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>db <span class="op">=</span> <span class="st">"dbs/w02/library.db"</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>csv <span class="op">=</span> <span class="st">"dbs/w02/pls_fy2018_libraries.csv"</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>table <span class="op">=</span> <span class="st">"libraries_2018"</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>sqlite_command <span class="op">=</span> <span class="ss">f"""</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="ss">.mode csv</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="ss">.import '</span><span class="sc">{</span>csv<span class="sc">}</span><span class="ss">' </span><span class="sc">{</span>table<span class="sc">}</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="ss">"""</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>subprocess.run([<span class="st">"sqlite3"</span>, db], <span class="bu">input</span><span class="op">=</span>sqlite_command, text<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <hr>
 <p><strong>Let’s see</strong> if the data was loaded? Let’s peak on the 10 first rows.</p>
-<div id="cell-9" class="cell" data-execution_count="16">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>sql</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>SELECT <span class="op">*</span> FROM libraries_2018</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>LIMIT <span class="dv">10</span><span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code> * sqlite:///dbs/w02/library.db
-Done.</code></pre>
-</div>
-<div class="cell-output cell-output-display" data-execution_count="16">
-<table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th">stabr</th>
-<th data-quarto-table-cell-role="th">fscskey</th>
-<th data-quarto-table-cell-role="th">libid</th>
-<th data-quarto-table-cell-role="th">libname</th>
-<th data-quarto-table-cell-role="th">address</th>
-<th data-quarto-table-cell-role="th">city</th>
-<th data-quarto-table-cell-role="th">zip</th>
-<th data-quarto-table-cell-role="th">county</th>
-<th data-quarto-table-cell-role="th">phone</th>
-<th data-quarto-table-cell-role="th">c_relatn</th>
-<th data-quarto-table-cell-role="th">c_legbas</th>
-<th data-quarto-table-cell-role="th">c_admin</th>
-<th data-quarto-table-cell-role="th">c_fscs</th>
-<th data-quarto-table-cell-role="th">geocode</th>
-<th data-quarto-table-cell-role="th">lsabound</th>
-<th data-quarto-table-cell-role="th">startdate</th>
-<th data-quarto-table-cell-role="th">enddate</th>
-<th data-quarto-table-cell-role="th">popu_lsa</th>
-<th data-quarto-table-cell-role="th">popu_und</th>
-<th data-quarto-table-cell-role="th">centlib</th>
-<th data-quarto-table-cell-role="th">branlib</th>
-<th data-quarto-table-cell-role="th">bkmob</th>
-<th data-quarto-table-cell-role="th">totstaff</th>
-<th data-quarto-table-cell-role="th">bkvol</th>
-<th data-quarto-table-cell-role="th">ebook</th>
-<th data-quarto-table-cell-role="th">audio_ph</th>
-<th data-quarto-table-cell-role="th">audio_dl</th>
-<th data-quarto-table-cell-role="th">video_ph</th>
-<th data-quarto-table-cell-role="th">video_dl</th>
-<th data-quarto-table-cell-role="th">ec_lo_ot</th>
-<th data-quarto-table-cell-role="th">subscrip</th>
-<th data-quarto-table-cell-role="th">hrs_open</th>
-<th data-quarto-table-cell-role="th">visits</th>
-<th data-quarto-table-cell-role="th">reference</th>
-<th data-quarto-table-cell-role="th">regbor</th>
-<th data-quarto-table-cell-role="th">totcir</th>
-<th data-quarto-table-cell-role="th">kidcircl</th>
-<th data-quarto-table-cell-role="th">totpro</th>
-<th data-quarto-table-cell-role="th">gpterms</th>
-<th data-quarto-table-cell-role="th">pitusr</th>
-<th data-quarto-table-cell-role="th">wifisess</th>
-<th data-quarto-table-cell-role="th">obereg</th>
-<th data-quarto-table-cell-role="th">statstru</th>
-<th data-quarto-table-cell-role="th">statname</th>
-<th data-quarto-table-cell-role="th">stataddr</th>
-<th data-quarto-table-cell-role="th">longitude</th>
-<th data-quarto-table-cell-role="th">latitude</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>STABR</td>
-<td>FSCSKEY</td>
-<td>LIBID</td>
-<td>LIBNAME</td>
-<td>ADDRESS</td>
-<td>CITY</td>
-<td>ZIP</td>
-<td>CNTY</td>
-<td>PHONE</td>
-<td>C_RELATN</td>
-<td>C_LEGBAS</td>
-<td>C_ADMIN</td>
-<td>C_FSCS</td>
-<td>GEOCODE</td>
-<td>LSABOUND</td>
-<td>STARTDAT</td>
-<td>ENDDATE</td>
-<td>POPU_LSA</td>
-<td>POPU_UND</td>
-<td>CENTLIB</td>
-<td>BRANLIB</td>
-<td>BKMOB</td>
-<td>TOTSTAFF</td>
-<td>BKVOL</td>
-<td>EBOOK</td>
-<td>AUDIO_PH</td>
-<td>AUDIO_DL</td>
-<td>VIDEO_PH</td>
-<td>VIDEO_DL</td>
-<td>EC_LO_OT</td>
-<td>SUBSCRIP</td>
-<td>HRS_OPEN</td>
-<td>VISITS</td>
-<td>REFERENC</td>
-<td>REGBOR</td>
-<td>TOTCIR</td>
-<td>KIDCIRCL</td>
-<td>TOTPRO</td>
-<td>GPTERMS</td>
-<td>PITUSR</td>
-<td>WIFISESS</td>
-<td>OBEREG</td>
-<td>STATSTRU</td>
-<td>STATNAME</td>
-<td>STATADDR</td>
-<td>LONGITUD</td>
-<td>LATITUDE</td>
-</tr>
-<tr class="even">
-<td>AK</td>
-<td>AK0001</td>
-<td>AK0001-002</td>
-<td>ANCHOR POINT PUBLIC LIBRARY</td>
-<td>34020 NORTH FORK ROAD</td>
-<td>ANCHOR POINT</td>
-<td>99556</td>
-<td>KENAI PENINSULA</td>
-<td>9072355692</td>
-<td>NO</td>
-<td>NP</td>
-<td>SO</td>
-<td>Y</td>
-<td>CI1</td>
-<td>N</td>
-<td>7/1/17</td>
-<td>6/30/18</td>
-<td>2057</td>
-<td>2040</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>0.67</td>
-<td>18201</td>
-<td>0</td>
-<td>179</td>
-<td>0</td>
-<td>3320</td>
-<td>0</td>
-<td>0</td>
-<td>9</td>
-<td>1245</td>
-<td>6032</td>
-<td>4</td>
-<td>1726</td>
-<td>11316</td>
-<td>2294</td>
-<td>60</td>
-<td>8</td>
-<td>1495</td>
-<td>1182</td>
-<td>08</td>
-<td>00</td>
-<td>00</td>
-<td>00</td>
-<td>-151.825</td>
-<td>59.77965</td>
-</tr>
-<tr class="odd">
-<td>AK</td>
-<td>AK0002</td>
-<td>AK0002-011</td>
-<td>ANCHORAGE PUBLIC LIBRARY</td>
-<td>3600 DENALI STREET</td>
-<td>ANCHORAGE</td>
-<td>99503</td>
-<td>ANCHORAGE</td>
-<td>9073432892</td>
-<td>NO</td>
-<td>CO</td>
-<td>MO</td>
-<td>Y</td>
-<td>MA1</td>
-<td>N</td>
-<td>1/1/17</td>
-<td>12/31/17</td>
-<td>295365</td>
-<td>292940</td>
-<td>1</td>
-<td>4</td>
-<td>0</td>
-<td>76.65</td>
-<td>370812</td>
-<td>21587</td>
-<td>30963</td>
-<td>12992</td>
-<td>76404</td>
-<td>0</td>
-<td>14</td>
-<td>7311</td>
-<td>11400</td>
-<td>723272</td>
-<td>54306</td>
-<td>135828</td>
-<td>1574942</td>
-<td>553651</td>
-<td>1924</td>
-<td>165</td>
-<td>126846</td>
-<td>90135</td>
-<td>08</td>
-<td>00</td>
-<td>00</td>
-<td>00</td>
-<td>-149.876</td>
-<td>61.18744</td>
-</tr>
-<tr class="even">
-<td>AK</td>
-<td>AK0003</td>
-<td>AK0003-002</td>
-<td>ANDERSON COMMUNITY LIBRARY</td>
-<td>101 FIRST STREET</td>
-<td>ANDERSON</td>
-<td>99744</td>
-<td>DENALI</td>
-<td>9075822628</td>
-<td>NO</td>
-<td>CI</td>
-<td>SO</td>
-<td>Y</td>
-<td>CI1</td>
-<td>N</td>
-<td>7/1/17</td>
-<td>6/30/18</td>
-<td>269</td>
-<td>267</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>0.75</td>
-<td>15314</td>
-<td>0</td>
-<td>201</td>
-<td>0</td>
-<td>1403</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>480</td>
-<td>592</td>
-<td>300</td>
-<td>113</td>
-<td>1137</td>
-<td>264</td>
-<td>4</td>
-<td>5</td>
-<td>225</td>
-<td>0</td>
-<td>08</td>
-<td>00</td>
-<td>00</td>
-<td>00</td>
-<td>-149.187</td>
-<td>64.34363</td>
-</tr>
-<tr class="odd">
-<td>AK</td>
-<td>AK0006</td>
-<td>AK0006-002</td>
-<td>KUSKOKWIM CONSORTIUM LIBRARY</td>
-<td>420 CHIEF EDDIE HOFFMAN HIGHWAY</td>
-<td>BETHEL</td>
-<td>99559</td>
-<td>BETHEL</td>
-<td>9075434516</td>
-<td>NO</td>
-<td>MJ</td>
-<td>SO</td>
-<td>Y</td>
-<td>CI1</td>
-<td>N</td>
-<td>7/1/17</td>
-<td>6/30/18</td>
-<td>6135</td>
-<td>6085</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>3</td>
-<td>34860</td>
-<td>21587</td>
-<td>425</td>
-<td>12992</td>
-<td>3782</td>
-<td>0</td>
-<td>0</td>
-<td>5</td>
-<td>2040</td>
-<td>51000</td>
-<td>1530</td>
-<td>1912</td>
-<td>14067</td>
-<td>3746</td>
-<td>406</td>
-<td>8</td>
-<td>6600</td>
-<td>5716</td>
-<td>08</td>
-<td>00</td>
-<td>00</td>
-<td>00</td>
-<td>-161.771</td>
-<td>60.79114</td>
-</tr>
-<tr class="even">
-<td>AK</td>
-<td>AK0007</td>
-<td>AK0007-002</td>
-<td>BIG LAKE PUBLIC LIBRARY</td>
-<td>3140 SOUTH BIG LAKE ROAD</td>
-<td>BIG LAKE</td>
-<td>99652</td>
-<td>MATANUSKA-SUSITNA</td>
-<td>9078617635</td>
-<td>NO</td>
-<td>CO</td>
-<td>SO</td>
-<td>Y</td>
-<td>CO1</td>
-<td>N</td>
-<td>7/1/17</td>
-<td>6/30/18</td>
-<td>12847</td>
-<td>12742</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>3</td>
-<td>28698</td>
-<td>21587</td>
-<td>2140</td>
-<td>12992</td>
-<td>3805</td>
-<td>0</td>
-<td>0</td>
-<td>47</td>
-<td>2551</td>
-<td>62249</td>
-<td>887</td>
-<td>2890</td>
-<td>36670</td>
-<td>15691</td>
-<td>363</td>
-<td>18</td>
-<td>15022</td>
-<td>8125</td>
-<td>08</td>
-<td>00</td>
-<td>00</td>
-<td>00</td>
-<td>-149.819</td>
-<td>61.5475</td>
-</tr>
-<tr class="odd">
-<td>AK</td>
-<td>AK0008</td>
-<td>AK0008-002</td>
-<td>CANTWELL COMMUNITY LIBRARY</td>
-<td>1 SCHOOL ROAD</td>
-<td>CANTWELL</td>
-<td>99729</td>
-<td>DENALI</td>
-<td>9077682372</td>
-<td>NO</td>
-<td>NP</td>
-<td>SO</td>
-<td>Y</td>
-<td>CI1</td>
-<td>N</td>
-<td>7/1/17</td>
-<td>6/30/18</td>
-<td>202</td>
-<td>200</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>0.8</td>
-<td>10376</td>
-<td>21587</td>
-<td>275</td>
-<td>12992</td>
-<td>562</td>
-<td>0</td>
-<td>0</td>
-<td>15</td>
-<td>720</td>
-<td>2500</td>
-<td>390</td>
-<td>183</td>
-<td>2828</td>
-<td>1198</td>
-<td>45</td>
-<td>1</td>
-<td>50</td>
-<td>95</td>
-<td>08</td>
-<td>00</td>
-<td>00</td>
-<td>00</td>
-<td>-148.9</td>
-<td>63.3912</td>
-</tr>
-<tr class="even">
-<td>AK</td>
-<td>AK0011</td>
-<td>AK0011-002</td>
-<td>CHINIAK PUBLIC LIBRARY</td>
-<td>43318 SPRUCE WAY</td>
-<td>CHINIAK</td>
-<td>99615</td>
-<td>KODIAK ISLAND</td>
-<td>9075120880</td>
-<td>NO</td>
-<td>NP</td>
-<td>SO</td>
-<td>N</td>
-<td>CI1</td>
-<td>N</td>
-<td>7/1/17</td>
-<td>6/30/18</td>
-<td>44</td>
-<td>44</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>2300</td>
-<td>21587</td>
-<td>0</td>
-<td>12992</td>
-<td>257</td>
-<td>0</td>
-<td>0</td>
-<td>18</td>
-<td>132</td>
-<td>302</td>
-<td>0</td>
-<td>39</td>
-<td>465</td>
-<td>301</td>
-<td>27</td>
-<td>2</td>
-<td>75</td>
-<td>220</td>
-<td>08</td>
-<td>00</td>
-<td>00</td>
-<td>00</td>
-<td>-152.231</td>
-<td>57.61245</td>
-</tr>
-<tr class="odd">
-<td>AK</td>
-<td>AK0014</td>
-<td>AK0014-002</td>
-<td>COLD BAY PUBLIC LIBRARY</td>
-<td>10 BARANOV ROAD</td>
-<td>COLD BAY</td>
-<td>99571</td>
-<td>ALEUTIANS EAST</td>
-<td>9075322878</td>
-<td>NO</td>
-<td>NP</td>
-<td>SO</td>
-<td>Y</td>
-<td>CI1</td>
-<td>N</td>
-<td>7/1/17</td>
-<td>6/30/18</td>
-<td>63</td>
-<td>62</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>0.25</td>
-<td>3226</td>
-<td>0</td>
-<td>445</td>
-<td>0</td>
-<td>2673</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>400</td>
-<td>1080</td>
-<td>31</td>
-<td>36</td>
-<td>121</td>
-<td>11</td>
-<td>5</td>
-<td>4</td>
-<td>235</td>
-<td>893</td>
-<td>08</td>
-<td>00</td>
-<td>00</td>
-<td>00</td>
-<td>-160.693</td>
-<td>55.69687</td>
-</tr>
-<tr class="even">
-<td>AK</td>
-<td>AK0015</td>
-<td>AK0015-002</td>
-<td>COOPER LANDING COMMUNITY LIBRARY</td>
-<td>18511 BEAN CREEK ROAD</td>
-<td>COOPER LANDING</td>
-<td>99572</td>
-<td>KENAI PENINSULA</td>
-<td>9075951241</td>
-<td>NO</td>
-<td>NP</td>
-<td>SO</td>
-<td>N</td>
-<td>CI1</td>
-<td>N</td>
-<td>7/1/17</td>
-<td>6/30/18</td>
-<td>265</td>
-<td>263</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>4163</td>
-<td>0</td>
-<td>192</td>
-<td>0</td>
-<td>926</td>
-<td>0</td>
-<td>0</td>
-<td>1</td>
-<td>1092</td>
-<td>2452</td>
-<td>70</td>
-<td>834</td>
-<td>2232</td>
-<td>772</td>
-<td>11</td>
-<td>4</td>
-<td>395</td>
-<td>357</td>
-<td>08</td>
-<td>00</td>
-<td>00</td>
-<td>00</td>
-<td>-149.823</td>
-<td>60.49404</td>
-</tr>
-</tbody>
-</table>
-</div>
+<div id="cell-9" class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>sql</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>SELECT <span class="op">*</span> FROM libraries_2018</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>LIMIT <span class="dv">10</span><span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><strong>Now, lets</strong> count how many rows are in this table.</p>
-<div id="cell-11" class="cell" data-execution_count="17">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>sql</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>SELECT count(<span class="op">*</span>) FROM libraries_2018<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code> * sqlite:///dbs/w02/library.db
-Done.</code></pre>
-</div>
-<div class="cell-output cell-output-display" data-execution_count="17">
-<table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th">count(*)</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>9262</td>
-</tr>
-</tbody>
-</table>
-</div>
+<div id="cell-11" class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>sql</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>SELECT count(<span class="op">*</span>) FROM libraries_2018<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <hr>
 <p><strong>The same</strong> should be done for the years 2016 and 2017. The code below is long, but identical to what we’ve done above.</p>
 <div id="cell-13" class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>sql</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="op">--</span> Creating the <span class="dv">2016</span> Public Libraries Survey table</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="op">--</span> We drop an old copy of the table, <span class="cf">if</span> it exists.</span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>DROP TABLE IF EXISTS libraries_2016<span class="op">;</span></span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>DROP TABLE IF EXISTS libraries_2017<span class="op">;</span></span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>CREATE TABLE libraries_2016 (</span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>    stabr text NOT NULL,</span>
-<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>    fscskey text CONSTRAINT fscskey_2018_pkey PRIMARY KEY,</span>
-<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>    libid text NOT NULL,</span>
-<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>    libname text NOT NULL,</span>
-<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>    address text NOT NULL,</span>
-<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>    city text NOT NULL,</span>
-<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>    <span class="bu">zip</span> text NOT NULL,</span>
-<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>    county text NOT NULL,</span>
-<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>    phone text NOT NULL,</span>
-<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>    c_relatn text NOT NULL,</span>
-<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a>    c_legbas text NOT NULL,</span>
-<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>    c_admin text NOT NULL,</span>
-<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a>    c_fscs text NOT NULL,</span>
-<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a>    geocode text NOT NULL,</span>
-<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a>    lsabound text NOT NULL,</span>
-<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a>    startdate text NOT NULL,</span>
-<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a>    enddate text NOT NULL,</span>
-<span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a>    popu_lsa integer NOT NULL,</span>
-<span id="cb11-27"><a href="#cb11-27" aria-hidden="true" tabindex="-1"></a>    popu_und integer NOT NULL,</span>
-<span id="cb11-28"><a href="#cb11-28" aria-hidden="true" tabindex="-1"></a>    centlib integer NOT NULL,</span>
-<span id="cb11-29"><a href="#cb11-29" aria-hidden="true" tabindex="-1"></a>    branlib integer NOT NULL,</span>
-<span id="cb11-30"><a href="#cb11-30" aria-hidden="true" tabindex="-1"></a>    bkmob integer NOT NULL,</span>
-<span id="cb11-31"><a href="#cb11-31" aria-hidden="true" tabindex="-1"></a>    totstaff numeric(<span class="dv">8</span>,<span class="dv">2</span>) NOT NULL,</span>
-<span id="cb11-32"><a href="#cb11-32" aria-hidden="true" tabindex="-1"></a>    bkvol integer NOT NULL,</span>
-<span id="cb11-33"><a href="#cb11-33" aria-hidden="true" tabindex="-1"></a>    ebook integer NOT NULL,</span>
-<span id="cb11-34"><a href="#cb11-34" aria-hidden="true" tabindex="-1"></a>    audio_ph integer NOT NULL,</span>
-<span id="cb11-35"><a href="#cb11-35" aria-hidden="true" tabindex="-1"></a>    audio_dl integer NOT NULL,</span>
-<span id="cb11-36"><a href="#cb11-36" aria-hidden="true" tabindex="-1"></a>    video_ph integer NOT NULL,</span>
-<span id="cb11-37"><a href="#cb11-37" aria-hidden="true" tabindex="-1"></a>    video_dl integer NOT NULL,</span>
-<span id="cb11-38"><a href="#cb11-38" aria-hidden="true" tabindex="-1"></a>    ec_lo_ot integer NOT NULL,</span>
-<span id="cb11-39"><a href="#cb11-39" aria-hidden="true" tabindex="-1"></a>    subscrip integer NOT NULL,</span>
-<span id="cb11-40"><a href="#cb11-40" aria-hidden="true" tabindex="-1"></a>    hrs_open integer NOT NULL,</span>
-<span id="cb11-41"><a href="#cb11-41" aria-hidden="true" tabindex="-1"></a>    visits integer NOT NULL,</span>
-<span id="cb11-42"><a href="#cb11-42" aria-hidden="true" tabindex="-1"></a>    reference integer NOT NULL,</span>
-<span id="cb11-43"><a href="#cb11-43" aria-hidden="true" tabindex="-1"></a>    regbor integer NOT NULL,</span>
-<span id="cb11-44"><a href="#cb11-44" aria-hidden="true" tabindex="-1"></a>    totcir integer NOT NULL,</span>
-<span id="cb11-45"><a href="#cb11-45" aria-hidden="true" tabindex="-1"></a>    kidcircl integer NOT NULL,</span>
-<span id="cb11-46"><a href="#cb11-46" aria-hidden="true" tabindex="-1"></a>    totpro integer NOT NULL,</span>
-<span id="cb11-47"><a href="#cb11-47" aria-hidden="true" tabindex="-1"></a>    gpterms integer NOT NULL,</span>
-<span id="cb11-48"><a href="#cb11-48" aria-hidden="true" tabindex="-1"></a>    pitusr integer NOT NULL,</span>
-<span id="cb11-49"><a href="#cb11-49" aria-hidden="true" tabindex="-1"></a>    wifisess integer NOT NULL,</span>
-<span id="cb11-50"><a href="#cb11-50" aria-hidden="true" tabindex="-1"></a>    obereg text NOT NULL,</span>
-<span id="cb11-51"><a href="#cb11-51" aria-hidden="true" tabindex="-1"></a>    statstru text NOT NULL,</span>
-<span id="cb11-52"><a href="#cb11-52" aria-hidden="true" tabindex="-1"></a>    statname text NOT NULL,</span>
-<span id="cb11-53"><a href="#cb11-53" aria-hidden="true" tabindex="-1"></a>    stataddr text NOT NULL,</span>
-<span id="cb11-54"><a href="#cb11-54" aria-hidden="true" tabindex="-1"></a>    longitude numeric(<span class="dv">10</span>,<span class="dv">7</span>) NOT NULL,</span>
-<span id="cb11-55"><a href="#cb11-55" aria-hidden="true" tabindex="-1"></a>    latitude numeric(<span class="dv">10</span>,<span class="dv">7</span>) NOT NULL</span>
-<span id="cb11-56"><a href="#cb11-56" aria-hidden="true" tabindex="-1"></a>)<span class="op">;</span></span>
-<span id="cb11-57"><a href="#cb11-57" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-58"><a href="#cb11-58" aria-hidden="true" tabindex="-1"></a>CREATE TABLE libraries_2017 (</span>
-<span id="cb11-59"><a href="#cb11-59" aria-hidden="true" tabindex="-1"></a>    stabr text NOT NULL,</span>
-<span id="cb11-60"><a href="#cb11-60" aria-hidden="true" tabindex="-1"></a>    fscskey text CONSTRAINT fscskey_2018_pkey PRIMARY KEY,</span>
-<span id="cb11-61"><a href="#cb11-61" aria-hidden="true" tabindex="-1"></a>    libid text NOT NULL,</span>
-<span id="cb11-62"><a href="#cb11-62" aria-hidden="true" tabindex="-1"></a>    libname text NOT NULL,</span>
-<span id="cb11-63"><a href="#cb11-63" aria-hidden="true" tabindex="-1"></a>    address text NOT NULL,</span>
-<span id="cb11-64"><a href="#cb11-64" aria-hidden="true" tabindex="-1"></a>    city text NOT NULL,</span>
-<span id="cb11-65"><a href="#cb11-65" aria-hidden="true" tabindex="-1"></a>    <span class="bu">zip</span> text NOT NULL,</span>
-<span id="cb11-66"><a href="#cb11-66" aria-hidden="true" tabindex="-1"></a>    county text NOT NULL,</span>
-<span id="cb11-67"><a href="#cb11-67" aria-hidden="true" tabindex="-1"></a>    phone text NOT NULL,</span>
-<span id="cb11-68"><a href="#cb11-68" aria-hidden="true" tabindex="-1"></a>    c_relatn text NOT NULL,</span>
-<span id="cb11-69"><a href="#cb11-69" aria-hidden="true" tabindex="-1"></a>    c_legbas text NOT NULL,</span>
-<span id="cb11-70"><a href="#cb11-70" aria-hidden="true" tabindex="-1"></a>    c_admin text NOT NULL,</span>
-<span id="cb11-71"><a href="#cb11-71" aria-hidden="true" tabindex="-1"></a>    c_fscs text NOT NULL,</span>
-<span id="cb11-72"><a href="#cb11-72" aria-hidden="true" tabindex="-1"></a>    geocode text NOT NULL,</span>
-<span id="cb11-73"><a href="#cb11-73" aria-hidden="true" tabindex="-1"></a>    lsabound text NOT NULL,</span>
-<span id="cb11-74"><a href="#cb11-74" aria-hidden="true" tabindex="-1"></a>    startdate text NOT NULL,</span>
-<span id="cb11-75"><a href="#cb11-75" aria-hidden="true" tabindex="-1"></a>    enddate text NOT NULL,</span>
-<span id="cb11-76"><a href="#cb11-76" aria-hidden="true" tabindex="-1"></a>    popu_lsa integer NOT NULL,</span>
-<span id="cb11-77"><a href="#cb11-77" aria-hidden="true" tabindex="-1"></a>    popu_und integer NOT NULL,</span>
-<span id="cb11-78"><a href="#cb11-78" aria-hidden="true" tabindex="-1"></a>    centlib integer NOT NULL,</span>
-<span id="cb11-79"><a href="#cb11-79" aria-hidden="true" tabindex="-1"></a>    branlib integer NOT NULL,</span>
-<span id="cb11-80"><a href="#cb11-80" aria-hidden="true" tabindex="-1"></a>    bkmob integer NOT NULL,</span>
-<span id="cb11-81"><a href="#cb11-81" aria-hidden="true" tabindex="-1"></a>    totstaff numeric(<span class="dv">8</span>,<span class="dv">2</span>) NOT NULL,</span>
-<span id="cb11-82"><a href="#cb11-82" aria-hidden="true" tabindex="-1"></a>    bkvol integer NOT NULL,</span>
-<span id="cb11-83"><a href="#cb11-83" aria-hidden="true" tabindex="-1"></a>    ebook integer NOT NULL,</span>
-<span id="cb11-84"><a href="#cb11-84" aria-hidden="true" tabindex="-1"></a>    audio_ph integer NOT NULL,</span>
-<span id="cb11-85"><a href="#cb11-85" aria-hidden="true" tabindex="-1"></a>    audio_dl integer NOT NULL,</span>
-<span id="cb11-86"><a href="#cb11-86" aria-hidden="true" tabindex="-1"></a>    video_ph integer NOT NULL,</span>
-<span id="cb11-87"><a href="#cb11-87" aria-hidden="true" tabindex="-1"></a>    video_dl integer NOT NULL,</span>
-<span id="cb11-88"><a href="#cb11-88" aria-hidden="true" tabindex="-1"></a>    ec_lo_ot integer NOT NULL,</span>
-<span id="cb11-89"><a href="#cb11-89" aria-hidden="true" tabindex="-1"></a>    subscrip integer NOT NULL,</span>
-<span id="cb11-90"><a href="#cb11-90" aria-hidden="true" tabindex="-1"></a>    hrs_open integer NOT NULL,</span>
-<span id="cb11-91"><a href="#cb11-91" aria-hidden="true" tabindex="-1"></a>    visits integer NOT NULL,</span>
-<span id="cb11-92"><a href="#cb11-92" aria-hidden="true" tabindex="-1"></a>    reference integer NOT NULL,</span>
-<span id="cb11-93"><a href="#cb11-93" aria-hidden="true" tabindex="-1"></a>    regbor integer NOT NULL,</span>
-<span id="cb11-94"><a href="#cb11-94" aria-hidden="true" tabindex="-1"></a>    totcir integer NOT NULL,</span>
-<span id="cb11-95"><a href="#cb11-95" aria-hidden="true" tabindex="-1"></a>    kidcircl integer NOT NULL,</span>
-<span id="cb11-96"><a href="#cb11-96" aria-hidden="true" tabindex="-1"></a>    totpro integer NOT NULL,</span>
-<span id="cb11-97"><a href="#cb11-97" aria-hidden="true" tabindex="-1"></a>    gpterms integer NOT NULL,</span>
-<span id="cb11-98"><a href="#cb11-98" aria-hidden="true" tabindex="-1"></a>    pitusr integer NOT NULL,</span>
-<span id="cb11-99"><a href="#cb11-99" aria-hidden="true" tabindex="-1"></a>    wifisess integer NOT NULL,</span>
-<span id="cb11-100"><a href="#cb11-100" aria-hidden="true" tabindex="-1"></a>    obereg text NOT NULL,</span>
-<span id="cb11-101"><a href="#cb11-101" aria-hidden="true" tabindex="-1"></a>    statstru text NOT NULL,</span>
-<span id="cb11-102"><a href="#cb11-102" aria-hidden="true" tabindex="-1"></a>    statname text NOT NULL,</span>
-<span id="cb11-103"><a href="#cb11-103" aria-hidden="true" tabindex="-1"></a>    stataddr text NOT NULL,</span>
-<span id="cb11-104"><a href="#cb11-104" aria-hidden="true" tabindex="-1"></a>    longitude numeric(<span class="dv">10</span>,<span class="dv">7</span>) NOT NULL,</span>
-<span id="cb11-105"><a href="#cb11-105" aria-hidden="true" tabindex="-1"></a>    latitude numeric(<span class="dv">10</span>,<span class="dv">7</span>) NOT NULL</span>
-<span id="cb11-106"><a href="#cb11-106" aria-hidden="true" tabindex="-1"></a>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-error">
-<div class="ansi-escaped-output">
-<pre>  <span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[23]</span><span class="ansi-green-fg">, line 5</span>
-<span class="ansi-red-fg">    </span><span class="ansi-red-fg">DROP TABLE IF EXISTS libraries_2016;</span>
-         ^
-<span class="ansi-red-fg">SyntaxError</span><span class="ansi-red-fg">:</span> invalid syntax
-</pre>
-</div>
-</div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>sql</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="op">--</span> Creating the <span class="dv">2016</span> Public Libraries Survey table</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="op">--</span> We drop an old copy of the table, <span class="cf">if</span> it exists.</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>DROP TABLE IF EXISTS libraries_2016<span class="op">;</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>DROP TABLE IF EXISTS libraries_2017<span class="op">;</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>CREATE TABLE libraries_2016 (</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>    stabr text NOT NULL,</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>    fscskey text CONSTRAINT fscskey_2018_pkey PRIMARY KEY,</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>    libid text NOT NULL,</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>    libname text NOT NULL,</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>    address text NOT NULL,</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>    city text NOT NULL,</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>    <span class="bu">zip</span> text NOT NULL,</span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>    county text NOT NULL,</span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>    phone text NOT NULL,</span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>    c_relatn text NOT NULL,</span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>    c_legbas text NOT NULL,</span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>    c_admin text NOT NULL,</span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>    c_fscs text NOT NULL,</span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>    geocode text NOT NULL,</span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>    lsabound text NOT NULL,</span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>    startdate text NOT NULL,</span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>    enddate text NOT NULL,</span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a>    popu_lsa integer NOT NULL,</span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a>    popu_und integer NOT NULL,</span>
+<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a>    centlib integer NOT NULL,</span>
+<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a>    branlib integer NOT NULL,</span>
+<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a>    bkmob integer NOT NULL,</span>
+<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a>    totstaff numeric(<span class="dv">8</span>,<span class="dv">2</span>) NOT NULL,</span>
+<span id="cb6-33"><a href="#cb6-33" aria-hidden="true" tabindex="-1"></a>    bkvol integer NOT NULL,</span>
+<span id="cb6-34"><a href="#cb6-34" aria-hidden="true" tabindex="-1"></a>    ebook integer NOT NULL,</span>
+<span id="cb6-35"><a href="#cb6-35" aria-hidden="true" tabindex="-1"></a>    audio_ph integer NOT NULL,</span>
+<span id="cb6-36"><a href="#cb6-36" aria-hidden="true" tabindex="-1"></a>    audio_dl integer NOT NULL,</span>
+<span id="cb6-37"><a href="#cb6-37" aria-hidden="true" tabindex="-1"></a>    video_ph integer NOT NULL,</span>
+<span id="cb6-38"><a href="#cb6-38" aria-hidden="true" tabindex="-1"></a>    video_dl integer NOT NULL,</span>
+<span id="cb6-39"><a href="#cb6-39" aria-hidden="true" tabindex="-1"></a>    ec_lo_ot integer NOT NULL,</span>
+<span id="cb6-40"><a href="#cb6-40" aria-hidden="true" tabindex="-1"></a>    subscrip integer NOT NULL,</span>
+<span id="cb6-41"><a href="#cb6-41" aria-hidden="true" tabindex="-1"></a>    hrs_open integer NOT NULL,</span>
+<span id="cb6-42"><a href="#cb6-42" aria-hidden="true" tabindex="-1"></a>    visits integer NOT NULL,</span>
+<span id="cb6-43"><a href="#cb6-43" aria-hidden="true" tabindex="-1"></a>    reference integer NOT NULL,</span>
+<span id="cb6-44"><a href="#cb6-44" aria-hidden="true" tabindex="-1"></a>    regbor integer NOT NULL,</span>
+<span id="cb6-45"><a href="#cb6-45" aria-hidden="true" tabindex="-1"></a>    totcir integer NOT NULL,</span>
+<span id="cb6-46"><a href="#cb6-46" aria-hidden="true" tabindex="-1"></a>    kidcircl integer NOT NULL,</span>
+<span id="cb6-47"><a href="#cb6-47" aria-hidden="true" tabindex="-1"></a>    totpro integer NOT NULL,</span>
+<span id="cb6-48"><a href="#cb6-48" aria-hidden="true" tabindex="-1"></a>    gpterms integer NOT NULL,</span>
+<span id="cb6-49"><a href="#cb6-49" aria-hidden="true" tabindex="-1"></a>    pitusr integer NOT NULL,</span>
+<span id="cb6-50"><a href="#cb6-50" aria-hidden="true" tabindex="-1"></a>    wifisess integer NOT NULL,</span>
+<span id="cb6-51"><a href="#cb6-51" aria-hidden="true" tabindex="-1"></a>    obereg text NOT NULL,</span>
+<span id="cb6-52"><a href="#cb6-52" aria-hidden="true" tabindex="-1"></a>    statstru text NOT NULL,</span>
+<span id="cb6-53"><a href="#cb6-53" aria-hidden="true" tabindex="-1"></a>    statname text NOT NULL,</span>
+<span id="cb6-54"><a href="#cb6-54" aria-hidden="true" tabindex="-1"></a>    stataddr text NOT NULL,</span>
+<span id="cb6-55"><a href="#cb6-55" aria-hidden="true" tabindex="-1"></a>    longitude numeric(<span class="dv">10</span>,<span class="dv">7</span>) NOT NULL,</span>
+<span id="cb6-56"><a href="#cb6-56" aria-hidden="true" tabindex="-1"></a>    latitude numeric(<span class="dv">10</span>,<span class="dv">7</span>) NOT NULL</span>
+<span id="cb6-57"><a href="#cb6-57" aria-hidden="true" tabindex="-1"></a>)<span class="op">;</span></span>
+<span id="cb6-58"><a href="#cb6-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-59"><a href="#cb6-59" aria-hidden="true" tabindex="-1"></a>CREATE TABLE libraries_2017 (</span>
+<span id="cb6-60"><a href="#cb6-60" aria-hidden="true" tabindex="-1"></a>    stabr text NOT NULL,</span>
+<span id="cb6-61"><a href="#cb6-61" aria-hidden="true" tabindex="-1"></a>    fscskey text CONSTRAINT fscskey_2018_pkey PRIMARY KEY,</span>
+<span id="cb6-62"><a href="#cb6-62" aria-hidden="true" tabindex="-1"></a>    libid text NOT NULL,</span>
+<span id="cb6-63"><a href="#cb6-63" aria-hidden="true" tabindex="-1"></a>    libname text NOT NULL,</span>
+<span id="cb6-64"><a href="#cb6-64" aria-hidden="true" tabindex="-1"></a>    address text NOT NULL,</span>
+<span id="cb6-65"><a href="#cb6-65" aria-hidden="true" tabindex="-1"></a>    city text NOT NULL,</span>
+<span id="cb6-66"><a href="#cb6-66" aria-hidden="true" tabindex="-1"></a>    <span class="bu">zip</span> text NOT NULL,</span>
+<span id="cb6-67"><a href="#cb6-67" aria-hidden="true" tabindex="-1"></a>    county text NOT NULL,</span>
+<span id="cb6-68"><a href="#cb6-68" aria-hidden="true" tabindex="-1"></a>    phone text NOT NULL,</span>
+<span id="cb6-69"><a href="#cb6-69" aria-hidden="true" tabindex="-1"></a>    c_relatn text NOT NULL,</span>
+<span id="cb6-70"><a href="#cb6-70" aria-hidden="true" tabindex="-1"></a>    c_legbas text NOT NULL,</span>
+<span id="cb6-71"><a href="#cb6-71" aria-hidden="true" tabindex="-1"></a>    c_admin text NOT NULL,</span>
+<span id="cb6-72"><a href="#cb6-72" aria-hidden="true" tabindex="-1"></a>    c_fscs text NOT NULL,</span>
+<span id="cb6-73"><a href="#cb6-73" aria-hidden="true" tabindex="-1"></a>    geocode text NOT NULL,</span>
+<span id="cb6-74"><a href="#cb6-74" aria-hidden="true" tabindex="-1"></a>    lsabound text NOT NULL,</span>
+<span id="cb6-75"><a href="#cb6-75" aria-hidden="true" tabindex="-1"></a>    startdate text NOT NULL,</span>
+<span id="cb6-76"><a href="#cb6-76" aria-hidden="true" tabindex="-1"></a>    enddate text NOT NULL,</span>
+<span id="cb6-77"><a href="#cb6-77" aria-hidden="true" tabindex="-1"></a>    popu_lsa integer NOT NULL,</span>
+<span id="cb6-78"><a href="#cb6-78" aria-hidden="true" tabindex="-1"></a>    popu_und integer NOT NULL,</span>
+<span id="cb6-79"><a href="#cb6-79" aria-hidden="true" tabindex="-1"></a>    centlib integer NOT NULL,</span>
+<span id="cb6-80"><a href="#cb6-80" aria-hidden="true" tabindex="-1"></a>    branlib integer NOT NULL,</span>
+<span id="cb6-81"><a href="#cb6-81" aria-hidden="true" tabindex="-1"></a>    bkmob integer NOT NULL,</span>
+<span id="cb6-82"><a href="#cb6-82" aria-hidden="true" tabindex="-1"></a>    totstaff numeric(<span class="dv">8</span>,<span class="dv">2</span>) NOT NULL,</span>
+<span id="cb6-83"><a href="#cb6-83" aria-hidden="true" tabindex="-1"></a>    bkvol integer NOT NULL,</span>
+<span id="cb6-84"><a href="#cb6-84" aria-hidden="true" tabindex="-1"></a>    ebook integer NOT NULL,</span>
+<span id="cb6-85"><a href="#cb6-85" aria-hidden="true" tabindex="-1"></a>    audio_ph integer NOT NULL,</span>
+<span id="cb6-86"><a href="#cb6-86" aria-hidden="true" tabindex="-1"></a>    audio_dl integer NOT NULL,</span>
+<span id="cb6-87"><a href="#cb6-87" aria-hidden="true" tabindex="-1"></a>    video_ph integer NOT NULL,</span>
+<span id="cb6-88"><a href="#cb6-88" aria-hidden="true" tabindex="-1"></a>    video_dl integer NOT NULL,</span>
+<span id="cb6-89"><a href="#cb6-89" aria-hidden="true" tabindex="-1"></a>    ec_lo_ot integer NOT NULL,</span>
+<span id="cb6-90"><a href="#cb6-90" aria-hidden="true" tabindex="-1"></a>    subscrip integer NOT NULL,</span>
+<span id="cb6-91"><a href="#cb6-91" aria-hidden="true" tabindex="-1"></a>    hrs_open integer NOT NULL,</span>
+<span id="cb6-92"><a href="#cb6-92" aria-hidden="true" tabindex="-1"></a>    visits integer NOT NULL,</span>
+<span id="cb6-93"><a href="#cb6-93" aria-hidden="true" tabindex="-1"></a>    reference integer NOT NULL,</span>
+<span id="cb6-94"><a href="#cb6-94" aria-hidden="true" tabindex="-1"></a>    regbor integer NOT NULL,</span>
+<span id="cb6-95"><a href="#cb6-95" aria-hidden="true" tabindex="-1"></a>    totcir integer NOT NULL,</span>
+<span id="cb6-96"><a href="#cb6-96" aria-hidden="true" tabindex="-1"></a>    kidcircl integer NOT NULL,</span>
+<span id="cb6-97"><a href="#cb6-97" aria-hidden="true" tabindex="-1"></a>    totpro integer NOT NULL,</span>
+<span id="cb6-98"><a href="#cb6-98" aria-hidden="true" tabindex="-1"></a>    gpterms integer NOT NULL,</span>
+<span id="cb6-99"><a href="#cb6-99" aria-hidden="true" tabindex="-1"></a>    pitusr integer NOT NULL,</span>
+<span id="cb6-100"><a href="#cb6-100" aria-hidden="true" tabindex="-1"></a>    wifisess integer NOT NULL,</span>
+<span id="cb6-101"><a href="#cb6-101" aria-hidden="true" tabindex="-1"></a>    obereg text NOT NULL,</span>
+<span id="cb6-102"><a href="#cb6-102" aria-hidden="true" tabindex="-1"></a>    statstru text NOT NULL,</span>
+<span id="cb6-103"><a href="#cb6-103" aria-hidden="true" tabindex="-1"></a>    statname text NOT NULL,</span>
+<span id="cb6-104"><a href="#cb6-104" aria-hidden="true" tabindex="-1"></a>    stataddr text NOT NULL,</span>
+<span id="cb6-105"><a href="#cb6-105" aria-hidden="true" tabindex="-1"></a>    longitude numeric(<span class="dv">10</span>,<span class="dv">7</span>) NOT NULL,</span>
+<span id="cb6-106"><a href="#cb6-106" aria-hidden="true" tabindex="-1"></a>    latitude numeric(<span class="dv">10</span>,<span class="dv">7</span>) NOT NULL</span>
+<span id="cb6-107"><a href="#cb6-107" aria-hidden="true" tabindex="-1"></a>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><strong>And now</strong>, let’s fill the tables with data from our CSV files.</p>
-<div id="cell-15" class="cell" data-execution_count="19">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>db <span class="op">=</span> <span class="st">"dbs/w02/library.db"</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>csv <span class="op">=</span> <span class="st">"dbs/w02/pls_fy2016_libraries.csv"</span></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>table <span class="op">=</span> <span class="st">"libraries_2016"</span></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>sqlite_command <span class="op">=</span> <span class="ss">f"""</span></span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="ss">.mode csv</span></span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="ss">.import '</span><span class="sc">{</span>csv<span class="sc">}</span><span class="ss">' </span><span class="sc">{</span>table<span class="sc">}</span></span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="ss">"""</span></span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>subprocess.run([<span class="st">"sqlite3"</span>, db], <span class="bu">input</span><span class="op">=</span>sqlite_command, text<span class="op">=</span><span class="va">True</span>)</span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a><span class="co"># 2017</span></span>
-<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>db <span class="op">=</span> <span class="st">"dbs/w02/library.db"</span></span>
-<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>csv <span class="op">=</span> <span class="st">"dbs/w02/pls_fy2017_libraries.csv"</span></span>
-<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>table <span class="op">=</span> <span class="st">"libraries_2017"</span></span>
-<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>sqlite_command <span class="op">=</span> <span class="ss">f"""</span></span>
-<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a><span class="ss">.mode csv</span></span>
-<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a><span class="ss">.import '</span><span class="sc">{</span>csv<span class="sc">}</span><span class="ss">' </span><span class="sc">{</span>table<span class="sc">}</span></span>
-<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a><span class="ss">"""</span></span>
-<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>subprocess.run([<span class="st">"sqlite3"</span>, db], <span class="bu">input</span><span class="op">=</span>sqlite_command, text<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="19">
-<pre><code>CompletedProcess(args=['sqlite3', 'dbs/w02/library.db'], returncode=0)</code></pre>
-</div>
+<div id="cell-15" class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>db <span class="op">=</span> <span class="st">"dbs/w02/library.db"</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>csv <span class="op">=</span> <span class="st">"dbs/w02/pls_fy2016_libraries.csv"</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>table <span class="op">=</span> <span class="st">"libraries_2016"</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>sqlite_command <span class="op">=</span> <span class="ss">f"""</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="ss">.mode csv</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="ss">.import '</span><span class="sc">{</span>csv<span class="sc">}</span><span class="ss">' </span><span class="sc">{</span>table<span class="sc">}</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="ss">"""</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>subprocess.run([<span class="st">"sqlite3"</span>, db], <span class="bu">input</span><span class="op">=</span>sqlite_command, text<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="co"># 2017</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>db <span class="op">=</span> <span class="st">"dbs/w02/library.db"</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>csv <span class="op">=</span> <span class="st">"dbs/w02/pls_fy2017_libraries.csv"</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>table <span class="op">=</span> <span class="st">"libraries_2017"</span></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>sqlite_command <span class="op">=</span> <span class="ss">f"""</span></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a><span class="ss">.mode csv</span></span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a><span class="ss">.import '</span><span class="sc">{</span>csv<span class="sc">}</span><span class="ss">' </span><span class="sc">{</span>table<span class="sc">}</span></span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a><span class="ss">"""</span></span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>subprocess.run([<span class="st">"sqlite3"</span>, db], <span class="bu">input</span><span class="op">=</span>sqlite_command, text<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <hr>
 <p><strong>Let’s check</strong> the rows count for each of the tables now.</p>
-<div id="cell-17" class="cell" data-execution_count="20">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>sql</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    SELECT <span class="dv">2016</span> AS <span class="st">'Year'</span>, count(<span class="op">*</span>) AS NumRows FROM libraries_2016</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>UNION ALL</span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>    SELECT <span class="dv">2017</span>, count(<span class="op">*</span>) AS NumRows FROM libraries_2017</span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>UNION ALL</span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>    SELECT <span class="dv">2018</span>, count(<span class="op">*</span>) AS NumRows FROM libraries_2018<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code> * sqlite:///dbs/w02/library.db
-Done.</code></pre>
-</div>
-<div class="cell-output cell-output-display" data-execution_count="20">
-<table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th">Year</th>
-<th data-quarto-table-cell-role="th">NumRows</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>2016</td>
-<td>9253</td>
-</tr>
-<tr class="even">
-<td>2017</td>
-<td>9246</td>
-</tr>
-<tr class="odd">
-<td>2018</td>
-<td>9262</td>
-</tr>
-</tbody>
-</table>
-</div>
+<div id="cell-17" class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>sql</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    SELECT <span class="dv">2016</span> AS <span class="st">'Year'</span>, count(<span class="op">*</span>) AS NumRows FROM libraries_2016</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>UNION ALL</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    SELECT <span class="dv">2017</span>, count(<span class="op">*</span>) AS NumRows FROM libraries_2017</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>UNION ALL</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    SELECT <span class="dv">2018</span>, count(<span class="op">*</span>) AS NumRows FROM libraries_2018<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="sql-aggregation-grouping-with-sqlite-notes" class="level2">
@@ -1151,9 +529,9 @@ Note
 <section id="basic-grouping-example" class="level3">
 <h3 class="anchored" data-anchor-id="basic-grouping-example">🧩 Basic Grouping Example</h3>
 <p><strong>Q:</strong> How many students are in each major?</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> major, <span class="fu">COUNT</span>(<span class="op">*</span>) <span class="kw">AS</span> student_count</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> students</span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> major;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> major, <span class="fu">COUNT</span>(<span class="op">*</span>) <span class="kw">AS</span> student_count</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> students</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> major;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1168,9 +546,9 @@ Note
 </div>
 </div>
 <p><strong>Example (SQLite accepts this):</strong></p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> major, name</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> students</span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> major;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> major, name</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> students</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> major;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1189,10 +567,10 @@ Note
 <h3 class="anchored" data-anchor-id="filtering-groups-with-having">🔍 Filtering Groups with HAVING</h3>
 <p>Use HAVING to filter after grouping.</p>
 <p><strong>Q:</strong> Show only majors with more than 10 students:</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> major, <span class="fu">COUNT</span>(<span class="op">*</span>) <span class="kw">AS</span> student_count</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> students</span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> major</span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="kw">HAVING</span> <span class="fu">COUNT</span>(<span class="op">*</span>) <span class="op">&gt;</span> <span class="dv">10</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> major, <span class="fu">COUNT</span>(<span class="op">*</span>) <span class="kw">AS</span> student_count</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> students</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> major</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="kw">HAVING</span> <span class="fu">COUNT</span>(<span class="op">*</span>) <span class="op">&gt;</span> <span class="dv">10</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1210,30 +588,30 @@ Note
 <section id="combining-aggregates" class="level3">
 <h3 class="anchored" data-anchor-id="combining-aggregates">📊 Combining Aggregates</h3>
 <p><strong>Q:</strong> Show average GPA per department — only if it’s above 3.5:</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> department, <span class="fu">AVG</span>(gpa) <span class="kw">AS</span> avg_gpa</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> students</span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> department</span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="kw">HAVING</span> <span class="fu">AVG</span>(gpa) <span class="op">&gt;</span> <span class="fl">3.5</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> department, <span class="fu">AVG</span>(gpa) <span class="kw">AS</span> avg_gpa</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> students</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> department</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="kw">HAVING</span> <span class="fu">AVG</span>(gpa) <span class="op">&gt;</span> <span class="fl">3.5</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="grouping-by-expressions" class="level3">
 <h3 class="anchored" data-anchor-id="grouping-by-expressions">🔗 Grouping by Expressions</h3>
 <p>You can group by computed values like substrings or date parts.</p>
 <p><strong>Q:</strong> Count students by <strong>admission year</strong> (from text-based dates):</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="fu">SUBSTR</span>(admission_date, <span class="dv">1</span>, <span class="dv">4</span>) <span class="kw">AS</span> <span class="dt">year</span>, <span class="fu">COUNT</span>(<span class="op">*</span>) <span class="kw">AS</span> num_students</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> students</span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> <span class="dt">year</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="fu">SUBSTR</span>(admission_date, <span class="dv">1</span>, <span class="dv">4</span>) <span class="kw">AS</span> <span class="dt">year</span>, <span class="fu">COUNT</span>(<span class="op">*</span>) <span class="kw">AS</span> num_students</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> students</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> <span class="dt">year</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>The SUBSTR() function extracts a <strong>substring</strong> from a given string.</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">SUBSTR</span>(string, <span class="kw">start</span>, <span class="fu">length</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">SUBSTR</span>(string, <span class="kw">start</span>, <span class="fu">length</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li>string: the text to extract from</li>
 <li>start: the position to start (1-based index)</li>
 <li>length (optional): how many characters to return</li>
 </ul>
-<div class="sourceCode" id="cb22"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co">-- Get the first 4 characters of a date</span></span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="fu">SUBSTR</span>(<span class="st">'2024-09-15'</span>, <span class="dv">1</span>, <span class="dv">4</span>);  <span class="co">-- Returns '2024'</span></span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="co">-- Get the first letter of a name</span></span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="fu">SUBSTR</span>(name, <span class="dv">1</span>, <span class="dv">1</span>) <span class="kw">FROM</span> students;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co">-- Get the first 4 characters of a date</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="fu">SUBSTR</span>(<span class="st">'2024-09-15'</span>, <span class="dv">1</span>, <span class="dv">4</span>);  <span class="co">-- Returns '2024'</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="co">-- Get the first letter of a name</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="fu">SUBSTR</span>(name, <span class="dv">1</span>, <span class="dv">1</span>) <span class="kw">FROM</span> students;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>📌 If length is omitted, SQLite returns the rest of the string from start.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -1263,51 +641,15 @@ Note
 <section id="counting-distinct-values-in-a-column" class="level2">
 <h2 class="anchored" data-anchor-id="counting-distinct-values-in-a-column">1.1 Counting Distinct Values in a Column</h2>
 <p>We can combine <code>DISTINCT</code> with combinations of values like <code>count()</code>. This will return a count of distinct values from a column.</p>
-<div id="cell-19" class="cell" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>sql</span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>SELECT count(libname)</span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>FROM libraries_2017<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code> * sqlite:///dbs/w02/library.db
-Done.</code></pre>
+<div id="cell-19" class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>sql</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>SELECT count(libname)</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>FROM libraries_2017<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell-output cell-output-display" data-execution_count="10">
-<table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th">count(libname)</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>9246</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div id="cell-20" class="cell" data-execution_count="12">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>sql</span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>SELECT count(DISTINCT libname)</span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>FROM libraries_2017<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code> * sqlite:///dbs/w02/library.db
-Done.</code></pre>
-</div>
-<div class="cell-output cell-output-display" data-execution_count="12">
-<table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th">count(DISTINCT libname)</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>8456</td>
-</tr>
-</tbody>
-</table>
-</div>
+<div id="cell-20" class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>sql</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>SELECT count(DISTINCT libname)</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>FROM libraries_2017<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 
