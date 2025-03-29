@@ -327,6 +327,7 @@ Done.</code></pre>
 <pre><code>CompletedProcess(args=['sqlite3', 'dbs/w02/library.db'], returncode=0)</code></pre>
 </div>
 </div>
+<hr>
 <p><strong>Let’s see</strong> if the data was loaded? Let’s peak on the 10 first rows.</p>
 <div id="cell-9" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>sql</span>
@@ -907,10 +908,9 @@ Done.</code></pre>
 </table>
 </div>
 </div>
+<hr>
 <p><strong>The same</strong> should be done for the years 2016 and 2017. The code below is long, but identical to what we’ve done above.</p>
-<div id="cell-13" class="cell" data-execution_count="21">
-<details class="code-fold">
-<summary>Code</summary>
+<div id="cell-13" class="cell">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>sql</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="op">--</span> Creating the <span class="dv">2016</span> Public Libraries Survey table</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1017,12 +1017,11 @@ Done.</code></pre>
 <span id="cb11-104"><a href="#cb11-104" aria-hidden="true" tabindex="-1"></a>    longitude numeric(<span class="dv">10</span>,<span class="dv">7</span>) NOT NULL,</span>
 <span id="cb11-105"><a href="#cb11-105" aria-hidden="true" tabindex="-1"></a>    latitude numeric(<span class="dv">10</span>,<span class="dv">7</span>) NOT NULL</span>
 <span id="cb11-106"><a href="#cb11-106" aria-hidden="true" tabindex="-1"></a>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 <div class="cell-output cell-output-error">
 <div class="ansi-escaped-output">
-<pre>  <span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[21]</span><span class="ansi-green-fg">, line 4</span>
-<span class="ansi-red-fg">    </span><span class="ansi-red-fg">-- Creating the 2016 Public Libraries Survey table</span>
-                ^
+<pre>  <span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[23]</span><span class="ansi-green-fg">, line 5</span>
+<span class="ansi-red-fg">    </span><span class="ansi-red-fg">DROP TABLE IF EXISTS libraries_2016;</span>
+         ^
 <span class="ansi-red-fg">SyntaxError</span><span class="ansi-red-fg">:</span> invalid syntax
 </pre>
 </div>
