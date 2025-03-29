@@ -276,10 +276,10 @@ subprocess.run(["sqlite3", db], input=sqlite_command, text=True)
 
 ```{python}
 %%sql
-    SELECT 2016, count(*) AS NumRows FROM libraries_2016
-UNION
+    SELECT 2016 AS 'Year', count(*) AS NumRows FROM libraries_2016
+UNION ALL
     SELECT 2017, count(*) AS NumRows FROM libraries_2017
-UNION
+UNION ALL
     SELECT 2018, count(*) AS NumRows FROM libraries_2018;
 ```
 
