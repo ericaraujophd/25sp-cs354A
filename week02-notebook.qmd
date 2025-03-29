@@ -2,7 +2,7 @@
 title: "Week 02: SQL – Intermediate Concepts Summary"
 format:
   html:
-    code-fold: true
+    code-fold: false
 jupyter: python3
 ---
 
@@ -98,8 +98,7 @@ This is an empty table. To fill the table, we need to convert our CSV entries to
 Here I came up with another trick. I created a shell script that opens SQLite3 and calls the command to convert a CSV file into a table inside the database. The code for the script is as follows:
 
 ```{sh}
-#| output: false
-
+#| eval: false
 #!/bin/bash
 
 # Usage: ./import_csv_to_sqlite.sh path/to/file.csv database.db table_name
