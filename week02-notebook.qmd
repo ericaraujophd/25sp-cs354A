@@ -438,7 +438,7 @@ Removing duplicates reduces the number of library names. It happens that some li
 
 ## 1.2 Finding Maximum and Minimum Values using max() and min()
 
-The `max()` and `min()` funtions return the largest and smallest values in a column. In our case, we will be using them to detect some annomalies in the data. Let's check the number of visits for 2018.
+The `max()` and `min()` funtions return the largest and smallest values in a column. In our case, we will be using them to detect some annomalies in the data, and to get a sense of the scope of the values reported. Let's check the number of annual visits to the library agencies for 2018.
 
 ```{python}
 %%sql
@@ -448,9 +448,11 @@ FROM libraries_2018;
 
 ---
 
-The value of -3 is unexpected. It happens that the negative values for this database indicate "not applicable" in this case. This is a terrible way of coding missing data, but we can cope with that.
+The value of -3 is unexpected. It happens that the negative values for this database indicate "not applicable", used when a library has closed temporarily or permanently. This is a terrible way of coding missing data, but we can cope with that.
 
 We could use `WHERE min(visits > 0)` to guarantee that only positive numbers are in the game.
+
+A better way of handling these situations would be using NULL values and adding a column to hold text explaining why the value is NULL.
 
 ## 1.3 Aggregating with GROUP BY
 

@@ -237,7 +237,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="creating-the-library-survey-tables">0. Creating the Library Survey Tables</h2>
 <p>In the US, the Institute of Museum and Library Services (IMLS) measures library activity as part of its annual Public Libraries Survey. The survey collects data from more than 9000 library administrative entities, defined by the survey as agencies that provide library services to a particular locality. Data includes the number of branches, staff, books, hours open per year, etc. To teach the concepts below, we will build three tables containing the data from the survey related to the years of 2016, 2017 and 2018. For doing so, we read from the CSV files downloaded from their website. More especifically, some columns will be selected in the process to reduce the amount of non used attributes.</p>
 <p>We are running SQL queries in a Jupyter environment.</p>
-<div id="d307b989" class="cell" data-execution_count="1">
+<div id="7a9aaed5" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>capture</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>load_ext sql</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>sql sqlite:<span class="op">///</span>dbs<span class="op">/</span>w02<span class="op">/</span>library.db</span>
@@ -314,7 +314,7 @@ Done.</code></pre>
 <hr>
 <p><strong>This is</strong> an empty table. To fill the table, we need to convert our CSV entries to entitites in our database.</p>
 <p>Here I came up with another trick. I created a subprocess that opens SQLite3 and calls the command to convert a CSV file into a table inside the database. The code is as follows:</p>
-<div id="591e126a" class="cell" data-execution_count="3">
+<div id="27318e1b" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> subprocess</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>db <span class="op">=</span> <span class="st">"dbs/w02/library.db"</span></span>
@@ -333,7 +333,7 @@ Done.</code></pre>
 </div>
 <hr>
 <p><strong>Let’s see</strong> if the data was loaded? Let’s peak on the 10 first rows.</p>
-<div id="d24bccd7" class="cell" data-execution_count="4">
+<div id="1fe4711f" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>sql</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>SELECT <span class="op">*</span> FROM libraries_2018</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>LIMIT <span class="dv">10</span><span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -891,7 +891,7 @@ Done.</code></pre>
 </div>
 <hr>
 <p><strong>Now, lets</strong> count how many rows are in this table.</p>
-<div id="9daf7967" class="cell" data-execution_count="5">
+<div id="ef504d5a" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>sql</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>SELECT count(<span class="op">*</span>) FROM libraries_2018<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -1038,7 +1038,7 @@ Done.</code></pre>
 </div>
 <hr>
 <p><strong>And now</strong>, let’s fill the tables with data from our CSV files.</p>
-<div id="e581df65" class="cell" data-execution_count="7">
+<div id="293f38a4" class="cell" data-execution_count="7">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 2016</span></span>
@@ -1071,7 +1071,7 @@ Done.</code></pre>
 </div>
 <hr>
 <p><strong>Let’s check</strong> the rows count for each of the tables now.</p>
-<div id="d8808cb5" class="cell" data-execution_count="8">
+<div id="4c84bd47" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>sql</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    SELECT <span class="dv">2016</span> AS <span class="st">'Year'</span>, count(<span class="op">*</span>) AS NumRows FROM libraries_2016</span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>UNION ALL</span>
@@ -1279,7 +1279,7 @@ Note
 <section id="counting-distinct-values-in-a-column" class="level2">
 <h2 class="anchored" data-anchor-id="counting-distinct-values-in-a-column">1.1 Counting Distinct Values in a Column</h2>
 <p>We can combine <code>DISTINCT</code> with combinations of values like <code>count()</code>. This will return a count of distinct values from a column.</p>
-<div id="9591c4d0" class="cell" data-execution_count="9">
+<div id="9ce09c3f" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>sql</span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>SELECT count(libname)</span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>FROM libraries_2017<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1302,7 +1302,7 @@ Done.</code></pre>
 </table>
 </div>
 </div>
-<div id="65a22dd0" class="cell" data-execution_count="10">
+<div id="72c0ae5a" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>sql</span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>SELECT count(DISTINCT libname)</span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>FROM libraries_2017<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1330,8 +1330,8 @@ Done.</code></pre>
 </section>
 <section id="finding-maximum-and-minimum-values-using-max-and-min" class="level2">
 <h2 class="anchored" data-anchor-id="finding-maximum-and-minimum-values-using-max-and-min">1.2 Finding Maximum and Minimum Values using max() and min()</h2>
-<p>The <code>max()</code> and <code>min()</code> funtions return the largest and smallest values in a column. In our case, we will be using them to detect some annomalies in the data. Let’s check the number of visits for 2018.</p>
-<div id="d18654a3" class="cell" data-execution_count="11">
+<p>The <code>max()</code> and <code>min()</code> funtions return the largest and smallest values in a column. In our case, we will be using them to detect some annomalies in the data, and to get a sense of the scope of the values reported. Let’s check the number of annual visits to the library agencies for 2018.</p>
+<div id="6985aa1f" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>sql</span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>SELECT <span class="bu">max</span>(visits), <span class="bu">min</span>(visits)</span>
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>FROM libraries_2018<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1357,8 +1357,9 @@ Done.</code></pre>
 </div>
 </div>
 <hr>
-<p>The value of -3 is unexpected. It happens that the negative values for this database indicate “not applicable” in this case. This is a terrible way of coding missing data, but we can cope with that.</p>
+<p>The value of -3 is unexpected. It happens that the negative values for this database indicate “not applicable”, used when a library has closed temporarily or permanently. This is a terrible way of coding missing data, but we can cope with that.</p>
 <p>We could use <code>WHERE min(visits &gt; 0)</code> to guarantee that only positive numbers are in the game.</p>
+<p>A better way of handling these situations would be using NULL values and adding a column to hold text explaining why the value is NULL.</p>
 </section>
 <section id="aggregating-with-group-by" class="level2">
 <h2 class="anchored" data-anchor-id="aggregating-with-group-by">1.3 Aggregating with GROUP BY</h2>
