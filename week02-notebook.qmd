@@ -100,7 +100,7 @@ Here I came up with another trick. I created a subprocess that opens SQLite3 and
 ```{python}
 import subprocess
 
-db = "//dbs/w02/library.db"
+db = "dbs/w02/library.db"
 csv = "/dbs/w02/pls_fy2018_libraries.csv"
 table = "libraries_2018"
 
