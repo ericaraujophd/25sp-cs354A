@@ -17,7 +17,7 @@ At the end of this unit, students will be able to...
 5.  Use SQL best practices for readable and efficient queries.
 6.  Optimize SQL queries for better performance.
 
-## 0. Our Dataset
+## 0. Creating the Library Survey Tables
 
 In the US, the Institute of Museum and Library Services (IMLS) measures library activity as part of its annual Public Libraries Survey. The survey collects data from more than 9000 library administrative entities, defined by the survey as agencies that provide library services to a particular locality. Data includes the number of branches, staff, books, hours open per year, etc. To teach the concepts below, we will build three tables containing the data from the survey related to the years of 2016, 2017 and 2018. For doing so, we read from the CSV files downloaded from their website. More especifically, some columns will be selected in the process to reduce the amount of non used attributes.
 
@@ -30,6 +30,7 @@ We are running SQL queries in a Jupyter environment.
 %config SqlMagic.style = '_DEPRECATED_DEFAULT'
 ```
 
+---
 
 **This will** open our database `library.db` for us. Don't bother yourself with the config details. That is a trick to run the SQL queries in this environment.
 
@@ -94,6 +95,8 @@ CREATE TABLE libraries_2018 (
 );
 ```
 
+---
+
 **This is** an empty table. To fill the table, we need to convert our CSV entries to entitites in our database.
 
 Here I came up with another trick. I created a subprocess that opens SQLite3 and calls the command to convert a CSV file into a table inside the database. The code is as follows:
@@ -113,6 +116,8 @@ sqlite_command = f"""
 subprocess.run(["sqlite3", db], input=sqlite_command, text=True)
 ```
 
+---
+
 **Let's see** if the data was loaded? Let's peak on the 10 first rows.
 
 ```{python}
@@ -121,12 +126,16 @@ SELECT * FROM libraries_2018
 LIMIT 10;
 ```
 
+---
+
 **Now, lets** count how many rows are in this table.
 
 ```{python}
 %%sql
 SELECT count(*) FROM libraries_2018;
 ```
+
+---
 
 **The same** should be done for the years 2016 and 2017. The code below is long, but identical to what we've done above.
 
@@ -241,6 +250,8 @@ CREATE TABLE libraries_2017 (
 );
 ```
 
+---
+
 **And now**, let's fill the tables with data from our CSV files.
 
 ```{python}
@@ -287,22 +298,28 @@ UNION ALL
 
 ---
 
-For a demonstration of a line plot on a polar axis, see @fig-polar.
+## 🧮 1. SQL Aggregation & Grouping (with SQLite Notes)
 
-```{python}
-#| label: fig-polar
-#| fig-cap: "A line plot on a polar axis"
+SQL lets you **summarize** data using **aggregate functions**, and **group** it with GROUP BY. This is especially helpful for statistics, reports, and dashboards.
 
-import numpy as np
-import matplotlib.pyplot as plt
+🎯 Common Aggregate Functions
 
-r = np.arange(0, 2, 0.01)
-theta = 2 * np.pi * r
-fig, ax = plt.subplots(
-  subplot_kw = {'projection': 'polar'} 
-)
-ax.plot(theta, r)
-ax.set_rticks([0.5, 1, 1.5, 2])
-ax.grid(True)
-plt.show()
+| Function    | Description          | Example              |
+|-------------|----------------------|----------------------|
+| `COUNT()`   | Number of rows       | `COUNT(*)`           |
+| `SUM()`     | Total of values      | `SUM(amount)`        |
+| `AVG()`     | Mean average         | `AVG(score)`         |
+| `MIN()`     | Smallest value       | `MIN(age)`           |
+| `MAX()`     | Largest value        | `MAX(salary)`        |
+
+✅ **SQLite supports all these functions.**
+
+### 🧩 Basic Grouping Example
+
+**Q:** How many students are in each major?
+
+```sql
+SELECT major, COUNT(*) AS student_count
+FROM students
+GROUP BY major;
 ```
