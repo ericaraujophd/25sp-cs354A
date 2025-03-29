@@ -384,6 +384,25 @@ FROM students
 GROUP BY year;
 ```
 
+The SUBSTR() function extracts a **substring** from a given string.
+
+```sql
+SUBSTR(string, start, length)
+```
+* string: the text to extract from
+* start: the position to start (1-based index)
+* length (optional): how many characters to return
+
+```sql
+-- Get the first 4 characters of a date
+SELECT SUBSTR('2024-09-15', 1, 4);  -- Returns '2024'
+
+-- Get the first letter of a name
+SELECT SUBSTR(name, 1, 1) FROM students;
+```
+
+📌 If length is omitted, SQLite returns the rest of the string from start.
+
 :::{.callout-note}
 ✅ Works well in SQLite (which stores dates as text: YYYY-MM-DD).
 ❗ In PostgreSQL, use: EXTRACT(YEAR FROM admission_date).
@@ -397,3 +416,19 @@ GROUP BY year;
 * Prefer column names or expressions in GROUP BY, not just positions (e.g., avoid GROUP BY 1).
 * Be cautious using non-aggregated, non-grouped columns in SQLite — it’s allowed, but not portable or predictable.
 
+## 1.1 Counting Distinct Values in a Column
+
+We can combine `DISTINCT` with combinations of values like `count()`. This will return a count of distinct values from a column.
+
+```{python}
+%%sql
+SELECT count(libname)
+FROM libraries_2017;
+
+SELECT count(DISTINCT libname)
+FROM libraries_2017;
+```
+
+
+
+## 1.2 Finding Maximum and Minimum Values using max() and min()

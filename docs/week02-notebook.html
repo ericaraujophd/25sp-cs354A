@@ -193,6 +193,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#grouping-by-expressions" id="toc-grouping-by-expressions" class="nav-link" data-scroll-target="#grouping-by-expressions">🔗 Grouping by Expressions</a></li>
   <li><a href="#tips-for-grouping-queries" id="toc-tips-for-grouping-queries" class="nav-link" data-scroll-target="#tips-for-grouping-queries">🧠 Tips for Grouping Queries</a></li>
   </ul></li>
+  <li><a href="#counting-distinct-values-in-a-column" id="toc-counting-distinct-values-in-a-column" class="nav-link" data-scroll-target="#counting-distinct-values-in-a-column">1.1 Counting Distinct Values in a Column</a></li>
+  <li><a href="#finding-maximum-and-minimum-values-using-max-and-min" id="toc-finding-maximum-and-minimum-values-using-max-and-min" class="nav-link" data-scroll-target="#finding-maximum-and-minimum-values-using-max-and-min">1.2 Finding Maximum and Minimum Values using max() and min()</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/ericaraujophd/25sp-cs354A/edit/main/week02-notebook.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/25sp-cs354A/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -234,7 +236,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="creating-the-library-survey-tables">0. Creating the Library Survey Tables</h2>
 <p>In the US, the Institute of Museum and Library Services (IMLS) measures library activity as part of its annual Public Libraries Survey. The survey collects data from more than 9000 library administrative entities, defined by the survey as agencies that provide library services to a particular locality. Data includes the number of branches, staff, books, hours open per year, etc. To teach the concepts below, we will build three tables containing the data from the survey related to the years of 2016, 2017 and 2018. For doing so, we read from the CSV files downloaded from their website. More especifically, some columns will be selected in the process to reduce the amount of non used attributes.</p>
 <p>We are running SQL queries in a Jupyter environment.</p>
-<div id="404e405f" class="cell" data-execution_count="1">
+<div id="1cf169e5" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>capture</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>load_ext sql</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>sql sqlite:<span class="op">///</span>dbs<span class="op">/</span>w02<span class="op">/</span>library.db</span>
@@ -311,7 +313,7 @@ Done.</code></pre>
 <hr>
 <p><strong>This is</strong> an empty table. To fill the table, we need to convert our CSV entries to entitites in our database.</p>
 <p>Here I came up with another trick. I created a subprocess that opens SQLite3 and calls the command to convert a CSV file into a table inside the database. The code is as follows:</p>
-<div id="10f984d2" class="cell" data-execution_count="3">
+<div id="5771fb1d" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> subprocess</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>db <span class="op">=</span> <span class="st">"dbs/w02/library.db"</span></span>
@@ -330,7 +332,7 @@ Done.</code></pre>
 </div>
 <hr>
 <p><strong>Let’s see</strong> if the data was loaded? Let’s peak on the 10 first rows.</p>
-<div id="74e4ac36" class="cell" data-execution_count="4">
+<div id="ea59eb69" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>sql</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>SELECT <span class="op">*</span> FROM libraries_2018</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>LIMIT <span class="dv">10</span><span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -888,7 +890,7 @@ Done.</code></pre>
 </div>
 <hr>
 <p><strong>Now, lets</strong> count how many rows are in this table.</p>
-<div id="e6f4dd62" class="cell" data-execution_count="5">
+<div id="20e96099" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>sql</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>SELECT count(<span class="op">*</span>) FROM libraries_2018<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -1035,7 +1037,7 @@ Done.</code></pre>
 </div>
 <hr>
 <p><strong>And now</strong>, let’s fill the tables with data from our CSV files.</p>
-<div id="2d8c6d6c" class="cell" data-execution_count="7">
+<div id="a4e22ee6" class="cell" data-execution_count="7">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 2016</span></span>
@@ -1068,7 +1070,7 @@ Done.</code></pre>
 </div>
 <hr>
 <p><strong>Let’s check</strong> the rows count for each of the tables now.</p>
-<div id="128e2324" class="cell" data-execution_count="8">
+<div id="841756ad" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>sql</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    SELECT <span class="dv">2016</span> AS <span class="st">'Year'</span>, count(<span class="op">*</span>) AS NumRows FROM libraries_2016</span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>UNION ALL</span>
@@ -1235,6 +1237,19 @@ Note
 <div class="sourceCode" id="cb22"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="fu">SUBSTR</span>(admission_date, <span class="dv">1</span>, <span class="dv">4</span>) <span class="kw">AS</span> <span class="dt">year</span>, <span class="fu">COUNT</span>(<span class="op">*</span>) <span class="kw">AS</span> num_students</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> students</span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> <span class="dt">year</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The SUBSTR() function extracts a <strong>substring</strong> from a given string.</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">SUBSTR</span>(string, <span class="kw">start</span>, <span class="fu">length</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>string: the text to extract from</li>
+<li>start: the position to start (1-based index)</li>
+<li>length (optional): how many characters to return</li>
+</ul>
+<div class="sourceCode" id="cb24"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co">-- Get the first 4 characters of a date</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="fu">SUBSTR</span>(<span class="st">'2024-09-15'</span>, <span class="dv">1</span>, <span class="dv">4</span>);  <span class="co">-- Returns '2024'</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="co">-- Get the first letter of a name</span></span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="fu">SUBSTR</span>(name, <span class="dv">1</span>, <span class="dv">1</span>) <span class="kw">FROM</span> students;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>📌 If length is omitted, SQLite returns the rest of the string from start.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1258,9 +1273,43 @@ Note
 <li>Prefer column names or expressions in GROUP BY, not just positions (e.g., avoid GROUP BY 1).</li>
 <li>Be cautious using non-aggregated, non-grouped columns in SQLite — it’s allowed, but not portable or predictable.</li>
 </ul>
-
-
 </section>
+</section>
+<section id="counting-distinct-values-in-a-column" class="level2">
+<h2 class="anchored" data-anchor-id="counting-distinct-values-in-a-column">1.1 Counting Distinct Values in a Column</h2>
+<p>We can combine <code>DISTINCT</code> with combinations of values like <code>count()</code>. This will return a count of distinct values from a column.</p>
+<div id="d9259455" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>sql</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>SELECT count(libname)</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>FROM libraries_2017<span class="op">;</span></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>SELECT count(DISTINCT libname)</span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>FROM libraries_2017<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> * sqlite:///dbs/w02/library.db
+Done.
+Done.</code></pre>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="9">
+<table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th">count(DISTINCT libname)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>8456</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="finding-maximum-and-minimum-values-using-max-and-min" class="level2">
+<h2 class="anchored" data-anchor-id="finding-maximum-and-minimum-values-using-max-and-min">1.2 Finding Maximum and Minimum Values using max() and min()</h2>
+
+
 </section>
 
 </main> <!-- /main -->
