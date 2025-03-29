@@ -272,6 +272,8 @@ subprocess.run(["sqlite3", db], input=sqlite_command, text=True)
 
 ```
 
+---
+
 **Let's check** the rows count for each of the tables now.
 
 ```{python}
@@ -282,6 +284,8 @@ UNION ALL
 UNION ALL
     SELECT 2018, count(*) AS NumRows FROM libraries_2018;
 ```
+
+---
 
 For a demonstration of a line plot on a polar axis, see @fig-polar.
 
