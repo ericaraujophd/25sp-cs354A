@@ -66,382 +66,343 @@
     ]
   },
   {
-    "objectID": "week02-summary.html",
-    "href": "week02-summary.html",
-    "title": "Week 02: SQL – Intermediate Concepts Summary",
+    "objectID": "resources.html",
+    "href": "resources.html",
+    "title": "Course Resources",
     "section": "",
-    "text": "At the end of this unit, students will be able to…\n\nPerform data aggregation using GROUP BY and HAVING.\nWrite and execute INNER, LEFT-OUTER, RIGHT, and FULL JOINs.\nConstruct subqueries for complex queries.\nImplement SQL functions and expressions.\nUse SQL best practices for readable and efficient queries.\nOptimize SQL queries for better performance."
+    "text": "Links to websites offering SQL training\n\n\n\n\n\n\nImportant\n\n\n\nThese links were last updated on 02/03/2025. Please let me know if you encounter any broken links.\n\n\n\nReal Python SQL\nSQLZoo\nCodeAcademy\nHackerRank\nLeetCode\nW3Schools\nSQLBolt\nMode\nSQLPad\nLearnSQL\nSQLGuroo\nDB Fiddle"
   },
   {
-    "objectID": "week02-summary.html#slos-for-week-02",
-    "href": "week02-summary.html#slos-for-week-02",
-    "title": "Week 02: SQL – Intermediate Concepts Summary",
+    "objectID": "week04.html",
+    "href": "week04.html",
+    "title": "Week 04: Database Design – ER Modeling & Schema Refinement (under construction)",
     "section": "",
-    "text": "At the end of this unit, students will be able to…\n\nPerform data aggregation using GROUP BY and HAVING.\nWrite and execute INNER, LEFT-OUTER, RIGHT, and FULL JOINs.\nConstruct subqueries for complex queries.\nImplement SQL functions and expressions.\nUse SQL best practices for readable and efficient queries.\nOptimize SQL queries for better performance."
-  },
-  {
-    "objectID": "week02-summary.html#aggregation-grouping",
-    "href": "week02-summary.html#aggregation-grouping",
-    "title": "Week 02: SQL – Intermediate Concepts Summary",
-    "section": "📏 1. Aggregation & Grouping",
-    "text": "📏 1. Aggregation & Grouping\n\nCOUNT(), SUM(), AVG(), MIN(), MAX() – summarize column values\nGROUP BY – group rows by one or more columns\nHAVING – filter grouped results\n\nSELECT department, AVG(gpa)\nFROM students\nGROUP BY department\nHAVING AVG(gpa) &gt; 3.5;"
-  },
-  {
-    "objectID": "week02-summary.html#sql-joins",
-    "href": "week02-summary.html#sql-joins",
-    "title": "Week 02: SQL – Intermediate Concepts Summary",
-    "section": "🔗 2. SQL Joins",
-    "text": "🔗 2. SQL Joins\n\nINNER JOIN – only matching rows from both tables\nLEFT OUTER JOIN – all from left table + matching right\nRIGHT OUTER JOIN – all from right table + matching left\nFULL OUTER JOIN – all rows from both tables (if supported)\n\nSELECT s.name, c.name\nFROM students s\nLEFT JOIN enrollments e ON s.id = e.student_id\nLEFT JOIN courses c ON e.course_id = c.id;"
-  },
-  {
-    "objectID": "week02-summary.html#subqueries",
-    "href": "week02-summary.html#subqueries",
-    "title": "Week 02: SQL – Intermediate Concepts Summary",
-    "section": "🔍 3. Subqueries",
-    "text": "🔍 3. Subqueries\n\nUse queries inside other queries\nUse with IN, EXISTS, =, &lt;, etc.\n\nSELECT * FROM students\nWHERE id IN (SELECT student_id FROM enrollments);\n\nCorrelated Subqueries: Reference outer query\nNon-Correlated Subqueries: Can run independently"
-  },
-  {
-    "objectID": "week02-summary.html#sql-functions-expressions",
-    "href": "week02-summary.html#sql-functions-expressions",
-    "title": "Week 02: SQL – Intermediate Concepts Summary",
-    "section": "🧲 4. SQL Functions & Expressions",
-    "text": "🧲 4. SQL Functions & Expressions\n\nMath: ROUND(gpa, 2), ABS(), CEIL(), FLOOR()\nString: UPPER(), LOWER(), LENGTH(), SUBSTR()\nDate (SQLite): DATE(), STRFTIME('%Y', birthdate)\n\nSELECT UPPER(first_name) || ' ' || UPPER(last_name) FROM students;"
-  },
-  {
-    "objectID": "week02-summary.html#sql-best-practices",
-    "href": "week02-summary.html#sql-best-practices",
-    "title": "Week 02: SQL – Intermediate Concepts Summary",
-    "section": "🪜 5. SQL Best Practices",
-    "text": "🪜 5. SQL Best Practices\n\nUse clear formatting and indentation\nAvoid SELECT * – specify needed columns\nUse aliases (AS) to clarify column and table names\n\nSELECT s.first_name AS student, c.name AS course\nFROM students s JOIN enrollments e ON s.id = e.student_id;"
-  },
-  {
-    "objectID": "week02-summary.html#query-optimization-basics",
-    "href": "week02-summary.html#query-optimization-basics",
-    "title": "Week 02: SQL – Intermediate Concepts Summary",
-    "section": "⚡ 6. Query Optimization Basics",
-    "text": "⚡ 6. Query Optimization Basics\n\nIndexes speed up filtering and joining\nFilter early with WHERE\nAvoid nested subqueries unless needed\nUse EXPLAIN (in supported engines) to analyze performance\n\nEXPLAIN SELECT * FROM students WHERE gpa &gt; 3.5;"
-  },
-  {
-    "objectID": "week02-summary.html#pro-tip-practice-readability-matter",
-    "href": "week02-summary.html#pro-tip-practice-readability-matter",
-    "title": "Week 02: SQL – Intermediate Concepts Summary",
-    "section": "✅ Pro Tip: Practice & Readability Matter!",
-    "text": "✅ Pro Tip: Practice & Readability Matter!\nGood SQL is not just correct—it’s efficient, maintainable, and easy to understand."
-  },
-  {
-    "objectID": "week05.html",
-    "href": "week05.html",
-    "title": "Week 05: Advanced SQL & Integrity Constraints (under construction)",
-    "section": "",
-    "text": "By the end of this unit, students will be able to…\n\nImplement integrity constraints (PRIMARY KEY, FOREIGN KEY, CHECK).\nWrite and execute triggers for database automation.\nOptimize SQL queries for improved performance.\nDemonstrate SQL injection and discuss prevention strategies.\nAssign user roles and permissions for database security.\nDebug and troubleshoot complex SQL queries.",
+    "text": "Students will be able to…\n\nDesign ER diagrams to model database structures.\nConvert ER models into relational schemas.\nNormalize database schemas using BCNF and 4NF (briefly).\nIdentify and resolve redundancy issues in schemas.\nDefine and enforce primary and foreign key constraints.\nCreate SQL schemas from conceptual designs.",
     "crumbs": [
       "Content",
-      "Week 05: Advanced SQL & Integrity Constraints (under construction)"
+      "Week 04: Database Design – ER Modeling & Schema Refinement (under construction)"
     ]
   },
   {
-    "objectID": "week05.html#slos-for-week-05",
-    "href": "week05.html#slos-for-week-05",
-    "title": "Week 05: Advanced SQL & Integrity Constraints (under construction)",
+    "objectID": "week04.html#slos-for-week-04",
+    "href": "week04.html#slos-for-week-04",
+    "title": "Week 04: Database Design – ER Modeling & Schema Refinement (under construction)",
     "section": "",
-    "text": "By the end of this unit, students will be able to…\n\nImplement integrity constraints (PRIMARY KEY, FOREIGN KEY, CHECK).\nWrite and execute triggers for database automation.\nOptimize SQL queries for improved performance.\nDemonstrate SQL injection and discuss prevention strategies.\nAssign user roles and permissions for database security.\nDebug and troubleshoot complex SQL queries.",
+    "text": "Students will be able to…\n\nDesign ER diagrams to model database structures.\nConvert ER models into relational schemas.\nNormalize database schemas using BCNF and 4NF (briefly).\nIdentify and resolve redundancy issues in schemas.\nDefine and enforce primary and foreign key constraints.\nCreate SQL schemas from conceptual designs.",
     "crumbs": [
       "Content",
-      "Week 05: Advanced SQL & Integrity Constraints (under construction)"
+      "Week 04: Database Design – ER Modeling & Schema Refinement (under construction)"
     ]
   },
   {
-    "objectID": "week05.html#slides-videos-and-application-exercises",
-    "href": "week05.html#slides-videos-and-application-exercises",
-    "title": "Week 05: Advanced SQL & Integrity Constraints (under construction)",
+    "objectID": "week04.html#slides-videos-and-application-exercises",
+    "href": "week04.html#slides-videos-and-application-exercises",
+    "title": "Week 04: Database Design – ER Modeling & Schema Refinement (under construction)",
     "section": "Slides, videos, and application exercises",
-    "text": "Slides, videos, and application exercises\n\nWeek 05: Slides\n\nSlides\n\n\nNo readings for Week 05.\n\n\n\n\nHomework 05: No homework for Week 05\n\n\n\nProject 05: No Project for Week 05",
+    "text": "Slides, videos, and application exercises\n\nWeek 04: Slides\n\nSlides\n\n\nNo readings for Week 4.\n\n\n\n\nHomework 04:\n\nInstructions\n\n\n\n\nProject 04:\n\nInstructions\n\n\n\nExam 1\nExam on Friday during class. Bring your laptop. Content: Weeks 1 - 3.",
     "crumbs": [
       "Content",
-      "Week 05: Advanced SQL & Integrity Constraints (under construction)"
+      "Week 04: Database Design – ER Modeling & Schema Refinement (under construction)"
     ]
   },
   {
-    "objectID": "week06.html",
-    "href": "week06.html",
-    "title": "Week 06: Database Management & Optimization (under construction)",
+    "objectID": "week07.html",
+    "href": "week07.html",
+    "title": "Week 07: Final Project and Course Wrap-Up (under construction)",
     "section": "",
-    "text": "At the end of this unit, the student will be able to…\n\nDevelop a backup and recovery plan for a database system.\nExplain different techniques for performance tuning.\nUnderstand database partitioning and indexing strategies.\nProfile SQL queries to detect inefficiencies.\nDiscuss database integration with software applications.\nApply database optimization techniques in real-world scenarios.",
+    "text": "By the end of this unit, students will be able to…\n\nDesign and implement a database system from scratch.\nWrite SQL queries to solve real-world data retrieval problems.\nPresent a comprehensive database solution addressing a given scenario.\nCompare different database designs and justify choices.\nDemonstrate proficiency in SQL and database management concepts.\nReflect on the course content and their learning experience.",
     "crumbs": [
       "Content",
-      "Week 06: Database Management & Optimization (under construction)"
+      "Week 07: Final Project and Course Wrap-Up (under construction)"
     ]
   },
   {
-    "objectID": "week06.html#slos-for-week-06",
-    "href": "week06.html#slos-for-week-06",
-    "title": "Week 06: Database Management & Optimization (under construction)",
+    "objectID": "week07.html#slos-for-week-07",
+    "href": "week07.html#slos-for-week-07",
+    "title": "Week 07: Final Project and Course Wrap-Up (under construction)",
     "section": "",
-    "text": "At the end of this unit, the student will be able to…\n\nDevelop a backup and recovery plan for a database system.\nExplain different techniques for performance tuning.\nUnderstand database partitioning and indexing strategies.\nProfile SQL queries to detect inefficiencies.\nDiscuss database integration with software applications.\nApply database optimization techniques in real-world scenarios.",
+    "text": "By the end of this unit, students will be able to…\n\nDesign and implement a database system from scratch.\nWrite SQL queries to solve real-world data retrieval problems.\nPresent a comprehensive database solution addressing a given scenario.\nCompare different database designs and justify choices.\nDemonstrate proficiency in SQL and database management concepts.\nReflect on the course content and their learning experience.",
     "crumbs": [
       "Content",
-      "Week 06: Database Management & Optimization (under construction)"
+      "Week 07: Final Project and Course Wrap-Up (under construction)"
     ]
   },
   {
-    "objectID": "week06.html#slides-videos-and-application-exercises",
-    "href": "week06.html#slides-videos-and-application-exercises",
-    "title": "Week 06: Database Management & Optimization (under construction)",
+    "objectID": "week07.html#slides-videos-and-application-exercises",
+    "href": "week07.html#slides-videos-and-application-exercises",
+    "title": "Week 07: Final Project and Course Wrap-Up (under construction)",
     "section": "Slides, videos, and application exercises",
-    "text": "Slides, videos, and application exercises\n\nWeek 06: Slides\n\nSlides\n\n\nNo readings for Week 6.\n\n\n\n\nHomework 06:\n\nInstructions\n\n\n\n\nProject 06: No project on Week 06",
+    "text": "Slides, videos, and application exercises\n\nWeek 07: Slides\n\nSlides\n\n\nNo readings for Week 07.\n\n\n\n\nHomework 7:\n\nInstructions\n\n\n\n\nProject 07: Final Project\n\nInstructions",
     "crumbs": [
       "Content",
-      "Week 06: Database Management & Optimization (under construction)"
+      "Week 07: Final Project and Course Wrap-Up (under construction)"
     ]
   },
   {
-    "objectID": "hws/hw01.html",
-    "href": "hws/hw01.html",
-    "title": "Homework 01: From zero to…",
+    "objectID": "week01-summary.html",
+    "href": "week01-summary.html",
+    "title": "Week 01: Introduction to Databases & SQL Basics",
     "section": "",
-    "text": "From zero to hero!\nWelcome to CS354 - Database Management Systems! This is your first homework, and you will be guided through the steps you need to take to complete it."
+    "text": "At the end of this unit, students will be able to…\n\nExplain the purpose and importance of relational databases.\nDifferentiate between relational databases and other types of data storage.\nWrite basic SQL queries to retrieve data.\nUse WHERE clauses and ORDER BY to filter and sort results.\nUnderstand SQL syntax and basic commands.\nAnalyze a dataset using simple queries."
   },
   {
-    "objectID": "hws/hw01.html#objectives",
-    "href": "hws/hw01.html#objectives",
-    "title": "Homework 01: From zero to…",
+    "objectID": "week01-summary.html#slos-for-week-01",
+    "href": "week01-summary.html#slos-for-week-01",
+    "title": "Week 01: Introduction to Databases & SQL Basics",
+    "section": "",
+    "text": "At the end of this unit, students will be able to…\n\nExplain the purpose and importance of relational databases.\nDifferentiate between relational databases and other types of data storage.\nWrite basic SQL queries to retrieve data.\nUse WHERE clauses and ORDER BY to filter and sort results.\nUnderstand SQL syntax and basic commands.\nAnalyze a dataset using simple queries."
+  },
+  {
+    "objectID": "week01-summary.html#what-is-a-database",
+    "href": "week01-summary.html#what-is-a-database",
+    "title": "Week 01: Introduction to Databases & SQL Basics",
+    "section": "📖 1. What is a Database?",
+    "text": "📖 1. What is a Database?\n\nA database is an organized collection of data that can be easily accessed, managed, and updated.\nCommonly used in web apps, finance systems, university systems, and more."
+  },
+  {
+    "objectID": "week01-summary.html#what-is-a-dbms",
+    "href": "week01-summary.html#what-is-a-dbms",
+    "title": "Week 01: Introduction to Databases & SQL Basics",
+    "section": "📄 2. What is a DBMS?",
+    "text": "📄 2. What is a DBMS?\n\nA Database Management System (DBMS) is software that allows users to interact with databases.\nExamples: SQLite, MySQL, PostgreSQL, SQL Server.\nFunctions: create, update, retrieve, and manage data."
+  },
+  {
+    "objectID": "week01-summary.html#relational-model",
+    "href": "week01-summary.html#relational-model",
+    "title": "Week 01: Introduction to Databases & SQL Basics",
+    "section": "💡 3. Relational Model",
+    "text": "💡 3. Relational Model\n\nData is stored in tables (called relations) made up of rows (records) and columns (attributes).\nSupports primary keys, foreign keys, and constraints.\nEnforces data integrity and relationships between data."
+  },
+  {
+    "objectID": "week01-summary.html#basic-sql-syntax",
+    "href": "week01-summary.html#basic-sql-syntax",
+    "title": "Week 01: Introduction to Databases & SQL Basics",
+    "section": "📃 4. Basic SQL Syntax",
+    "text": "📃 4. Basic SQL Syntax\n\nSQL = Structured Query Language used to communicate with databases.\nCore command to retrieve data:\n\nSELECT column1, column2 FROM table_name;\n\nUse * to select all columns:\n\nSELECT * FROM students;"
+  },
+  {
+    "objectID": "week01-summary.html#filtering-data-with-where",
+    "href": "week01-summary.html#filtering-data-with-where",
+    "title": "Week 01: Introduction to Databases & SQL Basics",
+    "section": "⚠️ 5. Filtering Data with WHERE",
+    "text": "⚠️ 5. Filtering Data with WHERE\n\nFilter records using WHERE:\n\nSELECT * FROM students WHERE major = 'Computer Science';\n\nComparison operators: =, &lt;&gt;, &gt;, &lt;, &gt;=, &lt;=\nLogical operators: AND, OR, NOT"
+  },
+  {
+    "objectID": "week01-summary.html#sorting-results-with-order-by",
+    "href": "week01-summary.html#sorting-results-with-order-by",
+    "title": "Week 01: Introduction to Databases & SQL Basics",
+    "section": "▲ 6. Sorting Results with ORDER BY",
+    "text": "▲ 6. Sorting Results with ORDER BY\n\nSort results alphabetically or numerically:\n\nSELECT * FROM students ORDER BY last_name ASC;\n\nUse DESC for descending order"
+  },
+  {
+    "objectID": "week01-summary.html#combining-where-and-order-by",
+    "href": "week01-summary.html#combining-where-and-order-by",
+    "title": "Week 01: Introduction to Databases & SQL Basics",
+    "section": "🔄 7. Combining WHERE and ORDER BY",
+    "text": "🔄 7. Combining WHERE and ORDER BY\nSELECT * FROM students\nWHERE gpa &gt;= 3.5\nORDER BY last_name ASC;"
+  },
+  {
+    "objectID": "week01-summary.html#tools-and-environment",
+    "href": "week01-summary.html#tools-and-environment",
+    "title": "Week 01: Introduction to Databases & SQL Basics",
+    "section": "🚀 8. Tools and Environment",
+    "text": "🚀 8. Tools and Environment\n\nWe use SQLite3 with DBeaver to write and run SQL queries.\nCreate .db files to store your database.\nUse the SQL Editor to run commands and explore data.\n\n\n🔹 Pro Tip: Practice Makes Progress!\nWrite and test queries regularly to get comfortable with SQL syntax.\n\nStart with SELECT, WHERE, and ORDER BY—you’ll use them everywhere!"
+  },
+  {
+    "objectID": "hws/hw02.html",
+    "href": "hws/hw02.html",
+    "title": "Homework 02: Multiple tables",
+    "section": "",
+    "text": "It makes more sense now."
+  },
+  {
+    "objectID": "hws/hw02.html#objectives",
+    "href": "hws/hw02.html#objectives",
+    "title": "Homework 02: Multiple tables",
     "section": "Objectives:",
-    "text": "Objectives:\nIn this exercise, you will:\n\nShow you understand how SELECT queries work for different tables.\nShow you learned how to visualize data by filtering rows and columns according to what is required.\nShow you are able to follow instructions and navigate in a given database."
+    "text": "Objectives:\nIn this exercise, you will:\n\nShow you understand how SELECT queries work for different tables.\nShow you learned how to visualize data by filtering rows and columns according to what is required.\nShow you are able to follow instructions and navigate in a given database.\nUse Joins to handle multiple tables."
   },
   {
-    "objectID": "hws/hw01.html#to-moodle",
-    "href": "hws/hw01.html#to-moodle",
-    "title": "Homework 01: From zero to…",
+    "objectID": "hws/hw02.html#to-moodle",
+    "href": "hws/hw02.html#to-moodle",
+    "title": "Homework 02: Multiple tables",
     "section": "To Moodle!",
-    "text": "To Moodle!\nYou will log in to Calvin’s Moodle, enter the course’s virtual classroom, and find a task named “Homework 1.” Follow the steps outlined there. Remember that we are using CodeRunner, a Moodle plugin that allows students to execute SQL queries and receive automatic feedback.\nYou may find this first assignment a bit challenging, but I will give you extra time to complete it so that you have enough time to get acquainted with the system."
+    "text": "To Moodle!\nYou will log in to Calvin’s Moodle, enter the course’s virtual classroom, and find a task named “Homework 2.” Follow the steps outlined there. Remember that we are using CodeRunner, a Moodle plugin that allows students to execute SQL queries and receive automatic feedback."
   },
   {
-    "objectID": "hws/hw01.html#grading-rubric",
-    "href": "hws/hw01.html#grading-rubric",
-    "title": "Homework 01: From zero to…",
+    "objectID": "hws/hw02.html#grading-rubric",
+    "href": "hws/hw02.html#grading-rubric",
+    "title": "Homework 02: Multiple tables",
     "section": "Grading Rubric",
     "text": "Grading Rubric\n100 pts total."
   },
   {
-    "objectID": "hws/hw03.html",
-    "href": "hws/hw03.html",
-    "title": "Homework 03:",
+    "objectID": "hws/hw07.html",
+    "href": "hws/hw07.html",
+    "title": "Homework 07:",
     "section": "",
-    "text": "In this exercise, you will:"
+    "text": "Definition of Grinch."
   },
   {
-    "objectID": "hws/hw03.html#objectives",
-    "href": "hws/hw03.html#objectives",
-    "title": "Homework 03:",
-    "section": "",
-    "text": "In this exercise, you will:"
+    "objectID": "hws/hw07.html#learning-objectives",
+    "href": "hws/hw07.html#learning-objectives",
+    "title": "Homework 07:",
+    "section": "Learning Objectives",
+    "text": "Learning Objectives\nIn this exercise, you will:\n\nbuild a hash table data structure\nexperiment with hashing algorithms to distribute data across all buckets, as much as possible."
   },
   {
-    "objectID": "hws/hw03.html#introduction",
-    "href": "hws/hw03.html#introduction",
-    "title": "Homework 03:",
-    "section": "Introduction",
-    "text": "Introduction\nBlablabla"
+    "objectID": "hws/hw07.html#step-0",
+    "href": "hws/hw07.html#step-0",
+    "title": "Homework 07:",
+    "section": "Step 0",
+    "text": "Step 0\nAccept the Assignment.\nOur hash table will be a STL vector of STL sets (in class we used a vector of linked lists). Your code will read a file, dictionary.txt, that contains “all” the words in the English language, and insert each word into the hash table. There are about ~127,000 words in the file, but we will use a fairly small number of buckets, so there will be many collisions.\nThe goal of this exercise is to experiment with hashing algorithms to see if you can find one that distributes items well."
   },
   {
-    "objectID": "hws/hw03.html#getting-started",
-    "href": "hws/hw03.html#getting-started",
-    "title": "Homework 03:",
-    "section": "Getting Started",
-    "text": "Getting Started"
+    "objectID": "hws/hw07.html#step-1-build-the-hashtable-data-structure-and-constructor",
+    "href": "hws/hw07.html#step-1-build-the-hashtable-data-structure-and-constructor",
+    "title": "Homework 07:",
+    "section": "Step 1: Build the HashTable data structure and constructor",
+    "text": "Step 1: Build the HashTable data structure and constructor\nInspect the code in HashTable.h and HashTable.cpp. There is not much there, but it is a start. Do notice that there is a static constant integer called TABLE_SIZE, initialized to the value 200.\nCreate the hash table data structure in the private: section, calling it myTable. For this project, the table must be a vector of sets of strings (in class we used a vector of lists).\nIn the constructor, initialize myTable to have TABLE_SIZE buckets by calling\nmyTable.resize(TABLE_SIZE);\nAlso, in the constructor initialize mySize to 0.\nCompile your code to make sure what you have written compiles."
   },
   {
-    "objectID": "hws/hw03.html#submit",
-    "href": "hws/hw03.html#submit",
-    "title": "Homework 03:",
-    "section": "Submit",
-    "text": "Submit\nDon’t forget to commit your changes.\nGrading Rubric: XX points total"
+    "objectID": "hws/hw07.html#step-2-insert-and-hash",
+    "href": "hws/hw07.html#step-2-insert-and-hash",
+    "title": "Homework 07:",
+    "section": "Step 2: insert() and hash()",
+    "text": "Step 2: insert() and hash()\nThe prototypes for insert() and hash() are defined in the .h file. Now, you must implement them in the .cpp file. Use the code we saw in the slides in class for the hash function. The function should add up the first and last characters of the string, modding the result by TABLE_SIZE.\nTry to compile the code using make. It should compile. Fix any issues if your compilation fails."
   },
   {
-    "objectID": "hws/hw06.html",
-    "href": "hws/hw06.html",
-    "title": "Homework 06:",
-    "section": "",
-    "text": "Equality."
+    "objectID": "hws/hw07.html#step-3-main",
+    "href": "hws/hw07.html#step-3-main",
+    "title": "Homework 07:",
+    "section": "Step 3: main()",
+    "text": "Step 3: main()\nNow, create code in main(). Your code should define a HashTable object first.\nThen, open the file dictionary.txt for reading, and read each word from the file, one at a time, inserting each word into the hash table.\nNext, have the code close the file.\nCompile your code."
   },
   {
-    "objectID": "hws/hw06.html#objectives",
-    "href": "hws/hw06.html#objectives",
-    "title": "Homework 06:",
-    "section": "Objectives:",
-    "text": "Objectives:\nIn this exercise, you will:\n\nBuild more List operations.\nPractice using pointers."
+    "objectID": "hws/hw07.html#step-4-testing",
+    "href": "hws/hw07.html#step-4-testing",
+    "title": "Homework 07:",
+    "section": "Step 4: Testing",
+    "text": "Step 4: Testing\nOf course, at this point, we have no idea if the items have been distributed well in the hash table, because we have no way to inspect the hash table contents.\nNotice that there is a method called dumpInfo() defined, but currently the code does nothing. Fill in the code to do the following:\n\nFor each bucket, print how many items are in it.\nCount and print the number of empty buckets.\nCalculate and print the average number of items in non-empty buckets.\n\nHere is a snippet of my output. Make your output look similar:\nnumber of items in bucket 0: 415\nnumber of items in bucket 1: 351\nnumber of items in bucket 2: 307\nnumber of items in bucket 3: 414\nnumber of items in bucket 4: 293\n...\nnumber of items in bucket 197: 560\nnumber of items in bucket 198: 484\nnumber of items in bucket 199: 341\n--------------------------\nTotal number of elements in the hash table: 127141\nNumber of empty buckets: 0\nAverage number of items in non-empty buckets: 635\n\n\n\n\n\n\nNote\n\n\n\nNote: the output above is from after I changed the number of buckets in my data structure, and tweaked the hash algorithm, which you’ll do below.\n\n\nAfter you implement your dumpInfo() method, call it from your main() code."
   },
   {
-    "objectID": "hws/hw06.html#introduction",
-    "href": "hws/hw06.html#introduction",
-    "title": "Homework 06:",
-    "section": "Introduction",
-    "text": "Introduction\nIn this week’s lab you will add more functionality to the List class we built in class.\nHere is the invite.\nUse git clone to get your copy of the assignment, as we have been doing. You should have these files: List.cpp, List.h, tests.cpp, plus a makefile, etc.\nIf you are working with a partner, so make sure you join the same Team when creating your repos. Also, put both your names in the README.md file now."
+    "objectID": "hws/hw07.html#step-5-tweak-your-hashing-algorithm-and-table-size",
+    "href": "hws/hw07.html#step-5-tweak-your-hashing-algorithm-and-table-size",
+    "title": "Homework 07:",
+    "section": "Step 5: Tweak Your Hashing Algorithm and Table Size",
+    "text": "Step 5: Tweak Your Hashing Algorithm and Table Size\nYou will notice that the basic hashing algorithm (adding up the first and last characters of each string) does a very poor job of distributing strings across all buckets in the hash table. Your goal now is to improve the hashing algorithm to improve the distribution.\nExperiment with different algorithms, but make sure they follow the criteria laid out in class:\n\nO(1)\ndistribute values across all buckets.\ndeterministic.\n\nYou MAY increase the number of buckets, but it must remain at or below 250 total. Do not change how buckets are implemented – they should remain sets.\nDo not spend more than 1 hour tweaking your algorithm. Make sure your final code implements your best algorithm.\n\n\n\n\n\n\nImportant\n\n\n\nWrite a comment in your hash() function that describes your algorithm, explaining why you think it works as well as it does."
   },
   {
-    "objectID": "hws/hw06.html#step-1.-append",
-    "href": "hws/hw06.html#step-1.-append",
-    "title": "Homework 06:",
-    "section": "Step 1. Append",
-    "text": "Step 1. Append\nThe append() method is easy to understand: given a new Item, add it to the end of the linked list. The tests.cpp file contains tests already for append().\nNow, implement the code for append(). You might find looking at the implementation of prepend() to be helpful – although append() is a bit more complicated. DRAW PICTURES! (Or, don’t draw pictures, if you want to make this step of the lab take much longer…)"
+    "objectID": "hws/hw07.html#step-6-submit",
+    "href": "hws/hw07.html#step-6-submit",
+    "title": "Homework 07:",
+    "section": "Step 6: Submit",
+    "text": "Step 6: Submit\nSubmit your code via github, as normal.\n\n\n\n\n\n\nWarning\n\n\n\nIF YOU WORKED WITH A PARTNER, ONLY ONE OF YOU HAS TO SUBMIT, but UPDATE THE README.md to INCLUDE BOTH NAMES."
   },
   {
-    "objectID": "hws/hw06.html#step-2.-searching",
-    "href": "hws/hw06.html#step-2.-searching",
-    "title": "Homework 06:",
-    "section": "Step 2. Searching",
-    "text": "Step 2. Searching\nLet’s implement a method that searches the linked list for a given Item, and returns the index of where the item is found, or -1 if it is not found. Name the method getIndexOf(). Here is the prototype:\nint getIndexOf(const Item &it) const;\nFirst implement tests of getIndexOf() in tests.cpp, and then implement the method. You must call the TEST_CASE “lookfor”. I.e., put this in the tests.cpp file:\nTEST_CASE(\"lookfor\") {\n     // add your tests here -- either inside SECTION()s or not.\n}"
-  },
-  {
-    "objectID": "hws/hw06.html#step-3.-copy-constructor",
-    "href": "hws/hw06.html#step-3.-copy-constructor",
-    "title": "Homework 06:",
-    "section": "Step 3. Copy constructor",
-    "text": "Step 3. Copy constructor\nYou knew it was coming…\ntests.cpp does not contain any test cases for this, so you’ll have to implement them yourself. My solution has 1 TEST_CASE with 3 SECTIONS: copying a 0-element List, copying a 1-element List, and copying a \\(&gt;1\\)-element list. The name of the TEST_CASE must be copy constructor:\nTEST_CASE(\"copy\") {\n     // add your tests here -- either inside SECTION()s or not.\n}\nThe prototype of the copy constructor will be:\nList(const List & original);\nHere is the algorithm to implement the copy constructor:\n\nSet all the instance variables (myFirst, myLast, mySize) to default values.\nWalk the list of nodes in original, calling append() on the value in each node. (You are calling append() on “this” node, thus adding a new node each time to the List being constructed.)"
-  },
-  {
-    "objectID": "hws/hw06.html#step-4.-equality",
-    "href": "hws/hw06.html#step-4.-equality",
-    "title": "Homework 06:",
-    "section": "Step 4. Equality",
-    "text": "Step 4. Equality\nImplement the equality method, so that you can test if two List objects have the same number of nodes and the items in the nodes are the same. The equality operator returns true or false.\nE.g.,\nif list1 contains 3 values: 11, 22, 33 and list2 contains four values: 11, 22, 33, 44, then list1 == list2 should return false.\nTo test this you have to use == (not !=), so your test might look like this:\nREQUIRE(! (list1 == list2) );\nCreate your tests first in a test case called “equality”:\nTEST_CASE(\"equality\") {\n     // add your tests here -- either inside SECTION()s or not.\n}\n\n\n\n\n\n\nTip\n\n\n\nUse a “curr” pointer to each list’s myFirst node, then in a loop, check if the items are the same for the two nodes, then move each curr pointer to its next node."
-  },
-  {
-    "objectID": "hws/hw06.html#step-5.-templatize",
-    "href": "hws/hw06.html#step-5.-templatize",
-    "title": "Homework 06:",
-    "section": "Step 5. Templatize",
-    "text": "Step 5. Templatize\nNow, convert your List class to a List&lt;Item&gt; template and modify the tests in tests.cpp to test your new template. Remember to edit the makefile to remove List.cpp from the SOURCES line near the top of the file. You should also delete the List.cpp file completely from your tree."
-  },
-  {
-    "objectID": "hws/hw06.html#submit",
-    "href": "hws/hw06.html#submit",
-    "title": "Homework 06:",
-    "section": "Submit",
-    "text": "Submit\nA part of your grade will be based on the thoroughness of your tests; you may want to model your tests after those provided for you in previous projects.\nDon’t forget to Commit and Push your changes to your repo.\nVerify you have synced your code to github by going to your online repo webpage and looking to see that the files are correct.\nVerify that the autograding tests have passed in github.com."
-  },
-  {
-    "objectID": "hws/hw06.html#grading-rubric",
-    "href": "hws/hw06.html#grading-rubric",
-    "title": "Homework 06:",
-    "section": "Grading Rubric:",
-    "text": "Grading Rubric:\nYou will be graded this way: 19 pts total\n\n4 pts each for append(), getIndexOf(), copy constructor, and equality operator (16 pts)\n3 pts for correctness,\n1 pt for thorough tests (you get this point free for append() for which I’ve provided tests).\n3 pts for correctly converting to a class template.\n\nWays students lost points in the past:\n\n-3: Incorrect class template conversion, code does not compile;\n-3: Missing tests for getIndexOf(), copy constructor, and equality operator\n-1: Incomplete equality tests, no tests for when equality is true\n-1: Append implementation needs to adjust the myNext of the current last element\n-1: Copy constructor: myFirst is not initialized to nullptr, causing tests to fail;\n-1: Missing test for equality operator;\n-1: Incomplete test for copy constructor;"
-  },
-  {
-    "objectID": "policies.html",
-    "href": "policies.html",
-    "title": "Course Policies",
-    "section": "",
-    "text": "Your grade in this course will be based on:\n\nWeekly Quizzes: 5%\n\nQuizzes every Friday.\n\nProjects: 20%\nFinal Project: 25%\nHomework: 20%\nTests (2, including the final test during the Exam time): 30%"
-  },
-  {
-    "objectID": "policies.html#grace-days",
-    "href": "policies.html#grace-days",
-    "title": "Course Policies",
-    "section": "Grace Days",
-    "text": "Grace Days\nYou have 4 Grace Days available to you during the semester. These grace days may be used to submit an assignment late without penalty. Grace Days Remaining will be seen in the GradeBook in Moodle.\nHere are some circumstances in which you might use grace days:\n\nYou are an athlete and you have a very busy week. Use a few grace days to catch up the next week.\nYou become ill (physically or mentally) and cannot do the work on time.\nYou need to go home for an emergency.\n\nHere is the procedure for using grace days:\n\nDO NOT email me to tell me you are going to use grace days. I don’t need to know this – there is no action I need to take if you tell me this.\nWhen your assignment grade comes back and you have lost points due to lateness, then send an email to ask for the points to be restored and tell me how many grace days you want to use for that."
-  },
-  {
-    "objectID": "policies.html#extenuating-circumstances",
-    "href": "policies.html#extenuating-circumstances",
-    "title": "Course Policies",
-    "section": "Extenuating Circumstances",
-    "text": "Extenuating Circumstances\nIf you fall ill (physically or mentally) for an extended period of time, AND you send me documentation from Student Life, Student Health Center, or the Center for Health and Wellness, then, and only then, I will consider allowing you to make up late assignments.\n\n\n\n\n\n\nWarning\n\n\n\nIf you begin to skip class repeatedly due to mental health problems, go to the Center for Health and Wellness! Don’t delay!"
-  },
-  {
-    "objectID": "policies.html#incompletes",
-    "href": "policies.html#incompletes",
-    "title": "Course Policies",
-    "section": "Incompletes",
-    "text": "Incompletes\nAn Incomplete (I) grade will be granted only in unusual circumstances, and only if those circumstances have been verified by the Student Life Office. Procrastination does not qualify as an unusual circumstance.\nNo work will be accepted after the last day of classes."
-  },
-  {
-    "objectID": "policies.html#classroom-policy",
-    "href": "policies.html#classroom-policy",
-    "title": "Course Policies",
-    "section": "Classroom Policy",
-    "text": "Classroom Policy\n\n\n\n\n\n\nIMPORTANT!\n\n\n\nNo phones, no laptops, unless we tell you you can.\n\n\nThis is a difficult class, and you don’t need to be distracted by goofing around on your phone or laptop. And, I don’t want you to distract others.\nWeekly Quizzes will be administered in the first 5 minutes of class every Friday, on Moodle. Do not show up late to class."
-  },
-  {
-    "objectID": "policies.html#attendance",
-    "href": "policies.html#attendance",
-    "title": "Course Policies",
-    "section": "Attendance",
-    "text": "Attendance\nClass attendance is required.\nMissing class due to illness: if you are going to miss class due to (physical or mental) illness, please send me an email before class."
-  },
-  {
-    "objectID": "policies.html#disabilities",
-    "href": "policies.html#disabilities",
-    "title": "Course Policies",
-    "section": "Disabilities",
-    "text": "Disabilities\nCalvin University is committed to providing access to all students. If you are a student with a documented disability, please notify a Disability Coordinator in Student Success (located in Hiemenga Hall 227) to discuss necessary accommodations. If you have an accommodation memo, please come talk to me in the first two weeks of class. If you are a student needing reasonable modifications for pregnancy and related conditions, please contact the Title IX Coordinator in Student Life (located in Spoelhof University Center 364)."
-  },
-  {
-    "objectID": "policies.html#statement-of-diversity-and-inclusion",
-    "href": "policies.html#statement-of-diversity-and-inclusion",
-    "title": "Course Policies",
-    "section": "Statement of Diversity and Inclusion",
-    "text": "Statement of Diversity and Inclusion\nInside and outside of the classroom, I work to treat every person with equal respect, regardless of racial identity, gender identity, physicality, brain chemistry, nationality, political leanings, and religious background. Whoever you are, you are fearfully and wonderfully made. God delights in diversity and I do, too. We humans need diverse viewpoints because every viewpoint, on its own, has blind spots. That has been proven to be true in technology-related fields, where under-represented minorities are significantly under-represented in the working world. When companies work hard to rectify this, they find their products and services improve. We have found this to be true in Computer Science classrooms as well.\n\n\n\n\n\n\nIMPORTANT!\n\n\n\nIf you or someone else in this class is hurt by something I say or do in class, I would like to know about it so that we can work toward a remedy. This has happened in the past in my classroom – usually when I’m trying to be “cool” or be funny. If this happens this semester, please know that it was unintentional. Because this kind of feedback can be uncomfortable for all involved, I’ll take it however it comes: in public or in private, on the spot or days later, directly from you or indirectly through another student, another professor, or through my department chair Keith VanderLinden (kvlinden@calvin.edu)."
-  },
-  {
-    "objectID": "projects/proj03.html#submission",
-    "href": "projects/proj03.html#submission",
-    "title": "Project 03: soon…",
-    "section": "Submission",
-    "text": "Submission\n\nGrading Rubric\nThis project is worth xx pts:"
-  },
-  {
-    "objectID": "projects/proj99-final.html#grading-rubric",
-    "href": "projects/proj99-final.html#grading-rubric",
-    "title": "Final Project: Soon…",
+    "objectID": "hws/hw07.html#grading-rubric",
+    "href": "hws/hw07.html#grading-rubric",
+    "title": "Homework 07:",
     "section": "Grading Rubric",
-    "text": "Grading Rubric\nTotal: XX pts"
+    "text": "Grading Rubric\n20 points total:\n\n10 pts: hash table code (not including the hash function) is correct\n5 pts: hash function obeys the criteria laid out in class.\n3 pts: hash function works well (not obviously leaving many buckets empty and have some be very full).\n2 pts: code is clean and hospitable.\n\nWays students lost points in the past:\n\n-2: Hash function does not appear to be evenly distributed but fills lower-numbered buckets way more (~2000 vs ~50)\n-4: Main function does not load words from file or call dumpInfo\n-1: Missing call to dumpInfo in main\n-3: Buckets are not evenly distributed (with many below 50 or above 2000) and some are empty. The smallest buckets are odd-numbered, which indicates a quirk in the algorithm which disfavors that half of the buckets\n-4: Most of the buckets are empty; a hashing algorithm should seek to evenly distribute words into buckets\n-1: Please output all bucket counts per instructions so the distribution can be seen."
   },
   {
-    "objectID": "projects/proj04.html#grading-rubric",
-    "href": "projects/proj04.html#grading-rubric",
-    "title": "Project 04: Soon…",
+    "objectID": "hws/hw04.html#introduction",
+    "href": "hws/hw04.html#introduction",
+    "title": "Homework 04:",
+    "section": "Introduction",
+    "text": "Introduction"
+  },
+  {
+    "objectID": "hws/hw04.html#turn-in",
+    "href": "hws/hw04.html#turn-in",
+    "title": "Homework 04:",
+    "section": "Turn In",
+    "text": "Turn In"
+  },
+  {
+    "objectID": "hws/hw04.html#grading-rubric",
+    "href": "hws/hw04.html#grading-rubric",
+    "title": "Homework 04:",
     "section": "Grading Rubric",
     "text": "Grading Rubric"
   },
   {
-    "objectID": "content.html",
-    "href": "content.html",
-    "title": "Course content",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Welcome to CS 354 - Database Management Systems",
     "section": "",
-    "text": "CS 354 – Database Management Systems – is organized by week, with each week structured as follows:\n\nClassroom sessions are Monday-Wednesday-Friday 2.45PM - 3.50PM at SB 382.\nHomeworks are due Friday 23:59. They will be released every Monday.\nProject submission is due Wednesday at 23:59. They will be released every Wednesday.\nTutoring Assistants are available in SB337 on Mondays and Thursdays, from 7 - 9 pm.\n\nThe SLOs (Student Learning Objectives), labs, and projects for each week are given in the links below. The readings are from Ramez Elmasri, S. B. N. (2016). Fundamentals of Database Systems 7th ed.\n\n\n\nWeek\nTopics\nLaboratories\nProjects\nTests, Video Links, etc.\n\n\n\n\n1  —  3/17\nIntroduction to Databases & SQL Basics  Week’s page\nHomework 1\nProj 1\n\n\n\n2  —  3/24\nSQL – Intermediate Concepts  Advising days – no class 26-27 Week’s page\nHomework 2\nProj 2\n\n\n\n3  —  3/31\nSQL – Data Modification & Advanced Queries Week’s page\nHomework 3\nProj 3\n\n\n\n4  —  4/7\nDatabase Design – ER Modeling & Schema Refinement Week’s page\nHomework 4\nProj 4\nTest 1: Weeks 1 - 3, Friday\n\n\n5  —  4/14\nAdvanced SQL & Integrity Constraints  Good Friday & Easter Monday – no class 18-21  Week’s page\nNo lab\nNo project\n\n\n\n6  —  4/22\nDatabase Management & Optimization Week’s page\nHomework 6\nNo project\n\n\n\n7  —  4/28\nFinal Project and Course Wrap-Up Week’s page\nHomework 7\nFinal Project\n\n\n\nFinal  —  May 3-8\nSearch calvin.edu for “Exam Schedule” to find the time of the exam (and all exams you have, this semester, and all future semesters).\n\n\nFinal Test Cumulative, during exam time (You may take it in either class’s exam time. Classes met at 2.45pm MWF.)",
-    "crumbs": [
-      "Content",
-      "Course content"
-    ]
+    "text": "Welcome to Database Management, a hands-on course designed to equip you with the essential skills for designing, querying, and optimizing relational databases. Over the next seven weeks, you’ll dive into SQL, explore database structures, and gain practical experience in managing data efficiently. Whether you’re new to databases or looking to sharpen your skills, this course will provide a solid foundation for real-world applications.\nGet ready to write queries, design schemas, and discover how databases power modern applications! Looking forward to an exciting and engaging learning journey with you all.\nSee you in class!"
   },
   {
-    "objectID": "LICENSE.html",
-    "href": "LICENSE.html",
-    "title": "Attribution-ShareAlike 4.0 International",
+    "objectID": "index.html#student-learning-outcomes",
+    "href": "index.html#student-learning-outcomes",
+    "title": "Welcome to CS 354 - Database Management Systems",
+    "section": "Student Learning Outcomes",
+    "text": "Student Learning Outcomes\n\nGeneral Student Learning Outcomes (SLOs) for the Course\nBy the end of this Database Management course, students will be able to:\n\nUnderstand the Role of Databases – Explain the importance of database management systems and how they support real-world applications.\n\nWrite and Optimize SQL Queries – Construct and execute SQL queries to retrieve, manipulate, and analyze data efficiently.\n\nDesign and Normalize Relational Databases – Develop well-structured database schemas using BCNF to ensure data integrity and eliminate redundancy.\n\nImplement Relationships and Constraints – Define and enforce primary keys, foreign keys, and other integrity constraints to maintain data consistency.\n\nUse Advanced SQL Features – Apply concepts like joins, subqueries, indexing, views (materialized vs. non-materialized), and stored procedures to enhance database functionality.\n\nManage Transactions and Security – Demonstrate the ability to handle transactions, prevent SQL injection, and implement security best practices.\n\nPerform Database Maintenance and Optimization – Explain and apply indexing, query optimization, and backup/recovery strategies for efficient database management.\n\nDevelop a Complete Database System – Design, implement, and present a database project that integrates SQL skills, schema design, and optimization techniques.\n\nThese outcomes ensure that students leave the course with both theoretical knowledge and practical, real-world database management skills."
+  },
+  {
+    "objectID": "index.html#course-organization",
+    "href": "index.html#course-organization",
+    "title": "Welcome to CS 354 - Database Management Systems",
+    "section": "Course Organization",
+    "text": "Course Organization\nThe course is organized around these components:\n\nThe lectures that will introduce the topics at the practical and conceptual level through live coding and theory explanation;\nThe homeworks in which students will practice using and building databases; and\nThe projects in which students will develop databases systems for real-world problems.\n\nEach week’s lectures, homeworks and projects will cover the same concepts, but will do so in different ways."
+  },
+  {
+    "objectID": "index.html#acknowledgements",
+    "href": "index.html#acknowledgements",
+    "title": "Welcome to CS 354 - Database Management Systems",
+    "section": "Acknowledgements",
+    "text": "Acknowledgements\nThis website is built with Quarto. The original code used to build this website can be found at DS Box. We are very grateful for their work!"
+  },
+  {
+    "objectID": "projects/proj02.html",
+    "href": "projects/proj02.html",
+    "title": "Project 02: Student Performance & Enrollment Analysis (Using DBeaver)",
     "section": "",
-    "text": "Creative Commons Corporation (“Creative Commons”) is not a law firm and does not provide legal services or legal advice. Distribution of Creative Commons public licenses does not create a lawyer-client or other relationship. Creative Commons makes its licenses and related information available on an “as-is” basis. Creative Commons gives no warranties regarding its licenses, any material licensed under their terms and conditions, or any related information. Creative Commons disclaims all liability for damages resulting from their use to the fullest extent possible."
+    "text": "This project gives students practical experience using aggregate functions, joins, subqueries, SQL expressions, and query optimization in a multi-table database built with SQLite3 and DBeaver.\nStudents will analyze student records, enrollment patterns, and course performance using intermediate SQL features covered in Week 2."
   },
   {
-    "objectID": "LICENSE.html#creative-commons-attribution-sharealike-4.0-international-public-license",
-    "href": "LICENSE.html#creative-commons-attribution-sharealike-4.0-international-public-license",
-    "title": "Attribution-ShareAlike 4.0 International",
-    "section": "Creative Commons Attribution-ShareAlike 4.0 International Public License",
-    "text": "Creative Commons Attribution-ShareAlike 4.0 International Public License\nBy exercising the Licensed Rights (defined below), You accept and agree to be bound by the terms and conditions of this Creative Commons Attribution-ShareAlike 4.0 International Public License (“Public License”). To the extent this Public License may be interpreted as a contract, You are granted the Licensed Rights in consideration of Your acceptance of these terms and conditions, and the Licensor grants You such rights in consideration of benefits the Licensor receives from making the Licensed Material available under these terms and conditions.\n\nSection 1 – Definitions.\n\nAdapted Material means material subject to Copyright and Similar Rights that is derived from or based upon the Licensed Material and in which the Licensed Material is translated, altered, arranged, transformed, or otherwise modified in a manner requiring permission under the Copyright and Similar Rights held by the Licensor. For purposes of this Public License, where the Licensed Material is a musical work, performance, or sound recording, Adapted Material is always produced where the Licensed Material is synched in timed relation with a moving image.\nAdapter’s License means the license You apply to Your Copyright and Similar Rights in Your contributions to Adapted Material in accordance with the terms and conditions of this Public License.\nBY-SA Compatible License means a license listed at creativecommons.org/compatiblelicenses, approved by Creative Commons as essentially the equivalent of this Public License.\nCopyright and Similar Rights means copyright and/or similar rights closely related to copyright including, without limitation, performance, broadcast, sound recording, and Sui Generis Database Rights, without regard to how the rights are labeled or categorized. For purposes of this Public License, the rights specified in Section 2(b)(1)-(2) are not Copyright and Similar Rights.\nEffective Technological Measures means those measures that, in the absence of proper authority, may not be circumvented under laws fulfilling obligations under Article 11 of the WIPO Copyright Treaty adopted on December 20, 1996, and/or similar international agreements.\nExceptions and Limitations means fair use, fair dealing, and/or any other exception or limitation to Copyright and Similar Rights that applies to Your use of the Licensed Material.\nLicense Elements means the license attributes listed in the name of a Creative Commons Public License. The License Elements of this Public License are Attribution and ShareAlike.\nLicensed Material means the artistic or literary work, database, or other material to which the Licensor applied this Public License.\nLicensed Rights means the rights granted to You subject to the terms and conditions of this Public License, which are limited to all Copyright and Similar Rights that apply to Your use of the Licensed Material and that the Licensor has authority to license.\nLicensor means the individual(s) or entity(ies) granting rights under this Public License.\nShare means to provide material to the public by any means or process that requires permission under the Licensed Rights, such as reproduction, public display, public performance, distribution, dissemination, communication, or importation, and to make material available to the public including in ways that members of the public may access the material from a place and at a time individually chosen by them.\nSui Generis Database Rights means rights other than copyright resulting from Directive 96/9/EC of the European Parliament and of the Council of 11 March 1996 on the legal protection of databases, as amended and/or succeeded, as well as other essentially equivalent rights anywhere in the world.\nYou means the individual or entity exercising the Licensed Rights under this Public License. Your has a corresponding meaning.\n\n\n\nSection 2 – Scope.\n\nLicense grant.\n\nSubject to the terms and conditions of this Public License, the Licensor hereby grants You a worldwide, royalty-free, non-sublicensable, non-exclusive, irrevocable license to exercise the Licensed Rights in the Licensed Material to:\n\nreproduce and Share the Licensed Material, in whole or in part; and\nproduce, reproduce, and Share Adapted Material.\n\nExceptions and Limitations. For the avoidance of doubt, where Exceptions and Limitations apply to Your use, this Public License does not apply, and You do not need to comply with its terms and conditions.\nTerm. The term of this Public License is specified in Section 6(a).\nMedia and formats; technical modifications allowed. The Licensor authorizes You to exercise the Licensed Rights in all media and formats whether now known or hereafter created, and to make technical modifications necessary to do so. The Licensor waives and/or agrees not to assert any right or authority to forbid You from making technical modifications necessary to exercise the Licensed Rights, including technical modifications necessary to circumvent Effective Technological Measures. For purposes of this Public License, simply making modifications authorized by this Section 2(a)(4) never produces Adapted Material.\nDownstream recipients.\nA. Offer from the Licensor – Licensed Material. Every recipient of the Licensed Material automatically receives an offer from the Licensor to exercise the Licensed Rights under the terms and conditions of this Public License.\n\n__Additional offer from the Licensor – Adapted Material. Every recipient of Adapted Material from You automatically receives an offer from the Licensor to exercise the Licensed Rights in the Adapted Material under the conditions of the Adapter’s License You apply.\n\nC. No downstream restrictions. You may not offer or impose any additional or different terms or conditions on, or apply any Effective Technological Measures to, the Licensed Material if doing so restricts exercise of the Licensed Rights by any recipient of the Licensed Material.\nNo endorsement. Nothing in this Public License constitutes or may be construed as permission to assert or imply that You are, or that Your use of the Licensed Material is, connected with, or sponsored, endorsed, or granted official status by, the Licensor or others designated to receive attribution as provided in Section 3(a)(1)(A)(i).\n\nOther rights.\n\nMoral rights, such as the right of integrity, are not licensed under this Public License, nor are publicity, privacy, and/or other similar personality rights; however, to the extent possible, the Licensor waives and/or agrees not to assert any such rights held by the Licensor to the limited extent necessary to allow You to exercise the Licensed Rights, but not otherwise.\nPatent and trademark rights are not licensed under this Public License.\nTo the extent possible, the Licensor waives any right to collect royalties from You for the exercise of the Licensed Rights, whether directly or through a collecting society under any voluntary or waivable statutory or compulsory licensing scheme. In all other cases the Licensor expressly reserves any right to collect such royalties.\n\n\n\n\nSection 3 – License Conditions.\nYour exercise of the Licensed Rights is expressly made subject to the following conditions.\n\nAttribution.\n\nIf You Share the Licensed Material (including in modified form), You must:\n\nretain the following if it is supplied by the Licensor with the Licensed Material:\n\n\n\nidentification of the creator(s) of the Licensed Material and any others designated to receive attribution, in any reasonable manner requested by the Licensor (including by pseudonym if designated);\na copyright notice;\na notice that refers to this Public License;\na notice that refers to the disclaimer of warranties;\na URI or hyperlink to the Licensed Material to the extent reasonably practicable;\n\n\n\nindicate if You modified the Licensed Material and retain an indication of any previous modifications; and\nindicate the Licensed Material is licensed under this Public License, and include the text of, or the URI or hyperlink to, this Public License.\n\nYou may satisfy the conditions in Section 3(a)(1) in any reasonable manner based on the medium, means, and context in which You Share the Licensed Material. For example, it may be reasonable to satisfy the conditions by providing a URI or hyperlink to a resource that includes the required information.\nIf requested by the Licensor, You must remove any of the information required by Section 3(a)(1)(A) to the extent reasonably practicable.\n\nShareAlike.\n\nIn addition to the conditions in Section 3(a), if You Share Adapted Material You produce, the following conditions also apply.\n\nThe Adapter’s License You apply must be a Creative Commons license with the same License Elements, this version or later, or a BY-SA Compatible License.\nYou must include the text of, or the URI or hyperlink to, the Adapter’s License You apply. You may satisfy this condition in any reasonable manner based on the medium, means, and context in which You Share Adapted Material.\nYou may not offer or impose any additional or different terms or conditions on, or apply any Effective Technological Measures to, Adapted Material that restrict exercise of the rights granted under the Adapter’s License You apply.\n\n\n\nSection 4 – Sui Generis Database Rights.\nWhere the Licensed Rights include Sui Generis Database Rights that apply to Your use of the Licensed Material:\n\nfor the avoidance of doubt, Section 2(a)(1) grants You the right to extract, reuse, reproduce, and Share all or a substantial portion of the contents of the database;\nif You include all or a substantial portion of the database contents in a database in which You have Sui Generis Database Rights, then the database in which You have Sui Generis Database Rights (but not its individual contents) is Adapted Material, including for purposes of Section 3(b); and\nYou must comply with the conditions in Section 3(a) if You Share all or a substantial portion of the contents of the database.\n\nFor the avoidance of doubt, this Section 4 supplements and does not replace Your obligations under this Public License where the Licensed Rights include other Copyright and Similar Rights.\n\n\nSection 5 – Disclaimer of Warranties and Limitation of Liability.\n\nUnless otherwise separately undertaken by the Licensor, to the extent possible, the Licensor offers the Licensed Material as-is and as-available, and makes no representations or warranties of any kind concerning the Licensed Material, whether express, implied, statutory, or other. This includes, without limitation, warranties of title, merchantability, fitness for a particular purpose, non-infringement, absence of latent or other defects, accuracy, or the presence or absence of errors, whether or not known or discoverable. Where disclaimers of warranties are not allowed in full or in part, this disclaimer may not apply to You.\nTo the extent possible, in no event will the Licensor be liable to You on any legal theory (including, without limitation, negligence) or otherwise for any direct, special, indirect, incidental, consequential, punitive, exemplary, or other losses, costs, expenses, or damages arising out of this Public License or use of the Licensed Material, even if the Licensor has been advised of the possibility of such losses, costs, expenses, or damages. Where a limitation of liability is not allowed in full or in part, this limitation may not apply to You.\nThe disclaimer of warranties and limitation of liability provided above shall be interpreted in a manner that, to the extent possible, most closely approximates an absolute disclaimer and waiver of all liability.\n\n\n\nSection 6 – Term and Termination.\n\nThis Public License applies for the term of the Copyright and Similar Rights licensed here. However, if You fail to comply with this Public License, then Your rights under this Public License terminate automatically.\nWhere Your right to use the Licensed Material has terminated under Section 6(a), it reinstates:\n\nautomatically as of the date the violation is cured, provided it is cured within 30 days of Your discovery of the violation; or\nupon express reinstatement by the Licensor.\n\nFor the avoidance of doubt, this Section 6(b) does not affect any right the Licensor may have to seek remedies for Your violations of this Public License.\nFor the avoidance of doubt, the Licensor may also offer the Licensed Material under separate terms or conditions or stop distributing the Licensed Material at any time; however, doing so will not terminate this Public License.\nSections 1, 5, 6, 7, and 8 survive termination of this Public License.\n\n\n\nSection 7 – Other Terms and Conditions.\n\nThe Licensor shall not be bound by any additional or different terms or conditions communicated by You unless expressly agreed.\nAny arrangements, understandings, or agreements regarding the Licensed Material not stated herein are separate from and independent of the terms and conditions of this Public License.t stated herein are separate from and independent of the terms and conditions of this Public License.\n\n\n\nSection 8 – Interpretation.\n\nFor the avoidance of doubt, this Public License does not, and shall not be interpreted to, reduce, limit, restrict, or impose conditions on any use of the Licensed Material that could lawfully be made without permission under this Public License.\nTo the extent possible, if any provision of this Public License is deemed unenforceable, it shall be automatically reformed to the minimum extent necessary to make it enforceable. If the provision cannot be reformed, it shall be severed from this Public License without affecting the enforceability of the remaining terms and conditions.\nNo term or condition of this Public License will be waived and no failure to comply consented to unless expressly agreed to by the Licensor.\nNothing in this Public License constitutes or may be interpreted as a limitation upon, or waiver of, any privileges and immunities that apply to the Licensor or You, including from the legal processes of any jurisdiction or authority.\n\n\nCreative Commons is not a party to its public licenses. Notwithstanding, Creative Commons may elect to apply one of its public licenses to material it publishes and in those instances will be considered the “Licensor.” Except for the limited purpose of indicating that material is shared under a Creative Commons public license or as otherwise permitted by the Creative Commons policies published at creativecommons.org/policies, Creative Commons does not authorize the use of the trademark “Creative Commons” or any other trademark or logo of Creative Commons without its prior written consent including, without limitation, in connection with any unauthorized modifications to any of its public licenses or any other arrangements, understandings, or agreements concerning use of licensed material. For the avoidance of doubt, this paragraph does not form part of the public licenses.\nCreative Commons may be contacted at creativecommons.org"
-  },
-  {
-    "objectID": "instructors.html",
-    "href": "instructors.html",
-    "title": "Instructors",
+    "objectID": "projects/proj02.html#objective",
+    "href": "projects/proj02.html#objective",
+    "title": "Project 02: Student Performance & Enrollment Analysis (Using DBeaver)",
     "section": "",
-    "text": "The instructor for this course is Prof. Eric Araújo."
+    "text": "This project gives students practical experience using aggregate functions, joins, subqueries, SQL expressions, and query optimization in a multi-table database built with SQLite3 and DBeaver.\nStudents will analyze student records, enrollment patterns, and course performance using intermediate SQL features covered in Week 2."
   },
   {
-    "objectID": "instructors.html#office-hours",
-    "href": "instructors.html#office-hours",
-    "title": "Instructors",
-    "section": "Office Hours",
-    "text": "Office Hours\n\nThursdays from 2pm until 4pm.\n\n\n\n\n\n\n\nWarning\n\n\n\nIf you can’t meet in during my office hours, use the link below to find free times in my schedule and send me an email requesting to meet during the selected time.\nProf. Araújo’s hours"
+    "objectID": "projects/proj02.html#learning-outcomes",
+    "href": "projects/proj02.html#learning-outcomes",
+    "title": "Project 02: Student Performance & Enrollment Analysis (Using DBeaver)",
+    "section": "🧠 Learning Outcomes",
+    "text": "🧠 Learning Outcomes\nBy completing this project, students will: * Gain confidence using JOINs, GROUP BY, and subqueries * Apply functions and expressions in real-world data * Think critically about query design and efficiency * Practice building clean, well-structured SQL statements in DBeaver"
+  },
+  {
+    "objectID": "projects/proj02.html#step-1-creating-the-database",
+    "href": "projects/proj02.html#step-1-creating-the-database",
+    "title": "Project 02: Student Performance & Enrollment Analysis (Using DBeaver)",
+    "section": "Step 1: Creating the Database",
+    "text": "Step 1: Creating the Database\n\n🗂️ Database Schema\nCreate a new database named university.db with the following tables:\nCREATE TABLE students (\n    student_id INTEGER PRIMARY KEY,\n    first_name TEXT NOT NULL,\n    last_name TEXT NOT NULL,\n    major TEXT,\n    gpa REAL\n);\n\nCREATE TABLE courses (\n    course_id INTEGER PRIMARY KEY,\n    course_name TEXT NOT NULL,\n    department TEXT NOT NULL,\n    credits INTEGER\n);\n\nCREATE TABLE enrollments (\n    enrollment_id INTEGER PRIMARY KEY,\n    student_id INTEGER,\n    course_id INTEGER,\n    grade TEXT,\n    FOREIGN KEY (student_id) REFERENCES students(student_id),\n    FOREIGN KEY (course_id) REFERENCES courses(course_id)\n);\n\n\n📥 Sample Data (Insert Statements)\nProvide the following sample data for testing queries:\n-- Students\nINSERT INTO students (first_name, last_name, major, gpa) VALUES\n('Alice', 'Johnson', 'Computer Science', 3.8),\n('Bob', 'Smith', 'Business', 3.1),\n('Charlie', 'Davis', 'Data Science', 3.5),\n('Diana', 'Lee', 'Computer Science', 2.9),\n('Ethan', 'Brown', 'Data Science', 3.7);\n\n-- Courses\nINSERT INTO courses (course_name, department, credits) VALUES\n('Database Management', 'Computer Science', 3),\n('Marketing 101', 'Business', 2),\n('Machine Learning', 'Data Science', 4),\n('Algorithms', 'Computer Science', 3);\n\n-- Enrollments\nINSERT INTO enrollments (student_id, course_id, grade) VALUES\n(1, 1, 'A'),\n(1, 4, 'B'),\n(2, 2, 'B'),\n(3, 1, 'A'),\n(3, 3, 'A'),\n(4, 1, 'C'),\n(4, 4, 'B'),\n(5, 3, 'A');\n\n\n\n\n\n\nYou can also download the sql file containing the setup of the database and open it in your DBeaver.\n\n\n\n🧰 Quick Setup Instructions for DBeaver\n\nInstall DBeaver (Community Edition) if not already installed.\nLaunch DBeaver and go to File → DBeaver → New Database Connection.\nSelect SQLite as the database type.\nClick Next, then Create a new database file, and name it university.db.\nAfter connection, right-click on the database and choose SQL Editor → New SQL Script to run the setup and queries.\n\n⏳ Load the SQL Script\n\nRight-click the new university.db connection in the Database Navigator pane.\nSelect SQL Editor → New SQL Script.\nIn the new script tab that appears, click File → Open File.\nSelect the provided file: 📄 week2_project_setup.sql\nMake sure the Active Datasource (on the top of the window) is connected to the database created."
+  },
+  {
+    "objectID": "projects/proj02.html#step-3-student-tasks",
+    "href": "projects/proj02.html#step-3-student-tasks",
+    "title": "Project 02: Student Performance & Enrollment Analysis (Using DBeaver)",
+    "section": "Step 3: Student Tasks",
+    "text": "Step 3: Student Tasks\nYou must write SQL queries to answer the following questions:\n🔹 Aggregation & Grouping\n\nFind the average GPA per major.\nCount the number of students enrolled in each course.\nList courses where the number of students enrolled is at least 2.\nFind the average number of credits students are enrolled in (per student).\n\n🔹 Joins\n\nShow each student’s first and last name along with the names of the courses they are enrolled in.\nList all students and the courses they are NOT enrolled in (use LEFT JOIN and NULL filtering).\nShow courses that have not been taken by any students (use LEFT JOIN or NOT IN).\n\n🔹 Subqueries\n\nFind the names of students who have received an ‘A’ in any course (use IN or EXISTS).\nList students whose GPA is higher than the average GPA of all students.\nRetrieve courses that have more students than the average number of enrollments per course.\n\n🔹 Functions & Expressions\n\nDisplay students’ names in uppercase.\nShow the length of each course name using a string function.\nCalculate and display a weighted GPA score based on credits * GPA for each student (hint: use a JOIN and a mathematical expression).\n\n🔹 Query Optimization (Conceptual)\n\nConceptual question about Joins."
+  },
+  {
+    "objectID": "projects/proj02.html#submit",
+    "href": "projects/proj02.html#submit",
+    "title": "Project 02: Student Performance & Enrollment Analysis (Using DBeaver)",
+    "section": "Submit",
+    "text": "Submit\nYou will submit your queries on Moodle."
+  },
+  {
+    "objectID": "projects/proj02.html#grading-rubric",
+    "href": "projects/proj02.html#grading-rubric",
+    "title": "Project 02: Student Performance & Enrollment Analysis (Using DBeaver)",
+    "section": "Grading Rubric",
+    "text": "Grading Rubric\nThis project is worth 100 pts."
   },
   {
     "objectID": "projects/proj01.html",
@@ -521,343 +482,389 @@
     "text": "Grading Rubric\nThis project is worth 100 pts:\nGrade will be given by the Quiz available on Moodle from Wednesday (3/19) until the following Wednesday (3/26)."
   },
   {
-    "objectID": "projects/proj02.html",
-    "href": "projects/proj02.html",
-    "title": "Project 02: Student Performance & Enrollment Analysis (Using DBeaver)",
+    "objectID": "instructors.html",
+    "href": "instructors.html",
+    "title": "Instructors",
     "section": "",
-    "text": "This project gives students practical experience using aggregate functions, joins, subqueries, SQL expressions, and query optimization in a multi-table database built with SQLite3 and DBeaver.\nStudents will analyze student records, enrollment patterns, and course performance using intermediate SQL features covered in Week 2."
+    "text": "The instructor for this course is Prof. Eric Araújo."
   },
   {
-    "objectID": "projects/proj02.html#objective",
-    "href": "projects/proj02.html#objective",
-    "title": "Project 02: Student Performance & Enrollment Analysis (Using DBeaver)",
+    "objectID": "instructors.html#office-hours",
+    "href": "instructors.html#office-hours",
+    "title": "Instructors",
+    "section": "Office Hours",
+    "text": "Office Hours\n\nThursdays from 2pm until 4pm.\n\n\n\n\n\n\n\nWarning\n\n\n\nIf you can’t meet in during my office hours, use the link below to find free times in my schedule and send me an email requesting to meet during the selected time.\nProf. Araújo’s hours"
+  },
+  {
+    "objectID": "LICENSE.html",
+    "href": "LICENSE.html",
+    "title": "Attribution-ShareAlike 4.0 International",
     "section": "",
-    "text": "This project gives students practical experience using aggregate functions, joins, subqueries, SQL expressions, and query optimization in a multi-table database built with SQLite3 and DBeaver.\nStudents will analyze student records, enrollment patterns, and course performance using intermediate SQL features covered in Week 2."
+    "text": "Creative Commons Corporation (“Creative Commons”) is not a law firm and does not provide legal services or legal advice. Distribution of Creative Commons public licenses does not create a lawyer-client or other relationship. Creative Commons makes its licenses and related information available on an “as-is” basis. Creative Commons gives no warranties regarding its licenses, any material licensed under their terms and conditions, or any related information. Creative Commons disclaims all liability for damages resulting from their use to the fullest extent possible."
   },
   {
-    "objectID": "projects/proj02.html#learning-outcomes",
-    "href": "projects/proj02.html#learning-outcomes",
-    "title": "Project 02: Student Performance & Enrollment Analysis (Using DBeaver)",
-    "section": "🧠 Learning Outcomes",
-    "text": "🧠 Learning Outcomes\nBy completing this project, students will: * Gain confidence using JOINs, GROUP BY, and subqueries * Apply functions and expressions in real-world data * Think critically about query design and efficiency * Practice building clean, well-structured SQL statements in DBeaver"
+    "objectID": "LICENSE.html#creative-commons-attribution-sharealike-4.0-international-public-license",
+    "href": "LICENSE.html#creative-commons-attribution-sharealike-4.0-international-public-license",
+    "title": "Attribution-ShareAlike 4.0 International",
+    "section": "Creative Commons Attribution-ShareAlike 4.0 International Public License",
+    "text": "Creative Commons Attribution-ShareAlike 4.0 International Public License\nBy exercising the Licensed Rights (defined below), You accept and agree to be bound by the terms and conditions of this Creative Commons Attribution-ShareAlike 4.0 International Public License (“Public License”). To the extent this Public License may be interpreted as a contract, You are granted the Licensed Rights in consideration of Your acceptance of these terms and conditions, and the Licensor grants You such rights in consideration of benefits the Licensor receives from making the Licensed Material available under these terms and conditions.\n\nSection 1 – Definitions.\n\nAdapted Material means material subject to Copyright and Similar Rights that is derived from or based upon the Licensed Material and in which the Licensed Material is translated, altered, arranged, transformed, or otherwise modified in a manner requiring permission under the Copyright and Similar Rights held by the Licensor. For purposes of this Public License, where the Licensed Material is a musical work, performance, or sound recording, Adapted Material is always produced where the Licensed Material is synched in timed relation with a moving image.\nAdapter’s License means the license You apply to Your Copyright and Similar Rights in Your contributions to Adapted Material in accordance with the terms and conditions of this Public License.\nBY-SA Compatible License means a license listed at creativecommons.org/compatiblelicenses, approved by Creative Commons as essentially the equivalent of this Public License.\nCopyright and Similar Rights means copyright and/or similar rights closely related to copyright including, without limitation, performance, broadcast, sound recording, and Sui Generis Database Rights, without regard to how the rights are labeled or categorized. For purposes of this Public License, the rights specified in Section 2(b)(1)-(2) are not Copyright and Similar Rights.\nEffective Technological Measures means those measures that, in the absence of proper authority, may not be circumvented under laws fulfilling obligations under Article 11 of the WIPO Copyright Treaty adopted on December 20, 1996, and/or similar international agreements.\nExceptions and Limitations means fair use, fair dealing, and/or any other exception or limitation to Copyright and Similar Rights that applies to Your use of the Licensed Material.\nLicense Elements means the license attributes listed in the name of a Creative Commons Public License. The License Elements of this Public License are Attribution and ShareAlike.\nLicensed Material means the artistic or literary work, database, or other material to which the Licensor applied this Public License.\nLicensed Rights means the rights granted to You subject to the terms and conditions of this Public License, which are limited to all Copyright and Similar Rights that apply to Your use of the Licensed Material and that the Licensor has authority to license.\nLicensor means the individual(s) or entity(ies) granting rights under this Public License.\nShare means to provide material to the public by any means or process that requires permission under the Licensed Rights, such as reproduction, public display, public performance, distribution, dissemination, communication, or importation, and to make material available to the public including in ways that members of the public may access the material from a place and at a time individually chosen by them.\nSui Generis Database Rights means rights other than copyright resulting from Directive 96/9/EC of the European Parliament and of the Council of 11 March 1996 on the legal protection of databases, as amended and/or succeeded, as well as other essentially equivalent rights anywhere in the world.\nYou means the individual or entity exercising the Licensed Rights under this Public License. Your has a corresponding meaning.\n\n\n\nSection 2 – Scope.\n\nLicense grant.\n\nSubject to the terms and conditions of this Public License, the Licensor hereby grants You a worldwide, royalty-free, non-sublicensable, non-exclusive, irrevocable license to exercise the Licensed Rights in the Licensed Material to:\n\nreproduce and Share the Licensed Material, in whole or in part; and\nproduce, reproduce, and Share Adapted Material.\n\nExceptions and Limitations. For the avoidance of doubt, where Exceptions and Limitations apply to Your use, this Public License does not apply, and You do not need to comply with its terms and conditions.\nTerm. The term of this Public License is specified in Section 6(a).\nMedia and formats; technical modifications allowed. The Licensor authorizes You to exercise the Licensed Rights in all media and formats whether now known or hereafter created, and to make technical modifications necessary to do so. The Licensor waives and/or agrees not to assert any right or authority to forbid You from making technical modifications necessary to exercise the Licensed Rights, including technical modifications necessary to circumvent Effective Technological Measures. For purposes of this Public License, simply making modifications authorized by this Section 2(a)(4) never produces Adapted Material.\nDownstream recipients.\nA. Offer from the Licensor – Licensed Material. Every recipient of the Licensed Material automatically receives an offer from the Licensor to exercise the Licensed Rights under the terms and conditions of this Public License.\n\n__Additional offer from the Licensor – Adapted Material. Every recipient of Adapted Material from You automatically receives an offer from the Licensor to exercise the Licensed Rights in the Adapted Material under the conditions of the Adapter’s License You apply.\n\nC. No downstream restrictions. You may not offer or impose any additional or different terms or conditions on, or apply any Effective Technological Measures to, the Licensed Material if doing so restricts exercise of the Licensed Rights by any recipient of the Licensed Material.\nNo endorsement. Nothing in this Public License constitutes or may be construed as permission to assert or imply that You are, or that Your use of the Licensed Material is, connected with, or sponsored, endorsed, or granted official status by, the Licensor or others designated to receive attribution as provided in Section 3(a)(1)(A)(i).\n\nOther rights.\n\nMoral rights, such as the right of integrity, are not licensed under this Public License, nor are publicity, privacy, and/or other similar personality rights; however, to the extent possible, the Licensor waives and/or agrees not to assert any such rights held by the Licensor to the limited extent necessary to allow You to exercise the Licensed Rights, but not otherwise.\nPatent and trademark rights are not licensed under this Public License.\nTo the extent possible, the Licensor waives any right to collect royalties from You for the exercise of the Licensed Rights, whether directly or through a collecting society under any voluntary or waivable statutory or compulsory licensing scheme. In all other cases the Licensor expressly reserves any right to collect such royalties.\n\n\n\n\nSection 3 – License Conditions.\nYour exercise of the Licensed Rights is expressly made subject to the following conditions.\n\nAttribution.\n\nIf You Share the Licensed Material (including in modified form), You must:\n\nretain the following if it is supplied by the Licensor with the Licensed Material:\n\n\n\nidentification of the creator(s) of the Licensed Material and any others designated to receive attribution, in any reasonable manner requested by the Licensor (including by pseudonym if designated);\na copyright notice;\na notice that refers to this Public License;\na notice that refers to the disclaimer of warranties;\na URI or hyperlink to the Licensed Material to the extent reasonably practicable;\n\n\n\nindicate if You modified the Licensed Material and retain an indication of any previous modifications; and\nindicate the Licensed Material is licensed under this Public License, and include the text of, or the URI or hyperlink to, this Public License.\n\nYou may satisfy the conditions in Section 3(a)(1) in any reasonable manner based on the medium, means, and context in which You Share the Licensed Material. For example, it may be reasonable to satisfy the conditions by providing a URI or hyperlink to a resource that includes the required information.\nIf requested by the Licensor, You must remove any of the information required by Section 3(a)(1)(A) to the extent reasonably practicable.\n\nShareAlike.\n\nIn addition to the conditions in Section 3(a), if You Share Adapted Material You produce, the following conditions also apply.\n\nThe Adapter’s License You apply must be a Creative Commons license with the same License Elements, this version or later, or a BY-SA Compatible License.\nYou must include the text of, or the URI or hyperlink to, the Adapter’s License You apply. You may satisfy this condition in any reasonable manner based on the medium, means, and context in which You Share Adapted Material.\nYou may not offer or impose any additional or different terms or conditions on, or apply any Effective Technological Measures to, Adapted Material that restrict exercise of the rights granted under the Adapter’s License You apply.\n\n\n\nSection 4 – Sui Generis Database Rights.\nWhere the Licensed Rights include Sui Generis Database Rights that apply to Your use of the Licensed Material:\n\nfor the avoidance of doubt, Section 2(a)(1) grants You the right to extract, reuse, reproduce, and Share all or a substantial portion of the contents of the database;\nif You include all or a substantial portion of the database contents in a database in which You have Sui Generis Database Rights, then the database in which You have Sui Generis Database Rights (but not its individual contents) is Adapted Material, including for purposes of Section 3(b); and\nYou must comply with the conditions in Section 3(a) if You Share all or a substantial portion of the contents of the database.\n\nFor the avoidance of doubt, this Section 4 supplements and does not replace Your obligations under this Public License where the Licensed Rights include other Copyright and Similar Rights.\n\n\nSection 5 – Disclaimer of Warranties and Limitation of Liability.\n\nUnless otherwise separately undertaken by the Licensor, to the extent possible, the Licensor offers the Licensed Material as-is and as-available, and makes no representations or warranties of any kind concerning the Licensed Material, whether express, implied, statutory, or other. This includes, without limitation, warranties of title, merchantability, fitness for a particular purpose, non-infringement, absence of latent or other defects, accuracy, or the presence or absence of errors, whether or not known or discoverable. Where disclaimers of warranties are not allowed in full or in part, this disclaimer may not apply to You.\nTo the extent possible, in no event will the Licensor be liable to You on any legal theory (including, without limitation, negligence) or otherwise for any direct, special, indirect, incidental, consequential, punitive, exemplary, or other losses, costs, expenses, or damages arising out of this Public License or use of the Licensed Material, even if the Licensor has been advised of the possibility of such losses, costs, expenses, or damages. Where a limitation of liability is not allowed in full or in part, this limitation may not apply to You.\nThe disclaimer of warranties and limitation of liability provided above shall be interpreted in a manner that, to the extent possible, most closely approximates an absolute disclaimer and waiver of all liability.\n\n\n\nSection 6 – Term and Termination.\n\nThis Public License applies for the term of the Copyright and Similar Rights licensed here. However, if You fail to comply with this Public License, then Your rights under this Public License terminate automatically.\nWhere Your right to use the Licensed Material has terminated under Section 6(a), it reinstates:\n\nautomatically as of the date the violation is cured, provided it is cured within 30 days of Your discovery of the violation; or\nupon express reinstatement by the Licensor.\n\nFor the avoidance of doubt, this Section 6(b) does not affect any right the Licensor may have to seek remedies for Your violations of this Public License.\nFor the avoidance of doubt, the Licensor may also offer the Licensed Material under separate terms or conditions or stop distributing the Licensed Material at any time; however, doing so will not terminate this Public License.\nSections 1, 5, 6, 7, and 8 survive termination of this Public License.\n\n\n\nSection 7 – Other Terms and Conditions.\n\nThe Licensor shall not be bound by any additional or different terms or conditions communicated by You unless expressly agreed.\nAny arrangements, understandings, or agreements regarding the Licensed Material not stated herein are separate from and independent of the terms and conditions of this Public License.t stated herein are separate from and independent of the terms and conditions of this Public License.\n\n\n\nSection 8 – Interpretation.\n\nFor the avoidance of doubt, this Public License does not, and shall not be interpreted to, reduce, limit, restrict, or impose conditions on any use of the Licensed Material that could lawfully be made without permission under this Public License.\nTo the extent possible, if any provision of this Public License is deemed unenforceable, it shall be automatically reformed to the minimum extent necessary to make it enforceable. If the provision cannot be reformed, it shall be severed from this Public License without affecting the enforceability of the remaining terms and conditions.\nNo term or condition of this Public License will be waived and no failure to comply consented to unless expressly agreed to by the Licensor.\nNothing in this Public License constitutes or may be interpreted as a limitation upon, or waiver of, any privileges and immunities that apply to the Licensor or You, including from the legal processes of any jurisdiction or authority.\n\n\nCreative Commons is not a party to its public licenses. Notwithstanding, Creative Commons may elect to apply one of its public licenses to material it publishes and in those instances will be considered the “Licensor.” Except for the limited purpose of indicating that material is shared under a Creative Commons public license or as otherwise permitted by the Creative Commons policies published at creativecommons.org/policies, Creative Commons does not authorize the use of the trademark “Creative Commons” or any other trademark or logo of Creative Commons without its prior written consent including, without limitation, in connection with any unauthorized modifications to any of its public licenses or any other arrangements, understandings, or agreements concerning use of licensed material. For the avoidance of doubt, this paragraph does not form part of the public licenses.\nCreative Commons may be contacted at creativecommons.org"
   },
   {
-    "objectID": "projects/proj02.html#step-1-creating-the-database",
-    "href": "projects/proj02.html#step-1-creating-the-database",
-    "title": "Project 02: Student Performance & Enrollment Analysis (Using DBeaver)",
-    "section": "Step 1: Creating the Database",
-    "text": "Step 1: Creating the Database\n\n🗂️ Database Schema\nCreate a new database named university.db with the following tables:\nCREATE TABLE students (\n    student_id INTEGER PRIMARY KEY,\n    first_name TEXT NOT NULL,\n    last_name TEXT NOT NULL,\n    major TEXT,\n    gpa REAL\n);\n\nCREATE TABLE courses (\n    course_id INTEGER PRIMARY KEY,\n    course_name TEXT NOT NULL,\n    department TEXT NOT NULL,\n    credits INTEGER\n);\n\nCREATE TABLE enrollments (\n    enrollment_id INTEGER PRIMARY KEY,\n    student_id INTEGER,\n    course_id INTEGER,\n    grade TEXT,\n    FOREIGN KEY (student_id) REFERENCES students(student_id),\n    FOREIGN KEY (course_id) REFERENCES courses(course_id)\n);\n\n\n📥 Sample Data (Insert Statements)\nProvide the following sample data for testing queries:\n-- Students\nINSERT INTO students (first_name, last_name, major, gpa) VALUES\n('Alice', 'Johnson', 'Computer Science', 3.8),\n('Bob', 'Smith', 'Business', 3.1),\n('Charlie', 'Davis', 'Data Science', 3.5),\n('Diana', 'Lee', 'Computer Science', 2.9),\n('Ethan', 'Brown', 'Data Science', 3.7);\n\n-- Courses\nINSERT INTO courses (course_name, department, credits) VALUES\n('Database Management', 'Computer Science', 3),\n('Marketing 101', 'Business', 2),\n('Machine Learning', 'Data Science', 4),\n('Algorithms', 'Computer Science', 3);\n\n-- Enrollments\nINSERT INTO enrollments (student_id, course_id, grade) VALUES\n(1, 1, 'A'),\n(1, 4, 'B'),\n(2, 2, 'B'),\n(3, 1, 'A'),\n(3, 3, 'A'),\n(4, 1, 'C'),\n(4, 4, 'B'),\n(5, 3, 'A');\n\n\n\n\n\n\nYou can also download the sql file containing the setup of the database and open it in your DBeaver.\n\n\n\n🧰 Quick Setup Instructions for DBeaver\n\nInstall DBeaver (Community Edition) if not already installed.\nLaunch DBeaver and go to File → DBeaver → New Database Connection.\nSelect SQLite as the database type.\nClick Next, then Create a new database file, and name it university.db.\nAfter connection, right-click on the database and choose SQL Editor → New SQL Script to run the setup and queries.\n\n⏳ Load the SQL Script\n\nRight-click the new university.db connection in the Database Navigator pane.\nSelect SQL Editor → New SQL Script.\nIn the new script tab that appears, click File → Open File.\nSelect the provided file: 📄 week2_project_setup.sql\nMake sure the Active Datasource (on the top of the window) is connected to the database created."
-  },
-  {
-    "objectID": "projects/proj02.html#step-3-student-tasks",
-    "href": "projects/proj02.html#step-3-student-tasks",
-    "title": "Project 02: Student Performance & Enrollment Analysis (Using DBeaver)",
-    "section": "Step 3: Student Tasks",
-    "text": "Step 3: Student Tasks\nYou must write SQL queries to answer the following questions:\n🔹 Aggregation & Grouping\n\nFind the average GPA per major.\nCount the number of students enrolled in each course.\nList courses where the number of students enrolled is at least 2.\nFind the average number of credits students are enrolled in (per student).\n\n🔹 Joins\n\nShow each student’s first and last name along with the names of the courses they are enrolled in.\nList all students and the courses they are NOT enrolled in (use LEFT JOIN and NULL filtering).\nShow courses that have not been taken by any students (use LEFT JOIN or NOT IN).\n\n🔹 Subqueries\n\nFind the names of students who have received an ‘A’ in any course (use IN or EXISTS).\nList students whose GPA is higher than the average GPA of all students.\nRetrieve courses that have more students than the average number of enrollments per course.\n\n🔹 Functions & Expressions\n\nDisplay students’ names in uppercase.\nShow the length of each course name using a string function.\nCalculate and display a weighted GPA score based on credits * GPA for each student (hint: use a JOIN and a mathematical expression).\n\n🔹 Query Optimization (Conceptual)\n\nConceptual question about Joins."
-  },
-  {
-    "objectID": "projects/proj02.html#submit",
-    "href": "projects/proj02.html#submit",
-    "title": "Project 02: Student Performance & Enrollment Analysis (Using DBeaver)",
-    "section": "Submit",
-    "text": "Submit\nYou will submit your queries on Moodle."
-  },
-  {
-    "objectID": "projects/proj02.html#grading-rubric",
-    "href": "projects/proj02.html#grading-rubric",
-    "title": "Project 02: Student Performance & Enrollment Analysis (Using DBeaver)",
-    "section": "Grading Rubric",
-    "text": "Grading Rubric\nThis project is worth 100 pts."
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Welcome to CS 354 - Database Management Systems",
+    "objectID": "content.html",
+    "href": "content.html",
+    "title": "Course content",
     "section": "",
-    "text": "Welcome to Database Management, a hands-on course designed to equip you with the essential skills for designing, querying, and optimizing relational databases. Over the next seven weeks, you’ll dive into SQL, explore database structures, and gain practical experience in managing data efficiently. Whether you’re new to databases or looking to sharpen your skills, this course will provide a solid foundation for real-world applications.\nGet ready to write queries, design schemas, and discover how databases power modern applications! Looking forward to an exciting and engaging learning journey with you all.\nSee you in class!"
+    "text": "CS 354 – Database Management Systems – is organized by week, with each week structured as follows:\n\nClassroom sessions are Monday-Wednesday-Friday 2.45PM - 3.50PM at SB 382.\nHomeworks are due Friday 23:59. They will be released every Monday.\nProject submission is due Wednesday at 23:59. They will be released every Wednesday.\nTutoring Assistants are available in SB337 on Mondays and Thursdays, from 7 - 9 pm.\n\nThe SLOs (Student Learning Objectives), labs, and projects for each week are given in the links below. The readings are from Ramez Elmasri, S. B. N. (2016). Fundamentals of Database Systems 7th ed.\n\n\n\nWeek\nTopics\nLaboratories\nProjects\nTests, Video Links, etc.\n\n\n\n\n1  —  3/17\nIntroduction to Databases & SQL Basics  Week’s page\nHomework 1\nProj 1\n\n\n\n2  —  3/24\nSQL – Intermediate Concepts  Advising days – no class 26-27 Week’s page\nHomework 2\nProj 2\n\n\n\n3  —  3/31\nSQL – Data Modification & Advanced Queries Week’s page\nHomework 3\nProj 3\n\n\n\n4  —  4/7\nDatabase Design – ER Modeling & Schema Refinement Week’s page\nHomework 4\nProj 4\nTest 1: Weeks 1 - 3, Friday\n\n\n5  —  4/14\nAdvanced SQL & Integrity Constraints  Good Friday & Easter Monday – no class 18-21  Week’s page\nNo lab\nNo project\n\n\n\n6  —  4/22\nDatabase Management & Optimization Week’s page\nHomework 6\nNo project\n\n\n\n7  —  4/28\nFinal Project and Course Wrap-Up Week’s page\nHomework 7\nFinal Project\n\n\n\nFinal  —  May 3-8\nSearch calvin.edu for “Exam Schedule” to find the time of the exam (and all exams you have, this semester, and all future semesters).\n\n\nFinal Test Cumulative, during exam time (You may take it in either class’s exam time. Classes met at 2.45pm MWF.)",
+    "crumbs": [
+      "Content",
+      "Course content"
+    ]
   },
   {
-    "objectID": "index.html#student-learning-outcomes",
-    "href": "index.html#student-learning-outcomes",
-    "title": "Welcome to CS 354 - Database Management Systems",
-    "section": "Student Learning Outcomes",
-    "text": "Student Learning Outcomes\n\nGeneral Student Learning Outcomes (SLOs) for the Course\nBy the end of this Database Management course, students will be able to:\n\nUnderstand the Role of Databases – Explain the importance of database management systems and how they support real-world applications.\n\nWrite and Optimize SQL Queries – Construct and execute SQL queries to retrieve, manipulate, and analyze data efficiently.\n\nDesign and Normalize Relational Databases – Develop well-structured database schemas using BCNF to ensure data integrity and eliminate redundancy.\n\nImplement Relationships and Constraints – Define and enforce primary keys, foreign keys, and other integrity constraints to maintain data consistency.\n\nUse Advanced SQL Features – Apply concepts like joins, subqueries, indexing, views (materialized vs. non-materialized), and stored procedures to enhance database functionality.\n\nManage Transactions and Security – Demonstrate the ability to handle transactions, prevent SQL injection, and implement security best practices.\n\nPerform Database Maintenance and Optimization – Explain and apply indexing, query optimization, and backup/recovery strategies for efficient database management.\n\nDevelop a Complete Database System – Design, implement, and present a database project that integrates SQL skills, schema design, and optimization techniques.\n\nThese outcomes ensure that students leave the course with both theoretical knowledge and practical, real-world database management skills."
-  },
-  {
-    "objectID": "index.html#course-organization",
-    "href": "index.html#course-organization",
-    "title": "Welcome to CS 354 - Database Management Systems",
-    "section": "Course Organization",
-    "text": "Course Organization\nThe course is organized around these components:\n\nThe lectures that will introduce the topics at the practical and conceptual level through live coding and theory explanation;\nThe homeworks in which students will practice using and building databases; and\nThe projects in which students will develop databases systems for real-world problems.\n\nEach week’s lectures, homeworks and projects will cover the same concepts, but will do so in different ways."
-  },
-  {
-    "objectID": "index.html#acknowledgements",
-    "href": "index.html#acknowledgements",
-    "title": "Welcome to CS 354 - Database Management Systems",
-    "section": "Acknowledgements",
-    "text": "Acknowledgements\nThis website is built with Quarto. The original code used to build this website can be found at DS Box. We are very grateful for their work!"
-  },
-  {
-    "objectID": "hws/hw04.html#introduction",
-    "href": "hws/hw04.html#introduction",
-    "title": "Homework 04:",
-    "section": "Introduction",
-    "text": "Introduction"
-  },
-  {
-    "objectID": "hws/hw04.html#turn-in",
-    "href": "hws/hw04.html#turn-in",
-    "title": "Homework 04:",
-    "section": "Turn In",
-    "text": "Turn In"
-  },
-  {
-    "objectID": "hws/hw04.html#grading-rubric",
-    "href": "hws/hw04.html#grading-rubric",
-    "title": "Homework 04:",
+    "objectID": "projects/proj04.html#grading-rubric",
+    "href": "projects/proj04.html#grading-rubric",
+    "title": "Project 04: Soon…",
     "section": "Grading Rubric",
     "text": "Grading Rubric"
   },
   {
-    "objectID": "hws/hw07.html",
-    "href": "hws/hw07.html",
-    "title": "Homework 07:",
-    "section": "",
-    "text": "Definition of Grinch."
-  },
-  {
-    "objectID": "hws/hw07.html#learning-objectives",
-    "href": "hws/hw07.html#learning-objectives",
-    "title": "Homework 07:",
-    "section": "Learning Objectives",
-    "text": "Learning Objectives\nIn this exercise, you will:\n\nbuild a hash table data structure\nexperiment with hashing algorithms to distribute data across all buckets, as much as possible."
-  },
-  {
-    "objectID": "hws/hw07.html#step-0",
-    "href": "hws/hw07.html#step-0",
-    "title": "Homework 07:",
-    "section": "Step 0",
-    "text": "Step 0\nAccept the Assignment.\nOur hash table will be a STL vector of STL sets (in class we used a vector of linked lists). Your code will read a file, dictionary.txt, that contains “all” the words in the English language, and insert each word into the hash table. There are about ~127,000 words in the file, but we will use a fairly small number of buckets, so there will be many collisions.\nThe goal of this exercise is to experiment with hashing algorithms to see if you can find one that distributes items well."
-  },
-  {
-    "objectID": "hws/hw07.html#step-1-build-the-hashtable-data-structure-and-constructor",
-    "href": "hws/hw07.html#step-1-build-the-hashtable-data-structure-and-constructor",
-    "title": "Homework 07:",
-    "section": "Step 1: Build the HashTable data structure and constructor",
-    "text": "Step 1: Build the HashTable data structure and constructor\nInspect the code in HashTable.h and HashTable.cpp. There is not much there, but it is a start. Do notice that there is a static constant integer called TABLE_SIZE, initialized to the value 200.\nCreate the hash table data structure in the private: section, calling it myTable. For this project, the table must be a vector of sets of strings (in class we used a vector of lists).\nIn the constructor, initialize myTable to have TABLE_SIZE buckets by calling\nmyTable.resize(TABLE_SIZE);\nAlso, in the constructor initialize mySize to 0.\nCompile your code to make sure what you have written compiles."
-  },
-  {
-    "objectID": "hws/hw07.html#step-2-insert-and-hash",
-    "href": "hws/hw07.html#step-2-insert-and-hash",
-    "title": "Homework 07:",
-    "section": "Step 2: insert() and hash()",
-    "text": "Step 2: insert() and hash()\nThe prototypes for insert() and hash() are defined in the .h file. Now, you must implement them in the .cpp file. Use the code we saw in the slides in class for the hash function. The function should add up the first and last characters of the string, modding the result by TABLE_SIZE.\nTry to compile the code using make. It should compile. Fix any issues if your compilation fails."
-  },
-  {
-    "objectID": "hws/hw07.html#step-3-main",
-    "href": "hws/hw07.html#step-3-main",
-    "title": "Homework 07:",
-    "section": "Step 3: main()",
-    "text": "Step 3: main()\nNow, create code in main(). Your code should define a HashTable object first.\nThen, open the file dictionary.txt for reading, and read each word from the file, one at a time, inserting each word into the hash table.\nNext, have the code close the file.\nCompile your code."
-  },
-  {
-    "objectID": "hws/hw07.html#step-4-testing",
-    "href": "hws/hw07.html#step-4-testing",
-    "title": "Homework 07:",
-    "section": "Step 4: Testing",
-    "text": "Step 4: Testing\nOf course, at this point, we have no idea if the items have been distributed well in the hash table, because we have no way to inspect the hash table contents.\nNotice that there is a method called dumpInfo() defined, but currently the code does nothing. Fill in the code to do the following:\n\nFor each bucket, print how many items are in it.\nCount and print the number of empty buckets.\nCalculate and print the average number of items in non-empty buckets.\n\nHere is a snippet of my output. Make your output look similar:\nnumber of items in bucket 0: 415\nnumber of items in bucket 1: 351\nnumber of items in bucket 2: 307\nnumber of items in bucket 3: 414\nnumber of items in bucket 4: 293\n...\nnumber of items in bucket 197: 560\nnumber of items in bucket 198: 484\nnumber of items in bucket 199: 341\n--------------------------\nTotal number of elements in the hash table: 127141\nNumber of empty buckets: 0\nAverage number of items in non-empty buckets: 635\n\n\n\n\n\n\nNote\n\n\n\nNote: the output above is from after I changed the number of buckets in my data structure, and tweaked the hash algorithm, which you’ll do below.\n\n\nAfter you implement your dumpInfo() method, call it from your main() code."
-  },
-  {
-    "objectID": "hws/hw07.html#step-5-tweak-your-hashing-algorithm-and-table-size",
-    "href": "hws/hw07.html#step-5-tweak-your-hashing-algorithm-and-table-size",
-    "title": "Homework 07:",
-    "section": "Step 5: Tweak Your Hashing Algorithm and Table Size",
-    "text": "Step 5: Tweak Your Hashing Algorithm and Table Size\nYou will notice that the basic hashing algorithm (adding up the first and last characters of each string) does a very poor job of distributing strings across all buckets in the hash table. Your goal now is to improve the hashing algorithm to improve the distribution.\nExperiment with different algorithms, but make sure they follow the criteria laid out in class:\n\nO(1)\ndistribute values across all buckets.\ndeterministic.\n\nYou MAY increase the number of buckets, but it must remain at or below 250 total. Do not change how buckets are implemented – they should remain sets.\nDo not spend more than 1 hour tweaking your algorithm. Make sure your final code implements your best algorithm.\n\n\n\n\n\n\nImportant\n\n\n\nWrite a comment in your hash() function that describes your algorithm, explaining why you think it works as well as it does."
-  },
-  {
-    "objectID": "hws/hw07.html#step-6-submit",
-    "href": "hws/hw07.html#step-6-submit",
-    "title": "Homework 07:",
-    "section": "Step 6: Submit",
-    "text": "Step 6: Submit\nSubmit your code via github, as normal.\n\n\n\n\n\n\nWarning\n\n\n\nIF YOU WORKED WITH A PARTNER, ONLY ONE OF YOU HAS TO SUBMIT, but UPDATE THE README.md to INCLUDE BOTH NAMES."
-  },
-  {
-    "objectID": "hws/hw07.html#grading-rubric",
-    "href": "hws/hw07.html#grading-rubric",
-    "title": "Homework 07:",
+    "objectID": "projects/proj99-final.html#grading-rubric",
+    "href": "projects/proj99-final.html#grading-rubric",
+    "title": "Final Project: Soon…",
     "section": "Grading Rubric",
-    "text": "Grading Rubric\n20 points total:\n\n10 pts: hash table code (not including the hash function) is correct\n5 pts: hash function obeys the criteria laid out in class.\n3 pts: hash function works well (not obviously leaving many buckets empty and have some be very full).\n2 pts: code is clean and hospitable.\n\nWays students lost points in the past:\n\n-2: Hash function does not appear to be evenly distributed but fills lower-numbered buckets way more (~2000 vs ~50)\n-4: Main function does not load words from file or call dumpInfo\n-1: Missing call to dumpInfo in main\n-3: Buckets are not evenly distributed (with many below 50 or above 2000) and some are empty. The smallest buckets are odd-numbered, which indicates a quirk in the algorithm which disfavors that half of the buckets\n-4: Most of the buckets are empty; a hashing algorithm should seek to evenly distribute words into buckets\n-1: Please output all bucket counts per instructions so the distribution can be seen."
+    "text": "Grading Rubric\nTotal: XX pts"
   },
   {
-    "objectID": "hws/hw02.html",
-    "href": "hws/hw02.html",
-    "title": "Homework 02: Multiple tables",
+    "objectID": "projects/proj03.html#submission",
+    "href": "projects/proj03.html#submission",
+    "title": "Project 03: soon…",
+    "section": "Submission",
+    "text": "Submission\n\nGrading Rubric\nThis project is worth xx pts:"
+  },
+  {
+    "objectID": "policies.html",
+    "href": "policies.html",
+    "title": "Course Policies",
     "section": "",
-    "text": "It makes more sense now."
+    "text": "Your grade in this course will be based on:\n\nWeekly Quizzes: 5%\n\nQuizzes every Friday.\n\nProjects: 20%\nFinal Project: 25%\nHomework: 20%\nTests (2, including the final test during the Exam time): 30%"
   },
   {
-    "objectID": "hws/hw02.html#objectives",
-    "href": "hws/hw02.html#objectives",
-    "title": "Homework 02: Multiple tables",
+    "objectID": "policies.html#grace-days",
+    "href": "policies.html#grace-days",
+    "title": "Course Policies",
+    "section": "Grace Days",
+    "text": "Grace Days\nYou have 4 Grace Days available to you during the semester. These grace days may be used to submit an assignment late without penalty. Grace Days Remaining will be seen in the GradeBook in Moodle.\nHere are some circumstances in which you might use grace days:\n\nYou are an athlete and you have a very busy week. Use a few grace days to catch up the next week.\nYou become ill (physically or mentally) and cannot do the work on time.\nYou need to go home for an emergency.\n\nHere is the procedure for using grace days:\n\nDO NOT email me to tell me you are going to use grace days. I don’t need to know this – there is no action I need to take if you tell me this.\nWhen your assignment grade comes back and you have lost points due to lateness, then send an email to ask for the points to be restored and tell me how many grace days you want to use for that."
+  },
+  {
+    "objectID": "policies.html#extenuating-circumstances",
+    "href": "policies.html#extenuating-circumstances",
+    "title": "Course Policies",
+    "section": "Extenuating Circumstances",
+    "text": "Extenuating Circumstances\nIf you fall ill (physically or mentally) for an extended period of time, AND you send me documentation from Student Life, Student Health Center, or the Center for Health and Wellness, then, and only then, I will consider allowing you to make up late assignments.\n\n\n\n\n\n\nWarning\n\n\n\nIf you begin to skip class repeatedly due to mental health problems, go to the Center for Health and Wellness! Don’t delay!"
+  },
+  {
+    "objectID": "policies.html#incompletes",
+    "href": "policies.html#incompletes",
+    "title": "Course Policies",
+    "section": "Incompletes",
+    "text": "Incompletes\nAn Incomplete (I) grade will be granted only in unusual circumstances, and only if those circumstances have been verified by the Student Life Office. Procrastination does not qualify as an unusual circumstance.\nNo work will be accepted after the last day of classes."
+  },
+  {
+    "objectID": "policies.html#classroom-policy",
+    "href": "policies.html#classroom-policy",
+    "title": "Course Policies",
+    "section": "Classroom Policy",
+    "text": "Classroom Policy\n\n\n\n\n\n\nIMPORTANT!\n\n\n\nNo phones, no laptops, unless we tell you you can.\n\n\nThis is a difficult class, and you don’t need to be distracted by goofing around on your phone or laptop. And, I don’t want you to distract others.\nWeekly Quizzes will be administered in the first 5 minutes of class every Friday, on Moodle. Do not show up late to class."
+  },
+  {
+    "objectID": "policies.html#attendance",
+    "href": "policies.html#attendance",
+    "title": "Course Policies",
+    "section": "Attendance",
+    "text": "Attendance\nClass attendance is required.\nMissing class due to illness: if you are going to miss class due to (physical or mental) illness, please send me an email before class."
+  },
+  {
+    "objectID": "policies.html#disabilities",
+    "href": "policies.html#disabilities",
+    "title": "Course Policies",
+    "section": "Disabilities",
+    "text": "Disabilities\nCalvin University is committed to providing access to all students. If you are a student with a documented disability, please notify a Disability Coordinator in Student Success (located in Hiemenga Hall 227) to discuss necessary accommodations. If you have an accommodation memo, please come talk to me in the first two weeks of class. If you are a student needing reasonable modifications for pregnancy and related conditions, please contact the Title IX Coordinator in Student Life (located in Spoelhof University Center 364)."
+  },
+  {
+    "objectID": "policies.html#statement-of-diversity-and-inclusion",
+    "href": "policies.html#statement-of-diversity-and-inclusion",
+    "title": "Course Policies",
+    "section": "Statement of Diversity and Inclusion",
+    "text": "Statement of Diversity and Inclusion\nInside and outside of the classroom, I work to treat every person with equal respect, regardless of racial identity, gender identity, physicality, brain chemistry, nationality, political leanings, and religious background. Whoever you are, you are fearfully and wonderfully made. God delights in diversity and I do, too. We humans need diverse viewpoints because every viewpoint, on its own, has blind spots. That has been proven to be true in technology-related fields, where under-represented minorities are significantly under-represented in the working world. When companies work hard to rectify this, they find their products and services improve. We have found this to be true in Computer Science classrooms as well.\n\n\n\n\n\n\nIMPORTANT!\n\n\n\nIf you or someone else in this class is hurt by something I say or do in class, I would like to know about it so that we can work toward a remedy. This has happened in the past in my classroom – usually when I’m trying to be “cool” or be funny. If this happens this semester, please know that it was unintentional. Because this kind of feedback can be uncomfortable for all involved, I’ll take it however it comes: in public or in private, on the spot or days later, directly from you or indirectly through another student, another professor, or through my department chair Keith VanderLinden (kvlinden@calvin.edu)."
+  },
+  {
+    "objectID": "hws/hw06.html",
+    "href": "hws/hw06.html",
+    "title": "Homework 06:",
+    "section": "",
+    "text": "Equality."
+  },
+  {
+    "objectID": "hws/hw06.html#objectives",
+    "href": "hws/hw06.html#objectives",
+    "title": "Homework 06:",
     "section": "Objectives:",
-    "text": "Objectives:\nIn this exercise, you will:\n\nShow you understand how SELECT queries work for different tables.\nShow you learned how to visualize data by filtering rows and columns according to what is required.\nShow you are able to follow instructions and navigate in a given database.\nUse Joins to handle multiple tables."
+    "text": "Objectives:\nIn this exercise, you will:\n\nBuild more List operations.\nPractice using pointers."
   },
   {
-    "objectID": "hws/hw02.html#to-moodle",
-    "href": "hws/hw02.html#to-moodle",
-    "title": "Homework 02: Multiple tables",
+    "objectID": "hws/hw06.html#introduction",
+    "href": "hws/hw06.html#introduction",
+    "title": "Homework 06:",
+    "section": "Introduction",
+    "text": "Introduction\nIn this week’s lab you will add more functionality to the List class we built in class.\nHere is the invite.\nUse git clone to get your copy of the assignment, as we have been doing. You should have these files: List.cpp, List.h, tests.cpp, plus a makefile, etc.\nIf you are working with a partner, so make sure you join the same Team when creating your repos. Also, put both your names in the README.md file now."
+  },
+  {
+    "objectID": "hws/hw06.html#step-1.-append",
+    "href": "hws/hw06.html#step-1.-append",
+    "title": "Homework 06:",
+    "section": "Step 1. Append",
+    "text": "Step 1. Append\nThe append() method is easy to understand: given a new Item, add it to the end of the linked list. The tests.cpp file contains tests already for append().\nNow, implement the code for append(). You might find looking at the implementation of prepend() to be helpful – although append() is a bit more complicated. DRAW PICTURES! (Or, don’t draw pictures, if you want to make this step of the lab take much longer…)"
+  },
+  {
+    "objectID": "hws/hw06.html#step-2.-searching",
+    "href": "hws/hw06.html#step-2.-searching",
+    "title": "Homework 06:",
+    "section": "Step 2. Searching",
+    "text": "Step 2. Searching\nLet’s implement a method that searches the linked list for a given Item, and returns the index of where the item is found, or -1 if it is not found. Name the method getIndexOf(). Here is the prototype:\nint getIndexOf(const Item &it) const;\nFirst implement tests of getIndexOf() in tests.cpp, and then implement the method. You must call the TEST_CASE “lookfor”. I.e., put this in the tests.cpp file:\nTEST_CASE(\"lookfor\") {\n     // add your tests here -- either inside SECTION()s or not.\n}"
+  },
+  {
+    "objectID": "hws/hw06.html#step-3.-copy-constructor",
+    "href": "hws/hw06.html#step-3.-copy-constructor",
+    "title": "Homework 06:",
+    "section": "Step 3. Copy constructor",
+    "text": "Step 3. Copy constructor\nYou knew it was coming…\ntests.cpp does not contain any test cases for this, so you’ll have to implement them yourself. My solution has 1 TEST_CASE with 3 SECTIONS: copying a 0-element List, copying a 1-element List, and copying a \\(&gt;1\\)-element list. The name of the TEST_CASE must be copy constructor:\nTEST_CASE(\"copy\") {\n     // add your tests here -- either inside SECTION()s or not.\n}\nThe prototype of the copy constructor will be:\nList(const List & original);\nHere is the algorithm to implement the copy constructor:\n\nSet all the instance variables (myFirst, myLast, mySize) to default values.\nWalk the list of nodes in original, calling append() on the value in each node. (You are calling append() on “this” node, thus adding a new node each time to the List being constructed.)"
+  },
+  {
+    "objectID": "hws/hw06.html#step-4.-equality",
+    "href": "hws/hw06.html#step-4.-equality",
+    "title": "Homework 06:",
+    "section": "Step 4. Equality",
+    "text": "Step 4. Equality\nImplement the equality method, so that you can test if two List objects have the same number of nodes and the items in the nodes are the same. The equality operator returns true or false.\nE.g.,\nif list1 contains 3 values: 11, 22, 33 and list2 contains four values: 11, 22, 33, 44, then list1 == list2 should return false.\nTo test this you have to use == (not !=), so your test might look like this:\nREQUIRE(! (list1 == list2) );\nCreate your tests first in a test case called “equality”:\nTEST_CASE(\"equality\") {\n     // add your tests here -- either inside SECTION()s or not.\n}\n\n\n\n\n\n\nTip\n\n\n\nUse a “curr” pointer to each list’s myFirst node, then in a loop, check if the items are the same for the two nodes, then move each curr pointer to its next node."
+  },
+  {
+    "objectID": "hws/hw06.html#step-5.-templatize",
+    "href": "hws/hw06.html#step-5.-templatize",
+    "title": "Homework 06:",
+    "section": "Step 5. Templatize",
+    "text": "Step 5. Templatize\nNow, convert your List class to a List&lt;Item&gt; template and modify the tests in tests.cpp to test your new template. Remember to edit the makefile to remove List.cpp from the SOURCES line near the top of the file. You should also delete the List.cpp file completely from your tree."
+  },
+  {
+    "objectID": "hws/hw06.html#submit",
+    "href": "hws/hw06.html#submit",
+    "title": "Homework 06:",
+    "section": "Submit",
+    "text": "Submit\nA part of your grade will be based on the thoroughness of your tests; you may want to model your tests after those provided for you in previous projects.\nDon’t forget to Commit and Push your changes to your repo.\nVerify you have synced your code to github by going to your online repo webpage and looking to see that the files are correct.\nVerify that the autograding tests have passed in github.com."
+  },
+  {
+    "objectID": "hws/hw06.html#grading-rubric",
+    "href": "hws/hw06.html#grading-rubric",
+    "title": "Homework 06:",
+    "section": "Grading Rubric:",
+    "text": "Grading Rubric:\nYou will be graded this way: 19 pts total\n\n4 pts each for append(), getIndexOf(), copy constructor, and equality operator (16 pts)\n3 pts for correctness,\n1 pt for thorough tests (you get this point free for append() for which I’ve provided tests).\n3 pts for correctly converting to a class template.\n\nWays students lost points in the past:\n\n-3: Incorrect class template conversion, code does not compile;\n-3: Missing tests for getIndexOf(), copy constructor, and equality operator\n-1: Incomplete equality tests, no tests for when equality is true\n-1: Append implementation needs to adjust the myNext of the current last element\n-1: Copy constructor: myFirst is not initialized to nullptr, causing tests to fail;\n-1: Missing test for equality operator;\n-1: Incomplete test for copy constructor;"
+  },
+  {
+    "objectID": "hws/hw03.html",
+    "href": "hws/hw03.html",
+    "title": "Homework 03:",
+    "section": "",
+    "text": "In this exercise, you will:"
+  },
+  {
+    "objectID": "hws/hw03.html#objectives",
+    "href": "hws/hw03.html#objectives",
+    "title": "Homework 03:",
+    "section": "",
+    "text": "In this exercise, you will:"
+  },
+  {
+    "objectID": "hws/hw03.html#introduction",
+    "href": "hws/hw03.html#introduction",
+    "title": "Homework 03:",
+    "section": "Introduction",
+    "text": "Introduction\nBlablabla"
+  },
+  {
+    "objectID": "hws/hw03.html#getting-started",
+    "href": "hws/hw03.html#getting-started",
+    "title": "Homework 03:",
+    "section": "Getting Started",
+    "text": "Getting Started"
+  },
+  {
+    "objectID": "hws/hw03.html#submit",
+    "href": "hws/hw03.html#submit",
+    "title": "Homework 03:",
+    "section": "Submit",
+    "text": "Submit\nDon’t forget to commit your changes.\nGrading Rubric: XX points total"
+  },
+  {
+    "objectID": "hws/hw01.html",
+    "href": "hws/hw01.html",
+    "title": "Homework 01: From zero to…",
+    "section": "",
+    "text": "From zero to hero!\nWelcome to CS354 - Database Management Systems! This is your first homework, and you will be guided through the steps you need to take to complete it."
+  },
+  {
+    "objectID": "hws/hw01.html#objectives",
+    "href": "hws/hw01.html#objectives",
+    "title": "Homework 01: From zero to…",
+    "section": "Objectives:",
+    "text": "Objectives:\nIn this exercise, you will:\n\nShow you understand how SELECT queries work for different tables.\nShow you learned how to visualize data by filtering rows and columns according to what is required.\nShow you are able to follow instructions and navigate in a given database."
+  },
+  {
+    "objectID": "hws/hw01.html#to-moodle",
+    "href": "hws/hw01.html#to-moodle",
+    "title": "Homework 01: From zero to…",
     "section": "To Moodle!",
-    "text": "To Moodle!\nYou will log in to Calvin’s Moodle, enter the course’s virtual classroom, and find a task named “Homework 2.” Follow the steps outlined there. Remember that we are using CodeRunner, a Moodle plugin that allows students to execute SQL queries and receive automatic feedback."
+    "text": "To Moodle!\nYou will log in to Calvin’s Moodle, enter the course’s virtual classroom, and find a task named “Homework 1.” Follow the steps outlined there. Remember that we are using CodeRunner, a Moodle plugin that allows students to execute SQL queries and receive automatic feedback.\nYou may find this first assignment a bit challenging, but I will give you extra time to complete it so that you have enough time to get acquainted with the system."
   },
   {
-    "objectID": "hws/hw02.html#grading-rubric",
-    "href": "hws/hw02.html#grading-rubric",
-    "title": "Homework 02: Multiple tables",
+    "objectID": "hws/hw01.html#grading-rubric",
+    "href": "hws/hw01.html#grading-rubric",
+    "title": "Homework 01: From zero to…",
     "section": "Grading Rubric",
     "text": "Grading Rubric\n100 pts total."
   },
   {
-    "objectID": "week01-summary.html",
-    "href": "week01-summary.html",
-    "title": "Week 01: Introduction to Databases & SQL Basics",
+    "objectID": "week06.html",
+    "href": "week06.html",
+    "title": "Week 06: Database Management & Optimization (under construction)",
     "section": "",
-    "text": "At the end of this unit, students will be able to…\n\nExplain the purpose and importance of relational databases.\nDifferentiate between relational databases and other types of data storage.\nWrite basic SQL queries to retrieve data.\nUse WHERE clauses and ORDER BY to filter and sort results.\nUnderstand SQL syntax and basic commands.\nAnalyze a dataset using simple queries."
-  },
-  {
-    "objectID": "week01-summary.html#slos-for-week-01",
-    "href": "week01-summary.html#slos-for-week-01",
-    "title": "Week 01: Introduction to Databases & SQL Basics",
-    "section": "",
-    "text": "At the end of this unit, students will be able to…\n\nExplain the purpose and importance of relational databases.\nDifferentiate between relational databases and other types of data storage.\nWrite basic SQL queries to retrieve data.\nUse WHERE clauses and ORDER BY to filter and sort results.\nUnderstand SQL syntax and basic commands.\nAnalyze a dataset using simple queries."
-  },
-  {
-    "objectID": "week01-summary.html#what-is-a-database",
-    "href": "week01-summary.html#what-is-a-database",
-    "title": "Week 01: Introduction to Databases & SQL Basics",
-    "section": "📖 1. What is a Database?",
-    "text": "📖 1. What is a Database?\n\nA database is an organized collection of data that can be easily accessed, managed, and updated.\nCommonly used in web apps, finance systems, university systems, and more."
-  },
-  {
-    "objectID": "week01-summary.html#what-is-a-dbms",
-    "href": "week01-summary.html#what-is-a-dbms",
-    "title": "Week 01: Introduction to Databases & SQL Basics",
-    "section": "📄 2. What is a DBMS?",
-    "text": "📄 2. What is a DBMS?\n\nA Database Management System (DBMS) is software that allows users to interact with databases.\nExamples: SQLite, MySQL, PostgreSQL, SQL Server.\nFunctions: create, update, retrieve, and manage data."
-  },
-  {
-    "objectID": "week01-summary.html#relational-model",
-    "href": "week01-summary.html#relational-model",
-    "title": "Week 01: Introduction to Databases & SQL Basics",
-    "section": "💡 3. Relational Model",
-    "text": "💡 3. Relational Model\n\nData is stored in tables (called relations) made up of rows (records) and columns (attributes).\nSupports primary keys, foreign keys, and constraints.\nEnforces data integrity and relationships between data."
-  },
-  {
-    "objectID": "week01-summary.html#basic-sql-syntax",
-    "href": "week01-summary.html#basic-sql-syntax",
-    "title": "Week 01: Introduction to Databases & SQL Basics",
-    "section": "📃 4. Basic SQL Syntax",
-    "text": "📃 4. Basic SQL Syntax\n\nSQL = Structured Query Language used to communicate with databases.\nCore command to retrieve data:\n\nSELECT column1, column2 FROM table_name;\n\nUse * to select all columns:\n\nSELECT * FROM students;"
-  },
-  {
-    "objectID": "week01-summary.html#filtering-data-with-where",
-    "href": "week01-summary.html#filtering-data-with-where",
-    "title": "Week 01: Introduction to Databases & SQL Basics",
-    "section": "⚠️ 5. Filtering Data with WHERE",
-    "text": "⚠️ 5. Filtering Data with WHERE\n\nFilter records using WHERE:\n\nSELECT * FROM students WHERE major = 'Computer Science';\n\nComparison operators: =, &lt;&gt;, &gt;, &lt;, &gt;=, &lt;=\nLogical operators: AND, OR, NOT"
-  },
-  {
-    "objectID": "week01-summary.html#sorting-results-with-order-by",
-    "href": "week01-summary.html#sorting-results-with-order-by",
-    "title": "Week 01: Introduction to Databases & SQL Basics",
-    "section": "▲ 6. Sorting Results with ORDER BY",
-    "text": "▲ 6. Sorting Results with ORDER BY\n\nSort results alphabetically or numerically:\n\nSELECT * FROM students ORDER BY last_name ASC;\n\nUse DESC for descending order"
-  },
-  {
-    "objectID": "week01-summary.html#combining-where-and-order-by",
-    "href": "week01-summary.html#combining-where-and-order-by",
-    "title": "Week 01: Introduction to Databases & SQL Basics",
-    "section": "🔄 7. Combining WHERE and ORDER BY",
-    "text": "🔄 7. Combining WHERE and ORDER BY\nSELECT * FROM students\nWHERE gpa &gt;= 3.5\nORDER BY last_name ASC;"
-  },
-  {
-    "objectID": "week01-summary.html#tools-and-environment",
-    "href": "week01-summary.html#tools-and-environment",
-    "title": "Week 01: Introduction to Databases & SQL Basics",
-    "section": "🚀 8. Tools and Environment",
-    "text": "🚀 8. Tools and Environment\n\nWe use SQLite3 with DBeaver to write and run SQL queries.\nCreate .db files to store your database.\nUse the SQL Editor to run commands and explore data.\n\n\n🔹 Pro Tip: Practice Makes Progress!\nWrite and test queries regularly to get comfortable with SQL syntax.\n\nStart with SELECT, WHERE, and ORDER BY—you’ll use them everywhere!"
-  },
-  {
-    "objectID": "week07.html",
-    "href": "week07.html",
-    "title": "Week 07: Final Project and Course Wrap-Up (under construction)",
-    "section": "",
-    "text": "By the end of this unit, students will be able to…\n\nDesign and implement a database system from scratch.\nWrite SQL queries to solve real-world data retrieval problems.\nPresent a comprehensive database solution addressing a given scenario.\nCompare different database designs and justify choices.\nDemonstrate proficiency in SQL and database management concepts.\nReflect on the course content and their learning experience.",
+    "text": "At the end of this unit, the student will be able to…\n\nDevelop a backup and recovery plan for a database system.\nExplain different techniques for performance tuning.\nUnderstand database partitioning and indexing strategies.\nProfile SQL queries to detect inefficiencies.\nDiscuss database integration with software applications.\nApply database optimization techniques in real-world scenarios.",
     "crumbs": [
       "Content",
-      "Week 07: Final Project and Course Wrap-Up (under construction)"
+      "Week 06: Database Management & Optimization (under construction)"
     ]
   },
   {
-    "objectID": "week07.html#slos-for-week-07",
-    "href": "week07.html#slos-for-week-07",
-    "title": "Week 07: Final Project and Course Wrap-Up (under construction)",
+    "objectID": "week06.html#slos-for-week-06",
+    "href": "week06.html#slos-for-week-06",
+    "title": "Week 06: Database Management & Optimization (under construction)",
     "section": "",
-    "text": "By the end of this unit, students will be able to…\n\nDesign and implement a database system from scratch.\nWrite SQL queries to solve real-world data retrieval problems.\nPresent a comprehensive database solution addressing a given scenario.\nCompare different database designs and justify choices.\nDemonstrate proficiency in SQL and database management concepts.\nReflect on the course content and their learning experience.",
+    "text": "At the end of this unit, the student will be able to…\n\nDevelop a backup and recovery plan for a database system.\nExplain different techniques for performance tuning.\nUnderstand database partitioning and indexing strategies.\nProfile SQL queries to detect inefficiencies.\nDiscuss database integration with software applications.\nApply database optimization techniques in real-world scenarios.",
     "crumbs": [
       "Content",
-      "Week 07: Final Project and Course Wrap-Up (under construction)"
+      "Week 06: Database Management & Optimization (under construction)"
     ]
   },
   {
-    "objectID": "week07.html#slides-videos-and-application-exercises",
-    "href": "week07.html#slides-videos-and-application-exercises",
-    "title": "Week 07: Final Project and Course Wrap-Up (under construction)",
+    "objectID": "week06.html#slides-videos-and-application-exercises",
+    "href": "week06.html#slides-videos-and-application-exercises",
+    "title": "Week 06: Database Management & Optimization (under construction)",
     "section": "Slides, videos, and application exercises",
-    "text": "Slides, videos, and application exercises\n\nWeek 07: Slides\n\nSlides\n\n\nNo readings for Week 07.\n\n\n\n\nHomework 7:\n\nInstructions\n\n\n\n\nProject 07: Final Project\n\nInstructions",
+    "text": "Slides, videos, and application exercises\n\nWeek 06: Slides\n\nSlides\n\n\nNo readings for Week 6.\n\n\n\n\nHomework 06:\n\nInstructions\n\n\n\n\nProject 06: No project on Week 06",
     "crumbs": [
       "Content",
-      "Week 07: Final Project and Course Wrap-Up (under construction)"
+      "Week 06: Database Management & Optimization (under construction)"
     ]
   },
   {
-    "objectID": "week04.html",
-    "href": "week04.html",
-    "title": "Week 04: Database Design – ER Modeling & Schema Refinement (under construction)",
+    "objectID": "week05.html",
+    "href": "week05.html",
+    "title": "Week 05: Advanced SQL & Integrity Constraints (under construction)",
     "section": "",
-    "text": "Students will be able to…\n\nDesign ER diagrams to model database structures.\nConvert ER models into relational schemas.\nNormalize database schemas using BCNF and 4NF (briefly).\nIdentify and resolve redundancy issues in schemas.\nDefine and enforce primary and foreign key constraints.\nCreate SQL schemas from conceptual designs.",
+    "text": "By the end of this unit, students will be able to…\n\nImplement integrity constraints (PRIMARY KEY, FOREIGN KEY, CHECK).\nWrite and execute triggers for database automation.\nOptimize SQL queries for improved performance.\nDemonstrate SQL injection and discuss prevention strategies.\nAssign user roles and permissions for database security.\nDebug and troubleshoot complex SQL queries.",
     "crumbs": [
       "Content",
-      "Week 04: Database Design – ER Modeling & Schema Refinement (under construction)"
+      "Week 05: Advanced SQL & Integrity Constraints (under construction)"
     ]
   },
   {
-    "objectID": "week04.html#slos-for-week-04",
-    "href": "week04.html#slos-for-week-04",
-    "title": "Week 04: Database Design – ER Modeling & Schema Refinement (under construction)",
+    "objectID": "week05.html#slos-for-week-05",
+    "href": "week05.html#slos-for-week-05",
+    "title": "Week 05: Advanced SQL & Integrity Constraints (under construction)",
     "section": "",
-    "text": "Students will be able to…\n\nDesign ER diagrams to model database structures.\nConvert ER models into relational schemas.\nNormalize database schemas using BCNF and 4NF (briefly).\nIdentify and resolve redundancy issues in schemas.\nDefine and enforce primary and foreign key constraints.\nCreate SQL schemas from conceptual designs.",
+    "text": "By the end of this unit, students will be able to…\n\nImplement integrity constraints (PRIMARY KEY, FOREIGN KEY, CHECK).\nWrite and execute triggers for database automation.\nOptimize SQL queries for improved performance.\nDemonstrate SQL injection and discuss prevention strategies.\nAssign user roles and permissions for database security.\nDebug and troubleshoot complex SQL queries.",
     "crumbs": [
       "Content",
-      "Week 04: Database Design – ER Modeling & Schema Refinement (under construction)"
+      "Week 05: Advanced SQL & Integrity Constraints (under construction)"
     ]
   },
   {
-    "objectID": "week04.html#slides-videos-and-application-exercises",
-    "href": "week04.html#slides-videos-and-application-exercises",
-    "title": "Week 04: Database Design – ER Modeling & Schema Refinement (under construction)",
+    "objectID": "week05.html#slides-videos-and-application-exercises",
+    "href": "week05.html#slides-videos-and-application-exercises",
+    "title": "Week 05: Advanced SQL & Integrity Constraints (under construction)",
     "section": "Slides, videos, and application exercises",
-    "text": "Slides, videos, and application exercises\n\nWeek 04: Slides\n\nSlides\n\n\nNo readings for Week 4.\n\n\n\n\nHomework 04:\n\nInstructions\n\n\n\n\nProject 04:\n\nInstructions\n\n\n\nExam 1\nExam on Friday during class. Bring your laptop. Content: Weeks 1 - 3.",
+    "text": "Slides, videos, and application exercises\n\nWeek 05: Slides\n\nSlides\n\n\nNo readings for Week 05.\n\n\n\n\nHomework 05: No homework for Week 05\n\n\n\nProject 05: No Project for Week 05",
     "crumbs": [
       "Content",
-      "Week 04: Database Design – ER Modeling & Schema Refinement (under construction)"
+      "Week 05: Advanced SQL & Integrity Constraints (under construction)"
     ]
   },
   {
-    "objectID": "resources.html",
-    "href": "resources.html",
-    "title": "Course Resources",
+    "objectID": "week02-summary.html",
+    "href": "week02-summary.html",
+    "title": "Week 02: SQL – Intermediate Concepts Summary",
     "section": "",
-    "text": "Links to websites offering SQL training\n\n\n\n\n\n\nImportant\n\n\n\nThese links were last updated on 02/03/2025. Please let me know if you encounter any broken links.\n\n\n\nReal Python SQL\nSQLZoo\nCodeAcademy\nHackerRank\nLeetCode\nW3Schools\nSQLBolt\nMode\nSQLPad\nLearnSQL\nSQLGuroo\nDB Fiddle"
+    "text": "At the end of this unit, students will be able to…\n\nPerform data aggregation using GROUP BY and HAVING.\nWrite and execute INNER, LEFT-OUTER, RIGHT, and FULL JOINs.\nConstruct subqueries for complex queries.\nImplement SQL functions and expressions.\nUse SQL best practices for readable and efficient queries.\nOptimize SQL queries for better performance."
+  },
+  {
+    "objectID": "week02-summary.html#slos-for-week-02",
+    "href": "week02-summary.html#slos-for-week-02",
+    "title": "Week 02: SQL – Intermediate Concepts Summary",
+    "section": "",
+    "text": "At the end of this unit, students will be able to…\n\nPerform data aggregation using GROUP BY and HAVING.\nWrite and execute INNER, LEFT-OUTER, RIGHT, and FULL JOINs.\nConstruct subqueries for complex queries.\nImplement SQL functions and expressions.\nUse SQL best practices for readable and efficient queries.\nOptimize SQL queries for better performance."
+  },
+  {
+    "objectID": "week02-summary.html#aggregation-grouping",
+    "href": "week02-summary.html#aggregation-grouping",
+    "title": "Week 02: SQL – Intermediate Concepts Summary",
+    "section": "📏 1. Aggregation & Grouping",
+    "text": "📏 1. Aggregation & Grouping\n\nCOUNT(), SUM(), AVG(), MIN(), MAX() – summarize column values\nGROUP BY – group rows by one or more columns\nHAVING – filter grouped results\n\nSELECT department, AVG(gpa)\nFROM students\nGROUP BY department\nHAVING AVG(gpa) &gt; 3.5;"
+  },
+  {
+    "objectID": "week02-summary.html#sql-joins",
+    "href": "week02-summary.html#sql-joins",
+    "title": "Week 02: SQL – Intermediate Concepts Summary",
+    "section": "🔗 2. SQL Joins",
+    "text": "🔗 2. SQL Joins\n\nINNER JOIN – only matching rows from both tables\nLEFT OUTER JOIN – all from left table + matching right\nRIGHT OUTER JOIN – all from right table + matching left\nFULL OUTER JOIN – all rows from both tables (if supported)\n\nSELECT s.name, c.name\nFROM students s\nLEFT JOIN enrollments e ON s.id = e.student_id\nLEFT JOIN courses c ON e.course_id = c.id;"
+  },
+  {
+    "objectID": "week02-summary.html#subqueries",
+    "href": "week02-summary.html#subqueries",
+    "title": "Week 02: SQL – Intermediate Concepts Summary",
+    "section": "🔍 3. Subqueries",
+    "text": "🔍 3. Subqueries\n\nUse queries inside other queries\nUse with IN, EXISTS, =, &lt;, etc.\n\nSELECT * FROM students\nWHERE id IN (SELECT student_id FROM enrollments);\n\nCorrelated Subqueries: Reference outer query\nNon-Correlated Subqueries: Can run independently"
+  },
+  {
+    "objectID": "week02-summary.html#sql-functions-expressions",
+    "href": "week02-summary.html#sql-functions-expressions",
+    "title": "Week 02: SQL – Intermediate Concepts Summary",
+    "section": "🧲 4. SQL Functions & Expressions",
+    "text": "🧲 4. SQL Functions & Expressions\n\nMath: ROUND(gpa, 2), ABS(), CEIL(), FLOOR()\nString: UPPER(), LOWER(), LENGTH(), SUBSTR()\nDate (SQLite): DATE(), STRFTIME('%Y', birthdate)\n\nSELECT UPPER(first_name) || ' ' || UPPER(last_name) FROM students;"
+  },
+  {
+    "objectID": "week02-summary.html#sql-best-practices",
+    "href": "week02-summary.html#sql-best-practices",
+    "title": "Week 02: SQL – Intermediate Concepts Summary",
+    "section": "🪜 5. SQL Best Practices",
+    "text": "🪜 5. SQL Best Practices\n\nUse clear formatting and indentation\nAvoid SELECT * – specify needed columns\nUse aliases (AS) to clarify column and table names\n\nSELECT s.first_name AS student, c.name AS course\nFROM students s JOIN enrollments e ON s.id = e.student_id;"
+  },
+  {
+    "objectID": "week02-summary.html#query-optimization-basics",
+    "href": "week02-summary.html#query-optimization-basics",
+    "title": "Week 02: SQL – Intermediate Concepts Summary",
+    "section": "⚡ 6. Query Optimization Basics",
+    "text": "⚡ 6. Query Optimization Basics\n\nIndexes speed up filtering and joining\nFilter early with WHERE\nAvoid nested subqueries unless needed\nUse EXPLAIN (in supported engines) to analyze performance\n\nEXPLAIN SELECT * FROM students WHERE gpa &gt; 3.5;"
+  },
+  {
+    "objectID": "week02-summary.html#pro-tip-practice-readability-matter",
+    "href": "week02-summary.html#pro-tip-practice-readability-matter",
+    "title": "Week 02: SQL – Intermediate Concepts Summary",
+    "section": "✅ Pro Tip: Practice & Readability Matter!",
+    "text": "✅ Pro Tip: Practice & Readability Matter!\nGood SQL is not just correct—it’s efficient, maintainable, and easy to understand."
+  },
+  {
+    "objectID": "jupyter/libraries/libraries.html",
+    "href": "jupyter/libraries/libraries.html",
+    "title": "CS 354 – Database Management Systems",
+    "section": "",
+    "text": "!uv pip install sql\n!uv pip install ipython-sql\n\nAudited 1 package in 6ms\nAudited 1 package in 7ms\n\n\n\n%%capture\n%load_ext sql\n%sql sqlite:///library.db\n%config SqlMagic.style = '_DEPRECATED_DEFAULT'\n\n\n%%sql\n-- Listing 9-1: Creating and filling the 2018 Public Libraries Survey table\n\n\nDROP TABLE IF EXISTS pls_fy2018_libraries;\n\nCREATE TABLE pls_fy2018_libraries (\n    stabr text NOT NULL,\n    fscskey text CONSTRAINT fscskey_2018_pkey PRIMARY KEY,\n    libid text NOT NULL,\n    libname text NOT NULL,\n    address text NOT NULL,\n    city text NOT NULL,\n    zip text NOT NULL,\n    county text NOT NULL,\n    phone text NOT NULL,\n    c_relatn text NOT NULL,\n    c_legbas text NOT NULL,\n    c_admin text NOT NULL,\n    c_fscs text NOT NULL,\n    geocode text NOT NULL,\n    lsabound text NOT NULL,\n    startdate text NOT NULL,\n    enddate text NOT NULL,\n    popu_lsa integer NOT NULL,\n    popu_und integer NOT NULL,\n    centlib integer NOT NULL,\n    branlib integer NOT NULL,\n    bkmob integer NOT NULL,\n    totstaff numeric(8,2) NOT NULL,\n    bkvol integer NOT NULL,\n    ebook integer NOT NULL,\n    audio_ph integer NOT NULL,\n    audio_dl integer NOT NULL,\n    video_ph integer NOT NULL,\n    video_dl integer NOT NULL,\n    ec_lo_ot integer NOT NULL,\n    subscrip integer NOT NULL,\n    hrs_open integer NOT NULL,\n    visits integer NOT NULL,\n    reference integer NOT NULL,\n    regbor integer NOT NULL,\n    totcir integer NOT NULL,\n    kidcircl integer NOT NULL,\n    totpro integer NOT NULL,\n    gpterms integer NOT NULL,\n    pitusr integer NOT NULL,\n    wifisess integer NOT NULL,\n    obereg text NOT NULL,\n    statstru text NOT NULL,\n    statname text NOT NULL,\n    stataddr text NOT NULL,\n    longitude numeric(10,7) NOT NULL,\n    latitude numeric(10,7) NOT NULL\n);\n\n * sqlite:///library.db\nDone.\nDone.\n\n\n[]\n\n\n\n%%sql\nSELECT * FROM pls_fy2018_libraries\n\n * sqlite:///library.db\nDone.\n\n\n\n\n\nstabr\nfscskey\nlibid\nlibname\naddress\ncity\nzip\ncounty\nphone\nc_relatn\nc_legbas\nc_admin\nc_fscs\ngeocode\nlsabound\nstartdate\nenddate\npopu_lsa\npopu_und\ncentlib\nbranlib\nbkmob\ntotstaff\nbkvol\nebook\naudio_ph\naudio_dl\nvideo_ph\nvideo_dl\nec_lo_ot\nsubscrip\nhrs_open\nvisits\nreference\nregbor\ntotcir\nkidcircl\ntotpro\ngpterms\npitusr\nwifisess\nobereg\nstatstru\nstatname\nstataddr\nlongitude\nlatitude\n\n\n\n\n\n\n\n\n%%sh\n./importCSV.sh pls_fy2018_libraries.csv library.db pls_fy2018_libraries\n\n✅ Imported 'pls_fy2018_libraries.csv' into table 'pls_fy2018_libraries' in 'library.db'\n\n\n\n%%sql\nSELECT * FROM pls_fy2018_libraries\nLIMIT 5;\n\n * sqlite:///library.db\nDone.\n\n\n\n\n\nstabr\nfscskey\nlibid\nlibname\naddress\ncity\nzip\ncounty\nphone\nc_relatn\nc_legbas\nc_admin\nc_fscs\ngeocode\nlsabound\nstartdate\nenddate\npopu_lsa\npopu_und\ncentlib\nbranlib\nbkmob\ntotstaff\nbkvol\nebook\naudio_ph\naudio_dl\nvideo_ph\nvideo_dl\nec_lo_ot\nsubscrip\nhrs_open\nvisits\nreference\nregbor\ntotcir\nkidcircl\ntotpro\ngpterms\npitusr\nwifisess\nobereg\nstatstru\nstatname\nstataddr\nlongitude\nlatitude\n\n\n\n\nAK\nAK0001\nAK0001-002\nANCHOR POINT PUBLIC LIBRARY\n34020 NORTH FORK ROAD\nANCHOR POINT\n99556\nKENAI PENINSULA\n9072355692\nNO\nNP\nSO\nY\nCI1\nN\n7/1/17\n6/30/18\n2057\n2040\n1\n0\n0\n0.67\n18201\n0\n179\n0\n3320\n0\n0\n9\n1245\n6032\n4\n1726\n11316\n2294\n60\n8\n1495\n1182\n08\n00\n00\n00\n-151.825\n59.77965\n\n\nAK\nAK0002\nAK0002-011\nANCHORAGE PUBLIC LIBRARY\n3600 DENALI STREET\nANCHORAGE\n99503\nANCHORAGE\n9073432892\nNO\nCO\nMO\nY\nMA1\nN\n1/1/17\n12/31/17\n295365\n292940\n1\n4\n0\n76.65\n370812\n21587\n30963\n12992\n76404\n0\n14\n7311\n11400\n723272\n54306\n135828\n1574942\n553651\n1924\n165\n126846\n90135\n08\n00\n00\n00\n-149.876\n61.18744\n\n\nAK\nAK0003\nAK0003-002\nANDERSON COMMUNITY LIBRARY\n101 FIRST STREET\nANDERSON\n99744\nDENALI\n9075822628\nNO\nCI\nSO\nY\nCI1\nN\n7/1/17\n6/30/18\n269\n267\n1\n0\n0\n0.75\n15314\n0\n201\n0\n1403\n0\n0\n0\n480\n592\n300\n113\n1137\n264\n4\n5\n225\n0\n08\n00\n00\n00\n-149.187\n64.34363\n\n\nAK\nAK0006\nAK0006-002\nKUSKOKWIM CONSORTIUM LIBRARY\n420 CHIEF EDDIE HOFFMAN HIGHWAY\nBETHEL\n99559\nBETHEL\n9075434516\nNO\nMJ\nSO\nY\nCI1\nN\n7/1/17\n6/30/18\n6135\n6085\n1\n0\n0\n3\n34860\n21587\n425\n12992\n3782\n0\n0\n5\n2040\n51000\n1530\n1912\n14067\n3746\n406\n8\n6600\n5716\n08\n00\n00\n00\n-161.771\n60.79114\n\n\nAK\nAK0007\nAK0007-002\nBIG LAKE PUBLIC LIBRARY\n3140 SOUTH BIG LAKE ROAD\nBIG LAKE\n99652\nMATANUSKA-SUSITNA\n9078617635\nNO\nCO\nSO\nY\nCO1\nN\n7/1/17\n6/30/18\n12847\n12742\n1\n0\n0\n3\n28698\n21587\n2140\n12992\n3805\n0\n0\n47\n2551\n62249\n887\n2890\n36670\n15691\n363\n18\n15022\n8125\n08\n00\n00\n00\n-149.819\n61.5475\n\n\n\n\n\n\n%%sql\nCREATE INDEX libname_2018_idx ON pls_fy2018_libraries (libname);\n\n * sqlite:///library.db\nDone.\n\n\n[]\n\n\n\n%%sql\nSELECT * FROM pls_fy2018_libraries LIMIT 5;\n\n * sqlite:///library.db\nDone.\n\n\n\n\n\nstabr\nfscskey\nlibid\nlibname\naddress\ncity\nzip\ncounty\nphone\nc_relatn\nc_legbas\nc_admin\nc_fscs\ngeocode\nlsabound\nstartdate\nenddate\npopu_lsa\npopu_und\ncentlib\nbranlib\nbkmob\ntotstaff\nbkvol\nebook\naudio_ph\naudio_dl\nvideo_ph\nvideo_dl\nec_lo_ot\nsubscrip\nhrs_open\nvisits\nreference\nregbor\ntotcir\nkidcircl\ntotpro\ngpterms\npitusr\nwifisess\nobereg\nstatstru\nstatname\nstataddr\nlongitude\nlatitude\n\n\n\n\nAK\nAK0001\nAK0001-002\nANCHOR POINT PUBLIC LIBRARY\n34020 NORTH FORK ROAD\nANCHOR POINT\n99556\nKENAI PENINSULA\n9072355692\nNO\nNP\nSO\nY\nCI1\nN\n7/1/17\n6/30/18\n2057\n2040\n1\n0\n0\n0.67\n18201\n0\n179\n0\n3320\n0\n0\n9\n1245\n6032\n4\n1726\n11316\n2294\n60\n8\n1495\n1182\n08\n00\n00\n00\n-151.825\n59.77965\n\n\nAK\nAK0002\nAK0002-011\nANCHORAGE PUBLIC LIBRARY\n3600 DENALI STREET\nANCHORAGE\n99503\nANCHORAGE\n9073432892\nNO\nCO\nMO\nY\nMA1\nN\n1/1/17\n12/31/17\n295365\n292940\n1\n4\n0\n76.65\n370812\n21587\n30963\n12992\n76404\n0\n14\n7311\n11400\n723272\n54306\n135828\n1574942\n553651\n1924\n165\n126846\n90135\n08\n00\n00\n00\n-149.876\n61.18744\n\n\nAK\nAK0003\nAK0003-002\nANDERSON COMMUNITY LIBRARY\n101 FIRST STREET\nANDERSON\n99744\nDENALI\n9075822628\nNO\nCI\nSO\nY\nCI1\nN\n7/1/17\n6/30/18\n269\n267\n1\n0\n0\n0.75\n15314\n0\n201\n0\n1403\n0\n0\n0\n480\n592\n300\n113\n1137\n264\n4\n5\n225\n0\n08\n00\n00\n00\n-149.187\n64.34363\n\n\nAK\nAK0006\nAK0006-002\nKUSKOKWIM CONSORTIUM LIBRARY\n420 CHIEF EDDIE HOFFMAN HIGHWAY\nBETHEL\n99559\nBETHEL\n9075434516\nNO\nMJ\nSO\nY\nCI1\nN\n7/1/17\n6/30/18\n6135\n6085\n1\n0\n0\n3\n34860\n21587\n425\n12992\n3782\n0\n0\n5\n2040\n51000\n1530\n1912\n14067\n3746\n406\n8\n6600\n5716\n08\n00\n00\n00\n-161.771\n60.79114\n\n\nAK\nAK0007\nAK0007-002\nBIG LAKE PUBLIC LIBRARY\n3140 SOUTH BIG LAKE ROAD\nBIG LAKE\n99652\nMATANUSKA-SUSITNA\n9078617635\nNO\nCO\nSO\nY\nCO1\nN\n7/1/17\n6/30/18\n12847\n12742\n1\n0\n0\n3\n28698\n21587\n2140\n12992\n3805\n0\n0\n47\n2551\n62249\n887\n2890\n36670\n15691\n363\n18\n15022\n8125\n08\n00\n00\n00\n-149.819\n61.5475\n\n\n\n\n\n\n%%sql\nPRAGMA index_list('pls_fy2018_libraries');\n\n * sqlite:///library.db\nDone.\n\n\n\n\n\nseq\nname\nunique\norigin\npartial\n\n\n\n\n0\nlibname_2018_idx\n0\nc\n0\n\n\n1\nsqlite_autoindex_pls_fy2018_libraries_1\n1\npk\n0\n\n\n\n\n\n\n%%sql\nSELECT sql FROM sqlite_master WHERE type = 'index' AND name = 'libname_2018_idx';\n\n * sqlite:///library.db\nDone.\n\n\n\n\n\nsql\n\n\n\n\nCREATE INDEX libname_2018_idx ON pls_fy2018_libraries (libname)\n\n\n\n\n\n\n%%sql\nSELECT count(*)\nFROM pls_fy2018_libraries;\n\n * sqlite:///library.db\nDone.\n\n\n\n\n\ncount(*)\n\n\n\n\n9261\n\n\n\n\n\n\n%%sql\nSELECT count(phone)\nFROM pls_fy2018_libraries;\n\n * sqlite:///library.db\nDone.\n\n\n\n\n\ncount(phone)\n\n\n\n\n9261\n\n\n\n\n\n\n%%sql \nSELECT libname, count(libname)\n    FROM pls_fy2018_libraries\n    GROUP BY libname\n    ORDER BY count(libname) DESC\n    LIMIT 20;\n\n * sqlite:///library.db\nDone.\n\n\n\n\n\nlibname\ncount(libname)\n\n\n\n\nOXFORD PUBLIC LIBRARY\n10\n\n\nMADISON PUBLIC LIBRARY\n8\n\n\nBLOOMFIELD PUBLIC LIBRARY\n7\n\n\nCARNEGIE PUBLIC LIBRARY\n7\n\n\nPRINCETON PUBLIC LIBRARY\n7\n\n\nBURLINGTON PUBLIC LIBRARY\n6\n\n\nFRANKLIN PUBLIC LIBRARY\n6\n\n\nMILFORD PUBLIC LIBRARY\n6\n\n\nWAYNE COUNTY PUBLIC LIBRARY\n6\n\n\nANDOVER PUBLIC LIBRARY\n5\n\n\nBRIDGEPORT PUBLIC LIBRARY\n5\n\n\nCANTON PUBLIC LIBRARY\n5\n\n\nELGIN PUBLIC LIBRARY\n5\n\n\nHILLSBORO PUBLIC LIBRARY\n5\n\n\nJEFFERSON PUBLIC LIBRARY\n5\n\n\nLEBANON PUBLIC LIBRARY\n5\n\n\nLINCOLN PUBLIC LIBRARY\n5\n\n\nLYONS PUBLIC LIBRARY\n5\n\n\nMARION PUBLIC LIBRARY\n5\n\n\nMONROE PUBLIC LIBRARY\n5\n\n\n\n\n\n\n%%sql\nSELECT max(visits), min(visits)\nFROM pls_fy2018_libraries\nWHERE visits &gt; 0;\n\n * sqlite:///library.db\nDone.\n\n\n\n\n\nmax(visits)\nmin(visits)\n\n\n\n\n16686945\n21"
   },
   {
     "objectID": "week03.html",
