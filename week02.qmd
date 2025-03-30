@@ -28,9 +28,12 @@ At the end of this unit, students will be able to...
 [Summary of the Week](/week02-summary.qmd)
 :::
 
+::: source
+[W02C02 Notebook](/week02-notes.ipynb)
+:::
+
 ::: reading
-Mark Simon. (2023). Getting Started with SQL and Databases : Managing and Manipulating Data with SQL. Apress. 
--   [Chapters 4, 5 and 6](https://calvin.primo.exlibrisgroup.com/permalink/01CALVIN_INST/1p09kqq/cdi_skillsoft_books24x7_bks000165833){target="_blank"}
+Mark Simon. (2023). Getting Started with SQL and Databases : Managing and Manipulating Data with SQL. Apress. - [Chapters 4, 5 and 6](https://calvin.primo.exlibrisgroup.com/permalink/01CALVIN_INST/1p09kqq/cdi_skillsoft_books24x7_bks000165833){target="_blank"}
 :::
 
 ```{=html}
@@ -41,32 +44,34 @@ Mark Simon. (2023). Getting Started with SQL and Databases : Managing and Mani
 ```
 ::::::
 
-
 <!-- ## Homework assignments -->
 
-:::::: homework
+:::: homework
 **Homework 02**
 
 ::: instructions
 [Instructions](/hws/hw02.qmd)
 :::
 
+```{=html}
 <!-- ::: starter
 [Source](){target="_blank"}
 ::: -->
-
-::::::
-
+```
+::::
 
 <!-- ## Lab -->
-::::: lab
+
+:::: lab
 **Project 02**
 
 ::: instructions
 [Instructions](/projects/proj02.qmd)
 :::
 
+```{=html}
 <!-- ::: starter
 [Starter](){target="_blank"}
 ::: -->
-:::::
+```
+::::

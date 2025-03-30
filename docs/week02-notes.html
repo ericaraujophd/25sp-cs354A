@@ -199,6 +199,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#visits-over-the-years" id="toc-visits-over-the-years" class="nav-link" data-scroll-target="#visits-over-the-years">📙 Visits over the years</a></li>
   </ul></li>
+  <li><a href="#filtering-groups-with-having-1" id="toc-filtering-groups-with-having-1" class="nav-link" data-scroll-target="#filtering-groups-with-having-1">1.4 Filtering Groups with HAVING</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.dev/ericaraujophd/25sp-cs354A/blob/main/week02-notes.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/25sp-cs354A/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -2564,9 +2565,106 @@ Done.</code></pre>
 </table>
 </div>
 </div>
-
-
+<hr>
 </section>
+</section>
+<section id="filtering-groups-with-having-1" class="level2">
+<h2 class="anchored" data-anchor-id="filtering-groups-with-having-1">1.4 Filtering Groups with HAVING</h2>
+<p>The <code>HAVING</code> clause is used to filter records that work on summarized GROUP BY results. It is similar to the <code>WHERE</code> clause, but it is used for filtering groups instead of individual rows.</p>
+<p>Let’s try to compare libraries located in a state with similar characteristics. For that, we will use <code>HAVING</code> to place conditions on gorups created by aggregating.</p>
+<div id="cell-45" class="cell" data-execution_count="23">
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>sql</span>
+<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>SELECT pls2018.stabr,</span>
+<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a><span class="bu">sum</span>(pls2018.visits) AS visits_2018,</span>
+<span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a><span class="bu">sum</span>(pls2017.visits) AS visits_2017,</span>
+<span id="cb53-5"><a href="#cb53-5" aria-hidden="true" tabindex="-1"></a><span class="bu">sum</span>(pls2016.visits) AS visits_2016,</span>
+<span id="cb53-6"><a href="#cb53-6" aria-hidden="true" tabindex="-1"></a><span class="bu">round</span> ( ( </span>
+<span id="cb53-7"><a href="#cb53-7" aria-hidden="true" tabindex="-1"></a>         (<span class="bu">sum</span>(pls2018.visits) <span class="op">-</span> <span class="bu">sum</span>(pls2017.visits) ) <span class="op">*</span> <span class="fl">1.0</span> <span class="op">/</span> <span class="bu">sum</span>(pls2017.visits) ) <span class="op">*</span> <span class="dv">100</span>, <span class="dv">1</span></span>
+<span id="cb53-8"><a href="#cb53-8" aria-hidden="true" tabindex="-1"></a>       ) AS visits_ratio_2018_2017,</span>
+<span id="cb53-9"><a href="#cb53-9" aria-hidden="true" tabindex="-1"></a><span class="bu">round</span> ( ( (<span class="bu">sum</span>(pls2017.visits) <span class="op">-</span> <span class="bu">sum</span>(pls2016.visits) ) <span class="op">*</span> <span class="fl">1.0</span> <span class="op">/</span> </span>
+<span id="cb53-10"><a href="#cb53-10" aria-hidden="true" tabindex="-1"></a>         <span class="bu">sum</span>(pls2016.visits) ) <span class="op">*</span> <span class="dv">100</span>, <span class="dv">1</span>) AS visits_ratio_2017_2016</span>
+<span id="cb53-11"><a href="#cb53-11" aria-hidden="true" tabindex="-1"></a>FROM libraries_2018 AS pls2018</span>
+<span id="cb53-12"><a href="#cb53-12" aria-hidden="true" tabindex="-1"></a>    JOIN libraries_2017 AS pls2017 ON pls2018.fscskey <span class="op">=</span> pls2017.fscskey</span>
+<span id="cb53-13"><a href="#cb53-13" aria-hidden="true" tabindex="-1"></a>    JOIN libraries_2016 AS pls2016 ON pls2018.fscskey <span class="op">=</span> pls2016.fscskey</span>
+<span id="cb53-14"><a href="#cb53-14" aria-hidden="true" tabindex="-1"></a>WHERE pls2018.visits <span class="op">&gt;=</span> <span class="dv">0</span></span>
+<span id="cb53-15"><a href="#cb53-15" aria-hidden="true" tabindex="-1"></a>  AND pls2017.visits <span class="op">&gt;=</span> <span class="dv">0</span></span>
+<span id="cb53-16"><a href="#cb53-16" aria-hidden="true" tabindex="-1"></a>  AND pls2016.visits <span class="op">&gt;=</span> <span class="dv">0</span></span>
+<span id="cb53-17"><a href="#cb53-17" aria-hidden="true" tabindex="-1"></a>GROUP BY pls2018.stabr</span>
+<span id="cb53-18"><a href="#cb53-18" aria-hidden="true" tabindex="-1"></a>HAVING <span class="bu">sum</span>(pls2018.visits) <span class="op">&gt;</span> <span class="dv">50000000</span></span>
+<span id="cb53-19"><a href="#cb53-19" aria-hidden="true" tabindex="-1"></a>ORDER BY visits_ratio_2018_2017 DESC<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> * sqlite:///dbs/w02/library.db
+Done.</code></pre>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="23">
+<table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th">stabr</th>
+<th data-quarto-table-cell-role="th">visits_2018</th>
+<th data-quarto-table-cell-role="th">visits_2017</th>
+<th data-quarto-table-cell-role="th">visits_2016</th>
+<th data-quarto-table-cell-role="th">visits_ratio_2018_2017</th>
+<th data-quarto-table-cell-role="th">visits_ratio_2017_2016</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>FL</td>
+<td>68423689</td>
+<td>66697122</td>
+<td>70991029</td>
+<td>2.6</td>
+<td>-6.0</td>
+</tr>
+<tr class="even">
+<td>NY</td>
+<td>97921323</td>
+<td>100012193</td>
+<td>103081304</td>
+<td>-2.1</td>
+<td>-3.0</td>
+</tr>
+<tr class="odd">
+<td>CA</td>
+<td>146656984</td>
+<td>151056672</td>
+<td>155613529</td>
+<td>-2.9</td>
+<td>-2.9</td>
+</tr>
+<tr class="even">
+<td>IL</td>
+<td>63466887</td>
+<td>66166082</td>
+<td>67336230</td>
+<td>-4.1</td>
+<td>-1.7</td>
+</tr>
+<tr class="odd">
+<td>OH</td>
+<td>68176967</td>
+<td>71895854</td>
+<td>74119719</td>
+<td>-5.2</td>
+<td>-3.0</td>
+</tr>
+<tr class="even">
+<td>TX</td>
+<td>66168387</td>
+<td>70514138</td>
+<td>70975901</td>
+<td>-6.2</td>
+<td>-0.7</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<hr>
+<p>We are including only rows with a sum greater than 50 million visitors in 2018. We got six states as a result of this arbitrary condition. Only Florida experienced an increase in the number of visitors from 2017 to 2018.</p>
+
+
 </section>
 
 </main> <!-- /main -->
