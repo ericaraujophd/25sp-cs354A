@@ -11,9 +11,8 @@ At the end of this unit, students will be able to...
 1.  Explain the purpose and importance of relational databases.
 2.  Differentiate between relational databases and other types of data storage.
 3.  Write basic SQL queries to retrieve data.
-4.  Use WHERE clauses and ORDER BY to filter and sort results.
-5.  Understand SQL syntax and basic commands.
-6.  Analyze a dataset using simple queries.
+4.  Understand SQL syntax and basic commands for querying: `SELECT`, `DISTINCT`, `WHERE`, `GROUP BY`, `HAVING`, `ORDER BY`, `LIMIT/OFFSET`.
+5.  Analyze a dataset using simple queries.
 
 ## 📖 1. What is a Database?
 

@@ -9,27 +9,23 @@ format:
 
 Students will be able to:
 
-1.  Insert new records using the INSERT statement.
-2.  Modify existing records using the UPDATE statement.
-3.  Delete records using the DELETE statement.
-4.  Manage transactions using COMMIT and ROLLBACK.
-5.  Differentiate between materialized and non-materialized views.
-6.  Create and manage indexes to optimize query performance.
+1.  Use SQL aggregate and scalar functions and create expressions.
+2.  Work with data types, including dates and strings, using `LIKE`, `GLOB`,`DATE`, `TIME`, `DATETIME`, `JULIANDAY` and `STRFTIME`. [Link](week03-02-time.ipynb)
+3.  Manipulate the records stored in a database using `INSERT INTO`, `UPDATE` and `DELETE FROM`.
+4.  Table design principles using DDL commands, such as `CREATE TABLE`, `DROP TABLE`, `ALTER TABLE`, `CREATE INDEX`, `DROP INDEX`, `CREATE VIEW`, `DROP VIEW`.
+5.  Control columns values using constraints: primary keys, foreign keys, delete with `CASCADE`, `CHECK`, `UNIQUE`, `NOT NULL`.
+6.  Differentiate between materialized and non-materialized views.
+7.  Create and manage indexes to optimize query performance using performance and debug commands, such as `ANALYZE` and `EXPLAIN`. [Link](week03-06-optimization.ipynb)
 
 ## Slides, videos, and application exercises
 
 ::::: slide-deck
 **Week 03: Slides**
 
-::: slides
+<!-- ::: slides
 [Slides]()
-:::
-
-```{=html}
-<!-- ::: starter
-[Code](){target="_blank"}
 ::: -->
-```
+
 
 ::: reading
 Mark Simon. (2023). Getting Started with SQL and Databases : Managing and Manipulating Data with SQL. Apress. - [Chapters 7, 8 and 9](https://calvin.primo.exlibrisgroup.com/permalink/01CALVIN_INST/1p09kqq/cdi_skillsoft_books24x7_bks000165833){target="_blank"}

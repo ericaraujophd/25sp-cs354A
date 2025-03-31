@@ -17,7 +17,7 @@ At the end of this unit, the student will be able to...
 
 ## Slides, videos, and application exercises
 
-:::::: slide-deck
+::::: slide-deck
 **Week 06: Slides**
 
 ::: slides
@@ -27,19 +27,17 @@ At the end of this unit, the student will be able to...
 ::: reading
 No readings for Week 6.
 :::
-::::::
+:::::
 
 <!-- ## Homework assignments -->
 
-:::::: homework
+:::: homework
 **Homework 06:**
 
 ::: instructions
 [Instructions](/hws/hw06.qmd)
 :::
-
-
-::::::
+::::
 
 <!-- ## Project -->
 

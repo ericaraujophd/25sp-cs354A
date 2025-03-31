@@ -10,9 +10,9 @@ At the end of this unit, students will be able to...
 
 1.  Explain the purpose and importance of relational databases.
 2.  Differentiate between relational databases and other types of data storage.
-3.  Write basic SQL queries to retrieve data.
-4.  Use WHERE clauses and ORDER BY to filter and sort results.
-5.  Understand SQL syntax and basic commands.
+3.  Query data from a single table using `SELECT` statement.
+4.  Sort the result set in ascending and descending order using `ORDER BY`.
+5.  Filter data according to various conditions using `DISTINCT`, `WHERE`, `AND`, `OR`, `LIMIT/OFFSET`, `BETWEEN`, `IN`, `LIKE` and `ILIKE`, `GLOB` and `IS NULL`.
 6.  Analyze a dataset using simple queries.
 
 #### 
@@ -46,11 +46,6 @@ Mark Simon. (2023). Getting Started with SQL and Databases : Managing and Mani
 [Instructions](/hws/hw01.qmd)
 :::
 
-```{=html}
-<!-- ::: starter
-[Starter](){target="_blank"}
-::: -->
-```
 ::::
 
 <!-- ## Lab -->

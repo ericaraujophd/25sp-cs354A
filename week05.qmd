@@ -20,18 +20,17 @@ By the end of this unit, students will be able to...
 
 ## Slides, videos, and application exercises
 
-:::::: slide-deck
+::::: slide-deck
 **Week 05: Slides**
 
 ::: slides
 [Slides]()
 :::
 
-
 ::: reading
 No readings for Week 05.
 :::
-::::::
+:::::
 
 <!-- ## Homework assignments -->
 
