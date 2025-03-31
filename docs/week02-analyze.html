@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Eric Araujo">
 
-<title>Week 04: Database Design – ER Modeling &amp; Schema Refinement (under construction) – CS 354 – Database Management Systems</title>
+<title>Week 02: SQL – ANALYZE – CS 354 – Database Management Systems</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,18 +21,50 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./week05.html" rel="next">
-<link href="./week03.html" rel="prev">
 <link href=".//images/data-management.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -72,13 +105,15 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <script src="https://kit.fontawesome.com/78ddb093ea.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
-<link rel="stylesheet" href="./styles.css">
-<meta property="og:title" content="Week 04: Database Design – ER Modeling &amp; Schema Refinement (under construction) – CS 354 – Database Management Systems">
+<meta property="og:title" content="Week 02: SQL – ANALYZE – CS 354 – Database Management Systems">
 <meta property="og:description" content="CS354 provides a hands-on introduction to relational databases, SQL querying, and database design, focusing on real-world applications, optimization, and security.">
 <meta property="og:site_name" content="CS 354 – Database Management Systems">
-<meta name="twitter:title" content="Week 04: Database Design – ER Modeling &amp; Schema Refinement (under construction) – CS 354 – Database Management Systems">
+<meta name="twitter:title" content="Week 02: SQL – ANALYZE – CS 354 – Database Management Systems">
 <meta name="twitter:description" content="CS354 provides a hands-on introduction to relational databases, SQL querying, and database design, focusing on real-world applications, optimization, and security.">
 <meta name="twitter:image" content="https://ericaraujo.com/25sp-cs354A/images/data-management.png">
 <meta name="twitter:creator" content="@ericfaraujo">
@@ -87,7 +122,7 @@ ul.task-list li input[type="checkbox"] {
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
-<body class="nav-sidebar floating nav-fixed">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -109,7 +144,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Overview</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./content.html" aria-current="page"> 
+    <a class="nav-link" href="./content.html"> 
 <span class="menu-text">Content</span></a>
   </li>  
   <li class="nav-item">
@@ -138,98 +173,41 @@ ul.task-list li input[type="checkbox"] {
 </div>
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./week04.html">Week 04: Database Design – ER Modeling &amp; Schema Refinement (under construction)</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-    </div>
-  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./content.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Course content</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week01.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 01: Introduction to Databases &amp; SQL Basics</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week02.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 02: SQL – Intermediate Concepts</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week03.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 03: SQL – Data Modification &amp; Advanced Queries (under construction)</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week04.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Week 04: Database Design – ER Modeling &amp; Schema Refinement (under construction)</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week05.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 05: Advanced SQL &amp; Integrity Constraints (under construction)</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week06.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 06: Database Management &amp; Optimization (under construction)</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week07.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 07: Final Project and Course Wrap-Up (under construction)</span></a>
-  </div>
-</li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#slos-for-week-04" id="toc-slos-for-week-04" class="nav-link active" data-scroll-target="#slos-for-week-04">SLOs for Week 04</a></li>
-  <li><a href="#slides-videos-and-application-exercises" id="toc-slides-videos-and-application-exercises" class="nav-link" data-scroll-target="#slides-videos-and-application-exercises">Slides, videos, and application exercises</a></li>
+  <li><a href="#create-a-table-and-insert-data" id="toc-create-a-table-and-insert-data" class="nav-link active" data-scroll-target="#create-a-table-and-insert-data">1. Create a Table and Insert Data</a></li>
+  <li><a href="#create-an-index" id="toc-create-an-index" class="nav-link" data-scroll-target="#create-an-index">2. Create an Index</a></li>
+  <li><a href="#run-a-query-and-check-the-plan" id="toc-run-a-query-and-check-the-plan" class="nav-link" data-scroll-target="#run-a-query-and-check-the-plan">3. Run a Query and Check the Plan</a></li>
+  <li><a href="#run-analyze" id="toc-run-analyze" class="nav-link" data-scroll-target="#run-analyze">4. Run ANALYZE</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/ericaraujophd/25sp-cs354A/edit/main/week04.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/25sp-cs354A/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.dev/ericaraujophd/25sp-cs354A/blob/main/week02-analyze.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/25sp-cs354A/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Week 04: Database Design – ER Modeling &amp; Schema Refinement (under construction)</h1>
+<h1 class="title">Week 02: SQL – ANALYZE</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Eric Araujo </p>
+          </div>
+  </div>
     
   
     
@@ -240,47 +218,180 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="slos-for-week-04" class="level2">
-<h2 class="anchored" data-anchor-id="slos-for-week-04">SLOs for Week 04</h2>
-<p>Students will be able to…</p>
-<ol type="1">
-<li>Design ER diagrams to model database structures.</li>
-<li>Convert ER models into relational schemas.</li>
-<li>Normalize database schemas using BCNF and 4NF (briefly).</li>
-<li>Identify and resolve redundancy issues in schemas.</li>
-<li>Define and enforce primary and foreign key constraints.</li>
-<li>Create SQL schemas from conceptual designs.</li>
-</ol>
+<div id="cell-1" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>capture</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>load_ext sql</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>sql sqlite:<span class="op">///</span>dbs<span class="op">/</span>w02<span class="op">/</span>analyze<span class="op">-</span>example.db</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>config SqlMagic.style <span class="op">=</span> <span class="st">'_DEPRECATED_DEFAULT'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="create-a-table-and-insert-data" class="level2">
+<h2 class="anchored" data-anchor-id="create-a-table-and-insert-data">1. Create a Table and Insert Data</h2>
+<div id="cell-3" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>sql</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>DROP TABLE IF EXISTS orders<span class="op">;</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>CREATE TABLE orders (</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  order_id INTEGER PRIMARY KEY,</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  customer_id INTEGER,</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  order_date TEXT,</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  total REAL</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>)<span class="op">;</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="op">--</span> Insert <span class="dv">10</span>,<span class="dv">000</span> rows</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>WITH RECURSIVE cnt(x) AS (</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>  SELECT <span class="dv">1</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>  UNION ALL</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>  SELECT x <span class="op">+</span> <span class="dv">1</span> FROM cnt WHERE x <span class="op">&lt;</span> <span class="dv">10000</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>INSERT INTO orders (customer_id, order_date, total)</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>SELECT </span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>  ABS(RANDOM() <span class="op">%</span> <span class="dv">100</span>), </span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>  date(<span class="st">'2024-01-01'</span>, <span class="st">'+'</span> <span class="op">||</span> (RANDOM() <span class="op">%</span> <span class="dv">365</span>) <span class="op">||</span> <span class="st">' days'</span>), </span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>  ROUND(RANDOM() <span class="op">%</span> <span class="dv">500</span>, <span class="dv">2</span>)</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>FROM cnt<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> * sqlite:///dbs/w02/analyze-example.db
+Done.
+Done.
+Done.</code></pre>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="5">
+<pre><code>[]</code></pre>
+</div>
+</div>
+<p>This generates 10,000 synthetic rows with:</p>
+<ul>
+<li>customer_id between 0 and 99</li>
+<li>order_date in the year 2024</li>
+<li>total up to 500</li>
+</ul>
 </section>
-<section id="slides-videos-and-application-exercises" class="level2">
-<h2 class="anchored" data-anchor-id="slides-videos-and-application-exercises">Slides, videos, and application exercises</h2>
-<div class="slide-deck">
-<p><strong>Week 04: Slides</strong></p>
-<div class="slides">
-<p><a href="">Slides</a></p>
+<section id="create-an-index" class="level2">
+<h2 class="anchored" data-anchor-id="create-an-index">2. Create an Index</h2>
+<div id="cell-6" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>sql</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>CREATE INDEX idx_orders_order_date ON orders(order_date)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> * sqlite:///dbs/w02/analyze-example.db
+Done.</code></pre>
 </div>
-<div class="reading">
-<p>No readings for Week 4.</p>
-</div>
-</div>
-<!-- ## Homework assignments -->
-<div class="homework">
-<p><strong>Homework 04:</strong></p>
-<div class="instructions">
-<p><a href="./hws/hw04.html">Instructions</a></p>
+<div class="cell-output cell-output-display" data-execution_count="6">
+<pre><code>[]</code></pre>
 </div>
 </div>
-<!-- ## Lab -->
-<div class="lab">
-<p><strong>Project 04:</strong></p>
-<div class="instructions">
-<p><a href="./projects/proj04.html">Instructions</a></p>
+</section>
+<section id="run-a-query-and-check-the-plan" class="level2">
+<h2 class="anchored" data-anchor-id="run-a-query-and-check-the-plan">3. Run a Query and Check the Plan</h2>
+<div id="cell-8" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>sql</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>EXPLAIN QUERY PLAN</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>SELECT <span class="op">*</span> FROM orders WHERE order_date <span class="op">&gt;</span> <span class="st">'2024-06-01'</span><span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> * sqlite:///dbs/w02/analyze-example.db
+Done.</code></pre>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="7">
+<table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th">id</th>
+<th data-quarto-table-cell-role="th">parent</th>
+<th data-quarto-table-cell-role="th">notused</th>
+<th data-quarto-table-cell-role="th">detail</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>3</td>
+<td>0</td>
+<td>205</td>
+<td>SEARCH orders USING INDEX idx_orders_order_date (order_date&gt;?)</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
-<div class="exam">
-<p><strong>Exam 1</strong></p>
-<p>Exam on Friday during class. Bring your laptop. Content: Weeks 1 - 3.</p>
+<p>Before ANALYZE, SQLite might not use the index if it doesn’t know how selective <code>order_date</code> is.</p>
+<p>In our case, the query is optimized and using the index. Let’s see what the output means.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 66%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Part</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>SEARCH orders</code></td>
+<td>SQLite is accessing the <code>orders</code> table using a search operation.</td>
+</tr>
+<tr class="even">
+<td><code>USING INDEX idx_orders_order_date</code></td>
+<td>It is using the <code>idx_orders_order_date</code> index to speed up the lookup.</td>
+</tr>
+<tr class="odd">
+<td><code>(order_date&gt;?)</code></td>
+<td>The filter condition is <code>order_date &gt; ?</code> (where <code>?</code> is the input value).</td>
+</tr>
+</tbody>
+</table>
+<p>This shows that SQLite (1) is not scanning the full table and (2) is using the index you created to efficiently jump to rows matching the condition.</p>
+<p>Had the query said something like:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SCAN</span> <span class="kw">TABLE</span> orders</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>…that would mean a <strong>full table scan</strong> — which is slower, especially on large datasets.</p>
+</section>
+<section id="run-analyze" class="level2">
+<h2 class="anchored" data-anchor-id="run-analyze">4. Run ANALYZE</h2>
+<p>This updates the sqlite_stat1 table with stats about the distribution of values in the table/indexes.</p>
+<div id="cell-11" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>sql</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>ANALYZE<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> * sqlite:///dbs/w02/analyze-example.db
+Done.</code></pre>
 </div>
+<div class="cell-output cell-output-display" data-execution_count="8">
+<pre><code>[]</code></pre>
+</div>
+</div>
+<div id="cell-12" class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">## 5. Run the Same Query Again</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="cell-13" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>sql</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>EXPLAIN QUERY PLAN</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>SELECT <span class="op">*</span> FROM orders WHERE order_date <span class="op">&gt;</span> <span class="st">'2024-06-01'</span><span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> * sqlite:///dbs/w02/analyze-example.db
+Done.</code></pre>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="9">
+<table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th">id</th>
+<th data-quarto-table-cell-role="th">parent</th>
+<th data-quarto-table-cell-role="th">notused</th>
+<th data-quarto-table-cell-role="th">detail</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>3</td>
+<td>0</td>
+<td>141</td>
+<td>SEARCH orders USING INDEX idx_orders_order_date (order_date&gt;?)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>After <code>ANALYZE</code>, you’ll likely see that the index is now being used, especially if the planner sees it as more efficient.</p>
 
 
 </section>
@@ -850,18 +961,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="./week03.html" class="pagination-link" aria-label="Week 03: SQL – Data Modification &amp; Advanced Queries (under construction)">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Week 03: SQL – Data Modification &amp; Advanced Queries (under construction)</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="./week05.html" class="pagination-link" aria-label="Week 05: Advanced SQL &amp; Integrity Constraints (under construction)">
-        <span class="nav-page-text">Week 05: Advanced SQL &amp; Integrity Constraints (under construction)</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -870,7 +969,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ericaraujophd/25sp-cs354A/edit/main/week04.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/25sp-cs354A/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.dev/ericaraujophd/25sp-cs354A/blob/main/week02-analyze.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/25sp-cs354A/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">

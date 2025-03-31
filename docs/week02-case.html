@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Eric Araujo">
 
-<title>Week 04: Database Design – ER Modeling &amp; Schema Refinement (under construction) – CS 354 – Database Management Systems</title>
+<title>Week 02: SQL – Using CASE – CS 354 – Database Management Systems</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,18 +21,50 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./week05.html" rel="next">
-<link href="./week03.html" rel="prev">
 <link href=".//images/data-management.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -72,13 +105,15 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <script src="https://kit.fontawesome.com/78ddb093ea.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
-<link rel="stylesheet" href="./styles.css">
-<meta property="og:title" content="Week 04: Database Design – ER Modeling &amp; Schema Refinement (under construction) – CS 354 – Database Management Systems">
+<meta property="og:title" content="Week 02: SQL – Using CASE – CS 354 – Database Management Systems">
 <meta property="og:description" content="CS354 provides a hands-on introduction to relational databases, SQL querying, and database design, focusing on real-world applications, optimization, and security.">
 <meta property="og:site_name" content="CS 354 – Database Management Systems">
-<meta name="twitter:title" content="Week 04: Database Design – ER Modeling &amp; Schema Refinement (under construction) – CS 354 – Database Management Systems">
+<meta name="twitter:title" content="Week 02: SQL – Using CASE – CS 354 – Database Management Systems">
 <meta name="twitter:description" content="CS354 provides a hands-on introduction to relational databases, SQL querying, and database design, focusing on real-world applications, optimization, and security.">
 <meta name="twitter:image" content="https://ericaraujo.com/25sp-cs354A/images/data-management.png">
 <meta name="twitter:creator" content="@ericfaraujo">
@@ -87,7 +122,7 @@ ul.task-list li input[type="checkbox"] {
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
-<body class="nav-sidebar floating nav-fixed">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -109,7 +144,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Overview</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./content.html" aria-current="page"> 
+    <a class="nav-link" href="./content.html"> 
 <span class="menu-text">Content</span></a>
   </li>  
   <li class="nav-item">
@@ -138,98 +173,47 @@ ul.task-list li input[type="checkbox"] {
 </div>
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./week04.html">Week 04: Database Design – ER Modeling &amp; Schema Refinement (under construction)</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-    </div>
-  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./content.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Course content</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week01.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 01: Introduction to Databases &amp; SQL Basics</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week02.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 02: SQL – Intermediate Concepts</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week03.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 03: SQL – Data Modification &amp; Advanced Queries (under construction)</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week04.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Week 04: Database Design – ER Modeling &amp; Schema Refinement (under construction)</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week05.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 05: Advanced SQL &amp; Integrity Constraints (under construction)</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week06.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 06: Database Management &amp; Optimization (under construction)</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week07.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 07: Final Project and Course Wrap-Up (under construction)</span></a>
-  </div>
-</li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#slos-for-week-04" id="toc-slos-for-week-04" class="nav-link active" data-scroll-target="#slos-for-week-04">SLOs for Week 04</a></li>
-  <li><a href="#slides-videos-and-application-exercises" id="toc-slides-videos-and-application-exercises" class="nav-link" data-scroll-target="#slides-videos-and-application-exercises">Slides, videos, and application exercises</a></li>
+  <li><a href="#basic-syntax-of-case" id="toc-basic-syntax-of-case" class="nav-link active" data-scroll-target="#basic-syntax-of-case">📌 Basic Syntax of CASE</a></li>
+  <li><a href="#example-1-using-case-in-a-select" id="toc-example-1-using-case-in-a-select" class="nav-link" data-scroll-target="#example-1-using-case-in-a-select">✅ Example 1: Using CASE in a SELECT</a></li>
+  <li><a href="#example-2-conditional-aggregation" id="toc-example-2-conditional-aggregation" class="nav-link" data-scroll-target="#example-2-conditional-aggregation">✅ Example 2: Conditional Aggregation</a></li>
+  <li><a href="#example-3-case-in-order-by" id="toc-example-3-case-in-order-by" class="nav-link" data-scroll-target="#example-3-case-in-order-by">✅ Example 3: CASE in ORDER BY</a></li>
+  <li><a href="#notes" id="toc-notes" class="nav-link" data-scroll-target="#notes">🔎 Notes</a></li>
+  <li><a href="#practice-classify-products-by-price" id="toc-practice-classify-products-by-price" class="nav-link" data-scroll-target="#practice-classify-products-by-price">🧪 Practice: Classify Products by Price</a>
+  <ul class="collapse">
+  <li><a href="#table-setup" id="toc-table-setup" class="nav-link" data-scroll-target="#table-setup">✅ Table Setup</a></li>
+  <li><a href="#question" id="toc-question" class="nav-link" data-scroll-target="#question">❓ Question:</a></li>
+  </ul></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/ericaraujophd/25sp-cs354A/edit/main/week04.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/25sp-cs354A/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.dev/ericaraujophd/25sp-cs354A/blob/main/week02-case.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/25sp-cs354A/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Week 04: Database Design – ER Modeling &amp; Schema Refinement (under construction)</h1>
+<h1 class="title">Week 02: SQL – Using CASE</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Eric Araujo </p>
+          </div>
+  </div>
     
   
     
@@ -240,49 +224,216 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="slos-for-week-04" class="level2">
-<h2 class="anchored" data-anchor-id="slos-for-week-04">SLOs for Week 04</h2>
-<p>Students will be able to…</p>
-<ol type="1">
-<li>Design ER diagrams to model database structures.</li>
-<li>Convert ER models into relational schemas.</li>
-<li>Normalize database schemas using BCNF and 4NF (briefly).</li>
-<li>Identify and resolve redundancy issues in schemas.</li>
-<li>Define and enforce primary and foreign key constraints.</li>
-<li>Create SQL schemas from conceptual designs.</li>
-</ol>
+<p>The CASE statement in SQL is a way to add conditional logic to your queries — it’s like an IF-THEN-ELSE structure in programming languages.</p>
+<section id="basic-syntax-of-case" class="level2">
+<h2 class="anchored" data-anchor-id="basic-syntax-of-case">📌 Basic Syntax of CASE</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="cf">CASE</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">WHEN</span> condition1 <span class="cf">THEN</span> result1</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">WHEN</span> condition2 <span class="cf">THEN</span> result2</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="op">..</span>.</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">ELSE</span> resultN</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="cf">END</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>You can use it:</p>
+<ul>
+<li>In SELECT to create computed columns.</li>
+<li>In ORDER BY to sort conditionally.</li>
+<li>In WHERE (less common, but possible).</li>
+</ul>
 </section>
-<section id="slides-videos-and-application-exercises" class="level2">
-<h2 class="anchored" data-anchor-id="slides-videos-and-application-exercises">Slides, videos, and application exercises</h2>
-<div class="slide-deck">
-<p><strong>Week 04: Slides</strong></p>
-<div class="slides">
-<p><a href="">Slides</a></p>
+<section id="example-1-using-case-in-a-select" class="level2">
+<h2 class="anchored" data-anchor-id="example-1-using-case-in-a-select">✅ Example 1: Using CASE in a SELECT</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> name,</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>       age,</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>       <span class="cf">CASE</span> </span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>           <span class="cf">WHEN</span> age <span class="op">&lt;</span> <span class="dv">18</span> <span class="cf">THEN</span> <span class="st">'Minor'</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>           <span class="cf">WHEN</span> age <span class="op">&lt;</span> <span class="dv">65</span> <span class="cf">THEN</span> <span class="st">'Adult'</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>           <span class="cf">ELSE</span> <span class="st">'Senior'</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>       <span class="cf">END</span> <span class="kw">AS</span> age_group</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> people;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This assigns a label (Minor, Adult, or Senior) based on age.</p>
+</section>
+<section id="example-2-conditional-aggregation" class="level2">
+<h2 class="anchored" data-anchor-id="example-2-conditional-aggregation">✅ Example 2: Conditional Aggregation</h2>
+<div class="sourceCode" id="cb3"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> </span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    department,</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">COUNT</span>(<span class="op">*</span>) <span class="kw">AS</span> total_employees,</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">SUM</span>(<span class="cf">CASE</span> <span class="cf">WHEN</span> gender <span class="op">=</span> <span class="st">'F'</span> <span class="cf">THEN</span> <span class="dv">1</span> <span class="cf">ELSE</span> <span class="dv">0</span> <span class="cf">END</span>) <span class="kw">AS</span> female_employees</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> employees</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> department;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This counts total and female employees per department.</p>
+</section>
+<section id="example-3-case-in-order-by" class="level2">
+<h2 class="anchored" data-anchor-id="example-3-case-in-order-by">✅ Example 3: CASE in ORDER BY</h2>
+<div class="sourceCode" id="cb4"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> name, priority</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> tasks</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> </span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">CASE</span> priority</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>        <span class="cf">WHEN</span> <span class="st">'High'</span> <span class="cf">THEN</span> <span class="dv">1</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">WHEN</span> <span class="st">'Medium'</span> <span class="cf">THEN</span> <span class="dv">2</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">ELSE</span> <span class="dv">3</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">END</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This sorts tasks by custom priority order.</p>
+</section>
+<section id="notes" class="level2">
+<h2 class="anchored" data-anchor-id="notes">🔎 Notes</h2>
+<ul>
+<li>You must include END.</li>
+<li>CASE can be nested.</li>
+<li>There’s also a simple form:</li>
+</ul>
+<div class="sourceCode" id="cb5"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="cf">CASE</span> expression</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">WHEN</span> value1 <span class="cf">THEN</span> result1</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">WHEN</span> value2 <span class="cf">THEN</span> result2</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">ELSE</span> resultN</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="cf">END</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>It compares a single expression against multiple values.</p>
+</section>
+<section id="practice-classify-products-by-price" class="level2">
+<h2 class="anchored" data-anchor-id="practice-classify-products-by-price">🧪 Practice: Classify Products by Price</h2>
+<section id="table-setup" class="level3">
+<h3 class="anchored" data-anchor-id="table-setup">✅ Table Setup</h3>
+<div id="cell-7" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>capture</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>load_ext sql</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>sql sqlite:<span class="op">///</span>dbs<span class="op">/</span>w02<span class="op">/</span>products.db</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>config SqlMagic.style <span class="op">=</span> <span class="st">'_DEPRECATED_DEFAULT'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="reading">
-<p>No readings for Week 4.</p>
+<div id="cell-8" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>sql</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>CREATE TABLE products (</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">id</span> INTEGER PRIMARY KEY,</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    name TEXT,</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    price REAL</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>)<span class="op">;</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>INSERT INTO products (name, price) VALUES</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>(<span class="st">'Pencil'</span>, <span class="fl">0.99</span>),</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>(<span class="st">'Notebook'</span>, <span class="fl">2.49</span>),</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>(<span class="st">'Backpack'</span>, <span class="fl">29.99</span>),</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>(<span class="st">'Laptop'</span>, <span class="fl">999.99</span>),</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>(<span class="st">'Water Bottle'</span>, <span class="fl">12.50</span>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> * sqlite:///dbs/w02/products.db
+Done.
+5 rows affected.</code></pre>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="2">
+<pre><code>[]</code></pre>
 </div>
 </div>
-<!-- ## Homework assignments -->
-<div class="homework">
-<p><strong>Homework 04:</strong></p>
-<div class="instructions">
-<p><a href="./hws/hw04.html">Instructions</a></p>
+<div id="cell-9" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>sql</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>SELECT <span class="op">*</span> FROM products<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> * sqlite:///dbs/w02/products.db
+Done.</code></pre>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="3">
+<table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th">id</th>
+<th data-quarto-table-cell-role="th">name</th>
+<th data-quarto-table-cell-role="th">price</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Pencil</td>
+<td>0.99</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Notebook</td>
+<td>2.49</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>Backpack</td>
+<td>29.99</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>Laptop</td>
+<td>999.99</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>Water Bottle</td>
+<td>12.5</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
-<!-- ## Lab -->
-<div class="lab">
-<p><strong>Project 04:</strong></p>
-<div class="instructions">
-<p><a href="./projects/proj04.html">Instructions</a></p>
+<hr>
+</section>
+<section id="question" class="level3">
+<h3 class="anchored" data-anchor-id="question">❓ Question:</h3>
+<p>Write an SQL query to return the name, price, and a new column called price_category that shows:</p>
+<ul>
+<li>‘Cheap’ if price is less than 5</li>
+<li>‘Moderate’ if price is between 5 and 100</li>
+<li>‘Expensive’ if price is greater than 100</li>
+</ul>
+<div id="cell-11" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>sql</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>SELECT </span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    name,</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    price,</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>    CASE </span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>        WHEN price <span class="op">&lt;</span> <span class="dv">5</span> THEN <span class="st">'Cheap'</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>        WHEN price <span class="op">&lt;=</span> <span class="dv">100</span> THEN <span class="st">'Moderate'</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>        ELSE <span class="st">'Expensive'</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>    END AS price_category</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>FROM products<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> * sqlite:///dbs/w02/products.db
+Done.</code></pre>
 </div>
+<div class="cell-output cell-output-display" data-execution_count="4">
+<table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th">name</th>
+<th data-quarto-table-cell-role="th">price</th>
+<th data-quarto-table-cell-role="th">price_category</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Pencil</td>
+<td>0.99</td>
+<td>Cheap</td>
+</tr>
+<tr class="even">
+<td>Notebook</td>
+<td>2.49</td>
+<td>Cheap</td>
+</tr>
+<tr class="odd">
+<td>Backpack</td>
+<td>29.99</td>
+<td>Moderate</td>
+</tr>
+<tr class="even">
+<td>Laptop</td>
+<td>999.99</td>
+<td>Expensive</td>
+</tr>
+<tr class="odd">
+<td>Water Bottle</td>
+<td>12.5</td>
+<td>Moderate</td>
+</tr>
+</tbody>
+</table>
 </div>
-<div class="exam">
-<p><strong>Exam 1</strong></p>
-<p>Exam on Friday during class. Bring your laptop. Content: Weeks 1 - 3.</p>
 </div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -850,18 +1001,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="./week03.html" class="pagination-link" aria-label="Week 03: SQL – Data Modification &amp; Advanced Queries (under construction)">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Week 03: SQL – Data Modification &amp; Advanced Queries (under construction)</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="./week05.html" class="pagination-link" aria-label="Week 05: Advanced SQL &amp; Integrity Constraints (under construction)">
-        <span class="nav-page-text">Week 05: Advanced SQL &amp; Integrity Constraints (under construction)</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -870,7 +1009,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ericaraujophd/25sp-cs354A/edit/main/week04.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/25sp-cs354A/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.dev/ericaraujophd/25sp-cs354A/blob/main/week02-case.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/25sp-cs354A/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">

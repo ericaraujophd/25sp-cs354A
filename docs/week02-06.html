@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Eric Araujo">
 
-<title>Week 04: Database Design – ER Modeling &amp; Schema Refinement (under construction) – CS 354 – Database Management Systems</title>
+<title>Week 02: SLO 06 – Optimize SQL Queries for Better Performance – CS 354 – Database Management Systems</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -30,8 +65,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./week05.html" rel="next">
-<link href="./week03.html" rel="prev">
 <link href=".//images/data-management.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -74,11 +107,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="https://kit.fontawesome.com/78ddb093ea.js" crossorigin="anonymous"></script>
 
 
-<link rel="stylesheet" href="./styles.css">
-<meta property="og:title" content="Week 04: Database Design – ER Modeling &amp; Schema Refinement (under construction) – CS 354 – Database Management Systems">
+<meta property="og:title" content="Week 02: SLO 06 – Optimize SQL Queries for Better Performance – CS 354 – Database Management Systems">
 <meta property="og:description" content="CS354 provides a hands-on introduction to relational databases, SQL querying, and database design, focusing on real-world applications, optimization, and security.">
 <meta property="og:site_name" content="CS 354 – Database Management Systems">
-<meta name="twitter:title" content="Week 04: Database Design – ER Modeling &amp; Schema Refinement (under construction) – CS 354 – Database Management Systems">
+<meta name="twitter:title" content="Week 02: SLO 06 – Optimize SQL Queries for Better Performance – CS 354 – Database Management Systems">
 <meta name="twitter:description" content="CS354 provides a hands-on introduction to relational databases, SQL querying, and database design, focusing on real-world applications, optimization, and security.">
 <meta name="twitter:image" content="https://ericaraujo.com/25sp-cs354A/images/data-management.png">
 <meta name="twitter:creator" content="@ericfaraujo">
@@ -87,7 +119,7 @@ ul.task-list li input[type="checkbox"] {
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
-<body class="nav-sidebar floating nav-fixed">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -109,7 +141,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Overview</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./content.html" aria-current="page"> 
+    <a class="nav-link" href="./content.html"> 
 <span class="menu-text">Content</span></a>
   </li>  
   <li class="nav-item">
@@ -138,98 +170,54 @@ ul.task-list li input[type="checkbox"] {
 </div>
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./week04.html">Week 04: Database Design – ER Modeling &amp; Schema Refinement (under construction)</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-    </div>
-  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./content.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Course content</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week01.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 01: Introduction to Databases &amp; SQL Basics</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week02.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 02: SQL – Intermediate Concepts</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week03.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 03: SQL – Data Modification &amp; Advanced Queries (under construction)</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week04.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Week 04: Database Design – ER Modeling &amp; Schema Refinement (under construction)</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week05.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 05: Advanced SQL &amp; Integrity Constraints (under construction)</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week06.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 06: Database Management &amp; Optimization (under construction)</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week07.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 07: Final Project and Course Wrap-Up (under construction)</span></a>
-  </div>
-</li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#slos-for-week-04" id="toc-slos-for-week-04" class="nav-link active" data-scroll-target="#slos-for-week-04">SLOs for Week 04</a></li>
-  <li><a href="#slides-videos-and-application-exercises" id="toc-slides-videos-and-application-exercises" class="nav-link" data-scroll-target="#slides-videos-and-application-exercises">Slides, videos, and application exercises</a></li>
+  <li><a href="#why-it-matters" id="toc-why-it-matters" class="nav-link active" data-scroll-target="#why-it-matters">🎯 Why It Matters</a></li>
+  <li><a href="#key-techniques-examples" id="toc-key-techniques-examples" class="nav-link" data-scroll-target="#key-techniques-examples">🔧 Key Techniques &amp; Examples</a>
+  <ul class="collapse">
+  <li><a href="#use-select-only-what-you-need" id="toc-use-select-only-what-you-need" class="nav-link" data-scroll-target="#use-select-only-what-you-need">1. Use SELECT Only What You Need</a></li>
+  <li><a href="#filter-early-with-where" id="toc-filter-early-with-where" class="nav-link" data-scroll-target="#filter-early-with-where">2. Filter Early with WHERE</a></li>
+  <li><a href="#use-indexes-wisely" id="toc-use-indexes-wisely" class="nav-link" data-scroll-target="#use-indexes-wisely">3. Use Indexes Wisely</a></li>
+  <li><a href="#avoid-functions-on-indexed-columns" id="toc-avoid-functions-on-indexed-columns" class="nav-link" data-scroll-target="#avoid-functions-on-indexed-columns">4. Avoid Functions on Indexed Columns</a></li>
+  <li><a href="#use-exists-instead-of-in-for-subqueries" id="toc-use-exists-instead-of-in-for-subqueries" class="nav-link" data-scroll-target="#use-exists-instead-of-in-for-subqueries">5. Use EXISTS Instead of IN for Subqueries</a></li>
+  <li><a href="#use-joins-instead-of-subqueries-when-appropriate" id="toc-use-joins-instead-of-subqueries-when-appropriate" class="nav-link" data-scroll-target="#use-joins-instead-of-subqueries-when-appropriate">6. Use JOINs Instead of Subqueries (when appropriate)</a></li>
+  <li><a href="#limit-result-set-with-limit" id="toc-limit-result-set-with-limit" class="nav-link" data-scroll-target="#limit-result-set-with-limit">7. Limit Result Set with LIMIT</a></li>
+  </ul></li>
+  <li><a href="#sqlite-specific-tips" id="toc-sqlite-specific-tips" class="nav-link" data-scroll-target="#sqlite-specific-tips">🔍 SQLite-Specific Tips</a>
+  <ul class="collapse">
+  <li><a href="#a.-use-analyze-to-collect-statistics-and-help-the-query-planner" id="toc-a.-use-analyze-to-collect-statistics-and-help-the-query-planner" class="nav-link" data-scroll-target="#a.-use-analyze-to-collect-statistics-and-help-the-query-planner">A. Use ANALYZE to collect statistics and help the query planner:</a></li>
+  <li><a href="#b.-use-explain-query-plan-to-understand-what-sqlite-is-doing" id="toc-b.-use-explain-query-plan-to-understand-what-sqlite-is-doing" class="nav-link" data-scroll-target="#b.-use-explain-query-plan-to-understand-what-sqlite-is-doing">B. Use EXPLAIN QUERY PLAN to understand what SQLite is doing:</a></li>
+  </ul></li>
+  <li><a href="#comparisons-to-other-dbmss" id="toc-comparisons-to-other-dbmss" class="nav-link" data-scroll-target="#comparisons-to-other-dbmss">🆚 Comparisons to Other DBMSs</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/ericaraujophd/25sp-cs354A/edit/main/week04.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/25sp-cs354A/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.dev/ericaraujophd/25sp-cs354A/blob/main/week02-06.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/25sp-cs354A/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Week 04: Database Design – ER Modeling &amp; Schema Refinement (under construction)</h1>
+<h1 class="title">Week 02: SLO 06 – Optimize SQL Queries for Better Performance</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Eric Araujo </p>
+          </div>
+  </div>
     
   
     
@@ -240,47 +228,229 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="slos-for-week-04" class="level2">
-<h2 class="anchored" data-anchor-id="slos-for-week-04">SLOs for Week 04</h2>
-<p>Students will be able to…</p>
-<ol type="1">
-<li>Design ER diagrams to model database structures.</li>
-<li>Convert ER models into relational schemas.</li>
-<li>Normalize database schemas using BCNF and 4NF (briefly).</li>
-<li>Identify and resolve redundancy issues in schemas.</li>
-<li>Define and enforce primary and foreign key constraints.</li>
-<li>Create SQL schemas from conceptual designs.</li>
-</ol>
+<section id="why-it-matters" class="level2">
+<h2 class="anchored" data-anchor-id="why-it-matters">🎯 Why It Matters</h2>
+<p>Well-optimized SQL queries:</p>
+<ul>
+<li>Run faster</li>
+<li>Reduce memory and CPU usage</li>
+<li>Improve scalability for large datasets</li>
+</ul>
+<p>Even in SQLite, which is lightweight and file-based, writing efficient queries is essential, especially when working with large tables or complex joins.</p>
 </section>
-<section id="slides-videos-and-application-exercises" class="level2">
-<h2 class="anchored" data-anchor-id="slides-videos-and-application-exercises">Slides, videos, and application exercises</h2>
-<div class="slide-deck">
-<p><strong>Week 04: Slides</strong></p>
-<div class="slides">
-<p><a href="">Slides</a></p>
+<section id="key-techniques-examples" class="level2">
+<h2 class="anchored" data-anchor-id="key-techniques-examples">🔧 Key Techniques &amp; Examples</h2>
+<section id="use-select-only-what-you-need" class="level3">
+<h3 class="anchored" data-anchor-id="use-select-only-what-you-need">1. Use SELECT Only What You Need</h3>
+<p>Avoid <code>SELECT *</code> — only select necessary columns.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">-- Bad</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">FROM</span> orders;</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">-- Good</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> order_id, order_date <span class="kw">FROM</span> orders;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>🔍 In other DBMSs, <code>SELECT *</code> can even prevent index-only scans (e.g., PostgreSQL). In DBMSs like PostgreSQL, an index-only scan is a powerful optimization. It allows the database to read data directly from the index without having to access the full table (also called the heap). This is much faster, especially on large tables.</p>
+<p>But for this to work, two things must be true:</p>
+<ol type="1">
+<li>All the required columns must be in the index</li>
+<li>There must be no need to access the actual table rows</li>
+</ol>
+<p><strong>SQLite</strong> does not support index-only scans in the same way <strong>PostgreSQL</strong> does. So in SQLite, this specific optimization doesn’t apply — but it’s still a good habit to avoid SELECT * for performance and clarity.</p>
+</section>
+<section id="filter-early-with-where" class="level3">
+<h3 class="anchored" data-anchor-id="filter-early-with-where">2. Filter Early with WHERE</h3>
+<p>Apply <code>WHERE</code> clauses to reduce the number of rows processed.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">-- Bad</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> customer_id <span class="kw">FROM</span> orders;</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co">-- Good</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> customer_id <span class="kw">FROM</span> orders <span class="kw">WHERE</span> order_date <span class="op">&gt;</span> <span class="st">'2024-01-01'</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>In <strong>SQLite</strong>, filtering helps avoid unnecessary disk reads since it uses B-Trees for indexes.</p>
+</section>
+<section id="use-indexes-wisely" class="level3">
+<h3 class="anchored" data-anchor-id="use-indexes-wisely">3. Use Indexes Wisely</h3>
+<p>Indexes speed up <code>WHERE</code>, <code>JOIN</code>, and <code>ORDER BY</code>. But avoid over-indexing!</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">-- Create index on order_date for filtering</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">INDEX</span> idx_orders_order_date <span class="kw">ON</span> orders(order_date);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>In PostgreSQL, you can use <code>EXPLAIN</code> to see if indexes are used. In SQLite, use <code>EXPLAIN QUERY PLAN</code>.</p>
+<p>An <strong>index</strong> is like a sorted list that a database uses to quickly find data in a table — similar to an index in a book.</p>
+<p>Instead of scanning every row (called a full table scan), the database looks in the index to jump directly to the relevant rows, which is much faster.</p>
+<p>📌 Key Points about Indexes</p>
+<ul>
+<li>Speeds up WHERE, JOIN, and ORDER BY queries.</li>
+<li>Uses extra disk space.</li>
+<li>Too many indexes = slower inserts/updates (because all indexes need updating).</li>
+<li>Best used on columns frequently used in filtering or joining.</li>
+</ul>
+</section>
+<section id="avoid-functions-on-indexed-columns" class="level3">
+<h3 class="anchored" data-anchor-id="avoid-functions-on-indexed-columns">4. Avoid Functions on Indexed Columns</h3>
+<p>Using functions on columns disables index use.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">-- Bad (no index use)</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">FROM</span> orders <span class="kw">WHERE</span> strftime(<span class="st">'%Y'</span>, order_date) <span class="op">=</span> <span class="st">'2024'</span>;</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co">-- Good</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">FROM</span> orders <span class="kw">WHERE</span> order_date <span class="op">&gt;=</span> <span class="st">'2024-01-01'</span> <span class="kw">AND</span> order_date <span class="op">&lt;</span> <span class="st">'2025-01-01'</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="use-exists-instead-of-in-for-subqueries" class="level3">
+<h3 class="anchored" data-anchor-id="use-exists-instead-of-in-for-subqueries">5. Use EXISTS Instead of IN for Subqueries</h3>
+<div class="sourceCode" id="cb5"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">-- Slower for large subqueries</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> name <span class="kw">FROM</span> customers </span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> customer_id <span class="kw">IN</span> (<span class="kw">SELECT</span> customer_id <span class="kw">FROM</span> orders);</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co">-- Faster with EXISTS</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> name <span class="kw">FROM</span> customers c</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> <span class="kw">EXISTS</span> (</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  <span class="kw">SELECT</span> <span class="dv">1</span> <span class="kw">FROM</span> orders o <span class="kw">WHERE</span> o.customer_id <span class="op">=</span> c.customer_id</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This query retrieves the names of customers who have at least one order.</p>
+<p>In <strong>SQLite</strong>, both are often converted internally, but <code>EXISTS</code> is still preferable with correlated subqueries.</p>
+<p>The subquery</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="dv">1</span> <span class="kw">FROM</span> orders o <span class="kw">WHERE</span> o.customer_id <span class="op">=</span> c.customer_id</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>says: “Is there at least one order where orders.customer_id = this customer’s ID?”. If yes, the customer is included in the result.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-<div class="reading">
-<p>No readings for Week 4.</p>
+<div class="callout-title-container flex-fill">
+Important
 </div>
 </div>
-<!-- ## Homework assignments -->
-<div class="homework">
-<p><strong>Homework 04:</strong></p>
-<div class="instructions">
-<p><a href="./hws/hw04.html">Instructions</a></p>
+<div class="callout-body-container callout-body">
+<p>SELECT 1 just returns a dummy value — it could be <code>SELECT *</code> or <code>SELECT 'x'</code>; it doesn’t matter because EXISTS only cares about the existence of at least one matching row.</p>
 </div>
 </div>
-<!-- ## Lab -->
-<div class="lab">
-<p><strong>Project 04:</strong></p>
-<div class="instructions">
-<p><a href="./projects/proj04.html">Instructions</a></p>
-</div>
-</div>
-<div class="exam">
-<p><strong>Exam 1</strong></p>
-<p>Exam on Friday during class. Bring your laptop. Content: Weeks 1 - 3.</p>
-</div>
+<p>This is often faster than:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> name <span class="kw">FROM</span> customers</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> customer_id <span class="kw">IN</span> (<span class="kw">SELECT</span> customer_id <span class="kw">FROM</span> orders);</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Because <code>EXISTS</code> can stop searching early (as soon as it finds a match), while <code>IN</code> may need to collect all values first, depending on the DBMS.</p>
+</section>
+<section id="use-joins-instead-of-subqueries-when-appropriate" class="level3">
+<h3 class="anchored" data-anchor-id="use-joins-instead-of-subqueries-when-appropriate">6. Use JOINs Instead of Subqueries (when appropriate)</h3>
+<div class="sourceCode" id="cb8"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">-- Subquery</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> name <span class="kw">FROM</span> customers </span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> customer_id <span class="kw">IN</span> (</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="kw">SELECT</span> customer_id <span class="kw">FROM</span> orders <span class="kw">WHERE</span> total <span class="op">&gt;</span> <span class="dv">100</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>);</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="co">-- JOIN (may perform better)</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="kw">DISTINCT</span> c.name </span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> customers c</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">JOIN</span> orders o <span class="kw">ON</span> c.customer_id <span class="op">=</span> o.customer_id</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> o.total <span class="op">&gt;</span> <span class="dv">100</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>In <strong>MySQL</strong> and <strong>PostgreSQL</strong>, query planners can optimize JOINs more effectively.</p>
+</section>
+<section id="limit-result-set-with-limit" class="level3">
+<h3 class="anchored" data-anchor-id="limit-result-set-with-limit">7. Limit Result Set with LIMIT</h3>
+<p>Always add a LIMIT for preview or pagination.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">FROM</span> logs <span class="kw">ORDER</span> <span class="kw">BY</span> created_at <span class="kw">DESC</span> <span class="kw">LIMIT</span> <span class="dv">100</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="sqlite-specific-tips" class="level2">
+<h2 class="anchored" data-anchor-id="sqlite-specific-tips">🔍 SQLite-Specific Tips</h2>
+<section id="a.-use-analyze-to-collect-statistics-and-help-the-query-planner" class="level3">
+<h3 class="anchored" data-anchor-id="a.-use-analyze-to-collect-statistics-and-help-the-query-planner">A. Use ANALYZE to collect statistics and help the query planner:</h3>
+<div class="sourceCode" id="cb10"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">ANALYZE</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><code>ANALYZE</code> is a command that collects statistics about the contents of tables and indexes. These statistics help SQLite’s query planner make better decisions when optimizing queries.</p>
+<p>You can also analyze a specific table or index:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">ANALYZE</span> orders;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>📈 What It Does</p>
+<ul>
+<li>Stores the data distribution and row counts in a system table called sqlite_stat1.</li>
+<li>Helps SQLite decide:
+<ul>
+<li>Which index to use</li>
+<li>Whether to use an index at all</li>
+<li>The best join order</li>
+</ul></li>
+</ul>
+<p>📌 When to Use</p>
+<ul>
+<li>After creating new indexes</li>
+<li>After loading a large amount of data</li>
+<li>After major updates or deletes</li>
+</ul>
+<p>It does not run automatically — you should run it manually when needed.</p>
+</section>
+<section id="b.-use-explain-query-plan-to-understand-what-sqlite-is-doing" class="level3">
+<h3 class="anchored" data-anchor-id="b.-use-explain-query-plan-to-understand-what-sqlite-is-doing">B. Use EXPLAIN QUERY PLAN to understand what SQLite is doing:</h3>
+<div class="sourceCode" id="cb12"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">EXPLAIN</span> <span class="kw">QUERY</span> <span class="kw">PLAN</span> <span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">FROM</span> orders <span class="kw">WHERE</span> order_date <span class="op">&gt;</span> <span class="st">'2024-01-01'</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><code>EXPLAIN</code> is a command that shows how SQLite will <strong>execute a SQL statement</strong>, step by step. It’s used to <strong>understand and debug query performance</strong>.</p>
+<p>🔍 Two Versions</p>
+<section id="explain" class="level4">
+<h4 class="anchored" data-anchor-id="explain">1. EXPLAIN</h4>
+<p>Shows low-level virtual machine instructions (for advanced debugging).</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">EXPLAIN</span> <span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">FROM</span> orders;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>Output: Virtual opcodes (not beginner-friendly)</li>
+<li>Use if you’re deep into SQLite internals</li>
+</ul>
+</section>
+<section id="explain-query-plan" class="level4">
+<h4 class="anchored" data-anchor-id="explain-query-plan">2. EXPLAIN QUERY PLAN</h4>
+<p>The one you’ll use most. It gives a high-level overview of the query plan.</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">EXPLAIN</span> <span class="kw">QUERY</span> <span class="kw">PLAN</span> </span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">FROM</span> orders <span class="kw">WHERE</span> order_date <span class="op">&gt;</span> <span class="st">'2024-01-01'</span>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Tells you:</p>
+<ul>
+<li>Which index (if any) is used</li>
+<li>Whether it does a full table scan</li>
+<li>The join order</li>
+</ul>
+<p>📌 When to Use</p>
+<ul>
+<li>To check if indexes are being used</li>
+<li>To spot slow queries doing full scans</li>
+<li>Before/after ANALYZE to see improvements</li>
+</ul>
+<p><a href="./week02-analyze.html">Here is</a> an example of the output you might see.</p>
+</section>
+</section>
+</section>
+<section id="comparisons-to-other-dbmss" class="level2">
+<h2 class="anchored" data-anchor-id="comparisons-to-other-dbmss">🆚 Comparisons to Other DBMSs</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 21%">
+<col style="width: 24%">
+<col style="width: 27%">
+<col style="width: 27%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Optimization Tip</th>
+<th>SQLite</th>
+<th>PostgreSQL</th>
+<th>MySQL</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Index Support</td>
+<td>B-tree only</td>
+<td>B-tree, GiST, GIN, BRIN</td>
+<td>B-tree, Full-text</td>
+</tr>
+<tr class="even">
+<td>Query Plan Tool</td>
+<td><code>EXPLAIN QUERY PLAN</code></td>
+<td><code>EXPLAIN (ANALYZE, BUFFERS)</code></td>
+<td><code>EXPLAIN</code></td>
+</tr>
+<tr class="odd">
+<td>Parallel Query Support</td>
+<td>❌ No</td>
+<td>✅ Yes</td>
+<td>✅ Limited</td>
+</tr>
+<tr class="even">
+<td>Optimizer Complexity</td>
+<td>Simple</td>
+<td>Advanced (cost-based)</td>
+<td>Moderate</td>
+</tr>
+</tbody>
+</table>
 
 
 </section>
@@ -850,18 +1020,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="./week03.html" class="pagination-link" aria-label="Week 03: SQL – Data Modification &amp; Advanced Queries (under construction)">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Week 03: SQL – Data Modification &amp; Advanced Queries (under construction)</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="./week05.html" class="pagination-link" aria-label="Week 05: Advanced SQL &amp; Integrity Constraints (under construction)">
-        <span class="nav-page-text">Week 05: Advanced SQL &amp; Integrity Constraints (under construction)</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -870,7 +1028,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ericaraujophd/25sp-cs354A/edit/main/week04.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/25sp-cs354A/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.dev/ericaraujophd/25sp-cs354A/blob/main/week02-06.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/25sp-cs354A/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">

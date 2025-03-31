@@ -18,42 +18,40 @@ Students will be able to:
 
 ## Slides, videos, and application exercises
 
-:::::: slide-deck
+::::: slide-deck
 **Week 03: Slides**
 
 ::: slides
 [Slides]()
 :::
 
+```{=html}
 <!-- ::: starter
 [Code](){target="_blank"}
 ::: -->
+```
 
 ::: reading
-Mark Simon. (2023). Getting Started with SQL and Databases : Managing and Manipulating Data with SQL. Apress. 
--   [Chapters 7, 8 and 9](https://calvin.primo.exlibrisgroup.com/permalink/01CALVIN_INST/1p09kqq/cdi_skillsoft_books24x7_bks000165833){target="_blank"}
-
+Mark Simon. (2023). Getting Started with SQL and Databases : Managing and Manipulating Data with SQL. Apress. - [Chapters 7, 8 and 9](https://calvin.primo.exlibrisgroup.com/permalink/01CALVIN_INST/1p09kqq/cdi_skillsoft_books24x7_bks000165833){target="_blank"}
 :::
-::::::
+:::::
 
 <!-- ## Homework assignments -->
 
-:::::: homework
-**Homework 03: **
+:::: homework
+**Homework 03:**
 
 ::: instructions
 [Instructions](/hws/hw03.qmd)
 :::
-::::::
+::::
 
 <!-- ## Lab -->
 
-::::: lab
+:::: lab
 **Project 03: Classes**
 
 ::: instructions
 [Instructions](/projects/proj03.qmd)
 :::
-
-:::::
-
+::::

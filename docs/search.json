@@ -2,34 +2,34 @@
   {
     "objectID": "week02.html",
     "href": "week02.html",
-    "title": "Week 02: SQL – Intermediate Concepts (under construction)",
+    "title": "Week 02: SQL – Intermediate Concepts",
     "section": "",
     "text": "At the end of this unit, students will be able to…\n\nPerform data aggregation using GROUP BY and HAVING.\nWrite and execute INNER, LEFT-OUTER, RIGHT, and FULL JOINs.\nConstruct subqueries for complex queries.\nImplement SQL functions and expressions.\nUse SQL best practices for readable and efficient queries.\nOptimize SQL queries for better performance.",
     "crumbs": [
       "Content",
-      "Week 02: SQL – Intermediate Concepts (under construction)"
+      "Week 02: SQL – Intermediate Concepts"
     ]
   },
   {
     "objectID": "week02.html#slos-for-week-02",
     "href": "week02.html#slos-for-week-02",
-    "title": "Week 02: SQL – Intermediate Concepts (under construction)",
+    "title": "Week 02: SQL – Intermediate Concepts",
     "section": "",
     "text": "At the end of this unit, students will be able to…\n\nPerform data aggregation using GROUP BY and HAVING.\nWrite and execute INNER, LEFT-OUTER, RIGHT, and FULL JOINs.\nConstruct subqueries for complex queries.\nImplement SQL functions and expressions.\nUse SQL best practices for readable and efficient queries.\nOptimize SQL queries for better performance.",
     "crumbs": [
       "Content",
-      "Week 02: SQL – Intermediate Concepts (under construction)"
+      "Week 02: SQL – Intermediate Concepts"
     ]
   },
   {
     "objectID": "week02.html#slides-videos-and-application-exercises",
     "href": "week02.html#slides-videos-and-application-exercises",
-    "title": "Week 02: SQL – Intermediate Concepts (under construction)",
+    "title": "Week 02: SQL – Intermediate Concepts",
     "section": "Slides, videos, and application exercises",
-    "text": "Slides, videos, and application exercises\n\nWeek 02: Slides\n\nSlides\n\n\nSummary of the Week\n\n\nW02C02 Notebook\n\n\nMark Simon. (2023). Getting Started with SQL and Databases : Managing and Manipulating Data with SQL. Apress. - Chapters 4, 5 and 6\n\n\n\n\n\nHomework 02\n\nInstructions\n\n\n\n\n\nProject 02\n\nInstructions",
+    "text": "Slides, videos, and application exercises\n\nWeek 02: Slides\n\n\nSummary of the Week\n\n\nW02C02 Notebook\n\n\nMark Simon. (2023). Getting Started with SQL and Databases : Managing and Manipulating Data with SQL. Apress. - Chapters 4, 5 and 6\n\n\n\n\nHomework 02\n\nInstructions\n\n\n\n\nProject 02\n\nInstructions",
     "crumbs": [
       "Content",
-      "Week 02: SQL – Intermediate Concepts (under construction)"
+      "Week 02: SQL – Intermediate Concepts"
     ]
   },
   {
@@ -73,70 +73,135 @@
     "text": "Links to websites offering SQL training\n\n\n\n\n\n\nImportant\n\n\n\nThese links were last updated on 02/03/2025. Please let me know if you encounter any broken links.\n\n\n\nReal Python SQL\nSQLZoo\nCodeAcademy\nHackerRank\nLeetCode\nW3Schools\nSQLBolt\nMode\nSQLPad\nLearnSQL\nSQLGuroo\nDB Fiddle"
   },
   {
-    "objectID": "week04.html",
-    "href": "week04.html",
-    "title": "Week 04: Database Design – ER Modeling & Schema Refinement (under construction)",
+    "objectID": "week02-summary.html",
+    "href": "week02-summary.html",
+    "title": "Week 02: SQL – Intermediate Concepts Summary",
     "section": "",
-    "text": "Students will be able to…\n\nDesign ER diagrams to model database structures.\nConvert ER models into relational schemas.\nNormalize database schemas using BCNF and 4NF (briefly).\nIdentify and resolve redundancy issues in schemas.\nDefine and enforce primary and foreign key constraints.\nCreate SQL schemas from conceptual designs.",
+    "text": "At the end of this unit, students will be able to…\n\nPerform data aggregation using GROUP BY and HAVING.\nWrite and execute INNER, LEFT-OUTER, RIGHT, and FULL JOINs.\nConstruct subqueries for complex queries.\nImplement SQL functions and expressions.\nUse SQL best practices for readable and efficient queries.\nOptimize SQL queries for better performance."
+  },
+  {
+    "objectID": "week02-summary.html#slos-for-week-02",
+    "href": "week02-summary.html#slos-for-week-02",
+    "title": "Week 02: SQL – Intermediate Concepts Summary",
+    "section": "",
+    "text": "At the end of this unit, students will be able to…\n\nPerform data aggregation using GROUP BY and HAVING.\nWrite and execute INNER, LEFT-OUTER, RIGHT, and FULL JOINs.\nConstruct subqueries for complex queries.\nImplement SQL functions and expressions.\nUse SQL best practices for readable and efficient queries.\nOptimize SQL queries for better performance."
+  },
+  {
+    "objectID": "week02-summary.html#aggregation-grouping",
+    "href": "week02-summary.html#aggregation-grouping",
+    "title": "Week 02: SQL – Intermediate Concepts Summary",
+    "section": "📏 1. Aggregation & Grouping",
+    "text": "📏 1. Aggregation & Grouping\n\nCOUNT(), SUM(), AVG(), MIN(), MAX() – summarize column values\nGROUP BY – group rows by one or more columns\nHAVING – filter grouped results\n\nSELECT department, AVG(gpa)\nFROM students\nGROUP BY department\nHAVING AVG(gpa) &gt; 3.5;"
+  },
+  {
+    "objectID": "week02-summary.html#sql-joins",
+    "href": "week02-summary.html#sql-joins",
+    "title": "Week 02: SQL – Intermediate Concepts Summary",
+    "section": "🔗 2. SQL Joins",
+    "text": "🔗 2. SQL Joins\n\nINNER JOIN – only matching rows from both tables\nLEFT OUTER JOIN – all from left table + matching right\nRIGHT OUTER JOIN – all from right table + matching left\nFULL OUTER JOIN – all rows from both tables (if supported)\n\nSELECT s.name, c.name\nFROM students s\nLEFT JOIN enrollments e ON s.id = e.student_id\nLEFT JOIN courses c ON e.course_id = c.id;"
+  },
+  {
+    "objectID": "week02-summary.html#subqueries",
+    "href": "week02-summary.html#subqueries",
+    "title": "Week 02: SQL – Intermediate Concepts Summary",
+    "section": "🔍 3. Subqueries",
+    "text": "🔍 3. Subqueries\n\nUse queries inside other queries\nUse with IN, EXISTS, =, &lt;, etc.\n\nSELECT * FROM students\nWHERE id IN (SELECT student_id FROM enrollments);\n\nCorrelated Subqueries: Reference outer query\nNon-Correlated Subqueries: Can run independently"
+  },
+  {
+    "objectID": "week02-summary.html#sql-functions-expressions",
+    "href": "week02-summary.html#sql-functions-expressions",
+    "title": "Week 02: SQL – Intermediate Concepts Summary",
+    "section": "🧲 4. SQL Functions & Expressions",
+    "text": "🧲 4. SQL Functions & Expressions\n\nMath: ROUND(gpa, 2), ABS(), CEIL(), FLOOR()\nString: UPPER(), LOWER(), LENGTH(), SUBSTR()\nDate (SQLite): DATE(), STRFTIME('%Y', birthdate)\n\nSELECT UPPER(first_name) || ' ' || UPPER(last_name) FROM students;"
+  },
+  {
+    "objectID": "week02-summary.html#sql-best-practices",
+    "href": "week02-summary.html#sql-best-practices",
+    "title": "Week 02: SQL – Intermediate Concepts Summary",
+    "section": "🪜 5. SQL Best Practices",
+    "text": "🪜 5. SQL Best Practices\n\nUse clear formatting and indentation\nAvoid SELECT * – specify needed columns\nUse aliases (AS) to clarify column and table names\n\nSELECT s.first_name AS student, c.name AS course\nFROM students s JOIN enrollments e ON s.id = e.student_id;"
+  },
+  {
+    "objectID": "week02-summary.html#query-optimization-basics",
+    "href": "week02-summary.html#query-optimization-basics",
+    "title": "Week 02: SQL – Intermediate Concepts Summary",
+    "section": "⚡ 6. Query Optimization Basics",
+    "text": "⚡ 6. Query Optimization Basics\n\nIndexes speed up filtering and joining\nFilter early with WHERE\nAvoid nested subqueries unless needed\nUse EXPLAIN (in supported engines) to analyze performance\n\nEXPLAIN SELECT * FROM students WHERE gpa &gt; 3.5;"
+  },
+  {
+    "objectID": "week02-summary.html#pro-tip-practice-readability-matter",
+    "href": "week02-summary.html#pro-tip-practice-readability-matter",
+    "title": "Week 02: SQL – Intermediate Concepts Summary",
+    "section": "✅ Pro Tip: Practice & Readability Matter!",
+    "text": "✅ Pro Tip: Practice & Readability Matter!\nGood SQL is not just correct—it’s efficient, maintainable, and easy to understand."
+  },
+  {
+    "objectID": "week05.html",
+    "href": "week05.html",
+    "title": "Week 05: Advanced SQL & Integrity Constraints (under construction)",
+    "section": "",
+    "text": "By the end of this unit, students will be able to…\n\nImplement integrity constraints (PRIMARY KEY, FOREIGN KEY, CHECK).\nWrite and execute triggers for database automation.\nOptimize SQL queries for improved performance.\nDemonstrate SQL injection and discuss prevention strategies.\nAssign user roles and permissions for database security.\nDebug and troubleshoot complex SQL queries.",
     "crumbs": [
       "Content",
-      "Week 04: Database Design – ER Modeling & Schema Refinement (under construction)"
+      "Week 05: Advanced SQL & Integrity Constraints (under construction)"
     ]
   },
   {
-    "objectID": "week04.html#slos-for-week-04",
-    "href": "week04.html#slos-for-week-04",
-    "title": "Week 04: Database Design – ER Modeling & Schema Refinement (under construction)",
+    "objectID": "week05.html#slos-for-week-05",
+    "href": "week05.html#slos-for-week-05",
+    "title": "Week 05: Advanced SQL & Integrity Constraints (under construction)",
     "section": "",
-    "text": "Students will be able to…\n\nDesign ER diagrams to model database structures.\nConvert ER models into relational schemas.\nNormalize database schemas using BCNF and 4NF (briefly).\nIdentify and resolve redundancy issues in schemas.\nDefine and enforce primary and foreign key constraints.\nCreate SQL schemas from conceptual designs.",
+    "text": "By the end of this unit, students will be able to…\n\nImplement integrity constraints (PRIMARY KEY, FOREIGN KEY, CHECK).\nWrite and execute triggers for database automation.\nOptimize SQL queries for improved performance.\nDemonstrate SQL injection and discuss prevention strategies.\nAssign user roles and permissions for database security.\nDebug and troubleshoot complex SQL queries.",
     "crumbs": [
       "Content",
-      "Week 04: Database Design – ER Modeling & Schema Refinement (under construction)"
+      "Week 05: Advanced SQL & Integrity Constraints (under construction)"
     ]
   },
   {
-    "objectID": "week04.html#slides-videos-and-application-exercises",
-    "href": "week04.html#slides-videos-and-application-exercises",
-    "title": "Week 04: Database Design – ER Modeling & Schema Refinement (under construction)",
+    "objectID": "week05.html#slides-videos-and-application-exercises",
+    "href": "week05.html#slides-videos-and-application-exercises",
+    "title": "Week 05: Advanced SQL & Integrity Constraints (under construction)",
     "section": "Slides, videos, and application exercises",
-    "text": "Slides, videos, and application exercises\n\nWeek 04: Slides\n\nSlides\n\n\nNo readings for Week 4.\n\n\n\n\nHomework 04:\n\nInstructions\n\n\n\n\nProject 04:\n\nInstructions\n\n\n\nExam 1\nExam on Friday during class. Bring your laptop. Content: Weeks 1 - 3.",
+    "text": "Slides, videos, and application exercises\n\nWeek 05: Slides\n\nSlides\n\n\nNo readings for Week 05.\n\n\n\n\nHomework 05: No homework for Week 05\n\n\n\nProject 05: No Project for Week 05",
     "crumbs": [
       "Content",
-      "Week 04: Database Design – ER Modeling & Schema Refinement (under construction)"
+      "Week 05: Advanced SQL & Integrity Constraints (under construction)"
     ]
   },
   {
-    "objectID": "week07.html",
-    "href": "week07.html",
-    "title": "Week 07: Final Project and Course Wrap-Up (under construction)",
+    "objectID": "week02-time.html",
+    "href": "week02-time.html",
+    "title": "Week 02: SQL – Dates and Times",
     "section": "",
-    "text": "By the end of this unit, students will be able to…\n\nDesign and implement a database system from scratch.\nWrite SQL queries to solve real-world data retrieval problems.\nPresent a comprehensive database solution addressing a given scenario.\nCompare different database designs and justify choices.\nDemonstrate proficiency in SQL and database management concepts.\nReflect on the course content and their learning experience.",
-    "crumbs": [
-      "Content",
-      "Week 07: Final Project and Course Wrap-Up (under construction)"
-    ]
+    "text": "In SQLite, date and time operations are handled using a set of built-in functions that work with text values in ISO-8601 format: ‘YYYY-MM-DD HH:MM:SS’. These functions can parse, manipulate, and format date/time values.\nHere’s a breakdown of how date and time functions and operators work in SQLite:"
   },
   {
-    "objectID": "week07.html#slos-for-week-07",
-    "href": "week07.html#slos-for-week-07",
-    "title": "Week 07: Final Project and Course Wrap-Up (under construction)",
-    "section": "",
-    "text": "By the end of this unit, students will be able to…\n\nDesign and implement a database system from scratch.\nWrite SQL queries to solve real-world data retrieval problems.\nPresent a comprehensive database solution addressing a given scenario.\nCompare different database designs and justify choices.\nDemonstrate proficiency in SQL and database management concepts.\nReflect on the course content and their learning experience.",
-    "crumbs": [
-      "Content",
-      "Week 07: Final Project and Course Wrap-Up (under construction)"
-    ]
+    "objectID": "week02-time.html#common-date-time-functions",
+    "href": "week02-time.html#common-date-time-functions",
+    "title": "Week 02: SQL – Dates and Times",
+    "section": "🕒 Common Date & Time Functions",
+    "text": "🕒 Common Date & Time Functions\n\n1. DATE(timestring, modifier1, modifier2, …)\nReturns the date (no time part).\nSELECT DATE('now'); -- Current date (UTC)\nSELECT DATE('now', 'localtime'); -- Current date (local time)\nSELECT DATE('2025-03-30', '+1 day'); -- Adds 1 day\nSELECT DATE('2025-03-30', '-1 month'); -- Subtracts 1 month\n\n\n2. TIME(timestring, modifier1, modifier2, …)\nReturns the time (no date part).\nSELECT TIME('now'); -- Current time (UTC)\nSELECT TIME('now', 'localtime'); -- Current time (local)\n\n\n3. DATETIME(timestring, modifier1, modifier2, …)\nReturns both date and time.\nSELECT DATETIME('now'); -- Current date and time (UTC)\nSELECT DATETIME('now', '+1 hour'); -- Adds one hour\n\n\n4. JULIANDAY(timestring, modifier1, …)\nReturns the Julian day number, which is a floating point value representing days since noon in Greenwich on November 24, 4714 B.C.\nSELECT JULIANDAY('2025-03-30');\n\n\n5. STRFTIME(format, timestring, modifier1, …)\nReturns a formatted string using format codes.\nSELECT STRFTIME('%Y-%m-%d', 'now'); -- \"2025-03-30\"\nSELECT STRFTIME('%H:%M:%S', 'now'); -- Time part\nSELECT STRFTIME('%Y', 'now');       -- Year only\n🧩 Common format codes:\n\n%Y = year (e.g. 2025)\n%m = month (01–12)\n%d = day (01–31)\n%H = hour (00–23)\n%M = minute (00–59)\n%S = seconds (00–59)\n\n\n\n🛠️ Useful Modifiers\nYou can use one or more modifiers to shift the date/time:\n\n\n\nModifier\nEffect\n\n\n\n\n'localtime'\nConverts to local time\n\n\n'utc'\nConverts to UTC\n\n\n'+NNN days'\nAdds NNN days\n\n\n'-NNN months'\nSubtracts NNN months\n\n\n'start of month'\nSets date to the 1st of the month\n\n\n'weekday N'\nMoves to next weekday (0=Sun…6=Sat)\n\n\n'start of year'\nSets date to January 1st\n\n\n\nSELECT DATE('now', 'start of month', '+1 month', '-1 day');\n-- Last day of current month"
   },
   {
-    "objectID": "week07.html#slides-videos-and-application-exercises",
-    "href": "week07.html#slides-videos-and-application-exercises",
-    "title": "Week 07: Final Project and Course Wrap-Up (under construction)",
-    "section": "Slides, videos, and application exercises",
-    "text": "Slides, videos, and application exercises\n\nWeek 07: Slides\n\nSlides\n\n\nNo readings for Week 07.\n\n\n\n\nHomework 7:\n\nInstructions\n\n\n\n\nProject 07: Final Project\n\nInstructions",
-    "crumbs": [
-      "Content",
-      "Week 07: Final Project and Course Wrap-Up (under construction)"
-    ]
+    "objectID": "week02-time.html#examples",
+    "href": "week02-time.html#examples",
+    "title": "Week 02: SQL – Dates and Times",
+    "section": "🔍 Examples",
+    "text": "🔍 Examples\n-- Age from birthday\nSELECT (JULIANDAY('now') - JULIANDAY('1990-05-15')) / 365 AS age;\n\n-- Timestamp 7 days from now\nSELECT DATETIME('now', '+7 days');\n\n-- Current time, formatted\nSELECT STRFTIME('%d-%m-%Y %H:%M', 'now', 'localtime');"
+  },
+  {
+    "objectID": "week02-time.html#tip-datetime-values-in-sqlite-are-stored-as-text",
+    "href": "week02-time.html#tip-datetime-values-in-sqlite-are-stored-as-text",
+    "title": "Week 02: SQL – Dates and Times",
+    "section": "🔗 Tip: Date/time values in SQLite are stored as TEXT",
+    "text": "🔗 Tip: Date/time values in SQLite are stored as TEXT\nSQLite doesn’t have a dedicated DATE or TIME type. Store your datetime values as ISO strings (YYYY-MM-DD HH:MM:SS) for full compatibility with these functions."
+  },
+  {
+    "objectID": "week02-time.html#example-database-appointments",
+    "href": "week02-time.html#example-database-appointments",
+    "title": "Week 02: SQL – Dates and Times",
+    "section": "📦 Example Database: appointments",
+    "text": "📦 Example Database: appointments\n🧱 Table: appointments\n\n%%capture\n%load_ext sql\n%sql sqlite:///dbs/w02/appointments.db\n%config SqlMagic.style = '_DEPRECATED_DEFAULT'\n\n\n%%sql\n\nDROP TABLE IF EXISTS appointments;\n\nCREATE TABLE appointments (\n    id INTEGER PRIMARY KEY,\n    title TEXT NOT NULL,\n    client_name TEXT NOT NULL,\n    scheduled_at TEXT NOT NULL  -- Stored in 'YYYY-MM-DD HH:MM:SS' format\n);\n\n-- Sample data\nINSERT INTO appointments (title, client_name, scheduled_at) VALUES\n('Consultation', 'Alice', '2025-03-30 10:00:00'),\n('Follow-up', 'Bob', '2025-03-31 14:30:00'),\n('Strategy Meeting', 'Charlie', '2025-04-01 09:00:00'),\n('Project Review', 'Diana', '2025-04-01 16:45:00'),\n('Feedback Session', 'Eve', '2025-04-02 11:15:00');\n\n * sqlite:///dbs/w02/appointments.db\nDone.\nDone.\n5 rows affected.\n\n\n[]\n\n\n\n🧪 Example Queries Using Date/Time Functions\n\n✅ 1. Get all appointments today (UTC)\n\n%%sql\nSELECT * \nFROM appointments \nWHERE DATE(scheduled_at) = DATE('now');\n\n * sqlite:///dbs/w02/appointments.db\nDone.\n\n\n\n\n\nid\ntitle\nclient_name\nscheduled_at\n\n\n\n\n2\nFollow-up\nBob\n2025-03-31 14:30:00\n\n\n\n\n\n\n✅ 2. Get all appointments in the next 3 days\n\n%%sql\nSELECT * \nFROM appointments \nWHERE DATE(scheduled_at) BETWEEN DATE('now') AND DATE('now', '+3 days');\n\n * sqlite:///dbs/w02/appointments.db\nDone.\n\n\n\n\n\nid\ntitle\nclient_name\nscheduled_at\n\n\n\n\n2\nFollow-up\nBob\n2025-03-31 14:30:00\n\n\n3\nStrategy Meeting\nCharlie\n2025-04-01 09:00:00\n\n\n4\nProject Review\nDiana\n2025-04-01 16:45:00\n\n\n5\nFeedback Session\nEve\n2025-04-02 11:15:00\n\n\n\n\n\n\n✅ 3. Show appointments with day of the week\n\n%%sql\nSELECT \n    id,\n    title,\n    client_name,\n    scheduled_at,\n    STRFTIME('%w', scheduled_at) AS weekday_num,\n    CASE STRFTIME('%w', scheduled_at)\n        WHEN '0' THEN 'Sunday'\n        WHEN '1' THEN 'Monday'\n        WHEN '2' THEN 'Tuesday'\n        WHEN '3' THEN 'Wednesday'\n        WHEN '4' THEN 'Thursday'\n        WHEN '5' THEN 'Friday'\n        WHEN '6' THEN 'Saturday'\n    END AS weekday\nFROM appointments;\n\n * sqlite:///dbs/w02/appointments.db\nDone.\n\n\n\n\n\nid\ntitle\nclient_name\nscheduled_at\nweekday_num\nweekday\n\n\n\n\n1\nConsultation\nAlice\n2025-03-30 10:00:00\n0\nSunday\n\n\n2\nFollow-up\nBob\n2025-03-31 14:30:00\n1\nMonday\n\n\n3\nStrategy Meeting\nCharlie\n2025-04-01 09:00:00\n2\nTuesday\n\n\n4\nProject Review\nDiana\n2025-04-01 16:45:00\n2\nTuesday\n\n\n5\nFeedback Session\nEve\n2025-04-02 11:15:00\n3\nWednesday\n\n\n\n\n\n\n✅ 4. Count how many appointments per day\n\n%%sql\nSELECT \n    DATE(scheduled_at) AS date,\n    COUNT(*) AS total_appointments\nFROM appointments\nGROUP BY DATE(scheduled_at);\n\n * sqlite:///dbs/w02/appointments.db\nDone.\n\n\n\n\n\ndate\ntotal_appointments\n\n\n\n\n2025-03-30\n1\n\n\n2025-03-31\n1\n\n\n2025-04-01\n2\n\n\n2025-04-02\n1\n\n\n\n\n\n\n✅ 5. Check if any appointment is scheduled on a weekend\n\n%%sql\nSELECT *\nFROM appointments\nWHERE STRFTIME('%w', scheduled_at) IN ('0', '6');  -- Sunday or Saturday\n\n * sqlite:///dbs/w02/appointments.db\nDone.\n\n\n\n\n\nid\ntitle\nclient_name\nscheduled_at\n\n\n\n\n1\nConsultation\nAlice\n2025-03-30 10:00:00\n\n\n\n\n\n\n✅ 6. Show how many hours until each appointment (from now)\n\n%%sql\nSELECT \n    id,\n    title,\n    scheduled_at,\n    ROUND((JULIANDAY(scheduled_at) - JULIANDAY('now')) * 24, 2) AS hours_until\nFROM appointments;\n\n * sqlite:///dbs/w02/appointments.db\nDone.\n\n\n\n\n\nid\ntitle\nscheduled_at\nhours_until\n\n\n\n\n1\nConsultation\n2025-03-30 10:00:00\n-14.31\n\n\n2\nFollow-up\n2025-03-31 14:30:00\n14.19\n\n\n3\nStrategy Meeting\n2025-04-01 09:00:00\n32.69\n\n\n4\nProject Review\n2025-04-01 16:45:00\n40.44\n\n\n5\nFeedback Session\n2025-04-02 11:15:00\n58.94\n\n\n\n\n\n\n\n🌍 Example: Show today’s local appointments\n\n%%sql\nSELECT *\nFROM appointments\nWHERE DATE(scheduled_at) = DATE('now', 'localtime');\n\n * sqlite:///dbs/w02/appointments.db\nDone.\n\n\n\n\n\nid\ntitle\nclient_name\nscheduled_at\n\n\n\n\n1\nConsultation\nAlice\n2025-03-30 10:00:00\n\n\n\n\n\n\nExplanation:\n\nDATE(‘now’, ‘localtime’) gets today’s date in the local time zone.\nThis query filters all appointments scheduled for today (local time)."
   },
   {
     "objectID": "week01-summary.html",
@@ -384,113 +449,88 @@
     "text": "Statement of Diversity and Inclusion\nInside and outside of the classroom, I work to treat every person with equal respect, regardless of racial identity, gender identity, physicality, brain chemistry, nationality, political leanings, and religious background. Whoever you are, you are fearfully and wonderfully made. God delights in diversity and I do, too. We humans need diverse viewpoints because every viewpoint, on its own, has blind spots. That has been proven to be true in technology-related fields, where under-represented minorities are significantly under-represented in the working world. When companies work hard to rectify this, they find their products and services improve. We have found this to be true in Computer Science classrooms as well.\n\n\n\n\n\n\nIMPORTANT!\n\n\n\nIf you or someone else in this class is hurt by something I say or do in class, I would like to know about it so that we can work toward a remedy. This has happened in the past in my classroom – usually when I’m trying to be “cool” or be funny. If this happens this semester, please know that it was unintentional. Because this kind of feedback can be uncomfortable for all involved, I’ll take it however it comes: in public or in private, on the spot or days later, directly from you or indirectly through another student, another professor, or through my department chair Keith VanderLinden (kvlinden@calvin.edu)."
   },
   {
-    "objectID": "projects/proj03.html#submission",
-    "href": "projects/proj03.html#submission",
-    "title": "Project 03: soon…",
-    "section": "Submission",
-    "text": "Submission\n\nGrading Rubric\nThis project is worth xx pts:"
+    "objectID": "week02-analyze.html",
+    "href": "week02-analyze.html",
+    "title": "Week 02: SQL – ANALYZE",
+    "section": "",
+    "text": "%%capture\n%load_ext sql\n%sql sqlite:///dbs/w02/analyze-example.db\n%config SqlMagic.style = '_DEPRECATED_DEFAULT'"
   },
   {
-    "objectID": "projects/proj99-final.html#grading-rubric",
-    "href": "projects/proj99-final.html#grading-rubric",
-    "title": "Final Project: Soon…",
+    "objectID": "week02-analyze.html#create-a-table-and-insert-data",
+    "href": "week02-analyze.html#create-a-table-and-insert-data",
+    "title": "Week 02: SQL – ANALYZE",
+    "section": "1. Create a Table and Insert Data",
+    "text": "1. Create a Table and Insert Data\n\n%%sql\n\nDROP TABLE IF EXISTS orders;\n\nCREATE TABLE orders (\n  order_id INTEGER PRIMARY KEY,\n  customer_id INTEGER,\n  order_date TEXT,\n  total REAL\n);\n\n-- Insert 10,000 rows\nWITH RECURSIVE cnt(x) AS (\n  SELECT 1\n  UNION ALL\n  SELECT x + 1 FROM cnt WHERE x &lt; 10000\n)\nINSERT INTO orders (customer_id, order_date, total)\nSELECT \n  ABS(RANDOM() % 100), \n  date('2024-01-01', '+' || (RANDOM() % 365) || ' days'), \n  ROUND(RANDOM() % 500, 2)\nFROM cnt;\n\n * sqlite:///dbs/w02/analyze-example.db\nDone.\nDone.\nDone.\n\n\n[]\n\n\nThis generates 10,000 synthetic rows with:\n\ncustomer_id between 0 and 99\norder_date in the year 2024\ntotal up to 500"
+  },
+  {
+    "objectID": "week02-analyze.html#create-an-index",
+    "href": "week02-analyze.html#create-an-index",
+    "title": "Week 02: SQL – ANALYZE",
+    "section": "2. Create an Index",
+    "text": "2. Create an Index\n\n%%sql\nCREATE INDEX idx_orders_order_date ON orders(order_date);\n\n * sqlite:///dbs/w02/analyze-example.db\nDone.\n\n\n[]"
+  },
+  {
+    "objectID": "week02-analyze.html#run-a-query-and-check-the-plan",
+    "href": "week02-analyze.html#run-a-query-and-check-the-plan",
+    "title": "Week 02: SQL – ANALYZE",
+    "section": "3. Run a Query and Check the Plan",
+    "text": "3. Run a Query and Check the Plan\n\n%%sql\nEXPLAIN QUERY PLAN\nSELECT * FROM orders WHERE order_date &gt; '2024-06-01';\n\n * sqlite:///dbs/w02/analyze-example.db\nDone.\n\n\n\n\n\nid\nparent\nnotused\ndetail\n\n\n\n\n3\n0\n205\nSEARCH orders USING INDEX idx_orders_order_date (order_date&gt;?)\n\n\n\n\n\nBefore ANALYZE, SQLite might not use the index if it doesn’t know how selective order_date is.\nIn our case, the query is optimized and using the index. Let’s see what the output means.\n\n\n\n\n\n\n\nPart\nMeaning\n\n\n\n\nSEARCH orders\nSQLite is accessing the orders table using a search operation.\n\n\nUSING INDEX idx_orders_order_date\nIt is using the idx_orders_order_date index to speed up the lookup.\n\n\n(order_date&gt;?)\nThe filter condition is order_date &gt; ? (where ? is the input value).\n\n\n\nThis shows that SQLite (1) is not scanning the full table and (2) is using the index you created to efficiently jump to rows matching the condition.\nHad the query said something like:\nSCAN TABLE orders\n…that would mean a full table scan — which is slower, especially on large datasets."
+  },
+  {
+    "objectID": "week02-analyze.html#run-analyze",
+    "href": "week02-analyze.html#run-analyze",
+    "title": "Week 02: SQL – ANALYZE",
+    "section": "4. Run ANALYZE",
+    "text": "4. Run ANALYZE\nThis updates the sqlite_stat1 table with stats about the distribution of values in the table/indexes.\n\n%%sql\nANALYZE;\n\n * sqlite:///dbs/w02/analyze-example.db\nDone.\n\n\n[]\n\n\n\n## 5. Run the Same Query Again\n\n\n%%sql\nEXPLAIN QUERY PLAN\nSELECT * FROM orders WHERE order_date &gt; '2024-06-01';\n\n * sqlite:///dbs/w02/analyze-example.db\nDone.\n\n\n\n\n\nid\nparent\nnotused\ndetail\n\n\n\n\n3\n0\n141\nSEARCH orders USING INDEX idx_orders_order_date (order_date&gt;?)\n\n\n\n\n\nAfter ANALYZE, you’ll likely see that the index is now being used, especially if the planner sees it as more efficient."
+  },
+  {
+    "objectID": "projects/proj02.html",
+    "href": "projects/proj02.html",
+    "title": "Project 02: Student Performance & Enrollment Analysis (Using DBeaver)",
+    "section": "",
+    "text": "This project gives students practical experience using aggregate functions, joins, subqueries, SQL expressions, and query optimization in a multi-table database built with SQLite3 and DBeaver.\nStudents will analyze student records, enrollment patterns, and course performance using intermediate SQL features covered in Week 2."
+  },
+  {
+    "objectID": "projects/proj02.html#objective",
+    "href": "projects/proj02.html#objective",
+    "title": "Project 02: Student Performance & Enrollment Analysis (Using DBeaver)",
+    "section": "",
+    "text": "This project gives students practical experience using aggregate functions, joins, subqueries, SQL expressions, and query optimization in a multi-table database built with SQLite3 and DBeaver.\nStudents will analyze student records, enrollment patterns, and course performance using intermediate SQL features covered in Week 2."
+  },
+  {
+    "objectID": "projects/proj02.html#learning-outcomes",
+    "href": "projects/proj02.html#learning-outcomes",
+    "title": "Project 02: Student Performance & Enrollment Analysis (Using DBeaver)",
+    "section": "🧠 Learning Outcomes",
+    "text": "🧠 Learning Outcomes\nBy completing this project, students will: * Gain confidence using JOINs, GROUP BY, and subqueries * Apply functions and expressions in real-world data * Think critically about query design and efficiency * Practice building clean, well-structured SQL statements in DBeaver"
+  },
+  {
+    "objectID": "projects/proj02.html#step-1-creating-the-database",
+    "href": "projects/proj02.html#step-1-creating-the-database",
+    "title": "Project 02: Student Performance & Enrollment Analysis (Using DBeaver)",
+    "section": "Step 1: Creating the Database",
+    "text": "Step 1: Creating the Database\n\n🗂️ Database Schema\nCreate a new database named university.db with the following tables:\nCREATE TABLE students (\n    student_id INTEGER PRIMARY KEY,\n    first_name TEXT NOT NULL,\n    last_name TEXT NOT NULL,\n    major TEXT,\n    gpa REAL\n);\n\nCREATE TABLE courses (\n    course_id INTEGER PRIMARY KEY,\n    course_name TEXT NOT NULL,\n    department TEXT NOT NULL,\n    credits INTEGER\n);\n\nCREATE TABLE enrollments (\n    enrollment_id INTEGER PRIMARY KEY,\n    student_id INTEGER,\n    course_id INTEGER,\n    grade TEXT,\n    FOREIGN KEY (student_id) REFERENCES students(student_id),\n    FOREIGN KEY (course_id) REFERENCES courses(course_id)\n);\n\n\n📥 Sample Data (Insert Statements)\nProvide the following sample data for testing queries:\n-- Students\nINSERT INTO students (first_name, last_name, major, gpa) VALUES\n('Alice', 'Johnson', 'Computer Science', 3.8),\n('Bob', 'Smith', 'Business', 3.1),\n('Charlie', 'Davis', 'Data Science', 3.5),\n('Diana', 'Lee', 'Computer Science', 2.9),\n('Ethan', 'Brown', 'Data Science', 3.7);\n\n-- Courses\nINSERT INTO courses (course_name, department, credits) VALUES\n('Database Management', 'Computer Science', 3),\n('Marketing 101', 'Business', 2),\n('Machine Learning', 'Data Science', 4),\n('Algorithms', 'Computer Science', 3);\n\n-- Enrollments\nINSERT INTO enrollments (student_id, course_id, grade) VALUES\n(1, 1, 'A'),\n(1, 4, 'B'),\n(2, 2, 'B'),\n(3, 1, 'A'),\n(3, 3, 'A'),\n(4, 1, 'C'),\n(4, 4, 'B'),\n(5, 3, 'A');\n\n\n\n\n\n\nYou can also download the sql file containing the setup of the database and open it in your DBeaver.\n\n\n\n🧰 Quick Setup Instructions for DBeaver\n\nInstall DBeaver (Community Edition) if not already installed.\nLaunch DBeaver and go to File → DBeaver → New Database Connection.\nSelect SQLite as the database type.\nClick Next, then Create a new database file, and name it university.db.\nAfter connection, right-click on the database and choose SQL Editor → New SQL Script to run the setup and queries.\n\n⏳ Load the SQL Script\n\nRight-click the new university.db connection in the Database Navigator pane.\nSelect SQL Editor → New SQL Script.\nIn the new script tab that appears, click File → Open File.\nSelect the provided file: 📄 week2_project_setup.sql\nMake sure the Active Datasource (on the top of the window) is connected to the database created."
+  },
+  {
+    "objectID": "projects/proj02.html#step-3-student-tasks",
+    "href": "projects/proj02.html#step-3-student-tasks",
+    "title": "Project 02: Student Performance & Enrollment Analysis (Using DBeaver)",
+    "section": "Step 3: Student Tasks",
+    "text": "Step 3: Student Tasks\nYou must write SQL queries to answer the following questions:\n🔹 Aggregation & Grouping\n\nFind the average GPA per major.\nCount the number of students enrolled in each course.\nList courses where the number of students enrolled is at least 2.\nFind the average number of credits students are enrolled in (per student).\n\n🔹 Joins\n\nShow each student’s first and last name along with the names of the courses they are enrolled in.\nList all students and the courses they are NOT enrolled in (use LEFT JOIN and NULL filtering).\nShow courses that have not been taken by any students (use LEFT JOIN or NOT IN).\n\n🔹 Subqueries\n\nFind the names of students who have received an ‘A’ in any course (use IN or EXISTS).\nList students whose GPA is higher than the average GPA of all students.\nRetrieve courses that have more students than the average number of enrollments per course.\n\n🔹 Functions & Expressions\n\nDisplay students’ names in uppercase.\nShow the length of each course name using a string function.\nCalculate and display a weighted GPA score based on credits * GPA for each student (hint: use a JOIN and a mathematical expression).\n\n🔹 Query Optimization (Conceptual)\n\nConceptual question about Joins."
+  },
+  {
+    "objectID": "projects/proj02.html#submit",
+    "href": "projects/proj02.html#submit",
+    "title": "Project 02: Student Performance & Enrollment Analysis (Using DBeaver)",
+    "section": "Submit",
+    "text": "Submit\nYou will submit your queries on Moodle."
+  },
+  {
+    "objectID": "projects/proj02.html#grading-rubric",
+    "href": "projects/proj02.html#grading-rubric",
+    "title": "Project 02: Student Performance & Enrollment Analysis (Using DBeaver)",
     "section": "Grading Rubric",
-    "text": "Grading Rubric\nTotal: XX pts"
-  },
-  {
-    "objectID": "projects/proj04.html#grading-rubric",
-    "href": "projects/proj04.html#grading-rubric",
-    "title": "Project 04: Soon…",
-    "section": "Grading Rubric",
-    "text": "Grading Rubric"
-  },
-  {
-    "objectID": "content.html",
-    "href": "content.html",
-    "title": "Course content",
-    "section": "",
-    "text": "CS 354 – Database Management Systems – is organized by week, with each week structured as follows:\n\nClassroom sessions are Monday-Wednesday-Friday 2.45PM - 3.50PM at SB 382.\nHomeworks are due Friday 23:59. They will be released every Monday.\nProject submission is due Wednesday at 23:59. They will be released every Wednesday.\nTutoring Assistants are available in SB337 on Mondays and Thursdays, from 7 - 9 pm.\n\nThe SLOs (Student Learning Objectives), labs, and projects for each week are given in the links below. The readings are from Ramez Elmasri, S. B. N. (2016). Fundamentals of Database Systems 7th ed.\n\n\n\nWeek\nTopics\nLaboratories\nProjects\nTests, Video Links, etc.\n\n\n\n\n1  —  3/17\nIntroduction to Databases & SQL Basics  Week’s page\nHomework 1\nProj 1\n\n\n\n2  —  3/24\nSQL – Intermediate Concepts  Advising days – no class 26-27 Week’s page\nHomework 2\nProj 2\n\n\n\n3  —  3/31\nSQL – Data Modification & Advanced Queries Week’s page\nHomework 3\nProj 3\n\n\n\n4  —  4/7\nDatabase Design – ER Modeling & Schema Refinement Week’s page\nHomework 4\nProj 4\nTest 1: Weeks 1 - 3, Friday\n\n\n5  —  4/14\nAdvanced SQL & Integrity Constraints  Good Friday & Easter Monday – no class 18-21  Week’s page\nNo lab\nNo project\n\n\n\n6  —  4/22\nDatabase Management & Optimization Week’s page\nHomework 6\nNo project\n\n\n\n7  —  4/28\nFinal Project and Course Wrap-Up Week’s page\nHomework 7\nFinal Project\n\n\n\nFinal  —  May 3-8\nSearch calvin.edu for “Exam Schedule” to find the time of the exam (and all exams you have, this semester, and all future semesters).\n\n\nFinal Test Cumulative, during exam time (You may take it in either class’s exam time. Classes met at 2.45pm MWF.)",
-    "crumbs": [
-      "Content",
-      "Course content"
-    ]
-  },
-  {
-    "objectID": "LICENSE.html",
-    "href": "LICENSE.html",
-    "title": "Attribution-ShareAlike 4.0 International",
-    "section": "",
-    "text": "Creative Commons Corporation (“Creative Commons”) is not a law firm and does not provide legal services or legal advice. Distribution of Creative Commons public licenses does not create a lawyer-client or other relationship. Creative Commons makes its licenses and related information available on an “as-is” basis. Creative Commons gives no warranties regarding its licenses, any material licensed under their terms and conditions, or any related information. Creative Commons disclaims all liability for damages resulting from their use to the fullest extent possible."
-  },
-  {
-    "objectID": "LICENSE.html#creative-commons-attribution-sharealike-4.0-international-public-license",
-    "href": "LICENSE.html#creative-commons-attribution-sharealike-4.0-international-public-license",
-    "title": "Attribution-ShareAlike 4.0 International",
-    "section": "Creative Commons Attribution-ShareAlike 4.0 International Public License",
-    "text": "Creative Commons Attribution-ShareAlike 4.0 International Public License\nBy exercising the Licensed Rights (defined below), You accept and agree to be bound by the terms and conditions of this Creative Commons Attribution-ShareAlike 4.0 International Public License (“Public License”). To the extent this Public License may be interpreted as a contract, You are granted the Licensed Rights in consideration of Your acceptance of these terms and conditions, and the Licensor grants You such rights in consideration of benefits the Licensor receives from making the Licensed Material available under these terms and conditions.\n\nSection 1 – Definitions.\n\nAdapted Material means material subject to Copyright and Similar Rights that is derived from or based upon the Licensed Material and in which the Licensed Material is translated, altered, arranged, transformed, or otherwise modified in a manner requiring permission under the Copyright and Similar Rights held by the Licensor. For purposes of this Public License, where the Licensed Material is a musical work, performance, or sound recording, Adapted Material is always produced where the Licensed Material is synched in timed relation with a moving image.\nAdapter’s License means the license You apply to Your Copyright and Similar Rights in Your contributions to Adapted Material in accordance with the terms and conditions of this Public License.\nBY-SA Compatible License means a license listed at creativecommons.org/compatiblelicenses, approved by Creative Commons as essentially the equivalent of this Public License.\nCopyright and Similar Rights means copyright and/or similar rights closely related to copyright including, without limitation, performance, broadcast, sound recording, and Sui Generis Database Rights, without regard to how the rights are labeled or categorized. For purposes of this Public License, the rights specified in Section 2(b)(1)-(2) are not Copyright and Similar Rights.\nEffective Technological Measures means those measures that, in the absence of proper authority, may not be circumvented under laws fulfilling obligations under Article 11 of the WIPO Copyright Treaty adopted on December 20, 1996, and/or similar international agreements.\nExceptions and Limitations means fair use, fair dealing, and/or any other exception or limitation to Copyright and Similar Rights that applies to Your use of the Licensed Material.\nLicense Elements means the license attributes listed in the name of a Creative Commons Public License. The License Elements of this Public License are Attribution and ShareAlike.\nLicensed Material means the artistic or literary work, database, or other material to which the Licensor applied this Public License.\nLicensed Rights means the rights granted to You subject to the terms and conditions of this Public License, which are limited to all Copyright and Similar Rights that apply to Your use of the Licensed Material and that the Licensor has authority to license.\nLicensor means the individual(s) or entity(ies) granting rights under this Public License.\nShare means to provide material to the public by any means or process that requires permission under the Licensed Rights, such as reproduction, public display, public performance, distribution, dissemination, communication, or importation, and to make material available to the public including in ways that members of the public may access the material from a place and at a time individually chosen by them.\nSui Generis Database Rights means rights other than copyright resulting from Directive 96/9/EC of the European Parliament and of the Council of 11 March 1996 on the legal protection of databases, as amended and/or succeeded, as well as other essentially equivalent rights anywhere in the world.\nYou means the individual or entity exercising the Licensed Rights under this Public License. Your has a corresponding meaning.\n\n\n\nSection 2 – Scope.\n\nLicense grant.\n\nSubject to the terms and conditions of this Public License, the Licensor hereby grants You a worldwide, royalty-free, non-sublicensable, non-exclusive, irrevocable license to exercise the Licensed Rights in the Licensed Material to:\n\nreproduce and Share the Licensed Material, in whole or in part; and\nproduce, reproduce, and Share Adapted Material.\n\nExceptions and Limitations. For the avoidance of doubt, where Exceptions and Limitations apply to Your use, this Public License does not apply, and You do not need to comply with its terms and conditions.\nTerm. The term of this Public License is specified in Section 6(a).\nMedia and formats; technical modifications allowed. The Licensor authorizes You to exercise the Licensed Rights in all media and formats whether now known or hereafter created, and to make technical modifications necessary to do so. The Licensor waives and/or agrees not to assert any right or authority to forbid You from making technical modifications necessary to exercise the Licensed Rights, including technical modifications necessary to circumvent Effective Technological Measures. For purposes of this Public License, simply making modifications authorized by this Section 2(a)(4) never produces Adapted Material.\nDownstream recipients.\nA. Offer from the Licensor – Licensed Material. Every recipient of the Licensed Material automatically receives an offer from the Licensor to exercise the Licensed Rights under the terms and conditions of this Public License.\n\n__Additional offer from the Licensor – Adapted Material. Every recipient of Adapted Material from You automatically receives an offer from the Licensor to exercise the Licensed Rights in the Adapted Material under the conditions of the Adapter’s License You apply.\n\nC. No downstream restrictions. You may not offer or impose any additional or different terms or conditions on, or apply any Effective Technological Measures to, the Licensed Material if doing so restricts exercise of the Licensed Rights by any recipient of the Licensed Material.\nNo endorsement. Nothing in this Public License constitutes or may be construed as permission to assert or imply that You are, or that Your use of the Licensed Material is, connected with, or sponsored, endorsed, or granted official status by, the Licensor or others designated to receive attribution as provided in Section 3(a)(1)(A)(i).\n\nOther rights.\n\nMoral rights, such as the right of integrity, are not licensed under this Public License, nor are publicity, privacy, and/or other similar personality rights; however, to the extent possible, the Licensor waives and/or agrees not to assert any such rights held by the Licensor to the limited extent necessary to allow You to exercise the Licensed Rights, but not otherwise.\nPatent and trademark rights are not licensed under this Public License.\nTo the extent possible, the Licensor waives any right to collect royalties from You for the exercise of the Licensed Rights, whether directly or through a collecting society under any voluntary or waivable statutory or compulsory licensing scheme. In all other cases the Licensor expressly reserves any right to collect such royalties.\n\n\n\n\nSection 3 – License Conditions.\nYour exercise of the Licensed Rights is expressly made subject to the following conditions.\n\nAttribution.\n\nIf You Share the Licensed Material (including in modified form), You must:\n\nretain the following if it is supplied by the Licensor with the Licensed Material:\n\n\n\nidentification of the creator(s) of the Licensed Material and any others designated to receive attribution, in any reasonable manner requested by the Licensor (including by pseudonym if designated);\na copyright notice;\na notice that refers to this Public License;\na notice that refers to the disclaimer of warranties;\na URI or hyperlink to the Licensed Material to the extent reasonably practicable;\n\n\n\nindicate if You modified the Licensed Material and retain an indication of any previous modifications; and\nindicate the Licensed Material is licensed under this Public License, and include the text of, or the URI or hyperlink to, this Public License.\n\nYou may satisfy the conditions in Section 3(a)(1) in any reasonable manner based on the medium, means, and context in which You Share the Licensed Material. For example, it may be reasonable to satisfy the conditions by providing a URI or hyperlink to a resource that includes the required information.\nIf requested by the Licensor, You must remove any of the information required by Section 3(a)(1)(A) to the extent reasonably practicable.\n\nShareAlike.\n\nIn addition to the conditions in Section 3(a), if You Share Adapted Material You produce, the following conditions also apply.\n\nThe Adapter’s License You apply must be a Creative Commons license with the same License Elements, this version or later, or a BY-SA Compatible License.\nYou must include the text of, or the URI or hyperlink to, the Adapter’s License You apply. You may satisfy this condition in any reasonable manner based on the medium, means, and context in which You Share Adapted Material.\nYou may not offer or impose any additional or different terms or conditions on, or apply any Effective Technological Measures to, Adapted Material that restrict exercise of the rights granted under the Adapter’s License You apply.\n\n\n\nSection 4 – Sui Generis Database Rights.\nWhere the Licensed Rights include Sui Generis Database Rights that apply to Your use of the Licensed Material:\n\nfor the avoidance of doubt, Section 2(a)(1) grants You the right to extract, reuse, reproduce, and Share all or a substantial portion of the contents of the database;\nif You include all or a substantial portion of the database contents in a database in which You have Sui Generis Database Rights, then the database in which You have Sui Generis Database Rights (but not its individual contents) is Adapted Material, including for purposes of Section 3(b); and\nYou must comply with the conditions in Section 3(a) if You Share all or a substantial portion of the contents of the database.\n\nFor the avoidance of doubt, this Section 4 supplements and does not replace Your obligations under this Public License where the Licensed Rights include other Copyright and Similar Rights.\n\n\nSection 5 – Disclaimer of Warranties and Limitation of Liability.\n\nUnless otherwise separately undertaken by the Licensor, to the extent possible, the Licensor offers the Licensed Material as-is and as-available, and makes no representations or warranties of any kind concerning the Licensed Material, whether express, implied, statutory, or other. This includes, without limitation, warranties of title, merchantability, fitness for a particular purpose, non-infringement, absence of latent or other defects, accuracy, or the presence or absence of errors, whether or not known or discoverable. Where disclaimers of warranties are not allowed in full or in part, this disclaimer may not apply to You.\nTo the extent possible, in no event will the Licensor be liable to You on any legal theory (including, without limitation, negligence) or otherwise for any direct, special, indirect, incidental, consequential, punitive, exemplary, or other losses, costs, expenses, or damages arising out of this Public License or use of the Licensed Material, even if the Licensor has been advised of the possibility of such losses, costs, expenses, or damages. Where a limitation of liability is not allowed in full or in part, this limitation may not apply to You.\nThe disclaimer of warranties and limitation of liability provided above shall be interpreted in a manner that, to the extent possible, most closely approximates an absolute disclaimer and waiver of all liability.\n\n\n\nSection 6 – Term and Termination.\n\nThis Public License applies for the term of the Copyright and Similar Rights licensed here. However, if You fail to comply with this Public License, then Your rights under this Public License terminate automatically.\nWhere Your right to use the Licensed Material has terminated under Section 6(a), it reinstates:\n\nautomatically as of the date the violation is cured, provided it is cured within 30 days of Your discovery of the violation; or\nupon express reinstatement by the Licensor.\n\nFor the avoidance of doubt, this Section 6(b) does not affect any right the Licensor may have to seek remedies for Your violations of this Public License.\nFor the avoidance of doubt, the Licensor may also offer the Licensed Material under separate terms or conditions or stop distributing the Licensed Material at any time; however, doing so will not terminate this Public License.\nSections 1, 5, 6, 7, and 8 survive termination of this Public License.\n\n\n\nSection 7 – Other Terms and Conditions.\n\nThe Licensor shall not be bound by any additional or different terms or conditions communicated by You unless expressly agreed.\nAny arrangements, understandings, or agreements regarding the Licensed Material not stated herein are separate from and independent of the terms and conditions of this Public License.t stated herein are separate from and independent of the terms and conditions of this Public License.\n\n\n\nSection 8 – Interpretation.\n\nFor the avoidance of doubt, this Public License does not, and shall not be interpreted to, reduce, limit, restrict, or impose conditions on any use of the Licensed Material that could lawfully be made without permission under this Public License.\nTo the extent possible, if any provision of this Public License is deemed unenforceable, it shall be automatically reformed to the minimum extent necessary to make it enforceable. If the provision cannot be reformed, it shall be severed from this Public License without affecting the enforceability of the remaining terms and conditions.\nNo term or condition of this Public License will be waived and no failure to comply consented to unless expressly agreed to by the Licensor.\nNothing in this Public License constitutes or may be interpreted as a limitation upon, or waiver of, any privileges and immunities that apply to the Licensor or You, including from the legal processes of any jurisdiction or authority.\n\n\nCreative Commons is not a party to its public licenses. Notwithstanding, Creative Commons may elect to apply one of its public licenses to material it publishes and in those instances will be considered the “Licensor.” Except for the limited purpose of indicating that material is shared under a Creative Commons public license or as otherwise permitted by the Creative Commons policies published at creativecommons.org/policies, Creative Commons does not authorize the use of the trademark “Creative Commons” or any other trademark or logo of Creative Commons without its prior written consent including, without limitation, in connection with any unauthorized modifications to any of its public licenses or any other arrangements, understandings, or agreements concerning use of licensed material. For the avoidance of doubt, this paragraph does not form part of the public licenses.\nCreative Commons may be contacted at creativecommons.org"
-  },
-  {
-    "objectID": "week02-notebook.html",
-    "href": "week02-notebook.html",
-    "title": "Week 02: SQL – Intermediate Concepts Summary",
-    "section": "",
-    "text": "At the end of this unit, students will be able to…\n\nPerform data aggregation using GROUP BY and HAVING.\nWrite and execute INNER, LEFT-OUTER, RIGHT, and FULL JOINs.\nConstruct subqueries for complex queries.\nImplement SQL functions and expressions.\nUse SQL best practices for readable and efficient queries.\nOptimize SQL queries for better performance."
-  },
-  {
-    "objectID": "week02-notebook.html#slos-for-week-02",
-    "href": "week02-notebook.html#slos-for-week-02",
-    "title": "Week 02: SQL – Intermediate Concepts Summary",
-    "section": "",
-    "text": "At the end of this unit, students will be able to…\n\nPerform data aggregation using GROUP BY and HAVING.\nWrite and execute INNER, LEFT-OUTER, RIGHT, and FULL JOINs.\nConstruct subqueries for complex queries.\nImplement SQL functions and expressions.\nUse SQL best practices for readable and efficient queries.\nOptimize SQL queries for better performance."
-  },
-  {
-    "objectID": "week02-notebook.html#creating-the-library-survey-tables",
-    "href": "week02-notebook.html#creating-the-library-survey-tables",
-    "title": "Week 02: SQL – Intermediate Concepts Summary",
-    "section": "0. Creating the Library Survey Tables",
-    "text": "0. Creating the Library Survey Tables\nIn the US, the Institute of Museum and Library Services (IMLS) measures library activity as part of its annual Public Libraries Survey. The survey collects data from more than 9000 library administrative entities, defined by the survey as agencies that provide library services to a particular locality. Data includes the number of branches, staff, books, hours open per year, etc. To teach the concepts below, we will build three tables containing the data from the survey related to the years of 2016, 2017 and 2018. For doing so, we read from the CSV files downloaded from their website. More especifically, some columns will be selected in the process to reduce the amount of non used attributes.\nWe are running SQL queries in a Jupyter environment.\n\n%%capture\n%load_ext sql\n%sql sqlite:///dbs/w02/library.db\n%config SqlMagic.style = '_DEPRECATED_DEFAULT'\n\n\nThis will open our database library.db for us. Don’t bother yourself with the config details. That is a trick to run the SQL queries in this environment.\nNow we turn to our tables. We have to create 3 tables. Let’s start with the table for 2018.\n\n%%sql\n-- Creating the 2018 Public Libraries Survey table\n\n-- We drop an old copy of the table, if it exists.\nDROP TABLE IF EXISTS libraries_2018;\n\nCREATE TABLE libraries_2018 (\n    stabr text NOT NULL,\n    fscskey text CONSTRAINT fscskey_2018_pkey PRIMARY KEY,\n    libid text NOT NULL,\n    libname text NOT NULL,\n    address text NOT NULL,\n    city text NOT NULL,\n    zip text NOT NULL,\n    county text NOT NULL,\n    phone text NOT NULL,\n    c_relatn text NOT NULL,\n    c_legbas text NOT NULL,\n    c_admin text NOT NULL,\n    c_fscs text NOT NULL,\n    geocode text NOT NULL,\n    lsabound text NOT NULL,\n    startdate text NOT NULL,\n    enddate text NOT NULL,\n    popu_lsa integer NOT NULL,\n    popu_und integer NOT NULL,\n    centlib integer NOT NULL,\n    branlib integer NOT NULL,\n    bkmob integer NOT NULL,\n    totstaff numeric(8,2) NOT NULL,\n    bkvol integer NOT NULL,\n    ebook integer NOT NULL,\n    audio_ph integer NOT NULL,\n    audio_dl integer NOT NULL,\n    video_ph integer NOT NULL,\n    video_dl integer NOT NULL,\n    ec_lo_ot integer NOT NULL,\n    subscrip integer NOT NULL,\n    hrs_open integer NOT NULL,\n    visits integer NOT NULL,\n    reference integer NOT NULL,\n    regbor integer NOT NULL,\n    totcir integer NOT NULL,\n    kidcircl integer NOT NULL,\n    totpro integer NOT NULL,\n    gpterms integer NOT NULL,\n    pitusr integer NOT NULL,\n    wifisess integer NOT NULL,\n    obereg text NOT NULL,\n    statstru text NOT NULL,\n    statname text NOT NULL,\n    stataddr text NOT NULL,\n    longitude numeric(10,7) NOT NULL,\n    latitude numeric(10,7) NOT NULL\n);\n\n * sqlite:///dbs/w02/library.db\nDone.\nDone.\n\n\n[]\n\n\n\nThis is an empty table. To fill the table, we need to convert our CSV entries to entitites in our database.\nHere I came up with another trick. I created a subprocess that opens SQLite3 and calls the command to convert a CSV file into a table inside the database. The code is as follows:\n\nimport subprocess\n\ndb = \"dbs/w02/library.db\"\ncsv = \"dbs/w02/pls_fy2018_libraries.csv\"\ntable = \"libraries_2018\"\n\nsqlite_command = f\"\"\"\n.mode csv\n.import '{csv}' {table}\n\"\"\"\n\nsubprocess.run([\"sqlite3\", db], input=sqlite_command, text=True)\n\nCompletedProcess(args=['sqlite3', 'dbs/w02/library.db'], returncode=0)\n\n\n\nLet’s see if the data was loaded? Let’s peak on the 10 first rows.\n\n%%sql\nSELECT * FROM libraries_2018\nLIMIT 10;\n\n * sqlite:///dbs/w02/library.db\nDone.\n\n\n\n\n\nstabr\nfscskey\nlibid\nlibname\naddress\ncity\nzip\ncounty\nphone\nc_relatn\nc_legbas\nc_admin\nc_fscs\ngeocode\nlsabound\nstartdate\nenddate\npopu_lsa\npopu_und\ncentlib\nbranlib\nbkmob\ntotstaff\nbkvol\nebook\naudio_ph\naudio_dl\nvideo_ph\nvideo_dl\nec_lo_ot\nsubscrip\nhrs_open\nvisits\nreference\nregbor\ntotcir\nkidcircl\ntotpro\ngpterms\npitusr\nwifisess\nobereg\nstatstru\nstatname\nstataddr\nlongitude\nlatitude\n\n\n\n\nSTABR\nFSCSKEY\nLIBID\nLIBNAME\nADDRESS\nCITY\nZIP\nCNTY\nPHONE\nC_RELATN\nC_LEGBAS\nC_ADMIN\nC_FSCS\nGEOCODE\nLSABOUND\nSTARTDAT\nENDDATE\nPOPU_LSA\nPOPU_UND\nCENTLIB\nBRANLIB\nBKMOB\nTOTSTAFF\nBKVOL\nEBOOK\nAUDIO_PH\nAUDIO_DL\nVIDEO_PH\nVIDEO_DL\nEC_LO_OT\nSUBSCRIP\nHRS_OPEN\nVISITS\nREFERENC\nREGBOR\nTOTCIR\nKIDCIRCL\nTOTPRO\nGPTERMS\nPITUSR\nWIFISESS\nOBEREG\nSTATSTRU\nSTATNAME\nSTATADDR\nLONGITUD\nLATITUDE\n\n\nAK\nAK0001\nAK0001-002\nANCHOR POINT PUBLIC LIBRARY\n34020 NORTH FORK ROAD\nANCHOR POINT\n99556\nKENAI PENINSULA\n9072355692\nNO\nNP\nSO\nY\nCI1\nN\n7/1/17\n6/30/18\n2057\n2040\n1\n0\n0\n0.67\n18201\n0\n179\n0\n3320\n0\n0\n9\n1245\n6032\n4\n1726\n11316\n2294\n60\n8\n1495\n1182\n08\n00\n00\n00\n-151.825\n59.77965\n\n\nAK\nAK0002\nAK0002-011\nANCHORAGE PUBLIC LIBRARY\n3600 DENALI STREET\nANCHORAGE\n99503\nANCHORAGE\n9073432892\nNO\nCO\nMO\nY\nMA1\nN\n1/1/17\n12/31/17\n295365\n292940\n1\n4\n0\n76.65\n370812\n21587\n30963\n12992\n76404\n0\n14\n7311\n11400\n723272\n54306\n135828\n1574942\n553651\n1924\n165\n126846\n90135\n08\n00\n00\n00\n-149.876\n61.18744\n\n\nAK\nAK0003\nAK0003-002\nANDERSON COMMUNITY LIBRARY\n101 FIRST STREET\nANDERSON\n99744\nDENALI\n9075822628\nNO\nCI\nSO\nY\nCI1\nN\n7/1/17\n6/30/18\n269\n267\n1\n0\n0\n0.75\n15314\n0\n201\n0\n1403\n0\n0\n0\n480\n592\n300\n113\n1137\n264\n4\n5\n225\n0\n08\n00\n00\n00\n-149.187\n64.34363\n\n\nAK\nAK0006\nAK0006-002\nKUSKOKWIM CONSORTIUM LIBRARY\n420 CHIEF EDDIE HOFFMAN HIGHWAY\nBETHEL\n99559\nBETHEL\n9075434516\nNO\nMJ\nSO\nY\nCI1\nN\n7/1/17\n6/30/18\n6135\n6085\n1\n0\n0\n3\n34860\n21587\n425\n12992\n3782\n0\n0\n5\n2040\n51000\n1530\n1912\n14067\n3746\n406\n8\n6600\n5716\n08\n00\n00\n00\n-161.771\n60.79114\n\n\nAK\nAK0007\nAK0007-002\nBIG LAKE PUBLIC LIBRARY\n3140 SOUTH BIG LAKE ROAD\nBIG LAKE\n99652\nMATANUSKA-SUSITNA\n9078617635\nNO\nCO\nSO\nY\nCO1\nN\n7/1/17\n6/30/18\n12847\n12742\n1\n0\n0\n3\n28698\n21587\n2140\n12992\n3805\n0\n0\n47\n2551\n62249\n887\n2890\n36670\n15691\n363\n18\n15022\n8125\n08\n00\n00\n00\n-149.819\n61.5475\n\n\nAK\nAK0008\nAK0008-002\nCANTWELL COMMUNITY LIBRARY\n1 SCHOOL ROAD\nCANTWELL\n99729\nDENALI\n9077682372\nNO\nNP\nSO\nY\nCI1\nN\n7/1/17\n6/30/18\n202\n200\n1\n0\n0\n0.8\n10376\n21587\n275\n12992\n562\n0\n0\n15\n720\n2500\n390\n183\n2828\n1198\n45\n1\n50\n95\n08\n00\n00\n00\n-148.9\n63.3912\n\n\nAK\nAK0011\nAK0011-002\nCHINIAK PUBLIC LIBRARY\n43318 SPRUCE WAY\nCHINIAK\n99615\nKODIAK ISLAND\n9075120880\nNO\nNP\nSO\nN\nCI1\nN\n7/1/17\n6/30/18\n44\n44\n1\n0\n0\n0\n2300\n21587\n0\n12992\n257\n0\n0\n18\n132\n302\n0\n39\n465\n301\n27\n2\n75\n220\n08\n00\n00\n00\n-152.231\n57.61245\n\n\nAK\nAK0014\nAK0014-002\nCOLD BAY PUBLIC LIBRARY\n10 BARANOV ROAD\nCOLD BAY\n99571\nALEUTIANS EAST\n9075322878\nNO\nNP\nSO\nY\nCI1\nN\n7/1/17\n6/30/18\n63\n62\n1\n0\n0\n0.25\n3226\n0\n445\n0\n2673\n0\n0\n0\n400\n1080\n31\n36\n121\n11\n5\n4\n235\n893\n08\n00\n00\n00\n-160.693\n55.69687\n\n\nAK\nAK0015\nAK0015-002\nCOOPER LANDING COMMUNITY LIBRARY\n18511 BEAN CREEK ROAD\nCOOPER LANDING\n99572\nKENAI PENINSULA\n9075951241\nNO\nNP\nSO\nN\nCI1\nN\n7/1/17\n6/30/18\n265\n263\n1\n0\n0\n0\n4163\n0\n192\n0\n926\n0\n0\n1\n1092\n2452\n70\n834\n2232\n772\n11\n4\n395\n357\n08\n00\n00\n00\n-149.823\n60.49404\n\n\n\n\n\n\nNow, lets count how many rows are in this table.\n\n%%sql\nSELECT count(*) FROM libraries_2018;\n\n * sqlite:///dbs/w02/library.db\nDone.\n\n\n\n\n\ncount(*)\n\n\n\n\n9262\n\n\n\n\n\n\nThe same should be done for the years 2016 and 2017. The code below is long, but identical to what we’ve done above.\n\n\nCode\n%%sql\n-- Creating the 2016 Public Libraries Survey table\n\n-- We drop an old copy of the table, if it exists.\nDROP TABLE IF EXISTS libraries_2016;\nDROP TABLE IF EXISTS libraries_2017;\n\nCREATE TABLE libraries_2016 (\n    stabr text NOT NULL,\n    fscskey text CONSTRAINT fscskey_2018_pkey PRIMARY KEY,\n    libid text NOT NULL,\n    libname text NOT NULL,\n    address text NOT NULL,\n    city text NOT NULL,\n    zip text NOT NULL,\n    county text NOT NULL,\n    phone text NOT NULL,\n    c_relatn text NOT NULL,\n    c_legbas text NOT NULL,\n    c_admin text NOT NULL,\n    c_fscs text NOT NULL,\n    geocode text NOT NULL,\n    lsabound text NOT NULL,\n    startdate text NOT NULL,\n    enddate text NOT NULL,\n    popu_lsa integer NOT NULL,\n    popu_und integer NOT NULL,\n    centlib integer NOT NULL,\n    branlib integer NOT NULL,\n    bkmob integer NOT NULL,\n    totstaff numeric(8,2) NOT NULL,\n    bkvol integer NOT NULL,\n    ebook integer NOT NULL,\n    audio_ph integer NOT NULL,\n    audio_dl integer NOT NULL,\n    video_ph integer NOT NULL,\n    video_dl integer NOT NULL,\n    ec_lo_ot integer NOT NULL,\n    subscrip integer NOT NULL,\n    hrs_open integer NOT NULL,\n    visits integer NOT NULL,\n    reference integer NOT NULL,\n    regbor integer NOT NULL,\n    totcir integer NOT NULL,\n    kidcircl integer NOT NULL,\n    totpro integer NOT NULL,\n    gpterms integer NOT NULL,\n    pitusr integer NOT NULL,\n    wifisess integer NOT NULL,\n    obereg text NOT NULL,\n    statstru text NOT NULL,\n    statname text NOT NULL,\n    stataddr text NOT NULL,\n    longitude numeric(10,7) NOT NULL,\n    latitude numeric(10,7) NOT NULL\n);\n\nCREATE TABLE libraries_2017 (\n    stabr text NOT NULL,\n    fscskey text CONSTRAINT fscskey_2018_pkey PRIMARY KEY,\n    libid text NOT NULL,\n    libname text NOT NULL,\n    address text NOT NULL,\n    city text NOT NULL,\n    zip text NOT NULL,\n    county text NOT NULL,\n    phone text NOT NULL,\n    c_relatn text NOT NULL,\n    c_legbas text NOT NULL,\n    c_admin text NOT NULL,\n    c_fscs text NOT NULL,\n    geocode text NOT NULL,\n    lsabound text NOT NULL,\n    startdate text NOT NULL,\n    enddate text NOT NULL,\n    popu_lsa integer NOT NULL,\n    popu_und integer NOT NULL,\n    centlib integer NOT NULL,\n    branlib integer NOT NULL,\n    bkmob integer NOT NULL,\n    totstaff numeric(8,2) NOT NULL,\n    bkvol integer NOT NULL,\n    ebook integer NOT NULL,\n    audio_ph integer NOT NULL,\n    audio_dl integer NOT NULL,\n    video_ph integer NOT NULL,\n    video_dl integer NOT NULL,\n    ec_lo_ot integer NOT NULL,\n    subscrip integer NOT NULL,\n    hrs_open integer NOT NULL,\n    visits integer NOT NULL,\n    reference integer NOT NULL,\n    regbor integer NOT NULL,\n    totcir integer NOT NULL,\n    kidcircl integer NOT NULL,\n    totpro integer NOT NULL,\n    gpterms integer NOT NULL,\n    pitusr integer NOT NULL,\n    wifisess integer NOT NULL,\n    obereg text NOT NULL,\n    statstru text NOT NULL,\n    statname text NOT NULL,\n    stataddr text NOT NULL,\n    longitude numeric(10,7) NOT NULL,\n    latitude numeric(10,7) NOT NULL\n);\n\n\n * sqlite:///dbs/w02/library.db\nDone.\nDone.\nDone.\nDone.\n\n\n[]\n\n\n\nAnd now, let’s fill the tables with data from our CSV files.\n\n\nCode\n# 2016\n\ndb = \"dbs/w02/library.db\"\ncsv = \"dbs/w02/pls_fy2016_libraries.csv\"\ntable = \"libraries_2016\"\n\nsqlite_command = f\"\"\"\n.mode csv\n.import '{csv}' {table}\n\"\"\"\nsubprocess.run([\"sqlite3\", db], input=sqlite_command, text=True)\n\n# 2017\n\ndb = \"dbs/w02/library.db\"\ncsv = \"dbs/w02/pls_fy2017_libraries.csv\"\ntable = \"libraries_2017\"\n\nsqlite_command = f\"\"\"\n.mode csv\n.import '{csv}' {table}\n\"\"\"\nsubprocess.run([\"sqlite3\", db], input=sqlite_command, text=True)\n\n\nCompletedProcess(args=['sqlite3', 'dbs/w02/library.db'], returncode=0)\n\n\n\nLet’s check the rows count for each of the tables now.\n\n%%sql\n    SELECT 2016 AS 'Year', count(*) AS NumRows FROM libraries_2016\nUNION ALL\n    SELECT 2017, count(*) AS NumRows FROM libraries_2017\nUNION ALL\n    SELECT 2018, count(*) AS NumRows FROM libraries_2018;\n\n * sqlite:///dbs/w02/library.db\nDone.\n\n\n\n\n\nYear\nNumRows\n\n\n\n\n2016\n9253\n\n\n2017\n9246\n\n\n2018\n9262"
-  },
-  {
-    "objectID": "week02-notebook.html#sql-aggregation-grouping-with-sqlite-notes",
-    "href": "week02-notebook.html#sql-aggregation-grouping-with-sqlite-notes",
-    "title": "Week 02: SQL – Intermediate Concepts Summary",
-    "section": "🧮 1. SQL Aggregation & Grouping (with SQLite Notes)",
-    "text": "🧮 1. SQL Aggregation & Grouping (with SQLite Notes)\nSQL lets you summarize data using aggregate functions, and group it with GROUP BY. This is especially helpful for statistics, reports, and dashboards.\n\n🎯 Common Aggregate Functions\n\n\n\nFunction\nDescription\nExample\n\n\n\n\nCOUNT()\nNumber of rows\nCOUNT(*)\n\n\nSUM()\nTotal of values\nSUM(amount)\n\n\nAVG()\nMean average\nAVG(score)\n\n\nMIN()\nSmallest value\nMIN(age)\n\n\nMAX()\nLargest value\nMAX(salary)\n\n\n\n\n\n\n\n\n\nNote\n\n\n\n✅ SQLite supports all these functions.\n\n\n\n\n🧩 Basic Grouping Example\nQ: How many students are in each major?\nSELECT major, COUNT(*) AS student_count\nFROM students\nGROUP BY major;\n\n\n\n\n\n\nNote\n\n\n\n✅ SQLite allows this even if you’re selecting columns not in the GROUP BY clause or not inside an aggregate function. It will return one arbitrary value from each group for such columns.\n\n\nExample (SQLite accepts this):\nSELECT major, name\nFROM students\nGROUP BY major;\n\n\n\n\n\n\nNote\n\n\n\nThis works in SQLite — it will return one name for each major, but which name is returned is undefined. ❌ PostgreSQL (and other standards-compliant SQL engines) will reject this query with an error unless name is also in the GROUP BY or wrapped in an aggregate like MIN(name).\n\n\n\n\n🔍 Filtering Groups with HAVING\nUse HAVING to filter after grouping.\nQ: Show only majors with more than 10 students:\nSELECT major, COUNT(*) AS student_count\nFROM students\nGROUP BY major\nHAVING COUNT(*) &gt; 10;\n\n\n\n\n\n\nNote\n\n\n\nℹ️ In SQLite, you can refer to the alias (student_count) in HAVING. In PostgreSQL, you’d need to repeat the expression: HAVING COUNT(*) &gt; 10.\n\n\n\n\n📊 Combining Aggregates\nQ: Show average GPA per department — only if it’s above 3.5:\nSELECT department, AVG(gpa) AS avg_gpa\nFROM students\nGROUP BY department\nHAVING AVG(gpa) &gt; 3.5;\n\n\n🔗 Grouping by Expressions\nYou can group by computed values like substrings or date parts.\nQ: Count students by admission year (from text-based dates):\nSELECT SUBSTR(admission_date, 1, 4) AS year, COUNT(*) AS num_students\nFROM students\nGROUP BY year;\nThe SUBSTR() function extracts a substring from a given string.\nSUBSTR(string, start, length)\n\nstring: the text to extract from\nstart: the position to start (1-based index)\nlength (optional): how many characters to return\n\n-- Get the first 4 characters of a date\nSELECT SUBSTR('2024-09-15', 1, 4);  -- Returns '2024'\n\n-- Get the first letter of a name\nSELECT SUBSTR(name, 1, 1) FROM students;\n📌 If length is omitted, SQLite returns the rest of the string from start.\n\n\n\n\n\n\nNote\n\n\n\n✅ Works well in SQLite (which stores dates as text: YYYY-MM-DD). ❗ In PostgreSQL, use: EXTRACT(YEAR FROM admission_date).\n\n\n\n\n🧠 Tips for Grouping Queries\n\nUse GROUP BY with aggregate functions.\nUse HAVING to filter groups (not rows).\nUse WHERE for filtering before grouping.\nPrefer column names or expressions in GROUP BY, not just positions (e.g., avoid GROUP BY 1).\nBe cautious using non-aggregated, non-grouped columns in SQLite — it’s allowed, but not portable or predictable."
-  },
-  {
-    "objectID": "week02-notebook.html#counting-distinct-values-in-a-column",
-    "href": "week02-notebook.html#counting-distinct-values-in-a-column",
-    "title": "Week 02: SQL – Intermediate Concepts Summary",
-    "section": "1.1 Counting Distinct Values in a Column",
-    "text": "1.1 Counting Distinct Values in a Column\nWe can combine DISTINCT with combinations of values like count(). This will return a count of distinct values from a column.\n\n%%sql\nSELECT count(libname)\nFROM libraries_2017;\n\n * sqlite:///dbs/w02/library.db\nDone.\n\n\n\n\n\ncount(libname)\n\n\n\n\n9246\n\n\n\n\n\n\n%%sql\nSELECT count(DISTINCT libname)\nFROM libraries_2017;\n\n * sqlite:///dbs/w02/library.db\nDone.\n\n\n\n\n\ncount(DISTINCT libname)\n\n\n\n\n8456\n\n\n\n\n\n\nRemoving duplicates reduces the number of library names. It happens that some libraries share their names with other agencies. We will see how we can see the duplicates soon."
-  },
-  {
-    "objectID": "week02-notebook.html#finding-maximum-and-minimum-values-using-max-and-min",
-    "href": "week02-notebook.html#finding-maximum-and-minimum-values-using-max-and-min",
-    "title": "Week 02: SQL – Intermediate Concepts Summary",
-    "section": "1.2 Finding Maximum and Minimum Values using max() and min()",
-    "text": "1.2 Finding Maximum and Minimum Values using max() and min()\nThe max() and min() funtions return the largest and smallest values in a column. In our case, we will be using them to detect some annomalies in the data, and to get a sense of the scope of the values reported. Let’s check the number of annual visits to the library agencies for 2018.\n\n%%sql\nSELECT max(visits), min(visits)\nFROM libraries_2018;\n\n * sqlite:///dbs/w02/library.db\nDone.\n\n\n\n\n\nmax(visits)\nmin(visits)\n\n\n\n\nVISITS\n-3\n\n\n\n\n\n\nThe value of -3 is unexpected. It happens that the negative values for this database indicate “not applicable”, used when a library has closed temporarily or permanently. This is a terrible way of coding missing data, but we can cope with that.\nWe could use WHERE min(visits &gt; 0) to guarantee that only positive numbers are in the game.\nA better way of handling these situations would be using NULL values and adding a column to hold text explaining why the value is NULL."
-  },
-  {
-    "objectID": "week02-notebook.html#aggregating-with-group-by",
-    "href": "week02-notebook.html#aggregating-with-group-by",
-    "title": "Week 02: SQL – Intermediate Concepts Summary",
-    "section": "1.3 Aggregating with GROUP BY",
-    "text": "1.3 Aggregating with GROUP BY"
-  },
-  {
-    "objectID": "instructors.html",
-    "href": "instructors.html",
-    "title": "Instructors",
-    "section": "",
-    "text": "The instructor for this course is Prof. Eric Araújo."
-  },
-  {
-    "objectID": "instructors.html#office-hours",
-    "href": "instructors.html#office-hours",
-    "title": "Instructors",
-    "section": "Office Hours",
-    "text": "Office Hours\n\nThursdays from 2pm until 4pm.\n\n\n\n\n\n\n\nWarning\n\n\n\nIf you can’t meet in during my office hours, use the link below to find free times in my schedule and send me an email requesting to meet during the selected time.\nProf. Araújo’s hours"
+    "text": "Grading Rubric\nThis project is worth 100 pts."
   },
   {
     "objectID": "projects/proj01.html",
@@ -570,53 +610,113 @@
     "text": "Grading Rubric\nThis project is worth 100 pts:\nGrade will be given by the Quiz available on Moodle from Wednesday (3/19) until the following Wednesday (3/26)."
   },
   {
-    "objectID": "projects/proj02.html",
-    "href": "projects/proj02.html",
-    "title": "Project 02: Student Performance & Enrollment Analysis (Using DBeaver)",
+    "objectID": "instructors.html",
+    "href": "instructors.html",
+    "title": "Instructors",
     "section": "",
-    "text": "This project gives students practical experience using aggregate functions, joins, subqueries, SQL expressions, and query optimization in a multi-table database built with SQLite3 and DBeaver.\nStudents will analyze student records, enrollment patterns, and course performance using intermediate SQL features covered in Week 2."
+    "text": "The instructor for this course is Prof. Eric Araújo."
   },
   {
-    "objectID": "projects/proj02.html#objective",
-    "href": "projects/proj02.html#objective",
-    "title": "Project 02: Student Performance & Enrollment Analysis (Using DBeaver)",
+    "objectID": "instructors.html#office-hours",
+    "href": "instructors.html#office-hours",
+    "title": "Instructors",
+    "section": "Office Hours",
+    "text": "Office Hours\n\nThursdays from 2pm until 4pm.\n\n\n\n\n\n\n\nWarning\n\n\n\nIf you can’t meet in during my office hours, use the link below to find free times in my schedule and send me an email requesting to meet during the selected time.\nProf. Araújo’s hours"
+  },
+  {
+    "objectID": "week02-case.html",
+    "href": "week02-case.html",
+    "title": "Week 02: SQL – Using CASE",
     "section": "",
-    "text": "This project gives students practical experience using aggregate functions, joins, subqueries, SQL expressions, and query optimization in a multi-table database built with SQLite3 and DBeaver.\nStudents will analyze student records, enrollment patterns, and course performance using intermediate SQL features covered in Week 2."
+    "text": "The CASE statement in SQL is a way to add conditional logic to your queries — it’s like an IF-THEN-ELSE structure in programming languages."
   },
   {
-    "objectID": "projects/proj02.html#learning-outcomes",
-    "href": "projects/proj02.html#learning-outcomes",
-    "title": "Project 02: Student Performance & Enrollment Analysis (Using DBeaver)",
-    "section": "🧠 Learning Outcomes",
-    "text": "🧠 Learning Outcomes\nBy completing this project, students will: * Gain confidence using JOINs, GROUP BY, and subqueries * Apply functions and expressions in real-world data * Think critically about query design and efficiency * Practice building clean, well-structured SQL statements in DBeaver"
+    "objectID": "week02-case.html#basic-syntax-of-case",
+    "href": "week02-case.html#basic-syntax-of-case",
+    "title": "Week 02: SQL – Using CASE",
+    "section": "📌 Basic Syntax of CASE",
+    "text": "📌 Basic Syntax of CASE\nCASE\n    WHEN condition1 THEN result1\n    WHEN condition2 THEN result2\n    ...\n    ELSE resultN\nEND\nYou can use it:\n\nIn SELECT to create computed columns.\nIn ORDER BY to sort conditionally.\nIn WHERE (less common, but possible)."
   },
   {
-    "objectID": "projects/proj02.html#step-1-creating-the-database",
-    "href": "projects/proj02.html#step-1-creating-the-database",
-    "title": "Project 02: Student Performance & Enrollment Analysis (Using DBeaver)",
-    "section": "Step 1: Creating the Database",
-    "text": "Step 1: Creating the Database\n\n🗂️ Database Schema\nCreate a new database named university.db with the following tables:\nCREATE TABLE students (\n    student_id INTEGER PRIMARY KEY,\n    first_name TEXT NOT NULL,\n    last_name TEXT NOT NULL,\n    major TEXT,\n    gpa REAL\n);\n\nCREATE TABLE courses (\n    course_id INTEGER PRIMARY KEY,\n    course_name TEXT NOT NULL,\n    department TEXT NOT NULL,\n    credits INTEGER\n);\n\nCREATE TABLE enrollments (\n    enrollment_id INTEGER PRIMARY KEY,\n    student_id INTEGER,\n    course_id INTEGER,\n    grade TEXT,\n    FOREIGN KEY (student_id) REFERENCES students(student_id),\n    FOREIGN KEY (course_id) REFERENCES courses(course_id)\n);\n\n\n📥 Sample Data (Insert Statements)\nProvide the following sample data for testing queries:\n-- Students\nINSERT INTO students (first_name, last_name, major, gpa) VALUES\n('Alice', 'Johnson', 'Computer Science', 3.8),\n('Bob', 'Smith', 'Business', 3.1),\n('Charlie', 'Davis', 'Data Science', 3.5),\n('Diana', 'Lee', 'Computer Science', 2.9),\n('Ethan', 'Brown', 'Data Science', 3.7);\n\n-- Courses\nINSERT INTO courses (course_name, department, credits) VALUES\n('Database Management', 'Computer Science', 3),\n('Marketing 101', 'Business', 2),\n('Machine Learning', 'Data Science', 4),\n('Algorithms', 'Computer Science', 3);\n\n-- Enrollments\nINSERT INTO enrollments (student_id, course_id, grade) VALUES\n(1, 1, 'A'),\n(1, 4, 'B'),\n(2, 2, 'B'),\n(3, 1, 'A'),\n(3, 3, 'A'),\n(4, 1, 'C'),\n(4, 4, 'B'),\n(5, 3, 'A');\n\n\n\n\n\n\nYou can also download the sql file containing the setup of the database and open it in your DBeaver.\n\n\n\n🧰 Quick Setup Instructions for DBeaver\n\nInstall DBeaver (Community Edition) if not already installed.\nLaunch DBeaver and go to File → DBeaver → New Database Connection.\nSelect SQLite as the database type.\nClick Next, then Create a new database file, and name it university.db.\nAfter connection, right-click on the database and choose SQL Editor → New SQL Script to run the setup and queries.\n\n⏳ Load the SQL Script\n\nRight-click the new university.db connection in the Database Navigator pane.\nSelect SQL Editor → New SQL Script.\nIn the new script tab that appears, click File → Open File.\nSelect the provided file: 📄 week2_project_setup.sql\nMake sure the Active Datasource (on the top of the window) is connected to the database created."
+    "objectID": "week02-case.html#example-1-using-case-in-a-select",
+    "href": "week02-case.html#example-1-using-case-in-a-select",
+    "title": "Week 02: SQL – Using CASE",
+    "section": "✅ Example 1: Using CASE in a SELECT",
+    "text": "✅ Example 1: Using CASE in a SELECT\nSELECT name,\n       age,\n       CASE \n           WHEN age &lt; 18 THEN 'Minor'\n           WHEN age &lt; 65 THEN 'Adult'\n           ELSE 'Senior'\n       END AS age_group\nFROM people;\nThis assigns a label (Minor, Adult, or Senior) based on age."
   },
   {
-    "objectID": "projects/proj02.html#step-3-student-tasks",
-    "href": "projects/proj02.html#step-3-student-tasks",
-    "title": "Project 02: Student Performance & Enrollment Analysis (Using DBeaver)",
-    "section": "Step 3: Student Tasks",
-    "text": "Step 3: Student Tasks\nYou must write SQL queries to answer the following questions:\n🔹 Aggregation & Grouping\n\nFind the average GPA per major.\nCount the number of students enrolled in each course.\nList courses where the number of students enrolled is at least 2.\nFind the average number of credits students are enrolled in (per student).\n\n🔹 Joins\n\nShow each student’s first and last name along with the names of the courses they are enrolled in.\nList all students and the courses they are NOT enrolled in (use LEFT JOIN and NULL filtering).\nShow courses that have not been taken by any students (use LEFT JOIN or NOT IN).\n\n🔹 Subqueries\n\nFind the names of students who have received an ‘A’ in any course (use IN or EXISTS).\nList students whose GPA is higher than the average GPA of all students.\nRetrieve courses that have more students than the average number of enrollments per course.\n\n🔹 Functions & Expressions\n\nDisplay students’ names in uppercase.\nShow the length of each course name using a string function.\nCalculate and display a weighted GPA score based on credits * GPA for each student (hint: use a JOIN and a mathematical expression).\n\n🔹 Query Optimization (Conceptual)\n\nConceptual question about Joins."
+    "objectID": "week02-case.html#example-2-conditional-aggregation",
+    "href": "week02-case.html#example-2-conditional-aggregation",
+    "title": "Week 02: SQL – Using CASE",
+    "section": "✅ Example 2: Conditional Aggregation",
+    "text": "✅ Example 2: Conditional Aggregation\nSELECT \n    department,\n    COUNT(*) AS total_employees,\n    SUM(CASE WHEN gender = 'F' THEN 1 ELSE 0 END) AS female_employees\nFROM employees\nGROUP BY department;\nThis counts total and female employees per department."
   },
   {
-    "objectID": "projects/proj02.html#submit",
-    "href": "projects/proj02.html#submit",
-    "title": "Project 02: Student Performance & Enrollment Analysis (Using DBeaver)",
-    "section": "Submit",
-    "text": "Submit\nYou will submit your queries on Moodle."
+    "objectID": "week02-case.html#example-3-case-in-order-by",
+    "href": "week02-case.html#example-3-case-in-order-by",
+    "title": "Week 02: SQL – Using CASE",
+    "section": "✅ Example 3: CASE in ORDER BY",
+    "text": "✅ Example 3: CASE in ORDER BY\nSELECT name, priority\nFROM tasks\nORDER BY \n    CASE priority\n        WHEN 'High' THEN 1\n        WHEN 'Medium' THEN 2\n        ELSE 3\n    END;\nThis sorts tasks by custom priority order."
   },
   {
-    "objectID": "projects/proj02.html#grading-rubric",
-    "href": "projects/proj02.html#grading-rubric",
-    "title": "Project 02: Student Performance & Enrollment Analysis (Using DBeaver)",
+    "objectID": "week02-case.html#notes",
+    "href": "week02-case.html#notes",
+    "title": "Week 02: SQL – Using CASE",
+    "section": "🔎 Notes",
+    "text": "🔎 Notes\n\nYou must include END.\nCASE can be nested.\nThere’s also a simple form:\n\nCASE expression\n    WHEN value1 THEN result1\n    WHEN value2 THEN result2\n    ELSE resultN\nEND\nIt compares a single expression against multiple values."
+  },
+  {
+    "objectID": "week02-case.html#practice-classify-products-by-price",
+    "href": "week02-case.html#practice-classify-products-by-price",
+    "title": "Week 02: SQL – Using CASE",
+    "section": "🧪 Practice: Classify Products by Price",
+    "text": "🧪 Practice: Classify Products by Price\n\n✅ Table Setup\n\n%%capture\n%load_ext sql\n%sql sqlite:///dbs/w02/products.db\n%config SqlMagic.style = '_DEPRECATED_DEFAULT'\n\n\n%%sql\nCREATE TABLE products (\n    id INTEGER PRIMARY KEY,\n    name TEXT,\n    price REAL\n);\n\nINSERT INTO products (name, price) VALUES\n('Pencil', 0.99),\n('Notebook', 2.49),\n('Backpack', 29.99),\n('Laptop', 999.99),\n('Water Bottle', 12.50);\n\n * sqlite:///dbs/w02/products.db\nDone.\n5 rows affected.\n\n\n[]\n\n\n\n%%sql\nSELECT * FROM products;\n\n * sqlite:///dbs/w02/products.db\nDone.\n\n\n\n\n\nid\nname\nprice\n\n\n\n\n1\nPencil\n0.99\n\n\n2\nNotebook\n2.49\n\n\n3\nBackpack\n29.99\n\n\n4\nLaptop\n999.99\n\n\n5\nWater Bottle\n12.5\n\n\n\n\n\n\n\n\n❓ Question:\nWrite an SQL query to return the name, price, and a new column called price_category that shows:\n\n‘Cheap’ if price is less than 5\n‘Moderate’ if price is between 5 and 100\n‘Expensive’ if price is greater than 100\n\n\n%%sql\nSELECT \n    name,\n    price,\n    CASE \n        WHEN price &lt; 5 THEN 'Cheap'\n        WHEN price &lt;= 100 THEN 'Moderate'\n        ELSE 'Expensive'\n    END AS price_category\nFROM products;\n\n * sqlite:///dbs/w02/products.db\nDone.\n\n\n\n\n\nname\nprice\nprice_category\n\n\n\n\nPencil\n0.99\nCheap\n\n\nNotebook\n2.49\nCheap\n\n\nBackpack\n29.99\nModerate\n\n\nLaptop\n999.99\nExpensive\n\n\nWater Bottle\n12.5\nModerate"
+  },
+  {
+    "objectID": "LICENSE.html",
+    "href": "LICENSE.html",
+    "title": "Attribution-ShareAlike 4.0 International",
+    "section": "",
+    "text": "Creative Commons Corporation (“Creative Commons”) is not a law firm and does not provide legal services or legal advice. Distribution of Creative Commons public licenses does not create a lawyer-client or other relationship. Creative Commons makes its licenses and related information available on an “as-is” basis. Creative Commons gives no warranties regarding its licenses, any material licensed under their terms and conditions, or any related information. Creative Commons disclaims all liability for damages resulting from their use to the fullest extent possible."
+  },
+  {
+    "objectID": "LICENSE.html#creative-commons-attribution-sharealike-4.0-international-public-license",
+    "href": "LICENSE.html#creative-commons-attribution-sharealike-4.0-international-public-license",
+    "title": "Attribution-ShareAlike 4.0 International",
+    "section": "Creative Commons Attribution-ShareAlike 4.0 International Public License",
+    "text": "Creative Commons Attribution-ShareAlike 4.0 International Public License\nBy exercising the Licensed Rights (defined below), You accept and agree to be bound by the terms and conditions of this Creative Commons Attribution-ShareAlike 4.0 International Public License (“Public License”). To the extent this Public License may be interpreted as a contract, You are granted the Licensed Rights in consideration of Your acceptance of these terms and conditions, and the Licensor grants You such rights in consideration of benefits the Licensor receives from making the Licensed Material available under these terms and conditions.\n\nSection 1 – Definitions.\n\nAdapted Material means material subject to Copyright and Similar Rights that is derived from or based upon the Licensed Material and in which the Licensed Material is translated, altered, arranged, transformed, or otherwise modified in a manner requiring permission under the Copyright and Similar Rights held by the Licensor. For purposes of this Public License, where the Licensed Material is a musical work, performance, or sound recording, Adapted Material is always produced where the Licensed Material is synched in timed relation with a moving image.\nAdapter’s License means the license You apply to Your Copyright and Similar Rights in Your contributions to Adapted Material in accordance with the terms and conditions of this Public License.\nBY-SA Compatible License means a license listed at creativecommons.org/compatiblelicenses, approved by Creative Commons as essentially the equivalent of this Public License.\nCopyright and Similar Rights means copyright and/or similar rights closely related to copyright including, without limitation, performance, broadcast, sound recording, and Sui Generis Database Rights, without regard to how the rights are labeled or categorized. For purposes of this Public License, the rights specified in Section 2(b)(1)-(2) are not Copyright and Similar Rights.\nEffective Technological Measures means those measures that, in the absence of proper authority, may not be circumvented under laws fulfilling obligations under Article 11 of the WIPO Copyright Treaty adopted on December 20, 1996, and/or similar international agreements.\nExceptions and Limitations means fair use, fair dealing, and/or any other exception or limitation to Copyright and Similar Rights that applies to Your use of the Licensed Material.\nLicense Elements means the license attributes listed in the name of a Creative Commons Public License. The License Elements of this Public License are Attribution and ShareAlike.\nLicensed Material means the artistic or literary work, database, or other material to which the Licensor applied this Public License.\nLicensed Rights means the rights granted to You subject to the terms and conditions of this Public License, which are limited to all Copyright and Similar Rights that apply to Your use of the Licensed Material and that the Licensor has authority to license.\nLicensor means the individual(s) or entity(ies) granting rights under this Public License.\nShare means to provide material to the public by any means or process that requires permission under the Licensed Rights, such as reproduction, public display, public performance, distribution, dissemination, communication, or importation, and to make material available to the public including in ways that members of the public may access the material from a place and at a time individually chosen by them.\nSui Generis Database Rights means rights other than copyright resulting from Directive 96/9/EC of the European Parliament and of the Council of 11 March 1996 on the legal protection of databases, as amended and/or succeeded, as well as other essentially equivalent rights anywhere in the world.\nYou means the individual or entity exercising the Licensed Rights under this Public License. Your has a corresponding meaning.\n\n\n\nSection 2 – Scope.\n\nLicense grant.\n\nSubject to the terms and conditions of this Public License, the Licensor hereby grants You a worldwide, royalty-free, non-sublicensable, non-exclusive, irrevocable license to exercise the Licensed Rights in the Licensed Material to:\n\nreproduce and Share the Licensed Material, in whole or in part; and\nproduce, reproduce, and Share Adapted Material.\n\nExceptions and Limitations. For the avoidance of doubt, where Exceptions and Limitations apply to Your use, this Public License does not apply, and You do not need to comply with its terms and conditions.\nTerm. The term of this Public License is specified in Section 6(a).\nMedia and formats; technical modifications allowed. The Licensor authorizes You to exercise the Licensed Rights in all media and formats whether now known or hereafter created, and to make technical modifications necessary to do so. The Licensor waives and/or agrees not to assert any right or authority to forbid You from making technical modifications necessary to exercise the Licensed Rights, including technical modifications necessary to circumvent Effective Technological Measures. For purposes of this Public License, simply making modifications authorized by this Section 2(a)(4) never produces Adapted Material.\nDownstream recipients.\nA. Offer from the Licensor – Licensed Material. Every recipient of the Licensed Material automatically receives an offer from the Licensor to exercise the Licensed Rights under the terms and conditions of this Public License.\n\n__Additional offer from the Licensor – Adapted Material. Every recipient of Adapted Material from You automatically receives an offer from the Licensor to exercise the Licensed Rights in the Adapted Material under the conditions of the Adapter’s License You apply.\n\nC. No downstream restrictions. You may not offer or impose any additional or different terms or conditions on, or apply any Effective Technological Measures to, the Licensed Material if doing so restricts exercise of the Licensed Rights by any recipient of the Licensed Material.\nNo endorsement. Nothing in this Public License constitutes or may be construed as permission to assert or imply that You are, or that Your use of the Licensed Material is, connected with, or sponsored, endorsed, or granted official status by, the Licensor or others designated to receive attribution as provided in Section 3(a)(1)(A)(i).\n\nOther rights.\n\nMoral rights, such as the right of integrity, are not licensed under this Public License, nor are publicity, privacy, and/or other similar personality rights; however, to the extent possible, the Licensor waives and/or agrees not to assert any such rights held by the Licensor to the limited extent necessary to allow You to exercise the Licensed Rights, but not otherwise.\nPatent and trademark rights are not licensed under this Public License.\nTo the extent possible, the Licensor waives any right to collect royalties from You for the exercise of the Licensed Rights, whether directly or through a collecting society under any voluntary or waivable statutory or compulsory licensing scheme. In all other cases the Licensor expressly reserves any right to collect such royalties.\n\n\n\n\nSection 3 – License Conditions.\nYour exercise of the Licensed Rights is expressly made subject to the following conditions.\n\nAttribution.\n\nIf You Share the Licensed Material (including in modified form), You must:\n\nretain the following if it is supplied by the Licensor with the Licensed Material:\n\n\n\nidentification of the creator(s) of the Licensed Material and any others designated to receive attribution, in any reasonable manner requested by the Licensor (including by pseudonym if designated);\na copyright notice;\na notice that refers to this Public License;\na notice that refers to the disclaimer of warranties;\na URI or hyperlink to the Licensed Material to the extent reasonably practicable;\n\n\n\nindicate if You modified the Licensed Material and retain an indication of any previous modifications; and\nindicate the Licensed Material is licensed under this Public License, and include the text of, or the URI or hyperlink to, this Public License.\n\nYou may satisfy the conditions in Section 3(a)(1) in any reasonable manner based on the medium, means, and context in which You Share the Licensed Material. For example, it may be reasonable to satisfy the conditions by providing a URI or hyperlink to a resource that includes the required information.\nIf requested by the Licensor, You must remove any of the information required by Section 3(a)(1)(A) to the extent reasonably practicable.\n\nShareAlike.\n\nIn addition to the conditions in Section 3(a), if You Share Adapted Material You produce, the following conditions also apply.\n\nThe Adapter’s License You apply must be a Creative Commons license with the same License Elements, this version or later, or a BY-SA Compatible License.\nYou must include the text of, or the URI or hyperlink to, the Adapter’s License You apply. You may satisfy this condition in any reasonable manner based on the medium, means, and context in which You Share Adapted Material.\nYou may not offer or impose any additional or different terms or conditions on, or apply any Effective Technological Measures to, Adapted Material that restrict exercise of the rights granted under the Adapter’s License You apply.\n\n\n\nSection 4 – Sui Generis Database Rights.\nWhere the Licensed Rights include Sui Generis Database Rights that apply to Your use of the Licensed Material:\n\nfor the avoidance of doubt, Section 2(a)(1) grants You the right to extract, reuse, reproduce, and Share all or a substantial portion of the contents of the database;\nif You include all or a substantial portion of the database contents in a database in which You have Sui Generis Database Rights, then the database in which You have Sui Generis Database Rights (but not its individual contents) is Adapted Material, including for purposes of Section 3(b); and\nYou must comply with the conditions in Section 3(a) if You Share all or a substantial portion of the contents of the database.\n\nFor the avoidance of doubt, this Section 4 supplements and does not replace Your obligations under this Public License where the Licensed Rights include other Copyright and Similar Rights.\n\n\nSection 5 – Disclaimer of Warranties and Limitation of Liability.\n\nUnless otherwise separately undertaken by the Licensor, to the extent possible, the Licensor offers the Licensed Material as-is and as-available, and makes no representations or warranties of any kind concerning the Licensed Material, whether express, implied, statutory, or other. This includes, without limitation, warranties of title, merchantability, fitness for a particular purpose, non-infringement, absence of latent or other defects, accuracy, or the presence or absence of errors, whether or not known or discoverable. Where disclaimers of warranties are not allowed in full or in part, this disclaimer may not apply to You.\nTo the extent possible, in no event will the Licensor be liable to You on any legal theory (including, without limitation, negligence) or otherwise for any direct, special, indirect, incidental, consequential, punitive, exemplary, or other losses, costs, expenses, or damages arising out of this Public License or use of the Licensed Material, even if the Licensor has been advised of the possibility of such losses, costs, expenses, or damages. Where a limitation of liability is not allowed in full or in part, this limitation may not apply to You.\nThe disclaimer of warranties and limitation of liability provided above shall be interpreted in a manner that, to the extent possible, most closely approximates an absolute disclaimer and waiver of all liability.\n\n\n\nSection 6 – Term and Termination.\n\nThis Public License applies for the term of the Copyright and Similar Rights licensed here. However, if You fail to comply with this Public License, then Your rights under this Public License terminate automatically.\nWhere Your right to use the Licensed Material has terminated under Section 6(a), it reinstates:\n\nautomatically as of the date the violation is cured, provided it is cured within 30 days of Your discovery of the violation; or\nupon express reinstatement by the Licensor.\n\nFor the avoidance of doubt, this Section 6(b) does not affect any right the Licensor may have to seek remedies for Your violations of this Public License.\nFor the avoidance of doubt, the Licensor may also offer the Licensed Material under separate terms or conditions or stop distributing the Licensed Material at any time; however, doing so will not terminate this Public License.\nSections 1, 5, 6, 7, and 8 survive termination of this Public License.\n\n\n\nSection 7 – Other Terms and Conditions.\n\nThe Licensor shall not be bound by any additional or different terms or conditions communicated by You unless expressly agreed.\nAny arrangements, understandings, or agreements regarding the Licensed Material not stated herein are separate from and independent of the terms and conditions of this Public License.t stated herein are separate from and independent of the terms and conditions of this Public License.\n\n\n\nSection 8 – Interpretation.\n\nFor the avoidance of doubt, this Public License does not, and shall not be interpreted to, reduce, limit, restrict, or impose conditions on any use of the Licensed Material that could lawfully be made without permission under this Public License.\nTo the extent possible, if any provision of this Public License is deemed unenforceable, it shall be automatically reformed to the minimum extent necessary to make it enforceable. If the provision cannot be reformed, it shall be severed from this Public License without affecting the enforceability of the remaining terms and conditions.\nNo term or condition of this Public License will be waived and no failure to comply consented to unless expressly agreed to by the Licensor.\nNothing in this Public License constitutes or may be interpreted as a limitation upon, or waiver of, any privileges and immunities that apply to the Licensor or You, including from the legal processes of any jurisdiction or authority.\n\n\nCreative Commons is not a party to its public licenses. Notwithstanding, Creative Commons may elect to apply one of its public licenses to material it publishes and in those instances will be considered the “Licensor.” Except for the limited purpose of indicating that material is shared under a Creative Commons public license or as otherwise permitted by the Creative Commons policies published at creativecommons.org/policies, Creative Commons does not authorize the use of the trademark “Creative Commons” or any other trademark or logo of Creative Commons without its prior written consent including, without limitation, in connection with any unauthorized modifications to any of its public licenses or any other arrangements, understandings, or agreements concerning use of licensed material. For the avoidance of doubt, this paragraph does not form part of the public licenses.\nCreative Commons may be contacted at creativecommons.org"
+  },
+  {
+    "objectID": "content.html",
+    "href": "content.html",
+    "title": "Course content",
+    "section": "",
+    "text": "CS 354 – Database Management Systems – is organized by week, with each week structured as follows:\n\nClassroom sessions are Monday-Wednesday-Friday 2.45PM - 3.50PM at SB 382.\nHomeworks are due Friday 23:59. They will be released every Monday.\nProject submission is due Wednesday at 23:59. They will be released every Wednesday.\nTutoring Assistants are available in SB337 on Mondays and Thursdays, from 7 - 9 pm.\n\nThe SLOs (Student Learning Objectives), labs, and projects for each week are given in the links below. The readings are from Ramez Elmasri, S. B. N. (2016). Fundamentals of Database Systems 7th ed.\n\n\n\nWeek\nTopics\nLaboratories\nProjects\nTests, Video Links, etc.\n\n\n\n\n1  —  3/17\nIntroduction to Databases & SQL Basics  Week’s page\nHomework 1\nProj 1\n\n\n\n2  —  3/24\nSQL – Intermediate Concepts  Advising days – no class 26-27 Week’s page\nHomework 2\nProj 2\n\n\n\n3  —  3/31\nSQL – Data Modification & Advanced Queries Week’s page\nHomework 3\nProj 3\n\n\n\n4  —  4/7\nDatabase Design – ER Modeling & Schema Refinement Week’s page\nHomework 4\nProj 4\nTest 1: Weeks 1 - 3, Friday\n\n\n5  —  4/14\nAdvanced SQL & Integrity Constraints  Good Friday & Easter Monday – no class 18-21  Week’s page\nNo lab\nNo project\n\n\n\n6  —  4/22\nDatabase Management & Optimization Week’s page\nHomework 6\nNo project\n\n\n\n7  —  4/28\nFinal Project and Course Wrap-Up Week’s page\nHomework 7\nFinal Project\n\n\n\nFinal  —  May 3-8\nSearch calvin.edu for “Exam Schedule” to find the time of the exam (and all exams you have, this semester, and all future semesters).\n\n\nFinal Test Cumulative, during exam time (You may take it in either class’s exam time. Classes met at 2.45pm MWF.)",
+    "crumbs": [
+      "Content",
+      "Course content"
+    ]
+  },
+  {
+    "objectID": "projects/proj04.html#grading-rubric",
+    "href": "projects/proj04.html#grading-rubric",
+    "title": "Project 04: Soon…",
     "section": "Grading Rubric",
-    "text": "Grading Rubric\nThis project is worth 100 pts."
+    "text": "Grading Rubric"
+  },
+  {
+    "objectID": "projects/proj99-final.html#grading-rubric",
+    "href": "projects/proj99-final.html#grading-rubric",
+    "title": "Final Project: Soon…",
+    "section": "Grading Rubric",
+    "text": "Grading Rubric\nTotal: XX pts"
+  },
+  {
+    "objectID": "projects/proj03.html#submission",
+    "href": "projects/proj03.html#submission",
+    "title": "Project 03: soon…",
+    "section": "Submission",
+    "text": "Submission\n\nGrading Rubric\nThis project is worth xx pts:"
   },
   {
     "objectID": "index.html",
@@ -869,100 +969,105 @@
     ]
   },
   {
-    "objectID": "week05.html",
-    "href": "week05.html",
-    "title": "Week 05: Advanced SQL & Integrity Constraints (under construction)",
+    "objectID": "week07.html",
+    "href": "week07.html",
+    "title": "Week 07: Final Project and Course Wrap-Up (under construction)",
     "section": "",
-    "text": "By the end of this unit, students will be able to…\n\nImplement integrity constraints (PRIMARY KEY, FOREIGN KEY, CHECK).\nWrite and execute triggers for database automation.\nOptimize SQL queries for improved performance.\nDemonstrate SQL injection and discuss prevention strategies.\nAssign user roles and permissions for database security.\nDebug and troubleshoot complex SQL queries.",
+    "text": "By the end of this unit, students will be able to…\n\nDesign and implement a database system from scratch.\nWrite SQL queries to solve real-world data retrieval problems.\nPresent a comprehensive database solution addressing a given scenario.\nCompare different database designs and justify choices.\nDemonstrate proficiency in SQL and database management concepts.\nReflect on the course content and their learning experience.",
     "crumbs": [
       "Content",
-      "Week 05: Advanced SQL & Integrity Constraints (under construction)"
+      "Week 07: Final Project and Course Wrap-Up (under construction)"
     ]
   },
   {
-    "objectID": "week05.html#slos-for-week-05",
-    "href": "week05.html#slos-for-week-05",
-    "title": "Week 05: Advanced SQL & Integrity Constraints (under construction)",
+    "objectID": "week07.html#slos-for-week-07",
+    "href": "week07.html#slos-for-week-07",
+    "title": "Week 07: Final Project and Course Wrap-Up (under construction)",
     "section": "",
-    "text": "By the end of this unit, students will be able to…\n\nImplement integrity constraints (PRIMARY KEY, FOREIGN KEY, CHECK).\nWrite and execute triggers for database automation.\nOptimize SQL queries for improved performance.\nDemonstrate SQL injection and discuss prevention strategies.\nAssign user roles and permissions for database security.\nDebug and troubleshoot complex SQL queries.",
+    "text": "By the end of this unit, students will be able to…\n\nDesign and implement a database system from scratch.\nWrite SQL queries to solve real-world data retrieval problems.\nPresent a comprehensive database solution addressing a given scenario.\nCompare different database designs and justify choices.\nDemonstrate proficiency in SQL and database management concepts.\nReflect on the course content and their learning experience.",
     "crumbs": [
       "Content",
-      "Week 05: Advanced SQL & Integrity Constraints (under construction)"
+      "Week 07: Final Project and Course Wrap-Up (under construction)"
     ]
   },
   {
-    "objectID": "week05.html#slides-videos-and-application-exercises",
-    "href": "week05.html#slides-videos-and-application-exercises",
-    "title": "Week 05: Advanced SQL & Integrity Constraints (under construction)",
+    "objectID": "week07.html#slides-videos-and-application-exercises",
+    "href": "week07.html#slides-videos-and-application-exercises",
+    "title": "Week 07: Final Project and Course Wrap-Up (under construction)",
     "section": "Slides, videos, and application exercises",
-    "text": "Slides, videos, and application exercises\n\nWeek 05: Slides\n\nSlides\n\n\nNo readings for Week 05.\n\n\n\n\nHomework 05: No homework for Week 05\n\n\n\nProject 05: No Project for Week 05",
+    "text": "Slides, videos, and application exercises\n\nWeek 07: Slides\n\nSlides\n\n\nNo readings for Week 07.\n\n\n\n\nHomework 7:\n\nInstructions\n\n\n\n\nProject 07: Final Project\n\nInstructions",
     "crumbs": [
       "Content",
-      "Week 05: Advanced SQL & Integrity Constraints (under construction)"
+      "Week 07: Final Project and Course Wrap-Up (under construction)"
     ]
   },
   {
-    "objectID": "week02-summary.html",
-    "href": "week02-summary.html",
-    "title": "Week 02: SQL – Intermediate Concepts Summary",
+    "objectID": "week04.html",
+    "href": "week04.html",
+    "title": "Week 04: Database Design – ER Modeling & Schema Refinement (under construction)",
     "section": "",
-    "text": "At the end of this unit, students will be able to…\n\nPerform data aggregation using GROUP BY and HAVING.\nWrite and execute INNER, LEFT-OUTER, RIGHT, and FULL JOINs.\nConstruct subqueries for complex queries.\nImplement SQL functions and expressions.\nUse SQL best practices for readable and efficient queries.\nOptimize SQL queries for better performance."
+    "text": "Students will be able to…\n\nDesign ER diagrams to model database structures.\nConvert ER models into relational schemas.\nNormalize database schemas using BCNF and 4NF (briefly).\nIdentify and resolve redundancy issues in schemas.\nDefine and enforce primary and foreign key constraints.\nCreate SQL schemas from conceptual designs.",
+    "crumbs": [
+      "Content",
+      "Week 04: Database Design – ER Modeling & Schema Refinement (under construction)"
+    ]
   },
   {
-    "objectID": "week02-summary.html#slos-for-week-02",
-    "href": "week02-summary.html#slos-for-week-02",
-    "title": "Week 02: SQL – Intermediate Concepts Summary",
+    "objectID": "week04.html#slos-for-week-04",
+    "href": "week04.html#slos-for-week-04",
+    "title": "Week 04: Database Design – ER Modeling & Schema Refinement (under construction)",
     "section": "",
-    "text": "At the end of this unit, students will be able to…\n\nPerform data aggregation using GROUP BY and HAVING.\nWrite and execute INNER, LEFT-OUTER, RIGHT, and FULL JOINs.\nConstruct subqueries for complex queries.\nImplement SQL functions and expressions.\nUse SQL best practices for readable and efficient queries.\nOptimize SQL queries for better performance."
+    "text": "Students will be able to…\n\nDesign ER diagrams to model database structures.\nConvert ER models into relational schemas.\nNormalize database schemas using BCNF and 4NF (briefly).\nIdentify and resolve redundancy issues in schemas.\nDefine and enforce primary and foreign key constraints.\nCreate SQL schemas from conceptual designs.",
+    "crumbs": [
+      "Content",
+      "Week 04: Database Design – ER Modeling & Schema Refinement (under construction)"
+    ]
   },
   {
-    "objectID": "week02-summary.html#aggregation-grouping",
-    "href": "week02-summary.html#aggregation-grouping",
-    "title": "Week 02: SQL – Intermediate Concepts Summary",
-    "section": "📏 1. Aggregation & Grouping",
-    "text": "📏 1. Aggregation & Grouping\n\nCOUNT(), SUM(), AVG(), MIN(), MAX() – summarize column values\nGROUP BY – group rows by one or more columns\nHAVING – filter grouped results\n\nSELECT department, AVG(gpa)\nFROM students\nGROUP BY department\nHAVING AVG(gpa) &gt; 3.5;"
+    "objectID": "week04.html#slides-videos-and-application-exercises",
+    "href": "week04.html#slides-videos-and-application-exercises",
+    "title": "Week 04: Database Design – ER Modeling & Schema Refinement (under construction)",
+    "section": "Slides, videos, and application exercises",
+    "text": "Slides, videos, and application exercises\n\nWeek 04: Slides\n\nSlides\n\n\nNo readings for Week 4.\n\n\n\n\nHomework 04:\n\nInstructions\n\n\n\n\nProject 04:\n\nInstructions\n\n\n\nExam 1\nExam on Friday during class. Bring your laptop. Content: Weeks 1 - 3.",
+    "crumbs": [
+      "Content",
+      "Week 04: Database Design – ER Modeling & Schema Refinement (under construction)"
+    ]
   },
   {
-    "objectID": "week02-summary.html#sql-joins",
-    "href": "week02-summary.html#sql-joins",
-    "title": "Week 02: SQL – Intermediate Concepts Summary",
-    "section": "🔗 2. SQL Joins",
-    "text": "🔗 2. SQL Joins\n\nINNER JOIN – only matching rows from both tables\nLEFT OUTER JOIN – all from left table + matching right\nRIGHT OUTER JOIN – all from right table + matching left\nFULL OUTER JOIN – all rows from both tables (if supported)\n\nSELECT s.name, c.name\nFROM students s\nLEFT JOIN enrollments e ON s.id = e.student_id\nLEFT JOIN courses c ON e.course_id = c.id;"
+    "objectID": "week02-06.html",
+    "href": "week02-06.html",
+    "title": "Week 02: SLO 06 – Optimize SQL Queries for Better Performance",
+    "section": "",
+    "text": "Well-optimized SQL queries:\n\nRun faster\nReduce memory and CPU usage\nImprove scalability for large datasets\n\nEven in SQLite, which is lightweight and file-based, writing efficient queries is essential, especially when working with large tables or complex joins."
   },
   {
-    "objectID": "week02-summary.html#subqueries",
-    "href": "week02-summary.html#subqueries",
-    "title": "Week 02: SQL – Intermediate Concepts Summary",
-    "section": "🔍 3. Subqueries",
-    "text": "🔍 3. Subqueries\n\nUse queries inside other queries\nUse with IN, EXISTS, =, &lt;, etc.\n\nSELECT * FROM students\nWHERE id IN (SELECT student_id FROM enrollments);\n\nCorrelated Subqueries: Reference outer query\nNon-Correlated Subqueries: Can run independently"
+    "objectID": "week02-06.html#why-it-matters",
+    "href": "week02-06.html#why-it-matters",
+    "title": "Week 02: SLO 06 – Optimize SQL Queries for Better Performance",
+    "section": "",
+    "text": "Well-optimized SQL queries:\n\nRun faster\nReduce memory and CPU usage\nImprove scalability for large datasets\n\nEven in SQLite, which is lightweight and file-based, writing efficient queries is essential, especially when working with large tables or complex joins."
   },
   {
-    "objectID": "week02-summary.html#sql-functions-expressions",
-    "href": "week02-summary.html#sql-functions-expressions",
-    "title": "Week 02: SQL – Intermediate Concepts Summary",
-    "section": "🧲 4. SQL Functions & Expressions",
-    "text": "🧲 4. SQL Functions & Expressions\n\nMath: ROUND(gpa, 2), ABS(), CEIL(), FLOOR()\nString: UPPER(), LOWER(), LENGTH(), SUBSTR()\nDate (SQLite): DATE(), STRFTIME('%Y', birthdate)\n\nSELECT UPPER(first_name) || ' ' || UPPER(last_name) FROM students;"
+    "objectID": "week02-06.html#key-techniques-examples",
+    "href": "week02-06.html#key-techniques-examples",
+    "title": "Week 02: SLO 06 – Optimize SQL Queries for Better Performance",
+    "section": "🔧 Key Techniques & Examples",
+    "text": "🔧 Key Techniques & Examples\n\n1. Use SELECT Only What You Need\nAvoid SELECT * — only select necessary columns.\n-- Bad\nSELECT * FROM orders;\n\n-- Good\nSELECT order_id, order_date FROM orders;\n🔍 In other DBMSs, SELECT * can even prevent index-only scans (e.g., PostgreSQL). In DBMSs like PostgreSQL, an index-only scan is a powerful optimization. It allows the database to read data directly from the index without having to access the full table (also called the heap). This is much faster, especially on large tables.\nBut for this to work, two things must be true:\n\nAll the required columns must be in the index\nThere must be no need to access the actual table rows\n\nSQLite does not support index-only scans in the same way PostgreSQL does. So in SQLite, this specific optimization doesn’t apply — but it’s still a good habit to avoid SELECT * for performance and clarity.\n\n\n2. Filter Early with WHERE\nApply WHERE clauses to reduce the number of rows processed.\n-- Bad\nSELECT customer_id FROM orders;\n\n-- Good\nSELECT customer_id FROM orders WHERE order_date &gt; '2024-01-01';\nIn SQLite, filtering helps avoid unnecessary disk reads since it uses B-Trees for indexes.\n\n\n3. Use Indexes Wisely\nIndexes speed up WHERE, JOIN, and ORDER BY. But avoid over-indexing!\n-- Create index on order_date for filtering\nCREATE INDEX idx_orders_order_date ON orders(order_date);\nIn PostgreSQL, you can use EXPLAIN to see if indexes are used. In SQLite, use EXPLAIN QUERY PLAN.\nAn index is like a sorted list that a database uses to quickly find data in a table — similar to an index in a book.\nInstead of scanning every row (called a full table scan), the database looks in the index to jump directly to the relevant rows, which is much faster.\n📌 Key Points about Indexes\n\nSpeeds up WHERE, JOIN, and ORDER BY queries.\nUses extra disk space.\nToo many indexes = slower inserts/updates (because all indexes need updating).\nBest used on columns frequently used in filtering or joining.\n\n\n\n4. Avoid Functions on Indexed Columns\nUsing functions on columns disables index use.\n-- Bad (no index use)\nSELECT * FROM orders WHERE strftime('%Y', order_date) = '2024';\n\n-- Good\nSELECT * FROM orders WHERE order_date &gt;= '2024-01-01' AND order_date &lt; '2025-01-01';\n\n\n5. Use EXISTS Instead of IN for Subqueries\n-- Slower for large subqueries\nSELECT name FROM customers \nWHERE customer_id IN (SELECT customer_id FROM orders);\n\n-- Faster with EXISTS\nSELECT name FROM customers c\nWHERE EXISTS (\n  SELECT 1 FROM orders o WHERE o.customer_id = c.customer_id\n);\nThis query retrieves the names of customers who have at least one order.\nIn SQLite, both are often converted internally, but EXISTS is still preferable with correlated subqueries.\nThe subquery\nSELECT 1 FROM orders o WHERE o.customer_id = c.customer_id\nsays: “Is there at least one order where orders.customer_id = this customer’s ID?”. If yes, the customer is included in the result.\n\n\n\n\n\n\nImportant\n\n\n\nSELECT 1 just returns a dummy value — it could be SELECT * or SELECT 'x'; it doesn’t matter because EXISTS only cares about the existence of at least one matching row.\n\n\nThis is often faster than:\nSELECT name FROM customers\nWHERE customer_id IN (SELECT customer_id FROM orders);\nBecause EXISTS can stop searching early (as soon as it finds a match), while IN may need to collect all values first, depending on the DBMS.\n\n\n6. Use JOINs Instead of Subqueries (when appropriate)\n-- Subquery\nSELECT name FROM customers \nWHERE customer_id IN (\n  SELECT customer_id FROM orders WHERE total &gt; 100\n);\n\n-- JOIN (may perform better)\nSELECT DISTINCT c.name \nFROM customers c\n    JOIN orders o ON c.customer_id = o.customer_id\nWHERE o.total &gt; 100;\nIn MySQL and PostgreSQL, query planners can optimize JOINs more effectively.\n\n\n7. Limit Result Set with LIMIT\nAlways add a LIMIT for preview or pagination.\nSELECT * FROM logs ORDER BY created_at DESC LIMIT 100;"
   },
   {
-    "objectID": "week02-summary.html#sql-best-practices",
-    "href": "week02-summary.html#sql-best-practices",
-    "title": "Week 02: SQL – Intermediate Concepts Summary",
-    "section": "🪜 5. SQL Best Practices",
-    "text": "🪜 5. SQL Best Practices\n\nUse clear formatting and indentation\nAvoid SELECT * – specify needed columns\nUse aliases (AS) to clarify column and table names\n\nSELECT s.first_name AS student, c.name AS course\nFROM students s JOIN enrollments e ON s.id = e.student_id;"
+    "objectID": "week02-06.html#sqlite-specific-tips",
+    "href": "week02-06.html#sqlite-specific-tips",
+    "title": "Week 02: SLO 06 – Optimize SQL Queries for Better Performance",
+    "section": "🔍 SQLite-Specific Tips",
+    "text": "🔍 SQLite-Specific Tips\n\nA. Use ANALYZE to collect statistics and help the query planner:\nANALYZE;\nANALYZE is a command that collects statistics about the contents of tables and indexes. These statistics help SQLite’s query planner make better decisions when optimizing queries.\nYou can also analyze a specific table or index:\nANALYZE orders;\n📈 What It Does\n\nStores the data distribution and row counts in a system table called sqlite_stat1.\nHelps SQLite decide:\n\nWhich index to use\nWhether to use an index at all\nThe best join order\n\n\n📌 When to Use\n\nAfter creating new indexes\nAfter loading a large amount of data\nAfter major updates or deletes\n\nIt does not run automatically — you should run it manually when needed.\n\n\nB. Use EXPLAIN QUERY PLAN to understand what SQLite is doing:\nEXPLAIN QUERY PLAN SELECT * FROM orders WHERE order_date &gt; '2024-01-01';\nEXPLAIN is a command that shows how SQLite will execute a SQL statement, step by step. It’s used to understand and debug query performance.\n🔍 Two Versions\n\n1. EXPLAIN\nShows low-level virtual machine instructions (for advanced debugging).\nEXPLAIN SELECT * FROM orders;\n\nOutput: Virtual opcodes (not beginner-friendly)\nUse if you’re deep into SQLite internals\n\n\n\n2. EXPLAIN QUERY PLAN\nThe one you’ll use most. It gives a high-level overview of the query plan.\nEXPLAIN QUERY PLAN \nSELECT * FROM orders WHERE order_date &gt; '2024-01-01';\nTells you:\n\nWhich index (if any) is used\nWhether it does a full table scan\nThe join order\n\n📌 When to Use\n\nTo check if indexes are being used\nTo spot slow queries doing full scans\nBefore/after ANALYZE to see improvements\n\nHere is an example of the output you might see."
   },
   {
-    "objectID": "week02-summary.html#query-optimization-basics",
-    "href": "week02-summary.html#query-optimization-basics",
-    "title": "Week 02: SQL – Intermediate Concepts Summary",
-    "section": "⚡ 6. Query Optimization Basics",
-    "text": "⚡ 6. Query Optimization Basics\n\nIndexes speed up filtering and joining\nFilter early with WHERE\nAvoid nested subqueries unless needed\nUse EXPLAIN (in supported engines) to analyze performance\n\nEXPLAIN SELECT * FROM students WHERE gpa &gt; 3.5;"
-  },
-  {
-    "objectID": "week02-summary.html#pro-tip-practice-readability-matter",
-    "href": "week02-summary.html#pro-tip-practice-readability-matter",
-    "title": "Week 02: SQL – Intermediate Concepts Summary",
-    "section": "✅ Pro Tip: Practice & Readability Matter!",
-    "text": "✅ Pro Tip: Practice & Readability Matter!\nGood SQL is not just correct—it’s efficient, maintainable, and easy to understand."
+    "objectID": "week02-06.html#comparisons-to-other-dbmss",
+    "href": "week02-06.html#comparisons-to-other-dbmss",
+    "title": "Week 02: SLO 06 – Optimize SQL Queries for Better Performance",
+    "section": "🆚 Comparisons to Other DBMSs",
+    "text": "🆚 Comparisons to Other DBMSs\n\n\n\n\n\n\n\n\n\nOptimization Tip\nSQLite\nPostgreSQL\nMySQL\n\n\n\n\nIndex Support\nB-tree only\nB-tree, GiST, GIN, BRIN\nB-tree, Full-text\n\n\nQuery Plan Tool\nEXPLAIN QUERY PLAN\nEXPLAIN (ANALYZE, BUFFERS)\nEXPLAIN\n\n\nParallel Query Support\n❌ No\n✅ Yes\n✅ Limited\n\n\nOptimizer Complexity\nSimple\nAdvanced (cost-based)\nModerate"
   },
   {
     "objectID": "jupyter/libraries/libraries.html",
@@ -998,7 +1103,7 @@
     "href": "week03.html#slides-videos-and-application-exercises",
     "title": "Week 03: SQL – Data Modification & Advanced Queries (under construction)",
     "section": "Slides, videos, and application exercises",
-    "text": "Slides, videos, and application exercises\n\nWeek 03: Slides\n\nSlides\n\n\n\nMark Simon. (2023). Getting Started with SQL and Databases : Managing and Manipulating Data with SQL. Apress. - Chapters 7, 8 and 9\n\n\n\n\nHomework 03: \n\nInstructions\n\n\n\n\nProject 03: Classes\n\nInstructions",
+    "text": "Slides, videos, and application exercises\n\nWeek 03: Slides\n\nSlides\n\n\n\nMark Simon. (2023). Getting Started with SQL and Databases : Managing and Manipulating Data with SQL. Apress. - Chapters 7, 8 and 9\n\n\n\n\nHomework 03:\n\nInstructions\n\n\n\n\nProject 03: Classes\n\nInstructions",
     "crumbs": [
       "Content",
       "Week 03: SQL – Data Modification & Advanced Queries (under construction)"
