@@ -11,12 +11,15 @@ format:
 
 By the end of this unit, students will be able to...
 
-1.  Implement integrity constraints (PRIMARY KEY, FOREIGN KEY, CHECK).
-2.  Write and execute triggers for database automation.
-3.  Optimize SQL queries for improved performance.
-4.  Demonstrate SQL injection and discuss prevention strategies.
-5.  Assign user roles and permissions for database security.
-6.  Debug and troubleshoot complex SQL queries.
+1.  Write and execute triggers for database automation using `CREATE TRIGGER`, `BEFORE`, `AFTER` and `INSTEAD OF`.
+2.  Understand that SQLite is a transactional database where all changes and queries are atomic, consistent, isolated, and durable (ACID) and what it means.
+3.  Manage transactions using `COMMIT` and `ROLLBACK`.
+4.  How to perform SQL full-text search using `MATCH`.
+5.  Use SQLite CLI commands, such as `.schema`, `.table`, `.headers on/off`, `.mode column`.
+6.  Normalize database schemas using BCNF and 4NF.
+
+
+
 
 ## Slides, videos, and application exercises
 

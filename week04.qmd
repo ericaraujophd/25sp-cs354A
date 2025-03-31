@@ -11,13 +11,13 @@ format:
 
 Students will be able to...
 
-1.  Design ER diagrams to model database structures.
-2.  Convert ER models into relational schemas.
-3.  Normalize database schemas using BCNF and 4NF (briefly).
-4.  Identify and resolve redundancy issues in schemas.
-5.  Define and enforce primary and foreign key constraints.
-6.  Manage transactions using COMMIT and ROLLBACK.
-7.  Create SQL schemas from conceptual designs.
+1.  Add conditional logic to queries using `CASE`.
+2.  Create and understand the view concept using `CREATE VIEW` and `DROP VIEW`.
+3.  Differentiate between materialized and non-materialized views.
+4.  Design ER diagrams to model database structures.
+5.  Convert ER models into relational schemas.
+6.  Create SQL schemas from conceptual designs.
+7.  Identify and resolve redundancy issues in schemas.
 
 ## Slides, videos, and application exercises
 

@@ -14,7 +14,7 @@
   </url>
   <url>
     <loc>https://ericaraujo.com/25sp-cs354A/week04.html</loc>
-    <lastmod>2025-03-31T03:14:30.252Z</lastmod>
+    <lastmod>2025-03-31T04:03:16.348Z</lastmod>
   </url>
   <url>
     <loc>https://ericaraujo.com/25sp-cs354A/week07.html</loc>
@@ -37,60 +37,64 @@
     <lastmod>2025-03-17T16:04:06.234Z</lastmod>
   </url>
   <url>
-    <loc>https://ericaraujo.com/25sp-cs354A/week03-06-optimization.html</loc>
-    <lastmod>2025-03-31T02:28:45.737Z</lastmod>
+    <loc>https://ericaraujo.com/25sp-cs354A/security.html</loc>
+    <lastmod>2025-03-31T04:21:03.211Z</lastmod>
   </url>
   <url>
-    <loc>https://ericaraujo.com/25sp-cs354A/index.html</loc>
-    <lastmod>2025-03-07T20:15:50.067Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ericaraujo.com/25sp-cs354A/projects/proj03.html</loc>
-    <lastmod>2025-03-17T15:57:38.561Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ericaraujo.com/25sp-cs354A/projects/proj99-final.html</loc>
-    <lastmod>2025-03-17T15:59:36.438Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ericaraujo.com/25sp-cs354A/projects/proj04.html</loc>
-    <lastmod>2025-03-17T15:58:50.280Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ericaraujo.com/25sp-cs354A/week03-02-time.html</loc>
-    <lastmod>2025-03-31T00:20:37.642Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ericaraujo.com/25sp-cs354A/week02-case.html</loc>
-    <lastmod>2025-03-30T17:33:56.097Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ericaraujo.com/25sp-cs354A/LICENSE.html</loc>
-    <lastmod>2025-01-03T22:28:28.236Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ericaraujo.com/25sp-cs354A/content.html</loc>
-    <lastmod>2025-03-02T03:14:37.047Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ericaraujo.com/25sp-cs354A/instructors.html</loc>
-    <lastmod>2025-03-20T19:10:56.421Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ericaraujo.com/25sp-cs354A/projects/proj01.html</loc>
-    <lastmod>2025-03-04T05:18:13.885Z</lastmod>
-  </url>
-  <url>
-    <loc>https://ericaraujo.com/25sp-cs354A/projects/proj02.html</loc>
-    <lastmod>2025-03-25T15:53:43.227Z</lastmod>
+    <loc>https://ericaraujo.com/25sp-cs354A/policies.html</loc>
+    <lastmod>2025-03-07T20:24:59.841Z</lastmod>
   </url>
   <url>
     <loc>https://ericaraujo.com/25sp-cs354A/week02-analyze.html</loc>
     <lastmod>2025-03-31T02:16:29.705Z</lastmod>
   </url>
   <url>
-    <loc>https://ericaraujo.com/25sp-cs354A/policies.html</loc>
-    <lastmod>2025-03-07T20:24:59.841Z</lastmod>
+    <loc>https://ericaraujo.com/25sp-cs354A/projects/proj02.html</loc>
+    <lastmod>2025-03-25T15:53:43.227Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ericaraujo.com/25sp-cs354A/projects/proj01.html</loc>
+    <lastmod>2025-03-04T05:18:13.885Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ericaraujo.com/25sp-cs354A/instructors.html</loc>
+    <lastmod>2025-03-20T19:10:56.421Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ericaraujo.com/25sp-cs354A/content.html</loc>
+    <lastmod>2025-03-02T03:14:37.047Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ericaraujo.com/25sp-cs354A/LICENSE.html</loc>
+    <lastmod>2025-01-03T22:28:28.236Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ericaraujo.com/25sp-cs354A/week02-case.html</loc>
+    <lastmod>2025-03-30T17:33:56.097Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ericaraujo.com/25sp-cs354A/week03-02-time.html</loc>
+    <lastmod>2025-03-31T00:20:37.642Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ericaraujo.com/25sp-cs354A/projects/proj04.html</loc>
+    <lastmod>2025-03-17T15:58:50.280Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ericaraujo.com/25sp-cs354A/projects/proj99-final.html</loc>
+    <lastmod>2025-03-17T15:59:36.438Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ericaraujo.com/25sp-cs354A/projects/proj03.html</loc>
+    <lastmod>2025-03-17T15:57:38.561Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ericaraujo.com/25sp-cs354A/index.html</loc>
+    <lastmod>2025-03-07T20:15:50.067Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ericaraujo.com/25sp-cs354A/week03-06-optimization.html</loc>
+    <lastmod>2025-03-31T02:28:45.737Z</lastmod>
   </url>
   <url>
     <loc>https://ericaraujo.com/25sp-cs354A/week02-notes.html</loc>
@@ -110,11 +114,11 @@
   </url>
   <url>
     <loc>https://ericaraujo.com/25sp-cs354A/week06.html</loc>
-    <lastmod>2025-03-31T03:29:07.926Z</lastmod>
+    <lastmod>2025-03-31T04:19:03.658Z</lastmod>
   </url>
   <url>
     <loc>https://ericaraujo.com/25sp-cs354A/week05.html</loc>
-    <lastmod>2025-03-31T02:37:44.791Z</lastmod>
+    <lastmod>2025-03-31T04:14:38.438Z</lastmod>
   </url>
   <url>
     <loc>https://ericaraujo.com/25sp-cs354A/week02-summary.html</loc>
@@ -126,6 +130,6 @@
   </url>
   <url>
     <loc>https://ericaraujo.com/25sp-cs354A/week03.html</loc>
-    <lastmod>2025-03-31T03:36:44.781Z</lastmod>
+    <lastmod>2025-03-31T04:05:23.971Z</lastmod>
   </url>
 </urlset>

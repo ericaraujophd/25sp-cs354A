@@ -1,0 +1,70 @@
+🔐 Topics for Database Security
+
+🔒 1. SQL Injection
+	•	What it is: Attacks where malicious SQL is injected into a query.
+	•	Why it matters: It’s one of the most common web security vulnerabilities.
+	•	Key concepts:
+	•	Use of parameterized queries / prepared statements
+	•	Risks of string concatenation
+	•	Demo: Show how unsafe user input can manipulate a query.
+	•	✅ SQLite supports parameter binding via libraries (like Python’s sqlite3, PHP, etc.)
+
+⸻
+
+👤 2. Authentication and Access Control
+
+(More relevant in full-featured DBMSs, but important conceptually)
+	•	What it is: Managing who can access what in a database.
+	•	SQLite doesn’t support users or roles, but you can:
+	•	Discuss permissions in PostgreSQL/MySQL (e.g., GRANT, REVOKE)
+	•	Mention OS-level protections in SQLite (file permissions)
+
+⸻
+
+📦 3. Data at Rest Protection
+	•	Encryption:
+	•	Explain database-level encryption (e.g., SQLCipher for SQLite)
+	•	Compare with TDE (Transparent Data Encryption) in SQL Server or Oracle
+	•	File system security:
+	•	Emphasize securing the .db file from unauthorized users
+
+⸻
+
+🔄 4. Backups and Integrity
+	•	Importance of:
+	•	Secure and consistent backups
+	•	Validating data integrity after restore
+	•	Tools: sqlite3 .backup command, VACUUM for cleanup
+
+⸻
+
+🧾 5. Logging & Auditing
+	•	What to track: queries, access, errors
+	•	In SQLite:
+	•	Logging must be implemented at the application layer
+	•	In PostgreSQL:
+	•	Native audit/logging tools exist (e.g., pg_stat_activity)
+
+⸻
+
+📋 6. Principle of Least Privilege
+	•	Always give users the minimum permissions they need
+	•	Relate this to:
+	•	Access control in PostgreSQL (REVOKE ALL, then GRANT what’s needed)
+	•	App-level SQLite access modes (read-only, read-write)
+
+⸻
+
+🧪 7. Practical Threat Scenarios
+	•	What happens if…
+	•	The database file is leaked?
+	•	Users can insert raw SQL?
+	•	No input validation is done?
+	•	Use small case studies or labs to reinforce concepts
+
+⸻
+
+⚖️ Optional (Advanced)
+	•	Hashing and salting passwords (e.g., for login tables)
+	•	Certificate-based connections (in PostgreSQL/MySQL)
+	•	Security implications of cloud databases

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Week 05: Advanced SQL &amp; Integrity Constraints (under construction) – CS 354 – Database Management Systems</title>
+<title>security – CS 354 – Database Management Systems</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./week06.html" rel="next">
-<link href="./week04.html" rel="prev">
 <link href=".//images/data-management.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -74,11 +72,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="https://kit.fontawesome.com/78ddb093ea.js" crossorigin="anonymous"></script>
 
 
-<link rel="stylesheet" href="./styles.css">
-<meta property="og:title" content="Week 05: Advanced SQL &amp; Integrity Constraints (under construction) – CS 354 – Database Management Systems">
+<meta property="og:title" content="CS 354 – Database Management Systems">
 <meta property="og:description" content="CS354 provides a hands-on introduction to relational databases, SQL querying, and database design, focusing on real-world applications, optimization, and security.">
 <meta property="og:site_name" content="CS 354 – Database Management Systems">
-<meta name="twitter:title" content="Week 05: Advanced SQL &amp; Integrity Constraints (under construction) – CS 354 – Database Management Systems">
+<meta name="twitter:title" content="CS 354 – Database Management Systems">
 <meta name="twitter:description" content="CS354 provides a hands-on introduction to relational databases, SQL querying, and database design, focusing on real-world applications, optimization, and security.">
 <meta name="twitter:image" content="https://ericaraujo.com/25sp-cs354A/images/data-management.png">
 <meta name="twitter:creator" content="@ericfaraujo">
@@ -87,7 +84,7 @@ ul.task-list li input[type="checkbox"] {
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
-<body class="nav-sidebar floating nav-fixed">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -109,7 +106,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Overview</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./content.html" aria-current="page"> 
+    <a class="nav-link" href="./content.html"> 
 <span class="menu-text">Content</span></a>
   </li>  
   <li class="nav-item">
@@ -138,142 +135,39 @@ ul.task-list li input[type="checkbox"] {
 </div>
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./week05.html">Week 05: Advanced SQL &amp; Integrity Constraints (under construction)</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-    </div>
-  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./content.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Course content</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week01.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 01: Introduction to Databases &amp; SQL Basics</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week02.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 02: SQL – Intermediate Concepts</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week03.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 03: SQL – Data Modification &amp; Advanced Queries (under construction)</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week04.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 04: Database Design – ER Modeling &amp; Schema Refinement (under construction)</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week05.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Week 05: Advanced SQL &amp; Integrity Constraints (under construction)</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week06.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 06: Database Management &amp; Optimization (under construction)</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./week07.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Week 07: Final Project and Course Wrap-Up (under construction)</span></a>
-  </div>
-</li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#slos-for-week-05" id="toc-slos-for-week-05" class="nav-link active" data-scroll-target="#slos-for-week-05">SLOs for Week 05</a></li>
-  <li><a href="#slides-videos-and-application-exercises" id="toc-slides-videos-and-application-exercises" class="nav-link" data-scroll-target="#slides-videos-and-application-exercises">Slides, videos, and application exercises</a></li>
-  </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/ericaraujophd/25sp-cs354A/edit/main/week05.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/25sp-cs354A/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Week 05: Advanced SQL &amp; Integrity Constraints (under construction)</h1>
-</div>
 
 
 
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-<section id="slos-for-week-05" class="level2">
-<h2 class="anchored" data-anchor-id="slos-for-week-05">SLOs for Week 05</h2>
-<p>By the end of this unit, students will be able to…</p>
-<ol type="1">
-<li>Write and execute triggers for database automation using <code>CREATE TRIGGER</code>, <code>BEFORE</code>, <code>AFTER</code> and <code>INSTEAD OF</code>.</li>
-<li>Understand that SQLite is a transactional database where all changes and queries are atomic, consistent, isolated, and durable (ACID) and what it means.</li>
-<li>Manage transactions using <code>COMMIT</code> and <code>ROLLBACK</code>.</li>
-<li>How to perform SQL full-text search using <code>MATCH</code>.</li>
-<li>Use SQLite CLI commands, such as <code>.schema</code>, <code>.table</code>, <code>.headers on/off</code>, <code>.mode column</code>.</li>
-<li>Normalize database schemas using BCNF and 4NF.</li>
-</ol>
-</section>
-<section id="slides-videos-and-application-exercises" class="level2">
-<h2 class="anchored" data-anchor-id="slides-videos-and-application-exercises">Slides, videos, and application exercises</h2>
-<div class="slide-deck">
-<p><strong>Week 05: Slides</strong></p>
-<div class="slides">
-<p><a href="">Slides</a></p>
-</div>
-<div class="reading">
-<p>No readings for Week 05.</p>
-</div>
-</div>
-<!-- ## Homework assignments -->
-<div class="homework">
-<p><strong>Homework 05: No homework for Week 05</strong></p>
-</div>
-<!-- ## Lab -->
-<div class="lab">
-<p><strong>Project 05: No Project for Week 05</strong></p>
-</div>
+<p>🔐 Topics for Database Security</p>
+<p>🔒 1. SQL Injection • What it is: Attacks where malicious SQL is injected into a query. • Why it matters: It’s one of the most common web security vulnerabilities. • Key concepts: • Use of parameterized queries / prepared statements • Risks of string concatenation • Demo: Show how unsafe user input can manipulate a query. • ✅ SQLite supports parameter binding via libraries (like Python’s sqlite3, PHP, etc.)</p>
+<p>⸻</p>
+<p>👤 2. Authentication and Access Control</p>
+<p>(More relevant in full-featured DBMSs, but important conceptually) • What it is: Managing who can access what in a database. • SQLite doesn’t support users or roles, but you can: • Discuss permissions in PostgreSQL/MySQL (e.g., GRANT, REVOKE) • Mention OS-level protections in SQLite (file permissions)</p>
+<p>⸻</p>
+<p>📦 3. Data at Rest Protection • Encryption: • Explain database-level encryption (e.g., SQLCipher for SQLite) • Compare with TDE (Transparent Data Encryption) in SQL Server or Oracle • File system security: • Emphasize securing the .db file from unauthorized users</p>
+<p>⸻</p>
+<p>🔄 4. Backups and Integrity • Importance of: • Secure and consistent backups • Validating data integrity after restore • Tools: sqlite3 .backup command, VACUUM for cleanup</p>
+<p>⸻</p>
+<p>🧾 5. Logging &amp; Auditing • What to track: queries, access, errors • In SQLite: • Logging must be implemented at the application layer • In PostgreSQL: • Native audit/logging tools exist (e.g., pg_stat_activity)</p>
+<p>⸻</p>
+<p>📋 6. Principle of Least Privilege • Always give users the minimum permissions they need • Relate this to: • Access control in PostgreSQL (REVOKE ALL, then GRANT what’s needed) • App-level SQLite access modes (read-only, read-write)</p>
+<p>⸻</p>
+<p>🧪 7. Practical Threat Scenarios • What happens if… • The database file is leaked? • Users can insert raw SQL? • No input validation is done? • Use small case studies or labs to reinforce concepts</p>
+<p>⸻</p>
+<p>⚖️ Optional (Advanced) • Hashing and salting passwords (e.g., for login tables) • Certificate-based connections (in PostgreSQL/MySQL) • Security implications of cloud databases</p>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -840,18 +734,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="./week04.html" class="pagination-link" aria-label="Week 04: Database Design – ER Modeling &amp; Schema Refinement (under construction)">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Week 04: Database Design – ER Modeling &amp; Schema Refinement (under construction)</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="./week06.html" class="pagination-link" aria-label="Week 06: Database Management &amp; Optimization (under construction)">
-        <span class="nav-page-text">Week 06: Database Management &amp; Optimization (under construction)</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -860,7 +742,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ericaraujophd/25sp-cs354A/edit/main/week05.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/25sp-cs354A/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions"><ul><li><a href="https://github.com/ericaraujophd/25sp-cs354A/edit/main/security.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/25sp-cs354A/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">

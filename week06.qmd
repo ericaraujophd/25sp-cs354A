@@ -8,12 +8,17 @@ title: "Week 06: Database Management & Optimization (under construction)"
 
 At the end of this unit, the student will be able to...
 
-1.  Develop a backup and recovery plan for a database system.
-2.  Explain different techniques for performance tuning.
-3.  Understand database partitioning and indexing strategies.
-4.  Profile SQL queries to detect inefficiencies.
-5.  Discuss database integration with software applications.
-6.  Apply database optimization techniques in real-world scenarios.
+1.  SQL implementation in Python.
+2.  Develop a backup and recovery plan for a database system.
+3.  Explain different techniques for performance tuning.
+4.  Understand database partitioning and indexing strategies.
+5.  Profile SQL queries to detect inefficiencies.
+6.  Discuss database integration with software applications.
+7.  Apply database optimization techniques in real-world scenarios.
+8.  Demonstrate SQL injection and discuss prevention strategies.
+9.  Assign user roles and permissions for database security.
+10. Debug and troubleshoot complex SQL queries.
+    
 
 ## Slides, videos, and application exercises
 
