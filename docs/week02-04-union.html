@@ -9,7 +9,7 @@
 <meta name="author" content="Eric Araujo">
 <meta name="dcterms.date" content="2023-09-18">
 
-<title>Week 02: SLO 04 – Union, Union All, Intersect, Except – CS 354 – Database Management Systems</title>
+<title>Week 02: Union, Union All, Intersect, Except – CS 354 – Database Management Systems</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -111,11 +111,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
-<meta property="og:title" content="Week 02: SLO 04 – Union, Union All, Intersect, Except – CS 354 – Database Management Systems">
-<meta property="og:description" content="SQL Basics">
+<meta property="og:title" content="Week 02: Union, Union All, Intersect, Except – CS 354 – Database Management Systems">
+<meta property="og:description" content="SLO 04">
 <meta property="og:site_name" content="CS 354 – Database Management Systems">
-<meta name="twitter:title" content="Week 02: SLO 04 – Union, Union All, Intersect, Except – CS 354 – Database Management Systems">
-<meta name="twitter:description" content="SQL Basics">
+<meta name="twitter:title" content="Week 02: Union, Union All, Intersect, Except – CS 354 – Database Management Systems">
+<meta name="twitter:description" content="SLO 04">
 <meta name="twitter:image" content="https://ericaraujo.com/25sp-cs354A/images/data-management.png">
 <meta name="twitter:creator" content="@ericfaraujo">
 <meta name="twitter:image-height" content="512">
@@ -203,8 +203,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Week 02: SLO 04 – Union, Union All, Intersect, Except</h1>
-<p class="subtitle lead">SQL Basics</p>
+<h1 class="title">Week 02: Union, Union All, Intersect, Except</h1>
+<p class="subtitle lead">SLO 04</p>
 </div>
 
 
@@ -285,19 +285,59 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </table>
 <section id="faq" class="level3">
 <h3 class="anchored" data-anchor-id="faq">⁉️ FAQ</h3>
-<p>Q1: What is the difference between <code>UNION</code> and <code>UNION ALL</code>? - <code>UNION</code> combines results from two queries and removes duplicates. - <code>UNION ALL</code> combines results from two queries and keeps duplicates.</p>
-<p>Q2: What does the <code>INTERSECT</code> operator do? - The <code>INTERSECT</code> operator returns rows that are common to both queries.</p>
-<p>Q3: What does the <code>EXCEPT</code> operator do? - The <code>EXCEPT</code> operator returns rows from the first query that are not present in the second query.</p>
-<p>Q4: Do all set operators require the same number of columns and data types in the queries? - Yes, all set operators require the same number of columns and compatible data types in the queries.</p>
-<p>Q5: Are set operators supported in SQLite? - Yes, all set operators are supported in SQLite.</p>
-<p>Q6: Do set operators remove duplicates by default? - Yes, <code>UNION</code> and <code>INTERSECT</code> remove duplicates by default, while <code>UNION ALL</code> keeps duplicates.</p>
-<p>Q7: Can you use set operators with different data types? - No, set operators require compatible data types in the queries.</p>
-<p>Q8: Do set operators require the same order of columns in the queries? - Yes, set operators require the same order of columns in the queries.</p>
-<p>Q9: Can you use set operators with subqueries? - Yes, you can use set operators with subqueries as long as the subqueries return compatible data types and the same number of columns.</p>
-<p>Q10: What happens if the queries in a set operator have different numbers of columns? - If the queries in a set operator have different numbers of columns, an error will occur.</p>
-<p>Q11: Can you use set operators with different table names? - Yes, you can use set operators with different table names as long as the queries return compatible data types and the same number of columns.</p>
-<p>Q12: Can you use set operators with different column names? - Yes, you can use set operators with different column names as long as the queries return compatible data types and the same number of columns.</p>
-<p>Q13: Can you use set operators with different data sources? - Yes, you can use set operators with different data sources as long as the queries return compatible data types and the same number of columns.</p>
+<p><strong>Q1: What is the difference between <code>UNION</code> and <code>UNION ALL</code>?</strong></p>
+<ul>
+<li><code>UNION</code> combines results from two queries and removes duplicates.</li>
+<li><code>UNION ALL</code> combines results from two queries and keeps duplicates.</li>
+</ul>
+<p><strong>Q2: What does the <code>INTERSECT</code> operator do?</strong></p>
+<ul>
+<li>The <code>INTERSECT</code> operator returns rows that are common to both queries.</li>
+</ul>
+<p><strong>Q3: What does the <code>EXCEPT</code> operator do?</strong></p>
+<ul>
+<li>The <code>EXCEPT</code> operator returns rows from the first query that are not present in the second query.</li>
+</ul>
+<p><strong>Q4: Do all set operators require the same number of columns and data types in the queries?</strong></p>
+<ul>
+<li>Yes, all set operators require the same number of columns and compatible data types in the queries.</li>
+</ul>
+<p><strong>Q5: Are set operators supported in SQLite?</strong></p>
+<ul>
+<li>Yes, all set operators are supported in SQLite.</li>
+</ul>
+<p><strong>Q6: Do set operators remove duplicates by default?</strong></p>
+<ul>
+<li>Yes, <code>UNION</code> and <code>INTERSECT</code> remove duplicates by default, while <code>UNION ALL</code> keeps duplicates.</li>
+</ul>
+<p><strong>Q7: Can you use set operators with different data types?</strong></p>
+<ul>
+<li>No, set operators require compatible data types in the queries.</li>
+</ul>
+<p><strong>Q8: Do set operators require the same order of columns in the queries?</strong></p>
+<ul>
+<li>Yes, set operators require the same order of columns in the queries.</li>
+</ul>
+<p><strong>Q9: Can you use set operators with subqueries?</strong></p>
+<ul>
+<li>Yes, you can use set operators with subqueries as long as the subqueries return compatible data types and the same number of columns.</li>
+</ul>
+<p><strong>Q10: What happens if the queries in a set operator have different numbers of columns?</strong></p>
+<ul>
+<li>If the queries in a set operator have different numbers of columns, an error will occur.</li>
+</ul>
+<p><strong>Q11: Can you use set operators with different table names?</strong></p>
+<ul>
+<li>Yes, you can use set operators with different table names as long as the queries return compatible data types and the same number of columns.</li>
+</ul>
+<p><strong>Q12: Can you use set operators with different column names?</strong></p>
+<ul>
+<li>Yes, you can use set operators with different column names as long as the queries return compatible data types and the same number of columns.</li>
+</ul>
+<p><strong>Q13: Can you use set operators with different data sources?</strong></p>
+<ul>
+<li>Yes, you can use set operators with different data sources as long as the queries return compatible data types and the same number of columns.</li>
+</ul>
 </section>
 </section>
 <section id="queries-references" class="level2">
@@ -330,13 +370,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="table-definitions-and-sample-data" class="level2">
 <h2 class="anchored" data-anchor-id="table-definitions-and-sample-data">🧱 Table Definitions and Sample Data</h2>
-<div id="cell-6" class="cell" data-execution_count="2">
+<div id="cell-6" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>capture</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>load_ext sql</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>sql sqlite:<span class="op">///</span>dbs<span class="op">/</span>w02<span class="op">/</span>slo2<span class="fl">.4</span><span class="op">-</span>union.db</span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>config SqlMagic.style <span class="op">=</span> <span class="st">'_DEPRECATED_DEFAULT'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cell-7" class="cell" data-execution_count="4">
+<div id="cell-7" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>sql</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>DROP TABLE IF EXISTS premier_league_teams<span class="op">;</span></span>
@@ -362,14 +402,14 @@ Done.
 Done.
 Done.</code></pre>
 </div>
-<div class="cell-output cell-output-display" data-execution_count="4">
+<div class="cell-output cell-output-display" data-execution_count="2">
 <pre><code>[]</code></pre>
 </div>
 </div>
 </section>
 <section id="sample-inserts" class="level2">
 <h2 class="anchored" data-anchor-id="sample-inserts">⚽ Sample Inserts</h2>
-<div id="cell-9" class="cell" data-execution_count="5">
+<div id="cell-9" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>sql</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>INSERT INTO premier_league_teams VALUES</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>(<span class="st">'Manchester City'</span>, <span class="st">'Sky Blue'</span>, <span class="dv">1880</span>, <span class="st">'Manchester'</span>),</span>
@@ -394,35 +434,120 @@ Done.</code></pre>
 6 rows affected.
 9 rows affected.</code></pre>
 </div>
-<div class="cell-output cell-output-display" data-execution_count="5">
+<div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>[]</code></pre>
 </div>
 </div>
 <section id="updated-query-examples-with-all-columns" class="level3">
 <h3 class="anchored" data-anchor-id="updated-query-examples-with-all-columns">🔍 Updated Query Examples with All Columns</h3>
-<ol type="1">
-<li>UNION: All distinct teams with full details</li>
-</ol>
+<p><strong>1. UNION: All distinct teams with full details</strong></p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">FROM</span> premier_league_teams</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="kw">UNION</span></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">FROM</span> champions_league_teams;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>%%sql SELECT * FROM premier_league_teams UNION SELECT * FROM champions_league_teams;</p>
-<ol start="2" type="1">
-<li>INTERSECT: Full details of teams in both leagues</li>
-</ol>
-<div class="sourceCode" id="cb10"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">FROM</span> premier_league_teams</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="kw">INTERSECT</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">FROM</span> champions_league_teams;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="cell-13" class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>sql</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>SELECT <span class="op">*</span> FROM premier_league_teams</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>INTERSECT</span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>SELECT <span class="op">*</span> FROM champions_league_teams<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-11" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>sql</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>SELECT <span class="op">*</span> FROM premier_league_teams</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>UNION</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>SELECT <span class="op">*</span> FROM champions_league_teams<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> * sqlite:///dbs/w02/slo2.4-union.db
 Done.</code></pre>
 </div>
-<div class="cell-output cell-output-display" data-execution_count="7">
+<div class="cell-output cell-output-display" data-execution_count="4">
+<table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th">team_name</th>
+<th data-quarto-table-cell-role="th">jersey_color</th>
+<th data-quarto-table-cell-role="th">founded_year</th>
+<th data-quarto-table-cell-role="th">city</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Arsenal</td>
+<td>Red and White</td>
+<td>1886</td>
+<td>London</td>
+</tr>
+<tr class="even">
+<td>Barcelona</td>
+<td>Blue and Red</td>
+<td>1899</td>
+<td>Barcelona</td>
+</tr>
+<tr class="odd">
+<td>Bayern Munich</td>
+<td>Red and White</td>
+<td>1900</td>
+<td>Munich</td>
+</tr>
+<tr class="even">
+<td>Chelsea</td>
+<td>Blue</td>
+<td>1905</td>
+<td>London</td>
+</tr>
+<tr class="odd">
+<td>Inter Milan</td>
+<td>Blue and Black</td>
+<td>1908</td>
+<td>Milan</td>
+</tr>
+<tr class="even">
+<td>Liverpool</td>
+<td>Red</td>
+<td>1892</td>
+<td>Liverpool</td>
+</tr>
+<tr class="odd">
+<td>Manchester City</td>
+<td>Sky Blue</td>
+<td>1880</td>
+<td>Manchester</td>
+</tr>
+<tr class="even">
+<td>Manchester United</td>
+<td>Red</td>
+<td>1878</td>
+<td>Manchester</td>
+</tr>
+<tr class="odd">
+<td>Paris Saint-Germain</td>
+<td>Blue and Red</td>
+<td>1970</td>
+<td>Paris</td>
+</tr>
+<tr class="even">
+<td>Real Madrid</td>
+<td>White</td>
+<td>1902</td>
+<td>Madrid</td>
+</tr>
+<tr class="odd">
+<td>Tottenham</td>
+<td>White and Navy</td>
+<td>1882</td>
+<td>London</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p><strong>2. INTERSECT: Full details of teams in both leagues</strong></p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">FROM</span> premier_league_teams</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="kw">INTERSECT</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">FROM</span> champions_league_teams;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-13" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>sql</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>SELECT <span class="op">*</span> FROM premier_league_teams</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>INTERSECT</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>SELECT <span class="op">*</span> FROM champions_league_teams<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> * sqlite:///dbs/w02/slo2.4-union.db
+Done.</code></pre>
+</div>
+<div class="cell-output cell-output-display" data-execution_count="5">
 <table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
@@ -455,22 +580,20 @@ Done.</code></pre>
 </table>
 </div>
 </div>
-<ol start="3" type="1">
-<li>EXCEPT: PL teams not in the CL (full detail)</li>
-</ol>
-<div class="sourceCode" id="cb13"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">FROM</span> premier_league_teams</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="kw">EXCEPT</span></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">FROM</span> champions_league_teams;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="cell-15" class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>sql</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>SELECT <span class="op">*</span> FROM premier_league_teams</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>EXCEPT</span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>SELECT <span class="op">*</span> FROM champions_league_teams<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>3. EXCEPT: PL teams not in the CL (full detail)</strong></p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">FROM</span> premier_league_teams</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="kw">EXCEPT</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">FROM</span> champions_league_teams;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cell-15" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>sql</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>SELECT <span class="op">*</span> FROM premier_league_teams</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>EXCEPT</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>SELECT <span class="op">*</span> FROM champions_league_teams<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> * sqlite:///dbs/w02/slo2.4-union.db
 Done.</code></pre>
 </div>
-<div class="cell-output cell-output-display" data-execution_count="8">
+<div class="cell-output cell-output-display" data-execution_count="6">
 <table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
