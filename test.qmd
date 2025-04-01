@@ -1,0 +1,10 @@
+---
+title: "Test Binder"
+# draft: true
+# draft-mode: visible
+---
+
+```{python}
+#| thebe: true
+print("Hello World")
+```

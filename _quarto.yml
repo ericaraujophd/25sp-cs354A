@@ -84,6 +84,12 @@ website:
     #     - href: 03-version-control.qmd
     #     - href: 03-discussion.qmd
 
+thebe:
+  use-binder: true
+  binder-url: https://mybinder.org
+  binder-repo: myusername/my-repo
+  binder-branch: main
+
 format:
   html:
     theme:
@@ -92,6 +98,8 @@ format:
     toc: true
     code-copy: true
     code-overflow: wrap
+    code-tools: true
+    thebe: true
     mainfont: "Atkinson Hyperlegible"
     include-in-header: "style/fontawesome.html"
 

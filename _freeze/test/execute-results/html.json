@@ -1,0 +1,12 @@
+{
+  "hash": "4656c16188ce5c7985c348270d77bd78",
+  "result": {
+    "engine": "jupyter",
+    "markdown": "---\ntitle: \"Test Binder\"\n# draft: true\n# draft-mode: visible\n---\n\n::: {#f0168262 .cell thebe='true' execution_count=1}\n``` {.python .cell-code}\nprint(\"Hello World\")\n```\n\n::: {.cell-output .cell-output-stdout}\n```\nHello World\n```\n:::\n:::\n\n\n",
+    "supporting": [
+      "test_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}

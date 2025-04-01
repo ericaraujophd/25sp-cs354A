@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -215,7 +249,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Course content</h1>
+<div class="quarto-title-block"><div><h1 class="title">Course content</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
 
 
@@ -311,6 +345,8 @@ ul.task-list li input[type="checkbox"] {
 </table>
 <!-- | 11   |   | OpenMP, etc. [SLOs] [Slides]  | Lab 11    | Project 11    |   | -->
 
+
+<!-- -->
 
 
 </main> <!-- /main -->
@@ -547,6 +583,57 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       container: window.document.getElementById('quarto-embedded-source-code-modal')
     });
     clipboardModal.on('success', onCopySuccess);
+  }
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
@@ -886,7 +973,37 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         <span class="nav-page-text">Week 01: Introduction to Databases &amp; SQL Basics</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
-</nav>
+</nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Course content"</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">editor:</span><span class="co"> visual</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> </span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">    css: /styles.css</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>CS 354 – Database Management Systems – is organized by week, with each week structured as follows:</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Classroom sessions are Monday-Wednesday-Friday 2.45PM - 3.50PM at SB 382.</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Homeworks are due Friday 23:59. They will be released every Monday.</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Project submission is due Wednesday at 23:59. They will be released every Wednesday.</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Tutoring Assistants are available in SB337 on Mondays and Thursdays, from 7 - 9 pm.</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>The SLOs (Student Learning Objectives), labs, and projects for each week are given in the links below. The readings are from Ramez Elmasri, S. B. N. (2016). Fundamentals of Database Systems 7th ed.</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>| Week | Topics | Laboratories | Projects | Tests, Video Links, etc. |</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>|---------------|---------------|---------------|---------------|---------------|</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>| 1 &lt;br&gt; --- &lt;br&gt; 3/17 | Introduction to Databases &amp; SQL Basics &lt;br&gt; <span class="co">[</span><span class="ot">Week's page</span><span class="co">](/week01.qmd)</span> | <span class="co">[</span><span class="ot">Homework 1</span><span class="co">](/hws/hw01.qmd)</span> | <span class="co">[</span><span class="ot">Proj 1</span><span class="co">](/projects/proj01.qmd)</span> |  |</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>| 2 &lt;br&gt; --- &lt;br&gt; 3/24 | SQL – Intermediate Concepts &lt;br&gt; Advising days – no class 26-27 &lt;br&gt;<span class="co">[</span><span class="ot">Week's page</span><span class="co">](/week02.qmd)</span> | <span class="co">[</span><span class="ot">Homework 2</span><span class="co">](/hws/hw02.qmd)</span> | <span class="co">[</span><span class="ot">Proj 2</span><span class="co">](/projects/proj02.qmd)</span> |  |</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>| 3 &lt;br&gt; --- &lt;br&gt; 3/31 | SQL – Data Modification &amp; Advanced Queries &lt;br&gt;<span class="co">[</span><span class="ot">Week's page</span><span class="co">](/week03.qmd)</span> | <span class="co">[</span><span class="ot">Homework 3</span><span class="co">](/hws/hw03.qmd)</span> | <span class="co">[</span><span class="ot">Proj 3</span><span class="co">](/projects/proj03.qmd)</span> |  |</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>| 4 &lt;br&gt; --- &lt;br&gt; 4/7 | Database Design – ER Modeling &amp; Schema Refinement &lt;br&gt;<span class="co">[</span><span class="ot">Week's page</span><span class="co">](/week04.qmd)</span> | <span class="co">[</span><span class="ot">Homework 4</span><span class="co">](/hws/hw04.qmd)</span> | <span class="co">[</span><span class="ot">Proj 4</span><span class="co">](/projects/proj04.qmd)</span> | **Test 1:** Weeks 1 - 3, Friday |</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>| 5 &lt;br&gt; --- &lt;br&gt; 4/14 | Advanced SQL &amp; Integrity Constraints &lt;br&gt; Good Friday &amp; Easter Monday – no class 18-21 &lt;br&gt; <span class="co">[</span><span class="ot">Week's page</span><span class="co">](/week05.qmd)</span> | No lab | No project |  |</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>| 6 &lt;br&gt; --- &lt;br&gt; 4/22 | Database Management &amp; Optimization &lt;br&gt;<span class="co">[</span><span class="ot">Week's page</span><span class="co">](/week06.qmd)</span> | <span class="co">[</span><span class="ot">Homework 6</span><span class="co">](/hws/hw06.qmd)</span> | No project |  |</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>| 7 &lt;br&gt; --- &lt;br&gt; 4/28 | Final Project and Course Wrap-Up &lt;br&gt;<span class="co">[</span><span class="ot">Week's page</span><span class="co">](/week07.qmd)</span> | <span class="co">[</span><span class="ot">Homework 7</span><span class="co">](/hws/hw07.qmd)</span> | <span class="co">[</span><span class="ot">Final Project</span><span class="co">](/projects/proj99-final.qmd)</span> |  |</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>| Final &lt;br&gt; --- &lt;br&gt; May 3-8 | Search calvin.edu for "Exam Schedule" to find the time of the exam (and all exams you have, this semester, and all future semesters). |  |  | Final Test Cumulative, during exam time (You may take it in either class's exam time. Classes met at 2.45pm MWF.) |</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- | 11   |   | OpenMP, etc. [SLOs] [Slides]  | Lab 11    | Project 11    |   | --&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
