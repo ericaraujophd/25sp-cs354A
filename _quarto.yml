@@ -86,8 +86,8 @@ website:
 
 thebe:
   use-binder: true
-  binder-url: https://mybinder.org
-  binder-repo: myusername/my-repo
+  binder-url: https://mybinder.org/v2/gh/ericaraujophd/25sp-cs354A/HEAD
+  binder-repo: ericaraujophd/25sp-cs354A/HEAD
   binder-branch: main
 
 format:
