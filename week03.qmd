@@ -10,11 +10,11 @@ format:
 Students will be able to:
 
 1.  Use SQL aggregate and scalar functions and create expressions.
-2.  Work with data types, including dates and strings, using `LIKE`, `GLOB`,`DATE`, `TIME`, `DATETIME`, `JULIANDAY` and `STRFTIME`. [Notebook 3.2](week03-02-time.ipynb)
+2.  Work with data types, including dates and strings, using `LIKE`, `GLOB`,`DATE`, `TIME`, `DATETIME`, `JULIANDAY` and `STRFTIME`. [📔 Notebook 3.2](week03-02-time.ipynb)
 3.  Manipulate the records stored in a database using `INSERT INTO`, `UPDATE` and `DELETE FROM` , `REPLACE`, `UPSERT` and `RETURNING`.
 4.  Table design principles using DDL commands, such as `CREATE TABLE`, `DROP TABLE`, `ALTER TABLE`, `CREATE INDEX`, `DROP INDEX`, `CREATE VIEW`, `DROP VIEW`.
 5.  Control columns values using constraints: primary keys, foreign keys, delete with `CASCADE`, `CHECK`, `UNIQUE`, `NOT NULL`, `AUTOINCREMENT`.
-6.  Create and manage indexes to optimize query performance using performance and debug commands, such as `CREATE INDEX`, `ANALYZE` and `EXPLAIN`. [Notebook 3.6](week03-06-optimization.ipynb)
+6.  Create and manage indexes to optimize query performance using performance and debug commands, such as `CREATE INDEX`, `ANALYZE` and `EXPLAIN`. [📔 Notebook 3.6](week03-06-optimization.ipynb)
 7.  Optimizing database files with `VACUUM`.
 
 ## Slides, videos, and application exercises

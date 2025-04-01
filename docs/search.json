@@ -4,7 +4,7 @@
     "href": "week02.html",
     "title": "Week 02: SQL – Intermediate Concepts",
     "section": "",
-    "text": "At the end of this unit, students will be able to…\n\nJoin tables using INNER, LEFT, RIGHT, and FULL JOINs.\nUnderstand the concepts and perform self-joins and cross joins using CROSS JOIN.\nPerform complex data aggregation using GROUP BY and HAVING.\nPerform set operations using UNION, UNION ALL, EXCEPT and INTERSECT. Notebook 2.4\nConstruct subqueries for complex queries using WHERE, IN, EXISTS.\nUsing CTEs to make queries more readable using WITH.\nImporting data from a CSV file using .mode csv and .import.",
+    "text": "At the end of this unit, students will be able to…\n\nJoin tables using INNER, LEFT, RIGHT, and FULL JOINs.\nUnderstand the concepts and perform self-joins and cross joins using CROSS JOIN.\nPerform complex data aggregation using GROUP BY and HAVING.\nPerform set operations using UNION, UNION ALL, EXCEPT and INTERSECT. 📔 Notebook 2.4\nConstruct subqueries for complex queries using WHERE, IN, EXISTS.\nUsing CTEs to make queries more readable using WITH.\nImporting data from a CSV file using .mode csv and .import.",
     "crumbs": [
       "Content",
       "Week 02: SQL – Intermediate Concepts"
@@ -15,7 +15,7 @@
     "href": "week02.html#slos-for-week-02",
     "title": "Week 02: SQL – Intermediate Concepts",
     "section": "",
-    "text": "At the end of this unit, students will be able to…\n\nJoin tables using INNER, LEFT, RIGHT, and FULL JOINs.\nUnderstand the concepts and perform self-joins and cross joins using CROSS JOIN.\nPerform complex data aggregation using GROUP BY and HAVING.\nPerform set operations using UNION, UNION ALL, EXCEPT and INTERSECT. Notebook 2.4\nConstruct subqueries for complex queries using WHERE, IN, EXISTS.\nUsing CTEs to make queries more readable using WITH.\nImporting data from a CSV file using .mode csv and .import.",
+    "text": "At the end of this unit, students will be able to…\n\nJoin tables using INNER, LEFT, RIGHT, and FULL JOINs.\nUnderstand the concepts and perform self-joins and cross joins using CROSS JOIN.\nPerform complex data aggregation using GROUP BY and HAVING.\nPerform set operations using UNION, UNION ALL, EXCEPT and INTERSECT. 📔 Notebook 2.4\nConstruct subqueries for complex queries using WHERE, IN, EXISTS.\nUsing CTEs to make queries more readable using WITH.\nImporting data from a CSV file using .mode csv and .import.",
     "crumbs": [
       "Content",
       "Week 02: SQL – Intermediate Concepts"
@@ -1137,7 +1137,7 @@
     "href": "week03.html",
     "title": "Week 03: SQL – Data Modification & Advanced Queries (under construction)",
     "section": "",
-    "text": "Students will be able to:\n\nUse SQL aggregate and scalar functions and create expressions.\nWork with data types, including dates and strings, using LIKE, GLOB,DATE, TIME, DATETIME, JULIANDAY and STRFTIME. Notebook 3.2\nManipulate the records stored in a database using INSERT INTO, UPDATE and DELETE FROM , REPLACE, UPSERT and RETURNING.\nTable design principles using DDL commands, such as CREATE TABLE, DROP TABLE, ALTER TABLE, CREATE INDEX, DROP INDEX, CREATE VIEW, DROP VIEW.\nControl columns values using constraints: primary keys, foreign keys, delete with CASCADE, CHECK, UNIQUE, NOT NULL, AUTOINCREMENT.\nCreate and manage indexes to optimize query performance using performance and debug commands, such as CREATE INDEX, ANALYZE and EXPLAIN. Notebook 3.6\nOptimizing database files with VACUUM.",
+    "text": "Students will be able to:\n\nUse SQL aggregate and scalar functions and create expressions.\nWork with data types, including dates and strings, using LIKE, GLOB,DATE, TIME, DATETIME, JULIANDAY and STRFTIME. 📔 Notebook 3.2\nManipulate the records stored in a database using INSERT INTO, UPDATE and DELETE FROM , REPLACE, UPSERT and RETURNING.\nTable design principles using DDL commands, such as CREATE TABLE, DROP TABLE, ALTER TABLE, CREATE INDEX, DROP INDEX, CREATE VIEW, DROP VIEW.\nControl columns values using constraints: primary keys, foreign keys, delete with CASCADE, CHECK, UNIQUE, NOT NULL, AUTOINCREMENT.\nCreate and manage indexes to optimize query performance using performance and debug commands, such as CREATE INDEX, ANALYZE and EXPLAIN. 📔 Notebook 3.6\nOptimizing database files with VACUUM.",
     "crumbs": [
       "Content",
       "Week 03: SQL – Data Modification & Advanced Queries (under construction)"
@@ -1148,7 +1148,7 @@
     "href": "week03.html#slos-for-week-03",
     "title": "Week 03: SQL – Data Modification & Advanced Queries (under construction)",
     "section": "",
-    "text": "Students will be able to:\n\nUse SQL aggregate and scalar functions and create expressions.\nWork with data types, including dates and strings, using LIKE, GLOB,DATE, TIME, DATETIME, JULIANDAY and STRFTIME. Notebook 3.2\nManipulate the records stored in a database using INSERT INTO, UPDATE and DELETE FROM , REPLACE, UPSERT and RETURNING.\nTable design principles using DDL commands, such as CREATE TABLE, DROP TABLE, ALTER TABLE, CREATE INDEX, DROP INDEX, CREATE VIEW, DROP VIEW.\nControl columns values using constraints: primary keys, foreign keys, delete with CASCADE, CHECK, UNIQUE, NOT NULL, AUTOINCREMENT.\nCreate and manage indexes to optimize query performance using performance and debug commands, such as CREATE INDEX, ANALYZE and EXPLAIN. Notebook 3.6\nOptimizing database files with VACUUM.",
+    "text": "Students will be able to:\n\nUse SQL aggregate and scalar functions and create expressions.\nWork with data types, including dates and strings, using LIKE, GLOB,DATE, TIME, DATETIME, JULIANDAY and STRFTIME. 📔 Notebook 3.2\nManipulate the records stored in a database using INSERT INTO, UPDATE and DELETE FROM , REPLACE, UPSERT and RETURNING.\nTable design principles using DDL commands, such as CREATE TABLE, DROP TABLE, ALTER TABLE, CREATE INDEX, DROP INDEX, CREATE VIEW, DROP VIEW.\nControl columns values using constraints: primary keys, foreign keys, delete with CASCADE, CHECK, UNIQUE, NOT NULL, AUTOINCREMENT.\nCreate and manage indexes to optimize query performance using performance and debug commands, such as CREATE INDEX, ANALYZE and EXPLAIN. 📔 Notebook 3.6\nOptimizing database files with VACUUM.",
     "crumbs": [
       "Content",
       "Week 03: SQL – Data Modification & Advanced Queries (under construction)"
