@@ -27,7 +27,7 @@ httpcore==1.0.7
 httpx==0.28.1
 idna==3.10
 ipykernel==6.29.5
-ipython==9.0.2
+ipython
 ipython-genutils==0.2.0
 ipython-sql==0.5.0
 ipython_pygments_lexers==1.1.1
