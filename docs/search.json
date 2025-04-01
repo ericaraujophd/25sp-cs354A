@@ -714,35 +714,35 @@
     "href": "week02-analyze.html",
     "title": "Week 02: SQL – ANALYZE",
     "section": "",
-    "text": "%%capture\n%load_ext sql\n%sql sqlite:///dbs/w02/analyze-example.db\n%config SqlMagic.style = '_DEPRECATED_DEFAULT'"
+    "text": "Code\n%%capture\n%load_ext sql\n%sql sqlite:///dbs/w02/analyze-example.db\n%config SqlMagic.style = '_DEPRECATED_DEFAULT'"
   },
   {
     "objectID": "week02-analyze.html#create-a-table-and-insert-data",
     "href": "week02-analyze.html#create-a-table-and-insert-data",
     "title": "Week 02: SQL – ANALYZE",
     "section": "1. Create a Table and Insert Data",
-    "text": "1. Create a Table and Insert Data\n\n%%sql\n\nDROP TABLE IF EXISTS orders;\n\nCREATE TABLE orders (\n  order_id INTEGER PRIMARY KEY,\n  customer_id INTEGER,\n  order_date TEXT,\n  total REAL\n);\n\n-- Insert 10,000 rows\nWITH RECURSIVE cnt(x) AS (\n  SELECT 1\n  UNION ALL\n  SELECT x + 1 FROM cnt WHERE x &lt; 10000\n)\nINSERT INTO orders (customer_id, order_date, total)\nSELECT \n  ABS(RANDOM() % 100), \n  date('2024-01-01', '+' || (RANDOM() % 365) || ' days'), \n  ROUND(RANDOM() % 500, 2)\nFROM cnt;\n\n * sqlite:///dbs/w02/analyze-example.db\nDone.\nDone.\nDone.\n\n\n[]\n\n\nThis generates 10,000 synthetic rows with:\n\ncustomer_id between 0 and 99\norder_date in the year 2024\ntotal up to 500"
+    "text": "1. Create a Table and Insert Data\n\n\nCode\n%%sql\n\nDROP TABLE IF EXISTS orders;\n\nCREATE TABLE orders (\n  order_id INTEGER PRIMARY KEY,\n  customer_id INTEGER,\n  order_date TEXT,\n  total REAL\n);\n\n-- Insert 10,000 rows\nWITH RECURSIVE cnt(x) AS (\n  SELECT 1\n  UNION ALL\n  SELECT x + 1 FROM cnt WHERE x &lt; 10000\n)\nINSERT INTO orders (customer_id, order_date, total)\nSELECT \n  ABS(RANDOM() % 100), \n  date('2024-01-01', '+' || (RANDOM() % 365) || ' days'), \n  ROUND(RANDOM() % 500, 2)\nFROM cnt;\n\n\n * sqlite:///dbs/w02/analyze-example.db\nDone.\nDone.\nDone.\n\n\n[]\n\n\nThis generates 10,000 synthetic rows with:\n\ncustomer_id between 0 and 99\norder_date in the year 2024\ntotal up to 500"
   },
   {
     "objectID": "week02-analyze.html#create-an-index",
     "href": "week02-analyze.html#create-an-index",
     "title": "Week 02: SQL – ANALYZE",
     "section": "2. Create an Index",
-    "text": "2. Create an Index\n\n%%sql\nCREATE INDEX idx_orders_order_date ON orders(order_date);\n\n * sqlite:///dbs/w02/analyze-example.db\nDone.\n\n\n[]"
+    "text": "2. Create an Index\n\n\nCode\n%%sql\nCREATE INDEX idx_orders_order_date ON orders(order_date);\n\n\n * sqlite:///dbs/w02/analyze-example.db\nDone.\n\n\n[]"
   },
   {
     "objectID": "week02-analyze.html#run-a-query-and-check-the-plan",
     "href": "week02-analyze.html#run-a-query-and-check-the-plan",
     "title": "Week 02: SQL – ANALYZE",
     "section": "3. Run a Query and Check the Plan",
-    "text": "3. Run a Query and Check the Plan\n\n%%sql\nEXPLAIN QUERY PLAN\nSELECT * FROM orders WHERE order_date &gt; '2024-06-01';\n\n * sqlite:///dbs/w02/analyze-example.db\nDone.\n\n\n\n\n\nid\nparent\nnotused\ndetail\n\n\n\n\n3\n0\n205\nSEARCH orders USING INDEX idx_orders_order_date (order_date&gt;?)\n\n\n\n\n\nBefore ANALYZE, SQLite might not use the index if it doesn’t know how selective order_date is.\nIn our case, the query is optimized and using the index. Let’s see what the output means.\n\n\n\n\n\n\n\nPart\nMeaning\n\n\n\n\nSEARCH orders\nSQLite is accessing the orders table using a search operation.\n\n\nUSING INDEX idx_orders_order_date\nIt is using the idx_orders_order_date index to speed up the lookup.\n\n\n(order_date&gt;?)\nThe filter condition is order_date &gt; ? (where ? is the input value).\n\n\n\nThis shows that SQLite (1) is not scanning the full table and (2) is using the index you created to efficiently jump to rows matching the condition.\nHad the query said something like:\nSCAN TABLE orders\n…that would mean a full table scan — which is slower, especially on large datasets."
+    "text": "3. Run a Query and Check the Plan\n\n\nCode\n%%sql\nEXPLAIN QUERY PLAN\nSELECT * FROM orders WHERE order_date &gt; '2024-06-01';\n\n\n * sqlite:///dbs/w02/analyze-example.db\nDone.\n\n\n\n\n\nid\nparent\nnotused\ndetail\n\n\n\n\n3\n0\n205\nSEARCH orders USING INDEX idx_orders_order_date (order_date&gt;?)\n\n\n\n\n\nBefore ANALYZE, SQLite might not use the index if it doesn’t know how selective order_date is.\nIn our case, the query is optimized and using the index. Let’s see what the output means.\n\n\n\n\n\n\n\nPart\nMeaning\n\n\n\n\nSEARCH orders\nSQLite is accessing the orders table using a search operation.\n\n\nUSING INDEX idx_orders_order_date\nIt is using the idx_orders_order_date index to speed up the lookup.\n\n\n(order_date&gt;?)\nThe filter condition is order_date &gt; ? (where ? is the input value).\n\n\n\nThis shows that SQLite (1) is not scanning the full table and (2) is using the index you created to efficiently jump to rows matching the condition.\nHad the query said something like:\nSCAN TABLE orders\n…that would mean a full table scan — which is slower, especially on large datasets."
   },
   {
     "objectID": "week02-analyze.html#run-analyze",
     "href": "week02-analyze.html#run-analyze",
     "title": "Week 02: SQL – ANALYZE",
     "section": "4. Run ANALYZE",
-    "text": "4. Run ANALYZE\nThis updates the sqlite_stat1 table with stats about the distribution of values in the table/indexes.\n\n%%sql\nANALYZE;\n\n * sqlite:///dbs/w02/analyze-example.db\nDone.\n\n\n[]\n\n\n\n## 5. Run the Same Query Again\n\n\n%%sql\nEXPLAIN QUERY PLAN\nSELECT * FROM orders WHERE order_date &gt; '2024-06-01';\n\n * sqlite:///dbs/w02/analyze-example.db\nDone.\n\n\n\n\n\nid\nparent\nnotused\ndetail\n\n\n\n\n3\n0\n141\nSEARCH orders USING INDEX idx_orders_order_date (order_date&gt;?)\n\n\n\n\n\nAfter ANALYZE, you’ll likely see that the index is now being used, especially if the planner sees it as more efficient."
+    "text": "4. Run ANALYZE\nThis updates the sqlite_stat1 table with stats about the distribution of values in the table/indexes.\n\n\nCode\n%%sql\nANALYZE;\n\n\n * sqlite:///dbs/w02/analyze-example.db\nDone.\n\n\n[]\n\n\n\n\nCode\n## 5. Run the Same Query Again\n\n\n\n\nCode\n%%sql\nEXPLAIN QUERY PLAN\nSELECT * FROM orders WHERE order_date &gt; '2024-06-01';\n\n\n * sqlite:///dbs/w02/analyze-example.db\nDone.\n\n\n\n\n\nid\nparent\nnotused\ndetail\n\n\n\n\n3\n0\n141\nSEARCH orders USING INDEX idx_orders_order_date (order_date&gt;?)\n\n\n\n\n\nAfter ANALYZE, you’ll likely see that the index is now being used, especially if the planner sees it as more efficient."
   },
   {
     "objectID": "policies.html",

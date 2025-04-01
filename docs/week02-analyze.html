@@ -196,7 +196,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Week 02: SQL – ANALYZE</h1>
+<div class="quarto-title-block"><div><h1 class="title">Week 02: SQL – ANALYZE</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li></ul></div></div>
 </div>
 
 
@@ -226,14 +226,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <div id="cell-1" class="cell" data-execution_count="2">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>capture</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>load_ext sql</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>sql sqlite:<span class="op">///</span>dbs<span class="op">/</span>w02<span class="op">/</span>analyze<span class="op">-</span>example.db</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>config SqlMagic.style <span class="op">=</span> <span class="st">'_DEPRECATED_DEFAULT'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <section id="create-a-table-and-insert-data" class="level2">
 <h2 class="anchored" data-anchor-id="create-a-table-and-insert-data">1. Create a Table and Insert Data</h2>
 <div id="cell-3" class="cell" data-execution_count="5">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>sql</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>DROP TABLE IF EXISTS orders<span class="op">;</span></span>
@@ -257,6 +262,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>  date(<span class="st">'2024-01-01'</span>, <span class="st">'+'</span> <span class="op">||</span> (RANDOM() <span class="op">%</span> <span class="dv">365</span>) <span class="op">||</span> <span class="st">' days'</span>), </span>
 <span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>  ROUND(RANDOM() <span class="op">%</span> <span class="dv">500</span>, <span class="dv">2</span>)</span>
 <span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>FROM cnt<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code> * sqlite:///dbs/w02/analyze-example.db
 Done.
@@ -277,8 +283,11 @@ Done.</code></pre>
 <section id="create-an-index" class="level2">
 <h2 class="anchored" data-anchor-id="create-an-index">2. Create an Index</h2>
 <div id="cell-6" class="cell" data-execution_count="6">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>sql</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>CREATE INDEX idx_orders_order_date ON orders(order_date)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code> * sqlite:///dbs/w02/analyze-example.db
 Done.</code></pre>
@@ -291,9 +300,12 @@ Done.</code></pre>
 <section id="run-a-query-and-check-the-plan" class="level2">
 <h2 class="anchored" data-anchor-id="run-a-query-and-check-the-plan">3. Run a Query and Check the Plan</h2>
 <div id="cell-8" class="cell" data-execution_count="7">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>sql</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>EXPLAIN QUERY PLAN</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>SELECT <span class="op">*</span> FROM orders WHERE order_date <span class="op">&gt;</span> <span class="st">'2024-06-01'</span><span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code> * sqlite:///dbs/w02/analyze-example.db
 Done.</code></pre>
@@ -356,8 +368,11 @@ Done.</code></pre>
 <h2 class="anchored" data-anchor-id="run-analyze">4. Run ANALYZE</h2>
 <p>This updates the sqlite_stat1 table with stats about the distribution of values in the table/indexes.</p>
 <div id="cell-11" class="cell" data-execution_count="8">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>sql</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>ANALYZE<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code> * sqlite:///dbs/w02/analyze-example.db
 Done.</code></pre>
@@ -367,12 +382,18 @@ Done.</code></pre>
 </div>
 </div>
 <div id="cell-12" class="cell">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">## 5. Run the Same Query Again</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <div id="cell-13" class="cell" data-execution_count="9">
+<details class="code-fold">
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>sql</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>EXPLAIN QUERY PLAN</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>SELECT <span class="op">*</span> FROM orders WHERE order_date <span class="op">&gt;</span> <span class="st">'2024-06-01'</span><span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code> * sqlite:///dbs/w02/analyze-example.db
 Done.</code></pre>
