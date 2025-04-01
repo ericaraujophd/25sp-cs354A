@@ -1,10 +1,12 @@
 ---
 title: "Test Binder"
+filters:
+  - pyodide
 # draft: true
 # draft-mode: visible
 ---
 
-```{python}
+```{pyodide-python}
 #| thebe: true
 print("Hello World")
 ```

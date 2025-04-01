@@ -1,10 +1,10 @@
 {
-  "hash": "4656c16188ce5c7985c348270d77bd78",
+  "hash": "8792593517a112e29d04d8aa183d55df",
   "result": {
     "engine": "jupyter",
-    "markdown": "---\ntitle: \"Test Binder\"\n# draft: true\n# draft-mode: visible\n---\n\n::: {#f0168262 .cell thebe='true' execution_count=1}\n``` {.python .cell-code}\nprint(\"Hello World\")\n```\n\n::: {.cell-output .cell-output-stdout}\n```\nHello World\n```\n:::\n:::\n\n\n",
+    "markdown": "---\ntitle: \"Test Binder\"\n# draft: true\n# draft-mode: visible\n---\n\n::: {#83bc9a10 .cell thebe='true' execution_count=1}\n``` {.python .cell-code}\nprint(\"Hello World\")\n```\n\n::: {.cell-output .cell-output-stdout}\n```\nHello World\n```\n:::\n:::\n\n\n[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ericaraujophd/25sp-cs354A/HEAD?urlpath=%2Fdoc%2Ftree%2Fweek02-analyze.ipynb)\n\n",
     "supporting": [
-      "test_files"
+      "test_files/figure-html"
     ],
     "filters": [],
     "includes": {}
