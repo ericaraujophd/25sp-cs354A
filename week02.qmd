@@ -11,7 +11,7 @@ At the end of this unit, students will be able to...
 1.  Join tables using `INNER`, `LEFT`, `RIGHT`, and `FULL JOINs`.
 2.  Understand the concepts and perform self-joins and cross joins using `CROSS JOIN`.
 3.  Perform complex data aggregation using `GROUP BY` and `HAVING`.
-4.  Perform set operations using `UNION`, `UNION ALL`, `EXCEPT` and `INTERSECT`.
+4.  Perform set operations using `UNION`, `UNION ALL`, `EXCEPT` and `INTERSECT`. [Notebook 2.4](week02-04-union.ipynb)
 5.  Construct subqueries for complex queries using `WHERE`, `IN`, `EXISTS`.
 6.  Using CTEs to make queries more readable using `WITH`.
 7.  Importing data from a CSV file using `.mode csv` and `.import`.
@@ -30,7 +30,11 @@ At the end of this unit, students will be able to...
 :::
 
 ::: source
-[W02C02 Notebook](/week02-notes.ipynb)
+[Library Case Notebook](/week02-library.ipynb)
+:::
+
+::: source
+[Notes for W02 Notebook](/week02-notes.ipynb)
 :::
 
 ::: reading
