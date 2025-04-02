@@ -1,37 +1,37 @@
 ---
-title: "Homework 03: "
+title: "Homework 03: More Multiple tables"
 format: 
   html:
     css: /hws/hw-styles.css
 ---
 
-## Objectives
-
-In this exercise, you will:
-
--   
-
-## Introduction
-
-Blablabla
-
-<!-- <center>
+<center>
 
 <figure>
 
-<img src="/images/labs/lab11/lab11-header.jpg" alt="Source: https://www.youtube.com/watch?v=WLvU5EQVZqY" width="500"/>
+<img src="/images/hws/hw02/makessense.gif" alt="Makes sense" width="400"/>
 
-<figcaption>Source: https://www.youtube.com/watch?v=WLvU5EQVZqY</figcaption>
+<figcaption>It makes more sense now.</figcaption>
 
 </figure>
 
-</center> -->
-
-## Getting Started
+</center>
 
 
-## Submit
+## Objectives:
 
-Don't forget to commit your changes.
+In this exercise, you will:
 
-Grading Rubric: XX points total
+1.  Show you understand how SELECT queries work for different tables.
+2.  Show you learned how to visualize data by filtering rows and columns according to what is required.
+3.  Show you are able to follow instructions and navigate in a given database.
+4.  Use Joins to handle multiple tables.
+
+## To Moodle!
+
+You will log in to [Calvin's Moodle](https://moodle.calvin.edu/){target="_blank"}, enter the course's virtual classroom, and find a task named "Homework 3." Follow the steps outlined there. Remember that we are using CodeRunner, a Moodle plugin that allows students to execute SQL queries and receive automatic feedback.
+
+
+## Grading Rubric
+
+100 pts total.

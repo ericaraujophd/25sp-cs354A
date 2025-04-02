@@ -927,37 +927,30 @@
   {
     "objectID": "hws/hw03.html",
     "href": "hws/hw03.html",
-    "title": "Homework 03:",
+    "title": "Homework 03: More Multiple tables",
     "section": "",
-    "text": "In this exercise, you will:"
+    "text": "It makes more sense now."
   },
   {
     "objectID": "hws/hw03.html#objectives",
     "href": "hws/hw03.html#objectives",
-    "title": "Homework 03:",
-    "section": "",
-    "text": "In this exercise, you will:"
+    "title": "Homework 03: More Multiple tables",
+    "section": "Objectives:",
+    "text": "Objectives:\nIn this exercise, you will:\n\nShow you understand how SELECT queries work for different tables.\nShow you learned how to visualize data by filtering rows and columns according to what is required.\nShow you are able to follow instructions and navigate in a given database.\nUse Joins to handle multiple tables."
   },
   {
-    "objectID": "hws/hw03.html#introduction",
-    "href": "hws/hw03.html#introduction",
-    "title": "Homework 03:",
-    "section": "Introduction",
-    "text": "Introduction\nBlablabla"
+    "objectID": "hws/hw03.html#to-moodle",
+    "href": "hws/hw03.html#to-moodle",
+    "title": "Homework 03: More Multiple tables",
+    "section": "To Moodle!",
+    "text": "To Moodle!\nYou will log in to Calvin’s Moodle, enter the course’s virtual classroom, and find a task named “Homework 3.” Follow the steps outlined there. Remember that we are using CodeRunner, a Moodle plugin that allows students to execute SQL queries and receive automatic feedback."
   },
   {
-    "objectID": "hws/hw03.html#getting-started",
-    "href": "hws/hw03.html#getting-started",
-    "title": "Homework 03:",
-    "section": "Getting Started",
-    "text": "Getting Started"
-  },
-  {
-    "objectID": "hws/hw03.html#submit",
-    "href": "hws/hw03.html#submit",
-    "title": "Homework 03:",
-    "section": "Submit",
-    "text": "Submit\nDon’t forget to commit your changes.\nGrading Rubric: XX points total"
+    "objectID": "hws/hw03.html#grading-rubric",
+    "href": "hws/hw03.html#grading-rubric",
+    "title": "Homework 03: More Multiple tables",
+    "section": "Grading Rubric",
+    "text": "Grading Rubric\n100 pts total."
   },
   {
     "objectID": "hws/hw01.html",
