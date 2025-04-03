@@ -48,6 +48,6 @@ Mark Simon. (2023). Getting Started with SQL and Databases : Managing and Mani
 **Project 03: Classes**
 
 ::: instructions
-[Instructions](/projects/proj03.qmd)
+[Instructions](/projects/proj03.ipynb)
 :::
 ::::
