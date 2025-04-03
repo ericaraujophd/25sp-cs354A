@@ -225,7 +225,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<div id="cell-1" class="cell" data-execution_count="2">
+<div id="cell-1" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>capture</span>
@@ -236,7 +236,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <section id="create-a-table-and-insert-data" class="level2">
 <h2 class="anchored" data-anchor-id="create-a-table-and-insert-data">1. Create a Table and Insert Data</h2>
-<div id="cell-3" class="cell" data-execution_count="5">
+<div id="cell-3" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>sql</span>
@@ -269,7 +269,7 @@ Done.
 Done.
 Done.</code></pre>
 </div>
-<div class="cell-output cell-output-display" data-execution_count="5">
+<div class="cell-output cell-output-display" data-execution_count="2">
 <pre><code>[]</code></pre>
 </div>
 </div>
@@ -282,7 +282,7 @@ Done.</code></pre>
 </section>
 <section id="create-an-index" class="level2">
 <h2 class="anchored" data-anchor-id="create-an-index">2. Create an Index</h2>
-<div id="cell-6" class="cell" data-execution_count="6">
+<div id="cell-6" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>sql</span>
@@ -292,14 +292,14 @@ Done.</code></pre>
 <pre><code> * sqlite:///dbs/w02/analyze-example.db
 Done.</code></pre>
 </div>
-<div class="cell-output cell-output-display" data-execution_count="6">
+<div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>[]</code></pre>
 </div>
 </div>
 </section>
 <section id="run-a-query-and-check-the-plan" class="level2">
 <h2 class="anchored" data-anchor-id="run-a-query-and-check-the-plan">3. Run a Query and Check the Plan</h2>
-<div id="cell-8" class="cell" data-execution_count="7">
+<div id="cell-8" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>sql</span>
@@ -310,7 +310,7 @@ Done.</code></pre>
 <pre><code> * sqlite:///dbs/w02/analyze-example.db
 Done.</code></pre>
 </div>
-<div class="cell-output cell-output-display" data-execution_count="7">
+<div class="cell-output cell-output-display" data-execution_count="4">
 <table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
@@ -367,7 +367,7 @@ Done.</code></pre>
 <section id="run-analyze" class="level2">
 <h2 class="anchored" data-anchor-id="run-analyze">4. Run ANALYZE</h2>
 <p>This updates the sqlite_stat1 table with stats about the distribution of values in the table/indexes.</p>
-<div id="cell-11" class="cell" data-execution_count="8">
+<div id="cell-11" class="cell" data-execution_count="5">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>sql</span>
@@ -377,17 +377,17 @@ Done.</code></pre>
 <pre><code> * sqlite:///dbs/w02/analyze-example.db
 Done.</code></pre>
 </div>
-<div class="cell-output cell-output-display" data-execution_count="8">
+<div class="cell-output cell-output-display" data-execution_count="5">
 <pre><code>[]</code></pre>
 </div>
 </div>
-<div id="cell-12" class="cell">
+<div id="cell-12" class="cell" data-execution_count="6">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">## 5. Run the Same Query Again</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<div id="cell-13" class="cell" data-execution_count="9">
+<div id="cell-13" class="cell" data-execution_count="7">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="op">%%</span>sql</span>
@@ -398,7 +398,7 @@ Done.</code></pre>
 <pre><code> * sqlite:///dbs/w02/analyze-example.db
 Done.</code></pre>
 </div>
-<div class="cell-output cell-output-display" data-execution_count="9">
+<div class="cell-output cell-output-display" data-execution_count="7">
 <table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
@@ -412,7 +412,7 @@ Done.</code></pre>
 <tr class="odd">
 <td>3</td>
 <td>0</td>
-<td>141</td>
+<td>140</td>
 <td>SEARCH orders USING INDEX idx_orders_order_date (order_date&gt;?)</td>
 </tr>
 </tbody>

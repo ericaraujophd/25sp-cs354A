@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Project 03: soon… – CS 354 – Database Management Systems</title>
+<title>Project 3 - Animal Crossing Database – CS 354 – Database Management Systems</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -106,10 +106,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="https://kit.fontawesome.com/78ddb093ea.js" crossorigin="anonymous"></script>
 
 
-<link rel="stylesheet" href="../projects/proj-styles.css">
-<meta property="og:title" content="Project 03: soon… – CS 354 – Database Management Systems">
+<meta property="og:title" content="Project 3 - Animal Crossing Database – CS 354 – Database Management Systems">
+<meta property="og:description" content="CS354 provides a hands-on introduction to relational databases, SQL querying, and database design, focusing on real-world applications, optimization, and security.">
 <meta property="og:site_name" content="CS 354 – Database Management Systems">
-<meta name="twitter:title" content="Project 03: soon… – CS 354 – Database Management Systems">
+<meta name="twitter:title" content="Project 3 - Animal Crossing Database – CS 354 – Database Management Systems">
+<meta name="twitter:description" content="CS354 provides a hands-on introduction to relational databases, SQL querying, and database design, focusing on real-world applications, optimization, and security.">
 <meta name="twitter:image" content="https://ericaraujo.com/25sp-cs354A/images/data-management.png">
 <meta name="twitter:creator" content="@ericfaraujo">
 <meta name="twitter:image-height" content="512">
@@ -178,20 +179,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#submission" id="toc-submission" class="nav-link" data-scroll-target="#submission">Submission</a>
-  <ul class="collapse">
-  <li><a href="#grading-rubric" id="toc-grading-rubric" class="nav-link" data-scroll-target="#grading-rubric">Grading Rubric</a></li>
-  </ul></li>
+  <li><a href="#animal-crossing-nintendo" id="toc-animal-crossing-nintendo" class="nav-link active" data-scroll-target="#animal-crossing-nintendo"><img src="../images/projects/Animal-Crossing-Nintendo.gif" class="img-fluid" alt="Animal Crossing Nintendo"></a></li>
+  <li><a href="#step-0.-accept-the-assignment" id="toc-step-0.-accept-the-assignment" class="nav-link" data-scroll-target="#step-0.-accept-the-assignment">Step 0. Accept the assignment</a></li>
+  <li><a href="#step-1.-creating-the-database" id="toc-step-1.-creating-the-database" class="nav-link" data-scroll-target="#step-1.-creating-the-database">Step 1. Creating the database</a></li>
+  <li><a href="#step-2.-answering-questions" id="toc-step-2.-answering-questions" class="nav-link" data-scroll-target="#step-2.-answering-questions">Step 2. Answering questions</a></li>
+  <li><a href="#deliverables" id="toc-deliverables" class="nav-link" data-scroll-target="#deliverables">Deliverables</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/ericaraujophd/25sp-cs354A/edit/main/projects/proj03.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/25sp-cs354A/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.dev/ericaraujophd/25sp-cs354A/blob/main/projects/proj03.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/25sp-cs354A/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">Project 03: soon…</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<h1 class="title">Project 3 - Animal Crossing Database</h1>
 </div>
 
 
@@ -208,30 +209,59 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<!-- <center>
-
-<figure>
-
-<img src="/images/projects/proj03-header.jpeg" alt="Created by AI Prompt: create a piece of art that echoes grading inside the classroom" width="450"/>
-
-<figcaption>Created by AI Prompt: *create a piece of art that echoes grading inside the classroom*</figcaption>
-
-</figure>
-
-</center> -->
-<section id="introduction" class="level2">
-<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<section id="animal-crossing-nintendo" class="level2">
+<h2 class="anchored" data-anchor-id="animal-crossing-nintendo"><img src="../images/projects/Animal-Crossing-Nintendo.gif" class="img-fluid" alt="Animal Crossing Nintendo"></h2>
+<p>This project intends to provide some experience organizing csv files into a database. For this task, you are given a set of csv files that contain information about the <a href="https://www.kaggle.com/datasets/jessicali9530/animal-crossing-new-horizons-nookplaza-dataset/data"><strong>Animal Crossing New Horizons Catalog</strong></a>, a popular video game.</p>
+<p>According to the description of the dataset:</p>
+<blockquote class="blockquote">
+<p>There are 30 csvs each listing various items, villagers, clothing, and other collectibles from the game. The data was collected by a dedicated group of AC fans who continue to collaborate and build this spreadsheet for public use. The database contains the original data and full list of contributors and raw data. At the time of writing, the only difference between the spreadsheet and this version is that the Kaggle version omits all columns with images of the items, but is otherwise identical.</p>
+</blockquote>
+<p>As you will notice, there is no explicit description of the data. You will need to explore the data and understand it in order to complete the tasks below. You will also need to rely on your own understanding of the data and the relationships between the different tables. You can use the <a href="https://animalcrossing.fandom.com/wiki/Animal_Crossing_Wiki">Animal Crossing Wiki</a> to help you understand the data and the relationships between the different tables.</p>
+<p>The goal of this project is to create a database that contains all the information in the csv files, and then answer some questions about the data using SQL queries.</p>
 </section>
-<section id="submission" class="level2">
-<h2 class="anchored" data-anchor-id="submission">Submission</h2>
-<section id="grading-rubric" class="level3">
-<h3 class="anchored" data-anchor-id="grading-rubric">Grading Rubric</h3>
-<p>This project is worth xx pts:</p>
-
-
-<!-- -->
-
+<section id="step-0.-accept-the-assignment" class="level2">
+<h2 class="anchored" data-anchor-id="step-0.-accept-the-assignment">Step 0. Accept the assignment</h2>
+<p>You will be using GitHub Classroom to complete this assignment. You will need to accept the assignment in order to get started. You can do this by clicking on the link below:</p>
+<p><a href="https://classroom.github.com/a/J4MNT0NZ">Accept the assignment</a></p>
+<p>After clicking and accepting, you need to click in the link for your repository. Click in the green button that says “Code” and copy the link that appears.</p>
+<p>To clone the repository, you can use the following command in your terminal:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone <span class="op">&lt;</span>repository_url<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Make sure to replace <code>&lt;repository_url&gt;</code> with the URL of your repository.</p>
+<p>CD into the directory of your repository:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> <span class="op">&lt;</span>repository_name<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Make sure to replace <code>&lt;repository_name&gt;</code> with the name of your repository.</p>
+<p>From now on you can work using VS Code or any other IDE of your preference. Make sure to create a virtual environment (venv) if you are using Python. You can do this by running the following command in your terminal:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> <span class="at">-m</span> venv venv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Then, activate the virtual environment by running the following command:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">source</span> venv/bin/activate</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>From now on, it is in your hands!</p>
+<p>All deliverables should be submitted through GitHub Classroom. You will need to create a new repository for this assignment, and then push your code to that repository.</p>
 </section>
+<section id="step-1.-creating-the-database" class="level2">
+<h2 class="anchored" data-anchor-id="step-1.-creating-the-database">Step 1. Creating the database</h2>
+<p>You will need to create tables and insert data into them. You must use the <code>sqlite3</code> module to create a database and tables. You will need to create a table for each csv file, and then insert the data from the csv files into the tables. There are a few ways of doing that. Feel free to use the SQLite CLI or the <code>sqlite3</code> module in Python.</p>
+<p>You can also use the <code>pandas</code> library to read the csv files and insert the data into the database. You can use the <code>to_sql</code> method of a pandas DataFrame to insert the data into the database. You can also use the <code>csv</code> module to read the csv files and insert the data into the database using SQL commands.</p>
+<p>Before creating the tables, you should come up with the schema for the database. You should think about the relationships between the different tables and how to represent them in the database. You should also think about the data types of the columns in the tables.</p>
+<p>Make sure to document well your database schema and the relationships between the tables. You should also document any assumptions you made about the data and the relationships between the tables. You can use comments in your SQL code to document your schema and the relationships between the tables.</p>
+<pre class="{note}"><code>As you will see, this dataset contains only the catalog of the elements of the game. We will keep working in this project to evolve it into a full database of the game. For now, we will only focus on the catalog of items.</code></pre>
+<p>The <strong>recipes</strong> table contains the materials and quantities to build the recipes. Make sure you create foreign keys to other tables so you can relate the recipes to the items. Think of other DIY elements in the other tables as connected to the recipes.</p>
+<p>Make sure you treat the NA values as NULL values in the database.</p>
+</section>
+<section id="step-2.-answering-questions" class="level2">
+<h2 class="anchored" data-anchor-id="step-2.-answering-questions">Step 2. Answering questions</h2>
+<p>Once you have created the database and inserted the data into the tables, you should answer the following questions using SQL queries: 1. What is the most expensive item in the game? 2. What is the cheapest item in the game? 3. What is the most expensive item in each category? 4. What is the cheapest item in each category? 7. What is the most expensive item in each color? 8. What is the cheapest item in each color? 9. What is the most expensive item in each style? 10. What is the cheapest item in each style? 11. What is the most expensive item in the recipes table? How would you calculate that? 12. What is the cheapest item in the recipes table? How would you calculate that?</p>
+</section>
+<section id="deliverables" class="level2">
+<h2 class="anchored" data-anchor-id="deliverables">Deliverables</h2>
+<ul>
+<li>A database file with the tables and data from the csv files in SQLite (.db).</li>
+<li>A file with the SQL queries you used to answer the questions above (.sql). Use comments to identify the questions you are answering with each query.</li>
+<li>A file with the SQL queries you used to create the tables and insert the data into the tables (.sql). If (and only if) you used Python, please include the code you used to create the tables and insert the data into the tables (.py).</li>
+<li>A README.md file with the documentation of the database schema and the relationships between the tables. You should also document any assumptions you made about the data and the relationships between the tables. You can use comments in your SQL code to document your schema and the relationships between the tables.</li>
+</ul>
+<p>If you are not familiar with Markdown, this is a good time to start learning it. Make sure you create a folder for the figures in your report on README.md. Use DBeaver to generate the schema of your database and include it in your report. You can also use DBeaver to generate the SQL code to create the tables and insert the data into the tables. You can use the “Export” feature of DBeaver to export the schema and data to a SQL file.</p>
+
+
 </section>
 
 </main> <!-- /main -->
@@ -849,36 +879,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Project 03: soon..."</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> </span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">    css: /projects/proj-styles.css</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- &lt;center&gt;</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;figure&gt;</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;img src="/images/projects/proj03-header.jpeg" alt="Created by AI Prompt: create a piece of art that echoes grading inside the classroom" width="450"/&gt;</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;figcaption&gt;Created by AI Prompt: *create a piece of art that echoes grading inside the classroom*&lt;/figcaption&gt;</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;/figure&gt;</span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;/center&gt; --&gt;</span></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="fu">## Introduction</span></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="fu">## Submission</span></span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="fu">### Grading Rubric</span></span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>This project is worth xx pts:</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
-</div></div></div></div></div>
+</script>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -887,7 +888,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/ericaraujophd/25sp-cs354A/edit/main/projects/proj03.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/25sp-cs354A/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.dev/ericaraujophd/25sp-cs354A/blob/main/projects/proj03.ipynb" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ericaraujophd/25sp-cs354A/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">

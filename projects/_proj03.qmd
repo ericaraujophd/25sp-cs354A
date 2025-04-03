@@ -5,6 +5,7 @@ format:
     css: /projects/proj-styles.css
 ---
 
+```{=html}
 <!-- <center>
 
 <figure>
@@ -16,12 +17,11 @@ format:
 </figure>
 
 </center> -->
+```
 
 ## Introduction
 
-
 ## Submission
-
 
 ### Grading Rubric
 
